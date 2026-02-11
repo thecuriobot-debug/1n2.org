@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - 1n2.org</title>
+    <meta name="description" content="Real-world examples of human-AI collaboration. See complete development journeys from concept to production.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .card-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .card-meta {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .card-description {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            position: relative;
+        }
+        
+        .coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffc107;
+            color: #333;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Case Studies</h1>
+            <p class="subtitle">Real-World Human-AI Collaboration Projects</p>
+            <p style="color: #999; margin-top: 15px;">
+                Complete development journeys from concept to production
+            </p>
+        </header>
+        
+        <div class="case-study-grid">
+            <!-- MediaLog Case Study -->
+            <a href="medialog/" class="case-study-card">
+                <div class="card-header">
+                    <div class="card-icon">📚🎬</div>
+                    <h2 class="card-title">MediaLog</h2>
+                    <p class="card-meta">Personal Media Tracker</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Building a modern media tracking application that combines Letterboxd and Goodreads 
+                        data. Complete development history across 5 versions, showing every feature addition, 
+                        design iteration, and technical decision.
+                    </p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">7.5</div>
+                            <div class="stat-label">Hours</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Versions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Pages</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">40+</div>
+                            <div class="stat-label">Features</div>
+                        </div>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Web Scraping</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Placeholder for future case studies -->
+            <div class="case-study-card coming-soon">
+                <div class="card-header">
+                    <div class="card-icon">🤖</div>
+                    <h2 class="card-title">AI Workflows</h2>
+                    <p class="card-meta">Documentation System</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Creating a comprehensive documentation system for AI-assisted development workflows. 
+                        Includes prompt engineering patterns, debugging strategies, and collaboration best practices.
+                    </p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">TBD</div>
+                            <div class="stat-label">Hours</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">TBD</div>
+                            <div class="stat-label">Guides</div>
+                        </div>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Documentation</span>
+                        <span class="tag">Best Practices</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study-card coming-soon">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h2 class="card-title">Data Pipeline</h2>
+                    <p class="card-meta">Automated ETL System</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">
+                        Building an automated data pipeline for aggregating content from multiple sources. 
+                        Shows the evolution from manual scripts to automated workflows with error handling.
+                    </p>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">TBD</div>
+                            <div class="stat-label">Hours</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">TBD</div>
+                            <div class="stat-label">Sources</div>
+                        </div>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 1.1em; font-weight: 600;">
+                Want to see more case studies?
+            </p>
+            <p style="margin-bottom: 10px;">
+                <a href="http://1n2.org">Return to 1n2.org</a>
+            </p>
+            <p style="opacity: 0.8; font-size: 0.9em; margin-top: 20px;">
+                &copy; 2026 1n2.org - Human + AI Collaboration
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

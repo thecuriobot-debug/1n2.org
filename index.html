@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1n2.org - Human + AI Collaboration</title>
+    <meta name="description" content="Building tools and experiences through human-AI collaboration. MediaLog, AI workflows, and real-world case studies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .mission {
+            font-size: 1.15em;
+            color: #777;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+        
+        /* Products Grid */
+        .products {
+            margin-bottom: 60px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 3px solid transparent;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: #667eea;
+        }
+        
+        .product-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .product-card h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .product-card p {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .product-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .product-status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-status.beta {
+            background: #17a2b8;
+        }
+        
+        .product-status.coming-soon {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .product-tag {
+            padding: 8px 16px;
+            background: #f0f0f0;
+            color: #666;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            margin-bottom: 60px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 30px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .timeline-date {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .timeline-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .stat-badge {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .stat-badge strong {
+            color: #667eea;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .about p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        footer p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 2px;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+            border-bottom-color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: -37px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="1n2_org_logo.png" alt="1n2.org Logo" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+            <p class="mission">
+                Building tools and experiences that amplify human creativity through intelligent AI assistance. 
+                One human, one AI, infinite possibilities.
+            </p>
+        </header>
+        
+        <section class="products">
+            <h2 class="section-header">🚀 Our Products</h2>
+            <div class="product-grid">
+                <a href="/medialog/" class="product-card">
+                    <div class="product-icon">📚🎬</div>
+                    <h3>MediaLog</h3>
+                    <p>
+                        Your personal media tracking dashboard. Beautifully combines Letterboxd and Goodreads 
+                        data to track movies and books in one place. Features: "On This Day" memories, reading/viewing 
+                        streaks, year-end projections, director and author analytics.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag"><span class="book-count">782</span> books</span>
+                        <span class="product-tag"><span class="movie-count">50</span> movies</span>
+                    </div>
+                </a>
+                
+                <a href="/workflows/" class="product-card">
+                    <div class="product-icon">🤖</div>
+                    <h3>AI Workflows</h3>
+                    <p>
+                        Documentation and tutorials on effective human-AI collaboration patterns. Learn prompt 
+                        engineering, agentic coding workflows, debugging strategies, and how to build production 
+                        applications with Claude, GPT-4, and specialized AI tools.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status beta">Beta</span>
+                        <span class="product-tag">Real examples</span>
+                    </div>
+                </a>
+                
+                <a href="/tweetster/" class="product-card">
+                    <div class="product-icon">🐦</div>
+                    <h3>Tweetster</h3>
+                    <p>
+                        Your Twitter feed, without the noise. Tweetster reads Twitter so you don't have to — 
+                        pulling tweets from your 996 followed accounts and organizing them by topic: Bitcoin, 
+                        Sports, Technology, and Politics. No ads, no algorithmic manipulation, just the tweets 
+                        you actually want to see. Classic Twitter vibes included.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">996 accounts</span>
+                        <span class="product-tag">Ad-free</span>
+                    </div>
+                </a>
+
+                <a href="/checklister/" class="product-card">
+                    <div class="product-icon">✅</div>
+                    <h3>Checklister</h3>
+                    <p>
+                        A clean, focused checklist app for getting things done. Create and manage checklists 
+                        with a beautiful, distraction-free interface. Built for speed and simplicity — just 
+                        you and your tasks, nothing else.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">Task management</span>
+                    </div>
+                </a>
+
+                <a href="/case-studies/" class="product-card">
+                    <div class="product-icon">📊</div>
+                    <h3>Case Studies</h3>
+                    <p>
+                        Real-world examples of AI-assisted projects: from concept to deployment. Complete development 
+                        diaries showing what works, what fails, token costs, debugging sessions, and lessons learned 
+                        from building with AI.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status beta">Beta</span>
+                        <span class="product-tag">5+ studies</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section class="about">
+            <h2>About 1n2</h2>
+            <p>
+                At 1n2, we believe the future isn't about AI replacing humans—it's about humans and AI working 
+                together to achieve what neither could alone. We're exploring the frontier of human-AI collaboration 
+                through practical tools, real-world applications, and hands-on experimentation.
+            </p>
+            <p>
+                Founded by Thomas Hunt, a history major turned AI power user, 1n2 represents a pragmatic approach 
+                to AI: learn by building, iterate quickly, and create tools that solve real problems. No buzzwords, 
+                no hype—just humans and AI getting things done.
+            </p>
+            <p>
+                Our philosophy is simple: AI agents are incredible assistants, but human judgment, creativity, and 
+                vision remain irreplaceable. The magic happens when both work together—1 human + 1 AI = 2x the potential.
+            </p>
+            <p>
+                <strong>Today's highlight:</strong> MediaLog was built entirely through AI-assisted development 
+                over 5 focused sessions totaling ~7.5 hours. From database design to deployment, every feature was 
+                created through human-AI collaboration—proving that powerful applications can be built quickly when 
+                the right tools work together.
+            </p>
+        </section>
+        
+        <section class="case-studies">
+            <h2 class="section-header">📖 Recent Work: MediaLog Development</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Session 1 - Feb 9, 2026</div>
+                    <h3>🎯 Foundation & Data Integration</h3>
+                    <p class="stats-text">
+                        Built complete database structure with MySQL. Integrated Letterboxd (movies) and Goodreads 
+                        (books) data sources. Created scraper system to populate 782 books and 50 movies with 
+                        metadata including ratings, dates, reviews, and poster images.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong class="book-count">782</strong> books imported</div>
+                        <div class="stat-badge"><strong class="movie-count">50</strong> movies imported</div>
+                        <div class="stat-badge"><strong>2</strong> hours session</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Session 2 - Feb 9, 2026</div>
+                    <h3>📊 Advanced Analytics & Insights</h3>
+                    <p>
+                        Enhanced statistics pages with decade analysis, viewing patterns, and release year trends. 
+                        Created advanced insights page with pace tracking (books/day, movies/day), streak detection, 
+                        year-end projections, and monthly comparison charts.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>3</strong> analytics pages</div>
+                        <div class="stat-badge"><strong>15+</strong> chart types</div>
+                        <div class="stat-badge"><strong>1.5</strong> hours</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Session 3 - Feb 9, 2026</div>
+                    <h3>🎨 Modern 3-Column Homepage</h3>
+                    <p>
+                        Redesigned homepage with purple gradient aesthetic, hero stats section, and three smart 
+                        columns: "On This Day" (memories), Recent Activity, and Random Picks. Added visual gallery 
+                        with poster grids. Implemented smart fallback logic and mobile responsive design.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>3</strong> columns</div>
+                        <div class="stat-badge"><strong>100%</strong> mobile</div>
+                        <div class="stat-badge"><strong>2</strong> hours</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Session 4 - Feb 9, 2026</div>
+                    <h3>🎬 Directors Page & Metadata</h3>
+                    <p>
+                        Created directors analytics page parallel to authors page. Built Letterboxd scraper to 
+                        extract director names, genres, and runtime data. Implemented multi-director film support, 
+                        poster grids, and year-watching statistics for 41 movies.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>41</strong> directors tracked</div>
+                        <div class="stat-badge"><strong>1</strong> new page</div>
+                        <div class="stat-badge"><strong>1</strong> hour</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Session 5 - Feb 9, 2026</div>
+                    <h3>🏷️ MediaLog Rebrand & Polish</h3>
+                    <p>
+                        Rebranded from "Hunt HQ" to "MediaLog" across all 10 pages. Added year fallback logic 
+                        (shows 2025 when 2026 is empty). Implemented zero-data protection and graceful degradation. 
+                        Created comprehensive documentation and deployment guides.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>10</strong> pages updated</div>
+                        <div class="stat-badge"><strong>5</strong> features added</div>
+                        <div class="stat-badge"><strong>1</strong> hour</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 1.1em;">
+                <span style="font-weight: 600;">📚 1n2.org</span> <span style="font-weight: 400;">- Human + AI Collaboration</span>
+            </p>
+            
+            <p style="margin-bottom: 20px; font-size: 0.95em; opacity: 0.9;">
+                MediaLog: <span id="book-count">782</span> books • <span id="movie-count">1,708</span> movies tracked
+            </p>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px;">
+                <p style="font-size: 0.9em; opacity: 0.8; margin-bottom: 10px;">
+                    Built with ❤️ through Human 💡 + AI Collaboration 🤖
+                </p>
+                <p style="font-size: 0.85em; opacity: 0.7;">
+                    &copy; 2026 <a href="http://1n2.org">1n2.org</a> 
+                    • <a href="http://www.thomashunt.com">Thomas Hunt</a>
+                    • Powered by <a href="https://claude.ai">Claude</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Fetch dynamic MediaLog statistics
+        fetch('/medialog/api-stats.php')
+            .then(response => response.json())
+            .then(data => {
+                // Update all instances of book/movie counts
+                const bookCountElements = document.querySelectorAll('#book-count, .book-count');
+                const movieCountElements = document.querySelectorAll('#movie-count, .movie-count');
+                const pageCountElements = document.querySelectorAll('#page-count, .page-count');
+                
+                bookCountElements.forEach(el => el.textContent = data.books);
+                movieCountElements.forEach(el => el.textContent = data.movies);
+                pageCountElements.forEach(el => el.textContent = data.pages);
+                
+                // Update compound text nodes
+                document.querySelectorAll('.stats-text').forEach(el => {
+                    el.textContent = el.textContent
+                        .replace(/\d+\s+books/, `${data.books} books`)
+                        .replace(/\d+\s+movies/, `${data.movies} movies`);
+                });
+            })
+            .catch(error => console.log('Stats loading...', error));
+    </script>
+</body>
+</html>

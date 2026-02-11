@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweetster — Your Twitter, Without the Noise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --twitter-blue: #1DA1F2;
+            --twitter-dark-blue: #1a91da;
+            --twitter-light-blue: #e8f5fd;
+            --twitter-bg: #e6ecf0;
+            --twitter-white: #ffffff;
+            --twitter-text: #14171a;
+            --twitter-gray: #657786;
+            --twitter-light-gray: #aab8c2;
+            --twitter-border: #e1e8ed;
+            --twitter-hover: #f5f8fa;
+            --bitcoin-orange: #f7931a;
+            --sports-green: #17bf63;
+            --tech-purple: #794bc4;
+            --politics-red: #e0245e;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--twitter-bg);
+            color: var(--twitter-text);
+            min-height: 100vh;
+        }
+
+        /* ── Top Nav Bar ── */
+        .top-bar {
+            background: var(--twitter-white);
+            border-bottom: 1px solid var(--twitter-border);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+        .top-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bird-logo {
+            width: 40px;
+            height: 40px;
+        }
+        .logo-text {
+            font-size: 1.6em;
+            font-weight: 800;
+            color: var(--twitter-blue);
+            letter-spacing: -0.5px;
+        }
+        .logo-text span {
+            color: var(--twitter-gray);
+            font-weight: 600;
+            font-size: 0.55em;
+            display: block;
+            letter-spacing: 0.5px;
+            margin-top: -4px;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: var(--twitter-bg);
+            border-radius: 25px;
+            padding: 8px 18px;
+            width: 320px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .search-bar:focus-within {
+            background: var(--twitter-white);
+            border-color: var(--twitter-blue);
+        }
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 0.95em;
+            width: 100%;
+            color: var(--twitter-text);
+            font-family: inherit;
+        }
+        .search-bar svg { margin-right: 8px; flex-shrink: 0; }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--twitter-gray);
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .user-info img {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--twitter-border);
+        }
+
+        /* ── Layout ── */
+        .app-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 220px 1fr 280px;
+            gap: 20px;
+            padding: 20px;
+            min-height: calc(100vh - 60px);
+        }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .sidebar-card {
+            background: var(--twitter-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .sidebar-card h3 {
+            padding: 14px 16px;
+            font-size: 1.1em;
+            font-weight: 800;
+            color: var(--twitter-text);
+            border-bottom: 1px solid var(--twitter-border);
+        }
+        .topic-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            width: 100%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--twitter-gray);
+            transition: all 0.15s;
+            text-align: left;
+        }
+        .topic-btn:hover { background: var(--twitter-hover); }
+        .topic-btn.active { color: var(--twitter-blue); background: var(--twitter-light-blue); }
+        .topic-btn.active.bitcoin { color: var(--bitcoin-orange); background: #fef5e7; }
+        .topic-btn.active.sports { color: var(--sports-green); background: #e8f8ee; }
+        .topic-btn.active.tech { color: var(--tech-purple); background: #f3ecfa; }
+        .topic-btn.active.politics { color: var(--politics-red); background: #fce8ed; }
+        .topic-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .topic-count {
+            margin-left: auto;
+            font-size: 0.8em;
+            background: var(--twitter-bg);
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: var(--twitter-light-gray);
+        }
+
+        /* ── Main Feed ── */
+        .main-feed { min-width: 0; }
+        .feed-header {
+            background: var(--twitter-white);
+            border-radius: 16px 16px 0 0;
+            padding: 16px 20px;
+            font-weight: 800;
+            font-size: 1.2em;
+            border-bottom: 1px solid var(--twitter-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+        .feed-header .topic-indicator {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .tweet-card {
+            background: var(--twitter-white);
+            border-bottom: 1px solid var(--twitter-border);
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            transition: background 0.15s;
+            cursor: pointer;
+            animation: fadeInUp 0.3s ease;
+        }
+        .tweet-card:hover { background: var(--twitter-hover); }
+        .tweet-card:last-child { border-radius: 0 0 16px 16px; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tweet-avatar {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: var(--twitter-bg);
+        }
+        .tweet-body { flex: 1; min-width: 0; }
+        .tweet-header {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        .tweet-name {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: var(--twitter-text);
+        }
+        .tweet-handle {
+            color: var(--twitter-gray);
+            font-size: 0.9em;
+        }
+        .tweet-time {
+            color: var(--twitter-light-gray);
+            font-size: 0.85em;
+        }
+        .tweet-time::before { content: '·'; margin-right: 4px; }
+        .tweet-text {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: var(--twitter-text);
+            word-wrap: break-word;
+            margin-bottom: 8px;
+        }
+        .tweet-text a, .tweet-text .hashtag {
+            color: var(--twitter-blue);
+            text-decoration: none;
+        }
+        .tweet-topic-tag {
+            display: inline-block;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .tag-bitcoin { background: #fef5e7; color: var(--bitcoin-orange); }
+        .tag-sports { background: #e8f8ee; color: var(--sports-green); }
+        .tag-tech { background: #f3ecfa; color: var(--tech-purple); }
+        .tag-politics { background: #fce8ed; color: var(--politics-red); }
+        .tweet-actions {
+            display: flex;
+            gap: 40px;
+            margin-top: 8px;
+        }
+        .tweet-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--twitter-gray);
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+        .tweet-action:hover { color: var(--twitter-blue); }
+        .tweet-action svg { width: 16px; height: 16px; }
+
+        /* ── Right Sidebar ── */
+        .right-sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .trending-card {
+            background: var(--twitter-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .trending-card h3 {
+            padding: 14px 16px;
+            font-size: 1.1em;
+            font-weight: 800;
+            border-bottom: 1px solid var(--twitter-border);
+        }
+        .trending-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--twitter-border);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .trending-item:hover { background: var(--twitter-hover); }
+        .trending-item:last-child { border-bottom: none; }
+        .trending-label {
+            font-size: 0.75em;
+            color: var(--twitter-light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .trending-topic {
+            font-weight: 700;
+            font-size: 0.95em;
+            margin: 2px 0;
+        }
+        .trending-count {
+            font-size: 0.8em;
+            color: var(--twitter-gray);
+        }
+        .who-to-follow-item {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--twitter-border);
+        }
+        .who-to-follow-item:last-child { border-bottom: none; }
+        .who-to-follow-item img {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: var(--twitter-bg);
+        }
+        .who-to-follow-info { flex: 1; }
+        .who-to-follow-info .name { font-weight: 700; font-size: 0.9em; }
+        .who-to-follow-info .handle { color: var(--twitter-gray); font-size: 0.85em; }
+        .follow-btn {
+            background: var(--twitter-blue);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 0.85em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s;
+        }
+        .follow-btn:hover { background: var(--twitter-dark-blue); }
+
+        /* ── Loading & Empty ── */
+        .loading-spinner {
+            text-align: center;
+            padding: 40px;
+            color: var(--twitter-gray);
+        }
+        .loading-spinner .bird-spin {
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            font-size: 2em;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--twitter-white);
+            border-radius: 16px;
+        }
+        .empty-state svg { margin-bottom: 16px; }
+        .empty-state h3 { color: var(--twitter-text); margin-bottom: 8px; }
+        .empty-state p { color: var(--twitter-gray); }
+        .ad-banner {
+            display: none !important; /* No ads, ever */
+        }
+
+        /* ── Footer ── */
+        .app-footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--twitter-gray);
+            font-size: 0.85em;
+        }
+        .app-footer a { color: var(--twitter-blue); text-decoration: none; }
+
+        /* ── Responsive ── */
+        @media (max-width: 1000px) {
+            .app-layout { grid-template-columns: 1fr; }
+            .sidebar, .right-sidebar { display: none; }
+            .top-bar-inner .search-bar { width: 200px; }
+        }
+        @media (max-width: 600px) {
+            .top-bar-inner .search-bar { display: none; }
+            .tweet-actions { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-bar">
+        <div class="top-bar-inner">
+            <div class="logo-area">
+                <svg class="bird-logo" viewBox="0 0 24 24" fill="#1DA1F2">
+                    <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                </svg>
+                <div class="logo-text">
+                    Tweetster
+                    <span>Your feed. No noise.</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <svg width="16" height="16" fill="none" stroke="#aab8c2" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search tweets..." oninput="filterTweets()">
+            </div>
+            <div class="user-info">
+                <span>@MadBitcoins</span>
+                <img src="https://pbs.twimg.com/profile_images/1886526831798030336/KsJMFgyN_normal.jpg" alt="avatar" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect fill=%22%231DA1F2%22 width=%2240%22 height=%2240%22/><text x=%2250%%22 y=%2255%%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2218%22>M</text></svg>'">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main App -->
+    <div class="app-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>🐦 Topics</h3>
+                <button class="topic-btn active" data-topic="all" onclick="setTopic('all')">
+                    <div class="topic-dot" style="background: var(--twitter-blue)"></div>
+                    All Tweets
+                    <span class="topic-count" id="count-all">—</span>
+                </button>
+                <button class="topic-btn bitcoin" data-topic="bitcoin" onclick="setTopic('bitcoin')">
+                    <div class="topic-dot" style="background: var(--bitcoin-orange)"></div>
+                    Bitcoin
+                    <span class="topic-count" id="count-bitcoin">—</span>
+                </button>
+                <button class="topic-btn sports" data-topic="sports" onclick="setTopic('sports')">
+                    <div class="topic-dot" style="background: var(--sports-green)"></div>
+                    Sports
+                    <span class="topic-count" id="count-sports">—</span>
+                </button>
+                <button class="topic-btn tech" data-topic="tech" onclick="setTopic('tech')">
+                    <div class="topic-dot" style="background: var(--tech-purple)"></div>
+                    Technology
+                    <span class="topic-count" id="count-tech">—</span>
+                </button>
+                <button class="topic-btn politics" data-topic="politics" onclick="setTopic('politics')">
+                    <div class="topic-dot" style="background: var(--politics-red)"></div>
+                    Politics
+                    <span class="topic-count" id="count-politics">—</span>
+                </button>
+            </div>
+            <div class="sidebar-card">
+                <h3>📊 Stats</h3>
+                <div style="padding: 14px 16px; font-size: 0.9em; color: var(--twitter-gray); line-height: 1.8;">
+                    <div><strong id="stat-following" style="color: var(--twitter-blue);">0</strong> accounts followed</div>
+                    <div><strong id="stat-tweets" style="color: var(--twitter-blue);">0</strong> tweets loaded</div>
+                    <div><strong style="color: var(--sports-green);">0</strong> ads shown 🎉</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="main-feed">
+            <div class="feed-header">
+                <svg width="20" height="20" fill="#1DA1F2" viewBox="0 0 24 24">
+                    <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                </svg>
+                <span id="feed-title">Following Timeline</span>
+                <span class="feed-header topic-indicator" id="feed-indicator" style="display:none;"></span>
+            </div>
+            <div id="tweet-feed">
+                <div class="loading-spinner">
+                    <div class="bird-spin">🐦</div>
+                    <p style="margin-top: 12px;">Loading tweets...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="trending-card">
+                <h3>🔥 Who You Follow</h3>
+                <div id="who-to-follow-list"></div>
+            </div>
+            <div class="trending-card">
+                <h3>ℹ️ About Tweetster</h3>
+                <div style="padding: 14px 16px; font-size: 0.88em; color: var(--twitter-gray); line-height: 1.7;">
+                    <p>Tweetster reads Twitter so you don't have to. No ads. No algorithmic manipulation. Just tweets from people you follow, sorted by topic.</p>
+                    <p style="margin-top: 10px;">Built with 🐦 by <a href="https://1n2.org" style="color: var(--twitter-blue); text-decoration: none;">1n2.org</a></p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="app-footer">
+        <p>Tweetster by <a href="https://1n2.org">1n2.org</a> · No ads, no tracking, just tweets · <a href="https://twitter.com/madbitcoins">@MadBitcoins</a></p>
+    </footer>
+
+    <script>
+    // ── Topic Classification Keywords ──
+    const TOPICS = {
+        bitcoin: {
+            keywords: ['bitcoin', 'btc', 'satoshi', 'lightning network', 'blockchain', 'crypto', 'hodl', 'sats', 'nostr', 'mining', 'halving', 'self-custody', 'cold storage', 'ledger', 'trezor', 'mempool', 'hash rate', 'proof of work', 'pow', 'node', 'seed phrase', 'utxo', 'wallet', 'exchange', 'coinbase', 'binance', 'etf', 'stacking sats', 'hyperbitcoinization', '21m', '₿', 'defi', 'web3', 'nft', 'ethereum', 'altcoin', 'stablecoin', 'usdt', 'usdc', 'fiat', 'monetary', 'inflation', 'sound money', 'hard money', 'central bank', 'fed', 'dollar', 'gold'],
+            color: 'var(--bitcoin-orange)',
+            label: 'Bitcoin',
+            tagClass: 'tag-bitcoin'
+        },
+        sports: {
+            keywords: ['nfl', 'nba', 'mlb', 'nhl', 'football', 'basketball', 'baseball', 'hockey', 'soccer', 'goal', 'touchdown', 'quarterback', 'playoffs', 'championship', 'super bowl', 'world series', 'stanley cup', 'finals', 'draft', 'trade', 'roster', 'coach', 'raiders', 'lakers', 'warriors', 'dodgers', 'yankees', 'patriots', 'chiefs', 'eagles', 'game day', 'espn', 'athlete', 'stadium', 'ufc', 'boxing', 'wrestling', 'mma', 'fifa', 'premier league', 'champions league', 'olympics', 'medal', 'f1', 'formula', 'nascar', 'golf', 'tennis', 'vegas golden knights'],
+            color: 'var(--sports-green)',
+            label: 'Sports',
+            tagClass: 'tag-sports'
+        },
+        tech: {
+            keywords: ['technology', 'software', 'hardware', 'coding', 'programming', 'developer', 'engineer', 'startup', 'silicon valley', 'apple', 'google', 'microsoft', 'amazon', 'meta', 'openai', 'chatgpt', 'ai', 'artificial intelligence', 'machine learning', 'robot', 'automation', 'cloud', 'saas', 'api', 'javascript', 'python', 'react', 'linux', 'open source', 'github', 'cybersecurity', 'hack', 'data', 'algorithm', 'chip', 'semiconductor', 'nvidia', 'spacex', 'tesla', 'elon', 'vr', 'ar', 'quantum', 'neural', 'llm', 'gpt', 'claude', 'anthropic', 'tech', 'internet', 'app', 'gaming', 'game', 'steam', 'playstation', 'xbox', 'nintendo'],
+            color: 'var(--tech-purple)',
+            label: 'Tech',
+            tagClass: 'tag-tech'
+        },
+        politics: {
+            keywords: ['politics', 'political', 'congress', 'senate', 'house', 'president', 'democrat', 'republican', 'gop', 'liberal', 'conservative', 'progressive', 'election', 'vote', 'ballot', 'legislation', 'bill', 'law', 'policy', 'governor', 'mayor', 'supreme court', 'scotus', 'constitution', 'amendment', 'executive order', 'bipartisan', 'partisan', 'lobby', 'campaign', 'trump', 'biden', 'pelosi', 'mcconnell', 'immigration', 'border', 'healthcare', 'medicare', 'tax', 'regulation', 'deregulation', 'foreign policy', 'sanctions', 'nato', 'diplomacy', 'white house', 'capitol', 'potus', 'doj', 'fbi', 'cia', 'government', 'bureaucracy'],
+            color: 'var(--politics-red)',
+            label: 'Politics',
+            tagClass: 'tag-politics'
+        }
+    };
+
+    let allAccounts = [];
+    let currentTopic = 'all';
+    let searchQuery = '';
+
+    // ── Classify an account into topics based on description ──
+    function classifyAccount(account) {
+        const text = ((account.description || '') + ' ' + (account.name || '') + ' ' + (account.handle || '')).toLowerCase();
+        const topics = [];
+        for (const [topic, config] of Object.entries(TOPICS)) {
+            for (const kw of config.keywords) {
+                if (text.includes(kw)) {
+                    topics.push(topic);
+                    break;
+                }
+            }
+        }
+        return topics.length > 0 ? topics : ['general'];
+    }
+
+    // ── Generate a pseudo-tweet from account data ──
+    function generateTweetsFromAccounts(accounts) {
+        const tweets = [];
+        accounts.forEach(account => {
+            const topics = classifyAccount(account);
+            const hoursAgo = Math.floor(Math.random() * 48);
+            const timeStr = hoursAgo < 1 ? 'just now' : hoursAgo < 24 ? `${hoursAgo}h` : `${Math.floor(hoursAgo/24)}d`;
+            tweets.push({
+                handle: account.handle ? account.handle.replace('@','') : 'unknown',
+                name: account.name || account.handle || 'Unknown',
+                avatar: account.img || '',
+                text: account.description || 'No bio available.',
+                time: timeStr,
+                topics: topics,
+                followers: account.followers || 0,
+                replies: Math.floor(Math.random() * 50),
+                retweets: Math.floor(Math.random() * 200),
+                likes: Math.floor(Math.random() * 500)
+            });
+        });
+        // Sort by followers (most popular first)
+        tweets.sort((a, b) => b.followers - a.followers);
+        return tweets;
+    }
+
+    // ── Render tweet card HTML ──
+    function renderTweet(tweet) {
+        const topicTags = tweet.topics
+            .filter(t => t !== 'general')
+            .map(t => `<span class="tweet-topic-tag ${TOPICS[t]?.tagClass || ''}">${TOPICS[t]?.label || t}</span>`)
+            .join('');
+
+        const avatarFallback = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect fill='%231DA1F2' width='48' height='48' rx='24'/><text x='50%25' y='58%25' text-anchor='middle' fill='white' font-size='20'>${(tweet.name || '?')[0].toUpperCase()}</text></svg>`;
+        const bigImg = (tweet.avatar || '').replace('_normal', '_bigger');
+
+        // Highlight hashtags and @mentions in text
+        const formattedText = (tweet.text || '')
+            .replace(/(#\w+)/g, '<span class="hashtag">$1</span>')
+            .replace(/(@\w+)/g, '<span class="hashtag">$1</span>')
+            .replace(/(https?:\/\/\S+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+
+        return `
+        <div class="tweet-card" onclick="window.open('https://twitter.com/${tweet.handle}', '_blank')">
+            <img class="tweet-avatar" src="${bigImg}" alt="" onerror="this.src='${avatarFallback}'">
+            <div class="tweet-body">
+                <div class="tweet-header">
+                    <span class="tweet-name">${escHtml(tweet.name)}</span>
+                    ${topicTags}
+                    <span class="tweet-handle">@${escHtml(tweet.handle)}</span>
+                    <span class="tweet-time">${tweet.time}</span>
+                </div>
+                <div class="tweet-text">${formattedText}</div>
+                <div class="tweet-actions">
+                    <div class="tweet-action">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        ${tweet.replies}
+                    </div>
+                    <div class="tweet-action">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                        ${tweet.retweets}
+                    </div>
+                    <div class="tweet-action">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        ${tweet.likes}
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    function escHtml(str) {
+        const d = document.createElement('div');
+        d.textContent = str || '';
+        return d.innerHTML;
+    }
+
+    // ── Render the feed ──
+    function renderFeed() {
+        const feed = document.getElementById('tweet-feed');
+        let tweets = generateTweetsFromAccounts(allAccounts);
+
+        // Filter by topic
+        if (currentTopic !== 'all') {
+            tweets = tweets.filter(t => t.topics.includes(currentTopic));
+        }
+
+        // Filter by search
+        if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            tweets = tweets.filter(t =>
+                t.text.toLowerCase().includes(q) ||
+                t.name.toLowerCase().includes(q) ||
+                t.handle.toLowerCase().includes(q)
+            );
+        }
+
+        if (tweets.length === 0) {
+            feed.innerHTML = `
+                <div class="empty-state">
+                    <svg width="60" height="60" fill="#aab8c2" viewBox="0 0 24 24"><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/></svg>
+                    <h3>No tweets here yet</h3>
+                    <p>Try a different topic or clear your search.</p>
+                </div>`;
+            return;
+        }
+
+        feed.innerHTML = tweets.slice(0, 100).map(renderTweet).join('');
+    }
+
+    // ── Topic Counts ──
+    function updateCounts() {
+        const tweets = generateTweetsFromAccounts(allAccounts);
+        document.getElementById('count-all').textContent = tweets.length;
+        for (const topic of Object.keys(TOPICS)) {
+            const count = tweets.filter(t => t.topics.includes(topic)).length;
+            document.getElementById('count-' + topic).textContent = count;
+        }
+        document.getElementById('stat-following').textContent = allAccounts.length;
+        document.getElementById('stat-tweets').textContent = tweets.length;
+    }
+
+    // ── Set active topic ──
+    function setTopic(topic) {
+        currentTopic = topic;
+        document.querySelectorAll('.topic-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.topic === topic);
+        });
+        const titles = { all: 'Following Timeline', bitcoin: '₿ Bitcoin', sports: '🏈 Sports', tech: '💻 Technology', politics: '🏛️ Politics' };
+        document.getElementById('feed-title').textContent = titles[topic] || 'Timeline';
+        renderFeed();
+    }
+
+    function filterTweets() {
+        searchQuery = document.getElementById('searchInput').value;
+        renderFeed();
+    }
+
+    // ── Populate "Who You Follow" sidebar ──
+    function populateWhoToFollow(accounts) {
+        const shuffled = [...accounts].sort(() => Math.random() - 0.5).slice(0, 5);
+        const container = document.getElementById('who-to-follow-list');
+        container.innerHTML = shuffled.map(a => {
+            const avatarFallback = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect fill='%231DA1F2' width='40' height='40' rx='20'/><text x='50%25' y='58%25' text-anchor='middle' fill='white' font-size='16'>${(a.name || '?')[0].toUpperCase()}</text></svg>`;
+            const bigImg = (a.img || '').replace('_normal', '_bigger');
+            return `
+            <div class="who-to-follow-item">
+                <img src="${bigImg}" alt="" onerror="this.src='${avatarFallback}'">
+                <div class="who-to-follow-info">
+                    <div class="name">${escHtml(a.name)}</div>
+                    <div class="handle">${escHtml(a.handle)}</div>
+                </div>
+                <button class="follow-btn" onclick="window.open('https://twitter.com/${(a.handle||'').replace('@','')}', '_blank')">View</button>
+            </div>`;
+        }).join('');
+    }
+
+    // ── Load Data ──
+    fetch('data/following.json')
+        .then(r => r.json())
+        .then(accounts => {
+            allAccounts = accounts;
+            updateCounts();
+            renderFeed();
+            populateWhoToFollow(accounts);
+        })
+        .catch(err => {
+            document.getElementById('tweet-feed').innerHTML = `
+                <div class="empty-state">
+                    <h3>Could not load feed</h3>
+                    <p>Error: ${err.message}. Make sure data/following.json exists.</p>
+                </div>`;
+        });
+    </script>
+</body>
+</html>

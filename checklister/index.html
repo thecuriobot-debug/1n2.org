@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklister</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+  <header class="app-header">
+    <div>
+      <h1>Checklister</h1>
+      <p>Simple daily task tracking with streaks and charts.</p>
+    </div>
+    <div class="header-meta">
+      <span id="today-label"></span>
+      <button id="seed-btn" class="ghost-btn" type="button">Seed demo tasks</button>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Main sections">
+    <button class="tab active" data-tab="track">My Tasks</button>
+    <button class="tab" data-tab="history">My History</button>
+    <button class="tab" data-tab="settings">Settings</button>
+    <button class="tab" data-tab="news">News</button>
+  </nav>
+
+  <main>
+    <section id="tab-track" class="panel active">
+      <div class="panel-head">
+        <h2>Track Daily Tasks</h2>
+        <form id="task-form" class="task-form">
+          <input id="task-input" type="text" maxlength="80" placeholder="Add a daily task (e.g. Brush teeth)" required />
+          <button type="submit">+ Add Task</button>
+        </form>
+      </div>
+
+      <div id="no-tasks" class="empty hidden">
+        <h3>No tasks yet</h3>
+        <p>Start by adding your first daily habit. Checklister will track streaks automatically.</p>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </section>
+
+    <section id="tab-history" class="panel">
+      <div class="panel-head">
+        <h2>Charts & Badges</h2>
+        <p class="muted">Last 30 days completion trend and per-task stats.</p>
+      </div>
+      <div id="summary-cards" class="summary-cards"></div>
+      <div class="chart-wrap">
+        <canvas id="trend-chart" width="1000" height="260" aria-label="30 day completion chart"></canvas>
+      </div>
+      <div id="badge-shelf" class="badge-shelf"></div>
+    </section>
+
+    <section id="tab-settings" class="panel">
+      <div class="panel-head">
+        <h2>Settings</h2>
+      </div>
+      <form id="settings-form" class="settings-form">
+        <label><input type="checkbox" id="setting-reminders" /> Daily reminder enabled</label>
+        <label><input type="checkbox" id="setting-weekly" /> Weekly email-style summary enabled (local)</label>
+        <label><input type="checkbox" id="setting-vacation" /> Vacation mode (pause streak breaks)</label>
+      </form>
+      <section class="task-manager">
+        <h3>Manage Tasks</h3>
+        <p class="muted">Remove tasks here instead of the main task page.</p>
+        <div id="manage-empty" class="muted hidden">No tasks to manage.</div>
+        <ul id="manage-task-list" class="manage-task-list"></ul>
+      </section>
+      <p class="muted">This MVP stores settings and data locally in your browser.</p>
+    </section>
+
+    <section id="tab-news" class="panel">
+      <div class="panel-head">
+        <h2>News</h2>
+      </div>
+      <article class="news-item">
+        <h3>Welcome to Checklister MVP</h3>
+        <p>Core idea from your docs is implemented: define daily tasks, check them off, build streaks, and review charts.</p>
+      </article>
+      <article class="news-item">
+        <h3>Patrons</h3>
+        <p>Future extension point for sponsorships, group tasks, and premium badges.</p>
+      </article>
+    </section>
+  </main>
+
+  <template id="task-template">
+    <li class="task-item">
+      <div class="task-main">
+        <label class="task-check">
+          <input type="checkbox" class="complete-today" />
+          <span class="checkmark"></span>
+        </label>
+        <div>
+          <h3 class="task-title"></h3>
+          <p class="task-meta"></p>
+          <div class="history-dots" aria-label="Last 14 days"></div>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

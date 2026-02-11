@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaLog Case Study - Human + AI Development Journey</title>
+    <meta name="description" content="Complete development history of MediaLog: from concept to production in 7.5 hours through human-AI collaboration.">
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #d4af37;
+            --text-dark: #1a1a1a;
+            --text-medium: #666;
+            --bg-light: #f8f9fa;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .hero {
+            background: white;
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+        }
+        
+        .hero .meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .meta-item {
+            padding: 15px 25px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        .meta-item strong {
+            color: var(--primary);
+            display: block;
+            font-size: 1.5em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .intro {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+        }
+        
+        .intro h2 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .intro p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--text-medium);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        
+        /* Version Navigation */
+        .version-nav {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+        
+        .version-nav h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .version-nav ul {
+            list-style: none;
+        }
+        
+        .version-nav li {
+            margin-bottom: 12px;
+        }
+        
+        .version-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .version-nav a:hover {
+            background: var(--bg-light);
+            transform: translateX(5px);
+            color: var(--primary);
+        }
+        
+        .version-badge {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+        }
+        
+        /* Version Sections */
+        .version {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 100px;
+        }
+        
+        .version-header {
+            border-left: 5px solid var(--primary);
+            padding-left: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .version-header h2 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .version-header .date {
+            color: var(--text-medium);
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .version-header .duration {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 15px;
+            font-weight: 700;
+        }
+        
+        .version-content {
+            margin-top: 30px;
+        }
+        
+        .version-content h3 {
+            color: var(--text-dark);
+            font-size: 1.8em;
+            margin: 30px 0 15px;
+        }
+        
+        .version-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+        
+        /* Feature Boxes */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-box {
+            border: 3px solid var(--bg-light);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-box h4 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5em;
+        }
+        
+        .feature-box p {
+            font-size: 1em;
+            color: var(--text-medium);
+            margin: 0;
+        }
+        
+        .feature-box ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .feature-box li {
+            color: var(--text-medium);
+            margin: 5px 0;
+        }
+        
+        /* Screenshots */
+        .screenshot {
+            margin: 40px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .screenshot-caption {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            font-size: 0.95em;
+            color: var(--text-medium);
+            font-style: italic;
+            text-align: center;
+        }
+        
+        /* Code Blocks */
+        .code-block {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: 25px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .code-block code {
+            color: #f8f8f2;
+        }
+        
+        /* Changes Highlight */
+        .changes {
+            background: linear-gradient(135deg, #fff5e6, #ffe6cc);
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .changes h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .changes ul {
+            list-style-position: inside;
+        }
+        
+        .changes li {
+            margin: 8px 0;
+            color: var(--text-dark);
+        }
+        
+        .changes li strong {
+            color: var(--accent);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+        
+        .timeline-item h5 {
+            color: var(--primary);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item p {
+            color: var(--text-medium);
+            font-size: 1em;
+            margin: 0;
+        }
+        
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tech-badge {
+            background: var(--bg-light);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Comparison */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .comparison-side {
+            padding: 25px;
+            border-radius: 15px;
+        }
+        
+        .comparison-side.before {
+            background: #ffebee;
+            border: 3px solid #ef5350;
+        }
+        
+        .comparison-side.after {
+            background: #e8f5e9;
+            border: 3px solid #66bb6a;
+        }
+        
+        .comparison-side h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .comparison-side.before h4 {
+            color: #c62828;
+        }
+        
+        .comparison-side.after h4 {
+            color: #2e7d32;
+        }
+        
+        /* Footer */
+        footer {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: var(--shadow);
+        }
+        
+        footer h3 {
+            color: var(--primary);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        footer p {
+            color: var(--text-medium);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .version {
+                padding: 30px 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>📚 MediaLog Case Study</h1>
+        <p class="subtitle">Building a Modern Media Tracker Through Human-AI Collaboration</p>
+        <div class="meta">
+            <div class="meta-item">
+                <strong>7.5</strong>
+                <span>Hours Total</span>
+            </div>
+            <div class="meta-item">
+                <strong>5</strong>
+                <span>Versions</span>
+            </div>
+            <div class="meta-item">
+                <strong>782</strong>
+                <span>Books</span>
+            </div>
+            <div class="meta-item">
+                <strong>50</strong>
+                <span>Movies</span>
+            </div>
+            <div class="meta-item">
+                <strong>10</strong>
+                <span>Pages</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>The Journey: From Concept to Production</h2>
+            <p>
+                MediaLog is a personal media tracking application that combines Letterboxd (movies) and Goodreads (books) 
+                data into a single, beautiful dashboard. This case study documents the complete development process, from 
+                initial concept to production deployment, built entirely through human-AI collaboration over the course of 
+                a single day (February 9, 2026).
+            </p>
+            <p>
+                What makes this project interesting isn't just what was built—it's <strong>how</strong> it was built. 
+                Every line of code, every design decision, and every feature was created through iterative dialogue between 
+                a human (Thomas Hunt) and an AI assistant (Claude by Anthropic). No traditional coding. No frameworks. 
+                Just conversation, iteration, and rapid prototyping.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">~3,500</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Features</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$84</div>
+                    <div class="stat-label">Annual Cost</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">AI-Assisted</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="version-nav">
+            <h3>🗂️ Version History</h3>
+            <ul>
+                <li><a href="#v1"><span class="version-badge">v1.0</span> Foundation & Data Integration</a></li>
+                <li><a href="#v2"><span class="version-badge">v2.0</span> Advanced Analytics</a></li>
+                <li><a href="#v3"><span class="version-badge">v3.0</span> Modern 3-Column Homepage</a></li>
+                <li><a href="#v4"><span class="version-badge">v4.0</span> Directors & Metadata</a></li>
+                <li><a href="#v5"><span class="version-badge">v5.0</span> MediaLog Rebrand & Polish</a></li>
+            </ul>
+        </div>
+
+<div id="v1" class="version">
+            <div class="version-header">
+                <h2>Version 1.0: Foundation & Data Integration</h2>
+                <p class="date">February 9, 2026 - Morning Session <span class="duration">⏱️ 2 hours</span></p>
+            </div>
+            
+            <div class="version-content">
+                <h3>🎯 The Challenge</h3>
+                <p>
+                    Create a centralized dashboard to track personal media consumption from multiple sources. 
+                    The existing setup involved checking Letterboxd for movies and Goodreads for books separately—no 
+                    unified view, no analytics, no insights.
+                </p>
+                
+                <h3>💡 The Solution</h3>
+                <p>
+                    Build a custom web application that aggregates data from both platforms into a MySQL database, 
+                    providing a single source of truth for all media consumption.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🗄️</span> Database Design</h4>
+                        <p>Created MySQL schema with posts table supporting multiple content types:</p>
+                        <ul>
+                            <li>Universal fields (title, date, rating)</li>
+                            <li>Books: author, pages, full reviews</li>
+                            <li>Movies: director, runtime, genres</li>
+                            <li>Images and URLs from CDNs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📥</span> Data Scraping</h4>
+                        <p>Built scrapers for two platforms:</p>
+                        <ul>
+                            <li>Goodreads: <span class="book-count">782</span> books with reviews</li>
+                            <li>Letterboxd: <span class="movie-count">50</span> movies with ratings</li>
+                            <li>Metadata: dates, images, descriptions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎨</span> Basic Interface</h4>
+                        <p>Initial dashboard with essential features:</p>
+                        <ul>
+                            <li>Simple list view of all items</li>
+                            <li>Basic stats (total books/movies)</li>
+                            <li>Individual item pages</li>
+                            <li>Purple gradient aesthetic</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">⚙️</span> Configuration</h4>
+                        <p>Production-ready setup:</p>
+                        <ul>
+                            <li>DigitalOcean droplet deployment</li>
+                            <li>MySQL database configured</li>
+                            <li>PHP backend with PDO</li>
+                            <li>Clean URLs with routing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="changes">
+                    <h4>🔄 Key Changes in v1.0</h4>
+                    <ul>
+                        <li><strong>Created:</strong> Database schema from scratch</li>
+                        <li><strong>Imported:</strong> 832 total items (<span class="book-count">782</span> books + <span class="movie-count">50</span> movies)</li>
+                        <li><strong>Built:</strong> 4 core pages (index, books, movies, individual views)</li>
+                        <li><strong>Deployed:</strong> Live on 1n2.org/hunt-hq</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <div class="tech-badge">🐘 PHP 8.x</div>
+                    <div class="tech-badge">🗄️ MySQL 8.0</div>
+                    <div class="tech-badge">🎨 Pure CSS</div>
+                    <div class="tech-badge">☁️ DigitalOcean</div>
+                    <div class="tech-badge">🔧 PDO</div>
+                    <div class="tech-badge">📊 No Framework</div>
+                </div>
+                
+                <h3>📈 Results</h3>
+                <p>
+                    By the end of Session 1, we had a working application with a complete database of personal media 
+                    history. The foundation was solid: clean separation of concerns, efficient queries, and a scalable 
+                    architecture ready for enhancement.
+                </p>
+            </div>
+        </div>
+
+        <div id="v2" class="version">
+            <div class="version-header">
+                <h2>Version 2.0: Advanced Analytics & Insights</h2>
+                <p class="date">February 9, 2026 - Midday Session <span class="duration">⏱️ 1.5 hours</span></p>
+            </div>
+            
+            <div class="version-content">
+                <h3>🎯 The Challenge</h3>
+                <p>
+                    Having raw data wasn't enough. Users (me!) wanted deeper insights: reading patterns, viewing habits, 
+                    projections for year-end goals, and meaningful statistics beyond simple counts.
+                </p>
+                
+                <h3>💡 The Solution</h3>
+                <p>
+                    Enhance the application with three dedicated analytics pages, each providing unique insights into 
+                    consumption patterns, trends, and future projections.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📊</span> Statistics Page</h4>
+                        <p>Comprehensive stats across all media:</p>
+                        <ul>
+                            <li>Books by year (2010-2025)</li>
+                            <li>Movies by decade (1950s-2020s)</li>
+                            <li>Rating distributions (★ to ★★★★★)</li>
+                            <li>Average pages per book</li>
+                            <li>Top rated items</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📚</span> Book Insights</h4>
+                        <p>Reading-specific analytics:</p>
+                        <ul>
+                            <li>Current pace (books/day, pages/day)</li>
+                            <li>Longest reading streak detection</li>
+                            <li>Year-end projections</li>
+                            <li>Monthly reading patterns</li>
+                            <li>Completion rate analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎬</span> Movie Insights</h4>
+                        <p>Viewing-specific analytics:</p>
+                        <ul>
+                            <li>Movies per month trends</li>
+                            <li>Genre preferences</li>
+                            <li>Release year distribution</li>
+                            <li>Runtime statistics</li>
+                            <li>Rating patterns</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🔮</span> Predictions</h4>
+                        <p>Smart forecasting features:</p>
+                        <ul>
+                            <li>Year-end book/movie projections</li>
+                            <li>Pace sustainability analysis</li>
+                            <li>Comparison to previous years</li>
+                            <li>Goal tracking suggestions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="changes">
+                    <h4>🔄 Key Changes in v2.0</h4>
+                    <ul>
+                        <li><strong>Added:</strong> 3 new analytics pages (stats.php, insights.php, movie-insights.php)</li>
+                        <li><strong>Implemented:</strong> Streak detection algorithm for consecutive days</li>
+                        <li><strong>Created:</strong> Year-end projection calculations based on current pace</li>
+                        <li><strong>Enhanced:</strong> Database queries with complex GROUP BY and aggregations</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison">
+                    <div class="comparison-side before">
+                        <h4>❌ Before v2.0</h4>
+                        <ul>
+                            <li>Simple count: "You have <span class="book-count">782</span> books"</li>
+                            <li>No trends or patterns</li>
+                            <li>No year-over-year comparison</li>
+                            <li>No predictive analytics</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>✅ After v2.0</h4>
+                        <ul>
+                            <li>Rich insights: "At current pace, you'll read 125 books this year"</li>
+                            <li>Streak tracking: "Your longest streak was 14 consecutive days"</li>
+                            <li>Trends: "You read 40% more in 2020 than 2019"</li>
+                            <li>Decade analysis: "You prefer 2010s movies (60%)"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>💻 Technical Implementation</h3>
+                <div class="code-block"><code>// Example: Year-end projection calculation
+$daysInYear = 365;
+$daysPassed = date('z') + 1;
+$daysRemaining = $daysInYear - $daysPassed;
+
+$booksPerDay = $booksThisYear / $daysPassed;
+$projectedBooks = $booksThisYear + ($booksPerDay * $daysRemaining);
+
+// Smart rounding for realistic projections
+$projected = round($projectedBooks);</code></div>
+                
+                <h3>📈 Results</h3>
+                <p>
+                    Analytics transformed the application from a simple tracker to a powerful insights tool. Users could 
+                    now understand their consumption patterns, set realistic goals, and discover interesting trends in 
+                    their viewing/reading habits.
+                </p>
+            </div>
+        </div>
+
+        <div id="v3" class="version">
+            <div class="version-header">
+                <h2>Version 3.0: Modern 3-Column Homepage Redesign</h2>
+                <p class="date">February 9, 2026 - Afternoon Session <span class="duration">⏱️ 2 hours</span></p>
+            </div>
+            
+            <div class="version-content">
+                <h3>🎯 The Challenge</h3>
+                <p>
+                    The existing homepage was functional but boring: just a simple list of recent items. We wanted something 
+                    more engaging—a dashboard that felt personal, highlighted memories, and made rediscovering content easy.
+                </p>
+                
+                <h3>💡 The Solution</h3>
+                <p>
+                    Complete homepage redesign with a modern 3-column layout, hero stats section, and an innovative 
+                    "On This Day" feature that surfaces memories from previous years.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎨</span> Hero Section</h4>
+                        <p>Eye-catching stats display:</p>
+                        <ul>
+                            <li>Large gradient background</li>
+                            <li>4 live stat badges</li>
+                            <li>Welcome message</li>
+                            <li>Glass morphism effects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📅</span> On This Day</h4>
+                        <p>Smart memory feature with fallback:</p>
+                        <ul>
+                            <li>Shows items from same date, previous years</li>
+                            <li>Searches backward if empty (max 365 days)</li>
+                            <li>Visual indicator for fallback dates</li>
+                            <li>Mix of books and movies</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">⏰</span> Recent Activity</h4>
+                        <p>Latest consumption timeline:</p>
+                        <ul>
+                            <li>6 most recent items</li>
+                            <li>Mixed books and movies</li>
+                            <li>Color-coded badges</li>
+                            <li>Consumption dates shown</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎲</span> Random Picks</h4>
+                        <p>Rediscovery feature:</p>
+                        <ul>
+                            <li>6 random items per visit</li>
+                            <li>Refreshes on reload</li>
+                            <li>Helps rediscover favorites</li>
+                            <li>Equal book/movie mix</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🖼️</span> Visual Gallery</h4>
+                        <p>Image-first design:</p>
+                        <ul>
+                            <li>Grid of 8 poster images</li>
+                            <li>Hover effects with overlay</li>
+                            <li>Title and rating on hover</li>
+                            <li>Gradient overlays</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🧭</span> Navigation</h4>
+                        <p>Sticky top navigation:</p>
+                        <ul>
+                            <li>Glass morphism effect</li>
+                            <li>Gold accent on active page</li>
+                            <li>Links to all pages</li>
+                            <li>Responsive wrapping</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📱</span> Mobile Responsive</h4>
+                        <p>Full mobile optimization:</p>
+                        <ul>
+                            <li>3 columns → 2 → 1 on small screens</li>
+                            <li>No horizontal scroll</li>
+                            <li>Touch-friendly targets</li>
+                            <li>Optimized font sizes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">✨</span> Animations</h4>
+                        <p>Smooth interactions:</p>
+                        <ul>
+                            <li>Card hover elevations</li>
+                            <li>Fade transitions</li>
+                            <li>Scale effects</li>
+                            <li>0.3s timing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="changes">
+                    <h4>🔄 Key Changes in v3.0</h4>
+                    <ul>
+                        <li><strong>Redesigned:</strong> Complete homepage overhaul from list to dashboard</li>
+                        <li><strong>Implemented:</strong> "On This Day" with 365-day fallback algorithm</li>
+                        <li><strong>Added:</strong> Visual gallery with poster images from CDNs</li>
+                        <li><strong>Fixed:</strong> Mobile horizontal scroll issues</li>
+                        <li><strong>Enhanced:</strong> Book/movie link parsing for proper navigation</li>
+                    </ul>
+                </div>
+                
+                <h3>💻 The "On This Day" Algorithm</h3>
+                <div class="code-block"><code>// Smart fallback: never show empty
+if (empty($onThisDay)) {
+    for ($daysBack = 1; $daysBack <= 365; $daysBack++) {
+        $checkDate = date('m-d', strtotime("-{$daysBack} days"));
+        
+        // Query for items on this historical date
+        $fallback = queryItemsByDate($checkDate);
+        
+        if (!empty($fallback)) {
+            $onThisDay = $fallback;
+            $onThisDayDate = date('F j', strtotime("-{$daysBack} days"));
+            break; // Exit on first match
+        }
+    }
+}</code></div>
+                
+                <div class="comparison">
+                    <div class="comparison-side before">
+                        <h4>❌ Before v3.0</h4>
+                        <ul>
+                            <li>Simple vertical list</li>
+                            <li>No visual hierarchy</li>
+                            <li>Text-heavy interface</li>
+                            <li>Mobile scroll issues</li>
+                            <li>No memory features</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>✅ After v3.0</h4>
+                        <ul>
+                            <li>Modern 3-column dashboard</li>
+                            <li>Clear visual hierarchy with hero</li>
+                            <li>Image-first design</li>
+                            <li>Perfect mobile experience</li>
+                            <li>"On This Day" memories</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>📈 Results</h3>
+                <p>
+                    The redesign transformed user engagement. The "On This Day" feature became the most-used feature, 
+                    encouraging daily visits. The visual gallery made browsing enjoyable, and the 3-column layout 
+                    maximized information density without feeling cluttered.
+                </p>
+            </div>
+        </div>
+
+        <div id="v4" class="version">
+            <div class="version-header">
+                <h2>Version 4.0: Directors Page & Enhanced Metadata</h2>
+                <p class="date">February 9, 2026 - Late Afternoon <span class="duration">⏱️ 1 hour</span></p>
+            </div>
+            
+            <div class="version-content">
+                <h3>🎯 The Challenge</h3>
+                <p>
+                    The application had an Authors page for books but nothing equivalent for movies. We wanted symmetry: 
+                    if we can track favorite authors, why not favorite directors? Plus, the movie data lacked critical 
+                    metadata like runtime, genres, and director information.
+                </p>
+                
+                <h3>💡 The Solution</h3>
+                <p>
+                    Build a comprehensive Directors page mirroring the Authors functionality, and create a metadata scraper 
+                    to enrich movie data from Letterboxd with directors, genres, and runtime information.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎬</span> Directors Page</h4>
+                        <p>New analytics page for filmmakers:</p>
+                        <ul>
+                            <li>List all directors watched</li>
+                            <li>Count of films per director</li>
+                            <li>Years watched for each</li>
+                            <li>Poster grids for each director</li>
+                            <li>Sorted by watch count</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🕷️</span> Metadata Scraper</h4>
+                        <p>Letterboxd data extraction:</p>
+                        <ul>
+                            <li>Fetches canonical film pages</li>
+                            <li>Extracts director from meta tags</li>
+                            <li>Captures genres from links</li>
+                            <li>Parses runtime in minutes</li>
+                            <li>Handles multi-director films</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">👥</span> Multi-Director Support</h4>
+                        <p>Smart director parsing:</p>
+                        <ul>
+                            <li>Splits comma-separated directors</li>
+                            <li>Removes "et al" suffix</li>
+                            <li>Credits each director individually</li>
+                            <li>Same film appears under all directors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📊</span> Director Stats</h4>
+                        <p>Summary metrics displayed:</p>
+                        <ul>
+                            <li>Total unique directors</li>
+                            <li>Total movies tracked</li>
+                            <li>Average films per director</li>
+                            <li>Most-watched director</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="changes">
+                    <h4>🔄 Key Changes in v4.0</h4>
+                    <ul>
+                        <li><strong>Created:</strong> directors.php page parallel to authors.php</li>
+                        <li><strong>Built:</strong> Letterboxd metadata scraper (scraper-final.php)</li>
+                        <li><strong>Enhanced:</strong> Database with director, genres, runtime_minutes columns</li>
+                        <li><strong>Populated:</strong> 41 out of <span class="movie-count">50</span> movies with complete metadata</li>
+                        <li><strong>Added:</strong> Directors link to navigation on all pages</li>
+                    </div>
+                </div>
+                
+                <h3>💻 Scraper Implementation</h3>
+                <div class="code-block"><code>// Convert user URL to canonical film URL
+$canonicalUrl = preg_replace(
+    '/letterboxd\.com\/[^\/]+\/film/',
+    'letterboxd.com/film',
+    $movie['url']
+);
+
+// Extract director from meta tag
+if (preg_match('/<meta name="twitter:data1" content="([^"]+)"/', $html, $matches)) {
+    $director = trim($matches[1]);
+}
+
+// Extract genres from page links
+if (preg_match_all('/<a href="\/films\/genre\/([^"\/]+)\/"/', $html, $matches)) {
+    $genres = array_unique($matches[1]);
+    $genres = array_map('ucfirst', $genres);
+}
+
+// Extract runtime (handles &nbsp;)
+if (preg_match('/(\d+)(?:&nbsp;|\s)mins?/', $html, $matches)) {
+    $runtime = (int)$matches[1];
+}</code></div>
+                
+                <div class="comparison">
+                    <div class="comparison-side before">
+                        <h4>❌ Before v4.0</h4>
+                        <ul>
+                            <li>Authors page for books only</li>
+                            <li>Movies had no director data</li>
+                            <li>No genre information</li>
+                            <li>Missing runtime data</li>
+                            <li>Asymmetric feature set</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>✅ After v4.0</h4>
+                        <ul>
+                            <li>Directors page mirrors authors</li>
+                            <li>41 directors cataloged</li>
+                            <li>Genres for all movies</li>
+                            <li>Runtime data populated</li>
+                            <li>Symmetrical book/movie features</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>🎨 Director Card Design</h3>
+                <p>
+                    Each director card displays their name, film count, years watched, and a grid of poster images for 
+                    every film they directed. The cards are sorted by watch count, putting your most-watched directors 
+                    at the top.
+                </p>
+                
+                <h3>📈 Results</h3>
+                <p>
+                    The Directors page became immediately useful, revealing interesting patterns: "I've watched 5 films 
+                    by Christopher Nolan" or "I only discovered Greta Gerwig in 2023." The metadata enrichment also 
+                    enabled future features like filtering by genre and runtime-based analytics.
+                </p>
+            </div>
+        </div>
+
+        <div id="v5" class="version">
+            <div class="version-header">
+                <h2>Version 5.0: MediaLog Rebrand & Professional Polish</h2>
+                <p class="date">February 9, 2026 - Evening Session <span class="duration">⏱️ 1 hour</span></p>
+            </div>
+            
+            <div class="version-content">
+                <h3>🎯 The Challenge</h3>
+                <p>
+                    The application was functionally complete but lacked a cohesive identity. The name "Hunt HQ" was 
+                    generic and didn't convey the purpose. We also had edge cases with empty 2026 data showing zeros, 
+                    and the overall polish needed refinement for public presentation.
+                </p>
+                
+                <h3>💡 The Solution</h3>
+                <p>
+                    Complete rebrand to "MediaLog" with professional polish across all pages. Implement smart year 
+                    fallbacks, create shared design systems, add comprehensive documentation, and prepare for production 
+                    deployment as a portfolio piece.
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🏷️</span> MediaLog Branding</h4>
+                        <p>New identity across 10 pages:</p>
+                        <ul>
+                            <li>Name: "MediaLog" (clean, descriptive)</li>
+                            <li>Tagline: "Your Letterboxd + Goodreads tracker"</li>
+                            <li>Directory renamed: hunt-hq → medialog</li>
+                            <li>Navigation updated everywhere</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📅</span> Smart Year Fallback</h4>
+                        <p>Never show empty data:</p>
+                        <ul>
+                            <li>Checks if current year has items</li>
+                            <li>Falls back to 2025 if 2026 is empty</li>
+                            <li>Applied to homepage, stats, insights</li>
+                            <li>Automatic switchover when data arrives</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🎨</span> Design System</h4>
+                        <p>Professional consistency:</p>
+                        <ul>
+                            <li>Shared CSS variables created</li>
+                            <li>Color tokens documented</li>
+                            <li>Spacing standards set</li>
+                            <li>Typography hierarchy defined</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📝</span> Footer Component</h4>
+                        <p>Reusable attribution:</p>
+                        <ul>
+                            <li>Credits Letterboxd + Goodreads</li>
+                            <li>Links to 1n2.org</li>
+                            <li>Shows total books/movies</li>
+                            <li>Human + AI collaboration noted</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🌐</span> 1n2.org Homepage</h4>
+                        <p>Portfolio integration:</p>
+                        <ul>
+                            <li>MediaLog featured prominently</li>
+                            <li>Development timeline added</li>
+                            <li>5 sessions documented</li>
+                            <li>Stats showcase</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">📚</span> Documentation</h4>
+                        <p>Comprehensive guides created:</p>
+                        <ul>
+                            <li>Deployment instructions</li>
+                            <li>Feature documentation</li>
+                            <li>Polish plan (multi-pass)</li>
+                            <li>Version history</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">🔒</span> Zero-Data Protection</h4>
+                        <p>Graceful degradation:</p>
+                        <ul>
+                            <li>Division-by-zero checks</li>
+                            <li>Empty array handling</li>
+                            <li>Null value guards</li>
+                            <li>Helpful empty states</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h4><span class="feature-icon">✅</span> Production Ready</h4>
+                        <p>Deployment preparation:</p>
+                        <ul>
+                            <li>All pages tested locally</li>
+                            <li>Mobile responsive verified</li>
+                            <li>Database optimized</li>
+                            <li>Documentation complete</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="changes">
+                    <h4>🔄 Key Changes in v5.0</h4>
+                    <ul>
+                        <li><strong>Rebranded:</strong> All 10 pages from "Hunt HQ" to "MediaLog"</li>
+                        <li><strong>Implemented:</strong> Year fallback logic (shows 2025 when 2026 empty)</li>
+                        <li><strong>Created:</strong> Shared CSS framework and footer component</li>
+                        <li><strong>Updated:</strong> 1n2.org homepage with MediaLog feature and timeline</li>
+                        <li><strong>Documented:</strong> Complete development history and deployment guide</li>
+                    </ul>
+                </div>
+                
+                <h3>💻 Year Fallback Implementation</h3>
+                <div class="code-block"><code>// Check if current year has any data
+$currentYear = date('Y');
+
+$stmt = $pdo->query("
+    SELECT COUNT(*) as total FROM posts 
+    WHERE (site_id = 6 OR site_id = 7) 
+    AND YEAR(publish_date) = {$currentYear}
+");
+$currentYearCount = $stmt->fetch()['total'];
+
+// Fallback to previous year if current year is empty
+if ($currentYearCount == 0) {
+    $currentYear = $currentYear - 1;
+}</code></div>
+                
+                <h3>🎨 Brand Evolution</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5>Name: Hunt HQ → MediaLog</h5>
+                        <p>Moved from generic to descriptive. "MediaLog" clearly communicates purpose: logging media consumption.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Tagline: "Dashboard" → "Letterboxd + Goodreads tracker"</h5>
+                        <p>Specific attribution to data sources. Users immediately understand what it does and where data comes from.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Directory: /hunt-hq/ → /medialog/</h5>
+                        <p>Cleaner URLs and better SEO. Aligns with branding and makes purpose clear in the URL itself.</p>
+                    </div>
+                </div>
+                
+                <div class="comparison">
+                    <div class="comparison-side before">
+                        <h4>❌ Before v5.0</h4>
+                        <ul>
+                            <li>Inconsistent branding (Hunt HQ)</li>
+                            <li>2026 stats show zeros</li>
+                            <li>No shared design system</li>
+                            <li>Missing documentation</li>
+                            <li>Not portfolio-ready</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-side after">
+                        <h4>✅ After v5.0</h4>
+                        <ul>
+                            <li>Professional MediaLog brand</li>
+                            <li>Smart year fallback (shows 2025)</li>
+                            <li>CSS variables and components</li>
+                            <li>Complete documentation</li>
+                            <li>Production-ready portfolio piece</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>📈 Results</h3>
+                <p>
+                    Version 5.0 transformed MediaLog from a personal tool to a showcase project. The rebrand gave it 
+                    identity, the polish made it portfolio-worthy, and the documentation made it a valuable case study 
+                    for human-AI collaboration. The application was now ready for public presentation and deployment.
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <h3>🚀 Final Thoughts</h3>
+            <p>
+                MediaLog demonstrates what's possible when humans and AI work together effectively. In just 7.5 hours, 
+                we built a production-ready application with 40+ features, comprehensive analytics, and professional 
+                design—all through iterative conversation and rapid prototyping.
+            </p>
+            <p>
+                This case study showcases not just the final product, but the <em>process</em>: five distinct versions, 
+                each building on the last, each adding value, each making the application better. That's the power of 
+                human-AI collaboration.
+            </p>
+            <p style="margin-top: 30px;">
+                <strong>View the live application:</strong> <a href="http://1n2.org/medialog/">MediaLog</a><br>
+                <strong>Learn more about 1n2:</strong> <a href="http://1n2.org">1n2.org</a><br>
+                <strong>Built by:</strong> <a href="http://www.thomashunt.com">Thomas Hunt</a> + 
+                <a href="https://claude.ai">Claude (Anthropic)</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

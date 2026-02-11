@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaLog Version Tree</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 50px;
+        }
+        
+        .tree {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .version-node {
+            position: relative;
+            background: white;
+            border: 4px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+        
+        .version-node:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .version-node::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            transform: translateX(-2px);
+        }
+        
+        .version-node:first-child::before {
+            display: none;
+        }
+        
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .version-number {
+            font-size: 2em;
+            font-weight: 800;
+            color: #667eea;
+        }
+        
+        .version-date {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .version-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5em;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .legend {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .legend h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 MediaLog Version Tree</h1>
+        
+        <div class="tree">
+            <div class="version-node">
+                <div class="version-header">
+                    <span class="version-number">v1.0</span>
+                    <span class="version-date">Feb 9, 2026 - Morning</span>
+                </div>
+                <h3 class="version-title">Foundation & Data Integration</h3>
+                <p>Built the core database and imported all media data from Letterboxd and Goodreads.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">🗄️</span>
+                        <span>MySQL Database</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <span>782 Books</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <span>50 Movies</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📄</span>
+                        <span>4 Pages</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span class="stat">⏱️ 2 hours</span>
+                    <span class="stat">📦 832 items imported</span>
+                    <span class="stat">🚀 First deployment</span>
+                </div>
+            </div>
+            
+            <div class="version-node">
+                <div class="version-header">
+                    <span class="version-number">v2.0</span>
+                    <span class="version-date">Feb 9, 2026 - Midday</span>
+                </div>
+                <h3 class="version-title">Advanced Analytics & Insights</h3>
+                <p>Added comprehensive analytics with pace tracking, projections, and trend analysis.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <span>Statistics Page</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <span>Book Insights</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <span>Movie Insights</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔮</span>
+                        <span>Projections</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <span>Streak Detection</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📉</span>
+                        <span>Decade Analysis</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span class="stat">⏱️ 1.5 hours</span>
+                    <span class="stat">📄 +3 pages</span>
+                    <span class="stat">🧮 15+ chart types</span>
+                </div>
+            </div>
+            
+            <div class="version-node">
+                <div class="version-header">
+                    <span class="version-number">v3.0</span>
+                    <span class="version-date">Feb 9, 2026 - Afternoon</span>
+                </div>
+                <h3 class="version-title">Modern 3-Column Homepage</h3>
+                <p>Complete redesign with "On This Day" memories, visual gallery, and responsive design.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <span>Hero Section</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📅</span>
+                        <span>On This Day</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⏰</span>
+                        <span>Recent Activity</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎲</span>
+                        <span>Random Picks</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🖼️</span>
+                        <span>Visual Gallery</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <span>Mobile Responsive</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span class="stat">⏱️ 2 hours</span>
+                    <span class="stat">🎨 Complete redesign</span>
+                    <span class="stat">✨ 365-day fallback</span>
+                </div>
+            </div>
+            
+            <div class="version-node">
+                <div class="version-header">
+                    <span class="version-number">v4.0</span>
+                    <span class="version-date">Feb 9, 2026 - Late Afternoon</span>
+                </div>
+                <h3 class="version-title">Directors & Enhanced Metadata</h3>
+                <p>Added directors page and enriched movie data with genres, runtime, and director information.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <span>Directors Page</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🕷️</span>
+                        <span>Metadata Scraper</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">👥</span>
+                        <span>Multi-Director Support</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎭</span>
+                        <span>Genre Data</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⏱️</span>
+                        <span>Runtime Info</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <span>Director Stats</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span class="stat">⏱️ 1 hour</span>
+                    <span class="stat">👥 41 directors</span>
+                    <span class="stat">📄 +1 page</span>
+                </div>
+            </div>
+            
+            <div class="version-node" style="border-color: #d4af37;">
+                <div class="version-header">
+                    <span class="version-number" style="color: #d4af37;">v5.0</span>
+                    <span class="version-date">Feb 9, 2026 - Evening</span>
+                </div>
+                <h3 class="version-title">MediaLog Rebrand & Polish</h3>
+                <p>Professional rebrand, smart year fallback, design system, and production-ready deployment.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">🏷️</span>
+                        <span>MediaLog Brand</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📅</span>
+                        <span>Year Fallback</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎨</span>
+                        <span>Design System</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📝</span>
+                        <span>Footer Component</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌐</span>
+                        <span>1n2.org Integration</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <span>Documentation</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span class="stat">⏱️ 1 hour</span>
+                    <span class="stat">🏷️ Complete rebrand</span>
+                    <span class="stat">✅ Production ready</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>📊 Development Summary</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                    <div>
+                        <strong>Total Time</strong><br>
+                        7.5 hours
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #28a745;"></div>
+                    <div>
+                        <strong>Total Pages</strong><br>
+                        10 pages
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #1976d2;"></div>
+                    <div>
+                        <strong>Books Tracked</strong><br>
+                        <span class="book-count">782</span> books
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #c2185b;"></div>
+                    <div>
+                        <strong>Movies Tracked</strong><br>
+                        <span class="movie-count">50</span> movies
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d4af37;"></div>
+                    <div>
+                        <strong>Features Built</strong><br>
+                        40+ features
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff9800;"></div>
+                    <div>
+                        <strong>Code Written</strong><br>
+                        ~3,500 lines
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 2px solid #f0f0f0;">
+            <p style="color: #666; margin-bottom: 15px;">
+                <strong>View:</strong>
+                <a href="index.html" style="color: #667eea; text-decoration: none; margin: 0 15px; font-weight: 600;">Full Case Study</a> |
+                <a href="http://1n2.org/medialog/" style="color: #667eea; text-decoration: none; margin: 0 15px; font-weight: 600;">Live Application</a> |
+                <a href="http://1n2.org" style="color: #667eea; text-decoration: none; margin: 0 15px; font-weight: 600;">1n2.org</a>
+            </p>
+            <p style="color: #999; font-size: 0.9em;">
+                Built by Thomas Hunt + Claude (Anthropic) • February 9, 2026
+            </p>
+        </div>
+    </div>
+<script>fetch("/medialog/api-stats.php").then(r=>r.json()).then(d=>{document.querySelectorAll(".book-count").forEach(e=>e.textContent=d.books);document.querySelectorAll(".movie-count").forEach(e=>e.textContent=d.movies);}).catch(e=>console.log("Stats loading..."));</script></body>
+</html>
