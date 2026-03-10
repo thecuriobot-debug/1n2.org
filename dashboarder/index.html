@@ -398,6 +398,17 @@ async function loadMuseums(){window._mul=true;
     h+='<div class="sc"><div class="n">'+new Set(exh.map(e=>e.city)).size+'</div><div class="l">Cities</div></div>';
     h+='<div class="sc"><div class="n">'+exh.filter(e=>e.free).length+'</div><div class="l">Free</div></div>';
     h+='</div></div></div>';
+    // Museums We're Tracking - sorted by city
+    const museumList={};
+    exh.forEach(e=>{if(!museumList[e.museum])museumList[e.museum]={city:e.city,count:0,free:e.free};museumList[e.museum].count++;});
+    const sorted=Object.entries(museumList).sort((a,b)=>a[1].city.localeCompare(b[1].city)||a[0].localeCompare(b[0]));
+    h+='<div class="sec"><div class="sh">🗺 Museums We\'re Tracking ('+sorted.length+')</div><div class="sb">';
+    let lastCity='';
+    sorted.forEach(([name,info])=>{
+      if(info.city!==lastCity){lastCity=info.city;h+='<div style="font-size:.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.4px;padding:8px 0 3px;border-bottom:1px solid rgba(30,41,59,.2)">'+info.city+'</div>';}
+      h+='<div style="padding:3px 0;font-size:.9rem;display:flex;justify-content:space-between;border-bottom:1px solid rgba(30,41,59,.15)"><span><b>'+name+'</b></span><span style="color:var(--muted);font-size:.75rem">'+info.count+' exhibition'+(info.count>1?'s':'')+'</span></div>';
+    });
+    h+='</div></div>';
     h+='</div></div>';
     document.getElementById('musc').innerHTML=h;
   }catch(e){document.getElementById('musc').textContent='Could not load museums: '+e;}
