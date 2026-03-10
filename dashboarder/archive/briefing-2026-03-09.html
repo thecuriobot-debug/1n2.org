@@ -1,71 +1,38 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Dashboarder Update</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<title>Briefing — 2026-03-09 — Dashboarder</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#EBE0CE;--card:#F9F4EC;--bdr:#D0C0A4;--tx:#1A1A1A;--mu:#8A7B6A;--ac:#8B6914;--lk:#5B3A00;--hi:#C17817;--up:#2D6A2E;--dn:#A03030;--tag:#E6D8C4;--live:#C33;}
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.5;font-size:13.5px}
-.wrap{max-width:1220px;margin:0 auto;padding:1rem 1.2rem 2rem}
-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ac);padding-bottom:.6rem;margin-bottom:.8rem}
-header h1{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--lk);font-weight:400;letter-spacing:-.3px}
-header h1 span{font-weight:700}
-header .m{font-size:.75rem;color:var(--mu);text-align:right;line-height:1.35;font-family:'JetBrains Mono',monospace;font-weight:300}
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.7rem}
-.col2{grid-column:span 2}
-.sec{background:var(--card);border:1px solid var(--bdr);border-radius:3px;margin-bottom:.7rem;overflow:hidden}
-.sh{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--lk);padding:.4rem .6rem;cursor:pointer;border-bottom:1px solid var(--bdr);background:linear-gradient(var(--card),#F0E8DA)}
-.sh:hover{background:#EBE1D0}
-.sb{padding:.4rem .6rem .5rem;max-height:400px;overflow-y:auto}
-.sec.cl .sb{display:none}
-.tp{font-family:'Playfair Display',serif;font-size:.8rem;color:var(--ac);margin:.4rem 0 .2rem;border-bottom:1px dotted var(--bdr)}
-.tp:first-child{margin-top:0}
-.it{padding:.15rem 0;font-size:.8rem;border-bottom:1px solid rgba(180,160,130,.12)}
-.it:last-child{border-bottom:none}
-.il{color:var(--lk);text-decoration:none;font-weight:600}
-.il:hover{color:var(--hi);text-decoration:underline}
-.ext{color:var(--mu);text-decoration:none;font-size:.7rem}
-.sr{color:var(--mu);font-size:.7rem}
-.tg{background:var(--tag);color:var(--ac);font-size:.6rem;padding:.05rem .2rem;border-radius:2px;font-family:'JetBrains Mono',monospace}
-.live-tag{background:var(--live);color:#fff}
-.it.live{font-weight:600}
-.cc{display:flex;align-items:center;gap:.5rem;padding:.35rem .5rem;background:var(--bg);border-radius:3px;border:1px solid var(--bdr);margin-bottom:.3rem}
-.cl{font-size:.65rem;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;width:70px}
-.cp{font-family:'JetBrains Mono',monospace;font-size:.95rem;font-weight:600;flex:1}
-.ch{font-family:'JetBrains Mono',monospace;font-size:.7rem}
-.up{color:var(--up)}.dn{color:var(--dn)}
-.tl{display:block;text-align:center;padding:.35rem;margin-bottom:.7rem;background:var(--card);border:1px dashed var(--ac);border-radius:3px;color:var(--lk);text-decoration:none;font-weight:600;font-size:.8rem}
-.ft{text-align:center;padding-top:.6rem;margin-top:.5rem;border-top:2px solid var(--bdr);font-size:.7rem;color:var(--mu);font-family:'JetBrains Mono',monospace}
-.ft a{color:var(--ac);text-decoration:none}.ft a:hover{text-decoration:underline}
-.score{font-family:'JetBrains Mono',monospace;font-size:.9rem;font-weight:600}
-.it.live{background:rgba(200,50,50,.06);padding:.3rem;border-radius:2px;border-left:3px solid var(--live)}
-.live-tag{background:var(--live);color:#fff;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
-.win{color:var(--up);font-weight:600}.loss{color:var(--dn)}
-.wx{padding:.25rem 0;border-bottom:1px solid rgba(180,160,130,.12)}
-.wx:last-child{border-bottom:none}
-.wx-city{font-weight:600;font-size:.8rem}
-.wx-now{font-family:'JetBrains Mono',monospace;font-size:.85rem}
-.art{display:flex;gap:.4rem;align-items:flex-start}
-.art-img{width:50px;height:35px;object-fit:cover;border-radius:2px;flex-shrink:0;margin-top:.1rem}
-.art-sum{color:var(--mu);font-size:.7rem;line-height:1.3;margin-top:.1rem}
-@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.col2{grid-column:span 2}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.col2{grid-column:span 1}.cg{grid-template-columns:1fr 1fr 1fr}}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff;text-decoration:underline}
+.wrap{max-width:800px;margin:0 auto;padding:2rem 1.5rem}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.9rem}
+h1{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:1.5rem}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.sh{padding:14px 16px;font-weight:600;font-size:1.1rem;color:var(--accent);border-bottom:1px solid var(--border)}
+.sb{padding:4px 16px 12px}
+.ns{padding:14px 0;border-bottom:1px solid rgba(30,41,59,.3);font-size:1.05rem;line-height:1.7;color:#cbd5e1}
+.ns:last-child{border-bottom:none}
+.nl{color:var(--accent);font-weight:700;font-size:.9rem;letter-spacing:.3px}
+.nm{color:var(--accent);font-size:.85rem;font-weight:600}
+.it{padding:6px 0;font-size:1rem;border-bottom:1px solid rgba(30,41,59,.3)}
+.it:last-child{border:none}
+.it a,.il{color:var(--text)}
+.it a:hover{color:var(--accent)}
+.it .sr{color:var(--muted);font-size:.75rem;float:right}
+.tp{font-size:.78rem;color:var(--muted);padding:7px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.cc{padding:0}.cl{font-weight:600}.cp{font-size:1.1rem}.ch{font-size:.8rem}
+.ch.dn{color:var(--red)}.ch.up{color:var(--green)}
+.wx{padding:4px 0}.wx-city{font-weight:600;color:var(--accent)}.wx-now{color:var(--text)}
+.ft{text-align:center;color:var(--muted);font-size:.7rem;padding:14px;border-top:1px solid var(--border);margin-top:12px}
 </style></head><body>
 <div class="wrap">
-<header><h1><span>Dashboarder</span> Update</h1><div class="m">Monday, March 9<br>2:15 pm</div></header>
-
-
-<div class="grid">
-<!-- COL 1: Crypto + News + About Me -->
-<div>
+<div class="nav"><a href="/dashboarder/">← Back to Dashboarder</a><a href="/dashboarder/archive/">All Briefings</a></div>
+<h1>📰 Briefing — 2026-03-09</h1>
 <div class="sec"><div class="sh" onclick="t(this)">₿ Crypto</div><div class="sb">
 <div class="cc"><div class="cl">Bitcoin</div><div class="cp">$71,004</div><div class="ch dn">-3.5%</div></div>
-<div class="cc"><div class="cl">Ethereum</div><div class="cp">$2,076</div><div class="ch dn">-4.8%</div></div>
-<div class="cc"><div class="cl">Curio Cards</div><div class="cp">0.04899999 ETH</div><div class="ch">4965 holders</div></div>
-<div class="sr" style="margin-top:.3rem;text-align:center"><a href="/curio-quant/">Quant</a> · <a href="/curiocharts/">Charts</a></div>
-</div></div>
-
 <div class="sec"><div class="sh" onclick="t(this)">📰 News Briefing</div><div class="sb"><div class="ns"><span class="nl">🤖 AI</span> — Global researchers created Humanity&#x27;s Last Exam AI benchmark with 2,500 expert-level questions across multiple subjects, published in Nature. Researchers found AI chatbots display more patience and empathy than humans in conversations, prompting half of teenagers to seek artificial companionship. Kentucky Today commentary examined artificial intelligence&#x27;s unprecedented impact on children and teenagers in modern society. <a href="sections/ai.html" class="nm">Read more →</a></div>
 <div class="ns"><span class="nl">🔬 TECH</span> — Archer Aviation filed a federal countersuit Monday alleging rival Joby Aviation concealed Chinese manufacturing ties and defrauded the U.S. government about its supply chain. Peter Thiel&#x27;s Founders Fund is nearing a $6 billion close for its fourth growth fund, according to sources. Russian spies used iPhone-hacking tools likely developed by U.S. military contractor L3Harris to target users in Ukraine and China. <a href="sections/tech.html" class="nm">Read more →</a></div>
 <div class="ns"><span class="nl">🚀 SCIENCE</span> — Potsdam Institute researchers found global warming accelerated around 2015 after removing natural climate influences from temperature records, according to March 2026 study. NASA&#x27;s DART spacecraft impact altered asteroid Dimorphos&#x27; solar orbit in March 2026, marking humanity&#x27;s first celestial trajectory change for planetary defense. Valdosta State University will host a free public Science Café on genomics Friday, March 13, at Augie&#x27;s Café. <a href="sections/science.html" class="nm">Read more →</a></div>
@@ -74,35 +41,14 @@ header .m{font-size:.75rem;color:var(--mu);text-align:right;line-height:1.35;fon
 <div class="ns"><span class="nl">💼 BUSINESS</span> — President Donald Trump predicted Monday that the U.S.-Israel war against Iran will end &quot;very soon&quot; and oil prices will drop. Oil prices fell 10% Tuesday after Trump threatened military action against Iran over potential Strait of Hormuz blockade. Asian markets rose Tuesday following the oil price decline and Trump&#x27;s signals that the Iran conflict may be ending soon. <a href="sections/business.html" class="nm">Read more →</a></div>
 <div class="ns"><span class="nl">🏥 HEALTH</span> — Medical facilities now offer specialized rehabilitation programs, memory care services, and transitional care options beyond traditional nursing homes for long-term patients. Researchers found GLP-1 drugs may reduce heart attack complications and lower heart failure risks in a new mouse study. Rowan University unveiled a $690 million West Campus development project today to support health, manufacturing innovation and workforce development initiatives. <a href="sections/health.html" class="nm">Read more →</a></div>
 <div class="ns"><span class="nl">🏟 SPORTS</span> — Duke tops USA TODAY Sports coaches poll entering conference tournament week, receiving 28 of 31 first-place votes ahead of March Madness selection. ESPN hired six former Washington Post journalists after the newspaper eliminated over 300 jobs in February, the company announced recently. <a href="sections/sports.html" class="nm">Read more →</a></div>
-<div class="ns"><span class="nl">🏛 POLITICS</span> — President Trump held a $1 million donor dinner at Mar-a-Lago while simultaneously ordering military strikes against Iran in February, according to Time Magazine. The Catholic Thing argues that America&#x27;s founding as a nation in 1776 preceded its government formation in 1787 by eleven years. The Trump administration launched the Iranian military operations without informing key allies including Italy, abandoning traditional diplomatic coordination practices. <a href="sections/politics.html" class="nm">Read more →</a></div></div></div>
-
-<div class="sec"><div class="sh" onclick="t(this)">🔍 About Me (10 mentions)</div><div class="sb"><div class="tp">👤 Thomas Hunt (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNMWZTeFp0Sk5FYUMxMDFaS2Z3QkNRWURUTUlGWFVUYXU4bDFDbVpGNm90SDhPWkduNTJTbVZhVXg4d2trSzNNU0JZN05DWU1oRTB0VXR3b0h4TzJ0SUVZanpNaXZ5Q21lcm9Sa2NQSGE1azFWUTllbEdEQnZhNEN3UkQtTDl1SnNLOTNTdGYwVjBFYWVnNUE4QmxvcGY4bkRyejltQW9zSzh4WVRtX2JiUVBXdkRSUVZmS2RFRQ?oc=5" target="_blank" class="il">Lombrozo: Bitcoin Core Developers May Never Use Miner-Focuse</a> <span class="sr">Bitcoin Magazine</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1RNHdyVE94bTVDcTU5bS01NExBWklDSWNGVENieU9CU1Bma0hOYUwxbjNBY3NDNEtNbjd6Ull5UUZuN0haSEgySHJNREpsMmlOeWE3alc5SjJKcnY5TlNRRENVMUNBM3VvdGFzN3BYUQ?oc=5" target="_blank" class="il">14 Industry Luminaries (and an Ode) on the State of Bitcoin </a> <span class="sr">Bitcoin.com News</span></div><div class="tp">🎭 Mad Bitcoins (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNMWZTeFp0Sk5FYUMxMDFaS2Z3QkNRWURUTUlGWFVUYXU4bDFDbVpGNm90SDhPWkduNTJTbVZhVXg4d2trSzNNU0JZN05DWU1oRTB0VXR3b0h4TzJ0SUVZanpNaXZ5Q21lcm9Sa2NQSGE1azFWUTllbEdEQnZhNEN3UkQtTDl1SnNLOTNTdGYwVjBFYWVnNUE4QmxvcGY4bkRyejltQW9zSzh4WVRtX2JiUVBXdkRSUVZmS2RFRQ?oc=5" target="_blank" class="il">Lombrozo: Bitcoin Core Developers May Never Use Miner-Focuse</a> <span class="sr">Bitcoin Magazine</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPNHlyQnI4RjFwSHRVY1ZvQXpPZVZ2cTJtd3d0Rl9pd2lSVGtmWEtPeXF0b1J2OUNmZHV6c2ZTYndUaTBEcXNJVUhJRWxINzBPbkRfUUxkZ3JiM1RZWjh3NFNGRi05dHdZVnB5cmI4T1FjdXRTczFRMWt4aW9vV29wQVV5a0djaXVXdU5uT0VUY3NDQVFJY1I5a0JHNA?oc=5" target="_blank" class="il">6 Outrageous Moments In Crypto Twitter Scam History</a> <span class="sr">CoinDesk</span></div><div class="tp">🃏 Curio Cards (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rY3FUbzZiUFpRQW9VcDlfa21DcWtGeWVTdFBpblJleDBTNVp0ZDVHNGtIQXVWUmEzMlRTZGhKQnA1M0VQVHRxT0dzaEFBeHl2VWJGTWswS1BpczgwOGFNSHNvaWxwTG8?oc=5" target="_blank" class="il">Bargain vs. Blue-Chip: Exploring the Rarest and Most Popular</a> <span class="sr">NFT Now</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQd2lYVXFFR1doUDZ1UUR0ZnFrb0RRUFFHMHV2RVZZS3hWRFNFR1NqUS1DRW5DZFFjaF9DZXZ3aU13WnRDdUpUaDFYTjRGa1EtSm5yRXlET2gwNW02ZFpjeG5ZeV8yWmdYQ3ZkdzJVY05CVDF3VHpkUDVNOFV5ay1VZFIwNll0NzZMcFNfUQ?oc=5" target="_blank" class="il">A “historic” NFT collection is on sale at Christie’s</a> <span class="sr">qz.com</span></div><div class="tp">🌐 1n2.org (1)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5wdUJzRXpxZnNuazB3ak5mNXgxVGFXTE8xUjItQm1BVjl4dXg2Y3lfZExtQ1lPNDBqNU42dUpWZUR5ZGM?oc=5" target="_blank" class="il">Create Next App</a> <span class="sr">curioterminal.com</span></div></div></div>
-</div>
-
-<!-- COL 2: Twitter + Media -->
-<div>
+<div class="ns"><span class="nl">🏛 POLITICS</span> — President Trump held a $1 million donor dinner at Mar-a-Lago while simultaneously ordering military strikes against Iran in February, according to Time Magazine. The Catholic Thing argues that America&#x27;s founding as a nation in 1776 preceded its government formation in 1787 by eleven years. The Trump administration launched the Iranian military operations without informing key allies including Italy, abandoning traditional diplomatic coordination practices. <a href="sections/politics.html" class="nm">Read more →</a></div></div>
+<div class="sec"><div class="sh" onclick="t(this)">🔍 About Me (10 mentions)</div><div class="sb"><div class="tp">👤 Thomas Hunt (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNMWZTeFp0Sk5FYUMxMDFaS2Z3QkNRWURUTUlGWFVUYXU4bDFDbVpGNm90SDhPWkduNTJTbVZhVXg4d2trSzNNU0JZN05DWU1oRTB0VXR3b0h4TzJ0SUVZanpNaXZ5Q21lcm9Sa2NQSGE1azFWUTllbEdEQnZhNEN3UkQtTDl1SnNLOTNTdGYwVjBFYWVnNUE4QmxvcGY4bkRyejltQW9zSzh4WVRtX2JiUVBXdkRSUVZmS2RFRQ?oc=5" target="_blank" class="il">Lombrozo: Bitcoin Core Developers May Never Use Miner-Focuse</a> <span class="sr">Bitcoin Magazine</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1RNHdyVE94bTVDcTU5bS01NExBWklDSWNGVENieU9CU1Bma0hOYUwxbjNBY3NDNEtNbjd6Ull5UUZuN0haSEgySHJNREpsMmlOeWE3alc5SjJKcnY5TlNRRENVMUNBM3VvdGFzN3BYUQ?oc=5" target="_blank" class="il">14 Industry Luminaries (and an Ode) on the State of Bitcoin </a> <span class="sr">Bitcoin.com News</span></div><div class="tp">🎭 Mad Bitcoins (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNMWZTeFp0Sk5FYUMxMDFaS2Z3QkNRWURUTUlGWFVUYXU4bDFDbVpGNm90SDhPWkduNTJTbVZhVXg4d2trSzNNU0JZN05DWU1oRTB0VXR3b0h4TzJ0SUVZanpNaXZ5Q21lcm9Sa2NQSGE1azFWUTllbEdEQnZhNEN3UkQtTDl1SnNLOTNTdGYwVjBFYWVnNUE4QmxvcGY4bkRyejltQW9zSzh4WVRtX2JiUVBXdkRSUVZmS2RFRQ?oc=5" target="_blank" class="il">Lombrozo: Bitcoin Core Developers May Never Use Miner-Focuse</a> <span class="sr">Bitcoin Magazine</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPNHlyQnI4RjFwSHRVY1ZvQXpPZVZ2cTJtd3d0Rl9pd2lSVGtmWEtPeXF0b1J2OUNmZHV6c2ZTYndUaTBEcXNJVUhJRWxINzBPbkRfUUxkZ3JiM1RZWjh3NFNGRi05dHdZVnB5cmI4T1FjdXRTczFRMWt4aW9vV29wQVV5a0djaXVXdU5uT0VUY3NDQVFJY1I5a0JHNA?oc=5" target="_blank" class="il">6 Outrageous Moments In Crypto Twitter Scam History</a> <span class="sr">CoinDesk</span></div><div class="tp">🃏 Curio Cards (3)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rY3FUbzZiUFpRQW9VcDlfa21DcWtGeWVTdFBpblJleDBTNVp0ZDVHNGtIQXVWUmEzMlRTZGhKQnA1M0VQVHRxT0dzaEFBeHl2VWJGTWswS1BpczgwOGFNSHNvaWxwTG8?oc=5" target="_blank" class="il">Bargain vs. Blue-Chip: Exploring the Rarest and Most Popular</a> <span class="sr">NFT Now</span></div><div class="it"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQd2lYVXFFR1doUDZ1UUR0ZnFrb0RRUFFHMHV2RVZZS3hWRFNFR1NqUS1DRW5DZFFjaF9DZXZ3aU13WnRDdUpUaDFYTjRGa1EtSm5yRXlET2gwNW02ZFpjeG5ZeV8yWmdYQ3ZkdzJVY05CVDF3VHpkUDVNOFV5ay1VZFIwNll0NzZMcFNfUQ?oc=5" target="_blank" class="il">A “historic” NFT collection is on sale at Christie’s</a> <span class="sr">qz.com</span></div><div class="tp">🌐 1n2.org (1)</div><div class="it"><a href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5wdUJzRXpxZnNuazB3ak5mNXgxVGFXTE8xUjItQm1BVjl4dXg2Y3lfZExtQ1lPNDBqNU42dUpWZUR5ZGM?oc=5" target="_blank" class="il">Create Next App</a> <span class="sr">curioterminal.com</span></div></div>
 <div class="sec"><div class="sh" onclick="t(this)">🐦 Twitter</div><div class="sb">
 <div class="sr" style="margin-top:.3rem"><a href="/tweetster/">Full Tweetster →</a> · 179 archived</div>
-</div></div>
-
-<div class="sec"><div class="sh" onclick="t(this)">📚 Reading & Watching</div><div class="sb"><div class="it">🎬 <b>The Bad Guys 2</b> (2025) ★★★</div><div class="it">🎬 <b>Elio</b> (2025) ★★★</div><div class="it">🎬 <b>Everything&#x27;s Going to Be Great</b> (2025) ★★★</div><div class="it">📚 <b>How Will You Measure Your Life?</b> — Clayton M. Christensen</div><div class="it">📚 <b>An Elegant Puzzle: Systems of Engineering Management</b> — Will Larson</div><div class="it">📚 <b>The Architecture of Happiness</b> — Alain de Botton</div><div class="it">📖 The Fat Lady Sang — Robert  Evans ★★★</div><div class="it">📖 Songs of the Doomed: More Notes on the Death of the American Dream — Hunter S. Thompson ★★★★</div></div></div>
-
-
 </div>
-
-<!-- COL 3: Sports + Weather + Extras -->
-<div>
-<div class="sec"><div class="sh" onclick="t(this)">🏟 Sports</div><div class="sb"><div class="it"><b>Oakland A&#x27;s</b> <span class="win">W 16-11</span> @ LAA <span class="sr">Mar 5</span></div><div class="it"><b>VGK</b> <span class="win">W 4-3</span> @ DET <span class="sr">Mar 4</span></div><div class="it"><b>49ers</b> <span class="sr">Offseason · Sep 2026</span></div><div class="it"><b>Raiders</b> <span class="sr">Offseason · Sep 2026</span></div><div class="it"><b>SF Giants</b> <span class="sr">Spring Training · ongoing</span></div><div class="it"><b>NY Mets</b> <span class="sr">Spring Training · ongoing</span></div></div></div>
-<div class="sec"><div class="sh" onclick="t(this)">🌤 Weather</div><div class="sb"><div class="wx"><div class="wx-city">Las Vegas</div><div class="wx-now">58°F Sunny</div><div class="sr">Sat 69° · Sun 73° · Mon 77°</div></div><div class="wx"><div class="wx-city">Sacramento</div><div class="wx-now">59°F Partly sunny</div><div class="sr">Sat 77° · Sun 75° · Mon 75°</div></div><div class="wx"><div class="wx-city">San Francisco</div><div class="wx-now">59°F Sunny</div><div class="sr">Sat 71° · Sun 64° · Mon 61°</div></div></div></div>
-<div class="sec"><div class="sh" onclick="t(this)">🏙 City News</div><div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">These headlines reflect significant urban development and cultural activities across major cities. Las Vegas, San Francisco, and Sacramento are all experiencing substantial construction and housing development projects, from shopping centers and medical facilities to ambitious housing quotas and affordable housing initiatives. Meanwhile, Amsterdam and Berlin are focusing on cultural offerings, with new museums opening and exhibitions celebrating art and history.</div></div></div></div>
-<div class="sec"><div class="sh" onclick="t(this)">🎬 Entertainment</div><div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">March 2026 brings a diverse slate of entertainment offerings, with new theatrical releases including horror sequel &quot;Ready or Not 2&quot; and an A24 film starring Zazie Beetz, alongside fresh family-friendly movies for kids. London&#x27;s West End is showcasing multiple new theatre productions opening this month, while the British Museum debuts a groundbreaking &quot;Samurai&quot; exhibition that reveals women comprised half of Japan&#x27;s samurai warriors, challenging traditional military mythology.</div></div></div></div>
-</div>
-</div>
-
-<div class="ft">
-30 articles · 1 photos · 179 tweets · 2:15 pm<br>
-<a href="/curio-quant/">Quant</a> · <a href="/curiocharts/">Charts</a> · <a href="/google-news/">News</a> · <a href="/tweetster/">Tweets</a> · <a href="/mb-games/">Games</a> · <a href="/">1n2.org</a>
-</div>
-</div>
-<script>function t(el){el.parentElement.classList.toggle('cl')}</script>
-</body></html>
+<div class="sec"><div class="sh" onclick="t(this)">📚 Reading & Watching</div><div class="sb"><div class="it">🎬 <b>The Bad Guys 2</b> (2025) ★★★</div><div class="it">🎬 <b>Elio</b> (2025) ★★★</div><div class="it">🎬 <b>Everything&#x27;s Going to Be Great</b> (2025) ★★★</div><div class="it">📚 <b>How Will You Measure Your Life?</b> — Clayton M. Christensen</div><div class="it">📚 <b>An Elegant Puzzle: Systems of Engineering Management</b> — Will Larson</div><div class="it">📚 <b>The Architecture of Happiness</b> — Alain de Botton</div><div class="it">📖 The Fat Lady Sang — Robert  Evans ★★★</div><div class="it">📖 Songs of the Doomed: More Notes on the Death of the American Dream — Hunter S. Thompson ★★★★</div></div>
+<div class="sec"><div class="sh" onclick="t(this)">🏟 Sports</div><div class="sb"><div class="it"><b>Oakland A&#x27;s</b> <span class="win">W 16-11</span> @ LAA <span class="sr">Mar 5</span></div><div class="it"><b>VGK</b> <span class="win">W 4-3</span> @ DET <span class="sr">Mar 4</span></div><div class="it"><b>49ers</b> <span class="sr">Offseason · Sep 2026</span></div><div class="it"><b>Raiders</b> <span class="sr">Offseason · Sep 2026</span></div><div class="it"><b>SF Giants</b> <span class="sr">Spring Training · ongoing</span></div><div class="it"><b>NY Mets</b> <span class="sr">Spring Training · ongoing</span></div></div>
+<div class="sec"><div class="sh" onclick="t(this)">🌤 Weather</div><div class="sb"><div class="wx"><div class="wx-city">Las Vegas</div><div class="wx-now">58°F Sunny</div><div class="sr">Sat 69° · Sun 73° · Mon 77°</div></div>
+<div class="sec"><div class="sh" onclick="t(this)">🏙 City News</div><div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">These headlines reflect significant urban development and cultural activities across major cities. Las Vegas, San Francisco, and Sacramento are all experiencing substantial construction and housing development projects, from shopping centers and medical facilities to ambitious housing quotas and affordable housing initiatives. Meanwhile, Amsterdam and Berlin are focusing on cultural offerings, with new museums opening and exhibitions celebrating art and history.</div></div>
+<div class="sec"><div class="sh" onclick="t(this)">🎬 Entertainment</div><div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">March 2026 brings a diverse slate of entertainment offerings, with new theatrical releases including horror sequel &quot;Ready or Not 2&quot; and an A24 film starring Zazie Beetz, alongside fresh family-friendly movies for kids. London&#x27;s West End is showcasing multiple new theatre productions opening this month, while the British Museum debuts a groundbreaking &quot;Samurai&quot; exhibition that reveals women comprised half of Japan&#x27;s samurai warriors, challenging traditional military mythology.</div></div>
+</div></body></html>
