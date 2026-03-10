@@ -359,6 +359,38 @@ def build_home_content():
     print(f"  Built home-content.html — {total} articles across {len(section_files)} sections")
     return True, section_files
 
+def send_telegram(sections_data):
+    """Send briefing summary to Telegram."""
+    BOT = "8260454959:AAFrHFnltK6fih2dvSsjkX9t_Ea0T5PtCHw"
+    CHAT = "244802318"
+    today = datetime.now().strftime('%A, %B %d')
+    
+    msg = f"📰 Dashboarder — {today}\n\n"
+    
+    # Read the generated home-content to extract briefing text
+    try:
+        html = OUTPUT.read_text()
+        import re as _re
+        # Extract .ns sections
+        ns_blocks = _re.findall(r'<span class="nl">(.*?)</span>\s*[—–-]\s*(.*?)<a', html, _re.DOTALL)
+        for label, text in ns_blocks:
+            clean = _re.sub(r'<[^>]+>', '', text).strip()
+            if len(clean) > 200:
+                clean = clean[:200].rsplit(' ', 1)[0] + '…'
+            msg += f"{label.strip()} — {clean}\n\n"
+    except:
+        msg += "New briefing available.\n"
+    
+    msg += f"🔗 https://1n2.org/dashboarder/"
+    
+    try:
+        import urllib.request, urllib.parse
+        data = urllib.parse.urlencode({"chat_id": CHAT, "text": msg, "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
+        urllib.request.urlopen(f"https://api.telegram.org/bot{BOT}/sendMessage", data, timeout=10)
+        print("  Sent Telegram notification")
+    except Exception as e:
+        print(f"  Telegram failed: {e}")
+
 def deploy(extra_files=None):
     """Deploy to server."""
     files = [str(OUTPUT), str(DASHBOARDER / 'index.html')]
@@ -408,6 +440,7 @@ def run(do_deploy=True, resummarize=False):
     if ok and do_deploy:
         print("\n── DEPLOY ──")
         deploy(section_files)
+        send_telegram(None)
     
     print(f"\n  Done in {(datetime.now() - start).seconds}s")
 
