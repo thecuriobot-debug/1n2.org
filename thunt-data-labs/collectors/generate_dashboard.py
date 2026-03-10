@@ -324,6 +324,37 @@ def build_home_content():
               '<div class="sb">' + headlines_html +
               existing[close_idx:])
     
+    # Summarize Entertainment section with Claude
+    if 'Entertainment' in result:
+        ent_start = result.find('Entertainment')
+        ent_end = result.find('</div></div>', ent_start + 50)
+        ent_chunk = result[ent_start:ent_end] if ent_end > ent_start else ''
+        ent_titles = re.findall(r'class="il">([^<]+)</a>', ent_chunk)
+        if ent_titles:
+            ent_prompt = f'Write one short paragraph (2-3 sentences) summarizing these entertainment headlines. Be factual and direct:\n\n' + '\n'.join(f'- {t}' for t in ent_titles[:10])
+            ent_summary = call_claude(ent_prompt, 100)
+            if not ent_summary:
+                ent_summary = '. '.join(t[:60] for t in ent_titles[:5]) + '.'
+            ent_sb = result.find('<div class="sb">', ent_start)
+            if ent_sb > -1 and ent_end > -1:
+                result = result[:ent_sb] + f'<div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">{_esc(ent_summary)}</div>' + result[ent_end:]
+                print(f"  Summarized Entertainment with Claude")
+    
+    # Summarize City News section with Claude
+    city_titles = re.findall(r'class="il">([^<]+)</a>', result[result.find('City News'):result.find('City News')+5000] if 'City News' in result else '')
+    if city_titles:
+        city_prompt = f'Write one short paragraph (2-3 sentences) summarizing these city news headlines across Las Vegas, San Francisco, Sacramento, Amsterdam and Berlin. Be factual:\n\n' + '\n'.join(f'- {t}' for t in city_titles[:12])
+        city_summary = call_claude(city_prompt, 100)
+        if not city_summary:
+            city_summary = '. '.join(t[:60] for t in city_titles[:5]) + '.'
+        city_start = result.find('City News')
+        if city_start > -1:
+            city_sb = result.find('<div class="sb">', city_start)
+            city_close = result.find('</div></div>', city_sb + 20)
+            if city_sb > -1 and city_close > -1:
+                result = result[:city_sb] + f'<div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">{_esc(city_summary)}</div>' + result[city_close:]
+                print(f"  Summarized City News with Claude")
+    
     OUTPUT.write_text(result)
     print(f"  Built home-content.html — {total} articles across {len(section_files)} sections")
     return True, section_files
