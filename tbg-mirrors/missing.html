@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Missing Episodes — The Bitcoin Group Mirrors</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff;text-decoration:underline}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+.nav{font-size:.9rem;margin-bottom:1rem;display:flex;gap:12px}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent);margin-bottom:.3rem}
+header p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 18px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700}
+.stat .n.red{color:var(--red)}.stat .n.amber{color:var(--amber)}.stat .n.green{color:var(--green)}
+.stat .l{font-size:.72rem;color:var(--muted)}
+.episode{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden}
+.ep-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px}
+.ep-num{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--red);min-width:60px}
+.ep-status{font-size:.72rem;padding:3px 10px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.status-missing{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.3)}
+.status-skip{background:rgba(251,191,36,.15);color:var(--amber);border:1px solid rgba(251,191,36,.3)}
+.status-incomplete{background:rgba(34,211,238,.15);color:var(--accent);border:1px solid rgba(34,211,238,.3)}
+.ep-body{padding:16px 20px}
+.ep-body .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;font-weight:600;margin-top:12px;margin-bottom:4px}
+.ep-body .label:first-child{margin-top:0}
+.ep-body .value{font-size:.95rem}
+.neighbor{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap}
+.nb{background:rgba(30,41,59,.5);border:1px solid var(--border);border-radius:6px;padding:8px 12px;flex:1;min-width:200px;font-size:.85rem}
+.nb .dir{font-size:.68rem;color:var(--muted);text-transform:uppercase;font-weight:600}
+.nb .num{font-family:'JetBrains Mono',monospace;color:var(--green);font-weight:700}
+.hints{margin-top:8px}
+.hint{font-size:.88rem;padding:4px 0;color:#94a3b8}
+.hint::before{content:'💡 ';font-size:.8rem}
+.recovery{background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.15);border-radius:6px;padding:10px 14px;margin-top:12px;font-size:.9rem;color:var(--accent)}
+.recovery::before{content:'🔍 Recovery: '}
+.checklist{margin-top:6px;font-size:.85rem;color:var(--muted)}
+.checklist div{padding:2px 0}
+.checklist div::before{content:'☐ '}
+.section-title{font-size:1.1rem;font-weight:700;color:var(--accent);margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.help-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:2rem}
+.help-box h3{color:var(--accent);font-size:1rem;margin-bottom:.5rem}
+.help-box p{font-size:.9rem;color:#94a3b8;margin-bottom:.5rem}
+</style></head><body>
+<div class="wrap">
+<div class="nav">
+<a href="/tbg-mirrors/">← Episode Tracker</a>
+<a href="/tbg-mirrors/transcripts/">📜 Transcripts</a>
+<a href="/tbg-mirrors/transcripts/search.html">🔍 Search</a>
+</div>
+<header>
+<h1>🕳️ Missing Episodes</h1>
+<p>Tracking gaps in The Bitcoin Group archive. 482 of 485 episodes preserved. Help us find the rest.</p>
+</header>
+
+<div class="stats">
+<div class="stat"><div class="n green">482</div><div class="l">Preserved</div></div>
+<div class="stat"><div class="n red">3</div><div class="l">Missing</div></div>
+<div class="stat"><div class="n amber">1</div><div class="l">Incomplete</div></div>
+<div class="stat"><div class="n green">99.4%</div><div class="l">Coverage</div></div>
+</div>
+
+<div class="section-title">❌ Missing Episodes (3)</div>
+
+<div class="episode">
+<div class="ep-head">
+<span class="ep-num">#61</span>
+<span class="ep-status status-missing">Completely Missing</span>
+<span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted)">~Dec 19, 2014</span>
+</div>
+<div class="ep-body">
+<div class="label">Time Period</div>
+<div class="value">December 2014 — Early Era. Bitcoin ~$320.</div>
+
+<div class="label">Context</div>
+<div class="value">Between #60 (Dec 12) and #62 (Jan 10). Nearly a month gap — likely holiday break. #62 was the "2014 Year in Review Spectacular."</div>
+
+<div class="label">Neighboring Episodes</div>
+<div class="neighbor">
+<div class="nb"><div class="dir">← Previous</div><span class="num">#60</span> Dec 12, 2014<br>Pirate Bay Still Down - The CIA Tortures</div>
+<div class="nb"><div class="dir">Next →</div><span class="num">#62</span> Jan 10, 2015<br>The 2014 Bitcoin Group Year in Review</div>
+</div>
+
+<div class="label">Search Hints</div>
+<div class="hints">
+<div class="hint">May have been a holiday special or skipped week</div>
+<div class="hint">Bitcoin was ~$320 in late Dec 2014</div>
+<div class="hint">Could be lost to early YouTube deletions</div>
+</div>
+
+<div class="recovery">No known copies anywhere. Check Wayback Machine, old RSS feeds, or WCN archives.</div>
+<div class="checklist">
+<div>YouTube (original WCN channel)</div>
+<div>Wayback Machine / archive.org</div>
+<div>Spreaker / Apple Podcasts / SoundCloud archives</div>
+<div>Old hard drives or backups</div>
+</div>
+</div>
+</div>
+
+<div class="episode">
+<div class="ep-head">
+<span class="ep-num">#75</span>
+<span class="ep-status status-skip">Likely Numbering Skip</span>
+<span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted)">~Aug 2015</span>
+</div>
+<div class="ep-body">
+<div class="label">Time Period</div>
+<div class="value">August 2015 — Early Era. Bitcoin ~$280. Ethereum had just launched (Jul 30, 2015).</div>
+
+<div class="label">Context</div>
+<div class="value">#74 (Jul 31) and #76 (Aug 7) are exactly one week apart. This strongly suggests #75 was a numbering skip — the show went from #74 directly to #76.</div>
+
+<div class="label">Neighboring Episodes</div>
+<div class="neighbor">
+<div class="nb"><div class="dir">← Previous</div><span class="num">#74</span> Jul 31, 2015<br>Ethereum Launches - Bitcoin Weed Drones - Taylor Swift</div>
+<div class="nb"><div class="dir">Next →</div><span class="num">#76</span> Aug 7, 2015<br>Who owns CoinTelegraph? - Overstock's T0</div>
+</div>
+
+<div class="label">Search Hints</div>
+<div class="hints">
+<div class="hint">#74 and #76 are only 1 week apart — possible numbering skip</div>
+<div class="hint">Ethereum had just launched the day before #74</div>
+<div class="hint">Verify against original YouTube uploads to confirm skip</div>
+</div>
+
+<div class="recovery">Likely never existed as a separate episode. The numbering may have jumped from #74 to #76. Need to verify against original YouTube channel.</div>
+<div class="checklist">
+<div>Check original YouTube video titles for #75</div>
+<div>Cross-reference with WCN episode list</div>
+<div>Confirm whether this was a deliberate skip</div>
+</div>
+</div>
+</div>
+
+<div class="episode">
+<div class="ep-head">
+<span class="ep-num">#243</span>
+<span class="ep-status status-missing">Completely Missing</span>
+<span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted)">~Jan 8, 2021</span>
+</div>
+<div class="ep-body">
+<div class="label">Time Period</div>
+<div class="value">January 2021 — Bull Run Era. Bitcoin had just crossed $30K for the first time and was racing to $40K.</div>
+
+<div class="label">Context</div>
+<div class="value">Between #242 (Jan 1) and #244 (Jan 15). Two-week gap during one of Bitcoin's most historic rallies. This would have been a significant episode.</div>
+
+<div class="label">Neighboring Episodes</div>
+<div class="neighbor">
+<div class="nb"><div class="dir">← Previous</div><span class="num">#242</span> Jan 1, 2021<br>Michael Saylor - Bitcoin ETF - $30,000</div>
+<div class="nb"><div class="dir">Next →</div><span class="num">#244</span> Jan 15, 2021<br>Right Wing Payments? - $1.9T Relief Pack</div>
+</div>
+
+<div class="label">Search Hints</div>
+<div class="hints">
+<div class="hint">Bitcoin crossed $40K for the first time in Jan 2021</div>
+<div class="hint">Most recent missing episode — higher chance of recovery</div>
+<div class="hint">Check MadBitcoins YouTube channel for unlisted videos</div>
+<div class="hint">May exist on Spreaker or Apple Podcasts</div>
+</div>
+
+<div class="recovery">Most recent missing episode — best chance of recovery. Check YouTube unlisted videos, Spreaker, Apple Podcasts, SoundCloud archives.</div>
+<div class="checklist">
+<div>YouTube (MadBitcoins + WCN channels, including unlisted)</div>
+<div>Spreaker podcast archive</div>
+<div>Apple Podcasts historical episodes</div>
+<div>SoundCloud WCN page</div>
+<div>Internet Archive / Wayback Machine</div>
+</div>
+</div>
+</div>
+
+<div class="section-title">⚠️ Incomplete Episodes (1)</div>
+
+<div class="episode">
+<div class="ep-head">
+<span class="ep-num" style="color:var(--amber)">#173</span>
+<span class="ep-status status-incomplete">Missing Audio</span>
+<span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted)">Feb 2, 2018</span>
+</div>
+<div class="ep-body">
+<div class="label">Title</div>
+<div class="value">The Bitcoin Group #173 - $8,500 - Tether - Square</div>
+
+<div class="label">What We Have</div>
+<div class="value">✅ Transcript exists · ✅ YouTube video exists · ❌ No local audio file</div>
+
+<div class="label">Context</div>
+<div class="value">Feb 2018. Bitcoin had crashed from $20K high to ~$8,500. Tether controversy was heating up. Square began allowing Bitcoin purchases.</div>
+
+<div class="recovery">Transcript and YouTube video exist. Audio can likely be recovered by downloading from YouTube or podcast platforms.</div>
+<div class="checklist">
+<div>Download audio from YouTube</div>
+<div>Check Spreaker for podcast audio</div>
+<div>Use yt-dlp to extract audio</div>
+</div>
+</div>
+</div>
+
+<div class="help-box">
+<h3>🤝 Can You Help?</h3>
+<p>If you have copies of any missing episodes — audio files, video recordings, screen captures, or even notes — please get in touch.</p>
+<p>These are primary historical sources documenting Bitcoin's evolution from 2013 to present. Every episode matters.</p>
+<p style="margin-top:8px"><b>Places to check:</b> Old podcast app downloads, Wayback Machine snapshots, torrent archives, YouTube playlists, email newsletters from the era, RSS feed caches.</p>
+</div>
+</div>
+</body></html>

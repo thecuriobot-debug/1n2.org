@@ -1,0 +1,96 @@
+{
+  "missing": [
+    {
+      "num": 61,
+      "estimated_date": "~Dec 19, 2014",
+      "context": "Between #60 (Dec 12, 2014) and #62 (Jan 10, 2015). Gap suggests holiday break or skipped episode.",
+      "date_range": "Dec 2014",
+      "era": "Early Era (2014)",
+      "prev": {
+        "num": 60,
+        "date": "2014-12-12",
+        "title": "The Bitcoin Group #60 -- Pirate Bay Still Down - The CIA Tortures People With Rectal Feeding"
+      },
+      "next": {
+        "num": 62,
+        "date": "2015-01-10",
+        "title": "The Bitcoin Group #62 -- The 2014 Bitcoin Group Year in Review Spectacular"
+      },
+      "has_audio": false,
+      "has_transcript": false,
+      "has_youtube": false,
+      "search_hints": [
+        "May have been a holiday special or skipped week",
+        "Bitcoin was ~$320 in late Dec 2014",
+        "Could be lost to early YouTube deletions"
+      ],
+      "status": "completely_missing",
+      "recovery_notes": "No known copies. Check Wayback Machine, old RSS feeds, or WCN archives."
+    },
+    {
+      "num": 75,
+      "estimated_date": "~Aug 7, 2015",
+      "context": "Between #74 (Jul 31, 2015) and #76 (Aug 7, 2015). Same week as #76 \u2014 may have been renumbered or never aired.",
+      "date_range": "Aug 2015",
+      "era": "Early Era (2015)",
+      "prev": {
+        "num": 74,
+        "date": "2015-07-31",
+        "title": "The Bitcoin Group #74 - Ethereum Launches - Bitcoin Weed Drones - Taylor Swift"
+      },
+      "next": {
+        "num": 76,
+        "date": "2015-08-07",
+        "title": "The Bitcoin Group #76 -- Who owns CoinTelegraph? - Overstock's T0"
+      },
+      "has_audio": false,
+      "has_transcript": false,
+      "has_youtube": false,
+      "search_hints": [
+        "#74 and #76 are only 1 week apart \u2014 possible numbering skip",
+        "Bitcoin was ~$280 in Aug 2015",
+        "Ethereum had just launched (Jul 30, 2015)"
+      ],
+      "status": "likely_numbering_skip",
+      "recovery_notes": "Likely never existed \u2014 numbering may have jumped from #74 to #76. Verify against original YouTube uploads."
+    },
+    {
+      "num": 243,
+      "estimated_date": "~Jan 8, 2021",
+      "context": "Between #242 (Jan 1, 2021) and #244 (Jan 15, 2021). Bitcoin was surging past $30K. Two-week gap.",
+      "date_range": "Jan 2021",
+      "era": "Bull Run Era (2021)",
+      "prev": {
+        "num": 242,
+        "date": "2021-01-01",
+        "title": "The Bitcoin Group #242 - Michael Saylor - Bitcoin ETF - $30,000"
+      },
+      "next": {
+        "num": 244,
+        "date": "2021-01-15",
+        "title": "The Bitcoin Group #244 - Right Wing Payments? - $1.9T Relief Pack"
+      },
+      "has_audio": false,
+      "has_transcript": false,
+      "has_youtube": false,
+      "search_hints": [
+        "Bitcoin crossed $40K for the first time in Jan 2021",
+        "May have been skipped due to holidays or scheduling",
+        "Check MadBitcoins YouTube channel for unlisted videos"
+      ],
+      "status": "completely_missing",
+      "recovery_notes": "Most recent missing episode. Higher chance of recovery. Check YouTube unlisted videos, Spreaker, Apple Podcasts archives."
+    }
+  ],
+  "incomplete": [
+    {
+      "num": 173,
+      "date": "2018-02-02",
+      "title": "The Bitcoin Group #173 - $8,500 - Tether - Square",
+      "issue": "No local audio file",
+      "has_transcript": true,
+      "has_youtube": true,
+      "recovery_notes": "Transcript exists. Audio may be downloadable from YouTube or podcast platforms."
+    }
+  ]
+}
