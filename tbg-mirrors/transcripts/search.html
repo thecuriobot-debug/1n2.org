@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Search Transcripts — The Bitcoin Group</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+header{margin-bottom:1.5rem}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent);margin-bottom:.3rem}
+header p{color:var(--muted);font-size:.85rem}
+.nav{font-size:.9rem;margin-bottom:1rem}
+.search-wrap{display:flex;gap:8px;margin-bottom:1rem}
+.search-box{flex:1;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1.05rem;font-family:'DM Sans',sans-serif}
+.search-box:focus{outline:none;border-color:var(--accent)}
+.search-box::placeholder{color:var(--muted)}
+.btn{padding:12px 20px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn:hover{opacity:.9}
+.status{font-size:.85rem;color:var(--muted);margin-bottom:1rem;min-height:1.5em}
+.result{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+.result:hover{border-color:var(--accent)}
+.result-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;cursor:pointer}
+.result-head:hover{background:rgba(34,211,238,.04)}
+.result-num{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);font-size:.95rem;min-width:50px}
+.result-title{flex:1;font-size:.95rem;margin:0 12px}
+.result-meta{font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.result-body{padding:0 16px 14px;display:none}
+.result.open .result-body{display:block}
+.match{font-size:.92rem;line-height:1.7;color:#94a3b8;padding:6px 0;border-bottom:1px solid rgba(30,41,59,.3)}
+.match:last-child{border:none}
+.match mark{background:rgba(34,211,238,.2);color:var(--accent);border-radius:2px;padding:0 2px}
+.match-count{font-size:.72rem;background:rgba(34,211,238,.15);color:var(--accent);padding:2px 8px;border-radius:10px;font-weight:600}
+.tips{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:1rem;font-size:.88rem;color:var(--muted)}
+.tips b{color:var(--text)}
+@media(max-width:600px){.result-meta{display:none}.search-wrap{flex-direction:column}}
+</style></head><body>
+<div class="wrap">
+<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a> · <a href="/tbg-mirrors/transcripts/">All Transcripts</a></div>
+<header>
+<h1>🔍 Search Bitcoin Group Transcripts</h1>
+<p>Full-text search across 482 episodes · 5.5 million words · 2013–2026</p>
+</header>
+<div class="search-wrap">
+<input type="text" class="search-box" id="q" placeholder="Search transcripts... (e.g. silk road, bitcoin etf, Mt. Gox)" autofocus>
+<button class="btn" onclick="doSearch()">Search</button>
+</div>
+<div class="status" id="status">Type a search term and press Enter</div>
+<div id="results"></div>
+<div class="tips" id="tips">
+<b>Search tips:</b> Search matches against episode titles and the first ~150 words of each transcript preview.
+For deep full-text search across complete transcripts, use the terminal tool:<br>
+<code style="color:var(--accent);font-size:.82rem">python3.12 tbg_search.py "your query" --context 2</code><br><br>
+<b>Try:</b> <a href="#" onclick="trySearch('silk road')">silk road</a> ·
+<a href="#" onclick="trySearch('bitcoin etf')">bitcoin etf</a> ·
+<a href="#" onclick="trySearch('halving')">halving</a> ·
+<a href="#" onclick="trySearch('iran')">iran</a> ·
+<a href="#" onclick="trySearch('Mt. Gox')">Mt. Gox</a> ·
+<a href="#" onclick="trySearch('quantum')">quantum</a> ·
+<a href="#" onclick="trySearch('curio cards')">curio cards</a> ·
+<a href="#" onclick="trySearch('Elon')">Elon</a>
+</div>
+</div>
+<script>
+let data=null;
+async function loadData(){
+  if(data)return data;
+  document.getElementById('status').textContent='Loading search index...';
+  const r=await fetch('/tbg-mirrors/transcripts/search-index.json');
+  data=await r.json();
+  document.getElementById('status').textContent='Ready — '+data.length+' transcripts loaded';
+  return data;
+}
+function trySearch(q){document.getElementById('q').value=q;doSearch();return false;}
+async function doSearch(){
+  const q=document.getElementById('q').value.trim();
+  if(!q)return;
+  history.replaceState(null,null,'#search='+encodeURIComponent(q));
+  const d=await loadData();
+  const ql=q.toLowerCase();
+  const terms=ql.split(/\s+/);
+  const results=[];
+  d.forEach(ep=>{
+    const searchable=(ep.t+' '+ep.p).toLowerCase();
+    const allMatch=terms.every(t=>searchable.includes(t));
+    if(!allMatch)return;
+    // Count matches and extract snippets
+    let count=0;
+    const snippets=[];
+    const words=ep.p.split(/\s+/);
+    for(let i=0;i<words.length;i++){
+      const w5=words.slice(Math.max(0,i-8),i+8).join(' ');
+      if(terms.some(t=>w5.toLowerCase().includes(t))){
+        count++;
+        // Get context window
+        const ctx=words.slice(Math.max(0,i-15),Math.min(words.length,i+15)).join(' ');
+        if(snippets.length<3&&!snippets.some(s=>Math.abs(s.pos-i)<20)){
+          snippets.push({text:ctx,pos:i});
+        }
+        i+=10;// skip ahead
+      }
+    }
+    if(count>0||terms.every(t=>ep.t.toLowerCase().includes(t))){
+      results.push({ep,count:Math.max(count,1),snippets});
+    }
+  });
+  results.sort((a,b)=>b.count-a.count);
+  document.getElementById('status').textContent=results.length+' episodes found for "'+q+'"';
+  let h='';
+  results.forEach(r=>{
+    let snipHtml='';
+    r.snippets.forEach(s=>{
+      let t=s.text;
+      terms.forEach(term=>{
+        const re=new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+        t=t.replace(re,'<mark>$1</mark>');
+      });
+      snipHtml+='<div class="match">...'+t+'...</div>';
+    });
+    // Also highlight title
+    let title=r.ep.t;
+    terms.forEach(term=>{
+      const re=new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      title=title.replace(re,'<mark>$1</mark>');
+    });
+    h+='<div class="result" onclick="this.classList.toggle(\'open\')">';
+    h+='<div class="result-head">';
+    h+='<span class="result-num">#'+r.ep.n+'</span>';
+    h+='<span class="result-title">'+title+'</span>';
+    h+='<span class="result-meta">'+r.ep.d+'</span>';
+    h+='<span class="match-count">'+r.count+'</span>';
+    h+='</div>';
+    if(snipHtml){
+      h+='<div class="result-body">'+snipHtml;
+      h+='<div style="padding-top:8px"><a href="/tbg-mirrors/transcripts/TBG-'+String(r.ep.n).padStart(3,'0')+'.html">Read full transcript →</a></div>';
+      h+='</div>';
+    }
+    h+='</div>';
+  });
+  document.getElementById('results').innerHTML=h;
+  document.getElementById('tips').style.display=results.length?'none':'block';
+}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+// Auto-search from URL hash
+if(location.hash.startsWith('#search=')){
+  const q=decodeURIComponent(location.hash.replace('#search=',''));
+  document.getElementById('q').value=q;
+  loadData().then(()=>doSearch());
+}else{loadData();}
+</script>
+</body></html>

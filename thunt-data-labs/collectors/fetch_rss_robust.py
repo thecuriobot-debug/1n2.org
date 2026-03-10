@@ -31,8 +31,8 @@ DB = Path.home() / 'Sites' / '1n2.org' / 'thunt-data-labs' / 'db' / 'thunt-data-
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
 # ── Timeout settings ──
-FEED_TIMEOUT   = 20   # seconds to fetch an RSS feed
-ARTICLE_TIMEOUT = 15   # seconds to fetch one article page
+FEED_TIMEOUT   = 12   # seconds to fetch an RSS feed
+ARTICLE_TIMEOUT = 10   # seconds to fetch one article page
 RATE_LIMIT     = 0.3   # seconds between requests to same source
 
 # ── Curated RSS feeds ──
@@ -51,39 +51,61 @@ FEEDS = {
     "ai": [
         ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
         ("Wired",           "https://www.wired.com/feed/rss"),
+        ("Google News AI",  "https://news.google.com/rss/search?q=artificial+intelligence&hl=en-US&gl=US&ceid=US:en"),
+        ("VentureBeat",     "https://venturebeat.com/feed/"),
+        ("The Register AI", "https://www.theregister.com/headlines.atom"),
     ],
     "tech": [
         ("TechCrunch",   "https://techcrunch.com/feed/"),
         ("Ars Technica",  "https://feeds.arstechnica.com/arstechnica/index"),
         ("The Verge",     "https://www.theverge.com/rss/index.xml"),
+        ("Google News Tech", "https://news.google.com/rss/search?q=technology&hl=en-US&gl=US&ceid=US:en"),
+        ("Hacker News",   "https://hnrss.org/frontpage"),
     ],
     "world": [
         ("BBC World",     "https://feeds.bbci.co.uk/news/world/rss.xml"),
         ("Guardian World", "https://www.theguardian.com/world/rss"),
         ("Al Jazeera",    "https://www.aljazeera.com/xml/rss/all.xml"),
-        ("Reuters",       "https://www.reutersagency.com/feed/"),
+        ("Dawn",          "https://www.dawn.com/feeds/home"),
+        ("Google News World", "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXigAQE?hl=en-US&gl=US&ceid=US:en"),
+        ("France24",      "https://www.france24.com/en/rss"),
+        ("DW News",       "https://rss.dw.com/rdf/rss-en-all"),
     ],
     "us": [
         ("BBC News",    "https://feeds.bbci.co.uk/news/rss.xml"),
         ("Guardian US", "https://www.theguardian.com/us-news/rss"),
         ("NPR",         "https://feeds.npr.org/1001/rss.xml"),
-        ("AP News",     "https://apnews.com/index.rss"),
+        ("Google News US", "https://news.google.com/rss/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE?hl=en-US&gl=US&ceid=US:en"),
+        ("USA Today",   "http://rssfeeds.usatoday.com/UsatodaycomNation-TopStories"),
     ],
     "politics": [
-        ("PBS NewsHour", "https://www.pbs.org/newshour/feeds/rss/headlines"),
+        ("Google News Politics", "https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFZ4ZERBU0FtVnVLQUFQAQ?hl=en-US&gl=US&ceid=US:en"),
+        ("The Hill",     "https://thehill.com/feed/"),
+        ("Politico",     "https://rss.politico.com/politics-news.xml"),
+        ("The Atlantic",  "https://www.theatlantic.com/feed/all/"),
     ],
     "business": [
         ("CNBC",        "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
         ("Fortune",     "https://fortune.com/feed/"),
-        ("MarketWatch", "https://feeds.marketwatch.com/marketwatch/topstories/"),
+        ("The Economic Times", "https://economictimes.indiatimes.com/rssfeedstopstories.cms"),
+        ("Google News Business", "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXigAQE?hl=en-US&gl=US&ceid=US:en"),
+        ("MarketWatch",  "https://feeds.content.dowjones.io/public/rss/mw_topstories"),
     ],
     "science": [
         ("Science Daily", "https://www.sciencedaily.com/rss/all.xml"),
-        ("Nature",        "https://www.nature.com/nature.rss"),
-        ("New Scientist", "https://www.newscientist.com/feed/home/"),
+        ("Google News Science", "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXigAQE?hl=en-US&gl=US&ceid=US:en"),
+        ("Phys.org",      "https://phys.org/rss-feed/"),
+        ("Nature News",   "https://www.nature.com/nature.rss"),
+        ("Space.com",     "https://www.space.com/feeds/all"),
     ],
     "health": [
-        ("Medical News Today", "https://www.medicalnewstoday.com/newsfeeds/rss"),
+        ("Google News Health", "https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ?hl=en-US&gl=US&ceid=US:en"),
+        ("WebMD",          "https://rssfeeds.webmd.com/rss/rss.aspx?RSSSource=RSS_PUBLIC"),
+        ("Stat News",      "https://www.statnews.com/feed/"),
+    ],
+    "sports": [
+        ("ESPN",           "https://www.espn.com/espn/rss/news"),
+        ("Google News Sports", "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXigAQE?hl=en-US&gl=US&ceid=US:en"),
     ],
     "culture": [
         ("Variety",    "https://variety.com/feed/"),
@@ -106,9 +128,12 @@ def article_id(url: str) -> str:
 def parse_feed(source_name: str, feed_url: str, limit: int) -> list[dict]:
     """Parse an RSS feed and return list of {url, title, date, summary} dicts."""
     try:
-        feed = feedparser.parse(feed_url, request_headers={
+        import requests as _req
+        resp = _req.get(feed_url, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-        })
+        }, timeout=(5, FEED_TIMEOUT))  # (connect_timeout, read_timeout)
+        raw = resp.content
+        feed = feedparser.parse(raw)
         
         if feed.bozo and not feed.entries:
             print(f"  ⚠️  {source_name:25} Feed parse error: {str(feed.bozo_exception)[:60]}")
@@ -157,8 +182,13 @@ def parse_feed(source_name: str, feed_url: str, limit: int) -> list[dict]:
 def fetch_article_text(url: str) -> dict | None:
     """Fetch and extract article text. Returns dict or None."""
     try:
-        html = trafilatura.fetch_url(url)
-        if not html:
+        import requests as _req
+        resp = _req.get(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+        }, timeout=(5, ARTICLE_TIMEOUT))
+        resp.raise_for_status()
+        html = resp.text
+        if not html or len(html) < 200:
             return None
         
         result = trafilatura.extract(

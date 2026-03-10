@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bitcoin Group Mirrors — Episode Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#f7931a;--red:#ef4444;--green:#34d399;--blue:#3b82f6;--purple:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:14px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent)}
+header .sub{color:var(--muted);font-size:.72rem}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.65rem;color:var(--muted);margin-top:2px}
+h2{color:var(--accent);font-size:.95rem;margin:16px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.75rem;margin:8px 0;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:4px}
+.search{width:100%;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85rem;margin:8px 0}
+.search:focus{outline:none;border-color:var(--accent)}
+.ep{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.8rem;transition:.1s}
+.ep:hover{background:rgba(247,147,26,.03)}
+.ep .num{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);width:36px;text-align:right;flex-shrink:0;font-size:.75rem}
+.ep .title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ep .date{color:var(--muted);font-size:.68rem;width:75px;text-align:right;flex-shrink:0}
+.ep .mirrors{display:flex;gap:3px;flex-shrink:0}
+.mirror{width:22px;height:22px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;cursor:pointer;transition:.15s}
+.mirror:hover{transform:scale(1.2)}
+.mirror.wcn{background:rgba(59,130,246,.2);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+.mirror.mb{background:rgba(167,139,250,.2);color:var(--purple);border:1px solid rgba(167,139,250,.3)}
+.mirror.tbg{background:rgba(247,147,26,.2);color:var(--accent);border:1px solid rgba(247,147,26,.3)}
+.mirror.sp{background:rgba(244,196,48,.2);color:#f4c430;border:1px solid rgba(244,196,48,.3)}
+.mirror.sc{background:rgba(255,85,0,.2);color:#ff5500;border:1px solid rgba(255,85,0,.3)}
+.mirror.ap{background:rgba(252,60,68,.2);color:#fc3c44;border:1px solid rgba(252,60,68,.3)}
+.mirror.local{background:rgba(52,211,153,.2);color:var(--green);border:1px solid rgba(52,211,153,.3)}
+.mirror.txt{background:rgba(147,197,253,.2);color:#93c5fd;border:1px solid rgba(147,197,253,.3)}
+.ft{text-align:center;color:var(--muted);font-size:.6rem;padding:16px;border-top:1px solid var(--border);margin-top:16px}
+</style>
+</head>
+<body>
+<header>
+<h1>📺 The Bitcoin Group Mirrors — Episode Tracker</h1>
+<div class="sub">Track where every episode lives across YouTube + Podcast platforms</div>
+</header>
+<main>
+<div class="grid" id="stats"></div>
+<div class="legend">
+<span><span class="mirror wcn">W</span> World Crypto Network</span>
+<span><span class="mirror mb">M</span> MadBitcoins</span>
+<span><span class="mirror tbg">T</span> TBG Original</span>
+<span><span class="mirror sp">S</span> Spreaker</span>
+<span><span class="mirror ap">A</span> Apple Podcasts</span>
+<span><span class="mirror sc">C</span> SoundCloud</span>
+<span><span class="mirror local">💾</span> Local Audio</span>
+<span><span class="mirror txt">📄</span> Transcript</span>
+<span><span class="mirror none">✕</span> Not available</span>
+</div>
+<input class="search" id="search" placeholder="Search episodes... (e.g. #100, Bitcoin ETF, Silk Road)">
+<div style="font-size:.82rem;padding:2px 0"><a href="/tbg-mirrors/transcripts/search.html">🔍 Full-Text Transcript Search</a> · <a href="/tbg-mirrors/transcripts/">📜 Browse All Transcripts</a></div>
+<h2 id="ep-count">Loading...</h2>
+<div id="episodes"></div>
+</main>
+<div class="ft"><a href="/my-youtube/">My YouTube</a> · <a href="/wcn-podcast/">WCN Podcast</a> · <a href="/commentzor/">Commentzor</a> · <a href="/dashboarder/">Dashboarder</a> · <a href="/">1n2.org</a></div>
+<script>
+let DATA;
+async function init(){
+  DATA=await(await fetch('data.json')).json();
+  const s=DATA.stats,eps=DATA.episodes;
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="n">${s.total}</div><div class="l">Episodes Found</div></div>
+    <div class="stat"><div class="n">#1–#${eps[eps.length-1]?.num||'?'}</div><div class="l">Range</div></div>
+    <div class="stat"><div class="n">${s.wcn}</div><div class="l">On WCN</div></div>
+    <div class="stat"><div class="n">${s.mb}</div><div class="l">On MadBitcoins</div></div>
+    <div class="stat"><div class="n">${s.tbg}</div><div class="l">On TBG Original</div></div>
+    <div class="stat"><div class="n">${s.multi}</div><div class="l">Multi-Platform</div></div>
+    <div class="stat"><div class="n">${eps.filter(e=>e.local_audio).length}</div><div class="l">Local Audio 💾</div></div>
+    <div class="stat"><div class="n">${eps.filter(e=>e.transcript).length}</div><div class="l">Transcripts 📄</div></div>`;
+  renderEps(eps);
+  document.getElementById('search').addEventListener('input',e=>{
+    const q=e.target.value.toLowerCase();
+    const filtered=eps.filter(ep=>{
+      const numMatch=q.match(/#?(\d+)/);
+      if(numMatch&&ep.num===parseInt(numMatch[1]))return true;
+      return ep.title.toLowerCase().includes(q);
+    });
+    renderEps(filtered);
+  });
+}
+function renderEps(eps){
+  document.getElementById('ep-count').textContent=`${eps.length} Episodes (newest first)`;
+  const reversed=[...eps].reverse();
+  let html='';
+  reversed.forEach(ep=>{
+    const onWCN=ep.yt?.wcn;
+    const onMB=ep.yt?.mb;
+    const onTBG=ep.yt?.tbg;
+    const date=ep.date||'';
+    let title=ep.title.replace(/^The Bitcoin Group #\d+\s*-?\s*/i,'').substring(0,80);
+    const wcnLink=onWCN?`<a href="https://youtube.com/watch?v=${onWCN.vid}" target="_blank" title="WCN: ${onWCN.views} views"><span class="mirror wcn">W</span></a>`
+      :'<span class="mirror none" title="Not on WCN">W</span>';
+    const mbLink=onMB?`<a href="https://youtube.com/watch?v=${onMB.vid}" target="_blank" title="MadBitcoins: ${onMB.views} views"><span class="mirror mb">M</span></a>`
+      :'<span class="mirror none" title="Not on MadBitcoins">M</span>';
+    const tbgLink=onTBG?`<a href="https://youtube.com/watch?v=${onTBG.vid}" target="_blank" title="TBG Original: ${onTBG.views} views"><span class="mirror tbg">T</span></a>`
+      :'<span class="mirror none" title="Not on TBG">T</span>';
+    // Podcast platforms
+    const isSpreaker=ep.num>=200;
+    const isApple=true;
+    const isSC=ep.num<=200;
+    const epSearch=encodeURIComponent((ep.title||'').substring(0,60));
+    const spLink=isSpreaker?`<a href="https://www.spreaker.com/podcast/the-world-crypto-network-podcast--3478703?query=${epSearch}" target="_blank" title="Spreaker"><span class="mirror sp">S</span></a>`:'<span class="mirror none">S</span>';
+    const apLink=isApple?`<a href="#" onclick="window.open('https://podcasts.apple.com/search?term='+encodeURIComponent('world crypto network bitcoin group '+(ep.title||'').substring(0,30)),'_blank');return false;" title="Apple Podcasts"><span class="mirror ap">A</span></a>`:'<span class="mirror none">A</span>';
+    const scLink=isSC?`<a href="https://soundcloud.com/search/sounds?q=worldcryptonet+${epSearch}" target="_blank" title="SoundCloud"><span class="mirror sc">C</span></a>`:'<span class="mirror none">C</span>';
+    const localLink=ep.local_audio?`<a href="http://localhost:8000${ep.local_audio}" title="Play Local Audio (localhost)" target="_blank"><span class="mirror local">💾</span></a>`:'<span class="mirror none">💾</span>';
+    const txtLink=ep.transcript?`<a href="/tbg-mirrors/transcripts/TBG-${String(ep.num).padStart(3,'0')}.html" title="Read Transcript" target="_blank"><span class="mirror txt">📄</span></a>`:'<span class="mirror none">📄</span>';
+    html+=`<div class="ep"><div class="num">#${ep.num}</div><div class="title" title="${ep.title.replace(/"/g,'&quot;')}">${title||ep.title}</div><div class="date">${date}</div><div class="mirrors">${localLink}${txtLink}${wcnLink}${mbLink}${tbgLink}${spLink}${apLink}${scLink}</div></div>`;
+  });
+  document.getElementById('episodes').innerHTML=html;
+}
+init();
+</script>
+</body></html>
