@@ -17,11 +17,11 @@ header h1{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:70
 .tab:hover{color:var(--text)}.tab.on{color:var(--accent);border-bottom-color:var(--accent)}
 .panel{display:none;padding:16px 20px;max-width:1400px;margin:0 auto}.panel.on{display:block}
 .sec{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;overflow:hidden}
-.sh{padding:12px 14px;font-weight:600;font-size:1.05rem;cursor:pointer;color:var(--accent);border-bottom:1px solid var(--border)}
+.sh{padding:14px 16px;font-weight:600;font-size:1.1rem;cursor:pointer;color:var(--accent);border-bottom:1px solid var(--border)}
 .sh:hover{background:rgba(34,211,238,.04)}.sb{padding:4px 14px 12px}
 .sec.cl .sb{display:none}.sec.cl .sh{border:none}
 .tp{font-size:.78rem;color:var(--muted);padding:7px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.it{padding:5px 0;font-size:.95rem;border-bottom:1px solid rgba(30,41,59,.3)}.it:last-child{border:none}
+.it{padding:6px 0;font-size:1rem;border-bottom:1px solid rgba(30,41,59,.3)}.it:last-child{border:none}
 .it a{color:var(--text)}.it a:hover{color:var(--accent)}
 .it .sr{color:var(--muted);font-size:.72rem;float:right}
 .it b{color:var(--text)}.win{color:var(--green)}.loss{color:var(--red)}
@@ -55,7 +55,7 @@ header h1{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:70
 /* News briefing sections */
 .ns{padding:14px 0;border-bottom:1px solid rgba(30,41,59,.3);font-size:1.1rem;line-height:1.7;color:#cbd5e1}
 .ns:last-child{border-bottom:none}
-.nl{color:var(--accent);font-weight:700;font-size:.85rem;letter-spacing:.3px;white-space:nowrap}
+.nl{color:var(--accent);font-weight:700;font-size:.9rem;letter-spacing:.3px;white-space:nowrap}
 .nm{color:var(--accent);font-size:.82rem;font-weight:600;white-space:nowrap}
 /* Media */
 .mi{display:flex;justify-content:space-between;padding:3px 0;font-size:.82rem;border-bottom:1px solid rgba(30,41,59,.25)}.mi:last-child{border:none}
@@ -94,6 +94,7 @@ header h1{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:70
 <div id="theater" class="panel"><div id="tc">Loading theater data...</div></div>
 <div id="museums" class="panel"><div id="musc">Loading museums...</div></div>
 <div id="countdown" class="panel"><div id="cdc">Loading...</div></div>
+<div style="text-align:center;padding:12px 0 6px"><a href="/dashboarder/archive/" style="display:inline-block;padding:8px 20px;background:rgba(34,211,238,.1);border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-weight:600;font-size:.9rem;text-decoration:none">Previous Briefings</a></div>
 <div class="ft"><a href="/">1n2.org</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/thunt-wiki/">MadWikipedia</a> · <a href="/health/">Health</a></div>
 <script>
 function ck(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}ck();setInterval(ck,30000);
@@ -146,7 +147,7 @@ async function loadContent(){
       // Weather: inline
       if(title.includes('Weather')){const wxs=s.querySelectorAll('.wx');let h='<div class="gcard-row">';wxs.forEach(w=>{const city=w.querySelector('.wx-city')?.textContent||'';const now=w.querySelector('.wx-now')?.textContent||'';const temp=now.match(/(\d+)°F/);const cond=now.replace(/\d+°F\s*/,'').trim();const icon=cond.includes('Sunny')||cond.includes('sunny')?'☀':cond.includes('Cloud')?'☁':cond.includes('Partly')?'⛅':'☀';h+='<div class="gcard"><div class="gcard-label">'+city+'</div><div class="gcard-val">'+(temp?temp[1]+'°':'')+'</div><div class="gcard-chg" style="color:var(--muted)">'+icon+' '+cond+'</div></div>';});h+='</div>';const sb=s.querySelector('.sb');if(sb)sb.innerHTML=h;col2.push(s.outerHTML);return;}
       // Entertainment: summarize as briefing
-      if(title.includes('Entertainment')){const items=s.querySelectorAll('.it');let briefs=[];items.forEach(it=>{const a=it.querySelector('a');if(a){let t=a.textContent.trim();if(t.length>70)t=t.slice(0,70)+'\u2026';briefs.push(t);}});const sb=s.querySelector('.sb');if(sb&&briefs.length)sb.innerHTML='<div class="ns" style="font-size:.88rem">'+briefs.join('. ')+'.</div>';col2.push(s.outerHTML);return;}
+      if(title.includes('Entertainment')){const items=s.querySelectorAll('.it');let briefs=[];items.forEach(it=>{const a=it.querySelector('a');if(a){let t=a.textContent.trim();if(t.length>70)t=t.slice(0,70)+'\u2026';briefs.push(t);}});const sb=s.querySelector('.sb');if(sb&&briefs.length)sb.innerHTML='<div class="ns" style="font-size:.88rem">'+briefs.join('. ')+'. <a href="#" class="nm" onclick="return false">Read more \u2192</a></div>';col2.push(s.outerHTML);return;}
       // Twitter: skip entirely from personal
       if(title.includes('Twitter')){return;}
       if(title.includes('About Me')){pers1.push(s.outerHTML);return;}
@@ -157,7 +158,7 @@ async function loadContent(){
         s.querySelectorAll('.ns').forEach(ns=>{if(ns.textContent.replace(/Read more.*/,'').trim().length<15)ns.remove();});
         col1.push(s.outerHTML);
       }
-      else if(title.includes('City News')){const citems=s.querySelectorAll('.it');let cbriefs=[];citems.forEach(it=>{const a=it.querySelector('a')||it.querySelector('.il');if(a){let t=a.textContent.trim();if(t.length>70)t=t.slice(0,70)+'\u2026';cbriefs.push(t);}});if(cbriefs.length){const csb=s.querySelector('.sb');if(csb)csb.innerHTML='<div class="ns" style="font-size:.88rem">'+cbriefs.join('. ')+'.</div>';}cityNews=s.outerHTML;}
+      else if(title.includes('City News')){const citems=s.querySelectorAll('.it');let cbriefs=[];citems.forEach(it=>{const a=it.querySelector('a')||it.querySelector('.il');if(a){let t=a.textContent.trim();if(t.length>70)t=t.slice(0,70)+'\u2026';cbriefs.push(t);}});if(cbriefs.length){const csb=s.querySelector('.sb');if(csb)csb.innerHTML='<div class="ns" style="font-size:.88rem">'+cbriefs.join('. ')+'. <a href="#" class="nm" onclick="return false">Read more \u2192</a></div>';}cityNews=s.outerHTML;}
       else col2.push(s.outerHTML);
     });
     if(cityNews)col2.push(cityNews);
