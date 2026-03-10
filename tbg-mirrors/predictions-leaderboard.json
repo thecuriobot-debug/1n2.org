@@ -1,0 +1,434 @@
+{
+  "generated": "2026-03-10T15:48:11.222078",
+  "total": 3525,
+  "leaderboard": [
+    {
+      "name": "Tim Draper",
+      "correct": 2,
+      "wrong": 0,
+      "accuracy": 100.0,
+      "evaluated": 2
+    },
+    {
+      "name": "Ansel",
+      "correct": 1,
+      "wrong": 0,
+      "accuracy": 100.0,
+      "evaluated": 1
+    },
+    {
+      "name": "Jesse",
+      "correct": 1,
+      "wrong": 0,
+      "accuracy": 100.0,
+      "evaluated": 1
+    },
+    {
+      "name": "Jimmy",
+      "correct": 8,
+      "wrong": 4,
+      "accuracy": 66.7,
+      "evaluated": 12
+    },
+    {
+      "name": "Adam",
+      "correct": 31,
+      "wrong": 18,
+      "accuracy": 63.3,
+      "evaluated": 49
+    },
+    {
+      "name": "Vin",
+      "correct": 249,
+      "wrong": 160,
+      "accuracy": 60.9,
+      "evaluated": 409
+    },
+    {
+      "name": "Unknown",
+      "correct": 1145,
+      "wrong": 1021,
+      "accuracy": 52.9,
+      "evaluated": 2166
+    },
+    {
+      "name": "Magic 8 Ball",
+      "correct": 278,
+      "wrong": 286,
+      "accuracy": 49.3,
+      "evaluated": 564
+    },
+    {
+      "name": "Thomas",
+      "correct": 73,
+      "wrong": 81,
+      "accuracy": 47.4,
+      "evaluated": 154
+    },
+    {
+      "name": "Tone",
+      "correct": 35,
+      "wrong": 42,
+      "accuracy": 45.5,
+      "evaluated": 77
+    },
+    {
+      "name": "Chris",
+      "correct": 16,
+      "wrong": 21,
+      "accuracy": 43.2,
+      "evaluated": 37
+    },
+    {
+      "name": "Hunt",
+      "correct": 8,
+      "wrong": 16,
+      "accuracy": 33.3,
+      "evaluated": 24
+    },
+    {
+      "name": "Gabriel",
+      "correct": 4,
+      "wrong": 8,
+      "accuracy": 33.3,
+      "evaluated": 12
+    },
+    {
+      "name": "Roger",
+      "correct": 3,
+      "wrong": 6,
+      "accuracy": 33.3,
+      "evaluated": 9
+    },
+    {
+      "name": "David",
+      "correct": 0,
+      "wrong": 3,
+      "accuracy": 0.0,
+      "evaluated": 3
+    },
+    {
+      "name": "Simon",
+      "correct": 0,
+      "wrong": 2,
+      "accuracy": 0.0,
+      "evaluated": 2
+    }
+  ],
+  "recent": [
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "lower",
+      "target": null,
+      "context": "But yeah, I don't know. Again, I think if more comes out possibly, but based on what we know now, there's a decent amount of plausible deniability, so I doubt that he would step down based on what we know. It is very much like a scene out of Godfather 2, where the Senator is in the prostitution hous",
+      "episode": 481,
+      "date": "2026-02-07",
+      "result": {
+        "price_at_prediction": 70297.07,
+        "price_7d_later": 68800.76,
+        "date_checked": "2026-02-14",
+        "actual_direction": "lower",
+        "change_pct": -2.13,
+        "correct": true
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "He certainly hasn't been proactive in coming forward and talking about his exposed to Epstein before all this paint came out. You know, often I think you can maybe get heads up on these things if you're honest and forthright about it ahead of time. The other people whose names have come up in the Ep",
+      "episode": 481,
+      "date": "2026-02-07",
+      "result": {
+        "price_at_prediction": 70297.07,
+        "price_7d_later": 68800.76,
+        "date_checked": "2026-02-14",
+        "actual_direction": "lower",
+        "change_pct": -2.13,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "But other people will use this as a disadvantage. Well, I think any criminal that's using Bitcoin for ransom is just stupid because there have been plenty of occasions now where people who've done that because that wallet address is going to be traced for decades if not centuries. You know, you'll n",
+      "episode": 481,
+      "date": "2026-02-07",
+      "result": {
+        "price_at_prediction": 70297.07,
+        "price_7d_later": 68800.76,
+        "date_checked": "2026-02-14",
+        "actual_direction": "lower",
+        "change_pct": -2.13,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "Obviously, mobile phones can be hacked. But in a in a quorum of keys, I think it's not an unreasonable thing to have have a couple on different mobile devices. And that would make it very easy for family.",
+      "episode": 481,
+      "date": "2026-02-07",
+      "result": {
+        "price_at_prediction": 70297.07,
+        "price_7d_later": 68800.76,
+        "date_checked": "2026-02-14",
+        "actual_direction": "lower",
+        "change_pct": -2.13,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "And if you want to try out ClaudeBots, let me know in the comments or the chat below if you had great success or not. I think a lot of the posts out there right now or like Claude did all my things, did all my trading was perfectly magical and I think those are made up. But there is stuff you can ge",
+      "episode": 481,
+      "date": "2026-02-07",
+      "result": {
+        "price_at_prediction": 70297.07,
+        "price_7d_later": 68800.76,
+        "date_checked": "2026-02-14",
+        "actual_direction": "lower",
+        "change_pct": -2.13,
+        "correct": false
+      }
+    },
+    {
+      "type": "magic_8_ball",
+      "speaker": "Magic 8 Ball",
+      "direction": "higher",
+      "context": "Long-term forecasts through 2030 remain unchanged. The bank's still conservative on the asset class. Checking in with the Magic eight ball, the source of all truth in this and any other universe, will the price of Bitcoin be higher this time next week? It is certain. It is certain the ball has spoke",
+      "episode": 482,
+      "date": "2026-02-13",
+      "result": {
+        "price_at_prediction": 69790.74,
+        "price_7d_later": 67965.05,
+        "date_checked": "2026-02-20",
+        "actual_direction": "lower",
+        "change_pct": -2.62,
+        "correct": false
+      }
+    },
+    {
+      "type": "magic_8_ball",
+      "speaker": "Magic 8 Ball",
+      "direction": "higher",
+      "context": "I think the the biggest risk that Bailey's got because he's quite a public figure and he speaks a lot about these things and then he can easily get himself in trouble which he did with the overvaluation which again you know these companies made 87 million in revenue which is great and in a in a Twit",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "lower",
+      "target": null,
+      "context": "There's a lot of powerful friends. It'll be alright but I think it's kind of a ballsy move because if NACA Motto now like fails as a company it's going to take down the Bitcoin conference company and UTex and management with it. So to me it seems like the last move a dude can do to breathe some life",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": true
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Thomas",
+      "direction": "higher",
+      "target": null,
+      "context": "I think he's hopefully my son's back because I've only asked me a bit too loud there. He's a clever guy like he is a clever guy he's a young guy and you know when we're all young we all made mistakes so I'm sure he's not without his mistakes but he's clever guys you're a guy he's always been good to",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Thomas",
+      "direction": "higher",
+      "target": null,
+      "context": "Well they say in the chat that Ben is much louder than Thomas in the chat and that's why I won't switch my mic over I don't know but Ben's muted now and it won't still want to switch my camera I'm going to have to go in the settings and double check it again it's been an issue but I don't know what ",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Thomas",
+      "direction": "higher",
+      "target": null,
+      "context": "I'll tell you know he's making his way back up maybe it's oh I know maybe it's like slept with newbs Thomas this is why this is why David Bailey as these big companies because he knows how to work microphones yeah well the software keeps changing that's one thing but it's interesting Ben you say he ",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Thomas",
+      "direction": "higher",
+      "target": "2000",
+      "context": "I think the the biggest risk that Bailey's got because he's quite a public figure and he speaks a lot about these things and then he can easily get himself in trouble which he did with the overvaluation which again you know these companies made 87 million in revenue which is great and in a in a Twit",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "target",
+      "speaker": "Vin",
+      "direction": "higher",
+      "target": "2000",
+      "context": "Leary uh thing here posting his phone number accusing him of murder this is beyond the pale uh this isn't just a back and forth like celebrity argument uh it seems that he went at him in directly where there's this unfortunate incident with the boating accident but then to also post his personal det",
+      "episode": 483,
+      "date": "2026-02-21",
+      "result": {
+        "price_at_prediction": 67626.88,
+        "price_7d_later": 65774.35,
+        "date_checked": "2026-02-28",
+        "actual_direction": "lower",
+        "change_pct": -2.74,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "And of course, there are many other people in different situations that suffer terribly as a result of that. And as sad as it sounds, I think it's just a lesson of wake up and not be so naive to say many of these other people. There are so many people that we're trying to educate and bring up these ",
+      "episode": 484,
+      "date": "2026-02-28",
+      "result": {
+        "price_at_prediction": 65774.35,
+        "price_7d_later": 65974.07,
+        "date_checked": "2026-03-07",
+        "actual_direction": "higher",
+        "change_pct": 0.3,
+        "correct": true
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "lower",
+      "target": null,
+      "context": "I think it's a cover story. I think that blocks in trouble because of the party, blocks in trouble because of the crypto downturn and because it's a lot harder to get people to use this stuff than people think. And I think that they're covering that up with this AI story.",
+      "episode": 484,
+      "date": "2026-02-28",
+      "result": {
+        "price_at_prediction": 65774.35,
+        "price_7d_later": 65974.07,
+        "date_checked": "2026-03-07",
+        "actual_direction": "higher",
+        "change_pct": 0.3,
+        "correct": false
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "I think that blocks in trouble because of the party, blocks in trouble because of the crypto downturn and because it's a lot harder to get people to use this stuff than people think. And I think that they're covering that up with this AI story. I think that it's what people want to believe.",
+      "episode": 484,
+      "date": "2026-02-28",
+      "result": {
+        "price_at_prediction": 65774.35,
+        "price_7d_later": 65974.07,
+        "date_checked": "2026-03-07",
+        "actual_direction": "higher",
+        "change_pct": 0.3,
+        "correct": true
+      }
+    },
+    {
+      "type": "opinion",
+      "speaker": "Unknown",
+      "direction": "higher",
+      "target": null,
+      "context": "We won't even know about it. I think the much larger issue is not just the Trump corruption, but the financial institutions corrupting our industry. Bitcoin was beautiful and pure.",
+      "episode": 484,
+      "date": "2026-02-28",
+      "result": {
+        "price_at_prediction": 65774.35,
+        "price_7d_later": 65974.07,
+        "date_checked": "2026-03-07",
+        "actual_direction": "higher",
+        "change_pct": 0.3,
+        "correct": true
+      }
+    },
+    {
+      "type": "magic_8_ball",
+      "speaker": "Magic 8 Ball",
+      "direction": "higher",
+      "context": "I think the Bitcoin is great. This gets me in a lot of trouble. But fortunately, I have the Magic 8 Ball to make all of my decisions for me and for you. Will the price of Bitcoin be higher this time next week? Here we go, shaking it may cause bubbles in the price and the ball.",
+      "episode": 485,
+      "date": "2026-03-07",
+      "result": null
+    },
+    {
+      "type": "magic_8_ball",
+      "speaker": "Magic 8 Ball",
+      "direction": "higher",
+      "context": "This gets me in a lot of trouble. But fortunately, I have the Magic 8 Ball to make all of my decisions for me and for you. Will the price of Bitcoin be higher this time next week? Here we go, shaking it may cause bubbles in the price and the ball. And it is too hard to see, balanced on its edge.",
+      "episode": 485,
+      "date": "2026-03-07",
+      "result": null
+    },
+    {
+      "type": "magic_8_ball",
+      "speaker": "Magic 8 Ball",
+      "direction": "higher",
+      "context": "And it is too hard to see, balanced on its edge. You can really see the dice. Without a doubt, without a doubt, the price of Bitcoin will be higher next week. So the Bitcoin price higher, that means that the war must be over soon as we can see here, the price continues to go down during this show br",
+      "episode": 485,
+      "date": "2026-03-07",
+      "result": null
+    }
+  ]
+}
