@@ -1,0 +1,192 @@
+{
+  "feeds": {
+    "CoinDesk": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+    "CoinTelegraph": "https://cointelegraph.com/rss",
+    "Bitcoin Magazine": "https://bitcoinmagazine.com/feed",
+    "The Block": "https://www.theblock.co/rss.xml",
+    "CryptoSlate": "https://cryptoslate.com/feed/",
+    "Bitcoin.com": "https://news.bitcoin.com/feed/",
+    "Decrypt": "https://decrypt.co/feed",
+    "TechCrunch": "https://techcrunch.com/feed/",
+    "Ars Technica": "https://feeds.arstechnica.com/arstechnica/index",
+    "The Verge": "https://www.theverge.com/rss/index.xml",
+    "Wired": "https://www.wired.com/feed/rss",
+    "MIT Tech Review": "https://www.technologyreview.com/feed/",
+    "BBC News": "https://feeds.bbci.co.uk/news/rss.xml",
+    "BBC World": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "Reuters": "https://www.reutersagency.com/feed/",
+    "AP News": "https://rsshub.app/apnews/topics/apf-topnews",
+    "The Guardian World": "https://www.theguardian.com/world/rss",
+    "The Guardian US": "https://www.theguardian.com/us-news/rss",
+    "NPR News": "https://feeds.npr.org/1001/rss.xml",
+    "Al Jazeera": "https://www.aljazeera.com/xml/rss/all.xml",
+    "NYT World": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "NYT US": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+    "NYT Politics": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+    "NYT Business": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "NYT Technology": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "CNBC": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+    "Bloomberg": "https://feeds.bloomberg.com/markets/news.rss",
+    "Fortune": "https://fortune.com/feed/",
+    "MarketWatch": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "Business Insider": "https://feeds.businessinsider.com/custom/all",
+    "Medical News Today": "https://www.medicalnewstoday.com/rss",
+    "WHO News": "https://www.who.int/rss-feeds/news-english.xml",
+    "NIH News": "https://www.nih.gov/news-events/news-releases/feed",
+    "Science Daily": "https://www.sciencedaily.com/rss/all.xml",
+    "Nature News": "https://www.nature.com/nature.rss",
+    "New Scientist": "https://www.newscientist.com/feed/home",
+    "ESPN": "https://www.espn.com/espn/rss/news",
+    "CBS Sports": "https://www.cbssports.com/rss/headlines/",
+    "Variety": "https://variety.com/feed/",
+    "Hollywood Reporter": "https://www.hollywoodreporter.com/feed/",
+    "Rolling Stone": "https://www.rollingstone.com/feed/"
+  },
+  "working": {
+    "CoinDesk": {
+      "feed_url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+      "article_count": 25
+    },
+    "CoinTelegraph": {
+      "feed_url": "https://cointelegraph.com/rss",
+      "article_count": 30
+    },
+    "Bitcoin Magazine": {
+      "feed_url": "https://bitcoinmagazine.com/feed",
+      "article_count": 10
+    },
+    "The Block": {
+      "feed_url": "https://www.theblock.co/rss.xml",
+      "article_count": 20
+    },
+    "CryptoSlate": {
+      "feed_url": "https://cryptoslate.com/feed/",
+      "article_count": 10
+    },
+    "Bitcoin.com": {
+      "feed_url": "https://news.bitcoin.com/feed/",
+      "article_count": 10
+    },
+    "Decrypt": {
+      "feed_url": "https://decrypt.co/feed",
+      "article_count": 38
+    },
+    "TechCrunch": {
+      "feed_url": "https://techcrunch.com/feed/",
+      "article_count": 20
+    },
+    "Ars Technica": {
+      "feed_url": "https://feeds.arstechnica.com/arstechnica/index",
+      "article_count": 20
+    },
+    "The Verge": {
+      "feed_url": "https://www.theverge.com/rss/index.xml",
+      "article_count": 10
+    },
+    "Wired": {
+      "feed_url": "https://www.wired.com/feed/rss",
+      "article_count": 41
+    },
+    "MIT Tech Review": {
+      "feed_url": "https://www.technologyreview.com/feed/",
+      "article_count": 10
+    },
+    "BBC News": {
+      "feed_url": "https://feeds.bbci.co.uk/news/rss.xml",
+      "article_count": 38
+    },
+    "BBC World": {
+      "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "article_count": 33
+    },
+    "The Guardian World": {
+      "feed_url": "https://www.theguardian.com/world/rss",
+      "article_count": 46
+    },
+    "The Guardian US": {
+      "feed_url": "https://www.theguardian.com/us-news/rss",
+      "article_count": 33
+    },
+    "Al Jazeera": {
+      "feed_url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "article_count": 25
+    },
+    "NYT World": {
+      "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+      "article_count": 59
+    },
+    "NYT US": {
+      "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+      "article_count": 27
+    },
+    "NYT Politics": {
+      "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+      "article_count": 21
+    },
+    "NYT Business": {
+      "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+      "article_count": 50
+    },
+    "NYT Technology": {
+      "feed_url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+      "article_count": 21
+    },
+    "CNBC": {
+      "feed_url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114",
+      "article_count": 31
+    },
+    "Bloomberg": {
+      "feed_url": "https://feeds.bloomberg.com/markets/news.rss",
+      "article_count": 31
+    },
+    "Fortune": {
+      "feed_url": "https://fortune.com/feed/",
+      "article_count": 10
+    },
+    "Business Insider": {
+      "feed_url": "https://feeds.businessinsider.com/custom/all",
+      "article_count": 20
+    },
+    "WHO News": {
+      "feed_url": "https://www.who.int/rss-feeds/news-english.xml",
+      "article_count": 25
+    },
+    "Science Daily": {
+      "feed_url": "https://www.sciencedaily.com/rss/all.xml",
+      "article_count": 61
+    },
+    "New Scientist": {
+      "feed_url": "https://www.newscientist.com/feed/home",
+      "article_count": 100
+    },
+    "ESPN": {
+      "feed_url": "https://www.espn.com/espn/rss/news",
+      "article_count": 46
+    },
+    "CBS Sports": {
+      "feed_url": "https://www.cbssports.com/rss/headlines/",
+      "article_count": 36
+    },
+    "Variety": {
+      "feed_url": "https://variety.com/feed/",
+      "article_count": 10
+    },
+    "Hollywood Reporter": {
+      "feed_url": "https://www.hollywoodreporter.com/feed/",
+      "article_count": 10
+    },
+    "Rolling Stone": {
+      "feed_url": "https://www.rollingstone.com/feed/",
+      "article_count": 10
+    }
+  },
+  "broken": [
+    "Reuters",
+    "AP News",
+    "NPR News",
+    "MarketWatch",
+    "Medical News Today",
+    "NIH News",
+    "Nature News"
+  ]
+}

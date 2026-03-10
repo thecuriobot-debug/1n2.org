@@ -1,0 +1,155 @@
+{
+  "AOL.com": {
+    "url": "https://www.aol.com",
+    "feeds": [
+      "https://www.aol.com/article/aol-pet-of-the-week-february-16-2026-remi-the-brindle-boxer-150334699.html",
+      "https://www.aol.com/article/aol-pet-of-the-week-february-9-2026-roxy-the-domestic-shorthair-cat-144745058.html",
+      "https://www.aol.com/articles/1-thing-eye-doctor-says-184056472.html"
+    ],
+    "count": 66
+  },
+  "TechBullion": {
+    "url": "https://techbullion.com",
+    "feeds": [
+      "https://techbullion.com/activecampaign-vs-brevo-vs-mailchimp-a-detailed-comparison-for-marketers/",
+      "https://techbullion.com/activecampaign-vs-brevo-vs-mailchimp-a-detailed-comparison-for-marketers/#comments",
+      "https://techbullion.com/best-crypto-presale-2026-traders-target-pepeto-for-100x-as-clarity-act-stalls-and-doge-and-avax-face-heavy-pullbacks/"
+    ],
+    "count": 26
+  },
+  "Meyka": {
+    "url": "https://meyka.com",
+    "feeds": [
+      "https://meyka.com/blog/0058hk-sunway-intl-4428-pre-market-hkse-10-mar-2026-volume-may-extend-gains-0903/",
+      "https://meyka.com/blog/1704-307-jpx-pre-market-10-mar-2026-gmo-product-platform-3695t-ai-view-0903/",
+      "https://meyka.com/blog/4745t-stock-pre-market-spike-jpy-446-tokyo-individualized-jpx-191x-relvol-0903/"
+    ],
+    "count": 25
+  },
+  "The New York Times": {
+    "url": "https://www.nytimes.com",
+    "feeds": [
+      "https://www.nytimes.com/2026/03/09/arts/kennedy-center-closing-reactions.html",
+      "https://www.nytimes.com/2026/03/09/arts/music/live-nation-ticketmaster-antitrust-suit-settled.html",
+      "https://www.nytimes.com/2026/03/09/arts/music/washington-national-opera-treemonisha.html"
+    ],
+    "count": 17
+  },
+  "CoinDesk": {
+    "url": "https://www.coindesk.com",
+    "feeds": [
+      "https://www.coindesk.com/business/2026/03/09/bithumb-faces-proposed-6-month-partial-ban-over-south-korea-aml-breaches",
+      "https://www.coindesk.com/business/2026/03/09/global-insurance-broker-aon-tests-stablecoin-payments-with-coinbase-paxos",
+      "https://www.coindesk.com/business/2026/03/09/josh-swihart-s-zcash-open-development-lab-raises-usd25-million-in-seed-funding"
+    ],
+    "count": 15
+  },
+  "The Guardian": {
+    "url": "https://www.theguardian.com",
+    "feeds": [
+      "https://www.theguardian.com/artanddesign/2026/mar/09/artist-24-nappies-sewage-pollution-zack-mennell",
+      "https://www.theguardian.com/artanddesign/2026/mar/09/venice-biennale-ukraine-exclude-russia",
+      "https://www.theguardian.com/books/2026/mar/06/doppelgangers-sinners-impersonator-conspiracy-theory-mar-a-lago-luxury-dupes-hogg-bronte-nabokov-spark"
+    ],
+    "count": 12
+  },
+  "TMAStreet.com": {
+    "url": "https://tmastreet.com",
+    "feeds": [
+      "https://tmastreet.com/bitcoin-price-today-btc-holds-68000-oil-shock-markets/",
+      "https://tmastreet.com/btc-holds-strong-near-68k-amid-oil-shock/",
+      "https://tmastreet.com/gold-price-today-oil-surge-inflation-pressure/"
+    ],
+    "count": 12
+  },
+  "Medical Dialogues": {
+    "url": "https://medicaldialogues.in",
+    "feeds": [
+      "https://medicaldialogues.in/anesthesia/news/not-just-procedure-patient-focused-predictors-for-icu-admission-after-cardiac-catheterization-finds-study-166134",
+      "https://medicaldialogues.in/cardiology-ctvs/news/microvascular-resistance-index-november-2025-ajc-study-reveals-new-prognostic-tool-for-heart-attack-patients-166056",
+      "https://medicaldialogues.in/critical-care/news/precision-immunotherapy-improves-organ-dysfunction-in-sepsis-study-166067"
+    ],
+    "count": 10
+  },
+  "Fortune": {
+    "url": "https://fortune.com",
+    "feeds": [
+      "https://fortune.com/2026/03/08/is-space-x-profitable-ipo-stock-date-earnings-outlook/",
+      "https://fortune.com/2026/03/08/taylor-swift-disney-world-restaurant-reservations-hidden-market-wharton/",
+      "https://fortune.com/2026/03/09/ai-layoffs-unemployment-insurance-benefits-systems-bls/"
+    ],
+    "count": 7
+  },
+  "CryptoTicker": {
+    "url": "https://cryptoticker.io",
+    "feeds": [
+      "https://cryptoticker.io/de/",
+      "https://cryptoticker.io/de/5-kryptowahrungen-grossten-verlusten-iran-krieges/",
+      "https://cryptoticker.io/de/altcoin-season-index-analyse-pippin-rallye/"
+    ],
+    "count": 7
+  },
+  "Stock Titan": {
+    "url": "https://www.stocktitan.net",
+    "feeds": [
+      "https://www.stocktitan.net/news/AAUC/allied-gold-announces-filing-and-mailing-of-management-information-ok0m8y9x5ucp.html",
+      "https://www.stocktitan.net/news/ADM/adm-appoints-michael-mc-murray-to-its-board-of-z6qs4poj65cl.html",
+      "https://www.stocktitan.net/news/AMPY/amplify-energy-announces-strategic-initiatives-update-year-end-2025-dbrbzrelq2k0.html"
+    ],
+    "count": 6
+  },
+  "Bitcoin.com News": {
+    "url": "https://news.bitcoin.com",
+    "feeds": [
+      "https://news.bitcoin.com/bhutan-executes-11-85m-bitcoin-transfer-as-royal-government-repositions-btc-holdings/",
+      "https://news.bitcoin.com/bitcoin-defies-market-rout-price-rebounds-to-69k-as-20-millionth-coin-is-mined/",
+      "https://news.bitcoin.com/bitcoin-gets-its-own-fear-gauge-as-cboe-announces-bitvx-index/"
+    ],
+    "count": 6
+  },
+  "CoinCentral": {
+    "url": "https://coincentral.com",
+    "feeds": [
+      "https://coincentral.com/anthropic-sues-pentagon-and-federal-agencies-over-ai-blacklisting/",
+      "https://coincentral.com/blockdag-launch-sparks-massive-demand-as-market-makers-predict-rise-to-0-50/",
+      "https://coincentral.com/blockdag-news-us-judge-freezes-customer-assets-at-crypto-lending-firm-as-deepsnitch-ai-prepares-for-a-massive-rally-before-its-march-31st-launch/"
+    ],
+    "count": 6
+  },
+  "Bitcoin Sistemi": {
+    "url": "https://en.bitcoinsistemi.com",
+    "feeds": [
+      "https://en.bitcoinsistemi.com/another-important-milestone-for-the-cryptocurrency-ecosystem-passed-the-20-millionth-btc-successfull/",
+      "https://en.bitcoinsistemi.com/arthur-hayes-assesses-the-impact-of-a-us-iran-war-on-bitcoin-btc-and-the-crypto-market-we-re-in-a-no/",
+      "https://en.bitcoinsistemi.com/bhutan-which-has-been-quietly-accumulating-bitcoin-btc-through-mining-for-a-long-time-sold-btc/"
+    ],
+    "count": 5
+  },
+  "CryptoSlate": {
+    "url": "https://cryptoslate.com",
+    "feeds": [
+      "https://cryptoslate.com/161000-us-jobs-just-disappeared-after-a-revision-as-bitcoin-navigates-messy-macro-data/",
+      "https://cryptoslate.com/are-us-stablecoins-just-cbdcs-in-disguise-look-closely-and-the-differences-start-to-blur/",
+      "https://cryptoslate.com/bitcoin-signals-economic-concerns-amid-oil-prices-rising/"
+    ],
+    "count": 5
+  },
+  "CoinGape": {
+    "url": "https://coingape.com",
+    "feeds": [
+      "https://coingape.com/analyst-predicts-bitcoin-price-dip-to-55k-as-etfs-see-outflows-amid-middle-east-tensions/",
+      "https://coingape.com/analyst-predicts-xrp-price-could-fall-to-1-as-xrp-etfs-record-net-weekly-outflows/",
+      "https://coingape.com/bhutan-dumps-more-bitcoin-as-btc-price-climbs-amid-falling-oil-prices/"
+    ],
+    "count": 4
+  },
+  "Travel And Tour World": {
+    "url": "https://www.travelandtourworld.com",
+    "feeds": [
+      "https://www.travelandtourworld.com/news/article/adora-cruises-sea-film-festival-a-cinematic-voyage-like-no-other-in-2026/",
+      "https://www.travelandtourworld.com/news/article/airlines-in-the-middle-east-and-asia-pause-aircraft-orders-amid-uncertainty-caused-by-iran-war-and-soaring-fuel-prices/",
+      "https://www.travelandtourworld.com/news/article/explore-the-flavors-of-grenada-the-ultimate-island-escape-for-2026-spices-adventure-and-culture-await/"
+    ],
+    "count": 3
+  }
+}
