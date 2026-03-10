@@ -135,6 +135,22 @@ async function loadContent(){
         // Deduplicate articles by title
         const seen=new Set();const items=s.querySelectorAll('.it');let removed=0;
         items.forEach(it=>{const link=it.querySelector('.il');if(!link)return;const key=link.textContent.trim().toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,60);if(seen.has(key)){it.remove();removed++;}else{seen.add(key);}});
+        // Reformat: show summary with link to reader page
+        s.querySelectorAll('.it').forEach(it=>{
+          const link=it.querySelector('.il');const sum=it.querySelector('.art-sum');const sr=it.querySelector('.sr');
+          if(!link)return;
+          const href=link.getAttribute('href');const title=link.textContent.trim();const source=sr?sr.textContent.trim():'';
+          let sumText=sum?sum.textContent.trim():'';
+          // Clean junk from summaries
+          sumText=sumText.replace(/!\[.*?\]\(.*?\)/g,'').replace(/!\[[^\]]*$/,'').replace(/^[\-–]\s*/,'').replace(/^!\[.*/, '').trim();
+          if(sumText.length<20)sumText=title;
+          // Truncate long summaries
+          if(sumText.length>180)sumText=sumText.slice(0,180).replace(/\s\S*$/,'')+'…';
+          const inner=it.querySelector('div')||it;
+          inner.innerHTML='<div style="font-size:.84rem;line-height:1.4;margin-bottom:.15rem">'+sumText+'</div>'+
+            '<div style="font-size:.7rem"><a href="'+href+'" class="il" style="font-weight:600">'+title.slice(0,60)+(title.length>60?'…':'')+'</a>'+
+            (source?' <span class="sr">'+source+'</span>':'')+'</div>';
+        });
         // Update story count
         const remaining=s.querySelectorAll('.it').length;const sh=s.querySelector('.sh');if(sh){const m=sh.textContent.match(/\(\d+/);if(m)sh.textContent=sh.textContent.replace(m[0],'('+remaining);}
         col1.push(s.outerHTML);
