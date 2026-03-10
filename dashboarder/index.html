@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboarder</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:15px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:10px 20px;background:rgba(17,24,39,.9);backdrop-filter:blur(10px);display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--accent)}
+#clock{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);margin-left:auto}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 20px;background:var(--card)}
+.tab{padding:9px 18px;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab:hover{color:var(--text)}.tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+.panel{display:none;padding:16px 20px;max-width:1400px;margin:0 auto}.panel.on{display:block}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;overflow:hidden}
+.sh{padding:10px 14px;font-weight:600;font-size:.95rem;cursor:pointer;color:var(--accent);border-bottom:1px solid var(--border)}
+.sh:hover{background:rgba(34,211,238,.04)}.sb{padding:0 14px 10px}
+.sec.cl .sb{display:none}.sec.cl .sh{border:none}
+.tp{font-size:.78rem;color:var(--muted);padding:7px 0 2px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.it{padding:4px 0;font-size:.88rem;border-bottom:1px solid rgba(30,41,59,.3)}.it:last-child{border:none}
+.it a{color:var(--text)}.it a:hover{color:var(--accent)}
+.it .sr{color:var(--muted);font-size:.72rem;float:right}
+.it b{color:var(--text)}.win{color:var(--green)}.loss{color:var(--red)}
+.art div{white-space:normal;word-break:break-word}.il{color:var(--text)}
+/* Crypto inline */
+.crypto-row{display:flex;gap:16px;flex-wrap:wrap;padding:4px 0}
+.crypto-item{font-size:.85rem}.crypto-item b{color:var(--accent)}.crypto-item .chg{font-size:.75rem}
+.chg.dn{color:var(--red)}.chg.up{color:var(--green)}
+/* Sports compact */
+.sport-active{padding:3px 0;font-size:.85rem;border-bottom:1px solid rgba(30,41,59,.3)}
+.sport-group{font-size:.75rem;color:var(--muted);padding:4px 0 1px;display:flex;gap:10px;flex-wrap:wrap}
+.sport-group span{font-size:.82rem;color:var(--text)}
+/* Weather inline */
+.wx-row{display:flex;gap:16px;flex-wrap:wrap;padding:2px 0}
+.wx-item{font-size:.82rem}.wx-item b{color:var(--accent)}
+/* Layouts */
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.cols2,.cols3{grid-template-columns:1fr}}
+@media(max-width:1100px){.cols3{grid-template-columns:1fr 1fr}}
+.ft{text-align:center;color:var(--muted);font-size:.65rem;padding:14px;border-top:1px solid var(--border);margin-top:10px}
+.ft a{color:var(--accent)}
+/* Media */
+.mi{display:flex;justify-content:space-between;padding:3px 0;font-size:.82rem;border-bottom:1px solid rgba(30,41,59,.25)}.mi:last-child{border:none}
+.mi span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stars{color:var(--amber)}
+.bar-row{display:flex;align-items:center;gap:5px;font-size:.72rem;padding:1px 0}
+.bar-row .lbl{width:105px;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bar{height:12px;border-radius:2px;min-width:2px}.bar-row .ct{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--accent);width:24px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px 0}
+.sc{text-align:center;padding:6px;background:rgba(34,211,238,.04);border-radius:4px}
+.sc .n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--accent)}
+.sc .l{font-size:.65rem;color:var(--muted)}
+/* Comments */
+.cc{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:9px;break-inside:avoid;margin-bottom:8px}
+.cc .a{font-weight:700;font-size:.78rem;color:var(--accent)}
+.cc .t{font-size:.78rem;margin:2px 0;line-height:1.3;word-break:break-word;overflow-wrap:break-word}
+.cc .m{font-size:.67rem;color:var(--muted)}.cc .m a{word-break:break-all}
+.cw{column-count:3;column-gap:10px}
+@media(max-width:900px){.cw{column-count:1}}@media(max-width:1100px){.cw{column-count:2}}
+</style>
+</head>
+<body>
+<header><h1>Dashboarder</h1><div id="clock"></div></header>
+<div class="tabs">
+<div class="tab on" onclick="sw('briefing',this)">📰 Briefing</div>
+<div class="tab" onclick="sw('personal',this)">👤 Personal</div>
+<div class="tab" onclick="sw('media',this)">🎬 Media</div>
+<div class="tab" onclick="sw('comments',this)">💬 Comments</div>
+<div class="tab" onclick="sw('theater',this)">🎭 London Theater</div>
+<div class="tab" onclick="sw('museums',this)">🏛 Museums</div>
+</div>
+<div id="briefing" class="panel on"><div id="bc">Loading...</div></div>
+<div id="personal" class="panel"><div id="pc">Loading...</div></div>
+<div id="media" class="panel"><div id="mc">Loading...</div></div>
+<div id="comments" class="panel"><div id="cc"></div></div>
+<div id="theater" class="panel"><div id="tc">Loading theater data...</div></div>
+<div id="museums" class="panel"><div id="musc">Loading museums...</div></div>
+<div class="ft"><a href="/">1n2.org</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/thunt-wiki/">MadWikipedia</a> · <a href="/health/">Health</a></div>
+<script>
+function ck(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}ck();setInterval(ck,30000);
+function sw(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.getElementById(id).classList.add('on');el.classList.add('on');if(id==='media'&&!window._ml)loadMedia();if(id==='comments'&&!window._cl)loadComments();if(id==='theater'&&!window._tl)loadTheater();if(id==='museums'&&!window._mul)loadMuseums();}
+function t(el){el.parentElement.classList.toggle('cl')}
+function stars(r){if(!r)return'';return'<span class="stars">'+'★'.repeat(Math.floor(r))+(r%1>=.5?'½':'')+'</span>';}
+
+async function loadTweets(){
+  try{const r=await fetch('data/tweets.json');const tw=await r.json();
+    const el=document.getElementById('tweet-feed');if(!el)return;
+    let h='';tw.slice(0,20).forEach(t=>{
+      h+='<div style="padding:5px 0;border-bottom:1px solid rgba(30,41,59,.3);font-size:.82rem">';
+      h+='<b style="color:var(--accent)">@'+t.username+'</b> <span style="color:var(--muted);font-size:.7rem">'+t.date+'</span><br>';
+      h+=t.text.substring(0,180)+(t.text.length>180?'...':'');
+      if(t.likes)h+=' <span style="color:var(--muted);font-size:.7rem">♥'+t.likes+'</span>';
+      h+='</div>';});
+    el.innerHTML=h;
+  }catch(e){const el=document.getElementById('tweet-feed');if(el)el.textContent='Could not load tweets';}
+}
+
+async function loadContent(){
+  try{const r=await fetch('home-content.html');const html=await r.text();
+    const doc=new DOMParser().parseFromString(html,'text/html');
+    const secs=doc.querySelectorAll('.sec');
+    const col1=[],col2=[],pers1=[],pers2=[];let cityNews=null;
+    const pKeys=['About Me','Twitter','Reading','YouTube'];
+    secs.forEach(s=>{
+      const title=s.querySelector('.sh')?.textContent||'';
+      // Crypto: inline
+      if(title.includes('Crypto')){const sb=s.querySelector('.sb');
+        if(sb){const txt=sb.textContent;const btc=txt.match(/Bitcoin\s*\n?\s*\$([\d,]+)\s*\n?\s*([\-\d.]+%)/);const eth=txt.match(/Ethereum\s*\n?\s*\$([\d,]+)\s*\n?\s*([\-\d.]+%)/);const cc=txt.match(/Curio Cards\s*\n?\s*([\d.]+)\s*ETH/);
+        let h='<div class="crypto-row">';
+        if(btc)h+='<div class="crypto-item"><b>BTC</b> $'+btc[1]+' <span class="chg '+(btc[2].startsWith('-')?'dn':'up')+'">'+btc[2]+'</span></div>';
+        if(eth)h+='<div class="crypto-item"><b>ETH</b> $'+eth[1]+' <span class="chg '+(eth[2].startsWith('-')?'dn':'up')+'">'+eth[2]+'</span></div>';
+        if(cc)h+='<div class="crypto-item"><b>Curio</b> '+cc[1]+' ETH</div>';
+        h+='</div>';const links=sb.innerHTML.match(/<a[^>]*>.*?<\/a>/g);if(links)h+='<div style="padding-top:4px;font-size:.75rem">'+links.join(' · ')+'</div>';sb.innerHTML=h;}
+        col2.push(s.outerHTML);return;}
+      // Sports: compact
+      if(title.includes('Sports')){const items=s.querySelectorAll('.it');let active='',off=[];
+        items.forEach(it=>{const txt=it.textContent;if(txt.includes('Offseason')||txt.includes('Spring Training')){const name=it.querySelector('b')?.textContent||'';off.push('<span><b>'+name+'</b> '+(txt.includes('Offseason')?'Off':'Spring')+'</span>');}else{active+=it.outerHTML;}});
+        const sb=s.querySelector('.sb');if(sb)sb.innerHTML=active+(off.length?'<div class="sport-group">'+off.join('')+'</div>':'');col2.push(s.outerHTML);return;}
+      // Weather: inline
+      if(title.includes('Weather')){const wxs=s.querySelectorAll('.wx');let h='<div class="wx-row">';wxs.forEach(w=>{h+='<div class="wx-item"><b>'+(w.querySelector('.wx-city')?.textContent||'')+'</b> '+(w.querySelector('.wx-now')?.textContent||'')+'</div>';});h+='</div>';const sb=s.querySelector('.sb');if(sb)sb.innerHTML=h;col2.push(s.outerHTML);return;}
+      // Twitter: replace with live feed
+      if(title.includes('Twitter')){const sb=s.querySelector('.sb');if(sb)sb.innerHTML='<div id="tweet-feed">Loading tweets...</div>';pers1.push(s.outerHTML);loadTweets();return;}
+      if(title.includes('About Me')){pers1.push(s.outerHTML);return;}
+      if(title.includes('Reading')||title.includes('YouTube')){pers2.push(s.outerHTML);return;}
+      if(title.includes('Headlines')){
+        // Remove unwanted topic sections: Bitcoin, Crypto, Ethereum, Culture
+        const removeTops=['Bitcoin','Crypto','Ethereum','Culture'];
+        const tps=s.querySelectorAll('.tp');
+        tps.forEach(tp=>{const txt=tp.textContent;if(removeTops.some(r=>txt.includes(r))){let sib=tp.nextElementSibling;while(sib&&!sib.classList.contains('tp')){const next=sib.nextElementSibling;sib.remove();sib=next;}tp.remove();}});
+        // Deduplicate articles by title
+        const seen=new Set();const items=s.querySelectorAll('.it');let removed=0;
+        items.forEach(it=>{const link=it.querySelector('.il');if(!link)return;const key=link.textContent.trim().toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,60);if(seen.has(key)){it.remove();removed++;}else{seen.add(key);}});
+        // Update story count
+        const remaining=s.querySelectorAll('.it').length;const sh=s.querySelector('.sh');if(sh){const m=sh.textContent.match(/\(\d+/);if(m)sh.textContent=sh.textContent.replace(m[0],'('+remaining);}
+        col1.push(s.outerHTML);
+      }
+      else if(title.includes('City News')){cityNews=s.outerHTML;}
+      else col2.push(s.outerHTML);
+    });
+    if(cityNews)col2.push(cityNews);
+    document.getElementById('bc').innerHTML='<div class="cols2"><div>'+col1.join('')+'</div><div>'+col2.join('')+'</div></div>';
+    document.getElementById('pc').innerHTML='<div class="cols2"><div>'+pers1.join('')+'</div><div>'+pers2.join('')+'</div></div>';
+    document.querySelectorAll('.sh').forEach(el=>el.setAttribute('onclick','t(this)'));
+  }catch(e){document.getElementById('bc').textContent='Could not load';}
+}
+loadContent();
+
+// MEDIA — 3 cols: Col1=Movies+Ratings+Decades, Col2=TopDirs+TopMovies+TopBooks, Col3=TopWriters+Books
+async function loadMedia(){window._ml=true;
+  try{const r=await fetch('data/media.json');const d=await r.json();
+    let h='<div class="cols3">';
+    // COL 1: Recent Movies + Rating Distribution (5→1) + Decades
+    h+='<div><div class="sec"><div class="sh">🎬 Recent Movies</div><div class="sb">';
+    h+='<div class="sg"><div class="sc"><div class="n">'+d.stats.total_movies.toLocaleString()+'</div><div class="l">Movies</div></div>';
+    h+='<div class="sc"><div class="n">'+d.stats.avg_rating+'</div><div class="l">Avg ★</div></div></div>';
+    d.recent_movies.forEach(m=>{h+='<div class="mi"><span>'+m.title+(m.year?' ('+m.year+')':'')+'</span><span>'+stars(m.rating)+'</span></div>';});
+    h+='</div></div>';
+    // Rating distribution inverted 5→1
+    h+='<div class="sec"><div class="sh">📊 Rating Distribution</div><div class="sb">';
+    const bins=[0,0,0,0,0,0];const seen=new Set();
+    [...d.recent_movies,...d.top_movies].forEach(m=>{if(m.rating&&!seen.has(m.title)){seen.add(m.title);bins[Math.min(5,Math.floor(m.rating))]++;}});
+    const bmx=Math.max(...bins);
+    for(let i=5;i>=1;i--){if(bins[i])h+='<div class="bar-row"><div class="lbl">'+i+'★</div><div class="bar" style="width:'+Math.round(bins[i]/bmx*90)+'px;background:'+(i>=4?'var(--green)':i>=3?'var(--amber)':'var(--red)')+'"></div><div class="ct">'+bins[i]+'</div></div>';}
+    h+='</div></div>';
+    // Decades
+    const decades={};const seenD=new Set();
+    [...d.recent_movies,...d.top_movies].forEach(m=>{if(m.year&&!seenD.has(m.title)){seenD.add(m.title);const dk=Math.floor(m.year/10)*10;decades[dk]=(decades[dk]||0)+1;}});
+    const dkeys=Object.keys(decades).sort();
+    if(dkeys.length>1){const decMx=Math.max(...Object.values(decades));
+      h+='<div class="sec"><div class="sh">📅 Movies by Decade</div><div class="sb">';
+      dkeys.forEach(dk=>{h+='<div class="bar-row"><div class="lbl">'+dk+'s</div><div class="bar" style="width:'+Math.round(decades[dk]/decMx*80)+'px;background:var(--amber)"></div><div class="ct">'+decades[dk]+'</div></div>';});
+      h+='</div></div>';}
+    h+='</div>';
+    // COL 2: Top Directors (FIRST) + Top Rated Movies + Top Rated Books
+    h+='<div>';
+    h+='<div class="sec"><div class="sh">🎬 Top Directors</div><div class="sb">';
+    if(d.top_directors&&d.top_directors.length>0){
+      const dmx=Math.max(...d.top_directors.map(x=>x.count));
+      d.top_directors.forEach(x=>{h+='<div class="bar-row"><div class="lbl">'+x.name+'</div><div class="bar" style="width:'+Math.round(x.count/dmx*90)+'px;background:var(--accent)"></div><div class="ct">'+x.count+'</div></div>';});
+    }else{h+='<div style="color:var(--muted);font-size:.8rem">No director data</div>';}
+    h+='</div></div>';
+    h+='<div class="sec"><div class="sh">⭐ Top Rated Movies</div><div class="sb">';
+    d.top_movies.forEach(m=>{h+='<div class="mi"><span>'+m.title+(m.year?' ('+m.year+')':'')+'</span><span>'+stars(m.rating)+'</span></div>';});
+    h+='</div></div>';
+    if(d.top_books&&d.top_books.length>0){
+      h+='<div class="sec"><div class="sh">⭐ Top Rated Books</div><div class="sb">';
+      d.top_books.forEach(b=>{h+='<div class="mi"><span>'+b.title+'</span><span>'+stars(b.rating)+'</span></div>';});
+      h+='</div></div>';}
+    h+='</div>';
+    // COL 3: Top Writers + Recent Books (compact like movies)
+    h+='<div>';
+    if(d.top_authors&&d.top_authors.length>0){
+      h+='<div class="sec"><div class="sh">✍️ Top Writers</div><div class="sb">';
+      const amx=Math.max(...d.top_authors.map(a=>a.count));
+      d.top_authors.forEach(a=>{h+='<div class="bar-row"><div class="lbl">'+a.name+'</div><div class="bar" style="width:'+Math.round(a.count/amx*90)+'px;background:var(--green)"></div><div class="ct">'+a.count+'</div></div>';});
+      h+='</div></div>';}
+    h+='<div class="sec"><div class="sh">📚 Recent Books <span style="font-weight:400;font-size:.7rem;color:var(--muted)">('+d.stats.total_books+' total)</span></div><div class="sb">';
+    d.recent_books.forEach(b=>{h+='<div class="mi"><span>'+b.title+'</span><span>'+stars(b.rating)+'</span></div>';});
+    h+='</div></div></div></div>';
+    document.getElementById('mc').innerHTML=h;
+  }catch(e){document.getElementById('mc').textContent='Could not load media: '+e;}
+}
+
+// Comments — reverse chronological
+async function loadComments(){window._cl=true;
+  try{const r=await fetch('data/comments.json');let c=await r.json();
+    c.sort((a,b)=>(b.published_at||b.date||'').localeCompare(a.published_at||a.date||''));
+    c=c.slice(0,60);let h='<div class="cw">';
+    c.forEach(x=>{const url='https://youtube.com/watch?v='+(x.video_id||'');
+      const txt=(x.text||'').substring(0,200).replace(/https?:\/\/\S+/g,u=>'<span style="word-break:break-all;font-size:.65rem">'+u+'</span>');
+      h+='<div class="cc"><div class="a">'+(x.author||'Anon')+'</div><div class="t">'+txt+'</div><div class="m">'+(x.published_at?x.published_at.substring(0,10)+' · ':'')+
+        '<a href="'+url+'" target="_blank">📺 '+(x.video_title||'').substring(0,30)+'</a>'+(x.likes?' · 👍'+x.likes:'')+'</div></div>';});
+    h+='</div>';document.getElementById('cc').innerHTML=h;
+  }catch(e){document.getElementById('cc').textContent='Could not load';}
+}
+// London Theater Tracker
+async function loadTheater(){window._tl=true;
+  try{const r=await fetch('data/london-theater.json');const shows=await r.json();
+    const BASE={lat:51.5120,lng:-0.1233};
+    const now=new Date();
+    function dist(s){const R=6371000;const dLat=(s.lat-BASE.lat)*Math.PI/180;const dLng=(s.lng-BASE.lng)*Math.PI/180;
+      const a=Math.sin(dLat/2)**2+Math.cos(BASE.lat*Math.PI/180)*Math.cos(s.lat*Math.PI/180)*Math.sin(dLng/2)**2;
+      return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
+    shows.forEach(s=>{s.distance=Math.round(dist(s));s.dist_min=Math.round(s.distance/80);
+      if(s.end_date){s.days_left=Math.round((new Date(s.end_date)-now)/86400000);}});
+    // Split Globe vs West End
+    const globe=shows.filter(s=>s.globe);
+    const westend=shows.filter(s=>!s.globe);
+    const running=westend.filter(s=>s.status==='running'||s.status==='closing_soon');
+    const upcoming=westend.filter(s=>s.status==='upcoming');
+    const closing=running.filter(s=>s.end_date).sort((a,b)=>a.end_date.localeCompare(b.end_date));
+    const byTheater={};running.forEach(s=>{if(!byTheater[s.theater])byTheater[s.theater]=[];byTheater[s.theater].push(s);});
+    function starH(r){if(!r)return'<span style="color:var(--muted)">—</span>';return'<span class="stars">'+'★'.repeat(Math.floor(r))+(r%1>=.25?'½':'')+'</span>';}
+    function priceH(s){return'<span style="color:var(--green)">£'+s.price_low+'</span>–<span style="color:var(--amber)">£'+s.price_high+'</span>';}
+    let h='<div class="cols2">';
+    // COL 1: West End Running + Globe Theatre
+    h+='<div>';
+    h+='<div class="sec"><div class="sh">🎭 West End — Currently Running ('+running.length+')</div><div class="sb">';
+    h+='<div style="font-size:.68rem;color:var(--muted);padding:3px 0">Sorted by distance from Covent Garden Travelodge</div>';
+    running.sort((a,b)=>a.distance-b.distance).forEach(s=>{
+      const badge=s.status==='closing_soon'?'<span style="color:var(--red);font-size:.65rem"> CLOSING SOON</span>':'';
+      h+='<div style="padding:4px 0;border-bottom:1px solid rgba(30,41,59,.3);font-size:.82rem">';
+      h+='<div style="display:flex;justify-content:space-between"><b>'+s.name+'</b>'+starH(s.rating)+'</div>';
+      h+='<div style="font-size:.7rem;color:var(--muted)">'+s.theater+' · '+s.dist_min+'min · '+priceH(s)+' · <span style="color:var(--accent)">'+s.genre+'</span>'+badge+'</div>';
+      if(s.end_date)h+='<div style="font-size:.66rem;color:var(--muted)">Until '+s.end_date+(s.days_left<60?' <span style="color:var(--red)">('+s.days_left+'d left)</span>':'')+'</div>';
+      h+='</div>';});
+    h+='</div></div>';
+    // GLOBE THEATRE SECTION
+    const globeNow=globe.filter(s=>s.status==='running'||s.status==='closing_soon');
+    const globeUp=globe.filter(s=>s.status==='upcoming');
+    const globeClosing=globeNow.filter(s=>s.end_date).sort((a,b)=>a.end_date.localeCompare(b.end_date));
+    h+='<div class="sec"><div class="sh" style="color:var(--amber)">🌍 Shakespeare\'s Globe — 2026 Season</div><div class="sb">';
+    h+='<div style="font-size:.68rem;color:var(--muted);padding:2px 0">'+globe[0].dist_min+'min walk from Travelodge · Groundling tickets from £5</div>';
+    if(globeNow.length){
+      h+='<div style="font-size:.72rem;color:var(--green);font-weight:600;padding:6px 0 2px">▶ NOW PLAYING</div>';
+      globeNow.forEach(s=>{
+        h+='<div style="padding:3px 0;border-bottom:1px solid rgba(30,41,59,.25);font-size:.82rem">';
+        h+='<div style="display:flex;justify-content:space-between"><b>'+s.name+'</b>'+starH(s.rating)+'</div>';
+        h+='<div style="font-size:.7rem;color:var(--muted)">'+s.theater+' · '+priceH(s)+' · <span style="color:var(--accent)">'+s.genre+'</span></div>';
+        if(s.end_date)h+='<div style="font-size:.66rem;color:'+(s.days_left<45?'var(--red)':'var(--muted)')+'">Until '+s.end_date+' ('+s.days_left+'d left)'+(s.days_left<45?' ⚠ CLOSING SOON':'')+'</div>';
+        if(s.note)h+='<div style="font-size:.66rem;color:var(--muted);font-style:italic">'+s.note+'</div>';
+        h+='</div>';});}
+    if(globeUp.length){
+      h+='<div style="font-size:.72rem;color:var(--amber);font-weight:600;padding:6px 0 2px">🔜 COMING SOON</div>';
+      globeUp.forEach(s=>{
+        h+='<div style="padding:3px 0;border-bottom:1px solid rgba(30,41,59,.25);font-size:.82rem">';
+        h+='<b>'+s.name+'</b> <span style="font-size:.7rem;color:var(--muted)">'+priceH(s)+' · '+s.genre+'</span>';
+        if(s.end_date)h+='<div style="font-size:.66rem;color:var(--muted)">'+s.theater+' · Until '+s.end_date+'</div>';
+        if(s.note)h+='<div style="font-size:.66rem;color:var(--muted);font-style:italic">'+s.note+'</div>';
+        h+='</div>';});}
+    h+='</div></div>';
+    h+='</div>';
+    // COL 2: Closing Timeline + Upcoming West End + By Theater
+    h+='<div>';
+    h+='<div class="sec"><div class="sh">⏰ Closing Timeline</div><div class="sb">';
+    const allClosing=[...closing,...globeClosing].sort((a,b)=>(a.end_date||'').localeCompare(b.end_date||''));
+    allClosing.forEach(s=>{
+      const days=s.days_left||Math.round((new Date(s.end_date)-now)/86400000);
+      const urgency=days<30?'var(--red)':days<90?'var(--amber)':'var(--green)';
+      const icon=s.globe?'🌍 ':'';
+      h+='<div style="padding:3px 0;font-size:.78rem;border-bottom:1px solid rgba(30,41,59,.25)"><span style="color:'+urgency+';font-weight:700;font-family:JetBrains Mono,monospace;font-size:.7rem">'+s.end_date+'</span> '+icon+'<b>'+s.name+'</b> <span style="color:var(--muted);font-size:.66rem">('+days+'d)</span></div>';});
+    h+='</div></div>';
+    if(upcoming.length){
+      h+='<div class="sec"><div class="sh">🔜 Coming Soon — West End ('+upcoming.length+')</div><div class="sb">';
+      upcoming.forEach(s=>{h+='<div style="padding:3px 0;font-size:.78rem;border-bottom:1px solid rgba(30,41,59,.25)"><b>'+s.name+'</b> <span style="color:var(--muted);font-size:.7rem">'+s.theater+' · '+priceH(s)+' · '+s.genre+'</span></div>';});
+      h+='</div></div>';}
+    h+='<div class="sec"><div class="sh">🏛 By Theater</div><div class="sb">';
+    Object.entries(byTheater).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([theater,tshows])=>{
+      h+='<div style="padding:2px 0;font-size:.76rem;border-bottom:1px solid rgba(30,41,59,.2)"><span style="color:var(--accent)">'+theater+'</span> <span style="color:var(--muted);font-size:.66rem">('+tshows[0].dist_min+'min)</span>: '+tshows.map(s=>s.name).join(', ')+'</div>';});
+    h+='</div></div>';
+    h+='</div></div>';
+    document.getElementById('tc').innerHTML=h;
+  }catch(e){document.getElementById('tc').textContent='Could not load: '+e;}
+}
+// Museums
+async function loadMuseums(){window._mul=true;
+  try{const r=await fetch('data/museums.json');const exh=await r.json();
+    const now=new Date();const today=now.toISOString().slice(0,10);
+    exh.forEach(e=>{
+      if(e.end){const d=Math.round((new Date(e.end)-now)/86400000);e.days_left=d;e.closing_soon=d<60;}
+      else{e.days_left=null;e.closing_soon=false;}
+      e.is_current=(!e.start||e.start<=today)&&(!e.end||e.end>=today);
+      e.is_upcoming=e.start&&e.start>today;
+      e.is_new_museum=e.type==='New Museum'||e.type==='Opening Exhibition';
+    });
+    const current=exh.filter(e=>e.is_current&&!e.is_new_museum);
+    const upcoming=exh.filter(e=>e.is_upcoming&&!e.is_new_museum);
+    const closing=current.filter(e=>e.end).sort((a,b)=>a.days_left-b.days_left);
+    const newMuseums=exh.filter(e=>e.is_new_museum);
+    const cities={};current.concat(upcoming).forEach(e=>{if(!cities[e.city])cities[e.city]=[];cities[e.city].push(e);});
+    let h='<div class="cols2">';
+    // COL 1: Current exhibitions by city
+    h+='<div>';
+    for(const[city,shows] of Object.entries(cities).sort()){
+      h+='<div class="sec"><div class="sh">🏛 '+city+' ('+shows.length+' exhibitions)</div><div class="sb">';
+      const byMuseum={};shows.forEach(s=>{if(!byMuseum[s.museum])byMuseum[s.museum]=[];byMuseum[s.museum].push(s);});
+      for(const[museum,ms] of Object.entries(byMuseum)){
+        h+='<div style="padding:4px 0;font-size:.72rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.3px;border-bottom:1px solid rgba(30,41,59,.2)">'+museum+'</div>';
+        ms.forEach(e=>{
+          const badge=e.closing_soon?'<span style="color:var(--red);font-size:.65rem;font-weight:700"> ⚠ '+e.days_left+'d left</span>':'';
+          const upcoming=e.is_upcoming?'<span style="color:var(--amber);font-size:.65rem"> UPCOMING</span>':'';
+          h+='<div style="padding:4px 0;border-bottom:1px solid rgba(30,41,59,.2);font-size:.82rem">';
+          h+='<div><b>'+e.exhibition+'</b>'+badge+upcoming+'</div>';
+          h+='<div style="font-size:.7rem;color:var(--muted)">'+e.type+' · '+e.price+(e.start?' · '+(e.start||'')+' → '+(e.end||'ongoing'):'')+'</div>';
+          if(e.note)h+='<div style="font-size:.68rem;color:var(--muted);font-style:italic">'+e.note+'</div>';
+          h+='</div>';});
+      }
+      h+='</div></div>';
+    }
+    h+='</div>';
+    // COL 2: Closing soon + New museums + Museum news
+    h+='<div>';
+    h+='<div class="sec"><div class="sh">⏰ Closing Soon</div><div class="sb">';
+    closing.slice(0,12).forEach(e=>{
+      const urgency=e.days_left<30?'var(--red)':e.days_left<60?'var(--amber)':'var(--green)';
+      h+='<div style="padding:3px 0;font-size:.8rem;border-bottom:1px solid rgba(30,41,59,.2)"><span style="color:'+urgency+';font-weight:700;font-family:JetBrains Mono,monospace;font-size:.72rem">'+e.end+'</span> <b>'+e.exhibition+'</b> <span style="color:var(--muted);font-size:.7rem">'+e.museum+' · '+e.days_left+'d</span></div>';});
+    h+='</div></div>';
+    if(upcoming.length){
+      h+='<div class="sec"><div class="sh">🔜 Upcoming Exhibitions ('+upcoming.length+')</div><div class="sb">';
+      upcoming.forEach(e=>{h+='<div style="padding:3px 0;font-size:.8rem;border-bottom:1px solid rgba(30,41,59,.2)"><b>'+e.exhibition+'</b> <span style="color:var(--muted);font-size:.7rem">'+e.museum+' · Opens '+e.start+'</span></div>';});
+      h+='</div></div>';}
+    if(newMuseums.length){
+      h+='<div class="sec"><div class="sh">🆕 New Museums Opening</div><div class="sb">';
+      newMuseums.forEach(e=>{h+='<div style="padding:4px 0;font-size:.82rem;border-bottom:1px solid rgba(30,41,59,.2)"><b>'+e.museum+'</b> — '+e.exhibition+'<div style="font-size:.7rem;color:var(--muted)">'+e.city+' · Opens '+(e.start||'TBC')+' · '+e.price+'</div>'+(e.note?'<div style="font-size:.68rem;color:var(--muted);font-style:italic">'+e.note+'</div>':'')+'</div>';});
+      h+='</div></div>';}
+    // Quick stats
+    h+='<div class="sec"><div class="sh">📊 Stats</div><div class="sb">';
+    h+='<div class="sg">';
+    h+='<div class="sc"><div class="n">'+exh.length+'</div><div class="l">Exhibitions</div></div>';
+    h+='<div class="sc"><div class="n">'+new Set(exh.map(e=>e.museum)).size+'</div><div class="l">Museums</div></div>';
+    h+='<div class="sc"><div class="n">'+new Set(exh.map(e=>e.city)).size+'</div><div class="l">Cities</div></div>';
+    h+='<div class="sc"><div class="n">'+exh.filter(e=>e.free).length+'</div><div class="l">Free</div></div>';
+    h+='</div></div></div>';
+    h+='</div></div>';
+    document.getElementById('musc').innerHTML=h;
+  }catch(e){document.getElementById('musc').textContent='Could not load museums: '+e;}
+}
+</script></body></html>
