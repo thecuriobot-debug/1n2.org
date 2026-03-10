@@ -283,6 +283,30 @@ def build_headlines():
     conn.close()
     return total, '\n'.join(sections_html), section_files
 
+def update_crypto_prices(html):
+    """Update BTC/ETH prices from CoinGecko API."""
+    import requests as _req
+    try:
+        r = _req.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true', timeout=10)
+        d = r.json()
+        btc_price = f"${d['bitcoin']['usd']:,.0f}"
+        btc_chg = f"{d['bitcoin']['usd_24h_change']:.1f}%"
+        btc_dir = 'dn' if d['bitcoin']['usd_24h_change'] < 0 else 'up'
+        eth_price = f"${d['ethereum']['usd']:,.0f}"
+        eth_chg = f"{d['ethereum']['usd_24h_change']:.1f}%"
+        eth_dir = 'dn' if d['ethereum']['usd_24h_change'] < 0 else 'up'
+        
+        # Replace in HTML
+        import re as _re
+        html = _re.sub(r'(<div class="cl">Bitcoin</div><div class="cp">)\$[\d,]+', r'\g<1>' + btc_price, html)
+        html = _re.sub(r'(<div class="cl">Bitcoin</div>.*?<div class="ch )\w+(">[^<]+)', r'\1' + btc_dir + r'">' + btc_chg, html)
+        html = _re.sub(r'(<div class="cl">Ethereum</div><div class="cp">)\$[\d,]+', r'\g<1>' + eth_price, html)
+        html = _re.sub(r'(<div class="cl">Ethereum</div>.*?<div class="ch )\w+(">[^<]+)', r'\1' + eth_dir + r'">' + eth_chg, html)
+        print(f"  Updated prices: BTC {btc_price} ({btc_chg}), ETH {eth_price} ({eth_chg})")
+    except Exception as e:
+        print(f"  Price update failed: {e}")
+    return html
+
 def build_home_content():
     """Rebuild home-content.html with new headline format."""
     existing = OUTPUT.read_text() if OUTPUT.exists() else ''
@@ -354,6 +378,9 @@ def build_home_content():
             if city_sb > -1 and city_close > -1:
                 result = result[:city_sb] + f'<div class="sb"><div class="ns" style="font-size:1rem;line-height:1.6">{_esc(city_summary)}</div>' + result[city_close:]
                 print(f"  Summarized City News with Claude")
+    
+    # Update live crypto prices
+    result = update_crypto_prices(result)
     
     OUTPUT.write_text(result)
     print(f"  Built home-content.html — {total} articles across {len(section_files)} sections")
