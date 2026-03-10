@@ -88,17 +88,6 @@
     "note": "First major UK Renoir show since 2007, 50+ works incl. Bal au Moulin de la Galette"
   },
   {
-    "museum": "Science Museum",
-    "city": "London",
-    "exhibition": "Water Pantanal Fire",
-    "type": "Exhibition",
-    "start": "2026-02-06",
-    "end": "2026-05-31",
-    "price": "Free",
-    "free": true,
-    "note": "Photography exhibition"
-  },
-  {
     "museum": "British Library",
     "city": "London",
     "exhibition": "Fairy Tales",
@@ -119,17 +108,6 @@
     "price": "Free",
     "free": true,
     "note": "Brand new museum opening in April 2026"
-  },
-  {
-    "museum": "Kew Gardens",
-    "city": "London",
-    "exhibition": "Henry Moore: Monumental Nature",
-    "type": "Outdoor Exhibition",
-    "start": "2026-05-09",
-    "end": "2026-09-27",
-    "price": "Incl. with entry",
-    "free": false,
-    "note": "Sculptures in the gardens"
   },
   {
     "museum": "Rijksmuseum",
@@ -218,17 +196,6 @@
     "price": "€16",
     "free": false,
     "note": "World's largest Impressionist collection: Monet, Renoir, Van Gogh, Degas"
-  },
-  {
-    "museum": "Quentin Blake Centre",
-    "city": "London",
-    "exhibition": "Opening Exhibition",
-    "type": "New Museum",
-    "start": "2026-06-01",
-    "end": null,
-    "price": "TBC",
-    "free": false,
-    "note": "Brand new illustration museum in Clerkenwell, opening summer 2026"
   },
   {
     "museum": "STRAAT Museum",

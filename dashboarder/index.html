@@ -98,7 +98,9 @@ header h1{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:70
 <div class="ft"><a href="/">1n2.org</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/thunt-wiki/">MadWikipedia</a> · <a href="/health/">Health</a></div>
 <script>
 function ck(){const d=new Date();document.getElementById('clock').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}ck();setInterval(ck,30000);
-function sw(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.getElementById(id).classList.add('on');el.classList.add('on');if(id==='media'&&!window._ml)loadMedia();if(id==='comments'&&!window._cl)loadComments();if(id==='theater'&&!window._tl)loadTheater();if(id==='museums'&&!window._mul)loadMuseums();if(id==='countdown'&&!window._cdl)loadCountdown();}
+function sw(id,el){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));document.getElementById(id).classList.add('on');el.classList.add('on');if(id==='media'&&!window._ml)loadMedia();if(id==='comments'&&!window._cl)loadComments();if(id==='theater'&&!window._tl)loadTheater();if(id==='museums'&&!window._mul)loadMuseums();if(id==='countdown'&&!window._cdl)loadCountdown();history.replaceState(null,null,'#'+id);}
+// Restore tab from URL hash on load
+window.addEventListener('load',()=>{const h=location.hash.replace('#','');if(h){const tab=document.querySelector('.tab[onclick*="\''+h+'\'"]');if(tab)sw(h,tab);}});
 function t(el){el.parentElement.classList.toggle('cl')}
 function stars(r){if(!r)return'';return'<span class="stars">'+'★'.repeat(Math.floor(r))+(r%1>=.5?'½':'')+'</span>';}
 
