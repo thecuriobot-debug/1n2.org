@@ -49,8 +49,10 @@ TOPIC_LABELS = {
 }
 
 def get_conn():
-    conn = sqlite3.connect(str(DB), timeout=30)
+    conn = sqlite3.connect(str(DB), timeout=60)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA busy_timeout=60000")
     return conn
 
 def ensure_columns():

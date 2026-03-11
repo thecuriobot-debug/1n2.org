@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171;--purple:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
+</style>
+</head>
+<body>
+<style>
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700}
+header h1 span{color:var(--accent)}
+.subtitle{color:var(--muted);font-size:.8rem;font-family:'JetBrains Mono',monospace}
+.hero{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:16px 0}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.hero-num{font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--accent)}
+.hero-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin:12px 0 0;overflow-x:auto}
+.tab{padding:10px 16px;font-size:.8rem;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;font-family:'Space Grotesk',sans-serif}
+.tab:hover{color:var(--text);background:rgba(34,211,238,.05)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.panel{display:none;padding:16px 0}
+.panel.active{display:block}
+</style>
+<style>
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;overflow:hidden}
+.card h3{font-size:.85rem;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.card h3 .badge{font-family:'JetBrains Mono',monospace;font-size:.7rem;background:rgba(34,211,238,.15);color:var(--accent);padding:1px 6px;border-radius:3px;margin-left:auto}
+.stat-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(30,41,59,.5);font-size:.8rem}
+.stat-row:last-child{border-bottom:none}
+.stat-row .val{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--green)}
+.stat-row .val.zero{color:var(--muted)}
+.bar-chart{display:flex;flex-direction:column;gap:4px}
+.bar-row{display:flex;align-items:center;gap:8px;font-size:.75rem}
+.bar-row .label{width:100px;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bar{height:16px;background:var(--accent);border-radius:2px;min-width:2px;transition:width .5s}
+.bar-row .count{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);width:40px}
+table.data{width:100%;font-size:.78rem;border-collapse:collapse}
+table.data th{text-align:left;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;border-bottom:1px solid var(--border)}
+table.data td{padding:4px 8px;border-bottom:1px solid rgba(30,41,59,.3)}
+table.data td.num{font-family:'JetBrains Mono',monospace;text-align:right;color:var(--green)}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.status-dot.live{background:var(--green);box-shadow:0 0 6px var(--green)}
+.status-dot.pending{background:var(--amber)}
+.status-dot.empty{background:var(--muted)}
+.log-entry{font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:3px 0;border-bottom:1px solid rgba(30,41,59,.3);color:var(--muted)}
+.log-entry .ok{color:var(--green)}.log-entry .err{color:var(--red)}
+.ft{text-align:center;color:var(--muted);font-size:.7rem;padding:20px;border-top:1px solid var(--border);margin-top:16px}
+.ft a{color:var(--accent)}
+@media(max-width:768px){.hero{grid-template-columns:repeat(3,1fr)}.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+<header>
+<h1><span>Data Labs</span></h1>
+<div class="subtitle" id="subtitle">Loading...</div>
+</header>
+<div class="hero" id="hero"></div>
+<div class="tabs" id="tabs"></div>
+<div id="panels"></div>
+<div class="ft">Data Labs · <a href="/">1n2.org</a> · <a href="/reader/">Dashboarder</a> · <a href="/thunt-wiki/">MadWikipedia</a> · <a href="/curio-quant/">Quant</a></div>
+</div>
+<script>
+let D;
+async function init(){
+  const r=await fetch('stats.json');D=await r.json();
+  document.getElementById('subtitle').textContent=`${D.total_records.toLocaleString()} records · ${D.db_size_mb}MB · Updated ${new Date(D.generated_at).toLocaleString()}`;
+  buildHero();buildTabs();
+}
+
+function buildHero(){
+  const h=document.getElementById('hero');
+  const items=[
+    {n:D.total_records,l:'Total Records',c:'--accent'},
+    {n:D.datasets.youtube.tables.comments,l:'YT Comments',c:'--green'},
+    {n:D.datasets.youtube.tables.videos,l:'Videos',c:'--purple'},
+    {n:D.datasets.articles.total,l:'Articles',c:'--amber'},
+    {n:D.datasets.tweets.tables.tweets,l:'Tweets',c:'--red'},
+    {n:D.datasets.curio.tables.cards,l:'Curio Cards',c:'--accent'},
+  ];
+  h.innerHTML=items.map(i=>`<div class="hero-card"><div class="hero-num" style="color:var(${i.c})">${i.n.toLocaleString()}</div><div class="hero-label">${i.l}</div></div>`).join('');
+}
+</script>
+<script>
+function buildTabs(){
+  const tabs=document.getElementById('tabs');
+  const panels=document.getElementById('panels');
+  const dsets=[
+    {id:'overview',name:'Overview',icon:'📊'},
+    {id:'youtube',name:'YouTube',icon:'📺'},
+    {id:'curio',name:'Curio Cards',icon:'🃏'},
+    {id:'articles',name:'Articles',icon:'📰'},
+    {id:'tweets',name:'Tweets',icon:'🐦'},
+    {id:'logs',name:'Collection Log',icon:'📋'},
+  ];
+  dsets.forEach((d,i)=>{
+    const btn=document.createElement('button');
+    btn.className='tab'+(i===0?' active':'');
+    btn.innerHTML=d.icon+' '+d.name;
+    btn.onclick=()=>{
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('p-'+d.id).classList.add('active');
+    };
+    tabs.appendChild(btn);
+    const panel=document.createElement('div');
+    panel.id='p-'+d.id;
+    panel.className='panel'+(i===0?' active':'');
+    panels.appendChild(panel);
+  });
+  buildOverview();buildYouTube();buildCurio();buildArticles();buildTweets();buildLogs();
+}
+</script>
+<script>
+function buildOverview(){
+  const p=document.getElementById('p-overview');
+  const ds=D.datasets;
+  let html='<div class="grid2">';
+  for(const[k,d] of Object.entries(ds)){
+    const status=d.total>0?'live':(d.status==='Coming soon'?'pending':'empty');
+    const rows=Object.entries(d.tables).map(([t,c])=>`<div class="stat-row"><span>${t}</span><span class="val${c===0?' zero':''}">${c.toLocaleString()}</span></div>`).join('');
+    html+=`<div class="card"><h3><span class="status-dot ${status}"></span>${d.icon} ${d.name}<span class="badge">${d.total.toLocaleString()}</span></h3>${rows}</div>`;
+  }
+  html+='</div>';
+  // DB info
+  html+=`<div class="card" style="margin-top:12px"><h3>💾 Database Info</h3>
+    <div class="stat-row"><span>SQLite file</span><span class="val">${D.db_size_mb} MB</span></div>
+    <div class="stat-row"><span>Total records</span><span class="val">${D.total_records.toLocaleString()}</span></div>
+    <div class="stat-row"><span>Last updated</span><span class="val">${new Date(D.generated_at).toLocaleString()}</span></div>
+    <div class="stat-row"><span>Datasets</span><span class="val">${Object.keys(ds).length}</span></div>
+    <div class="stat-row"><span>Tables</span><span class="val">13</span></div>
+  </div>`;
+  p.innerHTML=html;
+}
+</script>
+<script>
+function makeBar(data,maxW){
+  const max=Math.max(...data.map(d=>d.count));
+  return data.map(d=>{
+    const w=Math.max(2,Math.round((d.count/max)*(maxW||200)));
+    return`<div class="bar-row"><div class="label">${d.label}</div><div class="bar" style="width:${w}px"></div><div class="count">${d.count.toLocaleString()}</div></div>`;
+  }).join('');
+}
+
+function buildYouTube(){
+  const p=document.getElementById('p-youtube');
+  const yt=D.datasets.youtube;
+  let html='<div class="grid2">';
+  // Channels
+  html+='<div class="card"><h3>📺 Channels<span class="badge">'+yt.tables.channels+'</span></h3>';
+  (yt.channels||[]).forEach(ch=>{
+    html+=`<div class="stat-row"><span><a href="https://youtube.com/channel/${ch.id}" target="_blank" style="color:var(--accent)">${ch.name}</a></span><span class="val">${ch.videos} vids / ${ch.comments.toLocaleString()} cmts</span></div>`;
+  });
+  html+='</div>';
+  // Top commenters
+  html+='<div class="card"><h3>🏆 Top Commenters<span class="badge">'+yt.top_commenters.length+'</span></h3>';
+  html+=makeBar(yt.top_commenters.map(c=>({label:c.name.substring(0,15),count:c.count})),160);
+  html+='</div>';
+  // Top videos
+  html+='<div class="card" style="grid-column:span 2"><h3>🎬 Most Commented Videos<span class="badge">'+yt.top_videos.length+'</span></h3><table class="data"><tr><th>Video</th><th>Comments</th><th>Views</th></tr>';
+  (yt.top_videos||[]).forEach(v=>{
+    html+=`<tr><td><a href="https://youtube.com/watch?v=${v.id}" target="_blank" style="color:var(--accent)">${v.title}</a></td><td class="num">${v.comments.toLocaleString()}</td><td class="num">${(v.views||0).toLocaleString()}</td></tr>`;
+  });
+  html+='</table></div></div>';
+  p.innerHTML=html;
+}
+</script>
+<script>
+function buildCurio(){
+  const p=document.getElementById('p-curio');
+  const c=D.datasets.curio;
+  let html='<div class="grid2">';
+  html+='<div class="card"><h3>🃏 Collection Stats<span class="badge">'+c.total+'</span></h3>';
+  Object.entries(c.tables).forEach(([t,v])=>{
+    html+=`<div class="stat-row"><span>${t}</span><span class="val${v===0?' zero':''}">${v.toLocaleString()}</span></div>`;
+  });
+  if(c.latest) html+=`<div class="stat-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>Floor Price</span><span class="val">${c.latest.floor} ETH</span></div><div class="stat-row"><span>Holders</span><span class="val">${c.latest.holders}</span></div>`;
+  html+='</div>';
+  // Card grid
+  html+='<div class="card"><h3>🎨 All 30 Cards</h3><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px">';
+  (c.cards||[]).forEach(card=>{
+    const img=card.image_url?`<img src="${card.image_url}" style="width:100%;border-radius:3px" loading="lazy">`:'<div style="width:100%;aspect-ratio:3/4;background:var(--border);border-radius:3px"></div>';
+    html+=`<div style="text-align:center;font-size:.6rem;color:var(--muted)">${img}#${card.card_id}</div>`;
+  });
+  html+='</div></div></div>';
+  p.innerHTML=html;
+}
+
+function buildArticles(){
+  const p=document.getElementById('p-articles');
+  const a=D.datasets.articles;
+  let html='<div class="grid2">';
+  html+='<div class="card"><h3>📰 Article Stats<span class="badge">'+a.total+'</span></h3>';
+  html+=`<div class="stat-row"><span>Total articles</span><span class="val">${a.tables.articles}</span></div>`;
+  html+=`<div class="stat-row"><span>With full text</span><span class="val">${a.with_text}</span></div>`;
+  html+=`<div class="stat-row"><span>Images captured</span><span class="val">${a.tables.images}</span></div>`;
+  html+=`<div class="stat-row"><span>Total words</span><span class="val">${a.total_words.toLocaleString()}</span></div>`;
+  html+='</div>';
+  html+='<div class="card"><h3>📂 By Topic</h3>';
+  html+=makeBar((a.by_topic||[]).map(t=>({label:t.topic,count:t.count})),150);
+  html+='</div>';
+  html+='<div class="card" style="grid-column:span 2"><h3>📡 By Source</h3>';
+  html+=makeBar((a.by_source||[]).map(s=>({label:s.source.substring(0,20),count:s.count})),200);
+  html+='</div></div>';
+  p.innerHTML=html;
+}
+
+function buildTweets(){
+  const p=document.getElementById('p-tweets');
+  const t=D.datasets.tweets;
+  let html='<div class="grid2">';
+  html+='<div class="card"><h3>🐦 Tweet Stats<span class="badge">'+t.total+'</span></h3>';
+  html+=`<div class="stat-row"><span>Accounts tracked</span><span class="val">${t.tables.accounts}</span></div>`;
+  html+=`<div class="stat-row"><span>Tweets archived</span><span class="val">${t.tables.tweets}</span></div>`;
+  html+='</div>';
+  html+='<div class="card"><h3>👤 By Account</h3>';
+  html+=makeBar((t.accounts||[]).map(a=>({label:'@'+a.username.substring(0,14),count:a.tweets})),150);
+  html+='</div></div>';
+  p.innerHTML=html;
+}
+
+function buildLogs(){
+  const p=document.getElementById('p-logs');
+  let html='<div class="card"><h3>📋 Collection Log<span class="badge">'+(D.collection_log||[]).length+'</span></h3>';
+  (D.collection_log||[]).forEach(l=>{
+    const s=l.status==='ok'?'ok':'err';
+    html+=`<div class="log-entry"><span class="${s}">[${l.status}]</span> ${l.dataset} · ${l.action} · +${l.records_added} records · ${l.duration_seconds?.toFixed(1)||0}s · ${l.run_at}</div>`;
+  });
+  html+='</div>';
+  p.innerHTML=html;
+}
+
+init();
+</script>
+</body></html>

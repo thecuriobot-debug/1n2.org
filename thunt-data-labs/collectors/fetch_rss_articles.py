@@ -79,7 +79,9 @@ FEEDS = {
 }
 
 def fetch_all(limit_per_feed=10):
-    conn = sqlite3.connect(DB)
+    conn = sqlite3.connect(DB, timeout=60)
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA busy_timeout=60000")
     total_new = 0
     total_text = 0
     
