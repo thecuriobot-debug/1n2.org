@@ -92,6 +92,12 @@ def extract_guests_from_intro(text, ep_num):
                         affiliation = m.group(2).strip().rstrip('.,')
                     guests.append({'name': name, 'affiliation': affiliation})
     
+    # Also catch known full names mentioned in intro without "from" pattern
+    KNOWN_FULL_NAMES = ['Andreas Antonopoulos', 'Andreas Antennopoulos']
+    for kn in KNOWN_FULL_NAMES:
+        if kn.lower() in intro.lower() and not any(g['name'] == 'Andreas Antonopoulos' for g in guests):
+            guests.append({'name': kn, 'affiliation': ''})
+    
     # Thomas Hunt / Mad Bitcoins detection — he is the HOST and on nearly every episode
     # Check for any Thomas Hunt reference in the intro
     thomas_patterns = [
@@ -155,8 +161,14 @@ def extract_guests_from_intro(text, ep_num):
         'Megan Lors': 'Megan Lords',
         # Will Pangman
         'Will Penguin': 'Will Pangman', 'Will Pangmann': 'Will Pangman', 'Will Pengman': 'Will Pangman',
+        # Price Weiner -> Bryce Weiner
+        'Price Weiner': 'Bryce Weiner',
+        # Martino -> Ian DeMartino
+        'Martino': 'Ian DeMartino',
+        # Page Peterson -> Paige Peterson
+        'Page Peterson': 'Paige Peterson',
         # Ben Arc
-        'Ben Arck': 'Ben Arc', 'Ben Ark': 'Ben Arc', 'Ark': 'Ben Arc',
+        'Ben Arck': 'Ben Arc', 'Ben Ark': 'Ben Arc', 'Ark': 'Ben Arc', 'Ben': 'Ben Arc',
         # Vlad Costea
         'Vlad Kosta': 'Vlad Costea', 'Vlad Costa': 'Vlad Costea',
         # Martin Wismeijer
@@ -168,7 +180,7 @@ def extract_guests_from_intro(text, ep_num):
         # Derrick Freeman
         'Freeman': 'Derrick Freeman', 'Derek Freeman': 'Derrick Freeman', 'Derek': 'Derrick Freeman',
         # Chris -> Chris Ellis
-        'Chris': 'Chris Ellis',
+        'Chris': 'Chris Ellis', 'Chris Aless': 'Chris Ellis', 'Christoff Ellis': 'Chris Ellis',
         # Atlas -> Kristov Atlas
         'Atlas': 'Kristov Atlas', 'Christoph Atlas': 'Kristov Atlas', 'Christoph Atlis': 'Kristov Atlas',
         'Christoph Atlus': 'Kristov Atlas', 'Kristoff Atlus': 'Kristov Atlas', 'Kristoff Atlas': 'Kristov Atlas',
@@ -191,6 +203,9 @@ def extract_guests_from_intro(text, ep_num):
         'Dovey Barker': 'Davi Barker', 'Davy Barker': 'Davi Barker',
         'Dauvey Barker': 'Davi Barker', 'Avie Barker': 'Davi Barker',
         'Tavi Barker': 'Davi Barker', 'Donnie Barker': 'Davi Barker', 'David Barker': 'Davi Barker',
+        # Andreas Antonopoulos variants
+        'Andreas Antonopoulos': 'Andreas Antonopoulos', 'Andreas Antennopoulos': 'Andreas Antonopoulos',
+        'Andreas': 'Andreas Antonopoulos',
         # More Atlas variants
         'Chris Aless': 'Kristov Atlas', 'Christoff Ellis': 'Kristov Atlas',
         'Chris Doth Atlas': 'Kristov Atlas', 'Abyssoft Atlas': 'Kristov Atlas',
