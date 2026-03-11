@@ -91,8 +91,8 @@ Kristoff Atlas
 - Whisper variants: Christoph Atlas, Christoph Atlis, Christoph Atlus, Kristoff Atlus, Chris Dough Atlas
 - 19 appearances (#17–#59)
 
-Gabriel D Vine
-- Whisper variants: Gabriel Devon, Gabriel Divine
+Gabriel DeVine / FutureRant
+- Whisper variants: Gabriel Devon, Gabriel Divine, Gabriel D Vine
 - 6 appearances (#85–#133)
 
 Jimmy Song

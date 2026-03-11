@@ -172,7 +172,7 @@ def extract_guests_from_intro(text, ep_num):
         'Christoph Atlus': 'Kristoff Atlas', 'Kristoff Atlus': 'Kristoff Atlas',
         'Chris Dough Atlas': 'Kristoff Atlas',
         'Max Hillabran': 'Max Hillebrand', 'Max Hillabrand': 'Max Hillebrand',
-        'Gabriel Devon': 'Gabriel D Vine', 'Gabriel Divine': 'Gabriel D Vine',
+        'Gabriel Devon': 'Gabriel DeVine', 'Gabriel Divine': 'Gabriel DeVine', 'Gabriel D Vine': 'Gabriel DeVine',
         'Dovey Barker': 'Davy Barker',
     }
     for g in guests:
