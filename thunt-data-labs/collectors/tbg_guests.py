@@ -209,6 +209,23 @@ def extract_guests_from_intro(text, ep_num):
         'Mike Dupree': 'Michael Dupree',
         'Max Hillabran': 'Max Hillebrand', 'Max Hillabrand': 'Max Hillebrand',
         'Gabriel Devon': 'Gabriel DeVine', 'Gabriel Divine': 'Gabriel DeVine', 'Gabriel D Vine': 'Gabriel DeVine',
+        'Gabriel': 'Gabriel DeVine',
+        # Vaughan — remove
+        'Vaughan': '_REMOVE_',
+        # Martin -> Martin Wismeijer
+        'Martin': 'Martin Wismeijer',
+        # Ben -> Ben Arc
+        'Ben': 'Ben Arc',
+        # Todd Zhunt, Tom Hutt, Tom Thomas Hunt -> Thomas Hunt
+        'Todd Zhunt': 'Thomas Hunt', 'Tom Hutt': 'Thomas Hunt', 'Tom Thomas Hunt': 'Thomas Hunt',
+        # Ellis -> Chris Ellis
+        'Ellis': 'Chris Ellis',
+        # Anon, Republican — remove
+        'Anon': '_REMOVE_', 'Republican': '_REMOVE_',
+        # Megan Lorde -> MK Lords
+        'Megan Lorde': 'MK Lords',
+        # Bill Pangman -> Will Pangman
+        'Bill Pangman': 'Will Pangman',
     }
     for g in guests:
         if g['name'] in NORMALIZATIONS:
