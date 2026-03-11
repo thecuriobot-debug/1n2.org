@@ -77,7 +77,7 @@ def build_leaderboard():
     # Leaderboard table
     rows = ''
     for i, entry in enumerate(lb):
-        if entry['evaluated'] < 1:
+        if entry['evaluated'] < 5:
             continue
         medal = ['🥇','🥈','🥉'][i] if i < 3 else f'&nbsp;{i+1}.'
         acc_class = 'acc-g' if entry['accuracy'] >= 60 else 'acc-y' if entry['accuracy'] >= 45 else 'acc-r'

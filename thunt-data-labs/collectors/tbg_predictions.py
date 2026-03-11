@@ -30,18 +30,39 @@ KNOWN_SPEAKERS = [
     'Ansel', 'Ansel Lindner',
     'Jimmy', 'Jimmy Song',
     'Vin', 'Vin Armani',
-    'Chris', 'Chris DeRose',
+    'Chris', 'Chris Ellis',
     'Jesse',
     'Junseth',
     'David', 'David Bennett',
     'Tosin',
     'Derrick', 'Derrick Broze',
     'Collin',
-    'Gabriel',
+    'Gabriel', 'Gabriel DeVine',
     'Simon', 'Simon Dixon',
     'Roger', 'Roger Ver',
-    'Tim Draper', 'Draper',
+    'Victoria', 'Victoria Jones',
+    'Ben', 'Ben Arc',
+    'Dan', 'Dan Eve',
+    'Josh', 'Josh Scigala',
 ]
+
+# Map short/ambiguous names to canonical names
+SPEAKER_NORMALIZE = {
+    'Thomas': 'Thomas Hunt', 'Hunt': 'Thomas Hunt', 'Mad Bitcoins': 'Thomas Hunt',
+    'Adam': 'Adam Meister',
+    'Tone': 'Tone Vays', 'Tom Vays': 'Tone Vays', 'Toned Vays': 'Tone Vays',
+    'Gabriel': 'Gabriel DeVine',
+    'Chris': 'Chris Ellis',
+    'Vin': 'Vin Armani', 'Vine': 'Vin Armani',
+    'Dan': 'Dan Eve', 'Dan Eave': 'Dan Eve',
+    'Ben': 'Ben Arc', 'Ben Arck': 'Ben Arc',
+    'Josh': 'Josh Scigala',
+    'Victoria': 'Victoria Jones',
+    'Jimmy': 'Jimmy Song',
+    'Jesse': 'Jesse',
+    'Roger': 'Roger Ver',
+    'Ansel': 'Ansel Lindner',
+}
 
 # ANSI colors
 C = '\033[96m'; G = '\033[92m'; Y = '\033[93m'; R = '\033[91m'
@@ -224,18 +245,18 @@ def extract_predictions(text, ep_num, ep_date):
 
 
 def identify_speaker(context, sentences, idx):
-    """Try to identify who is speaking."""
+    """Try to identify who is speaking, normalize to canonical name."""
     cl = context.lower()
     # Check for direct name mentions near the prediction
     for name in KNOWN_SPEAKERS:
         if name.lower() in cl:
-            return name
+            return SPEAKER_NORMALIZE.get(name, name)
     # Check preceding sentences for speaker indicators
     if idx > 0:
         prev = sentences[idx-1].lower()
         for name in KNOWN_SPEAKERS:
             if name.lower() in prev:
-                return name
+                return SPEAKER_NORMALIZE.get(name, name)
     return 'Unknown'
 
 def evaluate_prediction(pred, prices):
@@ -375,7 +396,7 @@ def main():
     ranked = []
     for name, stats in by_person.items():
         evaluated = stats['correct'] + stats['wrong']
-        if evaluated >= 1:
+        if evaluated >= 5:
             accuracy = stats['correct'] / evaluated * 100 if evaluated > 0 else 0
             ranked.append((name, stats, accuracy, evaluated))
     

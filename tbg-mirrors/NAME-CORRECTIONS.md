@@ -3,6 +3,24 @@
 # Left = Whisper STT variants, Right = correct name
 # Updated: 2026-03-10
 
+## PREDICTION SPEAKER MAPPINGS
+# These map short names found in transcript body to canonical names:
+# Thomas, Hunt → Thomas Hunt
+# Adam → Adam Meister
+# Tone → Tone Vays
+# Gabriel → Gabriel DeVine
+# Chris → Chris Ellis (likely, though possible other Chris's)
+# Vin, Vine → Vin Armani
+# Dan → Dan Eve
+# Ben → Ben Arc
+# Josh → Josh Scigala
+# Victoria → Victoria Jones
+# Jimmy → Jimmy Song
+# Tim Draper — NEVER a guest on the show, removed from predictions
+
+## LEADERBOARD RULES
+# Minimum 5 verified predictions required to appear on leaderboard
+
 ## HOST
 Thomas Hunt / Mad Bitcoins / World Crypto Network
 - Whisper variants: Thomas, Tomas Hunt, Hunt, Nine Thomas Hunt, Time Thomas Hunt

@@ -1,44 +1,44 @@
 {
-  "generated": "2026-03-10T15:48:11.222078",
+  "generated": "2026-03-10T19:11:12.827190",
   "total": 3525,
   "leaderboard": [
     {
-      "name": "Tim Draper",
-      "correct": 2,
-      "wrong": 0,
-      "accuracy": 100.0,
-      "evaluated": 2
+      "name": "Victoria Jones",
+      "correct": 15,
+      "wrong": 4,
+      "accuracy": 78.9,
+      "evaluated": 19
     },
     {
-      "name": "Ansel",
-      "correct": 1,
-      "wrong": 0,
-      "accuracy": 100.0,
-      "evaluated": 1
-    },
-    {
-      "name": "Jesse",
-      "correct": 1,
-      "wrong": 0,
-      "accuracy": 100.0,
-      "evaluated": 1
-    },
-    {
-      "name": "Jimmy",
+      "name": "Jimmy Song",
       "correct": 8,
       "wrong": 4,
       "accuracy": 66.7,
       "evaluated": 12
     },
     {
-      "name": "Adam",
+      "name": "Josh Scigala",
+      "correct": 44,
+      "wrong": 25,
+      "accuracy": 63.8,
+      "evaluated": 69
+    },
+    {
+      "name": "Adam Meister",
       "correct": 31,
       "wrong": 18,
       "accuracy": 63.3,
       "evaluated": 49
     },
     {
-      "name": "Vin",
+      "name": "Ben Arc",
+      "correct": 52,
+      "wrong": 33,
+      "accuracy": 61.2,
+      "evaluated": 85
+    },
+    {
+      "name": "Vin Armani",
       "correct": 249,
       "wrong": 160,
       "accuracy": 60.9,
@@ -46,10 +46,10 @@
     },
     {
       "name": "Unknown",
-      "correct": 1145,
-      "wrong": 1021,
-      "accuracy": 52.9,
-      "evaluated": 2166
+      "correct": 990,
+      "wrong": 911,
+      "accuracy": 52.1,
+      "evaluated": 1901
     },
     {
       "name": "Magic 8 Ball",
@@ -59,60 +59,46 @@
       "evaluated": 564
     },
     {
-      "name": "Thomas",
-      "correct": 73,
-      "wrong": 81,
-      "accuracy": 47.4,
-      "evaluated": 154
+      "name": "Dan Eve",
+      "correct": 46,
+      "wrong": 48,
+      "accuracy": 48.9,
+      "evaluated": 94
     },
     {
-      "name": "Tone",
+      "name": "Thomas Hunt",
+      "correct": 81,
+      "wrong": 97,
+      "accuracy": 45.5,
+      "evaluated": 178
+    },
+    {
+      "name": "Tone Vays",
       "correct": 35,
       "wrong": 42,
       "accuracy": 45.5,
       "evaluated": 77
     },
     {
-      "name": "Chris",
+      "name": "Chris Ellis",
       "correct": 16,
       "wrong": 21,
       "accuracy": 43.2,
       "evaluated": 37
     },
     {
-      "name": "Hunt",
-      "correct": 8,
-      "wrong": 16,
-      "accuracy": 33.3,
-      "evaluated": 24
-    },
-    {
-      "name": "Gabriel",
+      "name": "Gabriel DeVine",
       "correct": 4,
       "wrong": 8,
       "accuracy": 33.3,
       "evaluated": 12
     },
     {
-      "name": "Roger",
+      "name": "Roger Ver",
       "correct": 3,
       "wrong": 6,
       "accuracy": 33.3,
       "evaluated": 9
-    },
-    {
-      "name": "David",
-      "correct": 0,
-      "wrong": 3,
-      "accuracy": 0.0,
-      "evaluated": 3
-    },
-    {
-      "name": "Simon",
-      "correct": 0,
-      "wrong": 2,
-      "accuracy": 0.0,
-      "evaluated": 2
     }
   ],
   "recent": [
@@ -252,7 +238,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Thomas",
+      "speaker": "Thomas Hunt",
       "direction": "higher",
       "target": null,
       "context": "I think he's hopefully my son's back because I've only asked me a bit too loud there. He's a clever guy like he is a clever guy he's a young guy and you know when we're all young we all made mistakes so I'm sure he's not without his mistakes but he's clever guys you're a guy he's always been good to",
@@ -269,7 +255,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Thomas",
+      "speaker": "Thomas Hunt",
       "direction": "higher",
       "target": null,
       "context": "Well they say in the chat that Ben is much louder than Thomas in the chat and that's why I won't switch my mic over I don't know but Ben's muted now and it won't still want to switch my camera I'm going to have to go in the settings and double check it again it's been an issue but I don't know what ",
@@ -286,7 +272,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Thomas",
+      "speaker": "Thomas Hunt",
       "direction": "higher",
       "target": null,
       "context": "I'll tell you know he's making his way back up maybe it's oh I know maybe it's like slept with newbs Thomas this is why this is why David Bailey as these big companies because he knows how to work microphones yeah well the software keeps changing that's one thing but it's interesting Ben you say he ",
@@ -303,7 +289,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Thomas",
+      "speaker": "Thomas Hunt",
       "direction": "higher",
       "target": "2000",
       "context": "I think the the biggest risk that Bailey's got because he's quite a public figure and he speaks a lot about these things and then he can easily get himself in trouble which he did with the overvaluation which again you know these companies made 87 million in revenue which is great and in a in a Twit",
@@ -320,7 +306,7 @@
     },
     {
       "type": "target",
-      "speaker": "Vin",
+      "speaker": "Vin Armani",
       "direction": "higher",
       "target": "2000",
       "context": "Leary uh thing here posting his phone number accusing him of murder this is beyond the pale uh this isn't just a back and forth like celebrity argument uh it seems that he went at him in directly where there's this unfortunate incident with the boating accident but then to also post his personal det",
