@@ -1,7 +1,7 @@
 {
-  "generated": "2026-03-10T22:35:19.726973",
+  "generated": "2026-03-10T22:41:05.468790",
   "total_episodes_with_guests": 475,
-  "unique_guests": 206,
+  "unique_guests": 192,
   "top_guests": [
     {
       "name": "Thomas Hunt",
@@ -905,8 +905,9 @@
     },
     {
       "name": "Theo Goodman",
-      "count": 50,
+      "count": 51,
       "episodes": [
+        45,
         71,
         72,
         73,
@@ -1217,6 +1218,38 @@
       ]
     },
     {
+      "name": "Kristov Atlas",
+      "count": 26,
+      "episodes": [
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        33,
+        35,
+        37,
+        38,
+        39,
+        40,
+        43,
+        45,
+        49,
+        53,
+        56,
+        58,
+        59
+      ]
+    },
+    {
       "name": "Chris Ellis",
       "count": 26,
       "episodes": [
@@ -1312,34 +1345,6 @@
       ]
     },
     {
-      "name": "Kristov Atlas",
-      "count": 22,
-      "episodes": [
-        17,
-        18,
-        19,
-        21,
-        22,
-        23,
-        24,
-        26,
-        28,
-        29,
-        31,
-        32,
-        33,
-        38,
-        39,
-        40,
-        45,
-        49,
-        53,
-        56,
-        58,
-        59
-      ]
-    },
-    {
       "name": "Gabriel",
       "count": 18,
       "episodes": [
@@ -1386,7 +1391,7 @@
     },
     {
       "name": "Davi Barker",
-      "count": 11,
+      "count": 14,
       "episodes": [
         2,
         6,
@@ -1395,9 +1400,12 @@
         10,
         13,
         16,
+        24,
         26,
         30,
+        35,
         36,
+        37,
         38
       ]
     },
@@ -1657,45 +1665,45 @@
       ]
     },
     {
-      "name": "Silk Road",
+      "name": "Page Peterson",
       "count": 1,
       "episodes": [
-        10
+        29
       ]
     },
     {
-      "name": "Inclus",
+      "name": "Marty Melrose",
       "count": 1,
       "episodes": [
-        19
+        30
       ]
     },
     {
-      "name": "Jolly Barker",
+      "name": "Kristoff Atlis",
       "count": 1,
       "episodes": [
-        19
+        47
       ]
     },
     {
-      "name": "Peace Propagandist",
+      "name": "Victoria Van Eyck",
       "count": 1,
       "episodes": [
-        19
+        47
       ]
     },
     {
-      "name": "Tavi Barker",
+      "name": "Thomas Hunter",
       "count": 1,
       "episodes": [
-        24
+        49
       ]
     },
     {
-      "name": "Chris Aless",
+      "name": "Price Weiner",
       "count": 1,
       "episodes": [
-        27
+        50
       ]
     }
   ],
@@ -1792,10 +1800,6 @@
       {
         "name": "Davi Barker",
         "affiliation": "Bitcoin Not Bombs"
-      },
-      {
-        "name": "Silk Road",
-        "affiliation": "within the United States"
       }
     ],
     "11": [
@@ -1900,24 +1904,12 @@
     ],
     "19": [
       {
-        "name": "Inclus",
-        "affiliation": ""
-      },
-      {
-        "name": "Jolly Barker",
-        "affiliation": "shiny badges"
-      },
-      {
         "name": "Kristov Atlas",
         "affiliation": "Anonymous Bitcoin book"
       },
       {
         "name": "MK Lords",
         "affiliation": "Bitcoin"
-      },
-      {
-        "name": "Peace Propagandist",
-        "affiliation": "Peace News now"
       },
       {
         "name": "Will Pangman",
@@ -1985,7 +1977,7 @@
     ],
     "24": [
       {
-        "name": "Tavi Barker",
+        "name": "Davi Barker",
         "affiliation": "shiny badges"
       },
       {
@@ -2065,7 +2057,7 @@
         "affiliation": "Peace News now"
       },
       {
-        "name": "Chris Aless",
+        "name": "Kristov Atlas",
         "affiliation": "World CryptoNet"
       },
       {
@@ -2219,11 +2211,11 @@
         "affiliation": "Bitcoin"
       },
       {
-        "name": "Donnie Barker",
+        "name": "Davi Barker",
         "affiliation": "ShinyBadges"
       },
       {
-        "name": "Christoff Ellis",
+        "name": "Kristov Atlas",
         "affiliation": "Anonymous Bitcoin book"
       },
       {
@@ -2275,7 +2267,7 @@
         "affiliation": "Facebook"
       },
       {
-        "name": "David Barker",
+        "name": "Davi Barker",
         "affiliation": "shiny badges"
       },
       {
@@ -2283,7 +2275,7 @@
         "affiliation": "Federcorn"
       },
       {
-        "name": "Chris Doth Atlas",
+        "name": "Kristov Atlas",
         "affiliation": "anonymous Bitcoin book"
       },
       {
@@ -2388,7 +2380,7 @@
         "affiliation": "facebook"
       },
       {
-        "name": "Abyssoft Atlas",
+        "name": "Kristov Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -2418,19 +2410,11 @@
     ],
     "45": [
       {
-        "name": "Money",
-        "affiliation": "MidasMoney"
-      },
-      {
-        "name": "Marnie",
-        "affiliation": "MidasMoney"
-      },
-      {
         "name": "Kristov Atlas",
         "affiliation": "anonymous Bitcoin book"
       },
       {
-        "name": "Theo",
+        "name": "Theo Goodman",
         "affiliation": "Soundwallet"
       },
       {

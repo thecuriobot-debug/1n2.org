@@ -190,6 +190,16 @@ def extract_guests_from_intro(text, ep_num):
         # Davi Barker
         'Dovey Barker': 'Davi Barker', 'Davy Barker': 'Davi Barker',
         'Dauvey Barker': 'Davi Barker', 'Avie Barker': 'Davi Barker',
+        'Tavi Barker': 'Davi Barker', 'Donnie Barker': 'Davi Barker', 'David Barker': 'Davi Barker',
+        # More Atlas variants
+        'Chris Aless': 'Kristov Atlas', 'Christoff Ellis': 'Kristov Atlas',
+        'Chris Doth Atlas': 'Kristov Atlas', 'Abyssoft Atlas': 'Kristov Atlas',
+        # Theo
+        'Theo': 'Theo Goodman',
+        # Remove false positives
+        'Money': '_REMOVE_', 'Marnie': '_REMOVE_',
+        'Silk Road': '_REMOVE_', 'Inclus': '_REMOVE_',
+        'Jolly Barker': '_REMOVE_', 'Peace Propagandist': '_REMOVE_',
         # Weatherman -> JD Weatherman
         'Weatherman': 'JD Weatherman',
         # REMOVE — not real guests (false positives)
