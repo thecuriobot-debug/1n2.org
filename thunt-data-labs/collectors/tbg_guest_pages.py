@@ -56,7 +56,7 @@ def build_db():
         first_date TEXT, last_date TEXT, is_host INTEGER DEFAULT 0,
         prediction_correct INTEGER DEFAULT 0, prediction_wrong INTEGER DEFAULT 0,
         m8_correct INTEGER DEFAULT 0, m8_wrong INTEGER DEFAULT 0,
-        max_consecutive INTEGER DEFAULT 0)""")
+        max_consecutive INTEGER DEFAULT 0, active_streak INTEGER DEFAULT 0)""")
     
     conn.execute("""CREATE TABLE appearances (
         id INTEGER PRIMARY KEY, guest_id INTEGER, episode INTEGER, date TEXT,
@@ -92,7 +92,7 @@ def build_db():
         last_date = ep_map.get(last_ep, {}).get('date', '')
         is_host = 1 if name == 'Thomas Hunt' else 0
         
-        # Calculate max consecutive appearances
+        # Calculate max consecutive and active streak
         max_consec = 1
         current = 1
         all_eps = sorted(set(int(k) for k in by_episode.keys()))
@@ -103,6 +103,14 @@ def build_db():
                 max_consec = max(max_consec, current)
             elif all_eps[i] in ep_set:
                 current = 1
+        
+        # Active streak — consecutive from the latest episode backwards
+        active_streak = 0
+        for i in range(len(all_eps)-1, -1, -1):
+            if all_eps[i] in ep_set:
+                active_streak += 1
+            else:
+                break
         
         # Prediction stats
         pred_correct = pred_wrong = 0
@@ -127,10 +135,10 @@ def build_db():
         
         conn.execute("""INSERT INTO guests (name, slug, total_appearances, first_episode, last_episode,
             first_date, last_date, is_host, prediction_correct, prediction_wrong,
-            m8_correct, m8_wrong, max_consecutive)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            m8_correct, m8_wrong, max_consecutive, active_streak)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
             (name, slug, len(ep_list), first_ep, last_ep, first_date, last_date, is_host,
-             pred_correct, pred_wrong, m8c, m8w, max_consec))
+             pred_correct, pred_wrong, m8c, m8w, max_consec, active_streak))
         guest_ids[name] = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         
         # Insert appearances
