@@ -1,46 +1,78 @@
 {
-  "generated": "2026-03-10T18:34:18.526583",
-  "total_episodes_with_guests": 472,
-  "unique_guests": 263,
+  "generated": "2026-03-10T19:06:07.342435",
+  "total_episodes_with_guests": 475,
+  "unique_guests": 223,
   "top_guests": [
     {
       "name": "Thomas Hunt",
-      "count": 396,
+      "count": 474,
       "episodes": [
         2,
         5,
+        11,
+        17,
+        19,
+        20,
+        23,
         24,
+        25,
+        26,
         27,
+        28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
         35,
         36,
         37,
         38,
         39,
         40,
+        41,
         42,
+        43,
+        44,
+        44,
+        45,
+        46,
         47,
+        48,
+        49,
+        50,
         51,
         52,
         53,
+        54,
         55,
         56,
+        57,
         58,
         59,
         60,
         62,
         63,
+        64,
         65,
+        66,
+        67,
         68,
+        69,
+        70,
         71,
         72,
         73,
         74,
+        76,
+        77,
         78,
         79,
         80,
         81,
         82,
+        83,
         84,
         85,
         86,
@@ -50,6 +82,7 @@
         90,
         91,
         92,
+        93,
         94,
         95,
         96,
@@ -58,18 +91,28 @@
         99,
         100,
         101,
+        102,
+        102,
         103,
         104,
         105,
+        106,
+        106,
         107,
         108,
         109,
+        110,
         111,
         112,
         113,
         114,
+        115,
+        115,
+        116,
         117,
         118,
+        119,
+        119,
         120,
         121,
         122,
@@ -80,6 +123,7 @@
         127,
         128,
         129,
+        130,
         131,
         132,
         133,
@@ -107,9 +151,11 @@
         155,
         156,
         157,
+        158,
         159,
         160,
         161,
+        162,
         163,
         164,
         165,
@@ -121,6 +167,7 @@
         171,
         172,
         173,
+        174,
         175,
         176,
         177,
@@ -131,6 +178,7 @@
         182,
         183,
         184,
+        185,
         186,
         187,
         188,
@@ -153,13 +201,18 @@
         205,
         206,
         207,
+        208,
         209,
+        210,
+        211,
+        211,
         212,
         213,
         214,
         215,
         216,
         217,
+        218,
         219,
         220,
         221,
@@ -171,6 +224,8 @@
         227,
         228,
         229,
+        230,
+        230,
         231,
         232,
         233,
@@ -189,6 +244,7 @@
         247,
         248,
         249,
+        250,
         251,
         252,
         253,
@@ -211,16 +267,20 @@
         270,
         271,
         272,
+        273,
         274,
         275,
         276,
         277,
         278,
         279,
+        280,
         281,
+        282,
         283,
         284,
         285,
+        286,
         287,
         288,
         289,
@@ -242,12 +302,14 @@
         305,
         307,
         308,
+        309,
         310,
         311,
         312,
         313,
         314,
         315,
+        316,
         317,
         318,
         319,
@@ -265,6 +327,8 @@
         331,
         332,
         333,
+        334,
+        334,
         335,
         336,
         337,
@@ -299,6 +363,8 @@
         366,
         367,
         368,
+        369,
+        369,
         370,
         371,
         372,
@@ -306,6 +372,7 @@
         374,
         375,
         376,
+        377,
         378,
         379,
         380,
@@ -331,6 +398,7 @@
         400,
         401,
         402,
+        403,
         404,
         405,
         406,
@@ -343,12 +411,14 @@
         413,
         414,
         415,
+        416,
         417,
         418,
         419,
         420,
         421,
         422,
+        423,
         424,
         425,
         426,
@@ -373,12 +443,15 @@
         445,
         446,
         447,
+        448,
+        448,
         449,
         450,
         451,
         452,
         453,
         454,
+        456,
         457,
         458,
         459,
@@ -391,14 +464,19 @@
         466,
         468,
         469,
+        470,
         471,
         472,
+        473,
+        473,
         474,
         475,
         476,
         478,
         479,
         480,
+        481,
+        481,
         482,
         483,
         484,
@@ -406,7 +484,149 @@
       ]
     },
     {
-      "name": "Dan Eave",
+      "name": "Josh Scigala",
+      "count": 136,
+      "episodes": [
+        194,
+        199,
+        201,
+        202,
+        204,
+        205,
+        207,
+        208,
+        209,
+        210,
+        211,
+        213,
+        215,
+        223,
+        224,
+        225,
+        226,
+        231,
+        232,
+        233,
+        234,
+        237,
+        238,
+        241,
+        242,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        253,
+        254,
+        255,
+        256,
+        257,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        267,
+        270,
+        271,
+        272,
+        273,
+        277,
+        278,
+        279,
+        280,
+        281,
+        283,
+        285,
+        286,
+        287,
+        288,
+        291,
+        292,
+        293,
+        294,
+        302,
+        303,
+        307,
+        310,
+        313,
+        314,
+        315,
+        316,
+        318,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        327,
+        330,
+        332,
+        334,
+        339,
+        342,
+        347,
+        348,
+        349,
+        357,
+        362,
+        364,
+        365,
+        366,
+        368,
+        372,
+        376,
+        378,
+        379,
+        382,
+        386,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        397,
+        398,
+        399,
+        402,
+        403,
+        404,
+        405,
+        407,
+        408,
+        410,
+        411,
+        412,
+        414,
+        418,
+        419,
+        420,
+        421,
+        422,
+        425,
+        432,
+        433,
+        435,
+        436,
+        437,
+        438,
+        443,
+        447,
+        452,
+        459,
+        460,
+        475
+      ]
+    },
+    {
+      "name": "Dan Eve",
       "count": 101,
       "episodes": [
         190,
@@ -513,110 +733,8 @@
       ]
     },
     {
-      "name": "Josh Sigala",
-      "count": 96,
-      "episodes": [
-        204,
-        205,
-        207,
-        208,
-        210,
-        211,
-        223,
-        224,
-        226,
-        232,
-        233,
-        238,
-        241,
-        242,
-        245,
-        247,
-        248,
-        250,
-        251,
-        253,
-        254,
-        255,
-        256,
-        257,
-        259,
-        260,
-        261,
-        262,
-        263,
-        264,
-        265,
-        267,
-        273,
-        277,
-        278,
-        279,
-        280,
-        281,
-        283,
-        286,
-        287,
-        291,
-        292,
-        293,
-        294,
-        314,
-        318,
-        320,
-        323,
-        324,
-        330,
-        332,
-        334,
-        339,
-        348,
-        349,
-        357,
-        362,
-        364,
-        365,
-        376,
-        378,
-        379,
-        386,
-        389,
-        390,
-        391,
-        392,
-        393,
-        397,
-        398,
-        399,
-        403,
-        404,
-        405,
-        407,
-        408,
-        410,
-        411,
-        412,
-        414,
-        418,
-        419,
-        420,
-        422,
-        425,
-        435,
-        436,
-        437,
-        438,
-        443,
-        447,
-        452,
-        459,
-        460,
-        475
-      ]
-    },
-    {
       "name": "Ben Arc",
-      "count": 84,
+      "count": 86,
       "episodes": [
         203,
         213,
@@ -668,6 +786,7 @@
         345,
         346,
         347,
+        352,
         355,
         356,
         365,
@@ -691,6 +810,7 @@
         445,
         446,
         447,
+        451,
         452,
         454,
         458,
@@ -706,24 +826,33 @@
     },
     {
       "name": "Tone Vays",
-      "count": 54,
+      "count": 65,
       "episodes": [
         78,
         79,
         82,
         84,
+        85,
+        88,
+        89,
         90,
         91,
+        92,
         96,
         99,
         100,
         102,
         103,
+        104,
         107,
+        108,
+        109,
+        110,
         111,
         112,
         114,
         117,
+        118,
         119,
         120,
         121,
@@ -736,6 +865,7 @@
         130,
         131,
         133,
+        134,
         136,
         138,
         139,
@@ -750,6 +880,7 @@
         150,
         152,
         153,
+        154,
         155,
         157,
         158,
@@ -925,8 +1056,48 @@
       ]
     },
     {
+      "name": "Martin Wismeijer",
+      "count": 34,
+      "episodes": [
+        245,
+        250,
+        252,
+        257,
+        258,
+        259,
+        265,
+        267,
+        273,
+        280,
+        284,
+        285,
+        286,
+        287,
+        288,
+        290,
+        291,
+        292,
+        299,
+        300,
+        301,
+        303,
+        304,
+        305,
+        314,
+        316,
+        320,
+        324,
+        326,
+        331,
+        337,
+        343,
+        349,
+        356
+      ]
+    },
+    {
       "name": "Megan Lords",
-      "count": 29,
+      "count": 31,
       "episodes": [
         7,
         8,
@@ -942,6 +1113,7 @@
         24,
         26,
         28,
+        29,
         31,
         33,
         34,
@@ -956,11 +1128,78 @@
         63,
         65,
         77,
-        81
+        81,
+        82
       ]
     },
     {
-      "name": "Jeffrey Jones",
+      "name": "Vin Armani",
+      "count": 28,
+      "episodes": [
+        87,
+        89,
+        90,
+        92,
+        103,
+        114,
+        115,
+        116,
+        121,
+        123,
+        124,
+        131,
+        134,
+        143,
+        144,
+        145,
+        154,
+        157,
+        160,
+        169,
+        171,
+        177,
+        178,
+        179,
+        184,
+        185,
+        187,
+        263
+      ]
+    },
+    {
+      "name": "Derrick Freeman",
+      "count": 26,
+      "episodes": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        13,
+        15,
+        20,
+        22,
+        24,
+        25,
+        27,
+        27,
+        32,
+        32,
+        36,
+        38,
+        41,
+        64,
+        64,
+        68,
+        73,
+        100
+      ]
+    },
+    {
+      "name": "Jeffery Jones",
       "count": 26,
       "episodes": [
         122,
@@ -993,7 +1232,7 @@
     },
     {
       "name": "Will Pangman",
-      "count": 23,
+      "count": 25,
       "episodes": [
         6,
         8,
@@ -1001,6 +1240,7 @@
         12,
         13,
         15,
+        16,
         17,
         19,
         20,
@@ -1011,6 +1251,7 @@
         30,
         35,
         36,
+        41,
         49,
         64,
         69,
@@ -1050,60 +1291,28 @@
       ]
     },
     {
-      "name": "Vin Armani",
-      "count": 23,
+      "name": "Kristoff Atlas",
+      "count": 19,
       "episodes": [
-        87,
-        89,
-        90,
-        92,
-        103,
-        114,
-        116,
-        121,
-        123,
-        124,
-        131,
-        144,
-        145,
-        154,
-        157,
-        160,
-        169,
-        171,
-        177,
-        179,
-        184,
-        187,
-        263
-      ]
-    },
-    {
-      "name": "Derrick Freeman",
-      "count": 22,
-      "episodes": [
-        2,
-        6,
-        7,
-        8,
-        9,
-        11,
-        12,
-        13,
-        15,
-        20,
+        17,
+        18,
+        19,
+        21,
         22,
+        23,
         24,
-        25,
-        27,
+        28,
+        29,
+        31,
         32,
-        36,
         38,
-        41,
-        64,
-        68,
-        73,
-        100
+        39,
+        45,
+        49,
+        53,
+        56,
+        58,
+        59
       ]
     },
     {
@@ -1152,21 +1361,17 @@
       ]
     },
     {
-      "name": "Martin Wismeijer",
-      "count": 12,
+      "name": "Davy Barker",
+      "count": 8,
       "episodes": [
-        250,
-        258,
-        265,
-        284,
-        286,
-        290,
-        299,
-        300,
-        303,
-        324,
-        331,
-        356
+        2,
+        6,
+        10,
+        16,
+        26,
+        30,
+        36,
+        38
       ]
     },
     {
@@ -1198,28 +1403,29 @@
       ]
     },
     {
-      "name": "Martin Wishmeyer",
-      "count": 7,
+      "name": "Adam McBride",
+      "count": 8,
       "episodes": [
-        288,
-        291,
-        301,
-        314,
-        320,
-        337,
-        343
+        254,
+        257,
+        265,
+        277,
+        289,
+        300,
+        350,
+        408
       ]
     },
     {
-      "name": "Tones",
+      "name": "Gabriel D Vine",
       "count": 6,
       "episodes": [
         85,
-        88,
-        108,
-        110,
+        111,
+        117,
         118,
-        154
+        129,
+        133
       ]
     },
     {
@@ -1271,53 +1477,6 @@
       ]
     },
     {
-      "name": "Bride",
-      "count": 6,
-      "episodes": [
-        254,
-        257,
-        265,
-        277,
-        289,
-        350
-      ]
-    },
-    {
-      "name": "Martin Wishmer",
-      "count": 6,
-      "episodes": [
-        259,
-        267,
-        292,
-        304,
-        316,
-        326
-      ]
-    },
-    {
-      "name": "Josh Tagala",
-      "count": 6,
-      "episodes": [
-        285,
-        316,
-        368,
-        402,
-        432,
-        433
-      ]
-    },
-    {
-      "name": "Davy Barker",
-      "count": 5,
-      "episodes": [
-        6,
-        16,
-        26,
-        30,
-        38
-      ]
-    },
-    {
       "name": "Bryce Weiner",
       "count": 5,
       "episodes": [
@@ -1329,36 +1488,14 @@
       ]
     },
     {
-      "name": "Vaan",
+      "name": "Max Hillebrand",
       "count": 5,
       "episodes": [
-        115,
-        134,
-        143,
-        178,
-        185
-      ]
-    },
-    {
-      "name": "Josh Kigala",
-      "count": 5,
-      "episodes": [
-        194,
-        199,
-        201,
-        202,
-        313
-      ]
-    },
-    {
-      "name": "Josh Gagala",
-      "count": 5,
-      "episodes": [
-        215,
-        231,
-        234,
-        237,
-        303
+        185,
+        186,
+        189,
+        191,
+        200
       ]
     },
     {
@@ -1373,17 +1510,6 @@
       ]
     },
     {
-      "name": "Martine Wismer",
-      "count": 5,
-      "episodes": [
-        245,
-        252,
-        257,
-        280,
-        285
-      ]
-    },
-    {
       "name": "Michael Dupree",
       "count": 5,
       "episodes": [
@@ -1392,56 +1518,6 @@
         300,
         336,
         338
-      ]
-    },
-    {
-      "name": "Derek",
-      "count": 4,
-      "episodes": [
-        13,
-        27,
-        32,
-        64
-      ]
-    },
-    {
-      "name": "Kristoff Atlas",
-      "count": 4,
-      "episodes": [
-        17,
-        31,
-        45,
-        58
-      ]
-    },
-    {
-      "name": "Christoph Atlus",
-      "count": 4,
-      "episodes": [
-        18,
-        19,
-        22,
-        23
-      ]
-    },
-    {
-      "name": "Christoph Atlas",
-      "count": 4,
-      "episodes": [
-        24,
-        32,
-        53,
-        56
-      ]
-    },
-    {
-      "name": "Gabriel Devon",
-      "count": 4,
-      "episodes": [
-        85,
-        118,
-        129,
-        133
       ]
     },
     {
@@ -1465,60 +1541,12 @@
       ]
     },
     {
-      "name": "Tomas Hunt",
-      "count": 4,
-      "episodes": [
-        211,
-        230,
-        334,
-        369
-      ]
-    },
-    {
-      "name": "Martine Wishmare",
-      "count": 4,
-      "episodes": [
-        273,
-        287,
-        305,
-        349
-      ]
-    },
-    {
-      "name": "Josh Legala",
-      "count": 4,
-      "episodes": [
-        302,
-        315,
-        366,
-        382
-      ]
-    },
-    {
       "name": "Andreas Antonopoulos",
       "count": 3,
       "episodes": [
         2,
         51,
         100
-      ]
-    },
-    {
-      "name": "Dovey Barker",
-      "count": 3,
-      "episodes": [
-        2,
-        10,
-        36
-      ]
-    },
-    {
-      "name": "Kristoff Atlus",
-      "count": 3,
-      "episodes": [
-        21,
-        29,
-        59
       ]
     },
     {
@@ -1529,6 +1557,133 @@
         25,
         28
       ]
+    },
+    {
+      "name": "Chris",
+      "count": 3,
+      "episodes": [
+        25,
+        28,
+        151
+      ]
+    },
+    {
+      "name": "Atlas",
+      "count": 3,
+      "episodes": [
+        26,
+        33,
+        40
+      ]
+    },
+    {
+      "name": "Martino",
+      "count": 3,
+      "episodes": [
+        97,
+        140,
+        169
+      ]
+    },
+    {
+      "name": "Now I'm Thomas Hunt",
+      "count": 3,
+      "episodes": [
+        105,
+        153,
+        183
+      ]
+    },
+    {
+      "name": "Goodman",
+      "count": 3,
+      "episodes": [
+        130,
+        138,
+        203
+      ]
+    },
+    {
+      "name": "Weatherman",
+      "count": 3,
+      "episodes": [
+        177,
+        179,
+        183
+      ]
+    },
+    {
+      "name": "Vlad Costea",
+      "count": 3,
+      "episodes": [
+        324,
+        446,
+        470
+      ]
+    },
+    {
+      "name": "Marshall Hainer",
+      "count": 2,
+      "episodes": [
+        51,
+        91
+      ]
+    },
+    {
+      "name": "Alex Sturk",
+      "count": 2,
+      "episodes": [
+        104,
+        107
+      ]
+    },
+    {
+      "name": "Live",
+      "count": 2,
+      "episodes": [
+        137,
+        311
+      ]
+    },
+    {
+      "name": "Christian Routsel",
+      "count": 2,
+      "episodes": [
+        202,
+        235
+      ]
+    },
+    {
+      "name": "Christian Rootsle",
+      "count": 2,
+      "episodes": [
+        227,
+        353
+      ]
+    },
+    {
+      "name": "Stefan Kinsella",
+      "count": 2,
+      "episodes": [
+        255,
+        272
+      ]
+    },
+    {
+      "name": "Justin Newton",
+      "count": 2,
+      "episodes": [
+        263,
+        285
+      ]
+    },
+    {
+      "name": "Michael Carter",
+      "count": 2,
+      "episodes": [
+        266,
+        400
+      ]
     }
   ],
   "by_episode": {
@@ -1538,7 +1693,7 @@
         "affiliation": "Let's Talk Bitcoin"
       },
       {
-        "name": "Dovey Barker",
+        "name": "Davy Barker",
         "affiliation": "Bitcoin"
       },
       {
@@ -1622,7 +1777,7 @@
     ],
     "10": [
       {
-        "name": "Dovey Barker",
+        "name": "Davy Barker",
         "affiliation": "Bitcoin Not Bombs"
       },
       {
@@ -1642,6 +1797,11 @@
       {
         "name": "Oreo",
         "affiliation": "Bitcoin Alliance of Canada This episode was sponsored by let's talk Bitcoin let's talk Bitcoin check out their exciting new podcast contest"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "12": [
@@ -1660,7 +1820,7 @@
     ],
     "13": [
       {
-        "name": "Derek",
+        "name": "Derrick Freeman",
         "affiliation": ""
       },
       {
@@ -1704,7 +1864,7 @@
         "affiliation": "Bitcoin"
       },
       {
-        "name": "Will Pengman",
+        "name": "Will Pangman",
         "affiliation": "Bitcoin"
       }
     ],
@@ -1716,11 +1876,16 @@
       {
         "name": "Will Pangman",
         "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "18": [
       {
-        "name": "Christoph Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -1738,7 +1903,7 @@
         "affiliation": "shiny badges"
       },
       {
-        "name": "Christoph Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin book"
       },
       {
@@ -1752,6 +1917,11 @@
       {
         "name": "Will Pangman",
         "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "20": [
@@ -1762,11 +1932,16 @@
       {
         "name": "Will Pangman",
         "affiliation": "Bitcoin Milwaki hi everybody"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "21": [
       {
-        "name": "Kristoff Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": ""
       },
       {
@@ -1776,7 +1951,7 @@
     ],
     "22": [
       {
-        "name": "Christoph Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -1790,12 +1965,17 @@
     ],
     "23": [
       {
-        "name": "Christoph Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": ""
       },
       {
         "name": "Megan Lords",
         "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "24": [
@@ -1808,7 +1988,7 @@
         "affiliation": "Bitcoin Talk Show"
       },
       {
-        "name": "Christoph Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "world crypto network"
       },
       {
@@ -1840,6 +2020,11 @@
       {
         "name": "Paige Peterson",
         "affiliation": "San Francisco"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "26": [
@@ -1858,11 +2043,16 @@
       {
         "name": "Will Pangman",
         "affiliation": "Bitcoin Millwaukey"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "27": [
       {
-        "name": "Derek",
+        "name": "Derrick Freeman",
         "affiliation": ""
       },
       {
@@ -1892,12 +2082,17 @@
         "affiliation": "Bitcoin"
       },
       {
-        "name": "Christoph Atlis",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
         "name": "Will Pangman",
         "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "29": [
@@ -1906,12 +2101,17 @@
         "affiliation": "San Francisco Bitcoin Meetup"
       },
       {
-        "name": "Megan Lors",
+        "name": "Megan Lords",
         "affiliation": "Bitcoin"
       },
       {
-        "name": "Kristoff Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": "anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "30": [
@@ -1926,6 +2126,11 @@
       {
         "name": "Marty Melrose",
         "affiliation": "MidasMardi"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "31": [
@@ -1940,11 +2145,16 @@
       {
         "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "32": [
       {
-        "name": "Derek",
+        "name": "Derrick Freeman",
         "affiliation": ""
       },
       {
@@ -1952,7 +2162,7 @@
         "affiliation": "Peace"
       },
       {
-        "name": "Christoph Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -1972,6 +2182,11 @@
       {
         "name": "Atlas",
         "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "34": [
@@ -1982,6 +2197,11 @@
       {
         "name": "Megan Lords",
         "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "35": [
@@ -2024,7 +2244,7 @@
         "affiliation": "Peace News Now"
       },
       {
-        "name": "Dovey Barker",
+        "name": "Davy Barker",
         "affiliation": "ShineeBadges"
       },
       {
@@ -2084,7 +2304,7 @@
         "affiliation": "Peace News now"
       },
       {
-        "name": "Chris Dough Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin book"
       },
       {
@@ -2098,7 +2318,7 @@
         "affiliation": ""
       },
       {
-        "name": "Christoph Atlis",
+        "name": "Kristoff Atlas",
         "affiliation": "anonymous bitcoinbook"
       },
       {
@@ -2130,7 +2350,7 @@
     ],
     "41": [
       {
-        "name": "Will Pengman",
+        "name": "Will Pangman",
         "affiliation": "Topiki"
       },
       {
@@ -2140,6 +2360,11 @@
       {
         "name": "Chris Ellis",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "42": [
@@ -2160,6 +2385,11 @@
       {
         "name": "Abyssoft Atlas",
         "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "44": [
@@ -2172,8 +2402,13 @@
         "affiliation": "Bitcoin Not Bombs"
       },
       {
-        "name": "Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "Bad Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "45": [
@@ -2192,6 +2427,11 @@
       {
         "name": "Theo",
         "affiliation": "Soundwallet"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "46": [
@@ -2202,6 +2442,11 @@
       {
         "name": "Bryce Weiner",
         "affiliation": "Block Tech"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "47": [
@@ -2234,6 +2479,11 @@
       {
         "name": "Chris Ellis",
         "affiliation": "At Mr"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "49": [
@@ -2254,12 +2504,17 @@
         "affiliation": "Topiki"
       },
       {
-        "name": "Chris Dough Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
         "name": "Thomas Hunter",
         "affiliation": "Mad Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "50": [
@@ -2278,6 +2533,11 @@
       {
         "name": "Todd Zhunt",
         "affiliation": "Matt Bitcoins"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "51": [
@@ -2318,7 +2578,7 @@
         "affiliation": "Block Tech Financial"
       },
       {
-        "name": "Christoph Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -2330,6 +2590,11 @@
       {
         "name": "Tom Hutt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "55": [
@@ -2348,7 +2613,7 @@
     ],
     "56": [
       {
-        "name": "Christoph Atlas",
+        "name": "Kristoff Atlas",
         "affiliation": "Anonymous Bitcoin Book"
       },
       {
@@ -2368,6 +2633,11 @@
       {
         "name": "Anonymous",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "58": [
@@ -2382,7 +2652,7 @@
     ],
     "59": [
       {
-        "name": "Kristoff Atlus",
+        "name": "Kristoff Atlas",
         "affiliation": ""
       },
       {
@@ -2434,7 +2704,7 @@
     ],
     "64": [
       {
-        "name": "Derek",
+        "name": "Derrick Freeman",
         "affiliation": ""
       },
       {
@@ -2448,6 +2718,11 @@
       {
         "name": "Tom Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "65": [
@@ -2462,6 +2737,20 @@
       {
         "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      }
+    ],
+    "66": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
+      }
+    ],
+    "67": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "68": [
@@ -2486,6 +2775,11 @@
       {
         "name": "Will Pangman",
         "affiliation": "Topiki"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "70": [
@@ -2496,6 +2790,11 @@
       {
         "name": "Chris Ellis",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "71": [
@@ -2566,6 +2865,11 @@
       {
         "name": "Will Pangman",
         "affiliation": "Satoshi Social"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "77": [
@@ -2580,6 +2884,11 @@
       {
         "name": "Chris Ellis",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "78": [
@@ -2660,7 +2969,7 @@
         "affiliation": "Facebook"
       },
       {
-        "name": "Megan Lors",
+        "name": "Megan Lords",
         "affiliation": "AirBits"
       },
       {
@@ -2688,6 +2997,11 @@
       {
         "name": "Theo Goodman",
         "affiliation": "Bitcoin Technical Analysis"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "84": [
@@ -2710,11 +3024,11 @@
     ],
     "85": [
       {
-        "name": "Gabriel Devon",
+        "name": "Gabriel D Vine",
         "affiliation": ""
       },
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Brave New Corn"
       },
       {
@@ -2764,7 +3078,7 @@
     ],
     "88": [
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Brave New Coin"
       },
       {
@@ -2786,7 +3100,7 @@
         "affiliation": "Future Rant"
       },
       {
-        "name": "Tony Vaze",
+        "name": "Tone Vays",
         "affiliation": "Brave New Coin"
       },
       {
@@ -2852,7 +3166,7 @@
         "affiliation": "Future Rant"
       },
       {
-        "name": "Tony Vaze",
+        "name": "Tone Vays",
         "affiliation": "Brave New Coin"
       },
       {
@@ -2868,6 +3182,11 @@
       {
         "name": "Thomas Hutton",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "94": [
@@ -3021,8 +3340,13 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "103": [
@@ -3057,7 +3381,7 @@
         "affiliation": "Future Rant"
       },
       {
-        "name": "Ton Vays",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3093,8 +3417,13 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "107": [
@@ -3113,7 +3442,7 @@
     ],
     "108": [
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3127,7 +3456,7 @@
         "affiliation": ""
       },
       {
-        "name": "Ton Vays",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3141,8 +3470,13 @@
         "affiliation": "Rare Pepe Blockchain Foundation"
       },
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "111": [
@@ -3151,7 +3485,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Gabriel Divine",
+        "name": "Gabriel D Vine",
         "affiliation": "Future Rant"
       },
       {
@@ -3215,12 +3549,17 @@
         "affiliation": ""
       },
       {
-        "name": "Vaan",
+        "name": "Vin Armani",
         "affiliation": "Future Rent"
       },
       {
-        "name": "Thomas",
+        "name": "Thomas Hunt",
         "affiliation": "world"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "116": [
@@ -3235,6 +3574,11 @@
       {
         "name": "Dean Martino",
         "affiliation": "Coin Journal"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "117": [
@@ -3243,7 +3587,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Gabriel Divine",
+        "name": "Gabriel D Vine",
         "affiliation": "Future Rent"
       },
       {
@@ -3261,11 +3605,11 @@
     ],
     "118": [
       {
-        "name": "Gabriel Devon",
+        "name": "Gabriel D Vine",
         "affiliation": ""
       },
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3279,8 +3623,13 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Time Thomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "120": [
@@ -3321,7 +3670,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3435,7 +3784,7 @@
         "affiliation": "HASS Online"
       },
       {
-        "name": "Gabriel Devon",
+        "name": "Gabriel D Vine",
         "affiliation": "Future Rent"
       },
       {
@@ -3443,7 +3792,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3463,6 +3812,11 @@
       {
         "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "131": [
@@ -3489,7 +3843,7 @@
         "affiliation": ""
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3507,7 +3861,7 @@
         "affiliation": "HASS online"
       },
       {
-        "name": "Gabriel Devon",
+        "name": "Gabriel D Vine",
         "affiliation": "Future Rant"
       },
       {
@@ -3515,7 +3869,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3533,11 +3887,11 @@
         "affiliation": "Hats online"
       },
       {
-        "name": "Vaan",
+        "name": "Vin Armani",
         "affiliation": "Future Rent"
       },
       {
-        "name": "Ton Vays",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3547,7 +3901,7 @@
     ],
     "135": [
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3587,7 +3941,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3631,7 +3985,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3667,7 +4021,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3695,11 +4049,11 @@
         "affiliation": "Bitcoin Uncensored"
       },
       {
-        "name": "Vaan",
+        "name": "Vin Armani",
         "affiliation": "Future Rant"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3885,7 +4239,7 @@
         "affiliation": "Future Rant"
       },
       {
-        "name": "Tones",
+        "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
       },
       {
@@ -3945,7 +4299,7 @@
         "affiliation": ""
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3955,6 +4309,11 @@
       {
         "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "159": [
@@ -3967,7 +4326,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -3999,7 +4358,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4015,6 +4374,11 @@
       {
         "name": "Tone Vays",
         "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "163": [
@@ -4023,7 +4387,7 @@
         "affiliation": ""
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4041,7 +4405,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4059,7 +4423,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4077,7 +4441,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4091,7 +4455,7 @@
         "affiliation": "KyleTorpy"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4101,7 +4465,7 @@
     ],
     "168": [
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4127,7 +4491,7 @@
         "affiliation": "Zap wallet"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4141,7 +4505,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4159,7 +4523,7 @@
         "affiliation": "Future Rant"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4173,7 +4537,7 @@
         "affiliation": "Bank to the Future"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4187,7 +4551,7 @@
         "affiliation": "KyleTorpy"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4197,7 +4561,7 @@
     ],
     "174": [
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4207,6 +4571,11 @@
       {
         "name": "Tom As Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "175": [
@@ -4223,7 +4592,7 @@
         "affiliation": "Liberty Life Trail"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4269,7 +4638,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vaan",
+        "name": "Vin Armani",
         "affiliation": "Future Rent"
       },
       {
@@ -4303,7 +4672,7 @@
         "affiliation": "Proof of Work Media"
       },
       {
-        "name": "Jeffrey Jones",
+        "name": "Jeffery Jones",
         "affiliation": "Bitcoin News Show"
       },
       {
@@ -4399,12 +4768,17 @@
         "affiliation": "Crypto Gold Central"
       },
       {
-        "name": "Vaan",
+        "name": "Vin Armani",
         "affiliation": "Future Rant"
       },
       {
-        "name": "Max Hillabrand",
+        "name": "Max Hillebrand",
         "affiliation": "towardsliberty"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "186": [
@@ -4413,7 +4787,7 @@
         "affiliation": ""
       },
       {
-        "name": "Max Hillabran",
+        "name": "Max Hillebrand",
         "affiliation": "towardsliberty"
       },
       {
@@ -4455,7 +4829,7 @@
         "affiliation": "Crypto Gold Central"
       },
       {
-        "name": "Max Hillabran",
+        "name": "Max Hillebrand",
         "affiliation": "towardliberty"
       },
       {
@@ -4465,7 +4839,7 @@
     ],
     "190": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4479,7 +4853,7 @@
     ],
     "191": [
       {
-        "name": "Max Hillabrand",
+        "name": "Max Hillebrand",
         "affiliation": "towardliberty"
       },
       {
@@ -4493,7 +4867,7 @@
     ],
     "192": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4503,7 +4877,7 @@
     ],
     "193": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4517,7 +4891,7 @@
     ],
     "194": [
       {
-        "name": "Josh Kigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4537,7 +4911,7 @@
     ],
     "196": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4551,7 +4925,7 @@
     ],
     "197": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4579,11 +4953,11 @@
     ],
     "199": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Kigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4619,7 +4993,7 @@
         "affiliation": "BTC Socialist"
       },
       {
-        "name": "Josh Kigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4641,7 +5015,7 @@
         "affiliation": "England"
       },
       {
-        "name": "Josh Kigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -4665,7 +5039,7 @@
     ],
     "204": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4675,7 +5049,7 @@
     ],
     "205": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4689,7 +5063,7 @@
     ],
     "206": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4707,7 +5081,7 @@
     ],
     "207": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtora"
       },
       {
@@ -4717,13 +5091,18 @@
     ],
     "208": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "209": [
       {
-        "name": "Josh Gigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -4737,23 +5116,33 @@
         "affiliation": "Wales"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Vol Toro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "211": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
-        "name": "Tomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "world crypto network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "212": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4771,11 +5160,11 @@
         "affiliation": "BTC"
       },
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": "crypto Raptor"
       },
       {
-        "name": "Jessica Gala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -4803,7 +5192,7 @@
         "affiliation": "Midas Touch Consulting"
       },
       {
-        "name": "Josh Gagala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -4813,7 +5202,7 @@
     ],
     "216": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4841,17 +5230,22 @@
     ],
     "218": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
         "name": "Thomas Hut",
         "affiliation": "world crypto network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "219": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4889,7 +5283,7 @@
     ],
     "222": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -4903,7 +5297,7 @@
         "affiliation": "BTC IoT"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -4913,7 +5307,7 @@
     ],
     "224": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -4927,7 +5321,7 @@
         "affiliation": "BTC"
       },
       {
-        "name": "Jessica Gala",
+        "name": "Josh Scigala",
         "affiliation": "Fall Toro"
       },
       {
@@ -4941,7 +5335,7 @@
         "affiliation": "BTC IoT"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5001,8 +5395,13 @@
         "affiliation": "BTC IoT"
       },
       {
-        "name": "Tomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "231": [
@@ -5011,7 +5410,7 @@
         "affiliation": "crypto feed what's up y'all great to be back on the Bitcoin group for the first time in year two I guess I'll see you out"
       },
       {
-        "name": "Josh Gagala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro a Yibba the Yibba the Yibba folks that's not all folks"
       },
       {
@@ -5025,7 +5424,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5035,7 +5434,7 @@
     ],
     "233": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5053,7 +5452,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Gagala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5095,7 +5494,7 @@
     ],
     "237": [
       {
-        "name": "Josh Gagala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5113,7 +5512,7 @@
         "affiliation": "BTC"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5143,7 +5542,7 @@
     ],
     "241": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5161,7 +5560,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5181,11 +5580,11 @@
     ],
     "245": [
       {
-        "name": "Martine Wismer",
+        "name": "Martin Wismeijer",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5199,7 +5598,7 @@
         "affiliation": "LNBITS"
       },
       {
-        "name": "Josh Gigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5213,7 +5612,7 @@
         "affiliation": "LNBits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Vault"
       },
       {
@@ -5223,11 +5622,11 @@
     ],
     "248": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5241,7 +5640,7 @@
         "affiliation": ""
       },
       {
-        "name": "Gala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5251,7 +5650,7 @@
     ],
     "250": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5259,13 +5658,18 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "251": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5279,11 +5683,11 @@
     ],
     "252": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martine Wismer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -5301,7 +5705,7 @@
     ],
     "253": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5313,7 +5717,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5327,15 +5731,15 @@
     ],
     "254": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Adam McBride show"
       },
       {
@@ -5353,7 +5757,7 @@
         "affiliation": "BTC"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5367,7 +5771,7 @@
         "affiliation": "CurioCards"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5377,15 +5781,15 @@
     ],
     "257": [
       {
-        "name": "Martine Wismer",
+        "name": "Martin Wismeijer",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Adam McBride Show"
       },
       {
@@ -5413,11 +5817,11 @@
     ],
     "259": [
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5427,11 +5831,11 @@
     ],
     "260": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5441,7 +5845,7 @@
     ],
     "261": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5451,11 +5855,11 @@
     ],
     "262": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -5469,11 +5873,11 @@
     ],
     "263": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Vol Toro"
       },
       {
@@ -5495,7 +5899,7 @@
     ],
     "264": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
@@ -5517,11 +5921,11 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Adam McBride show"
       },
       {
@@ -5545,11 +5949,11 @@
     ],
     "267": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -5563,7 +5967,7 @@
     ],
     "268": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5595,7 +5999,7 @@
         "affiliation": "Bitcoin Standard Conference"
       },
       {
-        "name": "Joshua Shigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -5609,7 +6013,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Joshua Shagalla",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -5623,7 +6027,7 @@
         "affiliation": "Open Crypto Alliance"
       },
       {
-        "name": "Joshua Shagalla",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -5633,11 +6037,11 @@
     ],
     "273": [
       {
-        "name": "Martine Wishmare",
+        "name": "Martin Wismeijer",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -5647,6 +6051,11 @@
       {
         "name": "Vahn",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "274": [
@@ -5655,7 +6064,7 @@
         "affiliation": "Valtoro"
       },
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5675,7 +6084,7 @@
     ],
     "276": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5685,11 +6094,11 @@
     ],
     "277": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Voltoro"
       },
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Adam McBride show"
       },
       {
@@ -5703,7 +6112,7 @@
         "affiliation": "LNBits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -5713,11 +6122,11 @@
     ],
     "279": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -5731,21 +6140,26 @@
     ],
     "280": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martine Wismer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "281": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -5757,9 +6171,16 @@
         "affiliation": "world crypto network"
       }
     ],
+    "282": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
+      }
+    ],
     "283": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -5783,11 +6204,11 @@
         "affiliation": "Netkey"
       },
       {
-        "name": "Martine Wismer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -5797,25 +6218,30 @@
     ],
     "286": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot I"
       },
       {
         "name": "Martin Wismeijer",
         "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "287": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martine Wishmare",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -5825,15 +6251,15 @@
     ],
     "288": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Jagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -5843,7 +6269,7 @@
     ],
     "289": [
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Adam McBride show"
       },
       {
@@ -5867,11 +6293,11 @@
     ],
     "291": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -5881,11 +6307,11 @@
     ],
     "292": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -5895,7 +6321,7 @@
     ],
     "293": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -5913,7 +6339,7 @@
     ],
     "294": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5921,7 +6347,7 @@
         "affiliation": "LN Bits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -5931,7 +6357,7 @@
     ],
     "295": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5953,7 +6379,7 @@
     ],
     "296": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -5987,7 +6413,7 @@
     ],
     "299": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6027,7 +6453,7 @@
     ],
     "301": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6035,7 +6461,7 @@
         "affiliation": "Lightning Bits"
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6045,7 +6471,7 @@
     ],
     "302": [
       {
-        "name": "Josh Legala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -6059,7 +6485,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Gagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6069,11 +6495,11 @@
     ],
     "304": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6083,7 +6509,7 @@
     ],
     "305": [
       {
-        "name": "Martine Wishmare",
+        "name": "Martin Wismeijer",
         "affiliation": ""
       },
       {
@@ -6103,7 +6529,7 @@
     ],
     "307": [
       {
-        "name": "Josh Agala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -6117,7 +6543,7 @@
     ],
     "308": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6127,13 +6553,18 @@
     ],
     "309": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "310": [
       {
-        "name": "Josh Seagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6157,7 +6588,7 @@
     ],
     "312": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6171,7 +6602,7 @@
     ],
     "313": [
       {
-        "name": "Josh Kigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6185,15 +6616,15 @@
     ],
     "314": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6203,11 +6634,11 @@
     ],
     "315": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Legala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -6217,11 +6648,11 @@
     ],
     "316": [
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6231,11 +6662,16 @@
       {
         "name": "Anon Thomas Hunt",
         "affiliation": "world of crypto network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "317": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6249,7 +6685,7 @@
     ],
     "318": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6257,7 +6693,7 @@
         "affiliation": "LNBIT"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6281,11 +6717,11 @@
         "affiliation": "LNBITS"
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -6299,7 +6735,7 @@
         "affiliation": "Ellen Bits"
       },
       {
-        "name": "Josh Jagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6309,11 +6745,11 @@
     ],
     "322": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Joshua Gala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -6323,7 +6759,7 @@
     ],
     "323": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6331,7 +6767,7 @@
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6345,7 +6781,7 @@
     ],
     "324": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6357,7 +6793,7 @@
         "affiliation": "BTC KVR"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -6367,11 +6803,11 @@
     ],
     "325": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Seagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6381,7 +6817,7 @@
     ],
     "326": [
       {
-        "name": "Martin Wishmer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6399,7 +6835,7 @@
         "affiliation": "Stoker"
       },
       {
-        "name": "Joshua Shigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -6409,7 +6845,7 @@
     ],
     "328": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6423,7 +6859,7 @@
     ],
     "329": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6437,7 +6873,7 @@
     ],
     "330": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6445,7 +6881,7 @@
         "affiliation": "LN bits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -6469,7 +6905,7 @@
     ],
     "332": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6477,7 +6913,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6497,17 +6933,22 @@
     ],
     "334": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
-        "name": "Tomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "335": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6521,7 +6962,7 @@
     ],
     "336": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6539,11 +6980,11 @@
     ],
     "337": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Pights"
       },
       {
@@ -6557,7 +6998,7 @@
     ],
     "338": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6575,7 +7016,7 @@
     ],
     "339": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -6603,7 +7044,7 @@
     ],
     "341": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6625,7 +7066,7 @@
         "affiliation": "Bitcoin"
       },
       {
-        "name": "Josh Agala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -6635,11 +7076,11 @@
     ],
     "343": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Martin Wishmeyer",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
@@ -6649,7 +7090,7 @@
     ],
     "344": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6673,7 +7114,7 @@
     ],
     "346": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6691,7 +7132,7 @@
     ],
     "347": [
       {
-        "name": "Joshua Gala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6709,7 +7150,7 @@
         "affiliation": "ZeroX Salon"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6719,11 +7160,11 @@
     ],
     "349": [
       {
-        "name": "Martine Wishmare",
+        "name": "Martin Wismeijer",
         "affiliation": "General Bites"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "Valtoro"
       },
       {
@@ -6733,7 +7174,7 @@
     ],
     "350": [
       {
-        "name": "Bride",
+        "name": "Adam McBride",
         "affiliation": "Embrun Vault"
       },
       {
@@ -6757,7 +7198,7 @@
         "affiliation": ""
       },
       {
-        "name": "Ben Ark",
+        "name": "Ben Arc",
         "affiliation": "LNBITS"
       },
       {
@@ -6781,7 +7222,7 @@
     ],
     "354": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6799,7 +7240,7 @@
     ],
     "355": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6839,7 +7280,7 @@
     ],
     "357": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6847,7 +7288,7 @@
         "affiliation": "Harlem Bitcoin"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -6857,7 +7298,7 @@
     ],
     "358": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6887,7 +7328,7 @@
     ],
     "361": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6897,7 +7338,7 @@
     ],
     "362": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6905,7 +7346,7 @@
         "affiliation": "Emblem Vault"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6915,7 +7356,7 @@
     ],
     "363": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -6929,7 +7370,7 @@
     ],
     "364": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6939,7 +7380,7 @@
     ],
     "365": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6953,11 +7394,11 @@
     ],
     "366": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Legala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -6981,11 +7422,11 @@
     ],
     "368": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -6995,17 +7436,22 @@
     ],
     "369": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Tomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "370": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7019,7 +7465,7 @@
     ],
     "371": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7029,11 +7475,11 @@
     ],
     "372": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Joshua Gala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7047,7 +7493,7 @@
     ],
     "373": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7061,7 +7507,7 @@
     ],
     "374": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7071,7 +7517,7 @@
     ],
     "375": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7081,11 +7527,11 @@
     ],
     "376": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7099,17 +7545,22 @@
     ],
     "377": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "378": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7119,7 +7570,7 @@
     ],
     "379": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7127,7 +7578,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7137,7 +7588,7 @@
     ],
     "380": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7147,7 +7598,7 @@
     ],
     "381": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7165,7 +7616,7 @@
     ],
     "382": [
       {
-        "name": "Josh Legala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7203,7 +7654,7 @@
     ],
     "385": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7213,11 +7664,11 @@
     ],
     "386": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -7255,7 +7706,7 @@
         "affiliation": "LN Bits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7265,11 +7716,11 @@
     ],
     "390": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7279,7 +7730,7 @@
     ],
     "391": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7287,7 +7738,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7301,7 +7752,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7319,7 +7770,7 @@
         "affiliation": "Progressive Bitcoin podcast"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7333,7 +7784,7 @@
     ],
     "394": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7341,7 +7792,7 @@
         "affiliation": "Understanding Crypto"
       },
       {
-        "name": "Josh Jagala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -7355,7 +7806,7 @@
     ],
     "395": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7365,7 +7816,7 @@
     ],
     "396": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7383,11 +7834,11 @@
     ],
     "397": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7401,7 +7852,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7411,11 +7862,11 @@
     ],
     "399": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7465,7 +7916,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -7479,17 +7930,22 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "404": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7499,7 +7955,7 @@
     ],
     "405": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7507,7 +7963,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7517,7 +7973,7 @@
     ],
     "406": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7531,7 +7987,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7545,7 +8001,7 @@
         "affiliation": ""
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7555,7 +8011,7 @@
     ],
     "409": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7573,7 +8029,7 @@
         "affiliation": "OX Salon"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7587,7 +8043,7 @@
     ],
     "411": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7597,7 +8053,7 @@
     ],
     "412": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7617,7 +8073,7 @@
     ],
     "414": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7625,7 +8081,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7663,6 +8119,11 @@
       {
         "name": "Ben Arc",
         "affiliation": "LNBIT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "417": [
@@ -7685,7 +8146,7 @@
         "affiliation": "LN bits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard dot IO"
       },
       {
@@ -7699,7 +8160,7 @@
     ],
     "419": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7717,7 +8178,7 @@
     ],
     "420": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7735,7 +8196,7 @@
         "affiliation": ""
       },
       {
-        "name": "Gala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7749,7 +8210,7 @@
         "affiliation": "Satoshi's page"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7773,6 +8234,11 @@
       {
         "name": "Mackie",
         "affiliation": "Amentum"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "424": [
@@ -7787,7 +8253,7 @@
     ],
     "425": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7821,7 +8287,7 @@
     ],
     "428": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -7857,7 +8323,7 @@
     ],
     "432": [
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7871,7 +8337,7 @@
     ],
     "433": [
       {
-        "name": "Josh Tagala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7895,7 +8361,7 @@
     ],
     "435": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7905,7 +8371,7 @@
     ],
     "436": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7923,7 +8389,7 @@
     ],
     "437": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -7933,7 +8399,7 @@
     ],
     "438": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -7975,7 +8441,7 @@
     ],
     "443": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -8035,7 +8501,7 @@
         "affiliation": "LNBits"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "standard"
       },
       {
@@ -8045,8 +8511,13 @@
     ],
     "448": [
       {
-        "name": "Time Thomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "449": [
@@ -8069,7 +8540,7 @@
     ],
     "450": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8079,7 +8550,7 @@
     ],
     "451": [
       {
-        "name": "Ben Ark",
+        "name": "Ben Arc",
         "affiliation": "LNBITS"
       },
       {
@@ -8097,7 +8568,7 @@
         "affiliation": "LNBITS"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -8111,7 +8582,7 @@
     ],
     "453": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8137,6 +8608,11 @@
       {
         "name": "Victoria Jones",
         "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "457": [
@@ -8165,7 +8641,7 @@
         "affiliation": "LNBIT"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -8187,7 +8663,7 @@
         "affiliation": "Ellen Bitts"
       },
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestandard"
       },
       {
@@ -8221,7 +8697,7 @@
     ],
     "463": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8235,7 +8711,7 @@
     ],
     "464": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8249,7 +8725,7 @@
     ],
     "465": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8285,12 +8761,17 @@
     ],
     "470": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
         "name": "Vlad Costea",
         "affiliation": "Bitcoin Takeover"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "471": [
@@ -8305,7 +8786,7 @@
     ],
     "472": [
       {
-        "name": "Dan Eave",
+        "name": "Dan Eve",
         "affiliation": ""
       },
       {
@@ -8323,8 +8804,13 @@
         "affiliation": "Razpy Blitz"
       },
       {
-        "name": "Nine Thomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "474": [
@@ -8351,7 +8837,7 @@
     ],
     "475": [
       {
-        "name": "Josh Sigala",
+        "name": "Josh Scigala",
         "affiliation": "thestander"
       },
       {
@@ -8413,8 +8899,13 @@
         "affiliation": "LNBits"
       },
       {
-        "name": "Nine Thomas Hunt",
+        "name": "Thomas Hunt",
         "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
       }
     ],
     "482": [

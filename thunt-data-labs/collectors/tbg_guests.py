@@ -92,28 +92,88 @@ def extract_guests_from_intro(text, ep_num):
                         affiliation = m.group(2).strip().rstrip('.,')
                     guests.append({'name': name, 'affiliation': affiliation})
     
-    # Also check for "I'm Thomas Hunt from the World Crypto Network"
-    host_match = re.search(r"I'm\s+(Thomas Hunt|Thomas)\s+from\s+(the World Crypto Network|World Crypto Network|WCN)", intro, re.IGNORECASE)
-    if host_match:
-        name = host_match.group(1)
-        if name not in [g['name'] for g in guests]:
+    # Thomas Hunt / Mad Bitcoins detection — he is the HOST and on nearly every episode
+    # Check for any Thomas Hunt reference in the intro
+    thomas_patterns = [
+        r"I'm\s+Thomas\s+Hunt",
+        r"Thomas\s+Hunt\s+from",
+        r"Mad\s+Bitcoins",
+        r"World\s+Crypto\s+Network",
+        r"I'm\s+Thomas\s+from",
+    ]
+    has_thomas = any(g['name'] == 'Thomas Hunt' for g in guests)
+    if not has_thomas:
+        for tp in thomas_patterns:
+            if re.search(tp, intro, re.IGNORECASE):
+                guests.append({'name': 'Thomas Hunt', 'affiliation': 'World Crypto Network', 'host': True})
+                has_thomas = True
+                break
+    
+    # Also check the full first 1500 words for Thomas Hunt references (he often self-IDs later)
+    if not has_thomas:
+        full_intro = ' '.join(body.split()[:1500]) if body else ''
+        for tp in thomas_patterns:
+            if re.search(tp, full_intro, re.IGNORECASE):
+                guests.append({'name': 'Thomas Hunt', 'affiliation': 'World Crypto Network', 'host': True})
+                has_thomas = True
+                break
+    
+    # Thomas Hunt is the host — assume present unless this is a known guest-only episode
+    # He appears in all but ~2-3 episodes across the entire run
+    if not has_thomas and ep_num not in []:
+        # Check if transcript mentions his name anywhere at all
+        full_text_lower = (body or '').lower()
+        if any(x in full_text_lower for x in ['thomas hunt', 'thomas from', 'mad bitcoins', 'world crypto network', 'i\'m thomas']):
             guests.append({'name': 'Thomas Hunt', 'affiliation': 'World Crypto Network', 'host': True})
     
     # Normalize known name variants (Whisper STT variations)
     NORMALIZATIONS = {
-        'Tom Vays': 'Tone Vays', 'Toned Vays': 'Tone Vays', 'Tony Vays': 'Tone Vays', 'Tone Bays': 'Tone Vays',
-        'Dan Eve': 'Dan Eave', 'Dan Eave': 'Dan Eave',
-        'Josh Shigala': 'Josh Sigala', 'Josh Shigalla': 'Josh Sigala', 'Josh Gagalla': 'Josh Sigala',
-        'Josh Egala': 'Josh Sigala', 'Josh Gala': 'Josh Sigala', 'Josh Shagalla': 'Josh Sigala',
-        'Vine': 'Vin Armani', 'Vin': 'Vin Armani',
+        # Host
+        'Thomas': 'Thomas Hunt', 'Tomas Hunt': 'Thomas Hunt', 'Hunt': 'Thomas Hunt',
+        'Mad Bitcoins': 'Thomas Hunt', 'Nine Thomas Hunt': 'Thomas Hunt',
+        'Now I M Thomas Hunt': 'Thomas Hunt', 'Time Thomas Hunt': 'Thomas Hunt',
+        # Tone Vays
+        'Tom Vays': 'Tone Vays', 'Toned Vays': 'Tone Vays', 'Tony Vays': 'Tone Vays',
+        'Tone Bays': 'Tone Vays', 'Tony Vaze': 'Tone Vays', 'Ton Vays': 'Tone Vays', 'Tones': 'Tone Vays',
+        # Dan Eve (correct spelling per user)
+        'Dan Eave': 'Dan Eve', 'Dan Eve': 'Dan Eve',
+        # Josh Scigala (correct spelling per user)
+        'Josh Shigala': 'Josh Scigala', 'Josh Shigalla': 'Josh Scigala', 'Josh Gagalla': 'Josh Scigala',
+        'Josh Egala': 'Josh Scigala', 'Josh Gala': 'Josh Scigala', 'Josh Shagalla': 'Josh Scigala',
+        'Josh Sigala': 'Josh Scigala', 'Josh Tagala': 'Josh Scigala', 'Josh Agala': 'Josh Scigala',
+        'Josh Jagala': 'Josh Scigala', 'Josh Kigala': 'Josh Scigala', 'Josh Legala': 'Josh Scigala',
+        'Josh Gigala': 'Josh Scigala', 'Josh Seagala': 'Josh Scigala', 'Josh Gagala': 'Josh Scigala',
+        'Joshua Gala': 'Josh Scigala', 'Joshua Shagalla': 'Josh Scigala', 'Joshua Shigala': 'Josh Scigala',
+        'Jessica Gala': 'Josh Scigala', 'Gala': 'Josh Scigala',
+        # Jeffrey Jones / The Vortex
+        'Jeffrey Jones': 'Jeffery Jones', 'Jeffery Jones': 'Jeffery Jones',
+        # Vin Armani
+        'Vine': 'Vin Armani', 'Vin': 'Vin Armani', 'Vaan': 'Vin Armani',
+        # Megan Lords
         'Megan Lourds': 'Megan Lords', 'Megan Lourdes': 'Megan Lords', 'Megan Lawrence': 'Megan Lords',
-        'Will Penguin': 'Will Pangman', 'Will Pangmann': 'Will Pangman',
-        'Ben Arck': 'Ben Arc', 'Ben Arc': 'Ben Arc',
+        'Megan Lors': 'Megan Lords',
+        # Will Pangman
+        'Will Penguin': 'Will Pangman', 'Will Pangmann': 'Will Pangman', 'Will Pengman': 'Will Pangman',
+        # Ben Arc
+        'Ben Arck': 'Ben Arc', 'Ben Ark': 'Ben Arc',
+        # Vlad Costea
         'Vlad Kosta': 'Vlad Costea', 'Vlad Costa': 'Vlad Costea',
+        # Martin Wismeijer
         'Martin Wishmare': 'Martin Wismeijer', 'Martin Wismer': 'Martin Wismeijer',
-        'Adam Mc': 'Adam McBride', 'Adam McBride': 'Adam McBride',
-        'Freeman': 'Derrick Freeman', 'Derek Freeman': 'Derrick Freeman',
+        'Martin Wishmeyer': 'Martin Wismeijer', 'Martin Wishmer': 'Martin Wismeijer',
+        'Martine Wishmare': 'Martin Wismeijer', 'Martine Wismer': 'Martin Wismeijer',
+        # Adam McBride
+        'Adam Mc': 'Adam McBride', 'Bride': 'Adam McBride',
+        # Derrick Freeman
+        'Freeman': 'Derrick Freeman', 'Derek Freeman': 'Derrick Freeman', 'Derek': 'Derrick Freeman',
+        # Other
         'Mike Dupree': 'Michael Dupree',
+        'Christoph Atlas': 'Kristoff Atlas', 'Christoph Atlis': 'Kristoff Atlas',
+        'Christoph Atlus': 'Kristoff Atlas', 'Kristoff Atlus': 'Kristoff Atlas',
+        'Chris Dough Atlas': 'Kristoff Atlas',
+        'Max Hillabran': 'Max Hillebrand', 'Max Hillabrand': 'Max Hillebrand',
+        'Gabriel Devon': 'Gabriel D Vine', 'Gabriel Divine': 'Gabriel D Vine',
+        'Dovey Barker': 'Davy Barker',
     }
     for g in guests:
         if g['name'] in NORMALIZATIONS:
