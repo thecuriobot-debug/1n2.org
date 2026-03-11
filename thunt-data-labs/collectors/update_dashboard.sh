@@ -8,13 +8,17 @@
 
 cd "$(dirname "$0")"
 
-# Prevent concurrent runs
+# Prevent concurrent runs — with stale lockfile detection
 LOCKFILE="/tmp/dashboard_update.lock"
 if [ -f "$LOCKFILE" ]; then
     LOCKPID=$(cat "$LOCKFILE")
-    if kill -0 "$LOCKPID" 2>/dev/null; then
+    # Check if PID is alive AND is actually our script (not a recycled PID)
+    if kill -0 "$LOCKPID" 2>/dev/null && ps -p "$LOCKPID" -o command= 2>/dev/null | grep -q "update_dashboard"; then
         echo "Another update is running (PID $LOCKPID). Skipping."
         exit 0
+    else
+        echo "Stale lockfile found (PID $LOCKPID dead or different process). Removing."
+        rm -f "$LOCKFILE"
     fi
 fi
 echo $$ > "$LOCKFILE"
