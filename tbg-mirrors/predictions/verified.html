@@ -1,8 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Verified Predictions — TBG Mirrors</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
+<title>Prediction Leaderboard — TBG Mirrors</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><style>:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
 a{color:var(--accent);text-decoration:none}a:hover{color:#fff}.wrap{max-width:950px;margin:0 auto;padding:2rem 1.5rem}
 .nav{font-size:.85rem;margin-bottom:1rem;display:flex;gap:10px;flex-wrap:wrap}
@@ -12,21 +9,20 @@ h2{font-size:1.05rem;color:var(--accent);margin:1.5rem 0 .7rem;padding-bottom:.3
 .stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;text-align:center}
 .stat .n{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700}.stat .l{font-size:.68rem;color:var(--muted)}
 table{width:100%;border-collapse:collapse}th{text-align:left;padding:8px 10px;font-size:.75rem;color:var(--muted);text-transform:uppercase;border-bottom:2px solid var(--border)}
-td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr:hover{background:rgba(34,211,238,.03)}
-</style></head><body><div class="wrap">
-<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/predictions/">🔮 All Predictions</a><a href="/tbg-mirrors/predictions/magic-8-ball.html">🎱 8-Ball</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a></div>
-<h1>🔮 Verified Prediction Leaderboard</h1>
-<p style="color:var(--muted);font-size:.88rem;margin-bottom:1rem">Predictions weighted by verification level. Higher stars = more confidence the attribution is correct.</p>
+td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr:hover{background:rgba(34,211,238,.03)}</style></head><body><div class="wrap">
+<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a><a href="/tbg-mirrors/predictions/">🏆 Leaderboard</a><a href="/tbg-mirrors/predictions/magic-8-ball.html">🎱 8-Ball</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a></div>
+<h1>🔮 Prediction Leaderboard</h1>
+<p style="color:var(--muted);font-size:.88rem;margin-bottom:1rem">Price predictions verified against BTC price 7 days later. Weighted by 3-tier confidence system using YouTube descriptions, show intros, and prediction segment context.</p>
 <div class="stats">
-<div class="stat"><div class="n" style="color:var(--accent)">471</div><div class="l">Total Predictions</div></div>
-<div class="stat"><div class="n" style="color:var(--amber)">3 Tiers</div><div class="l">Verification</div></div>
-<div class="stat"><div class="n" style="color:var(--green)">Min 5</div><div class="l">To Qualify</div></div>
+<div class="stat"><div class="n" style="color:var(--accent)">471</div><div class="l">Predictions</div></div>
+<div class="stat"><div class="n" style="color:var(--amber)">★★★</div><div class="l">3-Tier Verification</div></div>
+<div class="stat"><div class="n" style="color:var(--green)">5+ min</div><div class="l">To Qualify</div></div>
 </div>
 <h2>🔍 Verification Levels</h2>
-<div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★★★</span><span style="min-width:150px;font-size:.9rem">Named in prediction</span><span style="font-family:JetBrains Mono,monospace;font-size:.85rem;color:var(--muted)">371 predictions · 370 verified · 49%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★★☆</span><span style="min-width:150px;font-size:.9rem">In show intro</span><span style="font-family:JetBrains Mono,monospace;font-size:.85rem;color:var(--muted)">57 predictions · 57 verified · 56%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★☆☆</span><span style="min-width:150px;font-size:.9rem">In YouTube description</span><span style="font-family:JetBrains Mono,monospace;font-size:.85rem;color:var(--muted)">38 predictions · 38 verified · 53%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">☆☆☆</span><span style="min-width:150px;font-size:.9rem">Unverified</span><span style="font-family:JetBrains Mono,monospace;font-size:.85rem;color:var(--muted)">5 predictions · 5 verified · 80%</span></div>
-<h2>🏆 Leaderboard (min 5 verified predictions)</h2>
-<table><tr><th>#</th><th>Speaker</th><th>✅</th><th>❌</th><th>Accuracy</th><th>Confidence</th><th>Verified</th></tr><tr><td>🥇</td><td><b>Blake Anderson</b></td><td>5</td><td>0</td><td style="color:var(--green);font-weight:700">100.0%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>5</td></tr><tr><td>🥈</td><td><b>Martin Wismeijer</b></td><td>8</td><td>3</td><td style="color:var(--green);font-weight:700">72.7%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>11</td></tr><tr><td>🥉</td><td><b>Victoria Jones</b></td><td>22</td><td>10</td><td style="color:var(--green);font-weight:700">68.8%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>32</td></tr><tr><td>&nbsp;4.</td><td><b>Gabriel DeVine</b></td><td>4</td><td>2</td><td style="color:var(--green);font-weight:700">66.7%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>6</td></tr><tr><td>&nbsp;5.</td><td><b>Thomas Hunt</b></td><td>19</td><td>15</td><td style="color:var(--green);font-weight:700">55.9%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>34</td></tr><tr><td>&nbsp;6.</td><td><b>Jimmy Song</b></td><td>5</td><td>4</td><td style="color:var(--green);font-weight:700">55.6%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>9</td></tr><tr><td>&nbsp;7.</td><td><b>Adam Meister</b></td><td>5</td><td>4</td><td style="color:var(--green);font-weight:700">55.6%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>9</td></tr><tr><td>&nbsp;8.</td><td><b>Josh Scigala</b></td><td>38</td><td>37</td><td style="color:var(--amber);font-weight:700">50.7%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>75</td></tr><tr><td>&nbsp;9.</td><td><b>Magic 8-Ball</b></td><td>67</td><td>66</td><td style="color:var(--amber);font-weight:700">50.4%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>133</td></tr><tr><td>&nbsp;10.</td><td><b>Tone Vays</b></td><td>5</td><td>7</td><td style="color:var(--red);font-weight:700">41.7%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>12</td></tr><tr><td>&nbsp;11.</td><td><b>Dan Eve</b></td><td>36</td><td>55</td><td style="color:var(--red);font-weight:700">39.6%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★☆</td><td>91</td></tr><tr><td>&nbsp;12.</td><td><b>Ben Arc</b></td><td>17</td><td>27</td><td style="color:var(--red);font-weight:700">38.6%</td><td style="font-family:JetBrains Mono,monospace;color:var(--amber)">★★★</td><td>44</td></tr></table>
-<p style="font-size:.82rem;color:var(--muted);margin-top:4px">+ 0 unattributed predictions not shown</p>
+<div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★★★</span><span style="min-width:180px;font-size:.9rem">Named in prediction</span><span style="font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">371 predictions · 370 verified · 49%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★★☆</span><span style="min-width:180px;font-size:.9rem">In show intro</span><span style="font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">57 predictions · 57 verified · 56%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">★☆☆</span><span style="min-width:180px;font-size:.9rem">In YouTube description</span><span style="font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">38 predictions · 38 verified · 53%</span></div><div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">☆☆☆</span><span style="min-width:180px;font-size:.9rem">Unverified</span><span style="font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">5 predictions · 5 verified · 80%</span></div>
+<h2>🏆 Leaderboard (min 5 verified)</h2>
+<table><tr><th>#</th><th>Speaker</th><th>✅</th><th>❌</th><th>Acc</th><th>Confidence</th><th>Total</th></tr><tr><td>🥇</td><td><a href="/tbg-mirrors/guests/blake-anderson.html"><b>Blake Anderson</b></a></td><td>5</td><td>0</td><td style="color:var(--green);font-weight:700">100.0%</td><td style="color:var(--amber)">★★☆</td><td>5</td></tr><tr><td>🥈</td><td><a href="/tbg-mirrors/guests/martin-wismeijer.html"><b>Martin Wismeijer</b></a></td><td>8</td><td>3</td><td style="color:var(--green);font-weight:700">72.7%</td><td style="color:var(--amber)">★★☆</td><td>11</td></tr><tr><td>🥉</td><td><a href="/tbg-mirrors/guests/victoria-jones.html"><b>Victoria Jones</b></a></td><td>22</td><td>10</td><td style="color:var(--green);font-weight:700">68.8%</td><td style="color:var(--amber)">★★★</td><td>32</td></tr><tr><td>&nbsp;4.</td><td><a href="/tbg-mirrors/guests/gabriel-devine.html"><b>Gabriel DeVine</b></a></td><td>4</td><td>2</td><td style="color:var(--green);font-weight:700">66.7%</td><td style="color:var(--amber)">★★☆</td><td>6</td></tr><tr><td>&nbsp;5.</td><td><a href="/tbg-mirrors/guests/thomas-hunt.html"><b>Thomas Hunt</b></a></td><td>19</td><td>15</td><td style="color:var(--green);font-weight:700">55.9%</td><td style="color:var(--amber)">★★☆</td><td>34</td></tr><tr><td>&nbsp;6.</td><td><a href="/tbg-mirrors/guests/jimmy-song.html"><b>Jimmy Song</b></a></td><td>5</td><td>4</td><td style="color:var(--green);font-weight:700">55.6%</td><td style="color:var(--amber)">★★★</td><td>9</td></tr><tr><td>&nbsp;7.</td><td><a href="/tbg-mirrors/guests/adam-meister.html"><b>Adam Meister</b></a></td><td>5</td><td>4</td><td style="color:var(--green);font-weight:700">55.6%</td><td style="color:var(--amber)">★★☆</td><td>9</td></tr><tr><td>&nbsp;8.</td><td><a href="/tbg-mirrors/guests/josh-scigala.html"><b>Josh Scigala</b></a></td><td>38</td><td>37</td><td style="color:var(--amber);font-weight:700">50.7%</td><td style="color:var(--amber)">★★★</td><td>75</td></tr><tr><td>&nbsp;9.</td><td><a href="/tbg-mirrors/guests/magic-8-ball.html"><b>Magic 8-Ball</b></a></td><td>67</td><td>66</td><td style="color:var(--amber);font-weight:700">50.4%</td><td style="color:var(--amber)">★★★</td><td>133</td></tr><tr><td>&nbsp;10.</td><td><a href="/tbg-mirrors/guests/tone-vays.html"><b>Tone Vays</b></a></td><td>5</td><td>7</td><td style="color:var(--red);font-weight:700">41.7%</td><td style="color:var(--amber)">★★★</td><td>12</td></tr><tr><td>&nbsp;11.</td><td><a href="/tbg-mirrors/guests/dan-eve.html"><b>Dan Eve</b></a></td><td>36</td><td>55</td><td style="color:var(--red);font-weight:700">39.6%</td><td style="color:var(--amber)">★★☆</td><td>91</td></tr><tr><td>&nbsp;12.</td><td><a href="/tbg-mirrors/guests/ben-arc.html"><b>Ben Arc</b></a></td><td>17</td><td>27</td><td style="color:var(--red);font-weight:700">38.6%</td><td style="color:var(--amber)">★★★</td><td>44</td></tr></table>
+<p style="font-size:.82rem;color:var(--muted)">+ 0 unattributed predictions not shown</p>
 <h2>📝 Recent Verified Predictions</h2>
 <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
@@ -37,7 +33,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$67,627 → $65,774 (-2.7%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and you know we lost a l"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and "</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -47,7 +43,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--red);font-weight:700">▼</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$67,627 → $65,774 (-2.7%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and you know we lost a l"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and "</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -57,7 +53,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$67,627 → $65,774 (-2.7%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and you know we lost a l"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"o see that still valid and that we&#x27;re still on that track but i remember it last time and it turned out last time all right but it did take years and years and "</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -67,7 +63,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$69,791 → $67,965 (-2.6%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"ll? Not finding it must be here on my desk somewhere. Anyway, we&#x27;re here by ourselves today, predicting the price of Bitcoin like everyone else, and they all say that it&#x27;s going do"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"ll? Not finding it must be here on my desk somewhere. Anyway, we&#x27;re here by ourselves today, predicting the price of Bitcoin like everyone else, and they all sa"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -87,7 +83,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--red);font-weight:700">▼</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$70,297 → $68,801 (-2.1%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">" to the exit question. We&#x27;re predicting against the Bitcoin predictor ball, which knows all Victoria Jones. We&#x27;ve seen a lot of price movement lately. Do you think the price of Bit"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">" to the exit question. We&#x27;re predicting against the Bitcoin predictor ball, which knows all Victoria Jones. We&#x27;ve seen a lot of price movement lately. Do you th"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -107,7 +103,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$76,911 → $70,297 (-8.6%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"e would break, which laws he wouldn&#x27;t break. He&#x27;s like, oh, that&#x27;s a finance law. Oh, you could get a lot of trouble for that one. I wouldn&#x27;t do it. But we&#x27;ve got to move on to the"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"e would break, which laws he wouldn&#x27;t break. He&#x27;s like, oh, that&#x27;s a finance law. Oh, you could get a lot of trouble for that one. I wouldn&#x27;t do it. But we&#x27;ve g"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -117,7 +113,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--red);font-weight:700">▼</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$86,581 → $76,911 (-11.2%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"We&#x27;re around there again today. What do you think? Higher or lower? Well, given the dollar seems to be crashing right now, maybe it might be a bit higher. So I&#x27;m getting with highe"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"We&#x27;re around there again today. What do you think? Higher or lower? Well, given the dollar seems to be crashing right now, maybe it might be a bit higher. So I&#x27;"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -127,7 +123,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$90,885 → $93,642 (+3.0%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"price of Bitcoin be higher or lower this time next week. Oh, lower. Yeah, definitely lower. I&#x27;m going to stick with higher. I always think higher, but who knows what&#x27;s going to hap"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"price of Bitcoin be higher or lower this time next week. Oh, lower. Yeah, definitely lower. I&#x27;m going to stick with higher. I always think higher, but who knows"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -137,7 +133,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$90,599 → $90,392 (-0.2%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"side of the thousand Satoshi barrier. Volume is pretty high at a thousand and ten Bitcoins traded, keeping an eye on this developing story. Bitcoin reclaims $90,000 as United State"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"side of the thousand Satoshi barrier. Volume is pretty high at a thousand and ten Bitcoins traded, keeping an eye on this developing story. Bitcoin reclaims $90"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
@@ -167,7 +163,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$88,648 → $87,887 (-0.9%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"he Bitcoin. So, when it drops by half, it&#x27;s quite a shock. But how I like the price, Bitcoin, really, and see if it&#x27;s a fair price is what&#x27;s the cost of mining a Bitcoin? You can a"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"he Bitcoin. So, when it drops by half, it&#x27;s quite a shock. But how I like the price, Bitcoin, really, and see if it&#x27;s a fair price is what&#x27;s the cost of mining "</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -187,7 +183,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$88,170 → $88,648 (+0.5%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"oing to have a proper correction probably down to like 80, 70 if the whole market. I can&#x27;t see the market lasting too much longer and the elite will want to buy cheaper everything,"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"oing to have a proper correction probably down to like 80, 70 if the whole market. I can&#x27;t see the market lasting too much longer and the elite will want to buy"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -197,7 +193,7 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--red);font-weight:700">▼</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$114,560 → $110,565 (-3.5%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"higher because of a hardware wallet. Christian roots, so what do you think? Higher or lower? Yeah, I think there is a lot of headroom now after we&#x27;ve seen a bit the downturn in the"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"higher because of a hardware wallet. Christian roots, so what do you think? Higher or lower? Yeah, I think there is a lot of headroom now after we&#x27;ve seen a bit"</div>
 </div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
 <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
 <span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
@@ -227,56 +223,6 @@ td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 <span style="color:var(--green);font-weight:700">▲</span>
 <span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$108,702 → $114,560 (+5.4%)</span>
 </div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">" is like, don&#x27;t tell me this, don&#x27;t tell me this. They say that because we banged to the top and they killed the shorts and they were being to the bottom and they killed the longs,"</div>
-</div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-<span style="color:var(--red)">❌</span> <span style="color:var(--amber)">☆☆☆</span>
-<a href="/tbg-mirrors/transcripts/TBG-470.html" style="font-family:JetBrains Mono,monospace;font-weight:700">#470</a>
-<span style="color:var(--muted);font-size:.85rem">2025-10-04</span>
-<b>Dan Eve</b>
-<span style="color:var(--green);font-weight:700">▲</span>
-<span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$123,535 → $115,085 (-6.8%)</span>
-</div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"Higher or lower, starship in the chat says 130 this week"</div>
-</div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-<span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
-<a href="/tbg-mirrors/transcripts/TBG-470.html" style="font-family:JetBrains Mono,monospace;font-weight:700">#470</a>
-<span style="color:var(--muted);font-size:.85rem">2025-10-04</span>
-<b>Magic 8-Ball</b>
-<span style="color:var(--green);font-weight:700">▲</span>
-<span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$123,535 → $115,085 (-6.8%)</span>
-</div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"se of the power of you clicking the like button. We had about 13 likes last week. Well down from 20. So maybe you guys could push the like button this week. I&#x27;ll tell you early in "</div>
-</div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-<span style="color:var(--green)">✅</span> <span style="color:var(--amber)">★★★</span>
-<a href="/tbg-mirrors/transcripts/TBG-469.html" style="font-family:JetBrains Mono,monospace;font-weight:700">#469</a>
-<span style="color:var(--muted);font-size:.85rem">2025-09-27</span>
-<b>Victoria Jones</b>
-<span style="color:var(--green);font-weight:700">▲</span>
-<span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$112,227 → $123,535 (+10.1%)</span>
-</div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"Victoria, will the price be higher or lower this week"</div>
-</div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-<span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
-<a href="/tbg-mirrors/transcripts/TBG-468.html" style="font-family:JetBrains Mono,monospace;font-weight:700">#468</a>
-<span style="color:var(--muted);font-size:.85rem">2025-09-20</span>
-<b>Dan Eve</b>
-<span style="color:var(--green);font-weight:700">▲</span>
-<span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$115,300 → $112,227 (-2.7%)</span>
-</div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"I agree with Dan, always bullish"</div>
-</div><div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px">
-<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-<span style="color:var(--red)">❌</span> <span style="color:var(--amber)">★★★</span>
-<a href="/tbg-mirrors/transcripts/TBG-467.html" style="font-family:JetBrains Mono,monospace;font-weight:700">#467</a>
-<span style="color:var(--muted);font-size:.85rem">2025-09-13</span>
-<b>Dan Eve</b>
-<span style="color:var(--green);font-weight:700">▲</span>
-<span style="margin-left:auto;font-family:JetBrains Mono,monospace;font-size:.82rem;color:var(--muted)">$115,352 → $115,300 (-0.1%)</span>
-</div>
-<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">"Jed says higher, Dan, Eve, higher or lower"</div>
+<div style="font-size:.82rem;color:#94a3b8;font-style:italic;margin-top:4px;border-left:3px solid var(--border);padding-left:10px">" is like, don&#x27;t tell me this, don&#x27;t tell me this. They say that because we banged to the top and they killed the shorts and they were being to the bottom and th"</div>
 </div>
 </div></body></html>

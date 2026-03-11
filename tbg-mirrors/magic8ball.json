@@ -8,47 +8,67 @@
     "accuracy": 49.2
   },
   "guest_stats": {
+    "Josh Scigala": {
+      "correct": 32,
+      "wrong": 32
+    },
+    "Ben Arc": {
+      "correct": 15,
+      "wrong": 22
+    },
+    "Thomas Hunt": {
+      "correct": 13,
+      "wrong": 13
+    },
+    "Adam Meister": {
+      "correct": 3,
+      "wrong": 4
+    },
+    "Dan Eve": {
+      "correct": 29,
+      "wrong": 49
+    },
     "Ben": {
-      "correct": 16,
-      "wrong": 25
+      "correct": 5,
+      "wrong": 5
+    },
+    "Martin Wismeijer": {
+      "correct": 5,
+      "wrong": 1
+    },
+    "Gabriel DeVine": {
+      "correct": 1,
+      "wrong": 1
     },
     "Dan": {
-      "correct": 31,
-      "wrong": 38
+      "correct": 8,
+      "wrong": 5
     },
     "Thomas": {
       "correct": 0,
-      "wrong": 3
+      "wrong": 1
     },
-    "Gabriel": {
+    "Jesse": {
+      "correct": 2,
+      "wrong": 1
+    },
+    "Victoria Jones": {
+      "correct": 18,
+      "wrong": 10
+    },
+    "Victoria": {
+      "correct": 2,
+      "wrong": 0
+    },
+    "Jimmy Song": {
+      "correct": 2,
+      "wrong": 2
+    },
+    "Vlad Costea": {
       "correct": 0,
       "wrong": 1
     },
     "Adam": {
-      "correct": 5,
-      "wrong": 1
-    },
-    "Jesse": {
-      "correct": 1,
-      "wrong": 1
-    },
-    "Victoria": {
-      "correct": 18,
-      "wrong": 9
-    },
-    "Daniel": {
-      "correct": 3,
-      "wrong": 1
-    },
-    "Hunt": {
-      "correct": 0,
-      "wrong": 1
-    },
-    "Jimmy": {
-      "correct": 1,
-      "wrong": 1
-    },
-    "Tone": {
       "correct": 1,
       "wrong": 0
     }
@@ -80,7 +100,16 @@
       "date_7d": "2019-09-06",
       "actual": "higher",
       "change_pct": 9.01,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "There or lower Josh"
+        }
+      ]
     },
     {
       "episode": 211,
@@ -122,7 +151,16 @@
       "date_7d": "2020-04-03",
       "actual": "higher",
       "change_pct": 9.97,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "or this halving and although we're going to see, yeah, like I said, some volatility, I think things will be on the up, especially as Ben was saying, p"
+        }
+      ]
     },
     {
       "episode": 217,
@@ -150,7 +188,16 @@
       "date_7d": "2020-04-17",
       "actual": "higher",
       "change_pct": 5.47,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": false,
+          "verification": 1,
+          "context": "Lower"
+        }
+      ]
     },
     {
       "episode": 219,
@@ -178,7 +225,16 @@
       "date_7d": "2020-05-01",
       "actual": "higher",
       "change_pct": 19.0,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "Well, the hackers demand higher prices and that they are not willing to sell below a certain point"
+        }
+      ]
     },
     {
       "episode": 221,
@@ -192,7 +248,16 @@
       "date_7d": "2020-05-08",
       "actual": "higher",
       "change_pct": 6.24,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "This on it there was a huddle the hot one of the hard battle conferences and it was before the lightning network stuff like really kind of kicked off "
+        }
+      ]
     },
     {
       "episode": 222,
@@ -206,7 +271,16 @@
       "date_7d": "2020-05-15",
       "actual": "lower",
       "change_pct": -1.61,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "I think what's kind of funny is that you know how like there's the bitfinex, you know, the tethers, there's those, you know, people saying it's a scan"
+        }
+      ]
     },
     {
       "episode": 223,
@@ -233,7 +307,23 @@
       "date_7d": "2020-06-05",
       "actual": "lower",
       "change_pct": -0.29,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben, Ark, will the price be higher this time next week"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve, higher or lower next week"
+        }
+      ]
     },
     {
       "episode": 224,
@@ -254,7 +344,23 @@
       "date_7d": "2020-06-12",
       "actual": "lower",
       "change_pct": -2.03,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "is going to go up and down I especially interested in what Dan was saying about the hash rate going down previously the price of Bitcoin has followed "
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "is going to go up and down I especially interested in what Dan was saying about the hash rate going down previously the price of Bitcoin has followed "
+        }
+      ]
     },
     {
       "episode": 225,
@@ -310,7 +416,23 @@
       "date_7d": "2020-08-14",
       "actual": "higher",
       "change_pct": 0.77,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "y anything you can't put that as a a cube into a machine and the machine will recognize it and say activate whatever because you put the cube in so it"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "y anything you can't put that as a a cube into a machine and the machine will recognize it and say activate whatever because you put the cube in so it"
+        }
+      ]
     },
     {
       "episode": 230,
@@ -345,7 +467,23 @@
       "date_7d": "2020-10-16",
       "actual": "higher",
       "change_pct": 0.58,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "question and remember you will be competing against the predictor of predictor's prognosticator of prognosticators the bitcoin magic eight ball kyle t"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "question and remember you will be competing against the predictor of predictor's prognosticator of prognosticators the bitcoin magic eight ball kyle t"
+        }
+      ]
     },
     {
       "episode": 241,
@@ -359,7 +497,16 @@
       "date_7d": "2021-01-01",
       "actual": "higher",
       "change_pct": 21.77,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "again and uh we can answer any question that you might want to ask donald trump uh we're still waiting if you guys want to give us a thumbs up down be"
+        }
+      ]
     },
     {
       "episode": 242,
@@ -373,7 +520,16 @@
       "date_7d": "2021-01-08",
       "actual": "higher",
       "change_pct": 24.94,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Gagalla forced prediction with it all on the line up against the ball"
+        }
+      ]
     },
     {
       "episode": 246,
@@ -401,7 +557,16 @@
       "date_7d": "2021-02-12",
       "actual": "higher",
       "change_pct": 20.26,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "Well, after Michael's sale is a shell fest, it'll probably be higher, but I kind of feel like it needs to bounce off of 40 a couple more times to brea"
+        }
+      ]
     },
     {
       "episode": 248,
@@ -443,7 +608,16 @@
       "date_7d": "2021-04-02",
       "actual": "higher",
       "change_pct": 2.17,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, Shigala, higher or lower"
+        }
+      ]
     },
     {
       "episode": 252,
@@ -457,7 +631,23 @@
       "date_7d": "2021-04-09",
       "actual": "higher",
       "change_pct": 4.75,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "It'll be probably up"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "lower",
+          "correct": false,
+          "verification": 2,
+          "context": "It might come down and retest that"
+        }
+      ]
     },
     {
       "episode": 253,
@@ -485,7 +675,16 @@
       "date_7d": "2021-04-23",
       "actual": "lower",
       "change_pct": -16.55,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Will the price of Bitcoin be higher this time next week"
+        }
+      ]
     },
     {
       "episode": 256,
@@ -548,7 +747,23 @@
       "date_7d": "2021-05-28",
       "actual": "lower",
       "change_pct": -7.68,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Martin Wismeijer",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "No, I'm forever bullish on Bitcoin"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "And the thing is, as you said, Thomas, these markets went up and up and up for months since December, January, they started going up even earlier, I t"
+        }
+      ]
     },
     {
       "episode": 260,
@@ -562,7 +777,23 @@
       "date_7d": "2021-06-04",
       "actual": "higher",
       "change_pct": 2.68,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin go up or down this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Shagalla, the price this time next week, higher or lower"
+        }
+      ]
     },
     {
       "episode": 262,
@@ -589,7 +820,16 @@
       "date_7d": "2021-06-18",
       "actual": "lower",
       "change_pct": -0.07,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "lars really won't be worth anything everyone will be a millionaire even garbage men uh Josh Shigala higher or lower um I you know the funny thing is h"
+        }
+      ]
     },
     {
       "episode": 263,
@@ -638,7 +878,23 @@
       "date_7d": "2021-07-16",
       "actual": "lower",
       "change_pct": -5.87,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "I'm going to be optimistic and I'm going to say higher"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben the bear and now Carter higher or lower"
+        }
+      ]
     },
     {
       "episode": 269,
@@ -666,7 +922,23 @@
       "date_7d": "2021-09-04",
       "actual": "higher",
       "change_pct": 6.13,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Gabriel DeVine",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "you, Dan Eve, higher or lower higher Gabriel, Devon"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "We're going higher"
+        }
+      ]
     },
     {
       "episode": 274,
@@ -693,7 +965,23 @@
       "date_7d": "2021-09-11",
       "actual": "lower",
       "change_pct": -11.07,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Gabriel DeVine",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "s also interesting to see the altcoins following back up as well sov and reaching even higher uh ethereum's up about 20 30 percent this week uh incred"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "s also interesting to see the altcoins following back up as well sov and reaching even higher uh ethereum's up about 20 30 percent this week uh incred"
+        }
+      ]
     },
     {
       "episode": 281,
@@ -707,7 +995,16 @@
       "date_7d": "2021-11-05",
       "actual": "lower",
       "change_pct": -0.59,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "wable energy production there are parts of the world including huge patches of air at desert land in which the sun shines brightly and the wind blows "
+        }
+      ]
     },
     {
       "episode": 282,
@@ -735,7 +1032,16 @@
       "date_7d": "2021-11-19",
       "actual": "lower",
       "change_pct": -7.2,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, Shagalla, will the price of Bitcoin be higher this time next week"
+        }
+      ]
     },
     {
       "episode": 286,
@@ -777,7 +1083,23 @@
       "date_7d": "2021-12-16",
       "actual": "lower",
       "change_pct": -2.18,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Now, Dan Eve, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Martin Wismeijer",
+          "direction": "lower",
+          "correct": true,
+          "verification": 1,
+          "context": "You know, I think for the next foreseeable future, we'll be going like this up down, up down, up down, because I will see a lot of volatility, the mar"
+        }
+      ]
     },
     {
       "episode": 290,
@@ -812,7 +1134,16 @@
       "date_7d": "2022-01-21",
       "actual": "lower",
       "change_pct": -18.6,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "A little bit okay Dan Eve and tell us in the chat to what you guys think at home Dan Eve higher or lower"
+        }
+      ]
     },
     {
       "episode": 292,
@@ -840,7 +1171,23 @@
       "date_7d": "2022-02-04",
       "actual": "higher",
       "change_pct": 8.47,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Shagalla, higher or lower"
+        },
+        {
+          "name": "Martin Wismeijer",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "Is it all higher"
+        }
+      ]
     },
     {
       "episode": 294,
@@ -861,7 +1208,30 @@
       "date_7d": "2022-02-11",
       "actual": "higher",
       "change_pct": 1.98,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "We're going to go higher"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Legala, will you go higher"
+        }
+      ]
     },
     {
       "episode": 295,
@@ -882,7 +1252,23 @@
       "date_7d": "2022-02-18",
       "actual": "lower",
       "change_pct": -5.05,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "know about the article well acceptance is a major step moving on to the exit question forced prediction against the magical predictor ball predictor o"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "know about the article well acceptance is a major step moving on to the exit question forced prediction against the magical predictor ball predictor o"
+        }
+      ]
     },
     {
       "episode": 296,
@@ -896,7 +1282,23 @@
       "date_7d": "2022-02-25",
       "actual": "lower",
       "change_pct": -2.42,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eave, the price of Bitcoin, this time next week, higher or lower"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Higher because it's a sanction resistant"
+        }
+      ]
     },
     {
       "episode": 297,
@@ -917,7 +1319,23 @@
       "date_7d": "2022-03-04",
       "actual": "higher",
       "change_pct": 0.7,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eave will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, should I go higher or lower"
+        }
+      ]
     },
     {
       "episode": 299,
@@ -959,7 +1377,16 @@
       "date_7d": "2022-03-25",
       "actual": "higher",
       "change_pct": 5.46,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Martin Wismeijer",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "Definitely higher"
+        }
+      ]
     },
     {
       "episode": 301,
@@ -1000,7 +1427,16 @@
       "date_7d": "2022-04-08",
       "actual": "lower",
       "change_pct": -6.66,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, you got to hire or lower"
+        }
+      ]
     },
     {
       "episode": 304,
@@ -1028,7 +1464,16 @@
       "date_7d": "2022-05-06",
       "actual": "lower",
       "change_pct": -5.79,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I'm sure they're I'm sure they're working on the the better spies they're going to get us some better spies but it's nearly the end of the show it's t"
+        }
+      ]
     },
     {
       "episode": 306,
@@ -1125,7 +1570,23 @@
       "date_7d": "2022-06-10",
       "actual": "lower",
       "change_pct": -4.88,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "So Josh Shagalla higher or lower"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve higher or low"
+        }
+      ]
     },
     {
       "episode": 312,
@@ -1207,7 +1668,16 @@
       "date_7d": "2022-07-15",
       "actual": "lower",
       "change_pct": -1.78,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "pressing Bitcoin group, Dan Eve, higher and lower"
+        }
+      ]
     },
     {
       "episode": 317,
@@ -1228,7 +1698,23 @@
       "date_7d": "2022-08-05",
       "actual": "lower",
       "change_pct": -2.92,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve, with a price of Bitcoin be higher or lower this week, keeping in mind that everyone said lower last week and was all wrong and the permable r"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Higher, something's going on because there's not really any big news out there and the price has been public, so yeah, higher, something's out there"
+        }
+      ]
     },
     {
       "episode": 318,
@@ -1249,7 +1735,23 @@
       "date_7d": "2022-08-12",
       "actual": "higher",
       "change_pct": 6.51,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "as soon as starts bullying again it's actually should be part of the fear and greed index at one point one of the major effectors for hash rate was th"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "as soon as starts bullying again it's actually should be part of the fear and greed index at one point one of the major effectors for hash rate was th"
+        }
+      ]
     },
     {
       "episode": 320,
@@ -1276,7 +1778,23 @@
       "date_7d": "2022-08-26",
       "actual": "lower",
       "change_pct": -5.22,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, Dan Eves, higher or lower"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": true,
+          "verification": 2,
+          "context": "I'm going lower"
+        }
+      ]
     },
     {
       "episode": 321,
@@ -1297,7 +1815,23 @@
       "date_7d": "2022-09-02",
       "actual": "lower",
       "change_pct": -1.02,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": true,
+          "verification": 1,
+          "context": "I was right for the first time in about 10 which makes my record about as good as Jim Kramer's and so I think I'm actually going to go I'm still going"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "lower",
+          "correct": true,
+          "verification": 2,
+          "context": "I think that you know Elon Musk and Bezos and Sailor on their little telegram group I think they're all in agreement now that they've they push the pr"
+        }
+      ]
     },
     {
       "episode": 322,
@@ -1311,7 +1845,23 @@
       "date_7d": "2022-09-09",
       "actual": "higher",
       "change_pct": 9.18,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "And now we're going to hold on until the exit question where you must predict against the greatest predictor of Bitcoin of all time Dan Eve is the pri"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": false,
+          "verification": 1,
+          "context": "I've done the Fibonacci and I'm all Fibonacci that I think I'm going lower"
+        }
+      ]
     },
     {
       "episode": 323,
@@ -1325,7 +1875,30 @@
       "date_7d": "2022-09-16",
       "actual": "lower",
       "change_pct": -7.1,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "n to the exit question, predict the price of Bitcoin, Dan Eve, and let us know in the chat down below, what do you think the price is going higher or "
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, it got a higher or lower"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Higher, Ben, Ark, is the pessimism nightmare over"
+        }
+      ]
     },
     {
       "episode": 324,
@@ -1339,7 +1912,23 @@
       "date_7d": "2022-09-23",
       "actual": "lower",
       "change_pct": -5.93,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": true,
+          "verification": 2,
+          "context": "Bearish for Bitcoin"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": true,
+          "verification": 1,
+          "context": "Oh, yeah, I think it's going down for a little bit until we're teetering around this price and probably a bit lower for a while"
+        }
+      ]
     },
     {
       "episode": 325,
@@ -1360,7 +1949,23 @@
       "date_7d": "2022-09-30",
       "actual": "higher",
       "change_pct": 2.06,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Jesse",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "Kraken did have the political troubles, but it also is a huge mark of success for Jesse and the team at Kraken to build an exchange out of nothing and"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan, Eve, your thoughts on Jesse Powell's stepping down and do you think it was just a good time"
+        }
+      ]
     },
     {
       "episode": 327,
@@ -1402,7 +2007,16 @@
       "date_7d": "2022-10-21",
       "actual": "higher",
       "change_pct": 0.72,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "It's historically, everyone knows as Max Kaiser would say that the hash rate, hash rate follows that the price, the price follows the hash rate, but t"
+        }
+      ]
     },
     {
       "episode": 329,
@@ -1423,7 +2037,16 @@
       "date_7d": "2022-10-28",
       "actual": "higher",
       "change_pct": 8.4,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Yeah, I'm going up"
+        }
+      ]
     },
     {
       "episode": 331,
@@ -1437,7 +2060,16 @@
       "date_7d": "2022-11-11",
       "actual": "lower",
       "change_pct": -21.26,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Or does it come back up"
+        }
+      ]
     },
     {
       "episode": 334,
@@ -1451,7 +2083,16 @@
       "date_7d": "2022-12-02",
       "actual": "higher",
       "change_pct": 2.65,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben, ARC higher or lower"
+        }
+      ]
     },
     {
       "episode": 335,
@@ -1486,7 +2127,23 @@
       "date_7d": "2022-12-16",
       "actual": "lower",
       "change_pct": -2.04,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "an ultra mega ding dong pump uh when the harvining happens because everyone will already be hyped up because bitcoin's 250k then the harvining's going"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "an ultra mega ding dong pump uh when the harvining happens because everyone will already be hyped up because bitcoin's 250k then the harvining's going"
+        }
+      ]
     },
     {
       "episode": 337,
@@ -1513,7 +2170,23 @@
       "date_7d": "2022-12-23",
       "actual": "higher",
       "change_pct": 0.34,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Oh, Ben Arck, will the price be higher or lower this time next week"
+        },
+        {
+          "name": "Martin Wismeijer",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Oh, Martin, higher or lower"
+        }
+      ]
     },
     {
       "episode": 338,
@@ -1527,7 +2200,16 @@
       "date_7d": "2022-12-30",
       "actual": "lower",
       "change_pct": -1.82,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Okay, so Dan, Eve, this time next week higher or lower the price of Bitcoin"
+        }
+      ]
     },
     {
       "episode": 339,
@@ -1554,7 +2236,30 @@
       "date_7d": "2023-01-06",
       "actual": "higher",
       "change_pct": 2.49,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Let's see, Josh, the goal will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve, higher or lower, everyone's pretending to be optimistic, but only for a week"
+        }
+      ]
     },
     {
       "episode": 340,
@@ -1587,7 +2292,30 @@
       "date_7d": "2023-01-13",
       "actual": "higher",
       "change_pct": 23.68,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben Arck will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben, Dan Eve, higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Well, fortunately, I copied Victoria's prediction last week and went higher as well"
+        }
+      ]
     },
     {
       "episode": 341,
@@ -1608,7 +2336,23 @@
       "date_7d": "2023-01-20",
       "actual": "higher",
       "change_pct": 8.76,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan, are you going to go with higher or lower this time next"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan, you sticks with lower Josh Shagala also pessimistic"
+        }
+      ]
     },
     {
       "episode": 342,
@@ -1622,7 +2366,16 @@
       "date_7d": "2023-01-27",
       "actual": "higher",
       "change_pct": 1.06,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "All right higher optimism Josh Shagall a more optimism"
+        }
+      ]
     },
     {
       "episode": 343,
@@ -1636,7 +2389,16 @@
       "date_7d": "2023-02-03",
       "actual": "higher",
       "change_pct": 1.31,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Will the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 344,
@@ -1650,7 +2412,16 @@
       "date_7d": "2023-02-10",
       "actual": "lower",
       "change_pct": -6.3,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "The price is Bitcoin's been up recently will it be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 345,
@@ -1683,7 +2454,23 @@
       "date_7d": "2023-02-17",
       "actual": "higher",
       "change_pct": 12.7,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve continued pessimism over the crackdown on cracking and the trouble with staking and whatever else it is yield yield I think Bitcoin is is is l"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "NFTs are the key and now asking the Bitcoin predictor ball the prognosticator of prognosticators we recently had groundhog day in America I didn't eve"
+        }
+      ]
     },
     {
       "episode": 346,
@@ -1710,7 +2497,30 @@
       "date_7d": "2023-02-24",
       "actual": "lower",
       "change_pct": -5.96,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "And now predicting against the magic Bitcoin ball, the greatest predictor in all of Bitcoin history, Dan Eve will the price of Bitcoin be higher or lo"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben Arck, higher or lower"
+        },
+        {
+          "name": "Martin Wismeijer",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "He's going lower, martin, will you go higher or lower"
+        }
+      ]
     },
     {
       "episode": 347,
@@ -1737,7 +2547,30 @@
       "date_7d": "2023-03-03",
       "actual": "lower",
       "change_pct": -3.52,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh Shagalla, will the price of Bitcoin be higher or lower next week"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Sideways of push, Dan, Eve, higher or lower"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben, Ark, higher or lower"
+        }
+      ]
     },
     {
       "episode": 348,
@@ -1751,7 +2584,23 @@
       "date_7d": "2023-03-10",
       "actual": "lower",
       "change_pct": -7.78,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve will be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh Agala higher or lower"
+        }
+      ]
     },
     {
       "episode": 349,
@@ -1793,7 +2642,16 @@
       "date_7d": "2023-03-24",
       "actual": "higher",
       "change_pct": 1.93,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Adam McBride competing against the greatest Bitcoin predictor in the world who did say yes, the price would be up last week"
+        }
+      ]
     },
     {
       "episode": 351,
@@ -1807,7 +2665,16 @@
       "date_7d": "2023-03-31",
       "actual": "higher",
       "change_pct": 3.55,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones with the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 352,
@@ -1860,7 +2727,16 @@
       "date_7d": "2023-04-14",
       "actual": "higher",
       "change_pct": 8.47,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria, higher or lower next week"
+        }
+      ]
     },
     {
       "episode": 354,
@@ -1881,7 +2757,16 @@
       "date_7d": "2023-04-22",
       "actual": "lower",
       "change_pct": -8.99,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 355,
@@ -1950,7 +2835,16 @@
       "date_7d": "2023-05-13",
       "actual": "lower",
       "change_pct": -5.74,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 358,
@@ -1977,7 +2871,30 @@
       "date_7d": "2023-05-20",
       "actual": "lower",
       "change_pct": -0.65,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Because we were finally, finally, using that reverse psychology in your favor, Josh, a guy that higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Victoria Jones, higher or lower"
+        }
+      ]
     },
     {
       "episode": 359,
@@ -2032,7 +2949,30 @@
       "date_7d": "2023-06-10",
       "actual": "lower",
       "change_pct": -4.38,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "But yeah, moving on to the exit question predicting against the source of all truth in Bitcoin predictions, Bitcoin predictor ball, Dan Eve will the p"
+        },
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I'm going to say Adam McBride higher or lower Dan sound definitely down"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh Tegala is it going higher or lower"
+        }
+      ]
     },
     {
       "episode": 362,
@@ -2053,7 +2993,23 @@
       "date_7d": "2023-06-17",
       "actual": "higher",
       "change_pct": 1.54,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "No, up, up, up, up, up, up, up, up, and what will the balls say"
+        }
+      ]
     },
     {
       "episode": 363,
@@ -2080,7 +3036,23 @@
       "date_7d": "2023-06-24",
       "actual": "higher",
       "change_pct": 15.7,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "PayPal even if to your mind they seem very similar to Bitcoin from a user perspective but we're here on a male dominated Bitcoin show to talk about do"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "PayPal even if to your mind they seem very similar to Bitcoin from a user perspective but we're here on a male dominated Bitcoin show to talk about do"
+        }
+      ]
     },
     {
       "episode": 364,
@@ -2121,7 +3093,30 @@
       "date_7d": "2023-07-08",
       "actual": "lower",
       "change_pct": -1.46,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh should call it higher or lower higher"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben, are higher is it all optimism on this panel"
+        }
+      ]
     },
     {
       "episode": 366,
@@ -2135,7 +3130,23 @@
       "date_7d": "2023-07-15",
       "actual": "higher",
       "change_pct": 0.25,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Of the ball, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, Shagala higher or lower"
+        }
+      ]
     },
     {
       "episode": 367,
@@ -2163,7 +3174,23 @@
       "date_7d": "2023-08-05",
       "actual": "lower",
       "change_pct": -0.81,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": true,
+          "verification": 1,
+          "context": "I'm on a fit now, down"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Think it'll be up, up, up, as World Coin starts getting promoted every freaking way"
+        }
+      ]
     },
     {
       "episode": 369,
@@ -2190,7 +3217,30 @@
       "date_7d": "2023-08-15",
       "actual": "lower",
       "change_pct": -2.92,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "If you want to go around, we'll say Dan, do you think it'll be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Higher, Josh"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Victoria, higher or lower"
+        }
+      ]
     },
     {
       "episode": 370,
@@ -2217,7 +3267,23 @@
       "date_7d": "2023-08-18",
       "actual": "lower",
       "change_pct": -11.29,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "A mad tour is continuing Victoria will it go higher or lower next week"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "And without a doubt without a doubt the magic eight ball says it will be higher there it is there's your proof not investment advice it's a magic eigh"
+        }
+      ]
     },
     {
       "episode": 371,
@@ -2238,7 +3304,23 @@
       "date_7d": "2023-08-25",
       "actual": "lower",
       "change_pct": -0.33,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "pen and that we get to hear about it and this guy gets to spend some sunny days in Spain or whatever he would want to do now Dan as we reach the end o"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "pen and that we get to hear about it and this guy gets to spend some sunny days in Spain or whatever he would want to do now Dan as we reach the end o"
+        }
+      ]
     },
     {
       "episode": 372,
@@ -2252,7 +3334,23 @@
       "date_7d": "2023-09-01",
       "actual": "lower",
       "change_pct": -0.55,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, I think it did go up slightly from last week, Dan"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I forget Josh higher or lower"
+        }
+      ]
     },
     {
       "episode": 373,
@@ -2279,7 +3377,23 @@
       "date_7d": "2023-09-08",
       "actual": "higher",
       "change_pct": 0.12,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "e on to the exit question will the price of Bitcoin be higher this time next week Victoria Jones keep in mind that you're competing against the online"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve higher or lower"
+        }
+      ]
     },
     {
       "episode": 374,
@@ -2300,7 +3414,23 @@
       "date_7d": "2023-09-23",
       "actual": "lower",
       "change_pct": -1.02,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "now and then but are they are they still doing coin by still doing that sneaky thing where if you go to deposit Bitcoin it gives you a Bitcoin cash ad"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "now and then but are they are they still doing coin by still doing that sneaky thing where if you go to deposit Bitcoin it gives you a Bitcoin cash ad"
+        }
+      ]
     },
     {
       "episode": 375,
@@ -2321,7 +3451,23 @@
       "date_7d": "2023-09-30",
       "actual": "higher",
       "change_pct": 6.6,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan, evil, the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Thomas, what do you think about Bitcoin mining actually being good for the environment while if you've been watching this show over a while, we're pre"
+        }
+      ]
     },
     {
       "episode": 376,
@@ -2362,7 +3508,16 @@
       "date_7d": "2023-10-14",
       "actual": "lower",
       "change_pct": -2.71,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Well, it's, I mean, there've been, where about how far runs was someone straight up admitted"
+        }
+      ]
     },
     {
       "episode": 378,
@@ -2383,7 +3538,23 @@
       "date_7d": "2023-10-21",
       "actual": "higher",
       "change_pct": 10.39,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "How for the exit question, Dan Eve, will the price of Bitcoin be higher or lower, keeping in mind that you're you're competing against this orb of tru"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Up, Josh, Shagalla, higher or lower"
+        }
+      ]
     },
     {
       "episode": 379,
@@ -2431,7 +3602,16 @@
       "date_7d": "2023-11-04",
       "actual": "higher",
       "change_pct": 1.46,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "But now, Dan, it's time of course at the end of the first topic to predict against the Bitcoin ball, the knower of all truth in this universe and gala"
+        }
+      ]
     },
     {
       "episode": 381,
@@ -2452,7 +3632,16 @@
       "date_7d": "2023-11-11",
       "actual": "higher",
       "change_pct": 5.82,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "ght let's move on to prediction or story of the week Dan Eve are you ready with a prediction or a story of the week go ahead I'm going to go I'm going"
+        }
+      ]
     },
     {
       "episode": 382,
@@ -2473,7 +3662,16 @@
       "date_7d": "2023-11-18",
       "actual": "higher",
       "change_pct": 0.83,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 1,
+          "context": "Well, I mean, they're down like they're down overall, right"
+        }
+      ]
     },
     {
       "episode": 383,
@@ -2500,7 +3698,30 @@
       "date_7d": "2023-11-25",
       "actual": "higher",
       "change_pct": 0.19,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Higher or lower"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "lower",
+          "correct": false,
+          "verification": 2,
+          "context": "Love much lower"
+        }
+      ]
     },
     {
       "episode": 384,
@@ -2527,7 +3748,23 @@
       "date_7d": "2023-12-02",
       "actual": "higher",
       "change_pct": 6.73,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "as it's gonna go higher then eve higher or lower yeah higher and I think last week I even said there's my prediction that we might just reach 40k in s"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "as it's gonna go higher then eve higher or lower yeah higher and I think last week I even said there's my prediction that we might just reach 40k in s"
+        }
+      ]
     },
     {
       "episode": 385,
@@ -2548,7 +3785,23 @@
       "date_7d": "2023-12-09",
       "actual": "higher",
       "change_pct": 9.53,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "But like you say, Dan, the most important thing is predicting in the weekly competition next week, will the price of Bitcoin be higher or lower than E"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "I think the penalties for bankers and other people who break the rules should be higher"
+        }
+      ]
     },
     {
       "episode": 386,
@@ -2562,7 +3815,23 @@
       "date_7d": "2023-12-16",
       "actual": "lower",
       "change_pct": -5.58,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Well, the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, a guy higher or lower"
+        }
+      ]
     },
     {
       "episode": 387,
@@ -2597,7 +3866,23 @@
       "date_7d": "2023-12-30",
       "actual": "lower",
       "change_pct": -1.73,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 389,
@@ -2624,7 +3909,30 @@
       "date_7d": "2024-01-06",
       "actual": "higher",
       "change_pct": 3.95,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben, are higher or lower"
+        },
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Yeah, I think we'll be springing up right"
+        }
+      ]
     },
     {
       "episode": 390,
@@ -2645,7 +3953,23 @@
       "date_7d": "2024-01-13",
       "actual": "lower",
       "change_pct": -5.11,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "But for now, Dan Eave predicting against the source of all truth and knowledge in the universe, the Bitcoin predictor ball, will the price of Bitcoin "
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "But so I think we're going to be up again next week"
+        }
+      ]
     },
     {
       "episode": 391,
@@ -2672,7 +3996,16 @@
       "date_7d": "2024-01-20",
       "actual": "lower",
       "change_pct": -0.32,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones, what do you think about this exciting tweet and the surprise potential that such an important organization, one that as we've discusse"
+        }
+      ]
     },
     {
       "episode": 393,
@@ -2699,7 +4032,23 @@
       "date_7d": "2024-02-03",
       "actual": "higher",
       "change_pct": 1.29,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "igher or lower I'm going to say lower but I'm talking about the dollar exchange rate to satosies I think we're going to see a dollar become worth less"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "igher or lower I'm going to say lower but I'm talking about the dollar exchange rate to satosies I think we're going to see a dollar become worth less"
+        }
+      ]
     },
     {
       "episode": 394,
@@ -2713,7 +4062,23 @@
       "date_7d": "2024-02-10",
       "actual": "higher",
       "change_pct": 13.49,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin to be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh a gole higher or lower"
+        }
+      ]
     },
     {
       "episode": 395,
@@ -2741,7 +4106,23 @@
       "date_7d": "2024-02-24",
       "actual": "lower",
       "change_pct": -0.79,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "It's ever optimistic and up"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, should go higher or lower"
+        }
+      ]
     },
     {
       "episode": 397,
@@ -2762,7 +4143,23 @@
       "date_7d": "2024-03-02",
       "actual": "higher",
       "change_pct": 22.08,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "But the important question is, Dan Eave, will the price of Bitcoin be higher or lower this time next week predicting against the Bitcoin predictor bal"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Egolla, higher or lower"
+        }
+      ]
     },
     {
       "episode": 398,
@@ -2783,7 +4180,23 @@
       "date_7d": "2024-03-09",
       "actual": "higher",
       "change_pct": 9.3,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, a goal of the price be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 399,
@@ -2804,7 +4217,23 @@
       "date_7d": "2024-03-16",
       "actual": "lower",
       "change_pct": -0.95,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan, Eve, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, a gole, a higher or lower"
+        }
+      ]
     },
     {
       "episode": 401,
@@ -2825,7 +4254,23 @@
       "date_7d": "2024-03-30",
       "actual": "higher",
       "change_pct": 6.11,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Adam Meister, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Shagalla, all positivity on the panel, higher or lower"
+        }
+      ]
     },
     {
       "episode": 402,
@@ -2839,7 +4284,16 @@
       "date_7d": "2024-04-06",
       "actual": "lower",
       "change_pct": -2.74,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, a gole higher or lower higher higher"
+        }
+      ]
     },
     {
       "episode": 403,
@@ -2860,7 +4314,16 @@
       "date_7d": "2024-04-20",
       "actual": "lower",
       "change_pct": -1.23,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, should go higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 404,
@@ -2874,7 +4337,16 @@
       "date_7d": "2024-04-27",
       "actual": "lower",
       "change_pct": -2.84,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "Like Josh is saying, if you're a Bitcoiner and you're out there, like this is the greatest thing in the world, how could it ever go down"
+        }
+      ]
     },
     {
       "episode": 406,
@@ -2901,7 +4373,23 @@
       "date_7d": "2024-05-11",
       "actual": "lower",
       "change_pct": -4.03,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "So Dan, Eve, predicting against the Magikapal, the Bringer and the show of all truth and knowledge in this universe, will the price of Bitcoin be high"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben, arc higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 407,
@@ -2915,7 +4403,23 @@
       "date_7d": "2024-05-18",
       "actual": "higher",
       "change_pct": 7.82,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "The exit question, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, you got a higher or lower"
+        }
+      ]
     },
     {
       "episode": 408,
@@ -2936,7 +4440,23 @@
       "date_7d": "2024-05-25",
       "actual": "higher",
       "change_pct": 3.35,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Adam McBride will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh, Shagalla, higher or lower"
+        }
+      ]
     },
     {
       "episode": 409,
@@ -2957,7 +4477,23 @@
       "date_7d": "2024-06-01",
       "actual": "lower",
       "change_pct": -1.09,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 411,
@@ -2971,7 +4507,16 @@
       "date_7d": "2024-06-15",
       "actual": "lower",
       "change_pct": -4.32,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Will the price be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 412,
@@ -2985,7 +4530,16 @@
       "date_7d": "2024-06-22",
       "actual": "lower",
       "change_pct": -5.18,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, should go with a price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 413,
@@ -3026,7 +4580,23 @@
       "date_7d": "2024-07-06",
       "actual": "lower",
       "change_pct": -10.88,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan Eve, higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "And Victoria, higher or lower"
+        }
+      ]
     },
     {
       "episode": 415,
@@ -3074,7 +4644,16 @@
       "date_7d": "2024-08-03",
       "actual": "lower",
       "change_pct": -14.82,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "lower",
+          "correct": true,
+          "verification": 2,
+          "context": "So Bitcoin went up, Ethereum went down"
+        }
+      ]
     },
     {
       "episode": 418,
@@ -3101,7 +4680,23 @@
       "date_7d": "2024-08-24",
       "actual": "higher",
       "change_pct": 9.97,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben Ark, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Jimmy Song",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Jimmy song higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 419,
@@ -3115,7 +4710,23 @@
       "date_7d": "2024-08-31",
       "actual": "lower",
       "change_pct": -10.82,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, the goal of the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Vlad Costea",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I mean, you got to pay rent and stuff, but other than that, Vlad Kosta higher or lower"
+        }
+      ]
     },
     {
       "episode": 420,
@@ -3129,7 +4740,16 @@
       "date_7d": "2024-09-07",
       "actual": "lower",
       "change_pct": -4.25,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Let's see, Josh, it all will the price be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 421,
@@ -3164,7 +4784,16 @@
       "date_7d": "2024-09-21",
       "actual": "higher",
       "change_pct": 7.52,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "I think the halving drove down the supply and eventually we're going to have a supply shock where there's not enough Bitcoin and people go to buy them"
+        }
+      ]
     },
     {
       "episode": 424,
@@ -3199,7 +4828,16 @@
       "date_7d": "2024-10-12",
       "actual": "higher",
       "change_pct": 0.05,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "Do you think it'll be higher or lower next week"
+        }
+      ]
     },
     {
       "episode": 426,
@@ -3240,7 +4878,16 @@
       "date_7d": "2024-10-25",
       "actual": "lower",
       "change_pct": -1.98,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Okay, so I'm always bullish on Bitcoin"
+        }
+      ]
     },
     {
       "episode": 428,
@@ -3261,7 +4908,23 @@
       "date_7d": "2024-11-02",
       "actual": "higher",
       "change_pct": 1.18,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 1,
+          "context": "Will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria, higher or lower"
+        }
+      ]
     },
     {
       "episode": 429,
@@ -3296,7 +4959,16 @@
       "date_7d": "2024-11-16",
       "actual": "higher",
       "change_pct": 11.75,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh a call higher or lower"
+        }
+      ]
     },
     {
       "episode": 431,
@@ -3331,7 +5003,23 @@
       "date_7d": "2024-11-30",
       "actual": "lower",
       "change_pct": -0.76,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "whatever is the is the target is being the target I've said on this show for three four years now on the cycle of us going up but yeah I think once we"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "whatever is the is the target is being the target I've said on this show for three four years now on the cycle of us going up but yeah I think once we"
+        }
+      ]
     },
     {
       "episode": 433,
@@ -3366,7 +5054,16 @@
       "date_7d": "2024-12-21",
       "actual": "lower",
       "change_pct": -8.93,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Will the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 435,
@@ -3394,7 +5091,30 @@
       "date_7d": "2025-01-04",
       "actual": "higher",
       "change_pct": 5.11,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Jagalla will the price of Bitcoin going to be higher or lower this time next week"
+        },
+        {
+          "name": "Jesse",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Jesse, are you going higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones, higher or lower"
+        }
+      ]
     },
     {
       "episode": 437,
@@ -3408,7 +5128,16 @@
       "date_7d": "2025-01-11",
       "actual": "lower",
       "change_pct": -3.91,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh, as Max Kaiser always said, price follows hash rate and the Bitcoin hash rate just keeps going up"
+        }
+      ]
     },
     {
       "episode": 438,
@@ -3436,7 +5165,16 @@
       "date_7d": "2025-02-01",
       "actual": "lower",
       "change_pct": -4.79,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "So Josh, this time next week, will the price of Bitcoin be higher or lower"
+        }
+      ]
     },
     {
       "episode": 440,
@@ -3450,7 +5188,23 @@
       "date_7d": "2025-02-08",
       "actual": "lower",
       "change_pct": -1.21,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Adam Meister",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Adam McBride, the price of Bitcoin higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Victoria Jones sticking with the pessimism higher or lower"
+        }
+      ]
     },
     {
       "episode": 441,
@@ -3471,7 +5225,30 @@
       "date_7d": "2025-02-15",
       "actual": "lower",
       "change_pct": -0.37,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh Shagalla will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Jimmy Song",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Jimmy Song higher or lower"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "Yeah yeah but when it comes to Bitcoin I'm of course happy the other fields of interest it is not in my comfort zone so much or I will leave that to o"
+        }
+      ]
     },
     {
       "episode": 442,
@@ -3485,7 +5262,16 @@
       "date_7d": "2025-02-22",
       "actual": "higher",
       "change_pct": 0.15,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "If you look at it, since the creation of mad bitcoins and the world crypto network, the price of Bitcoin has historically always been up since then"
+        }
+      ]
     },
     {
       "episode": 443,
@@ -3506,7 +5292,23 @@
       "date_7d": "2025-03-01",
       "actual": "lower",
       "change_pct": -2.08,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "et's see go to the last 24 hours Bitcoin down 3.3% Ethereum down 4.3 ripple down 5.5 tether is holding Binance going down 2.2 Solana down 3.8 and USDC"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "et's see go to the last 24 hours Bitcoin down 3.3% Ethereum down 4.3 ripple down 5.5 tether is holding Binance going down 2.2 Solana down 3.8 and USDC"
+        }
+      ]
     },
     {
       "episode": 444,
@@ -3547,7 +5349,16 @@
       "date_7d": "2025-03-15",
       "actual": "higher",
       "change_pct": 2.3,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "later better not tell yeah there they all sound like eight ball responses I'm gonna create that now and then I'm gonna I can't click oh there we go um"
+        }
+      ]
     },
     {
       "episode": 446,
@@ -3588,7 +5399,30 @@
       "date_7d": "2025-03-29",
       "actual": "lower",
       "change_pct": -4.31,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben Arck will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Josh Shagalla higher or lower"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Yeah, because you did say to be fair Thomas, you did say is it going to be higher or lower"
+        }
+      ]
     },
     {
       "episode": 448,
@@ -3609,7 +5443,16 @@
       "date_7d": "2025-04-05",
       "actual": "lower",
       "change_pct": -4.87,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "It's been a try to get the chart up here for Ben"
+        }
+      ]
     },
     {
       "episode": 449,
@@ -3630,7 +5473,23 @@
       "date_7d": "2025-04-12",
       "actual": "higher",
       "change_pct": 6.85,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Even the dead cat bounces Josh Shagalla higher or lower"
+        }
+      ]
     },
     {
       "episode": 450,
@@ -3644,7 +5503,16 @@
       "date_7d": "2025-04-19",
       "actual": "higher",
       "change_pct": 1.72,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 0,
+          "context": "Higher or lower"
+        }
+      ]
     },
     {
       "episode": 451,
@@ -3679,7 +5547,23 @@
       "date_7d": "2025-05-03",
       "actual": "higher",
       "change_pct": 0.66,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Moving on to the exit question, the Bitcoin predictor ball and source of all truth and knowledge in this universe, Josh, a goal will the price of Bitc"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "I know it always goes up on I sell a Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 453,
@@ -3721,7 +5605,23 @@
       "date_7d": "2025-05-17",
       "actual": "higher",
       "change_pct": 2.27,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben, ARC will be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 456,
@@ -3742,7 +5642,16 @@
       "date_7d": "2025-05-30",
       "actual": "lower",
       "change_pct": -2.9,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "that was a debate and discussion it's been confirmed now but they could always change it like they say if there was enough consensus we are being told"
+        }
+      ]
     },
     {
       "episode": 457,
@@ -3777,7 +5686,23 @@
       "date_7d": "2025-06-14",
       "actual": "lower",
       "change_pct": -0.15,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben Ark, will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "lower",
+          "correct": true,
+          "verification": 2,
+          "context": "Tell Ben that it will be lower"
+        }
+      ]
     },
     {
       "episode": 459,
@@ -3798,7 +5723,16 @@
       "date_7d": "2025-06-21",
       "actual": "lower",
       "change_pct": -4.36,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I think like Ben said, it's a chance for some of those treasury companies to scoop up some more cheap Bitcoin at the hands of retail who keep selling "
+        }
+      ]
     },
     {
       "episode": 460,
@@ -3812,7 +5746,23 @@
       "date_7d": "2025-06-28",
       "actual": "higher",
       "change_pct": 7.3,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "lower",
+          "correct": false,
+          "verification": 2,
+          "context": "Up and down"
+        },
+        {
+          "name": "Josh Scigala",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Josh Shagalla, higher or lower"
+        }
+      ]
     },
     {
       "episode": 461,
@@ -3839,7 +5789,30 @@
       "date_7d": "2025-07-05",
       "actual": "higher",
       "change_pct": 0.78,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Ben Ark will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "I think it would be beautiful and delicious irony Victoria Jones higher or lower and what kind of irony do you think it would be"
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": true,
+          "verification": 2,
+          "context": "But in terms of price yeah I think we seem to have done quite well this week so yeah could be on a good trajectory I'm going to say higher for next we"
+        }
+      ]
     },
     {
       "episode": 462,
@@ -3866,7 +5839,23 @@
       "date_7d": "2025-07-26",
       "actual": "higher",
       "change_pct": 1.82,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Victoria Jones higher or lower"
+        }
+      ]
     },
     {
       "episode": 463,
@@ -3887,7 +5876,30 @@
       "date_7d": "2025-08-02",
       "actual": "lower",
       "change_pct": -4.38,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan E will be higher or lower this time next week"
+        },
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben Ark continuing the positivity higher or lower"
+        },
+        {
+          "name": "Victoria Jones",
+          "direction": "higher",
+          "correct": false,
+          "verification": 1,
+          "context": "Although she's not a fan and the hex people found it and now they're they're filling up her Twitter replies trying to teach her about the power of hex"
+        }
+      ]
     },
     {
       "episode": 464,
@@ -3922,7 +5934,16 @@
       "date_7d": "2025-08-23",
       "actual": "lower",
       "change_pct": -3.41,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Dan, evil, the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 467,
@@ -3943,7 +5964,16 @@
       "date_7d": "2025-09-20",
       "actual": "lower",
       "change_pct": -0.05,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Jed says higher, Dan, Eve, higher or lower"
+        }
+      ]
     },
     {
       "episode": 468,
@@ -3964,7 +5994,16 @@
       "date_7d": "2025-09-27",
       "actual": "lower",
       "change_pct": -2.67,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "I agree with Dan, always bullish"
+        }
+      ]
     },
     {
       "episode": 470,
@@ -3978,7 +6017,16 @@
       "date_7d": "2025-10-11",
       "actual": "lower",
       "change_pct": -6.84,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": false,
+          "verification": 0,
+          "context": "Higher or lower, starship in the chat says 130 this week"
+        }
+      ]
     },
     {
       "episode": 472,
@@ -4005,7 +6053,23 @@
       "date_7d": "2025-10-25",
       "actual": "higher",
       "change_pct": 5.39,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Dan Eve",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "So Dan, Eve, higher or lower next week"
+        },
+        {
+          "name": "Jesse",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Jesse, higher or lower"
+        }
+      ]
     },
     {
       "episode": 473,
@@ -4033,7 +6097,16 @@
       "date_7d": "2025-12-20",
       "actual": "higher",
       "change_pct": 0.54,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Jimmy Song",
+          "direction": "higher",
+          "correct": true,
+          "verification": 3,
+          "context": "Jimmy, song higher or lower"
+        }
+      ]
     },
     {
       "episode": 476,
@@ -4047,7 +6120,16 @@
       "date_7d": "2026-01-03",
       "actual": "higher",
       "change_pct": 4.11,
-      "ball_correct": null
+      "ball_correct": null,
+      "verified_guest_calls": [
+        {
+          "name": "Jimmy Song",
+          "direction": "lower",
+          "correct": false,
+          "verification": 3,
+          "context": "But first, Jimmy Song, do you think the price is going up or down this time next week"
+        }
+      ]
     },
     {
       "episode": 477,
@@ -4117,7 +6199,16 @@
       "date_7d": "2026-02-07",
       "actual": "lower",
       "change_pct": -8.6,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben Arck will the price of Bitcoin be higher or lower this time next week"
+        }
+      ]
     },
     {
       "episode": 481,
@@ -4138,7 +6229,16 @@
       "date_7d": "2026-02-14",
       "actual": "lower",
       "change_pct": -2.13,
-      "ball_correct": true
+      "ball_correct": true,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "higher",
+          "correct": false,
+          "verification": 3,
+          "context": "Ben, are higher or lower"
+        }
+      ]
     },
     {
       "episode": 482,
@@ -4173,7 +6273,23 @@
       "date_7d": "2026-02-28",
       "actual": "lower",
       "change_pct": -2.74,
-      "ball_correct": false
+      "ball_correct": false,
+      "verified_guest_calls": [
+        {
+          "name": "Ben Arc",
+          "direction": "lower",
+          "correct": true,
+          "verification": 3,
+          "context": "o see that still valid and that we're still on that track but i remember it last time and it turned out last time all right but it did take years and "
+        },
+        {
+          "name": "Thomas Hunt",
+          "direction": "higher",
+          "correct": false,
+          "verification": 2,
+          "context": "o see that still valid and that we're still on that track but i remember it last time and it turned out last time all right but it did take years and "
+        }
+      ]
     },
     {
       "episode": 485,
