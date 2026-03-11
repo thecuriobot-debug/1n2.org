@@ -1,0 +1,5 @@
+thunt-data-labs/.env
+thunt-data-labs/.DS_Store
+**/__pycache__/
+*.pyc
+**/.DS_Store
