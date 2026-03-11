@@ -1,0 +1,8453 @@
+{
+  "generated": "2026-03-10T18:34:18.526583",
+  "total_episodes_with_guests": 472,
+  "unique_guests": 263,
+  "top_guests": [
+    {
+      "name": "Thomas Hunt",
+      "count": 396,
+      "episodes": [
+        2,
+        5,
+        24,
+        27,
+        32,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        47,
+        51,
+        52,
+        53,
+        55,
+        56,
+        58,
+        59,
+        60,
+        62,
+        63,
+        65,
+        68,
+        71,
+        72,
+        73,
+        74,
+        78,
+        79,
+        80,
+        81,
+        82,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        103,
+        104,
+        105,
+        107,
+        108,
+        109,
+        111,
+        112,
+        113,
+        114,
+        117,
+        118,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        159,
+        160,
+        161,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        209,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        281,
+        283,
+        284,
+        285,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        307,
+        308,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        457,
+        458,
+        459,
+        460,
+        461,
+        462,
+        463,
+        464,
+        465,
+        466,
+        468,
+        469,
+        471,
+        472,
+        474,
+        475,
+        476,
+        478,
+        479,
+        480,
+        482,
+        483,
+        484,
+        485
+      ]
+    },
+    {
+      "name": "Dan Eave",
+      "count": 101,
+      "episodes": [
+        190,
+        192,
+        193,
+        196,
+        197,
+        199,
+        206,
+        212,
+        213,
+        216,
+        218,
+        219,
+        222,
+        248,
+        250,
+        252,
+        253,
+        254,
+        260,
+        262,
+        263,
+        268,
+        274,
+        276,
+        279,
+        280,
+        287,
+        288,
+        294,
+        295,
+        296,
+        299,
+        301,
+        304,
+        308,
+        309,
+        312,
+        314,
+        315,
+        317,
+        318,
+        322,
+        323,
+        324,
+        325,
+        328,
+        329,
+        330,
+        332,
+        335,
+        336,
+        337,
+        338,
+        341,
+        343,
+        344,
+        346,
+        354,
+        355,
+        357,
+        358,
+        361,
+        362,
+        363,
+        366,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        385,
+        386,
+        390,
+        391,
+        394,
+        395,
+        396,
+        397,
+        399,
+        404,
+        405,
+        406,
+        409,
+        414,
+        428,
+        450,
+        453,
+        463,
+        464,
+        465,
+        470,
+        472
+      ]
+    },
+    {
+      "name": "Josh Sigala",
+      "count": 96,
+      "episodes": [
+        204,
+        205,
+        207,
+        208,
+        210,
+        211,
+        223,
+        224,
+        226,
+        232,
+        233,
+        238,
+        241,
+        242,
+        245,
+        247,
+        248,
+        250,
+        251,
+        253,
+        254,
+        255,
+        256,
+        257,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        267,
+        273,
+        277,
+        278,
+        279,
+        280,
+        281,
+        283,
+        286,
+        287,
+        291,
+        292,
+        293,
+        294,
+        314,
+        318,
+        320,
+        323,
+        324,
+        330,
+        332,
+        334,
+        339,
+        348,
+        349,
+        357,
+        362,
+        364,
+        365,
+        376,
+        378,
+        379,
+        386,
+        389,
+        390,
+        391,
+        392,
+        393,
+        397,
+        398,
+        399,
+        403,
+        404,
+        405,
+        407,
+        408,
+        410,
+        411,
+        412,
+        414,
+        418,
+        419,
+        420,
+        422,
+        425,
+        435,
+        436,
+        437,
+        438,
+        443,
+        447,
+        452,
+        459,
+        460,
+        475
+      ]
+    },
+    {
+      "name": "Ben Arc",
+      "count": 84,
+      "episodes": [
+        203,
+        213,
+        214,
+        216,
+        217,
+        220,
+        221,
+        223,
+        225,
+        227,
+        228,
+        229,
+        230,
+        233,
+        236,
+        238,
+        239,
+        244,
+        246,
+        252,
+        253,
+        255,
+        262,
+        264,
+        266,
+        273,
+        278,
+        279,
+        294,
+        295,
+        296,
+        299,
+        301,
+        306,
+        307,
+        313,
+        316,
+        317,
+        318,
+        320,
+        321,
+        323,
+        326,
+        330,
+        336,
+        337,
+        340,
+        345,
+        346,
+        347,
+        355,
+        356,
+        365,
+        367,
+        376,
+        382,
+        383,
+        384,
+        389,
+        393,
+        410,
+        413,
+        415,
+        416,
+        418,
+        423,
+        426,
+        432,
+        433,
+        443,
+        445,
+        446,
+        447,
+        452,
+        454,
+        458,
+        459,
+        460,
+        461,
+        463,
+        464,
+        480,
+        481,
+        483
+      ]
+    },
+    {
+      "name": "Tone Vays",
+      "count": 54,
+      "episodes": [
+        78,
+        79,
+        82,
+        84,
+        90,
+        91,
+        96,
+        99,
+        100,
+        102,
+        103,
+        107,
+        111,
+        112,
+        114,
+        117,
+        119,
+        120,
+        121,
+        122,
+        123,
+        125,
+        126,
+        127,
+        129,
+        130,
+        131,
+        133,
+        136,
+        138,
+        139,
+        141,
+        142,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        152,
+        153,
+        155,
+        157,
+        158,
+        159,
+        161,
+        162,
+        164,
+        165,
+        166,
+        170,
+        175,
+        190
+      ]
+    },
+    {
+      "name": "Victoria Jones",
+      "count": 49,
+      "episodes": [
+        332,
+        333,
+        339,
+        340,
+        345,
+        351,
+        353,
+        358,
+        363,
+        370,
+        373,
+        379,
+        388,
+        389,
+        391,
+        392,
+        396,
+        398,
+        400,
+        402,
+        403,
+        405,
+        407,
+        409,
+        414,
+        415,
+        416,
+        417,
+        422,
+        424,
+        426,
+        428,
+        430,
+        434,
+        436,
+        444,
+        446,
+        449,
+        452,
+        454,
+        456,
+        458,
+        461,
+        462,
+        466,
+        469,
+        479,
+        481,
+        484
+      ]
+    },
+    {
+      "name": "Theo Goodman",
+      "count": 47,
+      "episodes": [
+        71,
+        72,
+        73,
+        74,
+        76,
+        78,
+        79,
+        80,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        92,
+        94,
+        97,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        110,
+        111,
+        114,
+        117,
+        121,
+        122,
+        123,
+        128,
+        129,
+        133,
+        134,
+        140,
+        147,
+        158,
+        179,
+        191,
+        195,
+        196,
+        199,
+        205
+      ]
+    },
+    {
+      "name": "Blake Anderson",
+      "count": 46,
+      "episodes": [
+        35,
+        36,
+        37,
+        39,
+        43,
+        46,
+        48,
+        49,
+        50,
+        51,
+        55,
+        60,
+        62,
+        65,
+        70,
+        72,
+        73,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        87,
+        89,
+        91,
+        92,
+        96,
+        100,
+        124,
+        125,
+        128,
+        130,
+        134,
+        140,
+        141,
+        142,
+        148,
+        149,
+        152,
+        155,
+        160,
+        183,
+        186
+      ]
+    },
+    {
+      "name": "Megan Lords",
+      "count": 29,
+      "episodes": [
+        7,
+        8,
+        9,
+        12,
+        13,
+        15,
+        16,
+        18,
+        19,
+        21,
+        23,
+        24,
+        26,
+        28,
+        31,
+        33,
+        34,
+        35,
+        36,
+        38,
+        40,
+        42,
+        44,
+        51,
+        55,
+        63,
+        65,
+        77,
+        81
+      ]
+    },
+    {
+      "name": "Jeffrey Jones",
+      "count": 26,
+      "episodes": [
+        122,
+        129,
+        132,
+        133,
+        135,
+        137,
+        139,
+        141,
+        143,
+        158,
+        159,
+        161,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        179
+      ]
+    },
+    {
+      "name": "Will Pangman",
+      "count": 23,
+      "episodes": [
+        6,
+        8,
+        9,
+        12,
+        13,
+        15,
+        17,
+        19,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        35,
+        36,
+        49,
+        64,
+        69,
+        73,
+        76,
+        91,
+        100
+      ]
+    },
+    {
+      "name": "Chris Ellis",
+      "count": 23,
+      "episodes": [
+        31,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        44,
+        48,
+        49,
+        52,
+        57,
+        69,
+        70,
+        77,
+        87,
+        114,
+        132,
+        138,
+        151
+      ]
+    },
+    {
+      "name": "Vin Armani",
+      "count": 23,
+      "episodes": [
+        87,
+        89,
+        90,
+        92,
+        103,
+        114,
+        116,
+        121,
+        123,
+        124,
+        131,
+        144,
+        145,
+        154,
+        157,
+        160,
+        169,
+        171,
+        177,
+        179,
+        184,
+        187,
+        263
+      ]
+    },
+    {
+      "name": "Derrick Freeman",
+      "count": 22,
+      "episodes": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        15,
+        20,
+        22,
+        24,
+        25,
+        27,
+        32,
+        36,
+        38,
+        41,
+        64,
+        68,
+        73,
+        100
+      ]
+    },
+    {
+      "name": "Gabriel",
+      "count": 18,
+      "episodes": [
+        86,
+        90,
+        94,
+        112,
+        115,
+        116,
+        131,
+        136,
+        144,
+        145,
+        154,
+        157,
+        169,
+        171,
+        178,
+        179,
+        184,
+        187
+      ]
+    },
+    {
+      "name": "Jimmy Song",
+      "count": 15,
+      "episodes": [
+        137,
+        139,
+        146,
+        153,
+        156,
+        158,
+        159,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        418,
+        474
+      ]
+    },
+    {
+      "name": "Martin Wismeijer",
+      "count": 12,
+      "episodes": [
+        250,
+        258,
+        265,
+        284,
+        286,
+        290,
+        299,
+        300,
+        303,
+        324,
+        331,
+        356
+      ]
+    },
+    {
+      "name": "Vaughan",
+      "count": 8,
+      "episodes": [
+        94,
+        100,
+        102,
+        104,
+        136,
+        148,
+        180,
+        181
+      ]
+    },
+    {
+      "name": "Andy Hoffman",
+      "count": 8,
+      "episodes": [
+        175,
+        176,
+        177,
+        180,
+        181,
+        185,
+        188,
+        189
+      ]
+    },
+    {
+      "name": "Martin Wishmeyer",
+      "count": 7,
+      "episodes": [
+        288,
+        291,
+        301,
+        314,
+        320,
+        337,
+        343
+      ]
+    },
+    {
+      "name": "Tones",
+      "count": 6,
+      "episodes": [
+        85,
+        88,
+        108,
+        110,
+        118,
+        154
+      ]
+    },
+    {
+      "name": "Kyle Torpy",
+      "count": 6,
+      "episodes": [
+        117,
+        124,
+        149,
+        150,
+        167,
+        173
+      ]
+    },
+    {
+      "name": "Juan Galt",
+      "count": 6,
+      "episodes": [
+        212,
+        217,
+        270,
+        295,
+        335,
+        415
+      ]
+    },
+    {
+      "name": "Robert Allen",
+      "count": 6,
+      "episodes": [
+        214,
+        293,
+        342,
+        420,
+        474,
+        481
+      ]
+    },
+    {
+      "name": "Martin",
+      "count": 6,
+      "episodes": [
+        226,
+        229,
+        232,
+        234,
+        241,
+        242
+      ]
+    },
+    {
+      "name": "Bride",
+      "count": 6,
+      "episodes": [
+        254,
+        257,
+        265,
+        277,
+        289,
+        350
+      ]
+    },
+    {
+      "name": "Martin Wishmer",
+      "count": 6,
+      "episodes": [
+        259,
+        267,
+        292,
+        304,
+        316,
+        326
+      ]
+    },
+    {
+      "name": "Josh Tagala",
+      "count": 6,
+      "episodes": [
+        285,
+        316,
+        368,
+        402,
+        432,
+        433
+      ]
+    },
+    {
+      "name": "Davy Barker",
+      "count": 5,
+      "episodes": [
+        6,
+        16,
+        26,
+        30,
+        38
+      ]
+    },
+    {
+      "name": "Bryce Weiner",
+      "count": 5,
+      "episodes": [
+        46,
+        47,
+        48,
+        49,
+        53
+      ]
+    },
+    {
+      "name": "Vaan",
+      "count": 5,
+      "episodes": [
+        115,
+        134,
+        143,
+        178,
+        185
+      ]
+    },
+    {
+      "name": "Josh Kigala",
+      "count": 5,
+      "episodes": [
+        194,
+        199,
+        201,
+        202,
+        313
+      ]
+    },
+    {
+      "name": "Josh Gagala",
+      "count": 5,
+      "episodes": [
+        215,
+        231,
+        234,
+        237,
+        303
+      ]
+    },
+    {
+      "name": "Ark",
+      "count": 5,
+      "episodes": [
+        226,
+        247,
+        305,
+        312,
+        329
+      ]
+    },
+    {
+      "name": "Martine Wismer",
+      "count": 5,
+      "episodes": [
+        245,
+        252,
+        257,
+        280,
+        285
+      ]
+    },
+    {
+      "name": "Michael Dupree",
+      "count": 5,
+      "episodes": [
+        289,
+        300,
+        300,
+        336,
+        338
+      ]
+    },
+    {
+      "name": "Derek",
+      "count": 4,
+      "episodes": [
+        13,
+        27,
+        32,
+        64
+      ]
+    },
+    {
+      "name": "Kristoff Atlas",
+      "count": 4,
+      "episodes": [
+        17,
+        31,
+        45,
+        58
+      ]
+    },
+    {
+      "name": "Christoph Atlus",
+      "count": 4,
+      "episodes": [
+        18,
+        19,
+        22,
+        23
+      ]
+    },
+    {
+      "name": "Christoph Atlas",
+      "count": 4,
+      "episodes": [
+        24,
+        32,
+        53,
+        56
+      ]
+    },
+    {
+      "name": "Gabriel Devon",
+      "count": 4,
+      "episodes": [
+        85,
+        118,
+        129,
+        133
+      ]
+    },
+    {
+      "name": "Adam Meister",
+      "count": 4,
+      "episodes": [
+        181,
+        239,
+        401,
+        478
+      ]
+    },
+    {
+      "name": "Ben",
+      "count": 4,
+      "episodes": [
+        200,
+        201,
+        206,
+        210
+      ]
+    },
+    {
+      "name": "Tomas Hunt",
+      "count": 4,
+      "episodes": [
+        211,
+        230,
+        334,
+        369
+      ]
+    },
+    {
+      "name": "Martine Wishmare",
+      "count": 4,
+      "episodes": [
+        273,
+        287,
+        305,
+        349
+      ]
+    },
+    {
+      "name": "Josh Legala",
+      "count": 4,
+      "episodes": [
+        302,
+        315,
+        366,
+        382
+      ]
+    },
+    {
+      "name": "Andreas Antonopoulos",
+      "count": 3,
+      "episodes": [
+        2,
+        51,
+        100
+      ]
+    },
+    {
+      "name": "Dovey Barker",
+      "count": 3,
+      "episodes": [
+        2,
+        10,
+        36
+      ]
+    },
+    {
+      "name": "Kristoff Atlus",
+      "count": 3,
+      "episodes": [
+        21,
+        29,
+        59
+      ]
+    },
+    {
+      "name": "Paige Peterson",
+      "count": 3,
+      "episodes": [
+        24,
+        25,
+        28
+      ]
+    }
+  ],
+  "by_episode": {
+    "2": [
+      {
+        "name": "Andreas Antonopoulos",
+        "affiliation": "Let's Talk Bitcoin"
+      },
+      {
+        "name": "Dovey Barker",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "PeaceNewsNow"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoins"
+      }
+    ],
+    "5": [
+      {
+        "name": "Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoins"
+      }
+    ],
+    "6": [
+      {
+        "name": "Davy Barker",
+        "affiliation": "Bitcoin not bombs"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Mass Appeal"
+      }
+    ],
+    "7": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "PLNU's now"
+      },
+      {
+        "name": "Dauvey Barker",
+        "affiliation": "shinybatches"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoins"
+      }
+    ],
+    "8": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Pete's Loose Now"
+      },
+      {
+        "name": "Davi Barker",
+        "affiliation": "ShiniBaggis"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin MKE"
+      }
+    ],
+    "9": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News Now"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "BitcoinMKE"
+      }
+    ],
+    "10": [
+      {
+        "name": "Dovey Barker",
+        "affiliation": "Bitcoin Not Bombs"
+      },
+      {
+        "name": "Tom",
+        "affiliation": "Mad Bitcoin"
+      },
+      {
+        "name": "Silk Road",
+        "affiliation": "within the United States"
+      }
+    ],
+    "11": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Bitcoin Philadelphia Megan lords from Bitcoin not bombs will penguin from Bitcoin Milwaukee"
+      },
+      {
+        "name": "Oreo",
+        "affiliation": "Bitcoin Alliance of Canada This episode was sponsored by let's talk Bitcoin let's talk Bitcoin check out their exciting new podcast contest"
+      }
+    ],
+    "12": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Bitcoin Philadelphia"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin not bombs"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin Mill Wocky"
+      }
+    ],
+    "13": [
+      {
+        "name": "Derek",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Avie Barker",
+        "affiliation": "shinybagets"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "15": [
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "16": [
+      {
+        "name": "Davy Barker",
+        "affiliation": "shinybadges"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Will Pengman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "17": [
+      {
+        "name": "Kristoff Atlas",
+        "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "18": [
+      {
+        "name": "Christoph Atlus",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "19": [
+      {
+        "name": "Inclus",
+        "affiliation": ""
+      },
+      {
+        "name": "Jolly Barker",
+        "affiliation": "shiny badges"
+      },
+      {
+        "name": "Christoph Atlus",
+        "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Peace Propagandist",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "20": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace Profigandist"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin Milwaki hi everybody"
+      }
+    ],
+    "21": [
+      {
+        "name": "Kristoff Atlus",
+        "affiliation": ""
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoins"
+      }
+    ],
+    "22": [
+      {
+        "name": "Christoph Atlus",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "BitcoinToxo"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin Milwaukee"
+      }
+    ],
+    "23": [
+      {
+        "name": "Christoph Atlus",
+        "affiliation": ""
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "24": [
+      {
+        "name": "Tavi Barker",
+        "affiliation": "shiny badges"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Bitcoin Talk Show"
+      },
+      {
+        "name": "Christoph Atlas",
+        "affiliation": "world crypto network"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin not bombs"
+      },
+      {
+        "name": "Paige Peterson",
+        "affiliation": "San Francisco Bitcoin"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "mad bitcoins"
+      }
+    ],
+    "25": [
+      {
+        "name": "Chris",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Paige Peterson",
+        "affiliation": "San Francisco"
+      }
+    ],
+    "26": [
+      {
+        "name": "Davy Barker",
+        "affiliation": "ShiniBadges"
+      },
+      {
+        "name": "Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin Not Bombs"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin Millwaukey"
+      }
+    ],
+    "27": [
+      {
+        "name": "Derek",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Chris Aless",
+        "affiliation": "World CryptoNet"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bittcoins"
+      }
+    ],
+    "28": [
+      {
+        "name": "Chris",
+        "affiliation": ""
+      },
+      {
+        "name": "Paige Peterson",
+        "affiliation": "San Francisco Bitcoin Meetup"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Christoph Atlis",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "29": [
+      {
+        "name": "Page Peterson",
+        "affiliation": "San Francisco Bitcoin Meetup"
+      },
+      {
+        "name": "Megan Lors",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Kristoff Atlus",
+        "affiliation": "anonymous Bitcoin book"
+      }
+    ],
+    "30": [
+      {
+        "name": "Davy Barker",
+        "affiliation": ""
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Marty Melrose",
+        "affiliation": "MidasMardi"
+      }
+    ],
+    "31": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Feathercoin"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Kristoff Atlas",
+        "affiliation": "Anonymous Bitcoin book"
+      }
+    ],
+    "32": [
+      {
+        "name": "Derek",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace"
+      },
+      {
+        "name": "Christoph Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "33": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Feathercoin"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      }
+    ],
+    "34": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": ""
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      }
+    ],
+    "35": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Feathercoma"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Donnie Barker",
+        "affiliation": "ShinyBadges"
+      },
+      {
+        "name": "Christoff Ellis",
+        "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "36": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News Now"
+      },
+      {
+        "name": "Dovey Barker",
+        "affiliation": "ShineeBadges"
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoins"
+      }
+    ],
+    "37": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "David Barker",
+        "affiliation": "shiny badges"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Federcorn"
+      },
+      {
+        "name": "Chris Doth Atlas",
+        "affiliation": "anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bittcoins"
+      }
+    ],
+    "38": [
+      {
+        "name": "Davy Barker",
+        "affiliation": "ShiniBadges"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Feathercoin"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Chris Dough Atlas",
+        "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "39": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": ""
+      },
+      {
+        "name": "Christoph Atlis",
+        "affiliation": "anonymous bitcoinbook"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Bad Bitcoins"
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "At Bitcoin Blake on Twitter"
+      }
+    ],
+    "40": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Atlas",
+        "affiliation": "anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoins"
+      }
+    ],
+    "41": [
+      {
+        "name": "Will Pengman",
+        "affiliation": "Topiki"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Peace News now"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "42": [
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Biccoins"
+      }
+    ],
+    "43": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "facebook"
+      },
+      {
+        "name": "Abyssoft Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      }
+    ],
+    "44": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin Not Bombs"
+      },
+      {
+        "name": "Hunt",
+        "affiliation": "Bad Bitcoin"
+      }
+    ],
+    "45": [
+      {
+        "name": "Money",
+        "affiliation": "MidasMoney"
+      },
+      {
+        "name": "Marnie",
+        "affiliation": "MidasMoney"
+      },
+      {
+        "name": "Kristoff Atlas",
+        "affiliation": "anonymous Bitcoin book"
+      },
+      {
+        "name": "Theo",
+        "affiliation": "Soundwallet"
+      }
+    ],
+    "46": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Bryce Weiner",
+        "affiliation": "Block Tech"
+      }
+    ],
+    "47": [
+      {
+        "name": "Bryce Weiner",
+        "affiliation": "BlockTech"
+      },
+      {
+        "name": "Kristoff Atlis",
+        "affiliation": "Anonymous Bitcoin book"
+      },
+      {
+        "name": "Victoria Van Eyck",
+        "affiliation": "Bitcoin Strategy Group"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "48": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Bryce Weiner",
+        "affiliation": "Block Tech Financial"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "At Mr"
+      }
+    ],
+    "49": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Bryce Weiner",
+        "affiliation": "Block Tech Financial"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Topiki"
+      },
+      {
+        "name": "Chris Dough Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunter",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "50": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Price Weiner",
+        "affiliation": "Block Tech Financial"
+      },
+      {
+        "name": "David Seaman",
+        "affiliation": "David Seaman Hour"
+      },
+      {
+        "name": "Todd Zhunt",
+        "affiliation": "Matt Bitcoins"
+      }
+    ],
+    "51": [
+      {
+        "name": "Andreas Antonopoulos",
+        "affiliation": ""
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Marshall Hainer",
+        "affiliation": "block"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "crypto convoes"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Mad Bitcoin"
+      }
+    ],
+    "52": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "Add Bitcoin"
+      }
+    ],
+    "53": [
+      {
+        "name": "Bryce Weiner",
+        "affiliation": "Block Tech Financial"
+      },
+      {
+        "name": "Christoph Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "54": [
+      {
+        "name": "Tom Hutt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "55": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World of Crypto Network"
+      }
+    ],
+    "56": [
+      {
+        "name": "Christoph Atlas",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "57": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Ellis",
+        "affiliation": "Anonymous Bitcoin Book"
+      },
+      {
+        "name": "Anonymous",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "58": [
+      {
+        "name": "Kristoff Atlas",
+        "affiliation": "anonymous Bitcoin book"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "59": [
+      {
+        "name": "Kristoff Atlus",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Republican",
+        "affiliation": "Texas"
+      }
+    ],
+    "60": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Brian Sovereign",
+        "affiliation": "Sovereign Tech"
+      },
+      {
+        "name": "Megan Lorde",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "62": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "63": [
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "64": [
+      {
+        "name": "Derek",
+        "affiliation": ""
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "DerekJ"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Topeeke"
+      },
+      {
+        "name": "Tom Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "65": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "68": [
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Free Talk Live"
+      },
+      {
+        "name": "Bill Pangman",
+        "affiliation": "Topiki"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "69": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Topiki"
+      }
+    ],
+    "70": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "71": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission Rocks"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "72": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission Rocks"
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "73": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission Rocks"
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Satoshi's social"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Free Talk Live"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "74": [
+      {
+        "name": "Jeremy Gardner",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission to Rocks"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "76": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "Satoshi Social"
+      }
+    ],
+    "77": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "AirBits"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "78": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Corin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "79": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission Rocks"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "80": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Don Vaze",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "81": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Megan Lords",
+        "affiliation": "AirBits"
+      },
+      {
+        "name": "Tone Vades",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "82": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Megan Lors",
+        "affiliation": "AirBits"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Transmission"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "83": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "David Sieman",
+        "affiliation": "David Siemens channel on YouTube"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Bitcoin Technical Analysis"
+      }
+    ],
+    "84": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Bitcoin Technical Analysis"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "85": [
+      {
+        "name": "Gabriel Devon",
+        "affiliation": ""
+      },
+      {
+        "name": "Tones",
+        "affiliation": "Brave New Corn"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "86": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "87": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Pro Tip"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future of Rant"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Jeffrey Gurdkin",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "88": [
+      {
+        "name": "Tones",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HASS online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "89": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tony Vaze",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "90": [
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "91": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Blake Anderson Facebook"
+      },
+      {
+        "name": "Marshall Hainer",
+        "affiliation": "Trees"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Coent live in his car"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "AirBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network who didn't update his script of who's going to be on the show today"
+      }
+    ],
+    "92": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tony Vaze",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Has online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "93": [
+      {
+        "name": "Thomas Hutton",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "94": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Kyle Torby",
+        "affiliation": "Bitcoin Magazine"
+      },
+      {
+        "name": "Ron Veys",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse Online"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "95": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "96": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "97": [
+      {
+        "name": "Vind",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Pass Online"
+      },
+      {
+        "name": "Martino",
+        "affiliation": "Coin Journal"
+      },
+      {
+        "name": "Professor Eman Gounsira",
+        "affiliation": "Cornell University"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network",
+        "host": true
+      }
+    ],
+    "98": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "99": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HASS Online"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "100": [
+      {
+        "name": "Andreas Antonopoulos",
+        "affiliation": ""
+      },
+      {
+        "name": "Blake Anderson",
+        "affiliation": "Facebook"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Has online"
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Derrick Freeman",
+        "affiliation": "Flaming Freedom"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Brave New Corn"
+      },
+      {
+        "name": "Will Pangman",
+        "affiliation": "AirBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "101": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hath online"
+      },
+      {
+        "name": "Tom Bees",
+        "affiliation": "Brave New Coin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "102": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "103": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "104": [
+      {
+        "name": "Alex Sturk",
+        "affiliation": "BlockTalk"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HAST online"
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Ton Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "105": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Toned Vaves",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Now I'm Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": ""
+      }
+    ],
+    "106": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse Online"
+      },
+      {
+        "name": "Ton Vaze",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "107": [
+      {
+        "name": "Alex Sturk",
+        "affiliation": "Block Talk"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "108": [
+      {
+        "name": "Tones",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "109": [
+      {
+        "name": "Ian",
+        "affiliation": ""
+      },
+      {
+        "name": "Ton Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "110": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Rare Pepe Blockchain Foundation"
+      },
+      {
+        "name": "Tones",
+        "affiliation": "Liberty Life Trail"
+      }
+    ],
+    "111": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Gabriel Divine",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "112": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vyn",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "113": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "114": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Pro Tip in the World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "115": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vaan",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Thomas",
+        "affiliation": "world"
+      }
+    ],
+    "116": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Dean Martino",
+        "affiliation": "Coin Journal"
+      }
+    ],
+    "117": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Gabriel Divine",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "Coin Journal"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "118": [
+      {
+        "name": "Gabriel Devon",
+        "affiliation": ""
+      },
+      {
+        "name": "Tones",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "119": [
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Time Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "120": [
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "121": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "122": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "123": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "124": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "Coin Journal"
+      },
+      {
+        "name": "John Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "125": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Rose",
+        "affiliation": "Bitcoin Uncensored"
+      },
+      {
+        "name": "Devine",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "126": [
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "127": [
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "128": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Tonedays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "129": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HASS Online"
+      },
+      {
+        "name": "Gabriel Devon",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "130": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Goodman",
+        "affiliation": "HASS online"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      }
+    ],
+    "131": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "132": [
+      {
+        "name": "Tonemay",
+        "affiliation": ""
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Protit"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "133": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HASS online"
+      },
+      {
+        "name": "Gabriel Devon",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "134": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hats online"
+      },
+      {
+        "name": "Vaan",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Ton Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "135": [
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "136": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Torpy",
+        "affiliation": "KyleTorpy"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "137": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tongue Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World of Crypto Network"
+      },
+      {
+        "name": "Live",
+        "affiliation": "Minnesota"
+      }
+    ],
+    "138": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "ProTIP"
+      },
+      {
+        "name": "Goodman",
+        "affiliation": "HAS online"
+      },
+      {
+        "name": "Nonset",
+        "affiliation": "Bitcoin Uncensored Classic"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "139": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "140": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "HAS online"
+      },
+      {
+        "name": "Martino",
+        "affiliation": "Bitcoin guidebook"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "141": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "142": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "143": [
+      {
+        "name": "Christa Rose",
+        "affiliation": "Bitcoin Uncensored"
+      },
+      {
+        "name": "Vaan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "144": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "145": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "146": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "147": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse Online"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "148": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "149": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "KyleTorpy"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "150": [
+      {
+        "name": "Aaron Van Weardham",
+        "affiliation": "Bitcoin Magazine"
+      },
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "KyleTorpy"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "151": [
+      {
+        "name": "Chris Ellis",
+        "affiliation": "Pro Tip"
+      },
+      {
+        "name": "Chris",
+        "affiliation": "SexyGno"
+      },
+      {
+        "name": "Joseph",
+        "affiliation": "cryptohwallet"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "152": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "153": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Now I'm Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": ""
+      }
+    ],
+    "154": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tones",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "155": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "156": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Stone Vaze",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network asking you to give us a like"
+      }
+    ],
+    "157": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "158": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Hasse online"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      }
+    ],
+    "159": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "160": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "161": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "162": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      }
+    ],
+    "163": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "164": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network reminding you to like"
+      }
+    ],
+    "165": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "166": [
+      {
+        "name": "Jimmy Song",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "167": [
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "KyleTorpy"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "168": [
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "169": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Martino",
+        "affiliation": "Coin Journal"
+      },
+      {
+        "name": "Jack Mollers",
+        "affiliation": "Zap wallet"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "170": [
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "171": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "172": [
+      {
+        "name": "Simon Dixon",
+        "affiliation": "Bank to the Future"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "173": [
+      {
+        "name": "Kyle Torpy",
+        "affiliation": "KyleTorpy"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "174": [
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Tom Vase",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Tom As Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "175": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Lee Camp",
+        "affiliation": "Redacted Tonight"
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Liberty Life Trail"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "176": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Vient",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "177": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Weatherman",
+        "affiliation": "mathbot"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "178": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vaan",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Samson Mao",
+        "affiliation": "Blockstream"
+      },
+      {
+        "name": "Shem Booth Spain",
+        "affiliation": "admedia"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "179": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Weatherman",
+        "affiliation": "mathbot"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Jeffrey Jones",
+        "affiliation": "Bitcoin News Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "180": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "181": [
+      {
+        "name": "Adam Meister",
+        "affiliation": "Bitcoin Meister Show"
+      },
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Vaughan",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "182": [
+      {
+        "name": "Max Hillivran",
+        "affiliation": "towardsliberty"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "183": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Jawskigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Weatherman",
+        "affiliation": "mathbot"
+      },
+      {
+        "name": "Now I'm Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": ""
+      }
+    ],
+    "184": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rent"
+      },
+      {
+        "name": "Jask Skigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "185": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Vaan",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Max Hillabrand",
+        "affiliation": "towardsliberty"
+      }
+    ],
+    "186": [
+      {
+        "name": "Blake Anderson",
+        "affiliation": ""
+      },
+      {
+        "name": "Max Hillabran",
+        "affiliation": "towardsliberty"
+      },
+      {
+        "name": "Shinobi",
+        "affiliation": "Block Digest"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "187": [
+      {
+        "name": "Gabriel",
+        "affiliation": ""
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "Future Rant"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "188": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "189": [
+      {
+        "name": "Andy Hoffman",
+        "affiliation": "Crypto Gold Central"
+      },
+      {
+        "name": "Max Hillabran",
+        "affiliation": "towardliberty"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "190": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Tone Vays",
+        "affiliation": "Unconfiscatable Conference"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "191": [
+      {
+        "name": "Max Hillabrand",
+        "affiliation": "towardliberty"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "192": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "193": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Leo Goodman",
+        "affiliation": "Poofalwork Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "194": [
+      {
+        "name": "Josh Kigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "195": [
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "196": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "197": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Eo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "198": [
+      {
+        "name": "Dear Goodman",
+        "affiliation": "Proof of World Media"
+      },
+      {
+        "name": "Then",
+        "affiliation": "Wales"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "199": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Kigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Ben Hannibus",
+        "affiliation": "Wales"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "200": [
+      {
+        "name": "Ben",
+        "affiliation": "Wales"
+      },
+      {
+        "name": "Max Hillebrand",
+        "affiliation": "towardliberty"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "201": [
+      {
+        "name": "Ben",
+        "affiliation": "BTC Socialist"
+      },
+      {
+        "name": "Josh Kigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "202": [
+      {
+        "name": "Ben Wales",
+        "affiliation": "BTC Socialist"
+      },
+      {
+        "name": "Christian Routsel",
+        "affiliation": "Raspberry Blitz"
+      },
+      {
+        "name": "Crypto Raptor",
+        "affiliation": "England"
+      },
+      {
+        "name": "Josh Kigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "203": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC Socialist"
+      },
+      {
+        "name": "Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "204": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "205": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Theo Goodman",
+        "affiliation": "Proof of Work Media"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World of Crypto Network"
+      }
+    ],
+    "206": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben",
+        "affiliation": "BTC IOT"
+      },
+      {
+        "name": "Corey",
+        "affiliation": "Bitcoin podcast"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "207": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtora"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "208": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      }
+    ],
+    "209": [
+      {
+        "name": "Josh Gigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "210": [
+      {
+        "name": "Ben",
+        "affiliation": "Wales"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Vol Toro"
+      }
+    ],
+    "211": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Tomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "212": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Juan Galt",
+        "affiliation": "Phone Hottle"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "213": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Dan Eave",
+        "affiliation": "crypto Raptor"
+      },
+      {
+        "name": "Jessica Gala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "214": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "215": [
+      {
+        "name": "Florian Grumis",
+        "affiliation": "Midas Touch Consulting"
+      },
+      {
+        "name": "Josh Gagala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "216": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "217": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Juan Galt",
+        "affiliation": "phone"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "218": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hut",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "219": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Kagala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "220": [
+      {
+        "name": "John Galt",
+        "affiliation": "Phone Hottle"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "221": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network moving on to the issue of the day"
+      }
+    ],
+    "222": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "223": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "224": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "225": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Jessica Gala",
+        "affiliation": "Fall Toro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "226": [
+      {
+        "name": "Ark",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Phil",
+        "affiliation": "VUN with Bitcoin podcast"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "227": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Christian Rootsle",
+        "affiliation": "Raspberry Blitz project"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "228": [
+      {
+        "name": "Ben Arc",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "229": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "230": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Tomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "231": [
+      {
+        "name": "Kyle Torpe",
+        "affiliation": "crypto feed what's up y'all great to be back on the Bitcoin group for the first time in year two I guess I'll see you out"
+      },
+      {
+        "name": "Josh Gagala",
+        "affiliation": "Voltoro a Yibba the Yibba the Yibba folks that's not all folks"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "232": [
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "233": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "234": [
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Gagala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Kyle Torpie",
+        "affiliation": "Crypto Feed"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "235": [
+      {
+        "name": "John Skigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Christian Routsel",
+        "affiliation": "Raspberry Blitz"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "236": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Josh Cagalla",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "237": [
+      {
+        "name": "Josh Gagala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Rudolfo",
+        "affiliation": "LLA BitConf"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "238": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "239": [
+      {
+        "name": "Adam Meister",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "240": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "241": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "242": [
+      {
+        "name": "Martin",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "244": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "245": [
+      {
+        "name": "Martine Wismer",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "246": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Josh Gigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "247": [
+      {
+        "name": "Ark",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Vault"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "248": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "249": [
+      {
+        "name": "Martin Wishmeier",
+        "affiliation": ""
+      },
+      {
+        "name": "Gala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "250": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      }
+    ],
+    "251": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Oscar Giza",
+        "affiliation": "Unchain Convention"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "252": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martine Wismer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "PTC"
+      },
+      {
+        "name": "Josh Nicola",
+        "affiliation": "Vol Toro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "253": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Jed Grant",
+        "affiliation": "open crypto alliance"
+      },
+      {
+        "name": "Arteen Wissmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "PTC"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "254": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Bride",
+        "affiliation": "Adam McBride show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "255": [
+      {
+        "name": "Stefan Kinsella",
+        "affiliation": "Open Crypto Alliance"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "256": [
+      {
+        "name": "Travis Uric",
+        "affiliation": "CurioCards"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "257": [
+      {
+        "name": "Martine Wismer",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Bride",
+        "affiliation": "Adam McBride Show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World crypto network"
+      }
+    ],
+    "258": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Alejandro De La Torre",
+        "affiliation": "Pulin"
+      },
+      {
+        "name": "Josh Chicala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "259": [
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "260": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "261": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "262": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "BTC"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "263": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Vol Toro"
+      },
+      {
+        "name": "Arck",
+        "affiliation": "BTC IoT"
+      },
+      {
+        "name": "Vin Armani",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Justin Newton",
+        "affiliation": "Netkey"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "264": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bits"
+      },
+      {
+        "name": "Juan Gold",
+        "affiliation": "onegall"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "265": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Bride",
+        "affiliation": "Adam McBride show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "266": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Michael Carter",
+        "affiliation": "BITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "267": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Lamar Wilson",
+        "affiliation": "Black Bitcoin billionaires"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "268": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Jashigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "269": [
+      {
+        "name": "Drainius",
+        "affiliation": "La BicConf"
+      },
+      {
+        "name": "Redolfo",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "270": [
+      {
+        "name": "Juan Galt",
+        "affiliation": "Bitcoin Standard Conference"
+      },
+      {
+        "name": "Joshua Shigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "271": [
+      {
+        "name": "Wishmare",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Joshua Shagalla",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "272": [
+      {
+        "name": "Stefan Kinsella",
+        "affiliation": "Open Crypto Alliance"
+      },
+      {
+        "name": "Joshua Shagalla",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "273": [
+      {
+        "name": "Martine Wishmare",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Vahn",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "274": [
+      {
+        "name": "Josh Shagala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "275": [
+      {
+        "name": "Oscar Geyser",
+        "affiliation": "Unchained Convention"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "276": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "277": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Voltoro"
+      },
+      {
+        "name": "Bride",
+        "affiliation": "Adam McBride show"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "278": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "279": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "280": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martine Wismer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      }
+    ],
+    "281": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "The Mar Wilson",
+        "affiliation": "black Bitcoin billionaires"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "283": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "284": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "285": [
+      {
+        "name": "Justin Newton",
+        "affiliation": "Netkey"
+      },
+      {
+        "name": "Martine Wismer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Tagala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "286": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot I"
+      },
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      }
+    ],
+    "287": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martine Wishmare",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "288": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Jagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "289": [
+      {
+        "name": "Bride",
+        "affiliation": "Adam McBride show"
+      },
+      {
+        "name": "Michael Dupree",
+        "affiliation": "EasyBit"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "290": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "291": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "292": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "293": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Martin Wishmayer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "294": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "295": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Josh Jagalla",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Juan Galt",
+        "affiliation": "JuanGalt"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "296": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Christian Rutzel",
+        "affiliation": "Raspi Blitz"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bitts"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "297": [
+      {
+        "name": "Josh Igala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "298": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "299": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "300": [
+      {
+        "name": "Adam McBride",
+        "affiliation": ""
+      },
+      {
+        "name": "Michael Dupree",
+        "affiliation": "EasyBit"
+      },
+      {
+        "name": "Michael Dupree",
+        "affiliation": "EasyBit here in Acapulco"
+      },
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "301": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Lightning Bits"
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "302": [
+      {
+        "name": "Josh Legala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "303": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Gagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "304": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "305": [
+      {
+        "name": "Martine Wishmare",
+        "affiliation": ""
+      },
+      {
+        "name": "Ark",
+        "affiliation": "Ellen Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "306": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      }
+    ],
+    "307": [
+      {
+        "name": "Josh Agala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bitts seems to have dropped off the call"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "308": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world"
+      }
+    ],
+    "309": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      }
+    ],
+    "310": [
+      {
+        "name": "Josh Seagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "311": [
+      {
+        "name": "Josh Tegala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Live",
+        "affiliation": "Fortingbridge"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network in the United Kingdom"
+      }
+    ],
+    "312": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ark",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "313": [
+      {
+        "name": "Josh Kigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "314": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "315": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Legala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "316": [
+      {
+        "name": "Josh Tagala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "ARKBTC"
+      },
+      {
+        "name": "Anon Thomas Hunt",
+        "affiliation": "world of crypto network"
+      }
+    ],
+    "317": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "318": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "319": [
+      {
+        "name": "Josh Ziegalo",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "320": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "321": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bits"
+      },
+      {
+        "name": "Josh Jagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "322": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Joshua Gala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World crypto network moving on to the first topic"
+      }
+    ],
+    "323": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Joaquin Wismer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Lightning"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "324": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Vlad Costea",
+        "affiliation": "BTC KVR"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "325": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Seagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "326": [
+      {
+        "name": "Martin Wishmer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World of Crypto Network"
+      }
+    ],
+    "327": [
+      {
+        "name": "Nascar",
+        "affiliation": "Stoker"
+      },
+      {
+        "name": "Joshua Shigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "328": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Joshua Schegalla",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "329": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ark",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "330": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN bits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Martin Wismair",
+        "affiliation": "general bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "331": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "332": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "333": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "334": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Tomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "335": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Juan Galt",
+        "affiliation": "JuanGalt"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "336": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Michael Dupree",
+        "affiliation": "EasyBit"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "337": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Pights"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "338": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Michael Dupree",
+        "affiliation": "EasyBit"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      },
+      {
+        "name": "Jack",
+        "affiliation": "old Twitter"
+      }
+    ],
+    "339": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "340": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "341": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "John Schugalla",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "342": [
+      {
+        "name": "Radolfo Adronsis",
+        "affiliation": "law"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Josh Agala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "343": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Martin Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "344": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "345": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "346": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Martian Wishmare",
+        "affiliation": "general bytes"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World crypto network"
+      }
+    ],
+    "347": [
+      {
+        "name": "Joshua Gala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "348": [
+      {
+        "name": "Rossim Alcindy",
+        "affiliation": "ZeroX Salon"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "349": [
+      {
+        "name": "Martine Wishmare",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "Valtoro"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "350": [
+      {
+        "name": "Bride",
+        "affiliation": "Embrun Vault"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "351": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "352": [
+      {
+        "name": "James",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Ark",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "353": [
+      {
+        "name": "Christian Rootsle",
+        "affiliation": "Raspberry Blitz"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "354": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Rijal",
+        "affiliation": "Swan Bitcoin"
+      },
+      {
+        "name": "Martine Wishmeyer",
+        "affiliation": "General Bites"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "355": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Raffi",
+        "affiliation": "BitTopia"
+      },
+      {
+        "name": "John Light",
+        "affiliation": "Sovereign"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "356": [
+      {
+        "name": "Martin Wismeijer",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Egaala",
+        "affiliation": "standard dot I"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "357": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Orangeville",
+        "affiliation": "Harlem Bitcoin"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "358": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Joshua Chagalla",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "359": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "360": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "361": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "362": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Jake Gallant",
+        "affiliation": "Emblem Vault"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "363": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "364": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "365": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "366": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Legala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "367": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bins"
+      },
+      {
+        "name": "Josh Egold",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "368": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Tagala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "369": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Tomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "370": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "371": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "372": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Joshua Gala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Bennark",
+        "affiliation": "LNBITZ"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "373": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "374": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "375": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "376": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "377": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      }
+    ],
+    "378": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "379": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "380": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "381": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Harry Krauss",
+        "affiliation": "Shenandoah"
+      },
+      {
+        "name": "Derek Ross",
+        "affiliation": "NosterPlebs"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "382": [
+      {
+        "name": "Josh Legala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "383": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Daniel",
+        "affiliation": "Nodesdrich"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "384": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "385": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "386": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "387": [
+      {
+        "name": "Robert",
+        "affiliation": "Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "388": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "389": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "390": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "391": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "392": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "393": [
+      {
+        "name": "Daniel",
+        "affiliation": "PubKey"
+      },
+      {
+        "name": "Tray Walsh",
+        "affiliation": "Progressive Bitcoin podcast"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "394": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Daniel Cari",
+        "affiliation": "Understanding Crypto"
+      },
+      {
+        "name": "Josh Jagala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Happy Saturday",
+        "affiliation": "where I am"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "395": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "396": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Shagallot",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "397": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "398": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "399": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Gideon Galaash",
+        "affiliation": "Blockchain Hotel"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "400": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Rijal",
+        "affiliation": "Swan"
+      },
+      {
+        "name": "Raffi",
+        "affiliation": "BitTopia University"
+      },
+      {
+        "name": "Michael Carter",
+        "affiliation": "BitSpeakTrippin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "401": [
+      {
+        "name": "Adam Meister",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "402": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Tagala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "403": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      }
+    ],
+    "404": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "405": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "406": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "407": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "408": [
+      {
+        "name": "Adam McBride",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "409": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "410": [
+      {
+        "name": "Waseem Alcindy",
+        "affiliation": "OX Salon"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "411": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "412": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "413": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "414": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "415": [
+      {
+        "name": "Juan Galt",
+        "affiliation": "JuanGalt"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "416": [
+      {
+        "name": "Vlad",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      }
+    ],
+    "417": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "The Daniel",
+        "affiliation": "pubkey"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "418": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN bits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard dot IO"
+      },
+      {
+        "name": "Jimmy Song",
+        "affiliation": "programming Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "419": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Lott",
+        "affiliation": "Casa Hottle"
+      },
+      {
+        "name": "Glad Costa",
+        "affiliation": "Bitcoin Takeover Magazine"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "420": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "satlantis"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "421": [
+      {
+        "name": "Josh",
+        "affiliation": ""
+      },
+      {
+        "name": "Gala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "422": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "423": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Vlad Kostet",
+        "affiliation": "Bitcoin Takeover Magazine"
+      },
+      {
+        "name": "Kyle Forky",
+        "affiliation": "Amentum"
+      },
+      {
+        "name": "Mackie",
+        "affiliation": "Amentum"
+      }
+    ],
+    "424": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "425": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "426": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Daniel Curry",
+        "affiliation": "TUNKEEPER"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITZ"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "427": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "428": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "429": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "430": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page Hello good party everybody Josh Egala from the standard dot IO Best week ever Ben Arck from Ellen Bitt Hello everyone happy Nostano Vemper four years ago"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "431": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "432": [
+      {
+        "name": "Josh Tagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "433": [
+      {
+        "name": "Josh Tagala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "434": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "435": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "436": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Jesse",
+        "affiliation": "Dr"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "437": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "438": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "439": [
+      {
+        "name": "Josh Egallo",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "440": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "441": [
+      {
+        "name": "Josh Egola",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "442": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "443": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "444": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "445": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "446": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Jameson Lopp",
+        "affiliation": "Kasa"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Vlad Costea",
+        "affiliation": "Bitcoin Takeover Magazine"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "447": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "standard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "448": [
+      {
+        "name": "Time Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "449": [
+      {
+        "name": "Wasim Alcindy",
+        "affiliation": "OX Salon"
+      },
+      {
+        "name": "Josh Jagallat",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "450": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "451": [
+      {
+        "name": "Ben Ark",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Josh Egaalot",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "452": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "453": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "454": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "456": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      }
+    ],
+    "457": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": ""
+      }
+    ],
+    "458": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bitt"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "459": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBIT"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "460": [
+      {
+        "name": "Muzzman",
+        "affiliation": "ThunderFunder"
+      },
+      {
+        "name": "Mike Jarmuz",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bitts"
+      },
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "461": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "462": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "463": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LN Bits"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "464": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "Ellen Bitts"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "465": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "world crypto network"
+      }
+    ],
+    "466": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "468": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "469": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "470": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Vlad Costea",
+        "affiliation": "Bitcoin Takeover"
+      }
+    ],
+    "471": [
+      {
+        "name": "Westeem Alcindy",
+        "affiliation": "OX Salon"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "472": [
+      {
+        "name": "Dan Eave",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "473": [
+      {
+        "name": "Jesse",
+        "affiliation": "Dr"
+      },
+      {
+        "name": "Christian Rootsville",
+        "affiliation": "Razpy Blitz"
+      },
+      {
+        "name": "Nine Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "474": [
+      {
+        "name": "Jess",
+        "affiliation": ""
+      },
+      {
+        "name": "Josh Shigall",
+        "affiliation": "thestandard"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "satlantis"
+      },
+      {
+        "name": "Jimmy Song",
+        "affiliation": "programming Bitcoin"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "475": [
+      {
+        "name": "Josh Sigala",
+        "affiliation": "thestander"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "476": [
+      {
+        "name": "Flag Costa",
+        "affiliation": "Bitcoin Takeover podcast"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "478": [
+      {
+        "name": "Adam Meister",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "479": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "480": [
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBITS"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "481": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Robert Allen",
+        "affiliation": "CoinCube"
+      },
+      {
+        "name": "Ben Arc",
+        "affiliation": "LNBits"
+      },
+      {
+        "name": "Nine Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "482": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "483": [
+      {
+        "name": "Ben Arc",
+        "affiliation": ""
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "484": [
+      {
+        "name": "Victoria Jones",
+        "affiliation": "Satoshi's page"
+      },
+      {
+        "name": "Thomas Hunt",
+        "affiliation": "World Crypto Network"
+      }
+    ],
+    "485": [
+      {
+        "name": "Thomas Hunt",
+        "affiliation": ""
+      }
+    ]
+  }
+}
