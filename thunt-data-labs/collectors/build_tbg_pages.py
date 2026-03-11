@@ -218,6 +218,10 @@ def build_enhanced_guest_index():
         pc = g[cols.index('prediction_correct')]
         pw = g[cols.index('prediction_wrong')]
         
+        # Thomas Hunt — host of every episode
+        if is_host:
+            count = 486; first = 1; last = 486; consec = 486
+        
         medal = ['🥇','🥈','🥉'][i] if i < 3 else f'{i+1}.'
         tags = ''
         if is_host: tags += '<span style="font-size:.65rem;padding:1px 6px;border-radius:8px;background:rgba(251,191,36,.15);color:var(--amber);margin-left:4px">HOST</span>'
@@ -230,7 +234,8 @@ def build_enhanced_guest_index():
         first_d = g[cols.index('first_date')][:7] if g[cols.index('first_date')] else ''
         last_d = g[cols.index('last_date')][:7] if g[cols.index('last_date')] else ''
         
-        rows += f'<tr><td>{medal}</td><td><a href="{slug}.html"><b>{H.escape(name)}</b></a>{tags}</td><td>{count}</td><td>#{first}–#{last}</td><td>{consec}</td><td>{pred_html}</td><td style="min-width:50px"><div class="bar-h" style="width:{bar_w:.0f}%;background:var(--accent)"></div></td></tr>'
+        consec_display = '∞' if is_host else str(consec)
+        rows += f'<tr><td>{medal}</td><td><a href="{slug}.html"><b>{H.escape(name)}</b></a>{tags}</td><td>{count}</td><td>#{first}–#{last}</td><td>{consec_display}</td><td>{pred_html}</td><td style="min-width:50px"><div class="bar-h" style="width:{bar_w:.0f}%;background:var(--accent)"></div></td></tr>'
     
     tbl = f'''<h2>🏆 Appearance Leaderboard</h2>
 <table><tr><th>#</th><th>Guest</th><th>Shows</th><th>Range</th><th>Streak</th><th>Pred</th><th></th></tr>{rows}</table>'''
@@ -255,6 +260,10 @@ def build_enhanced_guest_page(gid, name, slug, conn, cols):
     pw = g[cols.index('prediction_wrong')]
     m8c = g[cols.index('m8_correct')]
     m8w = g[cols.index('m8_wrong')]
+    
+    # Thomas Hunt — host of every episode
+    if is_host:
+        count = 486; first_ep = 1; last_ep = 486; consec = 486
     
     pt = pc + pw
     pred_acc = f'{pc/pt*100:.0f}%' if pt >= 5 else '—'
@@ -317,12 +326,14 @@ def build_enhanced_guest_page(gid, name, slug, conn, cols):
                 pred_html += f'<div style="padding:4px 0;font-size:.88rem;border-bottom:1px solid rgba(30,41,59,.2)">{icon} <a href="/tbg-mirrors/transcripts/TBG-{p["episode"]:03d}.html">#{p["episode"]}</a> {p["date"][:10]} {dir_label} ${r["price_at_prediction"]:,.0f} → ${r["price_7d_later"]:,.0f} ({r["change_pct"]:+.1f}%)</div>'
             pred_html += f'<div style="font-size:.8rem;color:var(--muted);margin-top:4px"><a href="/tbg-mirrors/predictions/{slug}.html">See all predictions →</a></div>'
     
+    consec_display = '∞' if is_host else str(consec)
+    
     body = f'''<h1>👤 {H.escape(name)}</h1>
 {"<span style='font-size:.8rem;padding:2px 8px;border-radius:8px;background:rgba(251,191,36,.15);color:var(--amber)'>HOST — World Crypto Network / Mad Bitcoins</span>" if is_host else ""}
 <div class="stats" style="margin-top:.8rem">
 <div class="stat"><div class="n c">{count}</div><div class="l">Appearances</div></div>
 <div class="stat"><div class="n g">#{first_ep}–#{last_ep}</div><div class="l">Episode Range</div></div>
-<div class="stat"><div class="n a">{consec}</div><div class="l">Max Streak</div></div>
+<div class="stat"><div class="n a">{consec_display}</div><div class="l">Max Streak</div></div>
 <div class="stat"><div class="n" style="color:#f472b6">{span or "—"}</div><div class="l">Span</div></div>
 {"<div class='stat'><div class='n " + ("g" if pc/pt>.55 else "a" if pc/pt>.45 else "r") + "'>" + pred_acc + "</div><div class='l'>Pred (" + str(pc) + "/" + str(pt) + ")</div></div>" if pt >= 5 else ""}
 {"<div class='stat'><div class='n " + ("g" if m8c/m8t>.55 else "a" if m8c/m8t>.45 else "r") + "'>" + m8_acc + "</div><div class='l'>8-Ball (" + str(m8c) + "/" + str(m8t) + ")</div></div>" if m8t >= 3 else ""}
