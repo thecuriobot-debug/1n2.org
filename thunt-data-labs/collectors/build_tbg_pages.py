@@ -55,7 +55,7 @@ td{padding:7px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr
 def page(title, body, extra_nav=''):
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>{title} — TBG Mirrors</title>{FONTS}<style>{CSS}</style></head><body><div class="wrap">
-<div class="nav"><a href="/tbg-mirrors/">← Episodes</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a><a href="/tbg-mirrors/transcripts/search.html">🔍 Search</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/analytics/narratives.html">📖 Narratives</a><a href="/tbg-mirrors/analytics/topics.html">📊 Topics</a><a href="/tbg-mirrors/analytics/wordcloud.html">☁️ Words</a><a href="/tbg-mirrors/analytics/stats.html">📈 Stats</a><a href="/tbg-mirrors/predictions/">🔮 Predictions</a><a href="/tbg-mirrors/predictions/magic-8-ball.html">🎱 8-Ball</a><a href="/tbg-mirrors/missing.html">🕳️ Missing</a></div>
+<div class="nav"><a href="/tbg-mirrors/">← Episodes</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a><a href="/tbg-mirrors/transcripts/search.html">🔍 Search</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/analytics/narratives.html">📖 Narratives</a><a href="/tbg-mirrors/analytics/quotes.html">💬 Quotes</a><a href="/tbg-mirrors/analytics/topics.html">📊 Topics</a><a href="/tbg-mirrors/analytics/wordcloud.html">☁️ Words</a><a href="/tbg-mirrors/analytics/stats.html">📈 Stats</a><a href="/tbg-mirrors/predictions/">🔮 Predictions</a><a href="/tbg-mirrors/predictions/magic-8-ball.html">🎱 8-Ball</a><a href="/tbg-mirrors/missing.html">🕳️ Missing</a></div>
 {body}</div></body></html>'''
 
 
