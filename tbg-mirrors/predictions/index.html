@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Prediction Leaderboard — TBG Predictions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff;text-decoration:underline}
+.wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.nav{font-size:.9rem;margin-bottom:1rem;display:flex;gap:12px;flex-wrap:wrap}
+h1{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent);margin-bottom:.3rem}
+h2{font-size:1.15rem;color:var(--accent);margin:1.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.5rem}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 18px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700}
+.stat .n.g{color:var(--green)}.stat .n.r{color:var(--red)}.stat .n.a{color:var(--amber)}.stat .n.c{color:var(--accent)}
+.stat .l{font-size:.72rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin-bottom:1rem}
+th{text-align:left;padding:10px 12px;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.95rem}
+tr:hover{background:rgba(34,211,238,.03)}
+.medal{font-size:1.1rem;min-width:30px;display:inline-block}
+.acc{font-family:'JetBrains Mono',monospace;font-weight:700}
+.acc-g{color:var(--green)}.acc-y{color:var(--amber)}.acc-r{color:var(--red)}
+.bar{height:4px;border-radius:2px;margin-top:2px}
+.bar-g{background:var(--green)}.bar-r{background:var(--red)}.bar-a{background:var(--amber)}
+.pred{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;padding:14px 18px}
+.pred-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.pred-ep{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);font-size:.9rem}
+.pred-dir{font-size:.75rem;padding:2px 8px;border-radius:10px;font-weight:700}
+.dir-up{background:rgba(52,211,153,.15);color:var(--green)}.dir-dn{background:rgba(248,113,113,.15);color:var(--red)}
+.pred-result{margin-left:auto;font-size:.85rem;font-weight:700}
+.res-correct{color:var(--green)}.res-wrong{color:var(--red)}.res-na{color:var(--muted)}
+.pred-quote{font-size:.9rem;color:#94a3b8;font-style:italic;border-left:3px solid var(--border);padding-left:12px;margin:6px 0}
+.pred-price{font-size:.82rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.pred-link{font-size:.8rem;margin-top:4px}
+@media(max-width:700px){.stats{gap:8px}.stat{padding:8px 12px}.stat .n{font-size:1.1rem}}
+</style></head><body>
+<div class="wrap">
+<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a><a href="/tbg-mirrors/predictions/">🏆 Leaderboard</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a></div>
+
+<h1>🔮 TBG Prediction Tracker</h1>
+<p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">Price predictions extracted from 482 Bitcoin Group transcripts, verified against actual BTC prices.</p>
+<div class="stats">
+<div class="stat"><div class="n c">3,525</div><div class="l">Predictions Found</div></div>
+<div class="stat"><div class="n g">3,522</div><div class="l">Price-Verified</div></div>
+<div class="stat"><div class="n g">1,854</div><div class="l">Correct</div></div>
+<div class="stat"><div class="n a">52.6%</div><div class="l">Overall Accuracy</div></div>
+</div><h2>🏆 Leaderboard</h2>
+<p style="font-size:.82rem;color:var(--muted);margin-bottom:.5rem">★ = 5+ verified predictions (qualified). Checked against BTC price 7 days after episode.</p>
+<table>
+<tr><th>Rank</th><th>Speaker</th><th>Correct</th><th>Wrong</th><th>Accuracy</th><th>Verified</th></tr>
+<tr>
+<td><span class="medal">🥇</span></td>
+<td><a href="tim-draper.html">Tim Draper</a></td>
+<td>2</td>
+<td>0</td>
+<td><span class="acc acc-g">100.0%</span><div class="bar bar-g" style="width:100.0%"></div></td>
+<td>2</td>
+</tr><tr>
+<td><span class="medal">🥈</span></td>
+<td><a href="ansel.html">Ansel</a></td>
+<td>1</td>
+<td>0</td>
+<td><span class="acc acc-g">100.0%</span><div class="bar bar-g" style="width:100.0%"></div></td>
+<td>1</td>
+</tr><tr>
+<td><span class="medal">🥉</span></td>
+<td><a href="jesse.html">Jesse</a></td>
+<td>1</td>
+<td>0</td>
+<td><span class="acc acc-g">100.0%</span><div class="bar bar-g" style="width:100.0%"></div></td>
+<td>1</td>
+</tr><tr>
+<td><span class="medal">&nbsp;4.</span></td>
+<td><a href="jimmy.html">Jimmy</a> ★</td>
+<td>8</td>
+<td>4</td>
+<td><span class="acc acc-g">66.7%</span><div class="bar bar-g" style="width:66.7%"></div></td>
+<td>12</td>
+</tr><tr>
+<td><span class="medal">&nbsp;5.</span></td>
+<td><a href="adam.html">Adam</a> ★</td>
+<td>31</td>
+<td>18</td>
+<td><span class="acc acc-g">63.3%</span><div class="bar bar-g" style="width:63.3%"></div></td>
+<td>49</td>
+</tr><tr>
+<td><span class="medal">&nbsp;6.</span></td>
+<td><a href="vin.html">Vin</a> ★</td>
+<td>249</td>
+<td>160</td>
+<td><span class="acc acc-g">60.9%</span><div class="bar bar-g" style="width:60.9%"></div></td>
+<td>409</td>
+</tr><tr>
+<td><span class="medal">&nbsp;7.</span></td>
+<td><a href="unknown.html">Unknown</a> ★</td>
+<td>1145</td>
+<td>1021</td>
+<td><span class="acc acc-y">52.9%</span><div class="bar bar-a" style="width:52.9%"></div></td>
+<td>2166</td>
+</tr><tr>
+<td><span class="medal">&nbsp;8.</span></td>
+<td><a href="magic-8-ball.html">Magic 8 Ball</a> ★</td>
+<td>278</td>
+<td>286</td>
+<td><span class="acc acc-y">49.3%</span><div class="bar bar-a" style="width:49.3%"></div></td>
+<td>564</td>
+</tr><tr>
+<td><span class="medal">&nbsp;9.</span></td>
+<td><a href="thomas.html">Thomas</a> ★</td>
+<td>73</td>
+<td>81</td>
+<td><span class="acc acc-y">47.4%</span><div class="bar bar-a" style="width:47.4%"></div></td>
+<td>154</td>
+</tr><tr>
+<td><span class="medal">&nbsp;10.</span></td>
+<td><a href="tone.html">Tone</a> ★</td>
+<td>35</td>
+<td>42</td>
+<td><span class="acc acc-y">45.5%</span><div class="bar bar-a" style="width:45.5%"></div></td>
+<td>77</td>
+</tr><tr>
+<td><span class="medal">&nbsp;11.</span></td>
+<td><a href="chris.html">Chris</a> ★</td>
+<td>16</td>
+<td>21</td>
+<td><span class="acc acc-r">43.2%</span><div class="bar bar-r" style="width:43.2%"></div></td>
+<td>37</td>
+</tr><tr>
+<td><span class="medal">&nbsp;12.</span></td>
+<td><a href="hunt.html">Hunt</a> ★</td>
+<td>8</td>
+<td>16</td>
+<td><span class="acc acc-r">33.3%</span><div class="bar bar-r" style="width:33.3%"></div></td>
+<td>24</td>
+</tr><tr>
+<td><span class="medal">&nbsp;13.</span></td>
+<td><a href="gabriel.html">Gabriel</a> ★</td>
+<td>4</td>
+<td>8</td>
+<td><span class="acc acc-r">33.3%</span><div class="bar bar-r" style="width:33.3%"></div></td>
+<td>12</td>
+</tr><tr>
+<td><span class="medal">&nbsp;14.</span></td>
+<td><a href="roger.html">Roger</a> ★</td>
+<td>3</td>
+<td>6</td>
+<td><span class="acc acc-r">33.3%</span><div class="bar bar-r" style="width:33.3%"></div></td>
+<td>9</td>
+</tr><tr>
+<td><span class="medal">&nbsp;15.</span></td>
+<td><a href="david.html">David</a></td>
+<td>0</td>
+<td>3</td>
+<td><span class="acc acc-r">0.0%</span><div class="bar bar-r" style="width:0.0%"></div></td>
+<td>3</td>
+</tr><tr>
+<td><span class="medal">&nbsp;16.</span></td>
+<td><a href="simon.html">Simon</a></td>
+<td>0</td>
+<td>2</td>
+<td><span class="acc acc-r">0.0%</span><div class="bar bar-r" style="width:0.0%"></div></td>
+<td>2</td>
+</tr>
+</table><h2>📝 Recent Verified Predictions</h2><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="vin.html">Vin</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"Leary uh thing here posting his phone number accusing him of murder this is beyond the pale uh this isn&#x27;t just a back and forth like celebrity argument uh it seems that he went at him in directly wher"</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="thomas.html">Thomas</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"I think the the biggest risk that Bailey&#x27;s got because he&#x27;s quite a public figure and he speaks a lot about these things and then he can easily get himself in trouble which he did with the overvaluati"</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="thomas.html">Thomas</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"I&#x27;ll tell you know he&#x27;s making his way back up maybe it&#x27;s oh I know maybe it&#x27;s like slept with newbs Thomas this is why this is why David Bailey as these big companies because he knows how to work mic"</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="thomas.html">Thomas</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"Well they say in the chat that Ben is much louder than Thomas in the chat and that&#x27;s why I won&#x27;t switch my mic over I don&#x27;t know but Ben&#x27;s muted now and it won&#x27;t still want to switch my camera I&#x27;m goi"</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="thomas.html">Thomas</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"I think he&#x27;s hopefully my son&#x27;s back because I&#x27;ve only asked me a bit too loud there. He&#x27;s a clever guy like he is a clever guy he&#x27;s a young guy and you know when we&#x27;re all young we all made mistakes "</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-483.html">#483</a></span>
+<span>2026-02-21</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"I think the the biggest risk that Bailey&#x27;s got because he&#x27;s quite a public figure and he speaks a lot about these things and then he can easily get himself in trouble which he did with the overvaluati"</div>
+<div class="pred-price">$67,627 → $65,774 (-2.7% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-483.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-482.html">#482</a></span>
+<span>2026-02-13</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"Long-term forecasts through 2030 remain unchanged. The bank&#x27;s still conservative on the asset class. Checking in with the Magic eight ball, the source of all truth in this and any other universe, will"</div>
+<div class="pred-price">$69,791 → $67,965 (-2.6% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-482.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-481.html">#481</a></span>
+<span>2026-02-07</span>
+<a href="vin.html">Vin</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"So yeah, I think this is kind of like the payback for some bad direction in terms of the industry. And I&#x27;m hopeful that we&#x27;ll get back to peer to peer money, which is what bitcoin, I believe, is clear"</div>
+<div class="pred-price">$70,297 → $68,801 (-2.1% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-481.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-481.html">#481</a></span>
+<span>2026-02-07</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-dn">▼ Lower</span>
+<span class="pred-result res-correct">✅ Correct</span>
+</div>
+<div class="pred-quote">"I mean, it may bounce off some dead cat bounce, but it&#x27;s going lower, much lower, much, much lower. And now I&#x27;m muted asking the Bitcoin predictor ball. Will the price of Bitcoin be higher this time n"</div>
+<div class="pred-price">$70,297 → $68,801 (-2.1% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-481.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-481.html">#481</a></span>
+<span>2026-02-07</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-dn">▼ Lower</span>
+<span class="pred-result res-correct">✅ Correct</span>
+</div>
+<div class="pred-quote">"We&#x27;re predicting against the Bitcoin predictor ball, which knows all Victoria Jones. We&#x27;ve seen a lot of price movement lately. Do you think the price of Bitcoin will be higher or lower this time next"</div>
+<div class="pred-price">$70,297 → $68,801 (-2.1% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-481.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-480.html">#480</a></span>
+<span>2026-01-31</span>
+<a href="vin.html">Vin</a>
+<span class="pred-dir dir-dn">▼ Lower</span>
+<span class="pred-result res-correct">✅ Correct</span>
+</div>
+<div class="pred-quote">"Last week. I think as long as the room was persist on this Kevin Warsh, becoming the new head of the Fed, then the price is going to continue to go down because the market&#x27;s just going to have less mo"</div>
+<div class="pred-price">$76,911 → $70,297 (-8.6% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-480.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-480.html">#480</a></span>
+<span>2026-01-31</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"Well, let&#x27;s check out the ball. What will the price of Bitcoin? Will the price of Bitcoin be higher this time next week? And it says. You may rely on it."</div>
+<div class="pred-price">$76,911 → $70,297 (-8.6% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-480.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-480.html">#480</a></span>
+<span>2026-01-31</span>
+<a href="magic-8-ball.html">Magic 8 Ball</a>
+<span class="pred-dir dir-dn">▼ Lower</span>
+<span class="pred-result res-correct">✅ Correct</span>
+</div>
+<div class="pred-quote">"I wouldn&#x27;t do it. But we&#x27;ve got to move on to the exit question predicting against the Bitcoin predictor ball, the source of all truth of this or any other universe. Ben Arck will the price of Bitcoin"</div>
+<div class="pred-price">$76,911 → $70,297 (-8.6% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-480.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-479.html">#479</a></span>
+<span>2026-01-24</span>
+<a href="adam.html">Adam</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"Maybe it would be better if it was Adam&#x27;s coin something with his name but it&#x27;s awful to see this kind of rug pull to see normal people I guess thinking they thought they were going to make money on N"</div>
+<div class="pred-price">$86,581 → $76,911 (-11.2% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-479.html">Read full transcript →</a></div>
+</div><div class="pred">
+<div class="pred-head">
+<span class="pred-ep"><a href="/tbg-mirrors/transcripts/TBG-479.html">#479</a></span>
+<span>2026-01-24</span>
+<a href="vin.html">Vin</a>
+<span class="pred-dir dir-up">▲ Higher</span>
+<span class="pred-result res-wrong">❌ Wrong</span>
+</div>
+<div class="pred-quote">"I don&#x27;t think the bankers have a future in this industry. I think that people who are more hybrid bankers like Brian or CZ will rise above and their companies will buy up and own the other companies. "</div>
+<div class="pred-price">$86,581 → $76,911 (-11.2% after 7d)</div>
+<div class="pred-link"><a href="/tbg-mirrors/transcripts/TBG-479.html">Read full transcript →</a></div>
+</div>
+</div></body></html>
