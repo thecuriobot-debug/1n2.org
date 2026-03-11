@@ -21,19 +21,19 @@ h2{font-size:1.05rem;color:var(--accent);margin:1.5rem 0 .7rem;padding-bottom:.3
 .tbar:hover{opacity:1}
 .tl-labels{display:flex;gap:2px;font-size:.55rem;color:var(--muted);margin-top:2px}.tl-labels span{flex:1;text-align:center;min-width:5px}
 .nar-info{flex:1;min-width:0}.nar-name{font-weight:700;font-size:1rem}.nar-meta{font-size:.78rem;color:var(--muted)}
-.nar-stats{text-align:right;min-width:80px}
-.nar-count{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700}.nar-eps{font-size:.72rem}
+.nar-stats{text-align:right;min-width:80px;display:flex;flex-direction:column;align-items:flex-end}
+.nar-count{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;order:1}.nar-eps{font-size:.72rem;order:2}
 .nar-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 .nar.open .nar-detail{display:block}
 .ep-chips{display:flex;flex-wrap:wrap;gap:3px}
 .ep-chip{font-size:.68rem;padding:2px 5px;background:rgba(30,41,59,.5);border:1px solid var(--border);border-radius:3px;font-family:'JetBrains Mono',monospace}.ep-chip:hover{border-color:var(--accent)}
 /* Sort mode colors */
 .mode-default .chart-bar{background:var(--orange)}
-.mode-default .nar-count{color:var(--accent)}.mode-default .nar-eps{color:var(--muted)}
+.mode-default .nar-count{color:var(--accent);font-size:1rem;order:1}.mode-default .nar-eps{color:var(--muted);font-size:.72rem;order:2}
 .mode-mentions .chart-bar{background:var(--accent)}
-.mode-mentions .mention-val{color:var(--orange)}.mode-mentions .nar-eps{color:var(--muted)}
+.mode-mentions .mention-val{color:var(--orange);font-size:1.2rem;order:1}.mode-mentions .ep-val{color:var(--muted);font-size:.68rem;order:2}
 .mode-episodes .chart-bar{background:var(--accent)}
-.mode-episodes .ep-val{color:var(--orange)}.mode-episodes .nar-count{color:var(--muted)}
+.mode-episodes .ep-val{color:var(--orange);font-size:1.2rem;order:1}.mode-episodes .mention-val{color:var(--muted);font-size:.68rem;order:2}
 @media(max-width:700px){.nar-chart{min-width:100px;max-width:120px}.timeline{height:40px}}
 </style></head><body><div class="wrap mode-default" id="wrap">
 <div class="nav"><a href="/tbg-mirrors/">← Episodes</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a><a href="/tbg-mirrors/transcripts/search.html">🔍 Search</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/analytics/narratives.html">📖 Narratives</a><a href="/tbg-mirrors/analytics/quotes.html">💬 Quotes</a><a href="/tbg-mirrors/analytics/topics.html">📊 Topics</a><a href="/tbg-mirrors/analytics/wordcloud.html">☁️ Words</a><a href="/tbg-mirrors/analytics/stats.html">📈 Stats</a><a href="/tbg-mirrors/predictions/">🔮 Predictions</a><a href="/tbg-mirrors/predictions/magic-8-ball.html">🎱 8-Ball</a><a href="/tbg-mirrors/missing.html">🕳️ Missing</a></div>
@@ -248,18 +248,30 @@ h2{font-size:1.05rem;color:var(--accent);margin:1.5rem 0 .7rem;padding-bottom:.3
 </div></div>
 </div>
 <script>
+// Store original order
+const origOrder=[];
+document.querySelectorAll('#content > *').forEach(el=>origOrder.push(el));
+
 function sortNar(mode,btn){
   document.querySelectorAll('.sort-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   const w=document.getElementById('wrap');
   w.className='wrap mode-'+mode;
-  if(mode==='default'){location.reload();return;}
-  const headers=document.querySelectorAll('.cat-header');
-  headers.forEach(h=>h.style.display='none');
-  const all=[...document.querySelectorAll('.nar')];
-  if(mode==='mentions')all.sort((a,b)=>parseInt(b.dataset.mentions)-parseInt(a.dataset.mentions));
-  else all.sort((a,b)=>parseInt(b.dataset.eps)-parseInt(a.dataset.eps));
   const container=document.getElementById('content');
-  all.forEach(n=>container.appendChild(n));
+  const headers=document.querySelectorAll('.cat-header');
+  
+  if(mode==='default'){
+    // Restore original order with category headers
+    headers.forEach(h=>h.style.display='');
+    origOrder.forEach(el=>container.appendChild(el));
+    return;
+  }
+  
+  // Hide category headers for sorted views
+  headers.forEach(h=>h.style.display='none');
+  const nars=[...document.querySelectorAll('.nar')];
+  if(mode==='mentions') nars.sort((a,b)=>parseInt(b.dataset.mentions)-parseInt(a.dataset.mentions));
+  else nars.sort((a,b)=>parseInt(b.dataset.eps)-parseInt(a.dataset.eps));
+  nars.forEach(n=>container.appendChild(n));
 }
 </script></body></html>

@@ -60,31 +60,27 @@ def page(title, body, extra_nav=''):
 
 
 def build_wordcloud():
+    """Word cloud is built by standalone script — skip if already exists with new content."""
+    existing = BASE / 'analytics' / 'wordcloud.html'
+    if existing.exists():
+        content = existing.read_text()
+        if 'btc-hero' in content:
+            return None  # Already has the new version, don't overwrite
+    # Fallback: build basic version
     wc = ANALYTICS['word_cloud'][:150]
-    max_count = wc[0]['count'] if wc else 1
-    
-    cloud_html = '<div class="cloud">'
     colors = ['#22d3ee','#34d399','#fbbf24','#f87171','#a78bfa','#f472b6','#fb923c','#38bdf8','#4ade80','#e879f9']
-    for i, w in enumerate(wc):
-        size = max(0.6, min(3.0, (w['count'] / max_count) * 3))
-        color = colors[i % len(colors)]
-        cloud_html += f'<span style="font-size:{size:.1f}rem;color:{color}" title="{w["word"]}: {w["count"]:,} mentions">{w["word"]}</span>'
+    bitcoin_count = wc[0]['count'] if wc and wc[0]['word'] == 'bitcoin' else 0
+    other_words = [w for w in wc if w['word'] != 'bitcoin']
+    max_other = other_words[0]['count'] if other_words else 1
+    cloud_html = '<div class="cloud">'
+    for i, w in enumerate(other_words):
+        size = max(0.5, min(2.8, 0.5 + (w['count'] / max_other) * 2.3))
+        cloud_html += f'<span style="font-size:{size:.2f}rem;color:{colors[i%len(colors)]}" title="{w["word"]}: {w["count"]:,}">{w["word"]}</span>'
     cloud_html += '</div>'
-    
-    # Year-by-year top words
-    yearly = ''
-    for year in sorted(ANALYTICS['yearly_stats'].keys(), reverse=True):
-        ys = ANALYTICS['yearly_stats'][year]
-        top = ys['top_words'][:15]
-        words = ', '.join(f'<b>{w["word"]}</b> ({w["count"]:,})' for w in top[:8])
-        yearly += f'<div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);font-size:.88rem"><span style="font-family:JetBrains Mono,monospace;color:var(--accent);font-weight:700;min-width:50px;display:inline-block">{year}</span> {words}</div>'
-    
-    body = f'''<h1>☁️ Word Cloud</h1>
-<p style="color:var(--muted);font-size:.88rem;margin-bottom:1rem">Top 150 words across {ANALYTICS["total_words"]:,} words in {ANALYTICS["total_transcripts"]} transcripts. Stop words removed.</p>
-{cloud_html}
-<h2>📅 Top Words by Year</h2>
-{yearly}'''
-    return page('Word Cloud', body)
+    body = f'''<h1>☁️ Word Cloud & Language Stats</h1>
+<div class="btc-hero" style="text-align:center;padding:1rem"><span style="font-family:JetBrains Mono,monospace;font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,#fbbf24,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent">bitcoin</span><div style="font-size:.82rem;color:var(--muted)">{bitcoin_count:,} mentions</div></div>
+{cloud_html}'''
+    return page('Word Cloud & Stats', body)
 
 def build_topics():
     topics = ANALYTICS['topics']
@@ -363,8 +359,10 @@ def main():
     OUT_GUESTS.mkdir(exist_ok=True)
     
     # Word Cloud
-    (OUT_ANALYTICS / 'wordcloud.html').write_text(build_wordcloud())
-    print("  ☁️ Built word cloud")
+    wc_content = build_wordcloud()
+    if wc_content:
+        (OUT_ANALYTICS / 'wordcloud.html').write_text(wc_content)
+    print("  ☁️ Word cloud (preserved new version)" if not wc_content else "  ☁️ Built word cloud")
     
     # Topics
     (OUT_ANALYTICS / 'topics.html').write_text(build_topics())
