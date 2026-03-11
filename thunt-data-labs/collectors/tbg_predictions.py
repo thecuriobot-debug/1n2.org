@@ -39,11 +39,10 @@ KNOWN_SPEAKERS = [
     'Collin',
     'Gabriel', 'Gabriel DeVine',
     'Simon', 'Simon Dixon',
-    'Roger', 'Roger Ver',
+    'Josh', 'Josh Scigala',
     'Victoria', 'Victoria Jones',
     'Ben', 'Ben Arc',
     'Dan', 'Dan Eve',
-    'Josh', 'Josh Scigala',
 ]
 
 # Map short/ambiguous names to canonical names
@@ -60,7 +59,6 @@ SPEAKER_NORMALIZE = {
     'Victoria': 'Victoria Jones',
     'Jimmy': 'Jimmy Song',
     'Jesse': 'Jesse',
-    'Roger': 'Roger Ver',
     'Ansel': 'Ansel Lindner',
 }
 

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-10T19:11:12.800305",
+  "generated": "2026-03-10T19:14:59.770143",
   "total_predictions": 3525,
   "leaderboard": [
     {
       "name": "Victoria Jones",
-      "correct": 15,
+      "correct": 14,
       "wrong": 4,
-      "accuracy": 78.9,
-      "evaluated": 19
+      "accuracy": 77.8,
+      "evaluated": 18
     },
     {
       "name": "Jimmy Song",
@@ -15,13 +15,6 @@
       "wrong": 4,
       "accuracy": 66.7,
       "evaluated": 12
-    },
-    {
-      "name": "Josh Scigala",
-      "correct": 44,
-      "wrong": 25,
-      "accuracy": 63.8,
-      "evaluated": 69
     },
     {
       "name": "Adam Meister",
@@ -32,10 +25,10 @@
     },
     {
       "name": "Ben Arc",
-      "correct": 52,
-      "wrong": 33,
-      "accuracy": 61.2,
-      "evaluated": 85
+      "correct": 48,
+      "wrong": 28,
+      "accuracy": 63.2,
+      "evaluated": 76
     },
     {
       "name": "Vin Armani",
@@ -45,11 +38,25 @@
       "evaluated": 409
     },
     {
+      "name": "Josh Scigala",
+      "correct": 51,
+      "wrong": 37,
+      "accuracy": 58.0,
+      "evaluated": 88
+    },
+    {
       "name": "Unknown",
-      "correct": 990,
-      "wrong": 911,
-      "accuracy": 52.1,
-      "evaluated": 1901
+      "correct": 993,
+      "wrong": 916,
+      "accuracy": 52.0,
+      "evaluated": 1909
+    },
+    {
+      "name": "Dan Eve",
+      "correct": 44,
+      "wrong": 42,
+      "accuracy": 51.2,
+      "evaluated": 86
     },
     {
       "name": "Magic 8 Ball",
@@ -57,13 +64,6 @@
       "wrong": 286,
       "accuracy": 49.3,
       "evaluated": 564
-    },
-    {
-      "name": "Dan Eve",
-      "correct": 46,
-      "wrong": 48,
-      "accuracy": 48.9,
-      "evaluated": 94
     },
     {
       "name": "Thomas Hunt",
@@ -92,13 +92,6 @@
       "wrong": 8,
       "accuracy": 33.3,
       "evaluated": 12
-    },
-    {
-      "name": "Roger Ver",
-      "correct": 3,
-      "wrong": 6,
-      "accuracy": 33.3,
-      "evaluated": 9
     }
   ],
   "predictions": [
@@ -10063,7 +10056,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "We just encounter as Homer Simpson calls them it's America's wing. All right well before we do the next issue we need to have a disclaimer I like Roger here I think Roger here is a super nice guy I've met him a couple of times I'm on good terms with him he's an investor in purse the company I work a",
@@ -10114,7 +10107,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "I think we did really well. I think, hopefully, Roger won't be upset at us. We were all very even-handed in discussing the issue.",
@@ -12901,7 +12894,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "lower",
       "target": null,
       "context": "I also wanted to say that we usually start off this segment with a disclaimer about how much we like Roger and how we're friends with him and it's not done. Well, I still I still I mean, I still like him, but I think it's just very sad the way that this has all come down. The once great Bitcoin Jesu",
@@ -23694,7 +23687,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "I mean it was obvious like five years ago that people around us were in Bitcoin before Wall Street had flooded into Bitcoin. But it still hasn't flooded into Bitcoin a few firms have started buying up some Bitcoin you know what micro strategy being what and that will you know the profits of astronom",
@@ -25496,7 +25489,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": "2",
       "context": "Ben arc $2 trillion. I like what Josh said and I think it's very true as Bitcoin goes up and down and up and down and up and down but generally goes up the people who stay in Bitcoin are hard to the bedrock and then you have the sort of thinner instead of slice of it is people trading Bitcoin and th",
@@ -29613,7 +29606,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "I want to echo what Ben and Josh said where the Curricards are kind of different than the generative art projects it's not like a punk with a cigar or a punk with shade or he has green hair whatever there are a lot more like an artist print where you can afford the original no no one can really affo",
@@ -30722,7 +30715,7 @@
     },
     {
       "type": "call",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "context": "Who higher then goes with higher, Dan higher or lower. I'm going to go lower because I know if I say lower, it will go higher. Reverse psychology, Josh Tagala higher or lower.",
       "episode": 286,
@@ -31408,7 +31401,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "And I just look at it and I don't think there's anything they could have done better. I love all the examples I like the little joke about the dance we did we did say that it was quite you know like technically it's a good advert like the when the you know the astronauts they step on that that grid ",
@@ -33495,7 +33488,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": "2.9",
       "context": "Yeah I mean look I've got a video on from me in 2011 on YouTube going Bitcoin is not a tulip bubble or something like that right. Because that was the constant thing that everyone went on about Bitcoin is a tulip bubble it's a tulip bubble like you know that that talks about the tulips in back in th",
@@ -33512,7 +33505,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": "2.9",
       "context": "Because that was the constant thing that everyone went on about Bitcoin is a tulip bubble it's a tulip bubble like you know that that talks about the tulips in back in the day where in Holland they started trading apparently the castles and and huge estates for single tulips because they are so beau",
@@ -34990,7 +34983,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "Rooja's not alive Josh just seconded it said she's not alive Dan Eve is Dr. Rooja alive when we ever see her cuffed in irons brought to justice uh she I think there's either concrete boots or she's she's had so much plastic surgery she looks like neither one of the three already pictures that are up",
@@ -35744,7 +35737,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "And again, you're selling the signature, the underlying thing, which allows you to access to all of Bitcoin's incredible ability, the ability to send art across the internet, to not have to go meet this guy in a parking lot and give him the signature personally, to not put it in an envelope and trus",
@@ -35812,7 +35805,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "lower",
       "target": null,
       "context": "At the time, if you go back, we didn't have any CEOs, we didn't have any large companies with the small blockers. So I think Saler would have seen it as an opportunity to make a wedge and opportunity to become the standard bearer and the winner of the small block size. And I think that there's a pos",
@@ -35829,7 +35822,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "So I think Saler would have seen it as an opportunity to make a wedge and opportunity to become the standard bearer and the winner of the small block size. And I think that there's a possibility he would have been up there challenging Roger Vier saying, I will sell all of my Bitcoin cash if you sell",
@@ -35846,7 +35839,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "And I think that there's a possibility he would have been up there challenging Roger Vier saying, I will sell all of my Bitcoin cash if you sell all of your Bitcoin original chain, and we can do it publicly and we can do it on the blockchain. And I think Saler's the kind of guy he would have put up ",
@@ -36484,7 +36477,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "lower",
       "target": null,
       "context": "And now we're going to hold on until the exit question where you must predict against the greatest predictor of Bitcoin of all time Dan Eve is the price of Bitcoin higher or lower this time next week. I'm still naked it's lower I think it's lower. Josh she got it as the pessimism continue the pessim",
@@ -42386,7 +42379,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "The city plazas the airport the city landmarks and now they say there's neither the Bitcoin city project nor is there knowledge of it Josh a go what happened to the dream the volcano powered dream of Bitcoin. Vaporware you know it's a thing I look you never know price the next bull market someone el",
@@ -42403,7 +42396,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "Vaporware you know it's a thing I look you never know price the next bull market someone else will come up with a new a new crazy plan and these sort of Bitcoin cities have been going on for ages you know like we have and cap dreamers like Roger for and even myself you know helping cities start up f",
@@ -42488,7 +42481,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "But you know you're like we said before government you're going to trust the private keys to some vault to some computer guys probably smarter than you anyway I'm pretty sure Josh would agree all those bitcoins will leave and you know somebody's briefcase but we're running out of time we're going to",
@@ -44500,7 +44493,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "But still happy. Josh, I think it did go up slightly from last week, Dan. We were both positive or negative on that.",
@@ -45049,7 +45042,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "No I saw actually I actually think it makes Bitcoin security better because miners get paid for merge mining blind merge mining these are the chains which means that I mean there's no example of a blockchain being secured by fees only and if you get rid of the mining reward like we're assuming that ",
@@ -45314,7 +45307,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Victoria Jones",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "Excellent source of news it's interesting the news you get on Twitter recently I seem to be gaining all my death notices from Twitter like I didn't know Suzanne Summers was dead and someone was already like referencing it like it was old news and I was like wow am I behind Josh Egala where do you ge",
@@ -46234,7 +46227,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Dan Eve",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "So we're not seeing normal people buying. We're not seeing large scale buying as Josh and Dan said, I think it says guys with the diamond hands out there that they're not going to let any Bitcoin go so that that's tightening the supply, the have anings tightening the supply. And like Josh said, a re",
@@ -48251,7 +48244,7 @@
     },
     {
       "type": "target",
-      "speaker": "Roger Ver",
+      "speaker": "Unknown",
       "direction": "higher",
       "target": null,
       "context": "And I think that so much positive and so many lessons can be learned from it that are going to be very productive. And just another interesting aspect of it, yeah, in 2017, people were very disciplined. I mean, Roger there was the first one to take advantage of the that people were angry that the fe",
@@ -52371,7 +52364,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "And so I think it's like it's a political belief or whatever just to get votes or to further political career so you just can't this is this is like it's an anti politician vote isn't it like the people who vote for Trump. And I think that's also an anti intellectual vote and anti science vote it st",
@@ -52555,7 +52548,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "target": null,
       "context": "Well it's interesting Ben I read an article in the Atlantic recently where they talked about how people are getting the wrong message from dystopian movies, their movies that are clearly anti dystopia and people watching them and coming out of them being pro dystopia and I think back like you're say",
@@ -54253,7 +54246,7 @@
     },
     {
       "type": "opinion",
-      "speaker": "Ben Arc",
+      "speaker": "Josh Scigala",
       "direction": "lower",
       "target": null,
       "context": "And that is the free markets. Well, and I think that's the example right there at Josh wants a government that's more like a business, more responsive to people's needs and Ben wants it to slow down and think about the consequences. And I think we're going to find out what the difference between tho",

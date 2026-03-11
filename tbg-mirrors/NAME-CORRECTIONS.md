@@ -17,6 +17,8 @@
 # Victoria → Victoria Jones
 # Jimmy → Jimmy Song
 # Tim Draper — NEVER a guest on the show, removed from predictions
+# Roger Ver — NEVER a guest on the show, only discussed, removed from predictions
+# Vin Armani — CONFIRMED guest, Whisper transcribes as "Vine from Future Rant" (his show Freedom Rant)
 
 ## LEADERBOARD RULES
 # Minimum 5 verified predictions required to appear on leaderboard

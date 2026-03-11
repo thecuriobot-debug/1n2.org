@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-10T19:11:12.827190",
+  "generated": "2026-03-10T19:14:59.796738",
   "total": 3525,
   "leaderboard": [
     {
       "name": "Victoria Jones",
-      "correct": 15,
+      "correct": 14,
       "wrong": 4,
-      "accuracy": 78.9,
-      "evaluated": 19
+      "accuracy": 77.8,
+      "evaluated": 18
     },
     {
       "name": "Jimmy Song",
@@ -15,13 +15,6 @@
       "wrong": 4,
       "accuracy": 66.7,
       "evaluated": 12
-    },
-    {
-      "name": "Josh Scigala",
-      "correct": 44,
-      "wrong": 25,
-      "accuracy": 63.8,
-      "evaluated": 69
     },
     {
       "name": "Adam Meister",
@@ -32,10 +25,10 @@
     },
     {
       "name": "Ben Arc",
-      "correct": 52,
-      "wrong": 33,
-      "accuracy": 61.2,
-      "evaluated": 85
+      "correct": 48,
+      "wrong": 28,
+      "accuracy": 63.2,
+      "evaluated": 76
     },
     {
       "name": "Vin Armani",
@@ -45,11 +38,25 @@
       "evaluated": 409
     },
     {
+      "name": "Josh Scigala",
+      "correct": 51,
+      "wrong": 37,
+      "accuracy": 58.0,
+      "evaluated": 88
+    },
+    {
       "name": "Unknown",
-      "correct": 990,
-      "wrong": 911,
-      "accuracy": 52.1,
-      "evaluated": 1901
+      "correct": 993,
+      "wrong": 916,
+      "accuracy": 52.0,
+      "evaluated": 1909
+    },
+    {
+      "name": "Dan Eve",
+      "correct": 44,
+      "wrong": 42,
+      "accuracy": 51.2,
+      "evaluated": 86
     },
     {
       "name": "Magic 8 Ball",
@@ -57,13 +64,6 @@
       "wrong": 286,
       "accuracy": 49.3,
       "evaluated": 564
-    },
-    {
-      "name": "Dan Eve",
-      "correct": 46,
-      "wrong": 48,
-      "accuracy": 48.9,
-      "evaluated": 94
     },
     {
       "name": "Thomas Hunt",
@@ -92,13 +92,6 @@
       "wrong": 8,
       "accuracy": 33.3,
       "evaluated": 12
-    },
-    {
-      "name": "Roger Ver",
-      "correct": 3,
-      "wrong": 6,
-      "accuracy": 33.3,
-      "evaluated": 9
     }
   ],
   "recent": [
