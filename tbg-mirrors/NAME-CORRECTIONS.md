@@ -10,7 +10,8 @@
 # Tone → Tone Vays
 # Gabriel → Gabriel DeVine
 # Chris → Chris Ellis (likely, though possible other Chris's)
-# Vin, Vine → Vin Armani
+# Vin, Vine → Gabriel DeVine (NOT Vin Armani — Vin Armani is not a real person)
+# 'Vine' was Whisper mishearing 'D. Vine' from 'Gabriel D. Vine'
 # Dan → Dan Eve
 # Ben → Ben Arc
 # Josh → Josh Scigala
@@ -72,10 +73,6 @@ Megan Lords
 - Whisper variants: Megan Lourds, Megan Lourdes, Megan Lawrence, Megan Lors
 - 31 appearances (#7–#82)
 
-Vin Armani
-- Whisper variants: Vine, Vin, Vaan
-- 28 appearances (#87–#263)
-
 Derrick Freeman
 - Whisper variants: Freeman, Derek Freeman, Derek
 - 26 appearances (#2–#100)
@@ -91,9 +88,13 @@ Kristoff Atlas
 - Whisper variants: Christoph Atlas, Christoph Atlis, Christoph Atlus, Kristoff Atlus, Chris Dough Atlas
 - 19 appearances (#17–#59)
 
+## REMOVED — NOT REAL PEOPLE
+# Vin Armani — never existed. 'Vine'/'Vin' was Whisper mishearing 'D. Vine' (Gabriel DeVine from FutureRant)
+# Tim Draper — never a guest on the show
+
 Gabriel DeVine / FutureRant
-- Whisper variants: Gabriel Devon, Gabriel Divine, Gabriel D Vine
-- 6 appearances (#85–#133)
+- Whisper variants: Gabriel Devon, Gabriel Divine, Gabriel D Vine, Vine, Vin, Vin Armani, Vaan
+- Appearances (#85–#263)
 
 Jimmy Song
 - 15 appearances (#137–#474)

@@ -30,7 +30,7 @@ NEGATIVE = ["don't count on it","my reply is no","my sources say no",
 C='\033[96m';G='\033[92m';Y='\033[93m';R='\033[91m';B='\033[1m';D='\033[2m';X='\033[0m'
 
 KNOWN_GUESTS = [
-    'Thomas','Hunt','Adam','Tone','Ansel','Jimmy','Vin','Chris','Jesse',
+    'Thomas','Hunt','Adam','Tone','Ansel','Jimmy','Chris','Jesse',
     'Junseth','David','Tosin','Derrick','Collin','Gabriel','Simon','Roger',
     'Victoria','Ben','Dan','Daniel','Jake','Dr. Bitcoin',
 ]

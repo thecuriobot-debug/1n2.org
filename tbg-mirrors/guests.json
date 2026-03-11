@@ -1,7 +1,7 @@
 {
-  "generated": "2026-03-10T19:16:26.141658",
+  "generated": "2026-03-10T19:19:50.817896",
   "total_episodes_with_guests": 475,
-  "unique_guests": 223,
+  "unique_guests": 222,
   "top_guests": [
     {
       "name": "Thomas Hunt",
@@ -1056,6 +1056,46 @@
       ]
     },
     {
+      "name": "Gabriel DeVine",
+      "count": 34,
+      "episodes": [
+        85,
+        87,
+        89,
+        90,
+        92,
+        103,
+        111,
+        114,
+        115,
+        116,
+        117,
+        118,
+        121,
+        123,
+        124,
+        129,
+        131,
+        133,
+        134,
+        143,
+        144,
+        145,
+        154,
+        157,
+        160,
+        169,
+        171,
+        177,
+        178,
+        179,
+        184,
+        185,
+        187,
+        263
+      ]
+    },
+    {
       "name": "Martin Wismeijer",
       "count": 34,
       "episodes": [
@@ -1130,40 +1170,6 @@
         77,
         81,
         82
-      ]
-    },
-    {
-      "name": "Vin Armani",
-      "count": 28,
-      "episodes": [
-        87,
-        89,
-        90,
-        92,
-        103,
-        114,
-        115,
-        116,
-        121,
-        123,
-        124,
-        131,
-        134,
-        143,
-        144,
-        145,
-        154,
-        157,
-        160,
-        169,
-        171,
-        177,
-        178,
-        179,
-        184,
-        185,
-        187,
-        263
       ]
     },
     {
@@ -1414,18 +1420,6 @@
         300,
         350,
         408
-      ]
-    },
-    {
-      "name": "Gabriel DeVine",
-      "count": 6,
-      "episodes": [
-        85,
-        111,
-        117,
-        118,
-        129,
-        133
       ]
     },
     {
@@ -1682,6 +1676,14 @@
       "count": 2,
       "episodes": [
         266,
+        400
+      ]
+    },
+    {
+      "name": "Rijal",
+      "count": 2,
+      "episodes": [
+        354,
         400
       ]
     }
@@ -3060,7 +3062,7 @@
         "affiliation": "Pro Tip"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future of Rant"
       },
       {
@@ -3096,7 +3098,7 @@
         "affiliation": "Facebook"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3114,7 +3116,7 @@
     ],
     "90": [
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3162,7 +3164,7 @@
         "affiliation": "Facebook"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3355,7 +3357,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3527,7 +3529,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3549,7 +3551,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -3568,7 +3570,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -3648,7 +3650,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3684,7 +3686,7 @@
         "affiliation": "Hasse online"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3702,7 +3704,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3825,7 +3827,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -3887,7 +3889,7 @@
         "affiliation": "Hats online"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -4049,7 +4051,7 @@
         "affiliation": "Bitcoin Uncensored"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4067,7 +4069,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4085,7 +4087,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4235,7 +4237,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4281,7 +4283,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4340,7 +4342,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -4479,7 +4481,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4519,7 +4521,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4620,7 +4622,7 @@
         "affiliation": "Crypto Gold Central"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4638,7 +4640,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -4660,7 +4662,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4750,7 +4752,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rent"
       },
       {
@@ -4768,7 +4770,7 @@
         "affiliation": "Crypto Gold Central"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -4805,7 +4807,7 @@
         "affiliation": ""
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "Future Rant"
       },
       {
@@ -5885,7 +5887,7 @@
         "affiliation": "BTC IoT"
       },
       {
-        "name": "Vin Armani",
+        "name": "Gabriel DeVine",
         "affiliation": "World Crypto Network"
       },
       {

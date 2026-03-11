@@ -147,8 +147,9 @@ def extract_guests_from_intro(text, ep_num):
         'Jessica Gala': 'Josh Scigala', 'Gala': 'Josh Scigala',
         # Jeffrey Jones / The Vortex
         'Jeffrey Jones': 'Jeffery Jones', 'Jeffery Jones': 'Jeffery Jones',
-        # Vin Armani
-        'Vine': 'Vin Armani', 'Vin': 'Vin Armani', 'Vaan': 'Vin Armani',
+        # Vin Armani — NOT A REAL PERSON. 'Vine' is Whisper mishearing 'D. Vine' (Gabriel DeVine)
+        'Vine': 'Gabriel DeVine', 'Vin': 'Gabriel DeVine', 'Vaan': 'Gabriel DeVine',
+        'Vin Armani': 'Gabriel DeVine',
         # Megan Lords
         'Megan Lourds': 'Megan Lords', 'Megan Lourdes': 'Megan Lords', 'Megan Lawrence': 'Megan Lords',
         'Megan Lors': 'Megan Lords',
