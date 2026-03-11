@@ -1,35 +1,53 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Max Hillebrand — TBG Guests</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><style>
+<title>Max Hillebrand — TBG Mirrors</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"><style>
 :root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24;--red:#f87171}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7}
 a{color:var(--accent);text-decoration:none}a:hover{color:#fff;text-decoration:underline}
 .wrap{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
-.nav{font-size:.9rem;margin-bottom:1rem;display:flex;gap:12px;flex-wrap:wrap}
-h1{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent);margin-bottom:.5rem}
-h2{font-size:1.1rem;color:var(--accent);margin:1.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 16px;text-align:center}
-.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700}
-.stat .l{font-size:.7rem;color:var(--muted)}
+.nav{font-size:.85rem;margin-bottom:1rem;display:flex;gap:10px;flex-wrap:wrap}
+h1{font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:var(--accent);margin-bottom:.5rem}
+h2{font-size:1.05rem;color:var(--accent);margin:1.5rem 0 .7rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.2rem}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700}
+.stat .l{font-size:.68rem;color:var(--muted)}
 table{width:100%;border-collapse:collapse;margin-bottom:1rem}
-th{text-align:left;padding:8px 10px;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border)}
-td{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.92rem}
-tr:hover{background:rgba(34,211,238,.03)}
-.tag{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:4px}
-.tag-host{background:rgba(251,191,36,.15);color:var(--amber)}.tag-top{background:rgba(52,211,153,.15);color:var(--green)}
-.bar{height:4px;border-radius:2px;margin-top:2px;background:var(--accent)}
-.ep-list{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
-.ep-chip{font-size:.72rem;padding:2px 6px;background:var(--card);border:1px solid var(--border);border-radius:4px;font-family:'JetBrains Mono',monospace}
+th{text-align:left;padding:8px 10px;font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border)}
+td{padding:7px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}tr:hover{background:rgba(34,211,238,.03)}
+.cloud{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:1rem}
+.cloud span{display:inline-block;padding:2px 6px;border-radius:4px;cursor:default;transition:opacity .2s}
+.cloud span:hover{opacity:.7}
+.bar-h{height:6px;border-radius:3px;margin-top:2px}
+.topic-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(30,41,59,.2)}
+.topic-name{min-width:120px;font-weight:600;font-size:.9rem}
+.topic-bar{flex:1;height:8px;background:rgba(30,41,59,.3);border-radius:4px;overflow:hidden}
+.topic-fill{height:100%;border-radius:4px;background:var(--accent)}
+.topic-count{font-size:.8rem;color:var(--muted);min-width:60px;text-align:right;font-family:'JetBrains Mono',monospace}
+.ep-chips{display:flex;flex-wrap:wrap;gap:3px;margin:6px 0}
+.ep-chip{font-size:.7rem;padding:2px 5px;background:var(--card);border:1px solid var(--border);border-radius:3px;font-family:'JetBrains Mono',monospace}
 .ep-chip:hover{border-color:var(--accent)}
-.pair{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(30,41,59,.2);font-size:.9rem}
-@media(max-width:700px){.stats{gap:6px}.stat{padding:6px 10px}.stat .n{font-size:1rem}table{font-size:.85rem}}
+.pair{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(30,41,59,.15);font-size:.88rem}
+.timeline{display:flex;gap:2px;align-items:flex-end;height:40px}
+.timeline-bar{flex:1;background:var(--accent);border-radius:2px 2px 0 0;min-width:6px;transition:opacity .2s}
+.timeline-bar:hover{opacity:.7}
+.g{color:var(--green)}.r{color:var(--red)}.a{color:var(--amber)}.c{color:var(--accent)}
+@media(max-width:700px){.stats{gap:6px}.stat{padding:6px 10px}.stat .n{font-size:1rem}table{font-size:.82rem}}
 </style></head><body><div class="wrap">
-<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a><a href="/tbg-mirrors/guests/">👥 All Guests</a><a href="/tbg-mirrors/predictions/">🔮 Predictions</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a></div>
+<div class="nav"><a href="/tbg-mirrors/">← Episode Tracker</a><a href="/tbg-mirrors/guests/">👥 Guests</a><a href="/tbg-mirrors/analytics/topics.html">📊 Topics</a><a href="/tbg-mirrors/analytics/wordcloud.html">☁️ Words</a><a href="/tbg-mirrors/analytics/stats.html">📈 Stats</a><a href="/tbg-mirrors/predictions/">🔮 Predictions</a><a href="/tbg-mirrors/transcripts/">📜 Transcripts</a></div>
 <h1>👤 Max Hillebrand</h1>
-<div class="stats">
-<div class="stat"><div class="n" style="color:var(--accent)">5</div><div class="l">Appearances</div></div>
-<div class="stat"><div class="n" style="color:var(--green)">#185–#200</div><div class="l">Range</div></div>
-<div class="stat"><div class="n" style="color:var(--amber)">2</div><div class="l">Max Consecutive</div></div>
-<div class="stat"><div class="n" style="color:var(--accent)">2 years</div><div class="l">Span</div></div>
-</div><h2>📺 All Episodes (5)</h2><div class="ep-list"><a href="/tbg-mirrors/transcripts/TBG-185.html" class="ep-chip" title="2018-08-17">#185</a><a href="/tbg-mirrors/transcripts/TBG-186.html" class="ep-chip" title="2018-08-24">#186</a><a href="/tbg-mirrors/transcripts/TBG-189.html" class="ep-chip" title="2018-11-16">#189</a><a href="/tbg-mirrors/transcripts/TBG-191.html" class="ep-chip" title="2019-01-18">#191</a><a href="/tbg-mirrors/transcripts/TBG-200.html" class="ep-chip" title="2019-05-10">#200</a></div><h2>🤝 Most Frequent Co-Panelists</h2><div class="pair"><a href="thomas-hunt.html">Thomas Hunt</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">5 shows</span></div><div class="pair"><a href="andy-hoffman.html">Andy Hoffman</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">2 shows</span></div><div class="pair"><a href="gabriel-devine.html">Gabriel DeVine</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">1 shows</span></div><div class="pair"><a href="blake-anderson.html">Blake Anderson</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">1 shows</span></div><div class="pair"><a href="shinobi.html">Shinobi</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">1 shows</span></div><div class="pair"><a href="theo-goodman.html">Theo Goodman</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">1 shows</span></div><div class="pair"><a href="ben.html">Ben</a><span style="color:var(--muted);font-family:JetBrains Mono,monospace;font-size:.82rem">1 shows</span></div></div></body></html>
+
+<div class="stats" style="margin-top:.8rem">
+<div class="stat"><div class="n c">5</div><div class="l">Appearances</div></div>
+<div class="stat"><div class="n g">#185–#200</div><div class="l">Episode Range</div></div>
+<div class="stat"><div class="n a">2</div><div class="l">Max Streak</div></div>
+<div class="stat"><div class="n" style="color:#f472b6">2 years</div><div class="l">Span</div></div>
+
+
+</div>
+
+<h2>📊 Activity by Year</h2>
+<div class="timeline" style="height:50px;margin-bottom:8px"><div class="timeline-bar" style="height:45px" title="2018: 3 episodes"></div><div class="timeline-bar" style="height:30px" title="2019: 2 episodes"></div></div><div style="display:flex;gap:2px;font-size:.6rem;color:var(--muted);justify-content:space-between"><span>18</span><span>19</span></div>
+
+<h2>🤝 Most Frequent Co-Panelists</h2><div class="pair"><a href="thomas-hunt.html">Thomas Hunt</a><span style="font-family:JetBrains Mono,monospace;font-size:.8rem;color:var(--muted)">5 shows together</span></div><div class="pair"><a href="andy-hoffman.html">Andy Hoffman</a><span style="font-family:JetBrains Mono,monospace;font-size:.8rem;color:var(--muted)">2 shows together</span></div>
+
+<h2>📺 All Episodes (5)</h2><div class="ep-chips"><a href="/tbg-mirrors/transcripts/TBG-185.html" class="ep-chip" title="2018-08-17">#185</a><a href="/tbg-mirrors/transcripts/TBG-186.html" class="ep-chip" title="2018-08-24">#186</a><a href="/tbg-mirrors/transcripts/TBG-189.html" class="ep-chip" title="2018-11-16">#189</a><a href="/tbg-mirrors/transcripts/TBG-191.html" class="ep-chip" title="2019-01-18">#191</a><a href="/tbg-mirrors/transcripts/TBG-200.html" class="ep-chip" title="2019-05-10">#200</a></div></div></body></html>

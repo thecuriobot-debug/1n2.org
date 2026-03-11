@@ -1,0 +1,3817 @@
+{
+  "generated": "2026-03-10T19:21:53.827542",
+  "total_transcripts": 482,
+  "total_words": 4231488,
+  "word_cloud": [
+    {
+      "word": "bitcoin",
+      "count": 54715
+    },
+    {
+      "word": "money",
+      "count": 13815
+    },
+    {
+      "word": "time",
+      "count": 12170
+    },
+    {
+      "word": "good",
+      "count": 11471
+    },
+    {
+      "word": "where",
+      "count": 10265
+    },
+    {
+      "word": "things",
+      "count": 9856
+    },
+    {
+      "word": "maybe",
+      "count": 8422
+    },
+    {
+      "word": "were",
+      "count": 8163
+    },
+    {
+      "word": "down",
+      "count": 7754
+    },
+    {
+      "word": "price",
+      "count": 6887
+    },
+    {
+      "word": "world",
+      "count": 6553
+    },
+    {
+      "word": "stuff",
+      "count": 6343
+    },
+    {
+      "word": "coin",
+      "count": 6284
+    },
+    {
+      "word": "need",
+      "count": 6173
+    },
+    {
+      "word": "crypto",
+      "count": 6033
+    },
+    {
+      "word": "little",
+      "count": 5895
+    },
+    {
+      "word": "great",
+      "count": 5798
+    },
+    {
+      "word": "again",
+      "count": 5762
+    },
+    {
+      "word": "week",
+      "count": 5648
+    },
+    {
+      "word": "everyone",
+      "count": 5465
+    },
+    {
+      "word": "only",
+      "count": 5397
+    },
+    {
+      "word": "doing",
+      "count": 5293
+    },
+    {
+      "word": "saying",
+      "count": 5278
+    },
+    {
+      "word": "probably",
+      "count": 5179
+    },
+    {
+      "word": "market",
+      "count": 5151
+    },
+    {
+      "word": "take",
+      "count": 4885
+    },
+    {
+      "word": "whatever",
+      "count": 4826
+    },
+    {
+      "word": "next",
+      "count": 4799
+    },
+    {
+      "word": "years",
+      "count": 4773
+    },
+    {
+      "word": "around",
+      "count": 4580
+    },
+    {
+      "word": "first",
+      "count": 4574
+    },
+    {
+      "word": "doesn",
+      "count": 4412
+    },
+    {
+      "word": "point",
+      "count": 4336
+    },
+    {
+      "word": "always",
+      "count": 4304
+    },
+    {
+      "word": "story",
+      "count": 4223
+    },
+    {
+      "word": "work",
+      "count": 4142
+    },
+    {
+      "word": "didn",
+      "count": 4140
+    },
+    {
+      "word": "sure",
+      "count": 4069
+    },
+    {
+      "word": "issue",
+      "count": 4063
+    },
+    {
+      "word": "show",
+      "count": 4061
+    },
+    {
+      "word": "network",
+      "count": 4053
+    },
+    {
+      "word": "pretty",
+      "count": 3916
+    },
+    {
+      "word": "might",
+      "count": 3914
+    },
+    {
+      "word": "interesting",
+      "count": 3909
+    },
+    {
+      "word": "whole",
+      "count": 3904
+    },
+    {
+      "word": "long",
+      "count": 3776
+    },
+    {
+      "word": "sort",
+      "count": 3776
+    },
+    {
+      "word": "before",
+      "count": 3765
+    },
+    {
+      "word": "last",
+      "count": 3760
+    },
+    {
+      "word": "government",
+      "count": 3757
+    },
+    {
+      "word": "getting",
+      "count": 3540
+    },
+    {
+      "word": "give",
+      "count": 3540
+    },
+    {
+      "word": "trying",
+      "count": 3529
+    },
+    {
+      "word": "through",
+      "count": 3522
+    },
+    {
+      "word": "company",
+      "count": 3502
+    },
+    {
+      "word": "josh",
+      "count": 3484
+    },
+    {
+      "word": "every",
+      "count": 3449
+    },
+    {
+      "word": "anything",
+      "count": 3443
+    },
+    {
+      "word": "idea",
+      "count": 3430
+    },
+    {
+      "word": "question",
+      "count": 3409
+    },
+    {
+      "word": "someone",
+      "count": 3396
+    },
+    {
+      "word": "keep",
+      "count": 3370
+    },
+    {
+      "word": "obviously",
+      "count": 3342
+    },
+    {
+      "word": "coins",
+      "count": 3339
+    },
+    {
+      "word": "ethereum",
+      "count": 3328
+    },
+    {
+      "word": "talk",
+      "count": 3299
+    },
+    {
+      "word": "never",
+      "count": 3277
+    },
+    {
+      "word": "different",
+      "count": 3248
+    },
+    {
+      "word": "everything",
+      "count": 3205
+    },
+    {
+      "word": "year",
+      "count": 3123
+    },
+    {
+      "word": "million",
+      "count": 3089
+    },
+    {
+      "word": "using",
+      "count": 3087
+    },
+    {
+      "word": "course",
+      "count": 3079
+    },
+    {
+      "word": "made",
+      "count": 3078
+    },
+    {
+      "word": "system",
+      "count": 3057
+    },
+    {
+      "word": "talking",
+      "count": 3055
+    },
+    {
+      "word": "used",
+      "count": 3050
+    },
+    {
+      "word": "after",
+      "count": 3033
+    },
+    {
+      "word": "start",
+      "count": 3009
+    },
+    {
+      "word": "goes",
+      "count": 3003
+    },
+    {
+      "word": "better",
+      "count": 2988
+    },
+    {
+      "word": "having",
+      "count": 2987
+    },
+    {
+      "word": "guys",
+      "count": 2978
+    },
+    {
+      "word": "moving",
+      "count": 2947
+    },
+    {
+      "word": "already",
+      "count": 2894
+    },
+    {
+      "word": "value",
+      "count": 2888
+    },
+    {
+      "word": "hard",
+      "count": 2887
+    },
+    {
+      "word": "happen",
+      "count": 2880
+    },
+    {
+      "word": "able",
+      "count": 2823
+    },
+    {
+      "word": "says",
+      "count": 2806
+    },
+    {
+      "word": "seems",
+      "count": 2803
+    },
+    {
+      "word": "else",
+      "count": 2764
+    },
+    {
+      "word": "satoshi",
+      "count": 2738
+    },
+    {
+      "word": "three",
+      "count": 2734
+    },
+    {
+      "word": "dollars",
+      "count": 2722
+    },
+    {
+      "word": "companies",
+      "count": 2708
+    },
+    {
+      "word": "problem",
+      "count": 2686
+    },
+    {
+      "word": "blockchain",
+      "count": 2679
+    },
+    {
+      "word": "real",
+      "count": 2675
+    },
+    {
+      "word": "mining",
+      "count": 2652
+    },
+    {
+      "word": "okay",
+      "count": 2640
+    },
+    {
+      "word": "cool",
+      "count": 2629
+    },
+    {
+      "word": "definitely",
+      "count": 2611
+    },
+    {
+      "word": "currency",
+      "count": 2607
+    },
+    {
+      "word": "fact",
+      "count": 2573
+    },
+    {
+      "word": "coming",
+      "count": 2547
+    },
+    {
+      "word": "twitter",
+      "count": 2534
+    },
+    {
+      "word": "went",
+      "count": 2501
+    },
+    {
+      "word": "move",
+      "count": 2494
+    },
+    {
+      "word": "sell",
+      "count": 2473
+    },
+    {
+      "word": "part",
+      "count": 2469
+    },
+    {
+      "word": "gold",
+      "count": 2455
+    },
+    {
+      "word": "done",
+      "count": 2447
+    },
+    {
+      "word": "quite",
+      "count": 2438
+    },
+    {
+      "word": "away",
+      "count": 2429
+    },
+    {
+      "word": "basically",
+      "count": 2388
+    },
+    {
+      "word": "future",
+      "count": 2385
+    },
+    {
+      "word": "cash",
+      "count": 2377
+    },
+    {
+      "word": "best",
+      "count": 2360
+    },
+    {
+      "word": "thought",
+      "count": 2325
+    },
+    {
+      "word": "agree",
+      "count": 2320
+    },
+    {
+      "word": "exchange",
+      "count": 2308
+    },
+    {
+      "word": "bank",
+      "count": 2264
+    },
+    {
+      "word": "prediction",
+      "count": 2257
+    },
+    {
+      "word": "enough",
+      "count": 2250
+    },
+    {
+      "word": "find",
+      "count": 2238
+    },
+    {
+      "word": "open",
+      "count": 2214
+    },
+    {
+      "word": "everybody",
+      "count": 2206
+    },
+    {
+      "word": "article",
+      "count": 2185
+    },
+    {
+      "word": "making",
+      "count": 2176
+    },
+    {
+      "word": "while",
+      "count": 2169
+    },
+    {
+      "word": "looking",
+      "count": 2161
+    },
+    {
+      "word": "understand",
+      "count": 2151
+    },
+    {
+      "word": "free",
+      "count": 2144
+    },
+    {
+      "word": "against",
+      "count": 2140
+    },
+    {
+      "word": "power",
+      "count": 2137
+    },
+    {
+      "word": "lightning",
+      "count": 2124
+    },
+    {
+      "word": "check",
+      "count": 2122
+    },
+    {
+      "word": "technology",
+      "count": 2115
+    },
+    {
+      "word": "wallet",
+      "count": 2114
+    },
+    {
+      "word": "person",
+      "count": 2069
+    },
+    {
+      "word": "internet",
+      "count": 2067
+    },
+    {
+      "word": "news",
+      "count": 2056
+    },
+    {
+      "word": "business",
+      "count": 2040
+    },
+    {
+      "word": "seen",
+      "count": 2005
+    },
+    {
+      "word": "bitcoins",
+      "count": 1983
+    },
+    {
+      "word": "remember",
+      "count": 1973
+    },
+    {
+      "word": "crazy",
+      "count": 1968
+    },
+    {
+      "word": "side",
+      "count": 1964
+    },
+    {
+      "word": "working",
+      "count": 1952
+    },
+    {
+      "word": "coinbase",
+      "count": 1945
+    },
+    {
+      "word": "believe",
+      "count": 1936
+    },
+    {
+      "word": "nothing",
+      "count": 1936
+    },
+    {
+      "word": "huge",
+      "count": 1930
+    },
+    {
+      "word": "such",
+      "count": 1921
+    },
+    {
+      "word": "change",
+      "count": 1912
+    },
+    {
+      "word": "higher",
+      "count": 1904
+    },
+    {
+      "word": "hold",
+      "count": 1895
+    },
+    {
+      "word": "ever",
+      "count": 1894
+    },
+    {
+      "word": "buying",
+      "count": 1893
+    },
+    {
+      "word": "reason",
+      "count": 1883
+    },
+    {
+      "word": "case",
+      "count": 1880
+    },
+    {
+      "word": "country",
+      "count": 1876
+    },
+    {
+      "word": "called",
+      "count": 1875
+    },
+    {
+      "word": "space",
+      "count": 1851
+    },
+    {
+      "word": "happening",
+      "count": 1834
+    },
+    {
+      "word": "once",
+      "count": 1833
+    },
+    {
+      "word": "hope",
+      "count": 1830
+    },
+    {
+      "word": "though",
+      "count": 1828
+    },
+    {
+      "word": "exit",
+      "count": 1816
+    },
+    {
+      "word": "dollar",
+      "count": 1812
+    },
+    {
+      "word": "makes",
+      "count": 1807
+    },
+    {
+      "word": "important",
+      "count": 1807
+    },
+    {
+      "word": "less",
+      "count": 1806
+    },
+    {
+      "word": "least",
+      "count": 1788
+    },
+    {
+      "word": "banks",
+      "count": 1783
+    },
+    {
+      "word": "anyone",
+      "count": 1783
+    },
+    {
+      "word": "until",
+      "count": 1773
+    },
+    {
+      "word": "four",
+      "count": 1736
+    },
+    {
+      "word": "guess",
+      "count": 1735
+    },
+    {
+      "word": "times",
+      "count": 1730
+    },
+    {
+      "word": "tell",
+      "count": 1718
+    },
+    {
+      "word": "read",
+      "count": 1715
+    },
+    {
+      "word": "especially",
+      "count": 1708
+    },
+    {
+      "word": "group",
+      "count": 1699
+    },
+    {
+      "word": "love",
+      "count": 1698
+    },
+    {
+      "word": "happened",
+      "count": 1696
+    },
+    {
+      "word": "comes",
+      "count": 1686
+    },
+    {
+      "word": "block",
+      "count": 1685
+    },
+    {
+      "word": "haven",
+      "count": 1682
+    },
+    {
+      "word": "gets",
+      "count": 1678
+    },
+    {
+      "word": "exchanges",
+      "count": 1674
+    },
+    {
+      "word": "financial",
+      "count": 1667
+    },
+    {
+      "word": "running",
+      "count": 1663
+    },
+    {
+      "word": "days",
+      "count": 1658
+    },
+    {
+      "word": "today",
+      "count": 1653
+    },
+    {
+      "word": "five",
+      "count": 1642
+    },
+    {
+      "word": "number",
+      "count": 1641
+    },
+    {
+      "word": "nice",
+      "count": 1633
+    },
+    {
+      "word": "worth",
+      "count": 1628
+    }
+  ],
+  "topics": {
+    "ETF": {
+      "total_mentions": 1522,
+      "episodes_with_topic": 161,
+      "first_episode": 9,
+      "first_date": "2021-11-01"
+    },
+    "Mt. Gox": {
+      "total_mentions": 445,
+      "episodes_with_topic": 138,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Silk Road": {
+      "total_mentions": 476,
+      "episodes_with_topic": 163,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Lightning": {
+      "total_mentions": 2124,
+      "episodes_with_topic": 289,
+      "first_episode": 44,
+      "first_date": "2014-08-22"
+    },
+    "Mining": {
+      "total_mentions": 4478,
+      "episodes_with_topic": 385,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Regulation": {
+      "total_mentions": 4296,
+      "episodes_with_topic": 417,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "China": {
+      "total_mentions": 2295,
+      "episodes_with_topic": 305,
+      "first_episode": 2,
+      "first_date": "2021-09-13"
+    },
+    "El Salvador": {
+      "total_mentions": 689,
+      "episodes_with_topic": 106,
+      "first_episode": 262,
+      "first_date": "2021-06-11"
+    },
+    "Tether": {
+      "total_mentions": 682,
+      "episodes_with_topic": 83,
+      "first_episode": 80,
+      "first_date": "2015-10-16"
+    },
+    "DeFi": {
+      "total_mentions": 168,
+      "episodes_with_topic": 75,
+      "first_episode": 16,
+      "first_date": "2021-12-20"
+    },
+    "NFT": {
+      "total_mentions": 1800,
+      "episodes_with_topic": 155,
+      "first_episode": 193,
+      "first_date": "2019-03-01"
+    },
+    "Halving": {
+      "total_mentions": 159,
+      "episodes_with_topic": 68,
+      "first_episode": 70,
+      "first_date": "2015-06-26"
+    },
+    "FTX": {
+      "total_mentions": 676,
+      "episodes_with_topic": 111,
+      "first_episode": 280,
+      "first_date": "2021-10-22"
+    },
+    "Binance": {
+      "total_mentions": 656,
+      "episodes_with_topic": 117,
+      "first_episode": 175,
+      "first_date": "2018-03-10"
+    },
+    "Coinbase": {
+      "total_mentions": 1945,
+      "episodes_with_topic": 282,
+      "first_episode": 6,
+      "first_date": "2021-10-11"
+    },
+    "MicroStrategy": {
+      "total_mentions": 166,
+      "episodes_with_topic": 52,
+      "first_episode": 232,
+      "first_date": "2020-10-23"
+    },
+    "Elon Musk": {
+      "total_mentions": 1998,
+      "episodes_with_topic": 249,
+      "first_episode": 4,
+      "first_date": "2021-09-27"
+    },
+    "Trump": {
+      "total_mentions": 1499,
+      "episodes_with_topic": 186,
+      "first_episode": 24,
+      "first_date": "2022-02-14"
+    },
+    "Iran": {
+      "total_mentions": 154,
+      "episodes_with_topic": 49,
+      "first_episode": 18,
+      "first_date": "2022-01-03"
+    },
+    "Stablecoin": {
+      "total_mentions": 321,
+      "episodes_with_topic": 91,
+      "first_episode": 180,
+      "first_date": "2018-06-15"
+    },
+    "Privacy": {
+      "total_mentions": 1370,
+      "episodes_with_topic": 250,
+      "first_episode": 3,
+      "first_date": "2021-09-20"
+    },
+    "Quantum": {
+      "total_mentions": 150,
+      "episodes_with_topic": 36,
+      "first_episode": 87,
+      "first_date": "2016-02-20"
+    },
+    "AI": {
+      "total_mentions": 792,
+      "episodes_with_topic": 124,
+      "first_episode": 26,
+      "first_date": "2014-04-18"
+    },
+    "PayPal": {
+      "total_mentions": 744,
+      "episodes_with_topic": 133,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Ordinals": {
+      "total_mentions": 243,
+      "episodes_with_topic": 36,
+      "first_episode": 344,
+      "first_date": "2023-02-03"
+    },
+    "Layer 2": {
+      "total_mentions": 163,
+      "episodes_with_topic": 58,
+      "first_episode": 105,
+      "first_date": "2016-08-19"
+    },
+    "Altcoins": {
+      "total_mentions": 6013,
+      "episodes_with_topic": 437,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Scams": {
+      "total_mentions": 3270,
+      "episodes_with_topic": 376,
+      "first_episode": 4,
+      "first_date": "2021-09-27"
+    },
+    "Adoption": {
+      "total_mentions": 1077,
+      "episodes_with_topic": 329,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    },
+    "Inflation": {
+      "total_mentions": 1385,
+      "episodes_with_topic": 341,
+      "first_episode": 1,
+      "first_date": "2013-10-18"
+    }
+  },
+  "yearly_stats": {
+    "2013": {
+      "episodes": 1,
+      "words": 4964,
+      "top_topics": [
+        {
+          "topic": "Mining",
+          "count": 28
+        },
+        {
+          "topic": "Silk Road",
+          "count": 18
+        },
+        {
+          "topic": "Regulation",
+          "count": 6
+        },
+        {
+          "topic": "Altcoins",
+          "count": 2
+        },
+        {
+          "topic": "Mt. Gox",
+          "count": 1
+        },
+        {
+          "topic": "PayPal",
+          "count": 1
+        },
+        {
+          "topic": "Adoption",
+          "count": 1
+        },
+        {
+          "topic": "Inflation",
+          "count": 1
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 87
+        },
+        {
+          "word": "time",
+          "count": 23
+        },
+        {
+          "word": "money",
+          "count": 23
+        },
+        {
+          "word": "mining",
+          "count": 21
+        },
+        {
+          "word": "silk",
+          "count": 18
+        },
+        {
+          "word": "take",
+          "count": 17
+        },
+        {
+          "word": "road",
+          "count": 17
+        },
+        {
+          "word": "amazon",
+          "count": 16
+        },
+        {
+          "word": "ebay",
+          "count": 16
+        },
+        {
+          "word": "currency",
+          "count": 16
+        },
+        {
+          "word": "every",
+          "count": 14
+        },
+        {
+          "word": "where",
+          "count": 13
+        },
+        {
+          "word": "gold",
+          "count": 12
+        },
+        {
+          "word": "world",
+          "count": 11
+        },
+        {
+          "word": "around",
+          "count": 11
+        },
+        {
+          "word": "only",
+          "count": 11
+        },
+        {
+          "word": "down",
+          "count": 11
+        },
+        {
+          "word": "business",
+          "count": 11
+        },
+        {
+          "word": "sort",
+          "count": 11
+        },
+        {
+          "word": "seized",
+          "count": 11
+        },
+        {
+          "word": "trust",
+          "count": 10
+        },
+        {
+          "word": "point",
+          "count": 9
+        },
+        {
+          "word": "things",
+          "count": 9
+        },
+        {
+          "word": "through",
+          "count": 9
+        },
+        {
+          "word": "issue",
+          "count": 8
+        },
+        {
+          "word": "andreas",
+          "count": 8
+        },
+        {
+          "word": "market",
+          "count": 8
+        },
+        {
+          "word": "doesn",
+          "count": 8
+        },
+        {
+          "word": "first",
+          "count": 8
+        },
+        {
+          "word": "means",
+          "count": 8
+        }
+      ]
+    },
+    "2014": {
+      "episodes": 36,
+      "words": 304052,
+      "top_topics": [
+        {
+          "topic": "Regulation",
+          "count": 471
+        },
+        {
+          "topic": "Altcoins",
+          "count": 395
+        },
+        {
+          "topic": "Mining",
+          "count": 227
+        },
+        {
+          "topic": "PayPal",
+          "count": 141
+        },
+        {
+          "topic": "Adoption",
+          "count": 126
+        },
+        {
+          "topic": "Silk Road",
+          "count": 123
+        },
+        {
+          "topic": "Privacy",
+          "count": 112
+        },
+        {
+          "topic": "China",
+          "count": 99
+        },
+        {
+          "topic": "Inflation",
+          "count": 85
+        },
+        {
+          "topic": "Coinbase",
+          "count": 77
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 3591
+        },
+        {
+          "word": "time",
+          "count": 868
+        },
+        {
+          "word": "good",
+          "count": 857
+        },
+        {
+          "word": "money",
+          "count": 750
+        },
+        {
+          "word": "things",
+          "count": 706
+        },
+        {
+          "word": "where",
+          "count": 634
+        },
+        {
+          "word": "were",
+          "count": 569
+        },
+        {
+          "word": "maybe",
+          "count": 559
+        },
+        {
+          "word": "doing",
+          "count": 507
+        },
+        {
+          "word": "need",
+          "count": 503
+        },
+        {
+          "word": "world",
+          "count": 501
+        },
+        {
+          "word": "coin",
+          "count": 496
+        },
+        {
+          "word": "little",
+          "count": 465
+        },
+        {
+          "word": "stuff",
+          "count": 460
+        },
+        {
+          "word": "first",
+          "count": 411
+        },
+        {
+          "word": "down",
+          "count": 407
+        },
+        {
+          "word": "take",
+          "count": 401
+        },
+        {
+          "word": "question",
+          "count": 397
+        },
+        {
+          "word": "great",
+          "count": 394
+        },
+        {
+          "word": "point",
+          "count": 391
+        },
+        {
+          "word": "chris",
+          "count": 388
+        },
+        {
+          "word": "price",
+          "count": 372
+        },
+        {
+          "word": "around",
+          "count": 364
+        },
+        {
+          "word": "through",
+          "count": 349
+        },
+        {
+          "word": "work",
+          "count": 348
+        },
+        {
+          "word": "idea",
+          "count": 342
+        },
+        {
+          "word": "trying",
+          "count": 339
+        },
+        {
+          "word": "market",
+          "count": 339
+        },
+        {
+          "word": "next",
+          "count": 336
+        },
+        {
+          "word": "probably",
+          "count": 330
+        }
+      ]
+    },
+    "2015": {
+      "episodes": 21,
+      "words": 120087,
+      "top_topics": [
+        {
+          "topic": "Altcoins",
+          "count": 142
+        },
+        {
+          "topic": "Regulation",
+          "count": 135
+        },
+        {
+          "topic": "Mining",
+          "count": 80
+        },
+        {
+          "topic": "Adoption",
+          "count": 61
+        },
+        {
+          "topic": "China",
+          "count": 53
+        },
+        {
+          "topic": "Scams",
+          "count": 53
+        },
+        {
+          "topic": "Coinbase",
+          "count": 48
+        },
+        {
+          "topic": "Privacy",
+          "count": 40
+        },
+        {
+          "topic": "Silk Road",
+          "count": 39
+        },
+        {
+          "topic": "Mt. Gox",
+          "count": 32
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 1570
+        },
+        {
+          "word": "good",
+          "count": 460
+        },
+        {
+          "word": "time",
+          "count": 326
+        },
+        {
+          "word": "things",
+          "count": 323
+        },
+        {
+          "word": "money",
+          "count": 260
+        },
+        {
+          "word": "price",
+          "count": 252
+        },
+        {
+          "word": "were",
+          "count": 252
+        },
+        {
+          "word": "where",
+          "count": 238
+        },
+        {
+          "word": "need",
+          "count": 216
+        },
+        {
+          "word": "great",
+          "count": 213
+        },
+        {
+          "word": "doing",
+          "count": 202
+        },
+        {
+          "word": "down",
+          "count": 201
+        },
+        {
+          "word": "maybe",
+          "count": 200
+        },
+        {
+          "word": "stuff",
+          "count": 200
+        },
+        {
+          "word": "little",
+          "count": 199
+        },
+        {
+          "word": "blake",
+          "count": 180
+        },
+        {
+          "word": "week",
+          "count": 171
+        },
+        {
+          "word": "question",
+          "count": 163
+        },
+        {
+          "word": "world",
+          "count": 162
+        },
+        {
+          "word": "take",
+          "count": 162
+        },
+        {
+          "word": "market",
+          "count": 162
+        },
+        {
+          "word": "government",
+          "count": 157
+        },
+        {
+          "word": "everyone",
+          "count": 154
+        },
+        {
+          "word": "first",
+          "count": 150
+        },
+        {
+          "word": "long",
+          "count": 150
+        },
+        {
+          "word": "next",
+          "count": 150
+        },
+        {
+          "word": "only",
+          "count": 146
+        },
+        {
+          "word": "again",
+          "count": 140
+        },
+        {
+          "word": "probably",
+          "count": 137
+        },
+        {
+          "word": "work",
+          "count": 136
+        }
+      ]
+    },
+    "2016": {
+      "episodes": 39,
+      "words": 343354,
+      "top_topics": [
+        {
+          "topic": "Altcoins",
+          "count": 1145
+        },
+        {
+          "topic": "Mining",
+          "count": 377
+        },
+        {
+          "topic": "Scams",
+          "count": 325
+        },
+        {
+          "topic": "Privacy",
+          "count": 287
+        },
+        {
+          "topic": "Regulation",
+          "count": 274
+        },
+        {
+          "topic": "Coinbase",
+          "count": 257
+        },
+        {
+          "topic": "Trump",
+          "count": 179
+        },
+        {
+          "topic": "China",
+          "count": 155
+        },
+        {
+          "topic": "Adoption",
+          "count": 81
+        },
+        {
+          "topic": "Inflation",
+          "count": 80
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 3984
+        },
+        {
+          "word": "money",
+          "count": 1139
+        },
+        {
+          "word": "good",
+          "count": 972
+        },
+        {
+          "word": "time",
+          "count": 815
+        },
+        {
+          "word": "ethereum",
+          "count": 794
+        },
+        {
+          "word": "where",
+          "count": 738
+        },
+        {
+          "word": "things",
+          "count": 705
+        },
+        {
+          "word": "coin",
+          "count": 690
+        },
+        {
+          "word": "were",
+          "count": 688
+        },
+        {
+          "word": "maybe",
+          "count": 634
+        },
+        {
+          "word": "only",
+          "count": 572
+        },
+        {
+          "word": "need",
+          "count": 538
+        },
+        {
+          "word": "doing",
+          "count": 509
+        },
+        {
+          "word": "little",
+          "count": 504
+        },
+        {
+          "word": "blockchain",
+          "count": 500
+        },
+        {
+          "word": "again",
+          "count": 489
+        },
+        {
+          "word": "down",
+          "count": 488
+        },
+        {
+          "word": "world",
+          "count": 471
+        },
+        {
+          "word": "probably",
+          "count": 471
+        },
+        {
+          "word": "government",
+          "count": 458
+        },
+        {
+          "word": "week",
+          "count": 454
+        },
+        {
+          "word": "first",
+          "count": 442
+        },
+        {
+          "word": "everyone",
+          "count": 441
+        },
+        {
+          "word": "doesn",
+          "count": 416
+        },
+        {
+          "word": "take",
+          "count": 405
+        },
+        {
+          "word": "show",
+          "count": 403
+        },
+        {
+          "word": "stuff",
+          "count": 403
+        },
+        {
+          "word": "great",
+          "count": 398
+        },
+        {
+          "word": "point",
+          "count": 396
+        },
+        {
+          "word": "price",
+          "count": 394
+        }
+      ]
+    },
+    "2017": {
+      "episodes": 47,
+      "words": 444797,
+      "top_topics": [
+        {
+          "topic": "Altcoins",
+          "count": 983
+        },
+        {
+          "topic": "Mining",
+          "count": 696
+        },
+        {
+          "topic": "Regulation",
+          "count": 627
+        },
+        {
+          "topic": "Scams",
+          "count": 520
+        },
+        {
+          "topic": "China",
+          "count": 486
+        },
+        {
+          "topic": "Coinbase",
+          "count": 300
+        },
+        {
+          "topic": "ETF",
+          "count": 248
+        },
+        {
+          "topic": "Tether",
+          "count": 130
+        },
+        {
+          "topic": "Lightning",
+          "count": 126
+        },
+        {
+          "topic": "Trump",
+          "count": 114
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 5943
+        },
+        {
+          "word": "money",
+          "count": 1331
+        },
+        {
+          "word": "time",
+          "count": 1316
+        },
+        {
+          "word": "good",
+          "count": 1039
+        },
+        {
+          "word": "things",
+          "count": 1006
+        },
+        {
+          "word": "price",
+          "count": 987
+        },
+        {
+          "word": "where",
+          "count": 913
+        },
+        {
+          "word": "maybe",
+          "count": 869
+        },
+        {
+          "word": "were",
+          "count": 812
+        },
+        {
+          "word": "coin",
+          "count": 707
+        },
+        {
+          "word": "down",
+          "count": 694
+        },
+        {
+          "word": "need",
+          "count": 675
+        },
+        {
+          "word": "only",
+          "count": 675
+        },
+        {
+          "word": "week",
+          "count": 656
+        },
+        {
+          "word": "stuff",
+          "count": 649
+        },
+        {
+          "word": "little",
+          "count": 640
+        },
+        {
+          "word": "point",
+          "count": 619
+        },
+        {
+          "word": "world",
+          "count": 611
+        },
+        {
+          "word": "market",
+          "count": 582
+        },
+        {
+          "word": "ethereum",
+          "count": 581
+        },
+        {
+          "word": "take",
+          "count": 572
+        },
+        {
+          "word": "doing",
+          "count": 571
+        },
+        {
+          "word": "everyone",
+          "count": 560
+        },
+        {
+          "word": "hard",
+          "count": 553
+        },
+        {
+          "word": "saying",
+          "count": 551
+        },
+        {
+          "word": "next",
+          "count": 545
+        },
+        {
+          "word": "again",
+          "count": 544
+        },
+        {
+          "word": "okay",
+          "count": 528
+        },
+        {
+          "word": "probably",
+          "count": 523
+        },
+        {
+          "word": "show",
+          "count": 518
+        }
+      ]
+    },
+    "2018": {
+      "episodes": 20,
+      "words": 165182,
+      "top_topics": [
+        {
+          "topic": "Mining",
+          "count": 368
+        },
+        {
+          "topic": "Altcoins",
+          "count": 275
+        },
+        {
+          "topic": "Regulation",
+          "count": 228
+        },
+        {
+          "topic": "China",
+          "count": 170
+        },
+        {
+          "topic": "Scams",
+          "count": 154
+        },
+        {
+          "topic": "Coinbase",
+          "count": 134
+        },
+        {
+          "topic": "Lightning",
+          "count": 131
+        },
+        {
+          "topic": "Tether",
+          "count": 118
+        },
+        {
+          "topic": "ETF",
+          "count": 82
+        },
+        {
+          "topic": "Adoption",
+          "count": 81
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 2422
+        },
+        {
+          "word": "money",
+          "count": 566
+        },
+        {
+          "word": "time",
+          "count": 423
+        },
+        {
+          "word": "things",
+          "count": 417
+        },
+        {
+          "word": "good",
+          "count": 368
+        },
+        {
+          "word": "where",
+          "count": 360
+        },
+        {
+          "word": "price",
+          "count": 359
+        },
+        {
+          "word": "down",
+          "count": 346
+        },
+        {
+          "word": "world",
+          "count": 336
+        },
+        {
+          "word": "again",
+          "count": 335
+        },
+        {
+          "word": "were",
+          "count": 334
+        },
+        {
+          "word": "crypto",
+          "count": 318
+        },
+        {
+          "word": "market",
+          "count": 294
+        },
+        {
+          "word": "only",
+          "count": 281
+        },
+        {
+          "word": "years",
+          "count": 271
+        },
+        {
+          "word": "need",
+          "count": 255
+        },
+        {
+          "word": "maybe",
+          "count": 254
+        },
+        {
+          "word": "mining",
+          "count": 251
+        },
+        {
+          "word": "network",
+          "count": 246
+        },
+        {
+          "word": "little",
+          "count": 240
+        },
+        {
+          "word": "week",
+          "count": 233
+        },
+        {
+          "word": "stuff",
+          "count": 231
+        },
+        {
+          "word": "question",
+          "count": 228
+        },
+        {
+          "word": "great",
+          "count": 220
+        },
+        {
+          "word": "doing",
+          "count": 215
+        },
+        {
+          "word": "show",
+          "count": 211
+        },
+        {
+          "word": "guys",
+          "count": 211
+        },
+        {
+          "word": "cash",
+          "count": 211
+        },
+        {
+          "word": "blockchain",
+          "count": 210
+        },
+        {
+          "word": "take",
+          "count": 208
+        }
+      ]
+    },
+    "2019": {
+      "episodes": 18,
+      "words": 123102,
+      "top_topics": [
+        {
+          "topic": "Lightning",
+          "count": 175
+        },
+        {
+          "topic": "Mining",
+          "count": 159
+        },
+        {
+          "topic": "Altcoins",
+          "count": 139
+        },
+        {
+          "topic": "Coinbase",
+          "count": 108
+        },
+        {
+          "topic": "China",
+          "count": 104
+        },
+        {
+          "topic": "Scams",
+          "count": 99
+        },
+        {
+          "topic": "Regulation",
+          "count": 87
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 59
+        },
+        {
+          "topic": "PayPal",
+          "count": 49
+        },
+        {
+          "topic": "Trump",
+          "count": 38
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 1590
+        },
+        {
+          "word": "good",
+          "count": 497
+        },
+        {
+          "word": "money",
+          "count": 404
+        },
+        {
+          "word": "coin",
+          "count": 394
+        },
+        {
+          "word": "crypto",
+          "count": 375
+        },
+        {
+          "word": "maybe",
+          "count": 325
+        },
+        {
+          "word": "things",
+          "count": 292
+        },
+        {
+          "word": "time",
+          "count": 292
+        },
+        {
+          "word": "world",
+          "count": 248
+        },
+        {
+          "word": "where",
+          "count": 236
+        },
+        {
+          "word": "down",
+          "count": 214
+        },
+        {
+          "word": "were",
+          "count": 201
+        },
+        {
+          "word": "network",
+          "count": 199
+        },
+        {
+          "word": "stuff",
+          "count": 199
+        },
+        {
+          "word": "great",
+          "count": 197
+        },
+        {
+          "word": "need",
+          "count": 197
+        },
+        {
+          "word": "price",
+          "count": 190
+        },
+        {
+          "word": "little",
+          "count": 189
+        },
+        {
+          "word": "week",
+          "count": 184
+        },
+        {
+          "word": "facebook",
+          "count": 184
+        },
+        {
+          "word": "pretty",
+          "count": 177
+        },
+        {
+          "word": "lightning",
+          "count": 175
+        },
+        {
+          "word": "everyone",
+          "count": 169
+        },
+        {
+          "word": "saying",
+          "count": 168
+        },
+        {
+          "word": "take",
+          "count": 166
+        },
+        {
+          "word": "whatever",
+          "count": 166
+        },
+        {
+          "word": "theo",
+          "count": 162
+        },
+        {
+          "word": "probably",
+          "count": 159
+        },
+        {
+          "word": "only",
+          "count": 158
+        },
+        {
+          "word": "sort",
+          "count": 158
+        }
+      ]
+    },
+    "2020": {
+      "episodes": 34,
+      "words": 280709,
+      "top_topics": [
+        {
+          "topic": "Lightning",
+          "count": 288
+        },
+        {
+          "topic": "China",
+          "count": 284
+        },
+        {
+          "topic": "Mining",
+          "count": 212
+        },
+        {
+          "topic": "Scams",
+          "count": 210
+        },
+        {
+          "topic": "Altcoins",
+          "count": 204
+        },
+        {
+          "topic": "Regulation",
+          "count": 147
+        },
+        {
+          "topic": "Inflation",
+          "count": 137
+        },
+        {
+          "topic": "PayPal",
+          "count": 133
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 121
+        },
+        {
+          "topic": "Coinbase",
+          "count": 107
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 3423
+        },
+        {
+          "word": "money",
+          "count": 966
+        },
+        {
+          "word": "good",
+          "count": 880
+        },
+        {
+          "word": "time",
+          "count": 860
+        },
+        {
+          "word": "where",
+          "count": 688
+        },
+        {
+          "word": "things",
+          "count": 617
+        },
+        {
+          "word": "maybe",
+          "count": 610
+        },
+        {
+          "word": "world",
+          "count": 596
+        },
+        {
+          "word": "were",
+          "count": 564
+        },
+        {
+          "word": "down",
+          "count": 523
+        },
+        {
+          "word": "price",
+          "count": 480
+        },
+        {
+          "word": "little",
+          "count": 479
+        },
+        {
+          "word": "stuff",
+          "count": 474
+        },
+        {
+          "word": "everyone",
+          "count": 432
+        },
+        {
+          "word": "week",
+          "count": 422
+        },
+        {
+          "word": "crypto",
+          "count": 418
+        },
+        {
+          "word": "great",
+          "count": 416
+        },
+        {
+          "word": "again",
+          "count": 412
+        },
+        {
+          "word": "need",
+          "count": 401
+        },
+        {
+          "word": "probably",
+          "count": 394
+        },
+        {
+          "word": "saying",
+          "count": 364
+        },
+        {
+          "word": "network",
+          "count": 363
+        },
+        {
+          "word": "next",
+          "count": 353
+        },
+        {
+          "word": "market",
+          "count": 350
+        },
+        {
+          "word": "whatever",
+          "count": 349
+        },
+        {
+          "word": "sort",
+          "count": 347
+        },
+        {
+          "word": "only",
+          "count": 346
+        },
+        {
+          "word": "josh",
+          "count": 341
+        },
+        {
+          "word": "always",
+          "count": 324
+        },
+        {
+          "word": "doing",
+          "count": 322
+        }
+      ]
+    },
+    "2021": {
+      "episodes": 63,
+      "words": 588536,
+      "top_topics": [
+        {
+          "topic": "Altcoins",
+          "count": 889
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 779
+        },
+        {
+          "topic": "Mining",
+          "count": 742
+        },
+        {
+          "topic": "NFT",
+          "count": 715
+        },
+        {
+          "topic": "Regulation",
+          "count": 497
+        },
+        {
+          "topic": "China",
+          "count": 477
+        },
+        {
+          "topic": "Scams",
+          "count": 418
+        },
+        {
+          "topic": "Lightning",
+          "count": 408
+        },
+        {
+          "topic": "Inflation",
+          "count": 296
+        },
+        {
+          "topic": "Adoption",
+          "count": 225
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 8297
+        },
+        {
+          "word": "money",
+          "count": 1787
+        },
+        {
+          "word": "time",
+          "count": 1618
+        },
+        {
+          "word": "good",
+          "count": 1528
+        },
+        {
+          "word": "where",
+          "count": 1431
+        },
+        {
+          "word": "things",
+          "count": 1221
+        },
+        {
+          "word": "down",
+          "count": 1103
+        },
+        {
+          "word": "maybe",
+          "count": 1059
+        },
+        {
+          "word": "were",
+          "count": 1040
+        },
+        {
+          "word": "stuff",
+          "count": 968
+        },
+        {
+          "word": "world",
+          "count": 939
+        },
+        {
+          "word": "coin",
+          "count": 927
+        },
+        {
+          "word": "crypto",
+          "count": 924
+        },
+        {
+          "word": "everyone",
+          "count": 841
+        },
+        {
+          "word": "need",
+          "count": 835
+        },
+        {
+          "word": "little",
+          "count": 832
+        },
+        {
+          "word": "price",
+          "count": 806
+        },
+        {
+          "word": "great",
+          "count": 786
+        },
+        {
+          "word": "week",
+          "count": 730
+        },
+        {
+          "word": "josh",
+          "count": 727
+        },
+        {
+          "word": "probably",
+          "count": 724
+        },
+        {
+          "word": "next",
+          "count": 723
+        },
+        {
+          "word": "take",
+          "count": 722
+        },
+        {
+          "word": "first",
+          "count": 718
+        },
+        {
+          "word": "again",
+          "count": 717
+        },
+        {
+          "word": "doing",
+          "count": 715
+        },
+        {
+          "word": "years",
+          "count": 700
+        },
+        {
+          "word": "network",
+          "count": 700
+        },
+        {
+          "word": "around",
+          "count": 672
+        },
+        {
+          "word": "only",
+          "count": 670
+        }
+      ]
+    },
+    "2022": {
+      "episodes": 57,
+      "words": 574304,
+      "top_topics": [
+        {
+          "topic": "Altcoins",
+          "count": 663
+        },
+        {
+          "topic": "Mining",
+          "count": 589
+        },
+        {
+          "topic": "Regulation",
+          "count": 568
+        },
+        {
+          "topic": "NFT",
+          "count": 515
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 491
+        },
+        {
+          "topic": "Scams",
+          "count": 400
+        },
+        {
+          "topic": "Lightning",
+          "count": 395
+        },
+        {
+          "topic": "Coinbase",
+          "count": 214
+        },
+        {
+          "topic": "El Salvador",
+          "count": 213
+        },
+        {
+          "topic": "Inflation",
+          "count": 194
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 7403
+        },
+        {
+          "word": "money",
+          "count": 1928
+        },
+        {
+          "word": "time",
+          "count": 1666
+        },
+        {
+          "word": "good",
+          "count": 1597
+        },
+        {
+          "word": "where",
+          "count": 1396
+        },
+        {
+          "word": "things",
+          "count": 1274
+        },
+        {
+          "word": "down",
+          "count": 1235
+        },
+        {
+          "word": "maybe",
+          "count": 1210
+        },
+        {
+          "word": "were",
+          "count": 1094
+        },
+        {
+          "word": "stuff",
+          "count": 967
+        },
+        {
+          "word": "crypto",
+          "count": 928
+        },
+        {
+          "word": "great",
+          "count": 899
+        },
+        {
+          "word": "price",
+          "count": 886
+        },
+        {
+          "word": "need",
+          "count": 829
+        },
+        {
+          "word": "only",
+          "count": 801
+        },
+        {
+          "word": "again",
+          "count": 750
+        },
+        {
+          "word": "little",
+          "count": 749
+        },
+        {
+          "word": "week",
+          "count": 745
+        },
+        {
+          "word": "everyone",
+          "count": 721
+        },
+        {
+          "word": "doing",
+          "count": 712
+        },
+        {
+          "word": "probably",
+          "count": 706
+        },
+        {
+          "word": "saying",
+          "count": 705
+        },
+        {
+          "word": "whatever",
+          "count": 702
+        },
+        {
+          "word": "world",
+          "count": 686
+        },
+        {
+          "word": "coin",
+          "count": 667
+        },
+        {
+          "word": "next",
+          "count": 647
+        },
+        {
+          "word": "didn",
+          "count": 642
+        },
+        {
+          "word": "market",
+          "count": 634
+        },
+        {
+          "word": "work",
+          "count": 628
+        },
+        {
+          "word": "around",
+          "count": 624
+        }
+      ]
+    },
+    "2023": {
+      "episodes": 50,
+      "words": 443478,
+      "top_topics": [
+        {
+          "topic": "Regulation",
+          "count": 690
+        },
+        {
+          "topic": "Altcoins",
+          "count": 530
+        },
+        {
+          "topic": "ETF",
+          "count": 448
+        },
+        {
+          "topic": "Mining",
+          "count": 396
+        },
+        {
+          "topic": "NFT",
+          "count": 347
+        },
+        {
+          "topic": "Scams",
+          "count": 337
+        },
+        {
+          "topic": "Lightning",
+          "count": 290
+        },
+        {
+          "topic": "FTX",
+          "count": 283
+        },
+        {
+          "topic": "Binance",
+          "count": 261
+        },
+        {
+          "topic": "Coinbase",
+          "count": 245
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 5679
+        },
+        {
+          "word": "money",
+          "count": 1547
+        },
+        {
+          "word": "time",
+          "count": 1309
+        },
+        {
+          "word": "where",
+          "count": 1184
+        },
+        {
+          "word": "good",
+          "count": 1163
+        },
+        {
+          "word": "things",
+          "count": 1136
+        },
+        {
+          "word": "maybe",
+          "count": 975
+        },
+        {
+          "word": "down",
+          "count": 886
+        },
+        {
+          "word": "were",
+          "count": 864
+        },
+        {
+          "word": "crypto",
+          "count": 768
+        },
+        {
+          "word": "price",
+          "count": 748
+        },
+        {
+          "word": "again",
+          "count": 655
+        },
+        {
+          "word": "obviously",
+          "count": 616
+        },
+        {
+          "word": "world",
+          "count": 614
+        },
+        {
+          "word": "need",
+          "count": 601
+        },
+        {
+          "word": "saying",
+          "count": 583
+        },
+        {
+          "word": "week",
+          "count": 580
+        },
+        {
+          "word": "little",
+          "count": 579
+        },
+        {
+          "word": "stuff",
+          "count": 568
+        },
+        {
+          "word": "great",
+          "count": 565
+        },
+        {
+          "word": "years",
+          "count": 548
+        },
+        {
+          "word": "market",
+          "count": 546
+        },
+        {
+          "word": "whatever",
+          "count": 545
+        },
+        {
+          "word": "everyone",
+          "count": 543
+        },
+        {
+          "word": "only",
+          "count": 530
+        },
+        {
+          "word": "always",
+          "count": 524
+        },
+        {
+          "word": "around",
+          "count": 519
+        },
+        {
+          "word": "probably",
+          "count": 518
+        },
+        {
+          "word": "josh",
+          "count": 504
+        },
+        {
+          "word": "next",
+          "count": 502
+        }
+      ]
+    },
+    "2024": {
+      "episodes": 47,
+      "words": 403231,
+      "top_topics": [
+        {
+          "topic": "Mining",
+          "count": 357
+        },
+        {
+          "topic": "Trump",
+          "count": 355
+        },
+        {
+          "topic": "Altcoins",
+          "count": 329
+        },
+        {
+          "topic": "Regulation",
+          "count": 300
+        },
+        {
+          "topic": "ETF",
+          "count": 298
+        },
+        {
+          "topic": "Scams",
+          "count": 274
+        },
+        {
+          "topic": "AI",
+          "count": 163
+        },
+        {
+          "topic": "Privacy",
+          "count": 150
+        },
+        {
+          "topic": "NFT",
+          "count": 147
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 141
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 4948
+        },
+        {
+          "word": "money",
+          "count": 1482
+        },
+        {
+          "word": "time",
+          "count": 1279
+        },
+        {
+          "word": "where",
+          "count": 1231
+        },
+        {
+          "word": "things",
+          "count": 1083
+        },
+        {
+          "word": "good",
+          "count": 1071
+        },
+        {
+          "word": "were",
+          "count": 840
+        },
+        {
+          "word": "down",
+          "count": 774
+        },
+        {
+          "word": "maybe",
+          "count": 767
+        },
+        {
+          "word": "josh",
+          "count": 731
+        },
+        {
+          "word": "price",
+          "count": 681
+        },
+        {
+          "word": "crypto",
+          "count": 668
+        },
+        {
+          "word": "saying",
+          "count": 664
+        },
+        {
+          "word": "great",
+          "count": 644
+        },
+        {
+          "word": "market",
+          "count": 628
+        },
+        {
+          "word": "coin",
+          "count": 613
+        },
+        {
+          "word": "world",
+          "count": 610
+        },
+        {
+          "word": "years",
+          "count": 608
+        },
+        {
+          "word": "stuff",
+          "count": 599
+        },
+        {
+          "word": "again",
+          "count": 592
+        },
+        {
+          "word": "week",
+          "count": 569
+        },
+        {
+          "word": "everyone",
+          "count": 547
+        },
+        {
+          "word": "probably",
+          "count": 538
+        },
+        {
+          "word": "satoshi",
+          "count": 534
+        },
+        {
+          "word": "always",
+          "count": 524
+        },
+        {
+          "word": "need",
+          "count": 521
+        },
+        {
+          "word": "around",
+          "count": 499
+        },
+        {
+          "word": "little",
+          "count": 491
+        },
+        {
+          "word": "whatever",
+          "count": 489
+        },
+        {
+          "word": "interesting",
+          "count": 478
+        }
+      ]
+    },
+    "2025": {
+      "episodes": 40,
+      "words": 374196,
+      "top_topics": [
+        {
+          "topic": "Trump",
+          "count": 481
+        },
+        {
+          "topic": "Scams",
+          "count": 369
+        },
+        {
+          "topic": "Altcoins",
+          "count": 289
+        },
+        {
+          "topic": "AI",
+          "count": 223
+        },
+        {
+          "topic": "Regulation",
+          "count": 221
+        },
+        {
+          "topic": "Mining",
+          "count": 217
+        },
+        {
+          "topic": "Tether",
+          "count": 175
+        },
+        {
+          "topic": "Privacy",
+          "count": 171
+        },
+        {
+          "topic": "Elon Musk",
+          "count": 152
+        },
+        {
+          "topic": "Coinbase",
+          "count": 134
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 4951
+        },
+        {
+          "word": "money",
+          "count": 1390
+        },
+        {
+          "word": "time",
+          "count": 1183
+        },
+        {
+          "word": "where",
+          "count": 1058
+        },
+        {
+          "word": "things",
+          "count": 906
+        },
+        {
+          "word": "good",
+          "count": 896
+        },
+        {
+          "word": "maybe",
+          "count": 819
+        },
+        {
+          "word": "were",
+          "count": 764
+        },
+        {
+          "word": "down",
+          "count": 732
+        },
+        {
+          "word": "whatever",
+          "count": 673
+        },
+        {
+          "word": "world",
+          "count": 644
+        },
+        {
+          "word": "coin",
+          "count": 631
+        },
+        {
+          "word": "price",
+          "count": 605
+        },
+        {
+          "word": "saying",
+          "count": 595
+        },
+        {
+          "word": "again",
+          "count": 567
+        },
+        {
+          "word": "music",
+          "count": 567
+        },
+        {
+          "word": "stuff",
+          "count": 535
+        },
+        {
+          "word": "need",
+          "count": 528
+        },
+        {
+          "word": "crypto",
+          "count": 517
+        },
+        {
+          "word": "market",
+          "count": 512
+        },
+        {
+          "word": "week",
+          "count": 500
+        },
+        {
+          "word": "everyone",
+          "count": 499
+        },
+        {
+          "word": "years",
+          "count": 485
+        },
+        {
+          "word": "trump",
+          "count": 481
+        },
+        {
+          "word": "always",
+          "count": 470
+        },
+        {
+          "word": "great",
+          "count": 466
+        },
+        {
+          "word": "little",
+          "count": 455
+        },
+        {
+          "word": "government",
+          "count": 451
+        },
+        {
+          "word": "probably",
+          "count": 432
+        },
+        {
+          "word": "doesn",
+          "count": 417
+        }
+      ]
+    },
+    "2026": {
+      "episodes": 9,
+      "words": 61496,
+      "top_topics": [
+        {
+          "topic": "AI",
+          "count": 105
+        },
+        {
+          "topic": "Trump",
+          "count": 66
+        },
+        {
+          "topic": "Tether",
+          "count": 48
+        },
+        {
+          "topic": "Regulation",
+          "count": 45
+        },
+        {
+          "topic": "Scams",
+          "count": 41
+        },
+        {
+          "topic": "Binance",
+          "count": 33
+        },
+        {
+          "topic": "Coinbase",
+          "count": 32
+        },
+        {
+          "topic": "Stablecoin",
+          "count": 32
+        },
+        {
+          "topic": "Mining",
+          "count": 30
+        },
+        {
+          "topic": "Privacy",
+          "count": 29
+        }
+      ],
+      "top_words": [
+        {
+          "word": "bitcoin",
+          "count": 827
+        },
+        {
+          "word": "money",
+          "count": 242
+        },
+        {
+          "word": "time",
+          "count": 192
+        },
+        {
+          "word": "things",
+          "count": 161
+        },
+        {
+          "word": "where",
+          "count": 145
+        },
+        {
+          "word": "good",
+          "count": 140
+        },
+        {
+          "word": "down",
+          "count": 140
+        },
+        {
+          "word": "were",
+          "count": 139
+        },
+        {
+          "word": "maybe",
+          "count": 138
+        },
+        {
+          "word": "crypto",
+          "count": 137
+        },
+        {
+          "word": "great",
+          "count": 131
+        },
+        {
+          "word": "again",
+          "count": 130
+        },
+        {
+          "word": "price",
+          "count": 126
+        },
+        {
+          "word": "world",
+          "count": 124
+        },
+        {
+          "word": "whatever",
+          "count": 115
+        },
+        {
+          "word": "coin",
+          "count": 104
+        },
+        {
+          "word": "market",
+          "count": 99
+        },
+        {
+          "word": "company",
+          "count": 93
+        },
+        {
+          "word": "week",
+          "count": 91
+        },
+        {
+          "word": "says",
+          "count": 89
+        },
+        {
+          "word": "stuff",
+          "count": 89
+        },
+        {
+          "word": "issue",
+          "count": 86
+        },
+        {
+          "word": "last",
+          "count": 85
+        },
+        {
+          "word": "story",
+          "count": 85
+        },
+        {
+          "word": "interesting",
+          "count": 82
+        },
+        {
+          "word": "seems",
+          "count": 79
+        },
+        {
+          "word": "saying",
+          "count": 79
+        },
+        {
+          "word": "probably",
+          "count": 75
+        },
+        {
+          "word": "next",
+          "count": 74
+        },
+        {
+          "word": "everyone",
+          "count": 74
+        }
+      ]
+    }
+  },
+  "topic_timeline": {
+    "ETF": {
+      "2013": 0,
+      "2014": 4,
+      "2015": 24,
+      "2016": 39,
+      "2017": 248,
+      "2018": 82,
+      "2019": 16,
+      "2020": 6,
+      "2021": 133,
+      "2022": 158,
+      "2023": 448,
+      "2024": 298,
+      "2025": 61,
+      "2026": 5
+    },
+    "Mt. Gox": {
+      "2013": 1,
+      "2014": 49,
+      "2015": 32,
+      "2016": 25,
+      "2017": 41,
+      "2018": 22,
+      "2019": 23,
+      "2020": 0,
+      "2021": 58,
+      "2022": 115,
+      "2023": 18,
+      "2024": 54,
+      "2025": 4,
+      "2026": 3
+    },
+    "Silk Road": {
+      "2013": 18,
+      "2014": 123,
+      "2015": 39,
+      "2016": 31,
+      "2017": 19,
+      "2018": 6,
+      "2019": 5,
+      "2020": 25,
+      "2021": 71,
+      "2022": 40,
+      "2023": 33,
+      "2024": 41,
+      "2025": 25,
+      "2026": 0
+    },
+    "Lightning": {
+      "2013": 0,
+      "2014": 1,
+      "2015": 1,
+      "2016": 52,
+      "2017": 126,
+      "2018": 131,
+      "2019": 175,
+      "2020": 288,
+      "2021": 408,
+      "2022": 395,
+      "2023": 290,
+      "2024": 134,
+      "2025": 115,
+      "2026": 8
+    },
+    "Mining": {
+      "2013": 28,
+      "2014": 227,
+      "2015": 80,
+      "2016": 377,
+      "2017": 696,
+      "2018": 368,
+      "2019": 159,
+      "2020": 212,
+      "2021": 742,
+      "2022": 589,
+      "2023": 396,
+      "2024": 357,
+      "2025": 217,
+      "2026": 30
+    },
+    "Regulation": {
+      "2013": 6,
+      "2014": 471,
+      "2015": 135,
+      "2016": 274,
+      "2017": 627,
+      "2018": 228,
+      "2019": 87,
+      "2020": 147,
+      "2021": 497,
+      "2022": 568,
+      "2023": 690,
+      "2024": 300,
+      "2025": 221,
+      "2026": 45
+    },
+    "China": {
+      "2013": 0,
+      "2014": 99,
+      "2015": 53,
+      "2016": 155,
+      "2017": 486,
+      "2018": 170,
+      "2019": 104,
+      "2020": 284,
+      "2021": 477,
+      "2022": 179,
+      "2023": 93,
+      "2024": 77,
+      "2025": 116,
+      "2026": 2
+    },
+    "El Salvador": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 0,
+      "2021": 222,
+      "2022": 213,
+      "2023": 93,
+      "2024": 92,
+      "2025": 64,
+      "2026": 5
+    },
+    "Tether": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 4,
+      "2016": 4,
+      "2017": 130,
+      "2018": 118,
+      "2019": 3,
+      "2020": 14,
+      "2021": 92,
+      "2022": 31,
+      "2023": 51,
+      "2024": 12,
+      "2025": 175,
+      "2026": 48
+    },
+    "DeFi": {
+      "2013": 0,
+      "2014": 2,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 15,
+      "2021": 55,
+      "2022": 41,
+      "2023": 28,
+      "2024": 16,
+      "2025": 9,
+      "2026": 2
+    },
+    "NFT": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 3,
+      "2020": 0,
+      "2021": 715,
+      "2022": 515,
+      "2023": 347,
+      "2024": 147,
+      "2025": 70,
+      "2026": 3
+    },
+    "Halving": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 2,
+      "2016": 10,
+      "2017": 2,
+      "2018": 4,
+      "2019": 0,
+      "2020": 30,
+      "2021": 11,
+      "2022": 27,
+      "2023": 29,
+      "2024": 30,
+      "2025": 14,
+      "2026": 0
+    },
+    "FTX": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 0,
+      "2021": 12,
+      "2022": 170,
+      "2023": 283,
+      "2024": 125,
+      "2025": 71,
+      "2026": 15
+    },
+    "Binance": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 14,
+      "2019": 28,
+      "2020": 45,
+      "2021": 54,
+      "2022": 112,
+      "2023": 261,
+      "2024": 47,
+      "2025": 62,
+      "2026": 33
+    },
+    "Coinbase": {
+      "2013": 0,
+      "2014": 77,
+      "2015": 48,
+      "2016": 257,
+      "2017": 300,
+      "2018": 134,
+      "2019": 108,
+      "2020": 107,
+      "2021": 164,
+      "2022": 214,
+      "2023": 245,
+      "2024": 125,
+      "2025": 134,
+      "2026": 32
+    },
+    "MicroStrategy": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 14,
+      "2021": 14,
+      "2022": 7,
+      "2023": 7,
+      "2024": 56,
+      "2025": 64,
+      "2026": 4
+    },
+    "Elon Musk": {
+      "2013": 0,
+      "2014": 25,
+      "2015": 7,
+      "2016": 13,
+      "2017": 21,
+      "2018": 6,
+      "2019": 59,
+      "2020": 121,
+      "2021": 779,
+      "2022": 491,
+      "2023": 174,
+      "2024": 141,
+      "2025": 152,
+      "2026": 9
+    },
+    "Trump": {
+      "2013": 0,
+      "2014": 1,
+      "2015": 6,
+      "2016": 179,
+      "2017": 114,
+      "2018": 17,
+      "2019": 38,
+      "2020": 104,
+      "2021": 40,
+      "2022": 68,
+      "2023": 30,
+      "2024": 355,
+      "2025": 481,
+      "2026": 66
+    },
+    "Iran": {
+      "2013": 0,
+      "2014": 2,
+      "2015": 1,
+      "2016": 1,
+      "2017": 4,
+      "2018": 11,
+      "2019": 3,
+      "2020": 31,
+      "2021": 5,
+      "2022": 14,
+      "2023": 3,
+      "2024": 18,
+      "2025": 39,
+      "2026": 22
+    },
+    "Stablecoin": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 3,
+      "2019": 16,
+      "2020": 7,
+      "2021": 38,
+      "2022": 84,
+      "2023": 31,
+      "2024": 32,
+      "2025": 78,
+      "2026": 32
+    },
+    "Privacy": {
+      "2013": 0,
+      "2014": 112,
+      "2015": 40,
+      "2016": 287,
+      "2017": 108,
+      "2018": 19,
+      "2019": 33,
+      "2020": 68,
+      "2021": 137,
+      "2022": 143,
+      "2023": 73,
+      "2024": 150,
+      "2025": 171,
+      "2026": 29
+    },
+    "Quantum": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 2,
+      "2017": 5,
+      "2018": 9,
+      "2019": 6,
+      "2020": 2,
+      "2021": 5,
+      "2022": 0,
+      "2023": 8,
+      "2024": 5,
+      "2025": 91,
+      "2026": 17
+    },
+    "AI": {
+      "2013": 0,
+      "2014": 3,
+      "2015": 0,
+      "2016": 13,
+      "2017": 3,
+      "2018": 11,
+      "2019": 15,
+      "2020": 13,
+      "2021": 6,
+      "2022": 45,
+      "2023": 192,
+      "2024": 163,
+      "2025": 223,
+      "2026": 105
+    },
+    "PayPal": {
+      "2013": 1,
+      "2014": 141,
+      "2015": 4,
+      "2016": 77,
+      "2017": 35,
+      "2018": 8,
+      "2019": 49,
+      "2020": 133,
+      "2021": 118,
+      "2022": 78,
+      "2023": 71,
+      "2024": 16,
+      "2025": 12,
+      "2026": 1
+    },
+    "Ordinals": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 0,
+      "2017": 0,
+      "2018": 0,
+      "2019": 0,
+      "2020": 0,
+      "2021": 0,
+      "2022": 0,
+      "2023": 163,
+      "2024": 46,
+      "2025": 34,
+      "2026": 0
+    },
+    "Layer 2": {
+      "2013": 0,
+      "2014": 0,
+      "2015": 0,
+      "2016": 2,
+      "2017": 3,
+      "2018": 1,
+      "2019": 2,
+      "2020": 0,
+      "2021": 38,
+      "2022": 11,
+      "2023": 41,
+      "2024": 25,
+      "2025": 37,
+      "2026": 3
+    },
+    "Altcoins": {
+      "2013": 2,
+      "2014": 395,
+      "2015": 142,
+      "2016": 1145,
+      "2017": 983,
+      "2018": 275,
+      "2019": 139,
+      "2020": 204,
+      "2021": 889,
+      "2022": 663,
+      "2023": 530,
+      "2024": 329,
+      "2025": 289,
+      "2026": 28
+    },
+    "Scams": {
+      "2013": 0,
+      "2014": 70,
+      "2015": 53,
+      "2016": 325,
+      "2017": 520,
+      "2018": 154,
+      "2019": 99,
+      "2020": 210,
+      "2021": 418,
+      "2022": 400,
+      "2023": 337,
+      "2024": 274,
+      "2025": 369,
+      "2026": 41
+    },
+    "Adoption": {
+      "2013": 1,
+      "2014": 126,
+      "2015": 61,
+      "2016": 81,
+      "2017": 83,
+      "2018": 81,
+      "2019": 34,
+      "2020": 44,
+      "2021": 225,
+      "2022": 126,
+      "2023": 84,
+      "2024": 63,
+      "2025": 63,
+      "2026": 5
+    },
+    "Inflation": {
+      "2013": 1,
+      "2014": 85,
+      "2015": 27,
+      "2016": 80,
+      "2017": 76,
+      "2018": 42,
+      "2019": 21,
+      "2020": 137,
+      "2021": 296,
+      "2022": 194,
+      "2023": 164,
+      "2024": 133,
+      "2025": 111,
+      "2026": 18
+    }
+  }
+}
