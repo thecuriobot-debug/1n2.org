@@ -21,13 +21,15 @@ TR_DIR = Path.home() / 'Sites' / '1n2.org' / 'bitcoingroup-audio' / 'transcripts
 DATA_JSON = BASE / 'data.json'
 GUESTS_JSON = BASE / 'guests.json'
 PRICES_JSON = BASE / 'btc-prices.json'
+ENV_FILE = Path.home() / 'Sites' / '1n2.org' / 'thunt-data-labs' / '.env'
+YT_DESC_CACHE = BASE / 'yt-descriptions.json'
 
 C='\033[96m';G='\033[92m';Y='\033[93m';R='\033[91m';B='\033[1m';D='\033[2m';X='\033[0m'
 
 SPEAKER_NORMALIZE = {
     'Thomas': 'Thomas Hunt', 'Hunt': 'Thomas Hunt', 'Mad Bitcoins': 'Thomas Hunt',
     'Adam': 'Adam Meister', 'Tone': 'Tone Vays', 'Tom Vays': 'Tone Vays',
-    'Gabriel': 'Gabriel DeVine', 'Vin': 'Gabriel DeVine', 'Vine': 'Gabriel DeVine',
+    'Gabriel': 'Gabriel DeVine',
     'Chris': 'Chris Ellis', 'Dan': 'Dan Eve', 'Dan Eave': 'Dan Eve',
     'Ben': 'Ben Arc', 'Ben Arck': 'Ben Arc', 'Josh': 'Josh Scigala',
     'Victoria': 'Victoria Jones', 'Jimmy': 'Jimmy Song',
@@ -42,7 +44,86 @@ def load_all():
     ep_map = {e['num']: e for e in episodes['episodes']}
     guests = json.load(open(GUESTS_JSON))
     prices = json.load(open(PRICES_JSON)) if PRICES_JSON.exists() else {}
-    return ep_map, guests, prices
+    yt_descs = fetch_yt_descriptions(ep_map)
+    return ep_map, guests, prices, yt_descs
+
+def get_yt_api_key():
+    if ENV_FILE.exists():
+        for line in open(ENV_FILE):
+            if line.startswith('YOUTUBE_API_KEY='):
+                return line.strip().split('=', 1)[1]
+    return None
+
+def fetch_yt_descriptions(ep_map):
+    """Fetch YouTube descriptions for guest verification. Cache results."""
+    if YT_DESC_CACHE.exists():
+        import os, time
+        age = time.time() - os.path.getmtime(YT_DESC_CACHE)
+        if age < 86400 * 7:  # cache for 7 days
+            return json.load(open(YT_DESC_CACHE))
+    
+    api_key = get_yt_api_key()
+    if not api_key:
+        print(f'   No YouTube API key found')
+        return {}
+    
+    import requests
+    print(f'{B}📺 Fetching YouTube descriptions...{X}')
+    descs = {}
+    
+    # Collect all video IDs
+    vid_ids = []
+    vid_to_ep = {}
+    for num, ep in ep_map.items():
+        yt = ep.get('yt', {})
+        for channel in ['wcn', 'mb']:
+            vid = yt.get(channel, {}).get('vid') if isinstance(yt.get(channel), dict) else yt.get(channel)
+            if vid and vid not in vid_to_ep:
+                vid_ids.append(vid)
+                vid_to_ep[vid] = num
+    
+    # Fetch in batches of 50
+    fetched = 0
+    for i in range(0, len(vid_ids), 50):
+        batch = vid_ids[i:i+50]
+        ids_str = ','.join(batch)
+        try:
+            url = f'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={ids_str}&key={api_key}'
+            r = requests.get(url, timeout=15)
+            if r.status_code == 200:
+                data = r.json()
+                for item in data.get('items', []):
+                    vid = item['id']
+                    desc = item.get('snippet', {}).get('description', '')
+                    ep_num = vid_to_ep.get(vid)
+                    if ep_num:
+                        descs[str(ep_num)] = desc
+                        fetched += 1
+            else:
+                print(f'   YouTube API error: {r.status_code}')
+                break
+            import time; time.sleep(0.5)
+        except Exception as e:
+            print(f'   YouTube API error: {e}')
+            break
+    
+    if descs:
+        json.dump(descs, open(YT_DESC_CACHE, 'w'), indent=2)
+        print(f'   Fetched {fetched} YouTube descriptions, cached')
+    return descs
+
+def get_yt_guests(desc_text):
+    """Extract guest names from YouTube description."""
+    names = set()
+    if not desc_text:
+        return names
+    for name in SPEAKER_NORMALIZE.values():
+        if name.lower() in desc_text.lower() or any(
+            re.search(r'\b' + re.escape(part) + r'\b', desc_text, re.IGNORECASE)
+            for part in name.split() if len(part) > 3
+        ):
+            names.add(name)
+    return names
 
 def get_price(prices, date_str, offset=0):
     try:
@@ -110,7 +191,7 @@ MAGIC_8_NEGATIVE = ["don't count on it","my reply is no","my sources say no",
 MAGIC_8_NEUTRAL = ['reply hazy','ask again later','better not tell you','cannot predict now',
     'concentrate and ask again']
 
-def extract_verified_predictions(text, ep_num, ep_date, ep_data, intro_guests):
+def extract_verified_predictions(text, ep_num, ep_date, ep_data, intro_guests, yt_guests):
     """Extract predictions with verification levels."""
     predictions = []
     has_yt = bool(ep_data.get('yt', {}).get('wcn') or ep_data.get('yt', {}).get('mb'))
@@ -169,26 +250,30 @@ def extract_verified_predictions(text, ep_num, ep_date, ep_data, intro_guests):
         
         for name_key in all_names:
             nk_lower = name_key.lower()
-            if nk_lower in sent.lower() or (i > 0 and nk_lower in sentences[i-1].lower()):
+            # Use word boundary matching to avoid substring false positives
+            # e.g. 'vin' matching 'moving', 'convincing'
+            nk_pattern = r'\b' + re.escape(nk_lower) + r'\b'
+            if re.search(nk_pattern, sent.lower()) or (i > 0 and re.search(nk_pattern, sentences[i-1].lower())):
                 canonical = SPEAKER_NORMALIZE.get(name_key, name_key)
                 if canonical == 'Magic 8-Ball':
                     continue
                 
                 # Determine verification level
                 # Level 3: Name appears RIGHT BEFORE their prediction in the prediction segment
-                name_in_sent = nk_lower in sent.lower()
+                name_in_sent = bool(re.search(r'\b' + re.escape(nk_lower) + r'\b', sent.lower()))
                 # Level 2: Name confirmed in show introduction
                 name_in_intro = canonical in intro_guests
-                # Level 1: YouTube video exists
+                # Level 1: Name found in YouTube description
+                name_in_yt = canonical in yt_guests
                 
                 if name_in_sent:
                     level = 3
                 elif name_in_intro:
                     level = 2
-                elif has_yt:
+                elif name_in_yt:
                     level = 1
                 else:
-                    level = 0  # unverified
+                    level = 0  # unverified — skip
                 
                 # Skip if we already have this person for this episode
                 if any(p['speaker'] == canonical and p['episode'] == ep_num for p in predictions):
@@ -231,7 +316,8 @@ def main():
     print(f'   ★★  Level 2: Confirmed in show intro')
     print(f'   ★   Level 1: YouTube video exists\n')
     
-    ep_map, guests_data, prices = load_all()
+    ep_map, guests_data, prices, yt_descs = load_all()
+    print(f'   {len(yt_descs)} YouTube descriptions loaded')
     
     all_preds = []
     for f in sorted(TR_DIR.glob('TBG-*.txt')):
@@ -249,7 +335,8 @@ def main():
                 break
         
         intro_guests = get_intro_guests(text)
-        preds = extract_verified_predictions(body, num, date, ep, intro_guests)
+        yt_guests = get_yt_guests(yt_descs.get(str(num), ''))
+        preds = extract_verified_predictions(body, num, date, ep, intro_guests, yt_guests)
         
         # Evaluate each prediction
         for p in preds:
@@ -291,8 +378,11 @@ def main():
     print(f'{"─"*80}')
     
     by_person = defaultdict(lambda: {'preds': [], 'correct': 0, 'wrong': 0, 'weighted_score': 0, 'stars': 0})
+    unknown_count = 0
     for p in all_preds:
-        if p['speaker'] == 'Unknown': continue
+        if p['speaker'] == 'Unknown':
+            unknown_count += 1
+            continue
         s = by_person[p['speaker']]
         s['preds'].append(p)
         s['stars'] += p['verification']
@@ -320,6 +410,8 @@ def main():
         star_str = '★' * round(avg_stars) + '☆' * (3 - round(avg_stars))
         print(f'{medal:<5} {name:<20} {stats["correct"]:>4} {stats["wrong"]:>4} {ac}{acc:>7.1f}%{X} {star_str:>6} {ev:>6}')
     
+    print(f'\n   {D}+ {unknown_count} unattributed predictions not shown{X}')
+    
     # Show recent predictions with stars
     print(f'\n{B}📝 RECENT PREDICTIONS WITH VERIFICATION{X}')
     recent = [p for p in all_preds if p.get('correct') is not None and p['speaker'] != 'Unknown'][-20:]
@@ -333,6 +425,7 @@ def main():
     output = {
         'generated': datetime.now().isoformat(),
         'total': len(all_preds),
+        'unknown_count': unknown_count,
         'by_level': {str(k): dict(v) for k, v in by_level.items()},
         'leaderboard': [{'name': n, 'correct': s['correct'], 'wrong': s['wrong'],
                         'accuracy': round(a, 1), 'evaluated': e, 'avg_stars': round(avg, 1)}
@@ -390,7 +483,7 @@ def build_verified_page(data):
         ev = s['correct'] + s['wrong']
         acc = f'{s["correct"]/ev*100:.0f}%' if ev else '—'
         stars_display = '★' * level + '☆' * (3 - level) if level > 0 else '☆☆☆'
-        labels = ['Unverified', 'YouTube exists', 'In show intro', 'Named in prediction']
+        labels = ['Unverified', 'In YouTube description', 'In show intro', 'Named in prediction']
         vb += f'<div style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:12px;align-items:center"><span style="color:var(--amber);min-width:50px">{stars_display}</span><span style="min-width:150px;font-size:.9rem">{labels[level]}</span><span style="font-family:JetBrains Mono,monospace;font-size:.85rem;color:var(--muted)">{s["total"]} predictions · {ev} verified · {acc}</span></div>'
 
     html = f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -421,6 +514,7 @@ td{{padding:8px 10px;border-bottom:1px solid rgba(30,41,59,.3);font-size:.9rem}}
 {vb}
 <h2>🏆 Leaderboard (min 5 verified predictions)</h2>
 <table><tr><th>#</th><th>Speaker</th><th>✅</th><th>❌</th><th>Accuracy</th><th>Confidence</th><th>Verified</th></tr>{lb_rows}</table>
+<p style="font-size:.82rem;color:var(--muted);margin-top:4px">+ {data.get('unknown_count', 0):,} unattributed predictions not shown</p>
 <h2>📝 Recent Verified Predictions</h2>
 {recent_html}
 </div></body></html>'''

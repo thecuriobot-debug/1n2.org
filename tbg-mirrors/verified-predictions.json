@@ -1,26 +1,27 @@
 {
-  "generated": "2026-03-10T19:30:40.445212",
-  "total": 567,
+  "generated": "2026-03-10T19:44:37.553021",
+  "total": 471,
+  "unknown_count": 0,
   "by_level": {
     "3": {
-      "correct": 217,
-      "wrong": 206,
-      "total": 424
+      "correct": 180,
+      "wrong": 190,
+      "total": 371
     },
     "1": {
-      "correct": 39,
-      "wrong": 43,
-      "total": 82
-    },
-    "2": {
-      "correct": 35,
-      "wrong": 26,
-      "total": 61
+      "correct": 20,
+      "wrong": 18,
+      "total": 38
     },
     "0": {
-      "correct": 0,
-      "wrong": 0,
-      "total": 0
+      "correct": 4,
+      "wrong": 1,
+      "total": 5
+    },
+    "2": {
+      "correct": 32,
+      "wrong": 25,
+      "total": 57
     }
   },
   "leaderboard": [
@@ -34,19 +35,35 @@
     },
     {
       "name": "Martin Wismeijer",
-      "correct": 10,
+      "correct": 8,
       "wrong": 3,
-      "accuracy": 76.9,
-      "evaluated": 13,
-      "avg_stars": 2.3
+      "accuracy": 72.7,
+      "evaluated": 11,
+      "avg_stars": 2.2
     },
     {
       "name": "Victoria Jones",
       "correct": 22,
-      "wrong": 9,
-      "accuracy": 71.0,
-      "evaluated": 31,
+      "wrong": 10,
+      "accuracy": 68.8,
+      "evaluated": 32,
       "avg_stars": 2.8
+    },
+    {
+      "name": "Gabriel DeVine",
+      "correct": 4,
+      "wrong": 2,
+      "accuracy": 66.7,
+      "evaluated": 6,
+      "avg_stars": 2.2
+    },
+    {
+      "name": "Thomas Hunt",
+      "correct": 19,
+      "wrong": 15,
+      "accuracy": 55.9,
+      "evaluated": 34,
+      "avg_stars": 2.2
     },
     {
       "name": "Jimmy Song",
@@ -62,31 +79,15 @@
       "wrong": 4,
       "accuracy": 55.6,
       "evaluated": 9,
-      "avg_stars": 2.6
-    },
-    {
-      "name": "Gabriel DeVine",
-      "correct": 51,
-      "wrong": 41,
-      "accuracy": 55.4,
-      "evaluated": 92,
-      "avg_stars": 2.3
+      "avg_stars": 2.4
     },
     {
       "name": "Josh Scigala",
-      "correct": 43,
-      "wrong": 35,
-      "accuracy": 55.1,
-      "evaluated": 78,
+      "correct": 38,
+      "wrong": 37,
+      "accuracy": 50.7,
+      "evaluated": 75,
       "avg_stars": 2.7
-    },
-    {
-      "name": "Thomas Hunt",
-      "correct": 19,
-      "wrong": 17,
-      "accuracy": 52.8,
-      "evaluated": 36,
-      "avg_stars": 2.2
     },
     {
       "name": "Magic 8-Ball",
@@ -98,43 +99,27 @@
     },
     {
       "name": "Tone Vays",
-      "correct": 8,
-      "wrong": 8,
-      "accuracy": 50.0,
-      "evaluated": 16,
-      "avg_stars": 2.6
-    },
-    {
-      "name": "Theo Goodman",
-      "correct": 3,
-      "wrong": 3,
-      "accuracy": 50.0,
-      "evaluated": 6,
-      "avg_stars": 2.3
-    },
-    {
-      "name": "Dan Eve",
-      "correct": 35,
-      "wrong": 52,
-      "accuracy": 40.2,
-      "evaluated": 87,
-      "avg_stars": 2.4
-    },
-    {
-      "name": "Ben Arc",
-      "correct": 12,
-      "wrong": 23,
-      "accuracy": 34.3,
-      "evaluated": 35,
+      "correct": 5,
+      "wrong": 7,
+      "accuracy": 41.7,
+      "evaluated": 12,
       "avg_stars": 2.7
     },
     {
-      "name": "Chris Ellis",
-      "correct": 2,
-      "wrong": 9,
-      "accuracy": 18.2,
-      "evaluated": 11,
-      "avg_stars": 1.5
+      "name": "Dan Eve",
+      "correct": 36,
+      "wrong": 55,
+      "accuracy": 39.6,
+      "evaluated": 91,
+      "avg_stars": 2.5
+    },
+    {
+      "name": "Ben Arc",
+      "correct": 17,
+      "wrong": 27,
+      "accuracy": 38.6,
+      "evaluated": 44,
+      "avg_stars": 2.8
     }
   ],
   "predictions": [
@@ -151,32 +136,6 @@
       "price_7d": 40709.59,
       "change_pct": -13.62,
       "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "That was a really impressive moment it really did seem up until then that she was convincing people to leave the United States so that they could get their Bitcoin freedom i was watching it live with dovey and Derek and dovey kept shipping in every t",
-      "episode": 6,
-      "date": "2021-10-11",
-      "type": "guest_call",
-      "price_at": 56010.9,
-      "price_7d": 64283.97,
-      "change_pct": 14.77,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "You're living costs so much higher than that",
-      "episode": 25,
-      "date": "2014-04-12",
-      "type": "guest_call",
-      "price_at": 427.6,
-      "price_7d": 498.51,
-      "change_pct": 16.58,
-      "correct": true
     },
     {
       "speaker": "Gabriel DeVine",
@@ -202,19 +161,6 @@
       "price_at": 728.51,
       "price_7d": 729.42,
       "change_pct": 0.12,
-      "correct": true
-    },
-    {
-      "speaker": "Martin Wismeijer",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Let's move on to the exit question, the price of Bitcoin next week, higher or lower, END Martina",
-      "episode": 119,
-      "date": "2016-12-03",
-      "type": "guest_call",
-      "price_at": 766.39,
-      "price_7d": 767.91,
-      "change_pct": 0.2,
       "correct": true
     },
     {
@@ -296,19 +242,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Just a rhyme, half of a rhyme, moving on to issue two, issue two, cloud bleed, cloud flare, the internet security company best known for those messages that pop up when you visit a website that's under a DOS attack has discovered an interesting bug",
-      "episode": 130,
-      "date": "2017-02-24",
-      "type": "guest_call",
-      "price_at": 1149.05,
-      "price_7d": 1264.32,
-      "change_pct": 10.03,
-      "correct": true
-    },
-    {
       "speaker": "Thomas Hunt",
       "direction": "higher",
       "verification": 3,
@@ -324,7 +257,7 @@
     {
       "speaker": "Roger Ver",
       "direction": "lower",
-      "verification": 1,
+      "verification": 0,
       "context": "Well, I still I still I mean, I still like him, but I think it's just very sad the way that this has all come down",
       "episode": 133,
       "date": "2017-03-18",
@@ -333,19 +266,6 @@
       "price_7d": 969.44,
       "change_pct": -5.2,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Moving on to issue two altcoin madness, the price of a theory of dash, Monero, and many other altcoins climbed higher this week, breaking their all time highs and creating new records almost daily with Ethereum, seeming to rise an average of 33% per ",
-      "episode": 133,
-      "date": "2017-03-18",
-      "type": "guest_call",
-      "price_at": 1022.6,
-      "price_7d": 969.44,
-      "change_pct": -5.2,
-      "correct": false
     },
     {
       "speaker": "Thomas Hunt",
@@ -429,20 +349,7 @@
       "speaker": "Gabriel DeVine",
       "direction": "higher",
       "verification": 3,
-      "context": "And I always go with higher moving on to issue two issue two European retail giant Alza to accept Bitcoin",
-      "episode": 142,
-      "date": "2017-05-19",
-      "type": "guest_call",
-      "price_at": 2040.18,
-      "price_7d": 2052.43,
-      "change_pct": 0.6,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "But if we have a stalemate, and no one knows what the hell is going on, then no one is moving any Bitcoin and it's even a bigger supply shortage, which can again move Bitcoin even higher, which creates all kinds of game theory scenarios of holy shit ",
+      "context": "Higher or lower, let's go to Gabriel D",
       "episode": 145,
       "date": "2017-06-09",
       "type": "guest_call",
@@ -493,7 +400,7 @@
     {
       "speaker": "Gabriel DeVine",
       "direction": "higher",
-      "verification": 2,
+      "verification": 1,
       "context": "Vine higher or lower",
       "episode": 154,
       "date": "2017-08-11",
@@ -521,19 +428,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "I mean, I think that Bitcoin moves up anti-fragile-y, like Nessim and Jimmy were talking about",
-      "episode": 155,
-      "date": "2017-08-18",
-      "type": "guest_call",
-      "price_at": 4150.45,
-      "price_7d": 4352.3,
-      "change_pct": 4.86,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Moving on to the exit question, the price of Bitcoin, this time next week, higher or lower, Jimmy's home",
       "episode": 155,
       "date": "2017-08-18",
       "type": "guest_call",
@@ -582,32 +476,6 @@
       "correct": false
     },
     {
-      "speaker": "Tone Vays",
-      "direction": "lower",
-      "verification": 2,
-      "context": "Lower",
-      "episode": 157,
-      "date": "2017-09-01",
-      "type": "guest_call",
-      "price_at": 4573.8,
-      "price_7d": 4335.13,
-      "change_pct": -5.22,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 2,
-      "context": "Specifically, the SEC was talking about first Bitcoin capital, who stock went up 6,000% after they announced that they were flirting with the idea of an ICO",
-      "episode": 157,
-      "date": "2017-09-01",
-      "type": "guest_call",
-      "price_at": 4573.8,
-      "price_7d": 4335.13,
-      "change_pct": -5.22,
-      "correct": false
-    },
-    {
       "speaker": "Blake Anderson",
       "direction": "higher",
       "verification": 3,
@@ -631,19 +499,6 @@
       "price_at": 6339.86,
       "price_7d": 7780.91,
       "change_pct": 22.73,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "If Tether is the lifeblood, maybe we could see if we could live without blood moving on to the exit question, the price of Bitcoin this time next week, higher or lower, Jeffrey Jones higher, always higher, man, I was higher",
-      "episode": 165,
-      "date": "2017-11-17",
-      "type": "guest_call",
-      "price_at": 7780.91,
-      "price_7d": 8754.69,
-      "change_pct": 12.51,
       "correct": true
     },
     {
@@ -673,19 +528,6 @@
       "correct": false
     },
     {
-      "speaker": "Tone Vays",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So all these old coins and I don't think that's going to last I think Bitcoin is getting ready to bust out maybe making a push for nine maybe nine and a half and I think some of those profits from the old coins are going to about to go back into Bitc",
-      "episode": 166,
-      "date": "2017-11-24",
-      "type": "guest_call",
-      "price_at": 8754.69,
-      "price_7d": 10912.73,
-      "change_pct": 24.65,
-      "correct": true
-    },
-    {
       "speaker": "Thomas Hunt",
       "direction": "higher",
       "verification": 2,
@@ -701,20 +543,7 @@
     {
       "speaker": "Gabriel DeVine",
       "direction": "higher",
-      "verification": 3,
-      "context": "Higher higher is always a good bet especially the way things been going lately every night I'm like I'll sell a little bit and I'll wait till tomorrow and then it's higher oh no moving on I just like to thank everyone for giving us a thumbs up in the",
-      "episode": 167,
-      "date": "2017-12-09",
-      "type": "guest_call",
-      "price_at": 15059.6,
-      "price_7d": 19065.71,
-      "change_pct": 26.6,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 2,
+      "verification": 0,
       "context": "Vine, higher or lower",
       "episode": 169,
       "date": "2017-12-23",
@@ -736,19 +565,6 @@
       "price_7d": 11097.21,
       "change_pct": 29.5,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 3,
-      "context": "It has to be forced because I'm clearly the greatest predictor of all predictors having predicted that it would go down, but then hedging saying that I always say it will go up",
-      "episode": 177,
-      "date": "2018-05-25",
-      "type": "guest_call",
-      "price_at": 7355.06,
-      "price_7d": 7643.26,
-      "change_pct": 3.92,
-      "correct": false
     },
     {
       "speaker": "Thomas Hunt",
@@ -816,19 +632,6 @@
       "correct": false
     },
     {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 3,
-      "context": "I'm Christian Rootsle, higher or lower",
-      "episode": 202,
-      "date": "2019-07-12",
-      "type": "guest_call",
-      "price_at": 11363.97,
-      "price_7d": 10759.42,
-      "change_pct": -5.32,
-      "correct": false
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "don't count on it",
@@ -856,7 +659,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
       "context": "Moving on to the exit question, Josh Gagalla, the price of Bitcoin this time next week, higher or lower",
@@ -867,32 +670,6 @@
       "price_7d": 10365.56,
       "change_pct": -1.2,
       "correct": false
-    },
-    {
-      "speaker": "Josh Scigala",
-      "direction": "lower",
-      "verification": 2,
-      "context": "I get it feeling it's going to be a little bit lower actually",
-      "episode": 205,
-      "date": "2019-09-06",
-      "type": "guest_call",
-      "price_at": 10491.96,
-      "price_7d": 10365.56,
-      "change_pct": -1.2,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "She's been moving on to the exit question, forced prediction, the price of Bitcoin, this time next week, then from Wales, higher or lower",
-      "episode": 207,
-      "date": "2019-12-20",
-      "type": "guest_call",
-      "price_at": 7159.47,
-      "price_7d": 7316.23,
-      "change_pct": 2.19,
-      "correct": true
     },
     {
       "speaker": "Dan Eve",
@@ -935,32 +712,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 1,
-      "context": "The community says down, I say sideways up",
-      "episode": 211,
-      "date": "2020-01-31",
-      "type": "guest_call",
-      "price_at": 9384.45,
-      "price_7d": 9898.25,
-      "change_pct": 5.48,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Moving on to the exit question, the price of Bitcoin this time next week, higher or lower crypto raptor",
-      "episode": 212,
-      "date": "2020-02-07",
-      "type": "guest_call",
-      "price_at": 9898.25,
-      "price_7d": 9905.43,
-      "change_pct": 0.07,
-      "correct": true
-    },
-    {
       "speaker": "Thomas Hunt",
       "direction": "higher",
       "verification": 2,
@@ -988,7 +739,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "or this halving and although we're going to see, yeah, like I said, some volatility, I think things will be on the up, especially as Ben was saying, perfectly timed, fed, just printing money out of their ass",
@@ -1009,19 +760,6 @@
       "episode": 217,
       "date": "2020-04-03",
       "type": "magic_8_ball",
-      "price_at": 6875.95,
-      "price_7d": 6887.6,
-      "change_pct": 0.17,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "You can't eat a Bitcoin, moving on to the exit question, the price of Bitcoin this time next week will be higher or lower than",
-      "episode": 217,
-      "date": "2020-04-03",
-      "type": "guest_call",
       "price_at": 6875.95,
       "price_7d": 6887.6,
       "change_pct": 0.17,
@@ -1076,19 +814,6 @@
       "episode": 221,
       "date": "2020-05-01",
       "type": "magic_8_ball",
-      "price_at": 8981.11,
-      "price_7d": 9541.13,
-      "change_pct": 6.24,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So the Bitcoin price is going up by crazy blah blah blah and for every one of those articles that they write that could continue to drive the price up I think as we start to talk so heavily about the price it's only right that we should check in with",
-      "episode": 221,
-      "date": "2020-05-01",
-      "type": "guest_call",
       "price_at": 8981.11,
       "price_7d": 9541.13,
       "change_pct": 6.24,
@@ -1161,7 +886,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "is going to go up and down I especially interested in what Dan was saying about the hash rate going down previously the price of Bitcoin has followed the hash rate but the hash rate has always gone up as I read an article earlier today on the show wi",
@@ -1199,19 +924,6 @@
       "price_7d": 9359.18,
       "change_pct": -1.22,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So, like you say, just having, when you get, when you just hear Bitcoin in media or in a film or it pops up in conversation on the radio or some politician mentions it in some book, it's still an impression",
-      "episode": 226,
-      "date": "2020-06-19",
-      "type": "guest_call",
-      "price_at": 9359.18,
-      "price_7d": 9007.14,
-      "change_pct": -3.76,
-      "correct": false
     },
     {
       "speaker": "Josh Scigala",
@@ -1254,7 +966,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "y anything you can't put that as a a cube into a machine and the machine will recognize it and say activate whatever because you put the cube in so it's been great for that and it is nice to have something something positive to promote something posi",
@@ -1280,7 +992,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "question and remember you will be competing against the predictor of predictor's prognosticator of prognosticators the bitcoin magic eight ball kyle torpy will the price of bitcoin be higher this time next week next week oh let's hope in for next yea",
@@ -1303,26 +1015,13 @@
       "price_at": 11301.57,
       "price_7d": 11367.65,
       "change_pct": 0.58,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So we're going to be going this time next week higher or lower than our",
-      "episode": 233,
-      "date": "2020-10-30",
-      "type": "guest_call",
-      "price_at": 13803.41,
-      "price_7d": 14838.16,
-      "change_pct": 7.5,
       "correct": true
     },
     {
       "speaker": "Josh Scigala",
       "direction": "higher",
-      "verification": 3,
-      "context": "That'll be right up against the American election will see if we get your record Josh could go all your thoughts on next week higher or lower",
+      "verification": 2,
+      "context": "So we're going to be going this time next week higher or lower than our",
       "episode": 233,
       "date": "2020-10-30",
       "type": "guest_call",
@@ -1371,7 +1070,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "Exit question the price of Bitcoin this time next week higher or lower Josh Kagala I think it's going to go lower next week yeah Ben Arck price uh yeah higher or lower higher hi baby you in the chat what do you think let us know in the chat higher or",
@@ -1382,19 +1081,6 @@
       "price_7d": 18814.98,
       "change_pct": -1.78,
       "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "And we were slowly moving up",
-      "episode": 239,
-      "date": "2020-12-11",
-      "type": "guest_call",
-      "price_at": 18814.98,
-      "price_7d": 23844.72,
-      "change_pct": 26.73,
-      "correct": true
     },
     {
       "speaker": "Ben Arc",
@@ -1436,7 +1122,7 @@
       "correct": false
     },
     {
-      "speaker": "Chris Ellis",
+      "speaker": "Josh Scigala",
       "direction": "lower",
       "verification": 3,
       "context": "again and uh we can answer any question that you might want to ask donald trump uh we're still waiting if you guys want to give us a thumbs up down below uh we have 72 likes we're halfway turrets our goal of 150 uh so we're doing good uh give us a li",
@@ -1545,7 +1231,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "lower",
       "verification": 3,
       "context": "ossible they could be liable because google is allowing these things to happen and the spam tools that I have as a youtuber are incredibly poor like I would just like to ban the word telegram like sorry I like telegram I use it but every time someone",
@@ -1638,19 +1324,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Steph and Consilla, the price of Bitcoin this time next week, higher or lower",
-      "episode": 255,
-      "date": "2021-04-23",
-      "type": "guest_call",
-      "price_at": 50115.99,
-      "price_7d": 57843.16,
-      "change_pct": 15.42,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "very doubtful",
@@ -1663,19 +1336,6 @@
       "price_7d": 58943.13,
       "change_pct": 1.9,
       "correct": false
-    },
-    {
-      "speaker": "Tone Vays",
-      "direction": "higher",
-      "verification": 3,
-      "context": "ou know it's worth a lot more than what it is at now so yeah Travis Erig higher or lower yeah bullish where you sit at the end I I don't know much about technical analysis I don't stare at charts but you have institutions clamoring for an opportunity",
-      "episode": 256,
-      "date": "2021-04-30",
-      "type": "guest_call",
-      "price_at": 57843.16,
-      "price_7d": 58943.13,
-      "change_pct": 1.9,
-      "correct": true
     },
     {
       "speaker": "Magic 8-Ball",
@@ -1745,36 +1405,10 @@
       "correct": false
     },
     {
-      "speaker": "Theo Goodman",
-      "direction": "lower",
-      "verification": 1,
-      "context": "I'm going to say it's going down, very down",
-      "episode": 260,
-      "date": "2021-05-28",
-      "type": "guest_call",
-      "price_at": 34611.58,
-      "price_7d": 35538.4,
-      "change_pct": 2.68,
-      "correct": false
-    },
-    {
       "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
       "context": "Josh Shagalla, the price this time next week, higher or lower",
-      "episode": 260,
-      "date": "2021-05-28",
-      "type": "guest_call",
-      "price_at": 34611.58,
-      "price_7d": 35538.4,
-      "change_pct": 2.68,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Issue two Elon Musk reveals why he's backing Dozecoin over Bitcoin, Ethereum and others after his surprise call for upgrade ideas, sends its price sharply higher",
       "episode": 260,
       "date": "2021-05-28",
       "type": "guest_call",
@@ -1798,7 +1432,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
       "context": "lars really won't be worth anything everyone will be a millionaire even garbage men uh Josh Shigala higher or lower um I you know the funny thing is here crypto player in the chat says too many negative news I choose lower well you know the thing is ",
@@ -1809,19 +1443,6 @@
       "price_7d": 35515.38,
       "change_pct": -0.07,
       "correct": false
-    },
-    {
-      "speaker": "Josh Scigala",
-      "direction": "lower",
-      "verification": 2,
-      "context": "it's a Ponzi scheme well first of all you're reading the same news as crypto player obviously because this is pretty nag it's pretty down on me but what what a kind of a ridiculous thing is that because there will be a crash into inevitable of course",
-      "episode": 262,
-      "date": "2021-06-11",
-      "type": "guest_call",
-      "price_at": 35541.78,
-      "price_7d": 35515.38,
-      "change_pct": -0.07,
-      "correct": true
     },
     {
       "speaker": "Magic 8-Ball",
@@ -1905,9 +1526,9 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Josh Scigala",
       "direction": "higher",
-      "verification": 3,
+      "verification": 1,
       "context": "yeah I reckon we might see hi I mean Elon tweeted that he owns Bitcoin so it's higher isn't there's no way the ball is going to agree with this all this positivity going around the ball is colored black for a reason here we go will the price of Bitco",
       "episode": 268,
       "date": "2021-07-23",
@@ -1958,7 +1579,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "Moving on to the exit question competing against the predictor of predictor prognosticator of prognosticators, the magical Bitcoin 8-ball, Dan Eve the price of Bitcoin this time next week, higher or lower",
@@ -1988,19 +1609,6 @@
       "direction": "higher",
       "verification": 1,
       "context": "It will definitely be higher",
-      "episode": 271,
-      "date": "2021-08-13",
-      "type": "guest_call",
-      "price_at": 47102.03,
-      "price_7d": 48867.87,
-      "change_pct": 3.75,
-      "correct": true
-    },
-    {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "And the contrarian says higher, Joshua Shagala",
       "episode": 271,
       "date": "2021-08-13",
       "type": "guest_call",
@@ -2063,19 +1671,6 @@
       "correct": true
     },
     {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So, yeah, higher Joshua, she got",
-      "episode": 273,
-      "date": "2021-08-28",
-      "type": "guest_call",
-      "price_at": 48794.26,
-      "price_7d": 51784.16,
-      "change_pct": 6.13,
-      "correct": true
-    },
-    {
       "speaker": "Gabriel DeVine",
       "direction": "higher",
       "verification": 3,
@@ -2115,7 +1710,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Josh Scigala",
       "direction": "lower",
       "verification": 3,
       "context": "wable energy production there are parts of the world including huge patches of air at desert land in which the sun shines brightly and the wind blows fiercely but without Bitcoin it is not profitable to capture that energy because Bitcoin can be mine",
@@ -2169,33 +1764,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "The Miami Herald is serious about popping up ads",
-      "episode": 283,
-      "date": "2021-11-12",
-      "type": "guest_call",
-      "price_at": 64409.56,
-      "price_7d": 59769.66,
-      "change_pct": -7.2,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So it's good that they accept Bitcoin and all and that they're giving up Bitcoin",
-      "episode": 284,
-      "date": "2021-11-19",
-      "type": "guest_call",
-      "price_at": 59769.66,
-      "price_7d": 54805.03,
-      "change_pct": -8.31,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "iving we're the only game in town uh we also want you to check out the WCN Clips YouTube channel on YouTube it's got 83 subscribers you could be one of them it's shorter versions of this show so it's also great if you want to send it to a friend uh i",
@@ -2234,19 +1803,6 @@
       "correct": true
     },
     {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 1,
-      "context": "And now the Bitcoin predictor ball will the price be higher this time next week",
-      "episode": 287,
-      "date": "2021-12-09",
-      "type": "guest_call",
-      "price_at": 47191.14,
-      "price_7d": 46164.14,
-      "change_pct": -2.18,
-      "correct": false
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "as i see it yes",
@@ -2261,36 +1817,10 @@
       "correct": false
     },
     {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "exit question we're going to do the Bitcoin price because there's not really a price topic this week so you're competing against the greatest predictor of Bitcoin price in the history of Bitcoin the Bitcoin predictor ball Joshua Sugala will the Bitco",
-      "episode": 291,
-      "date": "2022-01-14",
-      "type": "guest_call",
-      "price_at": 43088.74,
-      "price_7d": 35075.92,
-      "change_pct": -18.6,
-      "correct": false
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "A little bit okay Dan Eve and tell us in the chat to what you guys think at home Dan Eve higher or lower",
-      "episode": 291,
-      "date": "2022-01-14",
-      "type": "guest_call",
-      "price_at": 43088.74,
-      "price_7d": 35075.92,
-      "change_pct": -18.6,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "As I see it yes as I see yes the ball has spoken the price will be higher this time next week moving on to issues",
       "episode": 291,
       "date": "2022-01-14",
       "type": "guest_call",
@@ -2324,19 +1854,6 @@
       "price_7d": 41418.21,
       "change_pct": 8.47,
       "correct": true
-    },
-    {
-      "speaker": "Thomas Hunt",
-      "direction": "lower",
-      "verification": 3,
-      "context": "But with regards to NFTs, it would be quite funny if he starts trying to lay down the law and then suddenly Hunter Biden releases his R as NFTs and he's like, God damn it Hunter, you stupid son of a bitch",
-      "episode": 293,
-      "date": "2022-01-28",
-      "type": "guest_call",
-      "price_at": 38184.86,
-      "price_7d": 41418.21,
-      "change_pct": 8.47,
-      "correct": false
     },
     {
       "speaker": "Dan Eve",
@@ -2392,7 +1909,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "know about the article well acceptance is a major step moving on to the exit question forced prediction against the magical predictor ball predictor of predictors Joshua Shagalla will the price of Bitcoin be higher or lower this time next week okay I",
@@ -2436,19 +1953,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "Dan Eave, the price of Bitcoin, this time next week, higher or lower",
-      "episode": 296,
-      "date": "2022-02-18",
-      "type": "guest_call",
-      "price_at": 40107.12,
-      "price_7d": 39134.83,
-      "change_pct": -2.42,
-      "correct": false
-    },
-    {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Negativity from Dan reading the room of the Ukraine crisis, Christian Routel, higher or lower",
       "episode": 296,
       "date": "2022-02-18",
       "type": "guest_call",
@@ -2509,19 +2013,6 @@
       "price_7d": 42235.02,
       "change_pct": 8.84,
       "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "I was just a lot of people like I stake my whole life on that ball and this is this is in this is this is investment advice as well so how do you think that kid got FTX the company all that money the ball secret moving on to issue two will Biden's ex",
-      "episode": 299,
-      "date": "2022-03-11",
-      "type": "guest_call",
-      "price_at": 38805.53,
-      "price_7d": 42235.02,
-      "change_pct": 8.84,
-      "correct": true
     },
     {
       "speaker": "Magic 8-Ball",
@@ -2604,32 +2095,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "If it showed up in the order book, it'd be a complete nightmare",
-      "episode": 306,
-      "date": "2022-05-06",
-      "type": "guest_call",
-      "price_at": 35469.21,
-      "price_7d": 30050.31,
-      "change_pct": -15.28,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "We've seen like less of these like $1 million Bitcoin predictions because we're in a semi bay on the run up to the next on the next harvining",
-      "episode": 309,
-      "date": "2022-05-27",
-      "type": "guest_call",
-      "price_at": 29013.53,
-      "price_7d": 29845.48,
-      "change_pct": 2.87,
-      "correct": true
-    },
-    {
       "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
@@ -2682,58 +2147,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Bitcoin like the internet and social media benefits from network effects where more adoption spurts higher value and incentive for additional take up causing more adoption and higher value",
-      "episode": 311,
-      "date": "2022-06-10",
-      "type": "guest_call",
-      "price_at": 28389.49,
-      "price_7d": 18954.25,
-      "change_pct": -33.23,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "At least we can wait for the halving and then it will eventually go back up",
-      "episode": 312,
-      "date": "2022-06-17",
-      "type": "guest_call",
-      "price_at": 18954.25,
-      "price_7d": 21474.19,
-      "change_pct": 13.29,
-      "correct": true
-    },
-    {
-      "speaker": "Martin Wismeijer",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Martine Wishmare higher or lower",
-      "episode": 314,
-      "date": "2022-07-01",
-      "type": "guest_call",
-      "price_at": 19225.66,
-      "price_7d": 21582.17,
-      "change_pct": 12.26,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "He's now going up, basically buying up all these totally degenerate gambling companies and these VCs who have totally screwed up and ready to be liquidated and he's like, well, I'll help you out if and because he's got liquidity now",
-      "episode": 314,
-      "date": "2022-07-01",
-      "type": "guest_call",
-      "price_at": 19225.66,
-      "price_7d": 21582.17,
-      "change_pct": 12.26,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "outlook good",
@@ -2765,19 +2178,6 @@
       "direction": "lower",
       "verification": 2,
       "context": "The old down a group, the American original",
-      "episode": 316,
-      "date": "2022-07-22",
-      "type": "guest_call",
-      "price_at": 22452.14,
-      "price_7d": 23646.03,
-      "change_pct": 5.32,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 1,
-      "context": "Vitalik the king of throwing down arbitrary comparisons says that the difference between Bitcoin and Ethereum is that Bitcoiners consider Bitcoin to be 80% complete",
       "episode": 316,
       "date": "2022-07-22",
       "type": "guest_call",
@@ -2827,20 +2227,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "As opposed to that dirty nasty proof of work, the Bitcoin uses may be driving the entire market up, but now let's check the 8 Ball",
-      "episode": 317,
-      "date": "2022-07-29",
-      "type": "guest_call",
-      "price_at": 23646.03,
-      "price_7d": 22956.4,
-      "change_pct": -2.92,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "as soon as starts bullying again it's actually should be part of the fear and greed index at one point one of the major effectors for hash rate was the season in China whenever it was the flooding season they'd have to turn off their miners and move ",
@@ -3064,7 +2451,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Jesse",
       "direction": "lower",
       "verification": 3,
       "context": "Kraken did have the political troubles, but it also is a huge mark of success for Jesse and the team at Kraken to build an exchange out of nothing and to step down successfully leaving the company to be run by other professionals",
@@ -3129,19 +2516,6 @@
       "correct": true
     },
     {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Joshua should go higher or lower",
-      "episode": 328,
-      "date": "2022-10-14",
-      "type": "guest_call",
-      "price_at": 19069.72,
-      "price_7d": 19207.57,
-      "change_pct": 0.72,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "outlook good",
@@ -3169,23 +2543,10 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Dan Eve is the price of Bitcoin going to be higher or lower this time next week",
-      "episode": 330,
-      "date": "2022-10-28",
-      "type": "guest_call",
-      "price_at": 20820.19,
-      "price_7d": 21301.57,
-      "change_pct": 2.31,
-      "correct": true
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
-      "context": "So building on my incredible losing streak of predictions, I'm going to say higher next week",
+      "verification": 3,
+      "context": "Dan Eve is the price of Bitcoin going to be higher or lower this time next week",
       "episode": 330,
       "date": "2022-10-28",
       "type": "guest_call",
@@ -3225,19 +2586,6 @@
       "direction": "higher",
       "verification": 1,
       "context": "Or does it come back up",
-      "episode": 331,
-      "date": "2022-11-04",
-      "type": "guest_call",
-      "price_at": 21301.57,
-      "price_7d": 16773.9,
-      "change_pct": -21.26,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "According to Tim Draper, legendary venture capitalist man who suggested that hotmail put a footer on every email they sent advertising hotmail and the genius buyer of the Silk Road bitcoins ending up with tons of Bitcoin while the United States gets ",
       "episode": 331,
       "date": "2022-11-04",
       "type": "guest_call",
@@ -3314,19 +2662,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 1,
-      "context": "Because we've been parallel for so long, and there just didn't see any uplifting when someone had just imagined that there would be some black swan, sort of thing which just had some bad news cycle which could easily break the price down",
-      "episode": 333,
-      "date": "2022-11-18",
-      "type": "guest_call",
-      "price_at": 16683.72,
-      "price_7d": 16451.53,
-      "change_pct": -1.39,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "very doubtful",
@@ -3354,7 +2689,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "an ultra mega ding dong pump uh when the harvining happens because everyone will already be hyped up because bitcoin's 250k then the harvining's going to happen now be like oh my god it's 250k on steroids because there's harvining now so um yeah i'd ",
@@ -3405,19 +2740,6 @@
       "price_7d": 16837.16,
       "change_pct": 0.34,
       "correct": true
-    },
-    {
-      "speaker": "Dan Eve",
-      "direction": "lower",
-      "verification": 3,
-      "context": "Danny, fire or lower",
-      "episode": 337,
-      "date": "2022-12-16",
-      "type": "guest_call",
-      "price_at": 16780.55,
-      "price_7d": 16837.16,
-      "change_pct": 0.34,
-      "correct": false
     },
     {
       "speaker": "Martin Wismeijer",
@@ -3504,32 +2826,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "Dan Eve, higher or lower, everyone's pretending to be optimistic, but only for a week",
-      "episode": 339,
-      "date": "2022-12-30",
-      "type": "guest_call",
-      "price_at": 16531.31,
-      "price_7d": 16942.73,
-      "change_pct": 2.49,
-      "correct": true
-    },
-    {
-      "speaker": "Chris Ellis",
-      "direction": "lower",
-      "verification": 1,
-      "context": "A top SEC official is stepping down following controversial meetings with Sam Bankman, freed and FTX lobbyists",
-      "episode": 339,
-      "date": "2022-12-30",
-      "type": "guest_call",
-      "price_at": 16531.31,
-      "price_7d": 16942.73,
-      "change_pct": 2.49,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "She put up the $250 million bail, which seemed absurd that he was even getting offered bail, then she quickly resigned because her husband had worked for a case involving FTX",
       "episode": 339,
       "date": "2022-12-30",
       "type": "guest_call",
@@ -3726,9 +3022,9 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
-      "verification": 3,
+      "verification": 2,
       "context": "NFTs are the key and now asking the Bitcoin predictor ball the prognosticator of prognosticators we recently had groundhog day in America I didn't even watch the movie will the price of Bitcoin be higher it is certain it is certain the ball speaks ag",
       "episode": 345,
       "date": "2023-02-10",
@@ -3776,19 +3072,6 @@
       "price_7d": 23168.68,
       "change_pct": -5.96,
       "correct": true
-    },
-    {
-      "speaker": "Tone Vays",
-      "direction": "higher",
-      "verification": 3,
-      "context": "If you've watched that Bernie May Doff documentary on Netflix, this is someone who is held up as like a financial wizard and a cornerstone of the legacy financial system and yet who's able to run away with like 40 billion dollars or something over a ",
-      "episode": 346,
-      "date": "2023-02-17",
-      "type": "guest_call",
-      "price_at": 24638.27,
-      "price_7d": 23168.68,
-      "change_pct": -5.96,
-      "correct": false
     },
     {
       "speaker": "Josh Scigala",
@@ -3844,19 +3127,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 3,
-      "context": "Moving on to the exit question, the price of Bitcoin is down 5%",
-      "episode": 348,
-      "date": "2023-03-03",
-      "type": "guest_call",
-      "price_at": 22353.23,
-      "price_7d": 20613.6,
-      "change_pct": -7.78,
-      "correct": true
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
@@ -3881,32 +3151,6 @@
       "price_7d": 20613.6,
       "change_pct": -7.78,
       "correct": false
-    },
-    {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Joshua, Sugala, higher or lower",
-      "episode": 349,
-      "date": "2023-03-11",
-      "type": "guest_call",
-      "price_at": 22183.71,
-      "price_7d": 28040.29,
-      "change_pct": 26.4,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "And now the magic Bitcoin ball, the source of all truth, will the price of Bitcoin be higher this time next week",
-      "episode": 349,
-      "date": "2023-03-11",
-      "type": "guest_call",
-      "price_at": 22183.71,
-      "price_7d": 28040.29,
-      "change_pct": 26.4,
-      "correct": true
     },
     {
       "speaker": "Magic 8-Ball",
@@ -3950,19 +3194,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "We happen to have the greatest Bitcoin predictor right here who predicted that the price of Bitcoin would be higher last week correctly as per usual",
-      "episode": 351,
-      "date": "2023-03-24",
-      "type": "guest_call",
-      "price_at": 27492.83,
-      "price_7d": 28468.49,
-      "change_pct": 3.55,
-      "correct": true
-    },
-    {
       "speaker": "Victoria Jones",
       "direction": "higher",
       "verification": 3,
@@ -3988,19 +3219,6 @@
       "price_7d": 27953.93,
       "change_pct": -1.81,
       "correct": false
-    },
-    {
-      "speaker": "Ben Arc",
-      "direction": "lower",
-      "verification": 3,
-      "context": "Two ups and a down Benark which way are you going to go",
-      "episode": 352,
-      "date": "2023-03-31",
-      "type": "guest_call",
-      "price_at": 28468.49,
-      "price_7d": 27953.93,
-      "change_pct": -1.81,
-      "correct": true
     },
     {
       "speaker": "Magic 8-Ball",
@@ -4030,32 +3248,6 @@
       "correct": true
     },
     {
-      "speaker": "Dan Eve",
-      "direction": "lower",
-      "verification": 3,
-      "context": "Daniel, do you have an answer for us and up or down",
-      "episode": 353,
-      "date": "2023-04-07",
-      "type": "guest_call",
-      "price_at": 27953.93,
-      "price_7d": 30321.55,
-      "change_pct": 8.47,
-      "correct": false
-    },
-    {
-      "speaker": "Thomas Hunt",
-      "direction": "lower",
-      "verification": 3,
-      "context": "Well, anyone hunting down a criminal is always a good thing, although then you get into the debate as to who decides who's a criminal",
-      "episode": 353,
-      "date": "2023-04-07",
-      "type": "guest_call",
-      "price_at": 27953.93,
-      "price_7d": 30321.55,
-      "change_pct": 8.47,
-      "correct": false
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "you may rely on it",
@@ -4070,9 +3262,9 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
+      "verification": 3,
       "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week",
       "episode": 354,
       "date": "2023-04-15",
@@ -4177,19 +3369,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 1,
-      "context": "And one of those problems fits into your investment thesis, then it's not like it's going to shift because the price is down",
-      "episode": 361,
-      "date": "2023-06-03",
-      "type": "guest_call",
-      "price_at": 27125.24,
-      "price_7d": 25937.58,
-      "change_pct": -4.38,
-      "correct": true
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
@@ -4269,7 +3448,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "PayPal even if to your mind they seem very similar to Bitcoin from a user perspective but we're here on a male dominated Bitcoin show to talk about dominance and now we're going to talk about the price of Bitcoin and see the true dominant predictor i",
@@ -4309,23 +3488,10 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week",
-      "episode": 365,
-      "date": "2023-07-01",
-      "type": "guest_call",
-      "price_at": 30617.66,
-      "price_7d": 30171.49,
-      "change_pct": -1.46,
-      "correct": false
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
-      "context": "I'm going with higher again",
+      "verification": 3,
+      "context": "Dan Eve will the price of Bitcoin be higher or lower this time next week",
       "episode": 365,
       "date": "2023-07-01",
       "type": "guest_call",
@@ -4399,19 +3565,6 @@
       "price_7d": 30248.17,
       "change_pct": 0.25,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Exit question, will the price of Bitcoin be higher or lower this time next week",
-      "episode": 367,
-      "date": "2023-07-17",
-      "type": "guest_call",
-      "price_at": 29863.79,
-      "price_7d": 29226.63,
-      "change_pct": -2.13,
-      "correct": false
     },
     {
       "speaker": "Magic 8-Ball",
@@ -4547,7 +3700,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 3,
       "context": "pen and that we get to hear about it and this guy gets to spend some sunny days in Spain or whatever he would want to do now Dan as we reach the end of the show it's time to predict the future will the price of Bitcoin be higher or lower this time ne",
@@ -4757,32 +3910,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So as less people hold their coins on exchanges, there's less supply of Bitcoin and the price goes up this fits perfectly into the basic havining theory that the havining reduces the production of Bitcoin by 50%",
-      "episode": 380,
-      "date": "2023-10-28",
-      "type": "guest_call",
-      "price_at": 34535.38,
-      "price_7d": 35039.47,
-      "change_pct": 1.46,
-      "correct": true
-    },
-    {
-      "speaker": "Theo Goodman",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So theoretically the price of Bitcoin should go up",
-      "episode": 380,
-      "date": "2023-10-28",
-      "type": "guest_call",
-      "price_at": 34535.38,
-      "price_7d": 35039.47,
-      "change_pct": 1.46,
-      "correct": true
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "lower",
       "verification": 3,
@@ -4862,7 +3989,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "as it's gonna go higher then eve higher or lower yeah higher and I think last week I even said there's my prediction that we might just reach 40k in some craze move and and we're not far off you know we're just about 2k just over 2k off so I'm pretty",
@@ -4942,36 +4069,10 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "It's just a normal 3.5 year monetary cycle that Bitcoin seems to be linked up with",
-      "episode": 386,
-      "date": "2023-12-09",
-      "type": "guest_call",
-      "price_at": 43791.67,
-      "price_7d": 41349.42,
-      "change_pct": -5.58,
-      "correct": false
-    },
-    {
       "speaker": "Dan Eve",
       "direction": "higher",
       "verification": 1,
       "context": "Well, the price of Bitcoin be higher or lower this time next week",
-      "episode": 386,
-      "date": "2023-12-09",
-      "type": "guest_call",
-      "price_at": 43791.67,
-      "price_7d": 41349.42,
-      "change_pct": -5.58,
-      "correct": false
-    },
-    {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 1,
-      "context": "It's going to be higher",
       "episode": 386,
       "date": "2023-12-09",
       "type": "guest_call",
@@ -5141,19 +4242,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So it's a big moment in Bitcoin history, whether it makes the price go up or not",
-      "episode": 391,
-      "date": "2024-01-13",
-      "type": "guest_call",
-      "price_at": 41704.39,
-      "price_7d": 41570.17,
-      "change_pct": -0.32,
-      "correct": false
-    },
-    {
       "speaker": "Victoria Jones",
       "direction": "lower",
       "verification": 3,
@@ -5183,7 +4271,7 @@
     {
       "speaker": "Adam Meister",
       "direction": "higher",
-      "verification": 1,
+      "verification": 0,
       "context": "Something had happened where the value of micro strategies Bitcoin was higher than the value of the company",
       "episode": 392,
       "date": "2024-01-20",
@@ -5207,7 +4295,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "lower",
       "verification": 3,
       "context": "igher or lower I'm going to say lower but I'm talking about the dollar exchange rate to satosies I think we're going to see a dollar become worth less than two thousand sats well oh below the two thousand sat barrier again dan eave I started with you",
@@ -5273,19 +4361,6 @@
       "correct": true
     },
     {
-      "speaker": "Theo Goodman",
-      "direction": "higher",
-      "verification": 3,
-      "context": "I've drawn some Pythagoras theorems and some triangles and some lines and they all state high I said I'm just going to go higher",
-      "episode": 394,
-      "date": "2024-02-03",
-      "type": "guest_call",
-      "price_at": 42570.21,
-      "price_7d": 48311.16,
-      "change_pct": 13.49,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "outlook not so good",
@@ -5297,32 +4372,6 @@
       "price_at": 48311.16,
       "price_7d": 52139.33,
       "change_pct": 7.92,
-      "correct": false
-    },
-    {
-      "speaker": "Dan Eve",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Danny, if you think it will be higher or lower this time next week, does the great rally continue",
-      "episode": 395,
-      "date": "2024-02-10",
-      "type": "guest_call",
-      "price_at": 48311.16,
-      "price_7d": 52139.33,
-      "change_pct": 7.92,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Will the price of Bitcoin be higher or lower this time next week",
-      "episode": 396,
-      "date": "2024-02-17",
-      "type": "guest_call",
-      "price_at": 52139.33,
-      "price_7d": 51727.63,
-      "change_pct": -0.79,
       "correct": false
     },
     {
@@ -5446,9 +4495,9 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
+      "verification": 3,
       "context": "Dan, Eve, will the price of Bitcoin be higher or lower this time next week",
       "episode": 399,
       "date": "2024-03-09",
@@ -5557,19 +4606,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "Josh, should go higher or lower this time next week",
-      "episode": 403,
-      "date": "2024-04-13",
-      "type": "guest_call",
-      "price_at": 65765.64,
-      "price_7d": 64955.82,
-      "change_pct": -1.23,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Well, it's starting off the same because this is these are the exact same articles that have popped up just before every single harvining",
       "episode": 403,
       "date": "2024-04-13",
       "type": "guest_call",
@@ -5858,19 +4894,6 @@
       "correct": true
     },
     {
-      "speaker": "Josh Scigala",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Joshua Chicago higher or lower",
-      "episode": 418,
-      "date": "2024-08-17",
-      "type": "guest_call",
-      "price_at": 58439.22,
-      "price_7d": 64264.62,
-      "change_pct": 9.97,
-      "correct": true
-    },
-    {
       "speaker": "Jimmy Song",
       "direction": "higher",
       "verification": 3,
@@ -5951,19 +4974,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "What the main feature that we're working for is that people can upload their own collateral into their own smart vaults without giving up their private keys and then borrow against that so that you don't need to ever use or trust someone like Celsius",
-      "episode": 420,
-      "date": "2024-08-31",
-      "type": "guest_call",
-      "price_at": 57313.44,
-      "price_7d": 54879.33,
-      "change_pct": -4.25,
-      "correct": false
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "my sources say no",
@@ -5978,32 +4988,6 @@
       "correct": false
     },
     {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Let's see, Starship Schrodinger in the chat says next week higher, but going below 52",
-      "episode": 421,
-      "date": "2024-09-07",
-      "type": "guest_call",
-      "price_at": 54879.33,
-      "price_7d": 59139.21,
-      "change_pct": 7.76,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "I think the halving drove down the supply and eventually we're going to have a supply shock where there's not enough Bitcoin and people go to buy them and then they pay higher price to get the same amount of Bitcoin that they got last week",
-      "episode": 422,
-      "date": "2024-09-14",
-      "type": "guest_call",
-      "price_at": 59139.21,
-      "price_7d": 63587.45,
-      "change_pct": 7.52,
-      "correct": true
-    },
-    {
       "speaker": "Thomas Hunt",
       "direction": "higher",
       "verification": 2,
@@ -6015,19 +4999,6 @@
       "price_7d": 63587.45,
       "change_pct": 7.52,
       "correct": true
-    },
-    {
-      "speaker": "Dan Eve",
-      "direction": "higher",
-      "verification": 3,
-      "context": "So in spite of the dangers, I think maybe in the next week it could still be higher, but in the medium term, watch out",
-      "episode": 424,
-      "date": "2024-09-28",
-      "type": "guest_call",
-      "price_at": 65611.98,
-      "price_7d": 62821.76,
-      "change_pct": -4.25,
-      "correct": false
     },
     {
       "speaker": "Magic 8-Ball",
@@ -6057,19 +5028,6 @@
       "correct": true
     },
     {
-      "speaker": "Dan Eve",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Daniel, everything's just going up for Bitcoin, right",
-      "episode": 426,
-      "date": "2024-10-12",
-      "type": "guest_call",
-      "price_at": 62854.48,
-      "price_7d": 69020.94,
-      "change_pct": 9.81,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "outlook good",
@@ -6088,19 +5046,6 @@
       "direction": "higher",
       "verification": 2,
       "context": "Okay, so I'm always bullish on Bitcoin",
-      "episode": 427,
-      "date": "2024-10-18",
-      "type": "guest_call",
-      "price_at": 68370.04,
-      "price_7d": 67014.72,
-      "change_pct": -1.98,
-      "correct": false
-    },
-    {
-      "speaker": "Ben Arc",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So far coin base stock is up around 27% this month from 165 to 10",
       "episode": 427,
       "date": "2024-10-18",
       "type": "guest_call",
@@ -6150,19 +5095,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "They moved it up a week so we're a week ahead of them and their week behind so no one showed up because the time change",
-      "episode": 429,
-      "date": "2024-11-02",
-      "type": "guest_call",
-      "price_at": 68747.04,
-      "price_7d": 80429.43,
-      "change_pct": 16.99,
-      "correct": true
-    },
-    {
       "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
@@ -6190,7 +5122,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "whatever is the is the target is being the target I've said on this show for three four years now on the cycle of us going up but yeah I think once we get that floor of 100 K I mean it's it's supply and demand scarcity you got these big ETFs sucking ",
@@ -6224,19 +5156,6 @@
       "episode": 433,
       "date": "2024-12-07",
       "type": "magic_8_ball",
-      "price_at": 101189.81,
-      "price_7d": 104424.54,
-      "change_pct": 3.2,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "The world is slowly starting to wake up to how scarce these things actually are",
-      "episode": 433,
-      "date": "2024-12-07",
-      "type": "guest_call",
       "price_at": 101189.81,
       "price_7d": 104424.54,
       "change_pct": 3.2,
@@ -6337,19 +5256,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "Moving on to issue two tech companies embracing Bitcoin treasuries as a strategic asset as the market heats up heading into 2025",
-      "episode": 436,
-      "date": "2024-12-28",
-      "type": "guest_call",
-      "price_at": 93564.85,
-      "price_7d": 98346.97,
-      "change_pct": 5.11,
-      "correct": true
-    },
-    {
       "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
@@ -6363,49 +5269,10 @@
       "correct": false
     },
     {
-      "speaker": "Theo Goodman",
-      "direction": "lower",
-      "verification": 3,
-      "context": "So I remember when it went from 50 Bitcoin per block down to 25 and leading up to that there was talks by all these specialists and all these experts in the field about how there's going to be a game theoretical crash",
-      "episode": 437,
-      "date": "2025-01-04",
-      "type": "guest_call",
-      "price_at": 98346.97,
-      "price_7d": 94505.67,
-      "change_pct": -3.91,
-      "correct": true
-    },
-    {
-      "speaker": "Chris Ellis",
-      "direction": "lower",
-      "verification": 1,
-      "context": "You know, someone that says they set like, I'm for, you know, lower taxes and they go to every meeting and they say, down for lower taxes, you don't want a guy that he goes to the lower tax meeting",
-      "episode": 438,
-      "date": "2025-01-11",
-      "type": "guest_call",
-      "price_at": 94505.67,
-      "price_7d": 101212.56,
-      "change_pct": 7.1,
-      "correct": false
-    },
-    {
       "speaker": "Josh Scigala",
       "direction": "higher",
       "verification": 3,
       "context": "So Josh, this time next week, will the price of Bitcoin be higher or lower",
-      "episode": 439,
-      "date": "2025-01-25",
-      "type": "guest_call",
-      "price_at": 102576.93,
-      "price_7d": 97665.06,
-      "change_pct": -4.79,
-      "correct": false
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "The first big Trump scam is already blowing up in everyone's faces",
       "episode": 439,
       "date": "2025-01-25",
       "type": "guest_call",
@@ -6521,19 +5388,6 @@
       "correct": true
     },
     {
-      "speaker": "Dan Eve",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So I'm going to stick with up",
-      "episode": 442,
-      "date": "2025-02-15",
-      "type": "guest_call",
-      "price_at": 96132.69,
-      "price_7d": 96274.12,
-      "change_pct": 0.15,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "my sources say no",
@@ -6548,7 +5402,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
       "context": "et's see go to the last 24 hours Bitcoin down 3.3% Ethereum down 4.3 ripple down 5.5 tether is holding Binance going down 2.2 Solana down 3.8 and USDC is holding as well so there's a lot of market action on this let's go to the exit question predicti",
@@ -6721,19 +5575,6 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 3,
-      "context": "And it says it is decidedly so it is decidedly so the ball is optimistic moving on to issue three Bitcoin gearing up for next leg of acceleration phase research from fidelity digital assets suggest that the Bitcoin bull market is not done yet as the ",
-      "episode": 449,
-      "date": "2025-04-05",
-      "type": "guest_call",
-      "price_at": 78365.57,
-      "price_7d": 83730.92,
-      "change_pct": 6.85,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "it is certain",
@@ -6750,7 +5591,7 @@
     {
       "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
+      "verification": 0,
       "context": "Higher or lower",
       "episode": 450,
       "date": "2025-04-12",
@@ -6773,19 +5614,6 @@
       "price_7d": 94394.09,
       "change_pct": 0.66,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 3,
-      "context": "enhower says we've got to keep down the cost of living, which of course was justification for them to steal food from the military base",
-      "episode": 452,
-      "date": "2025-04-26",
-      "type": "guest_call",
-      "price_at": 93777.44,
-      "price_7d": 94394.09,
-      "change_pct": 0.66,
-      "correct": false
     },
     {
       "speaker": "Josh Scigala",
@@ -6828,19 +5656,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 3,
-      "context": "The ball is bearish moving on to issue two CIA deputy director hints agency uses Bitcoin crypto as tools against China and other adversaries",
-      "episode": 453,
-      "date": "2025-05-03",
-      "type": "guest_call",
-      "price_at": 94394.09,
-      "price_7d": 104124.02,
-      "change_pct": 10.31,
-      "correct": false
-    },
-    {
       "speaker": "Ben Arc",
       "direction": "higher",
       "verification": 3,
@@ -6867,7 +5682,7 @@
       "correct": true
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Victoria Jones",
       "direction": "higher",
       "verification": 3,
       "context": "that was a debate and discussion it's been confirmed now but they could always change it like they say if there was enough consensus we are being told in the chat that YouTube seems to be failing at streaming this week however we're on Facebook and a",
@@ -6961,19 +5776,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 1,
-      "context": "The landmark bills, odds of passes may have been derailed by macro political forces, crypto policy leaders believe we're talking about the, let's see, written down, clarity act",
-      "episode": 459,
-      "date": "2025-06-14",
-      "type": "guest_call",
-      "price_at": 105625.23,
-      "price_7d": 101015.42,
-      "change_pct": -4.36,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "my sources say no",
@@ -7045,19 +5847,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "I think it would be beautiful and delicious irony Victoria Jones higher or lower and what kind of irony do you think it would be",
-      "episode": 461,
-      "date": "2025-06-28",
-      "type": "guest_call",
-      "price_at": 108391.87,
-      "price_7d": 109233.93,
-      "change_pct": 0.78,
-      "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "But in terms of price yeah I think we seem to have done quite well this week so yeah could be on a good trajectory I'm going to say higher for next week",
       "episode": 461,
       "date": "2025-06-28",
       "type": "guest_call",
@@ -7296,7 +6085,7 @@
     {
       "speaker": "Dan Eve",
       "direction": "higher",
-      "verification": 1,
+      "verification": 0,
       "context": "Higher or lower, starship in the chat says 130 this week",
       "episode": 470,
       "date": "2025-10-04",
@@ -7361,19 +6150,6 @@
       "correct": true
     },
     {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Higher or lower",
-      "episode": 473,
-      "date": "2025-10-25",
-      "type": "guest_call",
-      "price_at": 114559.89,
-      "price_7d": 110564.52,
-      "change_pct": -3.49,
-      "correct": false
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "higher",
       "answer": "it is decidedly so",
@@ -7419,19 +6195,6 @@
       "direction": "higher",
       "verification": 3,
       "context": "Josh, will the price be higher or lower this time next week",
-      "episode": 475,
-      "date": "2025-12-20",
-      "type": "guest_call",
-      "price_at": 88647.8,
-      "price_7d": 87886.81,
-      "change_pct": -0.86,
-      "correct": false
-    },
-    {
-      "speaker": "Chris Ellis",
-      "direction": "higher",
-      "verification": 1,
-      "context": "Although I still think it's going higher",
       "episode": 475,
       "date": "2025-12-20",
       "type": "guest_call",
@@ -7523,19 +6286,6 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
-      "direction": "lower",
-      "verification": 3,
-      "context": "I think as long as the room was persist on this Kevin Warsh, becoming the new head of the Fed, then the price is going to continue to go down because the market's just going to have less money in them",
-      "episode": 480,
-      "date": "2026-01-31",
-      "type": "guest_call",
-      "price_at": 76910.99,
-      "price_7d": 70297.07,
-      "change_pct": -8.6,
-      "correct": true
-    },
-    {
       "speaker": "Magic 8-Ball",
       "direction": "lower",
       "answer": "outlook not so good",
@@ -7548,19 +6298,6 @@
       "price_7d": 68800.76,
       "change_pct": -2.13,
       "correct": true
-    },
-    {
-      "speaker": "Gabriel DeVine",
-      "direction": "higher",
-      "verification": 1,
-      "context": "So I'll go with higher",
-      "episode": 481,
-      "date": "2026-02-07",
-      "type": "guest_call",
-      "price_at": 70297.07,
-      "price_7d": 68800.76,
-      "change_pct": -2.13,
-      "correct": false
     },
     {
       "speaker": "Ben Arc",
@@ -7604,7 +6341,7 @@
       "correct": false
     },
     {
-      "speaker": "Gabriel DeVine",
+      "speaker": "Ben Arc",
       "direction": "lower",
       "verification": 3,
       "context": "o see that still valid and that we're still on that track but i remember it last time and it turned out last time all right but it did take years and years and you know we lost a lot of dwarves and elves this two to two to three years and it's it's t",
