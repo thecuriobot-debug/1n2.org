@@ -156,7 +156,7 @@ def extract_guests_from_intro(text, ep_num):
         # Will Pangman
         'Will Penguin': 'Will Pangman', 'Will Pangmann': 'Will Pangman', 'Will Pengman': 'Will Pangman',
         # Ben Arc
-        'Ben Arck': 'Ben Arc', 'Ben Ark': 'Ben Arc',
+        'Ben Arck': 'Ben Arc', 'Ben Ark': 'Ben Arc', 'Ark': 'Ben Arc',
         # Vlad Costea
         'Vlad Kosta': 'Vlad Costea', 'Vlad Costa': 'Vlad Costea',
         # Martin Wismeijer
@@ -167,18 +167,45 @@ def extract_guests_from_intro(text, ep_num):
         'Adam Mc': 'Adam McBride', 'Bride': 'Adam McBride',
         # Derrick Freeman
         'Freeman': 'Derrick Freeman', 'Derek Freeman': 'Derrick Freeman', 'Derek': 'Derrick Freeman',
+        # Chris -> Chris Ellis
+        'Chris': 'Chris Ellis',
+        # Atlas -> Kristov Atlas
+        'Atlas': 'Kristov Atlas', 'Christoph Atlas': 'Kristov Atlas', 'Christoph Atlis': 'Kristov Atlas',
+        'Christoph Atlus': 'Kristov Atlas', 'Kristoff Atlus': 'Kristov Atlas', 'Kristoff Atlas': 'Kristov Atlas',
+        'Chris Dough Atlas': 'Kristov Atlas',
+        # Now I'm Thomas Hunt -> Thomas Hunt
+        "Now I'm Thomas Hunt": 'Thomas Hunt', 'Now I M Thomas Hunt': 'Thomas Hunt',
+        # Goodman -> Theo Goodman
+        'Goodman': 'Theo Goodman',
+        # Christian Routsel/Rootsle -> Christian Rootzoll
+        'Christian Routsel': 'Christian Rootzoll', 'Christian Rootsle': 'Christian Rootzoll',
+        'Christian Routsle': 'Christian Rootzoll',
+        # Lords -> MK Lords
+        'Lords': 'MK Lords', 'Megan Lords': 'MK Lords', 'Megan Lourds': 'MK Lords',
+        'Megan Lourdes': 'MK Lords', 'Megan Lawrence': 'MK Lords', 'Megan Lors': 'MK Lords',
+        # Daniel -> The Daniel
+        'Daniel': 'The Daniel',
+        # Jesse -> Jesse Dr. Bitcoin
+        'Jesse': 'Jesse Dr. Bitcoin',
+        # Davi Barker
+        'Dovey Barker': 'Davi Barker', 'Davy Barker': 'Davi Barker',
+        'Dauvey Barker': 'Davi Barker', 'Avie Barker': 'Davi Barker',
+        # Weatherman -> JD Weatherman
+        'Weatherman': 'JD Weatherman',
+        # REMOVE — not real guests (false positives)
+        'Live': '_REMOVE_', 'Rijal': '_REMOVE_', 'Raffi': '_REMOVE_',
+        'Tom': '_REMOVE_', 'Oreo': '_REMOVE_',
         # Other
         'Mike Dupree': 'Michael Dupree',
-        'Christoph Atlas': 'Kristoff Atlas', 'Christoph Atlis': 'Kristoff Atlas',
-        'Christoph Atlus': 'Kristoff Atlas', 'Kristoff Atlus': 'Kristoff Atlas',
-        'Chris Dough Atlas': 'Kristoff Atlas',
         'Max Hillabran': 'Max Hillebrand', 'Max Hillabrand': 'Max Hillebrand',
         'Gabriel Devon': 'Gabriel DeVine', 'Gabriel Divine': 'Gabriel DeVine', 'Gabriel D Vine': 'Gabriel DeVine',
-        'Dovey Barker': 'Davy Barker',
     }
     for g in guests:
         if g['name'] in NORMALIZATIONS:
             g['name'] = NORMALIZATIONS[g['name']]
+    
+    # Remove false positives
+    guests = [g for g in guests if g['name'] != '_REMOVE_']
     
     return guests
 

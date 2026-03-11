@@ -118,3 +118,21 @@ Davy Barker
 Michael Dupree
 - Whisper variants: Mike Dupree
 - EasyBit
+
+
+## NEW CORRECTIONS (2026-03-10 batch 2)
+
+Ark, Ben -> Ben Arc
+Chris -> Chris Ellis
+Atlas -> Kristov Atlas (note: Kristov not Kristoff)
+Now I'm Thomas Hunt -> Thomas Hunt
+Goodman -> Theo Goodman
+Christian Routsel, Rootsle -> Christian Rootzoll
+Lords -> MK Lords (was Megan Lords)
+Daniel -> The Daniel
+Jesse -> Jesse Dr. Bitcoin
+Dauvey Barker, Avie Barker -> Davi Barker (was Davy)
+Weatherman -> JD Weatherman
+
+## REMOVED — NOT REAL GUESTS
+Live, Rijal, Raffi, Tom, Oreo — false positives from intro parsing
