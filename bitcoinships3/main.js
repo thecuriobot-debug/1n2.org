@@ -4,7 +4,7 @@
   const ctx = canvas.getContext("2d");
 
   const PHASES = [
-    { name: "storm", label: "荒波 · Riding the Storm", duration: 32 },
+    { name: "storm", label: "荒波 · Riding the Storm", duration: 55 },
     { name: "calm", label: "浮 · Calm Float", duration: Infinity },
   ];
 
@@ -59,11 +59,11 @@
   function visibleY(screenX) {
     const wx = S.camX + (screenX - view.width*0.5);
     const wt = S.wt, tb = S.turb;
-    const base = S.sl + sam(wx) * 0.65;  // price data as wave height
-    // Sloshing — but gentler, more oceanic
-    const slosh = Math.sin(screenX*0.012 + wt*2.5) * (3 + tb*4)
-                + Math.sin(screenX*0.028 + wt*4.2) * (1.5 + tb*2)
-                + Math.sin(screenX*0.006 + wt*1.2) * (2 + tb*3);
+    const base = S.sl + sam(wx) * 0.55;  // gentler mapping
+    // Smooth oceanic sloshing
+    const slosh = Math.sin(screenX*0.01 + wt*1.8) * (2 + tb*3)
+                + Math.sin(screenX*0.024 + wt*3.0) * (1 + tb*1.5)
+                + Math.sin(screenX*0.005 + wt*0.8) * (1.5 + tb*2);
     return clamp(base + slosh, 50, view.height - 35);
   }
 
@@ -73,18 +73,19 @@
     if(Number.isFinite(c.duration) && S.phT>=c.duration) { S.phT-=c.duration; S.phI=Math.min(S.phI+1,PHASES.length-1); }
     const p=ph();
     let spd=20, tT=0.82;
-    if(p.name==="storm") { spd=185; tT=1.4; }
+    if(p.name==="storm") { spd=105; tT=1.3; }
     else if(p.name==="calm") { spd=10; tT=0.45; }
     S.tlX+=spd*dt;
     S.turb+=(tT-S.turb)*Math.min(1,dt*0.9);
     S.tlX=clamp(S.tlX,1,SURFACE.length-2); S.camX=S.tlX;
   }
 
-  // ─── BOAT: hull bottom follows the wave exactly ───
+  // ─── BOAT: hull follows wave smoothly (no jitter) ───
   function updateBoat(dt) {
     const cx = view.width * 0.5;
     const surfY = visibleY(cx);
-    S.bY = surfY;  // hull bottom IS the wave
+    // Smooth follow — lerp to wave surface, not snap
+    S.bY = lerp(S.bY, surfY, Math.min(1, dt * 8));
     const vel = (S.bY - S.prevBY) / Math.max(dt, 0.001);
     S.prevBY = S.bY;
     // Roll from visible slope
@@ -169,20 +170,62 @@
     ctx.globalAlpha = 1;
   }
 
-  // ─── TINY CREW ───
-  function drawPerson(x, y, s) {
-    ctx.save(); ctx.translate(x, y); ctx.scale(s||1, s||1);
+  // ─── LEMMINGS-STYLE ANIMATED CREW ───
+  function drawPerson(x, y, s, action, phase) {
+    const sc = s || 1, t = (S.wt + phase*2.3) * 1.5;
+    ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc);
+    // Head
     ctx.fillStyle="#e8c8a0"; ctx.beginPath(); ctx.arc(0,-10,2.5,0,Math.PI*2); ctx.fill();
-    ctx.fillStyle="#c8a860"; ctx.beginPath(); ctx.moveTo(-4,-11.5); ctx.lineTo(0,-15); ctx.lineTo(4,-11.5); ctx.closePath(); ctx.fill();
-    ctx.fillStyle="#2a4a6a"; ctx.fillRect(-2,-7,4,7);
+    // Sugegasa hat
+    ctx.fillStyle="#c8a860"; ctx.beginPath(); ctx.moveTo(-4.5,-11.5); ctx.lineTo(0,-16); ctx.lineTo(4.5,-11.5); ctx.closePath(); ctx.fill();
+    // Body
+    ctx.fillStyle = action==='row'?'#3a5a3a':'#2a4a6a';
+    ctx.fillRect(-2.5,-7,5,7);
+    // Animated arms based on action
+    ctx.strokeStyle="#e8c8a0"; ctx.lineWidth=1.2;
+    if(action==='row') {
+      // Rowing motion
+      const arm = Math.sin(t*3)*0.6;
+      ctx.beginPath(); ctx.moveTo(-2.5,-5); ctx.lineTo(-6+arm*3,-1+arm*2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(2.5,-5); ctx.lineTo(6-arm*3,-1-arm*2); ctx.stroke();
+    } else if(action==='wave') {
+      // Waving at the sky
+      const arm = Math.sin(t*2)*0.5;
+      ctx.beginPath(); ctx.moveTo(2.5,-5); ctx.lineTo(6,-10+arm*4); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-2.5,-5); ctx.lineTo(-5,-2); ctx.stroke();
+    } else if(action==='bail') {
+      // Bailing water
+      const arm = Math.sin(t*4)*0.4;
+      ctx.beginPath(); ctx.moveTo(-2.5,-4); ctx.lineTo(-5+arm*2, 1); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(2.5,-4); ctx.lineTo(5-arm*2, 1); ctx.stroke();
+      // Bucket
+      ctx.fillStyle="#8a6a3a"; ctx.fillRect(-3+arm*2, 0, 3, 2);
+    } else if(action==='lookout') {
+      // Hand over eyes, looking forward
+      ctx.beginPath(); ctx.moveTo(2.5,-6); ctx.lineTo(5,-9); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-2.5,-5); ctx.lineTo(-4,-3); ctx.stroke();
+    } else if(action==='steer') {
+      // Holding the rudder
+      ctx.beginPath(); ctx.moveTo(-2.5,-4); ctx.lineTo(-6,-2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(2.5,-4); ctx.lineTo(-4,-2); ctx.stroke();
+    } else {
+      // Standing idle with slight sway
+      const sway = Math.sin(t*0.8)*0.3;
+      ctx.beginPath(); ctx.moveTo(-2.5,-5); ctx.lineTo(-4+sway,-2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(2.5,-5); ctx.lineTo(4-sway,-2); ctx.stroke();
+    }
     ctx.restore();
   }
 
-  // ─── SHIP — hull bottom sits on wave ───
+  // ─── SHIP — smooth scale transitions ───
+  let shipScaleSmooth = 1.0;
   function drawShip() {
     const cx = view.width*0.5, cy = S.bY;
     const price = prAt(S.tlX).price, t = tier(price);
-    const sc = (0.75 + t*0.2) * 1.2;  // bigger
+    const targetSc = (0.8 + t*0.2) * 1.3;
+    // Smooth scale transition
+    shipScaleSmooth = lerp(shipScaleSmooth, targetSc, 0.02);
+    const sc = shipScaleSmooth;
     ctx.save(); ctx.translate(cx, cy); ctx.rotate(S.bRoll); ctx.scale(sc, sc);
     if (t===0) drawMarukibune(); else if (t===1) drawBekabune();
     else if (t===2) drawTsuribune(); else if (t===3) drawBezaisen();
@@ -196,6 +239,8 @@
     ctx.strokeStyle="#3a2a14"; ctx.lineWidth=1; ctx.stroke();
     ctx.strokeStyle="#8a6a3a"; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(0,6); ctx.lineTo(0,-25); ctx.stroke();
     ctx.fillStyle="rgba(160,140,100,0.6)"; ctx.beginPath(); ctx.moveTo(1,-22); ctx.lineTo(1,-4); ctx.lineTo(14,-8); ctx.closePath(); ctx.fill();
+    // Even the dugout has a lone paddler!
+    drawPerson(8, -2, 0.65, 'row', 0);
   }
 
   function drawBekabune() {
@@ -205,6 +250,9 @@
     ctx.strokeStyle="#b09060"; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(2,8); ctx.lineTo(2,-42); ctx.stroke();
     ctx.fillStyle="#e0d8c8"; ctx.beginPath(); ctx.moveTo(3,-38); ctx.lineTo(3,-4); ctx.lineTo(24,-10); ctx.closePath(); ctx.fill();
     ctx.fillStyle="rgba(230,170,40,0.5)"; ctx.font="bold 12px sans-serif"; ctx.fillText("₿",6,-18);
+    // Two crew: one rows, one looks out
+    drawPerson(-12, -2, 0.6, 'row', 0);
+    drawPerson(14, -2, 0.6, 'lookout', 1);
   }
 
   function drawTsuribune() {
@@ -220,7 +268,10 @@
     ctx.fillStyle="#f0d8a0"; ctx.beginPath(); ctx.moveTo(3,-50); ctx.lineTo(3,0); ctx.lineTo(-30,-5); ctx.closePath(); ctx.fill();
     ctx.fillStyle="rgba(240,170,30,0.55)"; ctx.font="bold 18px sans-serif"; ctx.fillText("₿",14,-26);
     ctx.fillStyle="#4a2a10"; ctx.fillRect(-46,4,3,12);
-    drawPerson(-16,0,0.7); drawPerson(18,-2,0.65);
+    // 3 crew with actions
+    drawPerson(-18, 0, 0.7, 'steer', 0);  // helmsman at rudder
+    drawPerson(10, -2, 0.7, 'bail', 1);   // bailing water
+    drawPerson(30, -2, 0.65, 'lookout', 2); // lookout
   }
 
   function drawBezaisen() {
@@ -242,7 +293,11 @@
     ctx.fillStyle="#ffd44f"; ctx.fillRect(-52,-3,2.5,2.5); ctx.fillRect(-46,-3,2.5,2.5);
     ctx.fillStyle="#f7931a"; ctx.fillRect(-6,-84,10,6);
     ctx.fillStyle="#3a1a08"; ctx.fillRect(-60,4,4,14);
-    drawPerson(-26,-2,0.75); drawPerson(8,0,0.8); drawPerson(38,-2,0.7);
+    // 4 crew busy on the trader
+    drawPerson(-38, -2, 0.75, 'steer', 0);   // helmsman
+    drawPerson(-12, 0, 0.8, 'row', 1);        // working ropes
+    drawPerson(18, -2, 0.75, 'wave', 2);       // celebrating
+    drawPerson(42, -2, 0.7, 'lookout', 3);     // lookout at bow
   }
 
   function drawSengokubune() {
@@ -268,7 +323,13 @@
     ctx.fillStyle="#f7931a"; ctx.fillRect(14,-102,14,8);
     ctx.fillStyle="#fff"; ctx.font="bold 6px sans-serif"; ctx.fillText("₿",18,-96);
     ctx.fillStyle="#3a1a08"; ctx.fillRect(-78,6,4,16);
-    drawPerson(-36,-4,0.8); drawPerson(-8,-2,0.9); drawPerson(22,-4,0.8); drawPerson(46,-2,0.75); drawPerson(-58,-8,0.65);
+    // Grand crew of 6 — all busy like lemmings
+    drawPerson(-58, -8, 0.65, 'steer', 0);    // helmsman at stern
+    drawPerson(-30, -4, 0.8, 'bail', 1);       // bailing
+    drawPerson(-5, -2, 0.85, 'wave', 2);       // waving
+    drawPerson(20, -4, 0.8, 'row', 3);         // hauling ropes
+    drawPerson(42, -2, 0.75, 'lookout', 4);    // lookout
+    drawPerson(60, -4, 0.7, 'wave', 5);        // celebrating
   }
 
   // ─── HUD ───
