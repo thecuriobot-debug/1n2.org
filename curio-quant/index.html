@@ -19,7 +19,7 @@
 .quote-bar{background:linear-gradient(135deg,var(--card) 0%,rgba(240,160,48,.04) 100%);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;gap:14px;align-items:center;cursor:pointer;transition:border-color .3s}
 .quote-bar:hover{border-color:rgba(240,160,48,.3)}
 .quote-avatar{width:44px;height:44px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.quote-text{font-size:1.15rem;line-height:1.5;flex:1}.quote-text .name{color:var(--accent);font-weight:700;font-size:.75rem;margin-bottom:2px}
+.quote-text{font-size:1.25rem;line-height:1.5;flex:1}.quote-text .name{color:var(--accent);font-weight:700;font-size:.75rem;margin-bottom:2px}
 .quote-text .q{color:var(--text)}.quote-refresh{color:var(--muted);font-size:.7rem;cursor:pointer}
 .top2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.top2{grid-template-columns:1fr}}
 .pick{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s;display:block;color:inherit}
@@ -27,11 +27,11 @@
 .pick-rank{position:absolute;top:10px;left:10px;background:var(--accent);color:var(--bg);font-weight:800;font-size:.72rem;padding:3px 9px;border-radius:5px;z-index:2}
 .pick-img{position:relative;aspect-ratio:5/3;background:#111218;overflow:hidden;display:flex;align-items:center;justify-content:center}.pick-img img{height:100%;object-fit:contain}
 .pick-body{padding:16px}
-.pick-name{font-size:1.5rem;font-weight:700;margin-bottom:2px}.pick-signal{display:inline-block;padding:2px 9px;border-radius:18px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.pick-signal.buy{background:rgba(61,214,140,.15);color:var(--green)}.pick-signal.strong{background:rgba(240,160,48,.18);color:var(--accent)}
+.pick-name{font-size:2rem;font-weight:700;margin-bottom:2px}.pick-signal{display:inline-block;padding:2px 9px;border-radius:18px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.pick-signal{font-size:1.1rem;padding:4px 14px}.pick-signal.buy{background:rgba(61,214,140,.15);color:var(--green)}.pick-signal.strong{background:rgba(240,160,48,.18);color:var(--accent)}
 .pick-stats{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5px;margin-top:10px}
-.pst{background:var(--card2);border-radius:5px;padding:7px 9px}.pst-l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.pst-v{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:600;margin-top:1px}
-.pick-r{margin-top:8px;font-size:.9rem;color:var(--muted);line-height:1.5;border-left:2px solid var(--accent);padding-left:9px}
+.pst{background:var(--card2);border-radius:5px;padding:7px 9px}.pst-l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.pst-v{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:600;margin-top:1px}
+.pick-r{margin-top:10px;font-size:1rem;color:var(--muted);line-height:1.5;border-left:2px solid var(--accent);padding-left:9px}
 .wl{display:flex;gap:9px;overflow-x:auto;padding-bottom:5px;scroll-snap-type:x mandatory}.wl::-webkit-scrollbar{height:3px}.wl::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .wc{min-width:128px;max-width:128px;background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;scroll-snap-align:start;transition:border-color .2s,transform .2s;flex-shrink:0;display:block;color:inherit}
 .wc:hover{border-color:var(--accent);transform:translateY(-2px)}
@@ -157,7 +157,7 @@ newQuote();
 const picks = [['30','STRONG BUY','strong'], ['17','BUY','buy']];
 document.getElementById('top2').innerHTML = picks.map(([id,sig,cls],i) => {
   const c = CARDS[id];
-  return `<a class="pick" href="card.html?id=${id}"><div class="pick-img"><div class="pick-rank">#${i+1} PICK</div><img src="${c.img}" alt="${c.name}"></div><div class="pick-body"><span class="pick-signal ${cls}">${i===0?'⚡ ':''} ${sig}</span><div class="pick-name">Card #${id} — ${c.name}</div><div class="pick-stats"><div class="pst"><div class="pst-l">Floor</div><div class="pst-v" style="color:var(--accent)">${c.floor} Ξ</div></div><div class="pst"><div class="pst-l">Target</div><div class="pst-v" style="color:var(--green)">${(c.avg30*2).toFixed(2)} Ξ</div></div><div class="pst"><div class="pst-l">Supply</div><div class="pst-v">${c.supply}</div></div><div class="pst"><div class="pst-l">Confidence</div><div class="pst-v" style="color:var(--green)">${i===0?92:85}%</div></div></div><div class="pick-r">${id==='30'?'Lowest supply (111). Only 3 offers — supply squeeze. 76% undervalued. Daniel Friedman original. Sold for 9Ξ at Christie\'s.':'Historical significance — the famous 17b misprint. 4 new buys this week. Price at support. Cryptopop! original.'}</div></div></a>`;
+  return `<a class="pick" href="card.html?id=${id}"><div class="pick-img"><div class="pick-rank">#${i+1} PICK</div><img src="${c.img}" alt="${c.name}"></div><div class="pick-body"><div style="font-size:2rem;font-weight:800;letter-spacing:1px;margin-bottom:4px;color:${cls==='strong'?'var(--accent)':'var(--green)'}">${i===0?'⚡ ':''}${sig}</div><div class="pick-name">Card #${id} — ${c.name}</div><div class="pick-stats"><div class="pst"><div class="pst-l">Floor</div><div class="pst-v" style="color:var(--accent)">${c.floor} Ξ</div></div><div class="pst"><div class="pst-l">Target</div><div class="pst-v" style="color:var(--green)">${(c.avg30*2).toFixed(2)} Ξ</div></div><div class="pst"><div class="pst-l">Supply</div><div class="pst-v">${c.supply}</div></div><div class="pst"><div class="pst-l">Confidence</div><div class="pst-v" style="color:var(--green)">${i===0?92:85}%</div></div></div><div class="pick-r">${id==='30'?'Lowest supply (111). Only 3 offers — supply squeeze. 76% undervalued. Daniel Friedman original. Sold for 9Ξ at Christie\'s.':'Historical significance — the famous 17b misprint. 4 new buys this week. Price at support. Cryptopop! original.'}</div></div></a>`;
 }).join('');
 
 // Build watchlist
