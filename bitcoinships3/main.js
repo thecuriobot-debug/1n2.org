@@ -82,21 +82,21 @@
     S.tlX=clamp(S.tlX,1,SURFACE.length-2); S.camX=S.tlX;
   }
 
-  // ─── BOAT PHYSICS: sits DIRECTLY on wave surface ───
+  // ─── BOAT PHYSICS: follows the VISIBLE white foam line exactly ───
   function updateBoat(dt) {
-    const wv = sam(S.tlX) * S.turb;
-    // Boat sits ON the water — the surface IS the wave
-    const surfY = S.sl - wv * 0.8;
-    // Clamp so boat never goes off screen
-    S.bY = clamp(surfY, 40, view.height - 60);
+    // Boat follows the SAME wave the user sees — the foam crest line
+    const boatScreenX = view.width * 0.5;
+    const surfY = visibleSurfY(boatScreenX);
+    S.bY = surfY - 4;  // sit just on top of the wave
     S.bVY = (S.bY - (S.prevBY || S.bY)) / Math.max(dt, 0.001);
     S.prevBY = S.bY;
 
-    // Roll: follows wave slope tightly
-    const ss = 3;
-    const slope = (sam(S.tlX + ss) - sam(S.tlX - ss)) / (ss * 2);
-    S.bTRoll = clamp(-slope * 0.22, -0.65, 0.65);
-    S.bRoll += (S.bTRoll - S.bRoll) * Math.min(1, dt * 10);  // very fast response
+    // Roll: follows the VISIBLE slope (sample left/right of boat position)
+    const slopeL = visibleSurfY(boatScreenX - 20);
+    const slopeR = visibleSurfY(boatScreenX + 20);
+    const slope = (slopeR - slopeL) / 40;
+    S.bTRoll = clamp(slope * 0.8, -0.55, 0.55);
+    S.bRoll += (S.bTRoll - S.bRoll) * Math.min(1, dt * 12);  // instant response
 
     S.hDrift += dt * (8 + S.zoom * 5);
 
@@ -117,7 +117,18 @@
 
   function step(dt) { if(S.mode!=="playing") return; updatePhase(dt); updateBoat(dt); }
   function w2s(sx) { return S.camX + (sx - view.width*0.5) / S.zoom; }
-  function sy4w(wx) { return clamp(S.sl - sam(wx) * S.turb * 0.8, 20, view.height - 30); }
+  // The VISIBLE wave surface — includes sloshing. This is what the boat follows.
+  function visibleSurfY(screenX) {
+    const wx = w2s(screenX), wt = S.wt, tb = S.turb;
+    const baseY = S.sl - sam(wx) * tb * 0.8;
+    const slosh = Math.sin(screenX*0.01 + wt*3.5) * (6 + tb*8)
+                + Math.sin(screenX*0.022 + wt*6.0) * (3 + tb*5)
+                + Math.sin(screenX*0.04 + wt*9.5) * (2 + tb*3)
+                + Math.sin(screenX*0.008 + wt*1.8) * (4 + tb*4);
+    return clamp(baseY + slosh, 30, view.height - 40);
+  }
+  // For background layers that don't slosh
+  function sy4w(wx) { return clamp(S.sl - sam(wx) * S.turb * 0.8, 30, view.height - 40); }
 
   // ─── GHIBLI SKY ───
   function drawSky() {
@@ -181,16 +192,11 @@
       ctx.strokeStyle = `rgba(120,200,230,${alpha.toFixed(3)})`; ctx.lineWidth = 0.8; ctx.stroke();
     }
 
-    // MAIN WAVE BODY — with aggressive sloshing
+    // MAIN WAVE BODY — uses visibleSurfY so boat matches exactly
     ctx.beginPath();
     for (let x = 0; x <= view.width+2; x += 2) {
-      const wx = w2s(x), by = sy4w(wx);
-      // Multi-frequency sloshing — waves crash and recede HARD
-      const slosh = Math.sin(x*0.01 + wt*3.5) * (6 + tb*8)
-                  + Math.sin(x*0.022 + wt*6.0) * (3 + tb*5)
-                  + Math.sin(x*0.04 + wt*9.5) * (2 + tb*3)
-                  + Math.sin(x*0.008 + wt*1.8) * (4 + tb*4);
-      x===0 ? ctx.moveTo(x, by+slosh) : ctx.lineTo(x, by+slosh);
+      const y = visibleSurfY(x);
+      x===0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
     }
     ctx.lineTo(view.width, view.height); ctx.lineTo(0, view.height); ctx.closePath();
     const wg = ctx.createLinearGradient(0, S.sl-120, 0, view.height);
@@ -198,13 +204,12 @@
     wg.addColorStop(0.6, "rgba(5,32,68,0.98)"); wg.addColorStop(1, "rgba(2,16,40,0.99)");
     ctx.fillStyle = wg; ctx.fill();
 
-    // HOKUSAI CREST — thick white foam with curling tips
+    // HOKUSAI CREST — thick white foam riding the visible surface
     ctx.beginPath();
     for (let x = 0; x <= view.width+2; x += 2) {
-      const wx = w2s(x), by = sy4w(wx);
-      const slosh = Math.sin(x*0.01+wt*3.5)*(6+tb*8) + Math.sin(x*0.022+wt*6)*(3+tb*5) + Math.sin(x*0.04+wt*9.5)*(2+tb*3) + Math.sin(x*0.008+wt*1.8)*(4+tb*4);
+      const y = visibleSurfY(x);
       const curl = Math.max(0, Math.sin(x*0.016+wt*3.5))**2 * tb * 4;
-      x===0 ? ctx.moveTo(x, by+slosh-curl) : ctx.lineTo(x, by+slosh-curl);
+      x===0 ? ctx.moveTo(x, y-curl) : ctx.lineTo(x, y-curl);
     }
     ctx.strokeStyle = "rgba(235,250,255,0.85)"; ctx.lineWidth = 2.8; ctx.stroke();
 
@@ -260,11 +265,31 @@
     ctx.globalAlpha = 1;
   }
 
+  // ─── TINY CREW PEOPLE ───
+  function drawPerson(x, y, scale) {
+    const s = scale || 1;
+    ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+    // Head
+    ctx.fillStyle = "#e8c8a0";
+    ctx.beginPath(); ctx.arc(0, -10, 3, 0, Math.PI*2); ctx.fill();
+    // Conical hat (sugegasa)
+    ctx.fillStyle = "#c8a860";
+    ctx.beginPath(); ctx.moveTo(-5, -12); ctx.lineTo(0, -17); ctx.lineTo(5, -12); ctx.closePath(); ctx.fill();
+    // Body (kimono)
+    ctx.fillStyle = "#2a4a6a";
+    ctx.fillRect(-2.5, -7, 5, 8);
+    // Arms
+    ctx.strokeStyle = "#e8c8a0"; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.moveTo(-2.5, -5); ctx.lineTo(-5, -2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(2.5, -5); ctx.lineTo(5, -2); ctx.stroke();
+    ctx.restore();
+  }
+
   // ─── SHIP DRAWING — historically-inspired wasen ───
   function drawShip() {
     const cx = view.width*0.5, cy = S.bY;
     const price = prAt(S.tlX).price, t = tier(price);
-    const sc = clamp(0.45 + S.zoom*0.55, 0.45, 1.15) * (0.65 + t*0.15);
+    const sc = clamp(0.6 + S.zoom*0.6, 0.6, 1.4) * (0.7 + t*0.18);  // BIGGER ship
 
     ctx.save(); ctx.translate(cx, cy); ctx.rotate(S.bRoll); ctx.scale(sc, sc);
 
@@ -346,6 +371,8 @@
     ctx.fillStyle = "rgba(240,170,30,0.55)"; ctx.font = "bold 22px sans-serif"; ctx.fillText("₿", 16, -30);
     // Rudder
     ctx.fillStyle = "#4a2a10"; ctx.fillRect(-52, 6, 4, 14);
+    // Crew! 2 tiny sailors
+    drawPerson(-20, -2, 0.8); drawPerson(20, -4, 0.7);
   }
 
   // Tier 3: Bezaisen — elegant Edo-period coastal trader
@@ -394,6 +421,8 @@
     ctx.fillStyle = "#f7931a"; ctx.fillRect(-8, -97, 12, 7);
     // Rudder (Japanese-style large)
     ctx.fillStyle = "#3a1a08"; ctx.fillRect(-66, 6, 5, 16);
+    // Crew — 3 sailors
+    drawPerson(-30, -4, 0.85); drawPerson(10, -2, 0.9); drawPerson(42, -4, 0.75);
   }
 
   // Tier 4: Sengokubune — grand 1000-koku ship, the pride of Edo
@@ -453,6 +482,9 @@
     // Deck details — barrels
     ctx.fillStyle = "#5a3a18";
     for(let i=0;i<4;i++) { ctx.beginPath(); ctx.ellipse(-10+i*16, 4, 4, 3, 0, 0, Math.PI*2); ctx.fill(); }
+    // Grand crew — 5 sailors
+    drawPerson(-40, -6, 0.9); drawPerson(-10, -4, 1.0); drawPerson(20, -6, 0.85);
+    drawPerson(45, -4, 0.8); drawPerson(-60, -10, 0.7);
   }
 
   // ─── CHART OVERLAY ───
