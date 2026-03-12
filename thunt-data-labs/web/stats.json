@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-03-11T08:17:57.777184",
-  "total_records": 283098,
+  "generated_at": "2026-03-12T02:21:11.146654",
+  "total_records": 296515,
   "datasets": {
     "curio": {
       "name": "Curio Cards",
       "icon": "\ud83c\udccf",
       "tables": {
-        "prices": 20,
+        "prices": 21,
         "cards": 30,
-        "owners": 231880,
+        "owners": 244759,
         "sales": 75
       },
-      "total": 232005,
+      "total": 244885,
       "latest": {
-        "floor": 0.0489,
+        "floor": 0.0486,
         "holders": 0,
-        "date": "2026-03-11"
+        "date": "2026-03-12"
       },
       "cards": [
         {
@@ -176,9 +176,9 @@
       "tables": {
         "channels": 11,
         "videos": 5961,
-        "comments": 39526
+        "comments": 39527
       },
-      "total": 45498,
+      "total": 45499,
       "channels": [
         {
           "name": "IG-88 / MC Fanb0y (STOLEN)",
@@ -254,7 +254,7 @@
           "name": "World Crypto Network",
           "id": "UCR9gdpWisRwnk_k23GsHfcA",
           "videos": 4594,
-          "comments": 29657,
+          "comments": 29658,
           "subs": 52500
         }
       ],
@@ -323,7 +323,7 @@
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 245,
-          "views": 1678438
+          "views": 1678471
         },
         {
           "title": "\"The Bitcoin Song\" - Tatiana Moroz (Live in SF 201",
@@ -335,13 +335,13 @@
           "title": "Star Trek: The Motion Picture (ships only)",
           "id": "qHWlccpsYIA",
           "comments": 211,
-          "views": 158801
+          "views": 158812
         },
         {
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 188,
-          "views": 194079
+          "views": 194085
         },
         {
           "title": "An Interview with Roger Ver about Scaling Bitcoin ",
@@ -367,94 +367,94 @@
       "name": "Articles",
       "icon": "\ud83d\udcf0",
       "tables": {
-        "articles": 2922,
+        "articles": 3453,
         "images": 26
       },
-      "total": 2948,
-      "with_text": 1850,
-      "total_words": 1405341,
+      "total": 3479,
+      "with_text": 2594,
+      "total_words": 2102388,
       "by_topic": [
         {
           "topic": "news-bitcoin",
-          "count": 471
+          "count": 495
         },
         {
           "topic": "news-crypto",
-          "count": 390
+          "count": 446
         },
         {
           "topic": "news-world",
-          "count": 279
+          "count": 399
         },
         {
           "topic": "news-ai",
-          "count": 267
+          "count": 295
         },
         {
           "topic": "news-tech",
-          "count": 219
-        },
-        {
-          "topic": "news-science",
-          "count": 193
+          "count": 288
         },
         {
           "topic": "news-business",
-          "count": 185
+          "count": 250
+        },
+        {
+          "topic": "news-science",
+          "count": 245
+        },
+        {
+          "topic": "news-us",
+          "count": 204
+        },
+        {
+          "topic": "news-culture",
+          "count": 197
         },
         {
           "topic": "news-ethereum",
           "count": 170
-        },
-        {
-          "topic": "news-culture",
-          "count": 164
-        },
-        {
-          "topic": "news-us",
-          "count": 156
         }
       ],
       "by_source": [
+        {
+          "source": "Al Jazeera",
+          "count": 106
+        },
+        {
+          "source": "CoinDesk",
+          "count": 80
+        },
+        {
+          "source": "CoinTelegraph",
+          "count": 79
+        },
         {
           "source": "AOL.com",
           "count": 76
         },
         {
-          "source": "Al Jazeera",
+          "source": "CNBC",
+          "count": 73
+        },
+        {
+          "source": "The Economic Times",
           "count": 69
         },
         {
-          "source": "CoinDesk",
-          "count": 62
-        },
-        {
-          "source": "Bitget",
-          "count": 57
-        },
-        {
-          "source": "CoinTelegraph",
-          "count": 53
-        },
-        {
-          "source": "CNBC",
-          "count": 51
-        },
-        {
           "source": "Decrypt",
-          "count": 49
+          "count": 65
         },
         {
-          "source": "BBC World",
-          "count": 47
+          "source": "TechCrunch",
+          "count": 63
         },
         {
-          "source": "Wired",
-          "count": 45
+          "source": "BBC News",
+          "count": 63
         },
         {
-          "source": "Science Daily",
-          "count": 45
+          "source": "Guardian US",
+          "count": 62
         }
       ]
     },
@@ -510,10 +510,10 @@
       "name": "Media",
       "icon": "\ud83c\udfac",
       "tables": {
-        "movies": 1598,
+        "movies": 1603,
         "books": 779
       },
-      "total": 2377,
+      "total": 2382,
       "avg_movie_rating": 3.5,
       "top_directors": [
         {
@@ -560,6 +560,83 @@
     }
   },
   "collection_log": [
+    {
+      "id": 102,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "records_updated": 0,
+      "duration_seconds": 3.0765440464019775,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 09:21:10"
+    },
+    {
+      "id": 103,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "records_updated": 0,
+      "duration_seconds": 0.01328277587890625,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 09:21:10"
+    },
+    {
+      "id": 104,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 1708,
+      "records_updated": 0,
+      "duration_seconds": 0.07314896583557129,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 09:21:10"
+    },
+    {
+      "id": 105,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "records_updated": 0,
+      "duration_seconds": 0.02524089813232422,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 09:21:10"
+    },
+    {
+      "id": 101,
+      "dataset": "articles",
+      "action": "collect",
+      "records_added": 0,
+      "records_updated": 0,
+      "duration_seconds": 2058.9360699653625,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 08:44:12"
+    },
+    {
+      "id": 100,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 151,
+      "records_updated": 0,
+      "duration_seconds": 2.5190460681915283,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 08:09:53"
+    },
+    {
+      "id": 99,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14023,
+      "records_updated": 0,
+      "duration_seconds": 15.358695030212402,
+      "status": "ok",
+      "error_message": "",
+      "run_at": "2026-03-12 08:09:50"
+    },
     {
       "id": 95,
       "dataset": "tweets",
@@ -702,84 +779,7 @@
       "status": "ok",
       "error_message": "",
       "run_at": "2026-03-11 15:06:33"
-    },
-    {
-      "id": 85,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14021,
-      "records_updated": 0,
-      "duration_seconds": 7.532204627990723,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-11 15:06:31"
-    },
-    {
-      "id": 84,
-      "dataset": "articles",
-      "action": "collect",
-      "records_added": 658,
-      "records_updated": 0,
-      "duration_seconds": 8.96418309211731,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:29"
-    },
-    {
-      "id": 83,
-      "dataset": "articles",
-      "action": "collect",
-      "records_added": 658,
-      "records_updated": 0,
-      "duration_seconds": 5.280454158782959,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:28"
-    },
-    {
-      "id": 82,
-      "dataset": "youtube",
-      "action": "collect",
-      "records_added": 150,
-      "records_updated": 0,
-      "duration_seconds": 12.761528015136719,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:23"
-    },
-    {
-      "id": 81,
-      "dataset": "youtube",
-      "action": "collect",
-      "records_added": 150,
-      "records_updated": 0,
-      "duration_seconds": 2.5586469173431396,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:20"
-    },
-    {
-      "id": 80,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14021,
-      "records_updated": 0,
-      "duration_seconds": 16.374499797821045,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:17"
-    },
-    {
-      "id": 79,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14021,
-      "records_updated": 0,
-      "duration_seconds": 9.028040170669556,
-      "status": "ok",
-      "error_message": "",
-      "run_at": "2026-03-10 08:00:10"
     }
   ],
-  "db_size_mb": 54.77
+  "db_size_mb": 59.89
 }
