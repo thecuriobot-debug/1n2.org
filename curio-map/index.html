@@ -90,11 +90,10 @@ function renderMap(id){
   
   // Sidebar
   const imgNum = id==='17b'?'17':id.padStart(2,'0');
-  const imgExt = ['21','22','23','24','25','26','27'].includes(id)?'png':['23','30'].includes(id)?'gif':'jpg';
-  const imgSrc = `/curio-quant/img/card-${imgNum}.${['21','22'].includes(id)?'png':'jpg'}`;
+  const imgExt = ['21','22'].includes(id)?'png':['23','30'].includes(id)?'gif':'jpg';
   
   document.getElementById('sb').innerHTML = `
-    <img class="card-img" src="/curio-quant/img/card-${imgNum.padStart(2,'0')}.${['21','22','23','24','25','26','27'].includes(id)?'png':id==='30'||id==='23'?'gif':'jpg'}" alt="${card.name}" onerror="this.style.display='none'">
+    <img class="card-img" src="/curio-quant/img/card-${imgNum.padStart(2,'0')}.${['21','22'].includes(id)?'png':['23','30'].includes(id)?'gif':'jpg'}" alt="${card.name}" onerror="this.style.display='none'">
     <h2>#${id} ${card.name}</h2>
     <div style="font-size:.72rem;color:var(--muted);margin-bottom:8px">by ${card.artist}</div>
     ${[{l:'Minted',v:card.total_minted.toLocaleString()},{l:'Burned',v:card.burned.toLocaleString()},{l:'Supply',v:'~'+card.current_supply.toLocaleString()},{l:'Owners',v:card.current_owners},{l:'Events',v:stats.total_events},{l:'OG Buyers',v:stats.og_buyers},{l:'Wallets',v:stats.total_wallets},{l:'Contract',v:card.contract}].map(s=>`<div class="sb-s"><span class="l">${s.l}</span><span class="v">${s.v}</span></div>`).join('')}
