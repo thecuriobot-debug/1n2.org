@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420" width="300" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0e1a"/>
+      <stop offset="100%" stop-color="#2e1a2e"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0.5" y2="0.5">
+      <stop offset="0%" stop-color="#e840b8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e840b8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b030a0"/>
+      <stop offset="50%" stop-color="#e840b8"/>
+      <stop offset="100%" stop-color="#b030a0"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer frame -->
+  <rect x="0" y="0" width="300" height="420" rx="8" fill="#0a0a0a"/>
+  <!-- Border frame like Friedman cards -->
+  <rect x="6" y="6" width="288" height="408" rx="5" fill="none" stroke="url(#frame)" stroke-width="4"/>
+  <!-- Background -->
+  <rect x="10" y="10" width="280" height="400" rx="3" fill="url(#bg)"/>
+  <!-- Diagonal light beam from top-left -->
+  <polygon points="10,10 160,10 10,200" fill="url(#beam)"/>
+  <!-- Central icon circle -->
+  <circle cx="150" cy="170" r="70" fill="#281828" stroke="#e840b8" stroke-width="2" opacity="0.6"/>
+  <circle cx="150" cy="170" r="55" fill="#281828" stroke="#e840b8" stroke-width="1" opacity="0.4"/>
+  <!-- Emoji symbol -->
+  <text x="150" y="190" text-anchor="middle" font-size="64" fill="#e840b8">⚡</text>
+  <!-- Star pattern decorations -->
+  <circle cx="50" cy="80" r="1.5" fill="#e840b8" opacity="0.5"/>
+  <circle cx="250" cy="60" r="1" fill="#e840b8" opacity="0.4"/>
+  <circle cx="80" cy="300" r="1.2" fill="#e840b8" opacity="0.3"/>
+  <circle cx="230" cy="320" r="1" fill="#e840b8" opacity="0.5"/>
+  <circle cx="60" cy="350" r="0.8" fill="#e840b8" opacity="0.4"/>
+  <circle cx="270" cy="120" r="1.3" fill="#e840b8" opacity="0.3"/>
+  <!-- Card number area (top-left, Friedman style italic) -->
+  <text x="28" y="48" font-family="Georgia,serif" font-size="32" font-weight="bold" font-style="italic" fill="#888" opacity="0.4">✦</text>
+  <!-- Unnumbered badge -->
+  <rect x="20" y="56" width="65" height="18" rx="3" fill="#e840b8" opacity="0.2"/>
+  <text x="52" y="69" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#e840b8" letter-spacing="1">UNNUMBERED</text>
+  <!-- Name banner -->
+  <rect x="30" y="270" width="240" height="45" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <text x="150" y="292" text-anchor="middle" font-family="Outfit,sans-serif" font-size="18" font-weight="800" fill="#e840b8">Velocity Trader</text>
+  <text x="150" y="308" text-anchor="middle" font-family="Outfit,sans-serif" font-size="10" fill="#888" letter-spacing="1">SPEED IS PROFIT</text>
+  <!-- Group banner -->
+  <rect x="40" y="330" width="220" height="28" rx="4" fill="rgba(0,0,0,0.4)"/>
+  <text x="150" y="349" text-anchor="middle" font-family="Outfit,sans-serif" font-size="11" font-weight="600" fill="#aaa">⚡ Quick Flip Artists</text>
+  <!-- Bottom decorative line -->
+  <line x1="50" y1="375" x2="250" y2="375" stroke="#e840b8" stroke-width="1" opacity="0.3"/>
+  <!-- QuantBot badge -->
+  <text x="150" y="395" text-anchor="middle" font-family="Outfit,sans-serif" font-size="8" fill="#555" letter-spacing="2">CURIOQUANT COLLECTOR CARD</text>
+</svg>

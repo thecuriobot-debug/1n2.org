@@ -59,10 +59,19 @@ else {
   // Total value estimate
   const totalValue = h.cards.reduce((sum, cid) => { const c = CARDS[cid]; return sum + (c ? c.floor : 0); }, 0);
 
+  // Find group card image
+  const grp = (typeof GROUPS !== 'undefined') ? GROUPS.find(g => g.name === h.group) : null;
+  const grpCard = grp && grp.card_img ? `<div style="text-align:center;margin-bottom:12px"><img src="${grp.card_img}" alt="${h.group}" style="width:100%;max-width:160px;border-radius:8px;border:1px solid var(--border)"><div style="font-size:.7rem;color:var(--muted);margin-top:4px">${h.group} Card</div></div>` : '';
+
   document.getElementById('page').innerHTML = `
+<div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
 <h1><span>${h.name}</span></h1>
 <div class="sub">${h.group} · ${h.wallet}</div>
 <span class="type-badge" style="color:${typeC[h.type]}">${h.type}</span>
+</div>
+${grpCard}
+</div>
 <div class="sgrid">
   <div class="sb"><div class="sb-l">Cards Held</div><div class="sb-v" style="color:var(--accent)">${h.cards.length}</div></div>
   <div class="sb"><div class="sb-l">Total Spent</div><div class="sb-v">${h.total_spent} Ξ</div></div>
@@ -79,7 +88,10 @@ else {
 ${h.cards.map(cid => {
   const c = CARDS[cid];
   if (!c) return '';
-  return `<a class="bcard" href="card.html?id=${cid}"><div class="bcard-img"><img src="${c.img}" alt="${c.name}"></div><div class="bcard-b"><div class="bcard-n">#${cid} ${c.name}</div><div class="bcard-p">${c.floor} Ξ</div></div></a>`;
+  // Count how many of this card the holder has (simulate: whales get more of rare cards)
+  const qty = h.type==='whale' ? (c.supply<=222?3:c.supply<=500?2:1) : (h.type==='fan'&&c.supply<=500?2:1);
+  const qtyBadge = qty > 1 ? `<span style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:800;color:var(--accent);margin-left:auto">×${qty}</span>` : '';
+  return `<a class="bcard" href="card.html?id=${cid}"><div class="bcard-img"><img src="${c.img}" alt="${c.name}"></div><div class="bcard-b" style="display:flex;align-items:center;gap:4px"><div style="flex:1;min-width:0"><div class="bcard-n">#${cid} ${c.name}</div><div class="bcard-p">${c.floor} Ξ</div></div>${qtyBadge}</div></a>`;
 }).join('')}
 </div>
 <div class="sec-t">🤝 Similar Collectors</div>

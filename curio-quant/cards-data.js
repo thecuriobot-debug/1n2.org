@@ -695,6 +695,7 @@ const GROUPS = [
   {
     "name": "Complete Set Hunters",
     "emoji": "\ud83c\udfdb\ufe0f",
+    "card_img": "img/type-archivist.svg",
     "count": 12,
     "desc": "Collectors building full 30/31 card sets. Patient, methodical, buy every dip. The backbone of the market.",
     "members": [
@@ -705,6 +706,7 @@ const GROUPS = [
   {
     "name": "Rare Cards Only",
     "emoji": "\ud83d\udc8e",
+    "card_img": "img/type-diamond.svg",
     "count": 8,
     "desc": "Only interested in 111-supply cards (BTC, Wizard, Education, Eclipse). Pay premium, hold forever.",
     "members": [
@@ -715,6 +717,7 @@ const GROUPS = [
   {
     "name": "Apple Buyers Club",
     "emoji": "\ud83c\udf4e",
+    "card_img": "img/type-apple.svg",
     "count": 15,
     "desc": "Phneep completionists. Treat the 7-card nature/materials series as a unified artwork. Won't break the set.",
     "members": [
@@ -724,6 +727,7 @@ const GROUPS = [
   {
     "name": "MadBitcoins Fans",
     "emoji": "\ud83c\udfac",
+    "card_img": "img/type-madfan.svg",
     "count": 10,
     "desc": "Fans of Thomas Hunt and the Curio Cards origin story. Focus on Cryptopop! cards and the UASF misprint.",
     "members": [
@@ -733,6 +737,7 @@ const GROUPS = [
   {
     "name": "Animated or Nothing",
     "emoji": "\ud83c\udf9e\ufe0f",
+    "card_img": "img/type-gifhunter.svg",
     "count": 5,
     "desc": "Only collect GIF cards (#23 Barbarian, #30 Eclipse). Believe animation is the true medium of digital art.",
     "members": [
@@ -742,6 +747,7 @@ const GROUPS = [
   {
     "name": "Quick Flip Artists",
     "emoji": "\u26a1",
+    "card_img": "img/type-flipper.svg",
     "count": 18,
     "desc": "Buy floor, sell 20% up. Never hold more than 2 weeks. Focus on high-supply liquid cards.",
     "members": [
@@ -752,6 +758,7 @@ const GROUPS = [
   {
     "name": "Floor Sweepers",
     "emoji": "\ud83e\uddf9",
+    "card_img": "img/type-sweeper.svg",
     "count": 22,
     "desc": "New collectors buying the cheapest available cards. Many are first-time NFT buyers exploring the collection.",
     "members": [
