@@ -60,7 +60,7 @@ else {
   const sigC = c.signal.includes('BUY')?'var(--green)':c.signal==='HOLD'?'var(--accent)':'var(--muted)';
   const conf = c.signal.includes('STRONG')?92:c.signal.includes('BUY')?85:c.signal==='HOLD'?70:50;
   // SEEDED chart
-  const prices = cardPriceHistory(id.replace('b',''), 90);
+  const prices = cardPriceHistory(id.replace('b',''), 730); // 2 years of history
   const cH=100,cW=380,pMin=Math.min(...prices),pMax=Math.max(...prices),pR=pMax-pMin||0.001;
   let pathD=prices.map((v,i)=>`${i===0?'M':'L'}${(i/prices.length*cW).toFixed(1)},${(cH-((v-pMin)/pR)*cH).toFixed(1)}`).join(' ');
   let fillD=`M0,${cH} ${prices.map((v,i)=>`L${(i/prices.length*cW).toFixed(1)},${(cH-((v-pMin)/pR)*cH).toFixed(1)}`).join(' ')} L${cW},${cH} Z`;
@@ -70,9 +70,9 @@ else {
   // Sale history with seeded prices
   const rng2 = seededRng(parseInt(id.replace('b','17'))*3571);
   const sales = [];
-  const types=['BUY','LIST','BUY','SELL','BUY','EXPIRE','BUY','LIST','BUY','SELL','BUY','LIST'];
-  const times=['1h','4h','8h','1d','2d','3d','5d','1w','10d','2w','3w','1mo'];
-  for(let i=0;i<12;i++){
+  const types=['BUY','LIST','BUY','SELL','BUY','EXPIRE','BUY','LIST','BUY','SELL','BUY','LIST','BUY','BUY','SELL','LIST','BUY','EXPIRE','BUY','LIST'];
+  const times=['1h','4h','8h','1d','2d','3d','5d','1w','10d','2w','3w','1mo','5w','2mo','3mo','3mo','4mo','5mo','6mo','8mo'];
+  for(let i=0;i<20;i++){
     const p=(c.avg30*(0.8+rng2()*0.5)).toFixed(3);
     sales.push({type:types[i],price:p,time:times[i]});
   }
@@ -89,7 +89,15 @@ else {
     `Smart money entry. Low supply card.`,
     `Taking profit after ${(rng2()*60+20).toFixed(0)}d hold.`,
     `New collector — first Curio purchase.`,
-    `Relisted at lower price. Motivated seller.`
+    `Relisted at lower price. Motivated seller.`,
+    `Accumulation phase — wallet bought 3 in one tx.`,
+    `Floor sweep by known collector.`,
+    `Profit taking after ${(rng2()*90+30).toFixed(0)}d hold. Solid return.`,
+    `New listing from long-term holder. First activity in 8 months.`,
+    `Bought during the dip. ${c.trend>0?'Good timing.':'Catching falling knife?'}`,
+    `Offer sat for 2 weeks then expired. Market moved past it.`,
+    `Post-Christie's sale era. Market still digesting the $1.27M headline.`,
+    `Early 2023 accumulation. Smart money was buying here.`
   ];
 
   document.getElementById('page').innerHTML = `
@@ -113,7 +121,7 @@ else {
 <div class="sec-t">📈 Price & Stats</div>
 <div class="chart-row">
   <div class="chart-box">
-    <h4>${c.name} — 90 Day Price</h4>
+    <h4>${c.name} — 2 Year Price History</h4>
     <svg viewBox="0 0 ${cW} ${cH+16}" style="width:100%;height:auto">
       <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0a030" stop-opacity="0.25"/><stop offset="100%" stop-color="#f0a030" stop-opacity="0.02"/></linearGradient></defs>
       <path d="${fillD}" fill="url(#cg)"/><path d="${pathD}" fill="none" stroke="#f0a030" stroke-width="1.5"/>

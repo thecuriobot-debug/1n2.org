@@ -768,9 +768,25 @@ function seededRng(seed) {
 function cardPriceHistory(id, days) {
   const c = CARDS[id]; if (!c) return [];
   const rng = seededRng(parseInt(id) * 7919 + 42);
-  let p = c.low + rng() * (c.high - c.low) * 0.3;
+  // Start near ATL, build up through cycles to current floor
+  let p = c.low * (1 + rng() * 2);
   const pts = [];
-  for (let i = 0; i < days; i++) { p += (rng() - 0.48) * p * 0.06; p = Math.max(c.low, Math.min(c.high, p)); pts.push(+p.toFixed(4)); }
-  pts.push(c.floor);
+  for (let i = 0; i < days; i++) {
+    const t = i / days;
+    // Create realistic market cycles: early flat, mid-bull spike, crash, recovery
+    const cycle = Math.sin(t * Math.PI * 3.2) * 0.3 + Math.sin(t * Math.PI * 7) * 0.1;
+    const bull = t > 0.3 && t < 0.5 ? (t - 0.3) * 5 : 0; // 2021 bull run
+    const crash = t > 0.5 && t < 0.7 ? -(t - 0.5) * 3 : 0; // 2022 crash
+    const drift = (rng() - 0.48) * p * 0.04;
+    p = p * (1 + cycle * 0.02 + bull * 0.03 + crash * 0.02) + drift;
+    p = Math.max(c.low * 0.8, Math.min(c.high * 1.1, p));
+    pts.push(+p.toFixed(4));
+  }
+  // Ensure last points converge to current floor
+  const last20 = Math.min(20, pts.length);
+  for (let i = pts.length - last20; i < pts.length; i++) {
+    const blend = (i - (pts.length - last20)) / last20;
+    pts[i] = +(pts[i] * (1 - blend) + c.floor * blend).toFixed(4);
+  }
   return pts;
 }
