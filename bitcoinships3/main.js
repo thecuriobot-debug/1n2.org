@@ -4,10 +4,7 @@
   const ctx = canvas.getContext("2d");
 
   const PHASES = [
-    { name: "storm", label: "荒波 · Riding the Storm", duration: 28 },
-    { name: "zoom_out", label: "大浪 · The Great Wave", duration: 14 },
-    { name: "calm_hunt", label: "静寂 · Finding Calm", duration: 9 },
-    { name: "zoom_in", label: "安心 · Settling In", duration: 11 },
+    { name: "storm", label: "荒波 · Riding the Storm", duration: 30 },
     { name: "calm", label: "浮 · Calm Float", duration: Infinity },
   ];
 
@@ -23,8 +20,8 @@
     const v=p.map(x=>x.price); PMIN=Math.min(...v); PMAX=Math.max(...v);
     PMEAN=v.reduce((a,b)=>a+b,0)/v.length;
     const r=PMAX-PMIN;
-    // Amplify the waves — make drops DEEP and rises HIGH
-    return smooth(v.map(x=>((x-PMEAN)/(r*0.5))*420), 1, 1);
+    // Amplify waves but keep on screen — the clamping in sy4w handles overflow
+    return smooth(v.map(x=>((x-PMEAN)/(r*0.5))*350), 1, 1);
   }
   function smooth(s, rad, passes) {
     let src=s.slice(); const o=new Array(src.length);
@@ -63,49 +60,43 @@
     return {
       mode:"playing", seqT:0, phI:0, phT:0, tlX:start, camX:start,
       zoom:1, tZoom:1, sl, turb:1.3,
-      bY:sl, bVY:0, bRoll:0, bTRoll:0,
+      bY:sl, bVY:0, bRoll:0, bTRoll:0, prevBY:sl,
       hDrift:0, chartOp:0, wt:0,
       spray:[],
     };
   }
   let S = null;
   const ph = () => PHASES[Math.min(S.phI, PHASES.length-1)];
-  const wzf = () => Math.pow(S.zoom, 0.66);
+  const wzf = () => 1;  // no zoom
 
   function updatePhase(dt) {
     S.seqT+=dt; S.phT+=dt; S.wt+=dt;
     const c=ph();
     if(Number.isFinite(c.duration) && S.phT>=c.duration) { S.phT-=c.duration; S.phI=Math.min(S.phI+1,PHASES.length-1); }
     const p=ph();
-    let spd=20, dZ=1.18, tT=0.82;
-    if(p.name==="storm") { spd=220; dZ=1; tT=1.6; }
-    else if(p.name==="zoom_out") { spd=55; const t=S.phT/p.duration; dZ=lerp(1,0.05,easeInOutCubic(t)); tT=1.0; S.chartOp=clamp(S.chartOp+dt*0.22,0,0.5); }
-    else if(p.name==="calm_hunt") { spd=6; dZ=0.05; tT=0.85; S.chartOp=0.5; const s=1-Math.exp(-dt*1.4); S.tlX=lerp(S.tlX,CALM_IDX-80,s); }
-    else if(p.name==="zoom_in") { spd=18; const t=S.phT/p.duration; dZ=lerp(0.05,1.18,easeInOutCubic(t)); tT=0.65; S.chartOp=clamp(S.chartOp-dt*0.16,0,0.5); if(S.tlX<CALM_IDX-60) S.tlX+=(CALM_IDX-60-S.tlX)*Math.min(1,dt*1.3); }
-    else if(p.name==="calm") { spd=10; dZ=1.18; tT=0.5; S.chartOp=clamp(S.chartOp-dt*0.1,0,0.5); }
-    S.tlX+=spd*dt; S.tZoom=dZ;
+    let spd=20, tT=0.82;
+    if(p.name==="storm") { spd=200; tT=1.6; }
+    else if(p.name==="calm") { spd=12; tT=0.5; }
+    S.tlX+=spd*dt;
     S.turb+=(tT-S.turb)*Math.min(1,dt*0.9);
-    S.zoom+=(S.tZoom-S.zoom)*Math.min(1,dt*2.2);
     S.tlX=clamp(S.tlX,1,SURFACE.length-2); S.camX=S.tlX;
   }
 
-  // ─── BOAT PHYSICS: ride the curves TIGHT ───
+  // ─── BOAT PHYSICS: sits DIRECTLY on wave surface ───
   function updateBoat(dt) {
-    const vz = wzf();
     const wv = sam(S.tlX) * S.turb;
-    const surfY = S.sl - wv * vz;
-    // Very stiff spring — boat hugs the wave surface
-    const desired = surfY - 6 * clamp(S.zoom, 0.3, 1.2);
-    const spring = (desired - S.bY) * 30;  // extremely stiff — glued to wave
-    const damp = -S.bVY * 5.5;  // less damping = more bounce
-    S.bVY += (spring + damp) * dt;
-    S.bY += S.bVY * dt;
+    // Boat sits ON the water — the surface IS the wave
+    const surfY = S.sl - wv * 0.8;
+    // Clamp so boat never goes off screen
+    S.bY = clamp(surfY, 40, view.height - 60);
+    S.bVY = (S.bY - (S.prevBY || S.bY)) / Math.max(dt, 0.001);
+    S.prevBY = S.bY;
 
-    // Roll: tight slope following
-    const ss = 4;
+    // Roll: follows wave slope tightly
+    const ss = 3;
     const slope = (sam(S.tlX + ss) - sam(S.tlX - ss)) / (ss * 2);
-    S.bTRoll = clamp(-slope * 0.18 * vz, -0.6, 0.6);
-    S.bRoll += (S.bTRoll - S.bRoll) * Math.min(1, dt * 8);  // fast response
+    S.bTRoll = clamp(-slope * 0.22, -0.65, 0.65);
+    S.bRoll += (S.bTRoll - S.bRoll) * Math.min(1, dt * 10);  // very fast response
 
     S.hDrift += dt * (8 + S.zoom * 5);
 
@@ -126,7 +117,7 @@
 
   function step(dt) { if(S.mode!=="playing") return; updatePhase(dt); updateBoat(dt); }
   function w2s(sx) { return S.camX + (sx - view.width*0.5) / S.zoom; }
-  function sy4w(wx) { return S.sl - sam(wx) * S.turb * wzf(); }
+  function sy4w(wx) { return clamp(S.sl - sam(wx) * S.turb * 0.8, 20, view.height - 30); }
 
   // ─── GHIBLI SKY ───
   function drawSky() {
