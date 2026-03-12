@@ -131,13 +131,19 @@
   </div>
 </div>
 
+<!-- LEADERBOARD -->
+<div class="sec">
+  <div class="sec-t">🏆 Collector Awards — Leaderboard</div>
+  <div id="awards"></div>
+</div>
+
 <!-- HOLDER ANALYSIS -->
 <div class="sec">
-  <div class="sec-t">👤 QuantBot Holder Analysis</div>
+  <div class="sec-t">👤 QuantBot Holder Analysis <a href="collectors.html" style="font-size:.7rem;margin-left:auto;color:var(--accent);text-transform:none;letter-spacing:0">View all →</a></div>
   <div id="holders"></div>
 </div>
 <div class="sec">
-  <div class="sec-t">🎭 Collector Groups</div>
+  <div class="sec-t">🎭 Collector Groups <a href="groups.html" style="font-size:.7rem;margin-left:auto;color:var(--accent);text-transform:none;letter-spacing:0">View all →</a></div>
   <div id="groups"></div>
 </div>
 <div class="foot"><p>CurioQuant — AI Card Market Intelligence · <a href="/curiohub/">Curio Ecosystem</a> · <a href="/">1n2.org</a></p></div>
@@ -172,10 +178,15 @@ document.getElementById('watchlist').innerHTML = allIds.map(id => {
   return `<a class="wc" href="card.html?id=${id}"><div class="wc-img"><img src="${c.img}" alt="${c.name}"></div><div class="wc-b"><div class="wc-n">#${id} ${c.name}</div><div class="wc-p">${c.floor} Ξ</div><div class="wc-tag ${tcls}">${tlbl}</div></div></a>`;
 }).join('');
 
+// Render awards leaderboard
+if(typeof AWARDS!=='undefined'){
+  document.getElementById('awards').innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">${AWARDS.map((a,i)=>`<div style="background:var(--card);border:1px solid ${i<3?'rgba(240,160,48,.3)':'var(--border)'};border-radius:10px;padding:14px;${i<3?'box-shadow:0 0 15px rgba(240,160,48,.05)':''}"><div style="font-size:1.6rem;margin-bottom:4px">${a.emoji}</div><div style="font-size:.95rem;font-weight:700;margin-bottom:2px">${a.title}</div><div style="font-size:.82rem;color:var(--accent);margin-bottom:4px">${a.holder}</div><div style="font-size:.8rem;color:var(--muted);line-height:1.4">${a.detail}</div><div style="font-size:.68rem;font-family:'JetBrains Mono',monospace;color:var(--muted);margin-top:6px">${a.wallet}</div></div>`).join('')}</div>`;
+}
+
 // Render holders
 if(typeof HOLDERS!=='undefined'){
   const typeC={whale:'var(--accent)',flipper:'var(--red)',fan:'var(--blue)',collector:'var(--green)',newbie:'var(--muted)'};
-  document.getElementById('holders').innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">${HOLDERS.map(h=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-weight:700;font-size:1rem">${h.name}</span><span style="font-size:.65rem;padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.06);color:${typeC[h.type]||'var(--muted)'};font-weight:600;text-transform:uppercase">${h.type}</span></div><div style="font-size:.72rem;color:var(--accent);margin-bottom:6px">${h.group}</div><div style="font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:8px">${h.style}</div><div style="font-size:.78rem;color:var(--text);font-style:italic;line-height:1.4;border-left:2px solid var(--border);padding-left:8px;margin-bottom:6px">${h.personality}</div><div style="display:flex;gap:12px;font-size:.7rem;color:var(--muted)"><span>💰 ${h.total_spent}Ξ spent</span><span>📅 ${h.avg_hold_days}d avg hold</span><span>🃏 ${h.cards.length} cards</span></div></div>`).join('')}</div>`;
+  document.getElementById('holders').innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">${HOLDERS.map(h=>`<a href="collector.html?id=${h.id}" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;display:block;color:inherit;transition:border-color .2s;cursor:pointer" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-weight:700;font-size:1rem">${h.name}</span><span style="font-size:.65rem;padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.06);color:${typeC[h.type]||'var(--muted)'};font-weight:600;text-transform:uppercase">${h.type}</span></div><div style="font-size:.72rem;color:var(--accent);margin-bottom:6px">${h.group}</div><div style="font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:8px">${h.style}</div><div style="font-size:.78rem;color:var(--text);font-style:italic;line-height:1.4;border-left:2px solid var(--border);padding-left:8px;margin-bottom:6px">${h.personality}</div><div style="display:flex;gap:12px;font-size:.7rem;color:var(--muted)"><span>💰 ${h.total_spent}Ξ spent</span><span>📅 ${h.avg_hold_days}d avg hold</span><span>🃏 ${h.cards.length} cards</span></div></a>`).join('')}</div>`;
 }
 // Render groups
 if(typeof GROUPS!=='undefined'){

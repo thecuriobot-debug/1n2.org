@@ -760,6 +760,190 @@ const GROUPS = [
   }
 ];
 
+
+const EXTRA_HOLDERS = [
+  {
+    "id": "collector-003",
+    "name": "The Historian",
+    "wallet": "0xb2e...71c",
+    "type": "collector",
+    "group": "Complete Set Hunters",
+    "cards": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      "17b",
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "style": "The only known wallet with a verified complete 31-card set including 17b. Purchased most cards in 2021 during the rediscovery. Has never sold a single card.",
+    "personality": "Quiet, resolute, plays the infinite game. Believes they are preserving a cultural artifact for future generations. Once said 'I don't own these cards \u2014 I'm their custodian.' Never engages in price discussion.",
+    "total_spent": 85.2,
+    "avg_hold_days": 1200
+  },
+  {
+    "id": "fan-003",
+    "name": "The Moon Caller",
+    "wallet": "0xd4f...28a",
+    "type": "fan",
+    "group": "MadBitcoins Fans",
+    "cards": [
+      17,
+      "17b",
+      19
+    ],
+    "style": "Owns both UASF cards and To The Moon. Obsessed with the Bitcoin maximalist cards. Active on CT posting about Curio history daily.",
+    "personality": "Evangelical, persistent, quotes Satoshi in conversations. Has the UASF card as their PFP. Runs a small Telegram group dedicated to Curio Cards price alerts.",
+    "total_spent": 1.8,
+    "avg_hold_days": 340
+  },
+  {
+    "id": "whale-004",
+    "name": "The Silent Accumulator",
+    "wallet": "0xe7a...93d",
+    "type": "whale",
+    "group": "Complete Set Hunters",
+    "cards": [
+      3,
+      5,
+      6,
+      7,
+      12,
+      13,
+      21,
+      23,
+      24,
+      25,
+      28,
+      29,
+      30
+    ],
+    "style": "Buys exclusively through limit orders placed 10-15% below floor. Patience personified \u2014 some orders sit for months before filling.",
+    "personality": "Disciplined, emotionless, algorithmic in approach. Never buys market. Has a spreadsheet tracking every historical sale. Probably runs a bot. Communication style: single-word Discord messages.",
+    "total_spent": 22.4,
+    "avg_hold_days": 480
+  },
+  {
+    "id": "newbie-002",
+    "name": "The Art Student",
+    "wallet": "0xf1c...56e",
+    "type": "newbie",
+    "group": "Floor Sweepers",
+    "cards": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "style": "Bought 4 cheap cards as research for a thesis on NFT art history. Screenshots everything for their presentation.",
+    "personality": "Academic, curious, asks thoughtful questions. Writing a paper on 'Pre-Standard NFTs and the Origins of Digital Art Ownership.' Has interviewed Thomas Hunt twice.",
+    "total_spent": 0.16,
+    "avg_hold_days": 14
+  },
+  {
+    "id": "collector-004",
+    "name": "The Minimalist",
+    "wallet": "0xa3b...82f",
+    "type": "collector",
+    "group": "Rare Cards Only",
+    "cards": [
+      29,
+      30
+    ],
+    "style": "Owns exactly two cards: Education and Eclipse. Both 111 supply. Believes in maximum concentration on the rarest pieces.",
+    "personality": "Zen-like, decisive, allergic to diversification. 'Two cards, infinite patience.' Has been offered 50x their purchase price and declined. Rarely speaks in Discord but when they do, everyone listens.",
+    "total_spent": 15.6,
+    "avg_hold_days": 720
+  }
+];
+
+const AWARDS = [
+  {
+    "title": "Most Complete Collection",
+    "emoji": "\ud83c\udfc6",
+    "holder": "The Historian",
+    "detail": "31/31 cards \u2014 the only verified complete set including 17b",
+    "wallet": "0xb2e...71c"
+  },
+  {
+    "title": "Most Apples",
+    "emoji": "\ud83c\udf4e",
+    "holder": "The Phneep Purist",
+    "detail": "Holds 12 copies of Card #1 Apples \u2014 the largest single-card position",
+    "wallet": "0x2d7...e9b"
+  },
+  {
+    "title": "Most Diverse Collection",
+    "emoji": "\ud83c\udf08",
+    "holder": "The Archivist",
+    "detail": "14 unique cards across all 7 artists \u2014 perfect artist diversity",
+    "wallet": "0x7a3...f2e"
+  },
+  {
+    "title": "Longest Diamond Hands",
+    "emoji": "\ud83d\udc8e",
+    "holder": "The Historian",
+    "detail": "1,200 days average hold time \u2014 since the 2021 rediscovery",
+    "wallet": "0xb2e...71c"
+  },
+  {
+    "title": "Biggest Single Purchase",
+    "emoji": "\ud83d\udcb0",
+    "holder": "Captain Diamond Hands",
+    "detail": "Card #21 Wizard purchased for 4.25 ETH \u2014 the highest price paid",
+    "wallet": "0x3b1...a8d"
+  },
+  {
+    "title": "Most Active Trader",
+    "emoji": "\u26a1",
+    "holder": "The Velocity Trader",
+    "detail": "47 buy/sell transactions in the last 90 days",
+    "wallet": "0x9c4...b7f"
+  },
+  {
+    "title": "Rarest Cards Only",
+    "emoji": "\ud83d\udc51",
+    "holder": "The Minimalist",
+    "detail": "Portfolio is 100% cards with 111 supply \u2014 pure rarity concentration",
+    "wallet": "0xa3b...82f"
+  },
+  {
+    "title": "Best Entry Timing",
+    "emoji": "\ud83c\udfaf",
+    "holder": "The Silent Accumulator",
+    "detail": "Average purchase price 22% below market \u2014 the limit order king",
+    "wallet": "0xe7a...93d"
+  }
+];
+
+// Merge extra holders
+if(typeof HOLDERS !== 'undefined') { HOLDERS.push(...EXTRA_HOLDERS); }
+
 // Seeded RNG for deterministic charts
 function seededRng(seed) {
   let t = seed >>> 0;
