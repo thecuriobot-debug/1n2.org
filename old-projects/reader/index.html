@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboarder</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--green:#34d399;--amber:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<style>
+header{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700}
+header h1 span{color:var(--accent)}
+#dateline{font-size:.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border);padding:0 16px;overflow-x:auto}
+.tab-btn{padding:10px 14px;font-size:.8rem;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;font-family:'DM Sans',sans-serif}
+.tab-btn:hover{color:var(--text);background:rgba(34,211,238,.05)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none;padding:0}
+.tab-content.active{display:block}
+.tab-content iframe{width:100%;height:calc(100vh - 90px);border:none}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px;max-width:1200px;margin:0 auto}
+.media-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px}
+.media-card h3{font-size:.85rem;color:var(--accent);margin-bottom:8px}
+.media-item{padding:4px 0;border-bottom:1px solid rgba(30,41,59,.4);font-size:.8rem;display:flex;justify-content:space-between}
+.media-item:last-child{border:none}
+.media-item .title{flex:1}
+.media-item .meta{color:var(--muted);font-size:.7rem;margin-left:8px;white-space:nowrap}
+.stars{color:var(--amber)}
+.stat-row{display:flex;justify-content:space-between;padding:3px 0;font-size:.8rem;border-bottom:1px solid rgba(30,41,59,.4)}
+.stat-row:last-child{border:none}
+.stat-row .v{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--green)}
+.bar-row{display:flex;align-items:center;gap:6px;font-size:.75rem;padding:2px 0}
+.bar-row .label{width:120px;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bar{height:14px;background:var(--accent);border-radius:2px;min-width:2px}
+.bar-row .count{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);width:30px}
+.comments-wall{column-count:3;column-gap:12px;padding:16px;max-width:1200px;margin:0 auto}
+.comment-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;break-inside:avoid;margin-bottom:12px}
+.comment-card .author{font-weight:700;font-size:.8rem;color:var(--accent)}
+.comment-card .text{font-size:.8rem;margin:4px 0;line-height:1.4}
+.comment-card .cmeta{font-size:.7rem;color:var(--muted)}
+.comment-card .cmeta a{color:var(--accent)}
+.ft{text-align:center;color:var(--muted);font-size:.7rem;padding:12px;border-top:1px solid var(--border)}
+.ft a{color:var(--accent)}
+@media(max-width:768px){.media-grid{grid-template-columns:1fr}.comments-wall{column-count:1}}
+</style>
+
+<header>
+<h1><span>Dashboarder</span></h1>
+<div id="dateline"></div>
+</header>
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab('home')">📰 Home</button>
+<button class="tab-btn" onclick="showTab('media')">🎬 Media</button>
+<button class="tab-btn" onclick="showTab('comments')">💬 Comments</button>
+<button class="tab-btn" onclick="showTab('youtube')">📺 YouTube</button>
+</div>
+<div id="tab-home" class="tab-content active"><iframe src="home-content.html"></iframe></div>
+<div id="tab-media" class="tab-content"><div id="media-panel" class="media-grid"><div class="media-card"><h3>Loading...</h3></div></div></div>
+<div id="tab-comments" class="tab-content"><div id="comments-wall" class="comments-wall"></div></div>
+<div id="tab-youtube" class="tab-content"><div id="yt-panel" class="media-grid"></div></div>
+<div class="ft">Dashboarder · <a href="/">1n2.org</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/thunt-wiki/">MadWikipedia</a> · <a href="/health/">Health</a></div>
+
+<script>
+const d=new Date();
+document.getElementById('dateline').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+  if(id==='media'&&!window._mediaLoaded){window._mediaLoaded=true;loadMedia();}
+  if(id==='comments'&&!window._commentsLoaded){window._commentsLoaded=true;loadComments();}
+  if(id==='youtube'&&!window._ytLoaded){window._ytLoaded=true;loadYouTube();}
+}
+
+function stars(r){if(!r)return'';const f=Math.floor(r);const h=r%1>=0.5;return '<span class="stars">'+'★'.repeat(f)+(h?'½':'')+'</span>';}
+
+async function loadMedia(){
+  const p=document.getElementById('media-panel');
+  try{
+    const r=await fetch('data/media.json');const d=await r.json();
+    let html='';
+    // Recent movies
+    html+='<div class="media-card"><h3>🎬 Recent Movies ('+d.stats.total_movies.toLocaleString()+' total · '+d.stats.avg_rating+' avg)</h3>';
+    d.recent_movies.forEach(m=>{
+      html+='<div class="media-item"><span class="title">'+m.title+(m.year?' ('+m.year+')':'')+'</span><span class="meta">'+stars(m.rating)+(m.director?' · '+m.director:'')+'</span></div>';
+    });
+    html+='</div>';
+    // Recent books
+    html+='<div class="media-card"><h3>📚 Recent Books ('+d.stats.total_books+' total)</h3>';
+    d.recent_books.forEach(b=>{
+      html+='<div class="media-item"><span class="title">'+b.title+'</span><span class="meta">'+(b.author||'')+' '+stars(b.rating)+'</span></div>';
+    });
+    html+='</div>';
+    // Top rated
+    html+='<div class="media-card"><h3>⭐ Top Rated Movies</h3>';
+    d.top_movies.forEach(m=>{
+      html+='<div class="media-item"><span class="title">'+m.title+(m.year?' ('+m.year+')':'')+'</span><span class="meta">'+stars(m.rating)+'</span></div>';
+    });
+    html+='</div>';
+    // Top directors
+    html+='<div class="media-card"><h3>🎬 Top Directors</h3>';
+    const maxD=Math.max(...d.top_directors.map(x=>x.count));
+    d.top_directors.forEach(x=>{
+      const w=Math.max(2,Math.round((x.count/maxD)*150));
+      html+='<div class="bar-row"><div class="label">'+x.name+'</div><div class="bar" style="width:'+w+'px"></div><div class="count">'+x.count+'</div></div>';
+    });
+    html+='</div>';
+    p.innerHTML=html;
+  }catch(e){p.innerHTML='<div class="media-card"><h3>Could not load media data</h3></div>';}
+}
+
+async function loadComments(){
+  const w=document.getElementById('comments-wall');
+  try{
+    const r=await fetch('data/comments.json');const comments=await r.json();
+    const shuffled=[...comments].sort(()=>Math.random()-0.5).slice(0,60);
+    shuffled.forEach(c=>{
+      const card=document.createElement('div');card.className='comment-card';
+      const url=c.video_url||'https://www.youtube.com/watch?v='+(c.video_id||'');
+      card.innerHTML='<div class="author">'+(c.author||'Anonymous')+'</div><div class="text">'+(c.text||'')+'</div><div class="cmeta"><a href="'+url+'" target="_blank">📺 '+(c.video_title||'')+'</a>'+(c.likes?' · 👍 '+c.likes:'')+'</div>';
+      w.appendChild(card);
+    });
+  }catch(e){w.innerHTML='<div class="comment-card">Could not load comments</div>';}
+}
+
+async function loadYouTube(){
+  const p=document.getElementById('yt-panel');
+  try{
+    const r=await fetch('data/comments.json');const comments=await r.json();
+    // Get unique videos from comments
+    const vids={};
+    comments.forEach(c=>{if(c.video_id&&c.video_title)vids[c.video_id]={title:c.video_title,id:c.video_id,comments:(vids[c.video_id]?.comments||0)+1};});
+    const sorted=Object.values(vids).sort((a,b)=>b.comments-a.comments).slice(0,20);
+    let html='<div class="media-card" style="grid-column:span 2"><h3>📺 Most Discussed Videos ('+Object.keys(vids).length+' with comments)</h3>';
+    sorted.forEach(v=>{
+      html+='<div class="media-item"><span class="title"><a href="https://youtube.com/watch?v='+v.id+'" target="_blank">'+v.title+'</a></span><span class="meta">💬 '+v.comments+'</span></div>';
+    });
+    html+='</div>';
+    p.innerHTML=html;
+  }catch(e){p.innerHTML='<div class="media-card">Could not load YouTube data</div>';}
+}
+</script>
+</body></html>
