@@ -131,6 +131,15 @@
   </div>
 </div>
 
+<!-- HOLDER ANALYSIS -->
+<div class="sec">
+  <div class="sec-t">👤 QuantBot Holder Analysis</div>
+  <div id="holders"></div>
+</div>
+<div class="sec">
+  <div class="sec-t">🎭 Collector Groups</div>
+  <div id="groups"></div>
+</div>
 <div class="foot"><p>CurioQuant — AI Card Market Intelligence · <a href="/curiohub/">Curio Ecosystem</a> · <a href="/">1n2.org</a></p></div>
 </div>
 
@@ -146,11 +155,31 @@ document.getElementById('top2').innerHTML = picks.map(([id,sig,cls],i) => {
 }).join('');
 
 // Build watchlist
-const watchIds = [1,7,12,22,19,28,3,29,14,18];
-const tags = {1:['new','NEW LISTING'],7:['dip','BETTER PRICE'],12:['rare','RARE · 222'],22:['hot','VOLUME ↑'],19:['dip','BELOW AVG'],28:['rare','RARE · 222'],3:['dip','-16% FLOOR'],29:['rare','111 SUPPLY'],14:['hot','↑ 8.2%'],18:['new','NEW LISTING']};
-document.getElementById('watchlist').innerHTML = watchIds.map(id => {
-  const c = CARDS[id]; const [tcls,tlbl] = tags[id]||['new','WATCH'];
+// Show ALL 31 cards
+const allIds = Object.keys(CARDS).sort((a,b)=>{
+  const na=a==='17b'?17.5:+a, nb=b==='17b'?17.5:+b; return na-nb;
+});
+const tagFor = (id,c) => {
+  if(c.supply<=111) return ['rare','111 SUPPLY'];
+  if(c.supply<=222) return ['rare','RARE · '+c.supply];
+  if(c.trend>5) return ['hot','↑ '+c.trend.toFixed(1)+'%'];
+  if(c.trend<-5) return ['dip','DIP '+c.trend.toFixed(1)+'%'];
+  if(c.floor<c.avg30*0.85) return ['dip','BELOW AVG'];
+  return ['new','WATCH'];
+};
+document.getElementById('watchlist').innerHTML = allIds.map(id => {
+  const c = CARDS[id]; const [tcls,tlbl] = tagFor(id,c);
   return `<a class="wc" href="card.html?id=${id}"><div class="wc-img"><img src="${c.img}" alt="${c.name}"></div><div class="wc-b"><div class="wc-n">#${id} ${c.name}</div><div class="wc-p">${c.floor} Ξ</div><div class="wc-tag ${tcls}">${tlbl}</div></div></a>`;
 }).join('');
+
+// Render holders
+if(typeof HOLDERS!=='undefined'){
+  const typeC={whale:'var(--accent)',flipper:'var(--red)',fan:'var(--blue)',collector:'var(--green)',newbie:'var(--muted)'};
+  document.getElementById('holders').innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">${HOLDERS.map(h=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-weight:700;font-size:1rem">${h.name}</span><span style="font-size:.65rem;padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.06);color:${typeC[h.type]||'var(--muted)'};font-weight:600;text-transform:uppercase">${h.type}</span></div><div style="font-size:.72rem;color:var(--accent);margin-bottom:6px">${h.group}</div><div style="font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:8px">${h.style}</div><div style="font-size:.78rem;color:var(--text);font-style:italic;line-height:1.4;border-left:2px solid var(--border);padding-left:8px;margin-bottom:6px">${h.personality}</div><div style="display:flex;gap:12px;font-size:.7rem;color:var(--muted)"><span>💰 ${h.total_spent}Ξ spent</span><span>📅 ${h.avg_hold_days}d avg hold</span><span>🃏 ${h.cards.length} cards</span></div></div>`).join('')}</div>`;
+}
+// Render groups
+if(typeof GROUPS!=='undefined'){
+  document.getElementById('groups').innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px">${GROUPS.map(g=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px"><div style="font-size:1.1rem;font-weight:700;margin-bottom:4px">${g.emoji} ${g.name}</div><div style="font-size:.72rem;color:var(--accent);margin-bottom:6px">${g.count} known wallets</div><div style="font-size:.85rem;color:var(--muted);line-height:1.5;margin-bottom:6px">${g.desc}</div><div style="font-size:.75rem;color:var(--text)">Notable: ${g.members.join(', ')}</div></div>`).join('')}</div>`;
+}
 </script>
 </body></html>

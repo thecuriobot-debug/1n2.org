@@ -448,8 +448,24 @@ const CARDS = {
     "trend": -18.5,
     "signal": "STRONG BUY",
     "img": "img/card-30.gif"
+  },
+  "17b": {
+    "name": "UASF Misprint",
+    "artist": "Cryptopop!",
+    "supply": 500,
+    "holders": 72,
+    "floor": 0.12,
+    "avg30": 0.15,
+    "high": 0.39,
+    "low": 0.06,
+    "offers": 2,
+    "sales30": 2,
+    "trend": 6.2,
+    "signal": "HOLD",
+    "img": "img/card-17.jpg"
   }
 };
+
 const QUOTES = [
   "Card #30 Eclipse at 0.045\u039e with 111 supply? That's a misprint in the pricing. \ud83c\udfaf",
   "The first art NFTs on Ethereum, predating CryptoPunks. History doesn't repeat, but it rhymes.",
@@ -474,5 +490,287 @@ const QUOTES = [
   "I've tracked 47 sales this month. The smart money is accumulating low-supply Friedman cards.",
   "Curio Cards: where fine art meets cryptographic scarcity. Est. May 9, 2017.",
   "Card #14 CryptoCurrency is up 8.2% this week. Volume precedes price. \ud83d\udcc8",
-  "The bear market tests conviction. The bull market rewards it. Which side are you on?"
+  "The bear market tests conviction. The bull market rewards it. Which side are you on?",
+  "The Archivist just bought another Eclipse. That wallet now holds 2 complete sets. \ud83c\udfdb\ufe0f",
+  "Floor Sweepers are back \u2014 3 new wallets buying Cards #1 and #8 this week. Fresh blood.",
+  "The Friedman Scholar hasn't sold a single card in 560 days. That's conviction.",
+  "Quick Flip Artists made 0.8\u039e profit this month. But they'll never own a complete set.",
+  "I've identified 5 collector groups. The Apple Buyers Club refuses to break their Phneep sets.",
+  "New wallet alert: someone just bought 7 cards in 10 minutes. Classic Complete Set Hunter behavior.",
+  "The GIF Hunter only owns animated cards. Card #23 and #30. A purist with a thesis.",
+  "17b misprint at 0.12\u039e. There are only 500 and you need it for a complete set. Do the math.",
+  "The Cryptopop Devotee owns every Cryptopop card plus the misprint. That's dedication.",
+  "Rare Cards Only group: 8 wallets holding 80% of all 111-supply cards. Supply is locked up."
 ];
+
+const HOLDERS = [
+  {
+    "id": "whale-001",
+    "name": "The Archivist",
+    "wallet": "0x7a3...f2e",
+    "type": "whale",
+    "group": "Complete Set Hunters",
+    "cards": [
+      1,
+      3,
+      5,
+      7,
+      12,
+      13,
+      17,
+      "17b",
+      21,
+      22,
+      23,
+      28,
+      29,
+      30
+    ],
+    "style": "Methodical collector. Buys every dip, never sells. Has held since 2021. Owns at least one of every card. Rumored to have two complete sets including the 17b misprint.",
+    "personality": "Patient, meticulous, deeply knowledgeable about crypto art history. Types of person who catalogs their collection in spreadsheets. Believes Curio Cards are the Rosetta Stone of NFT art.",
+    "total_spent": 42.5,
+    "avg_hold_days": 680
+  },
+  {
+    "id": "whale-002",
+    "name": "Captain Diamond Hands",
+    "wallet": "0x3b1...a8d",
+    "type": "whale",
+    "group": "Rare Cards Only",
+    "cards": [
+      13,
+      21,
+      29,
+      30,
+      "17b"
+    ],
+    "style": "Only buys the rarest cards (111 supply). Pays premium prices without flinching. Last purchase was Eclipse at 4.2 ETH.",
+    "personality": "Bold, confident, slightly theatrical. The kind of collector who names their wallet. Posts 'gm' every morning in Discord. Unshakeable conviction.",
+    "total_spent": 28.7,
+    "avg_hold_days": 520
+  },
+  {
+    "id": "flipper-001",
+    "name": "The Velocity Trader",
+    "wallet": "0x9c4...b7f",
+    "type": "flipper",
+    "group": "Quick Flip Artists",
+    "cards": [
+      1,
+      8,
+      9,
+      14
+    ],
+    "style": "Buys floor, sells 20% up. Never holds more than 2 weeks. Focuses on high-supply liquid cards for quick turns.",
+    "personality": "Impatient, data-driven, allergic to sentiment. Treats cards like stocks. Has a custom dashboard tracking every sale in real-time. Zero emotional attachment.",
+    "total_spent": 8.2,
+    "avg_hold_days": 11
+  },
+  {
+    "id": "fan-001",
+    "name": "The Cryptopop Devotee",
+    "wallet": "0x5e8...c3a",
+    "type": "fan",
+    "group": "MadBitcoins Fans",
+    "cards": [
+      14,
+      15,
+      16,
+      17,
+      "17b",
+      18,
+      19
+    ],
+    "style": "Owns every Cryptopop! card. Refuses to buy from other artists. Has the UASF and the misprint. True believer.",
+    "personality": "Passionate, tribal, slightly obsessive. Knows the lore behind every Cryptopop card. Will correct you if you get the Dogs Playing Poker references wrong. Active in community governance.",
+    "total_spent": 5.8,
+    "avg_hold_days": 450
+  },
+  {
+    "id": "fan-002",
+    "name": "The Phneep Purist",
+    "wallet": "0x2d7...e9b",
+    "type": "fan",
+    "group": "Apple Buyers Club",
+    "cards": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "style": "Owns the complete Phneep set. Treats them as a unified artwork \u2014 the building blocks series. Won't sell any piece individually.",
+    "personality": "Artistic, principled, quietly stubborn. Sees the Phneep series as a coherent artistic statement about creation. Refuses offers that would break the set. Writes long posts about NFT art theory.",
+    "total_spent": 3.1,
+    "avg_hold_days": 380
+  },
+  {
+    "id": "collector-001",
+    "name": "The Friedman Scholar",
+    "wallet": "0x8f2...d4c",
+    "type": "collector",
+    "group": "Rare Cards Only",
+    "cards": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      30
+    ],
+    "style": "Complete Daniel Friedman collection. Values the RPG trilogy (Wizard/Bard/Barbarian) above all else. Academic approach to collecting.",
+    "personality": "Intellectual, deliberate, speaks in art criticism language. Compares Friedman's work to early digital art movements. Has written a 3000-word essay on the significance of Eclipse.",
+    "total_spent": 18.4,
+    "avg_hold_days": 560
+  },
+  {
+    "id": "collector-002",
+    "name": "The GIF Hunter",
+    "wallet": "0x1a6...f8e",
+    "type": "collector",
+    "group": "Animated or Nothing",
+    "cards": [
+      23,
+      30
+    ],
+    "style": "Only collects animated cards (GIFs). Believes animation is the true medium of digital art. Currently holding Barbarian and Eclipse.",
+    "personality": "Tech-forward, visually minded, slightly contrarian. Argues that static JPGs are 'just paintings with extra steps.' Loves showing people the Eclipse animation on loop.",
+    "total_spent": 6.2,
+    "avg_hold_days": 290
+  },
+  {
+    "id": "newbie-001",
+    "name": "The Curious Newcomer",
+    "wallet": "0x6c3...a2d",
+    "type": "newbie",
+    "group": "Floor Sweepers",
+    "cards": [
+      1,
+      8,
+      9
+    ],
+    "style": "Bought 3 floor cards last week. First NFT purchase ever. Still learning what 'wrapping' means.",
+    "personality": "Enthusiastic, slightly overwhelmed, asks a lot of questions in Discord. Keeps checking floor prices every hour. Excited about owning 'the first art NFTs ever.'",
+    "total_spent": 0.12,
+    "avg_hold_days": 7
+  },
+  {
+    "id": "whale-003",
+    "name": "The Vengas Vault",
+    "wallet": "0x4b9...c1f",
+    "type": "whale",
+    "group": "Complete Set Hunters",
+    "cards": [
+      20,
+      26,
+      27,
+      28,
+      29
+    ],
+    "style": "Complete Marisol Vengas collection including the ultra-rare Education. Rumored to be an art gallery curator IRL.",
+    "personality": "Refined, understated, appreciates color theory. Sees the Vengas series as an exploration of pure chromatic expression. The kind of person who has opinions about Pantone swatches.",
+    "total_spent": 12.8,
+    "avg_hold_days": 410
+  },
+  {
+    "id": "flipper-002",
+    "name": "The Arbitrageur",
+    "wallet": "0x7d5...e3b",
+    "type": "flipper",
+    "group": "Quick Flip Artists",
+    "cards": [
+      14,
+      19
+    ],
+    "style": "Cross-marketplace arbitrage specialist. Buys on one platform, lists higher on another. Lightning fast execution.",
+    "personality": "Calculating, efficient, zero sentimentality. Views Curio Cards purely as an arbitrage opportunity. Has automated alerts for any listing below rolling average. Respects the history but won't let it affect the trade.",
+    "total_spent": 4.5,
+    "avg_hold_days": 5
+  }
+];
+
+const GROUPS = [
+  {
+    "name": "Complete Set Hunters",
+    "emoji": "\ud83c\udfdb\ufe0f",
+    "count": 12,
+    "desc": "Collectors building full 30/31 card sets. Patient, methodical, buy every dip. The backbone of the market.",
+    "members": [
+      "The Archivist",
+      "The Vengas Vault"
+    ]
+  },
+  {
+    "name": "Rare Cards Only",
+    "emoji": "\ud83d\udc8e",
+    "count": 8,
+    "desc": "Only interested in 111-supply cards (BTC, Wizard, Education, Eclipse). Pay premium, hold forever.",
+    "members": [
+      "Captain Diamond Hands",
+      "The Friedman Scholar"
+    ]
+  },
+  {
+    "name": "Apple Buyers Club",
+    "emoji": "\ud83c\udf4e",
+    "count": 15,
+    "desc": "Phneep completionists. Treat the 7-card nature/materials series as a unified artwork. Won't break the set.",
+    "members": [
+      "The Phneep Purist"
+    ]
+  },
+  {
+    "name": "MadBitcoins Fans",
+    "emoji": "\ud83c\udfac",
+    "count": 10,
+    "desc": "Fans of Thomas Hunt and the Curio Cards origin story. Focus on Cryptopop! cards and the UASF misprint.",
+    "members": [
+      "The Cryptopop Devotee"
+    ]
+  },
+  {
+    "name": "Animated or Nothing",
+    "emoji": "\ud83c\udf9e\ufe0f",
+    "count": 5,
+    "desc": "Only collect GIF cards (#23 Barbarian, #30 Eclipse). Believe animation is the true medium of digital art.",
+    "members": [
+      "The GIF Hunter"
+    ]
+  },
+  {
+    "name": "Quick Flip Artists",
+    "emoji": "\u26a1",
+    "count": 18,
+    "desc": "Buy floor, sell 20% up. Never hold more than 2 weeks. Focus on high-supply liquid cards.",
+    "members": [
+      "The Velocity Trader",
+      "The Arbitrageur"
+    ]
+  },
+  {
+    "name": "Floor Sweepers",
+    "emoji": "\ud83e\uddf9",
+    "count": 22,
+    "desc": "New collectors buying the cheapest available cards. Many are first-time NFT buyers exploring the collection.",
+    "members": [
+      "The Curious Newcomer"
+    ]
+  }
+];
+
+// Seeded RNG for deterministic charts
+function seededRng(seed) {
+  let t = seed >>> 0;
+  return () => { t += 0x6d2b79f5; let r = Math.imul(t ^ (t >>> 15), 1 | t); r ^= r + Math.imul(r ^ (r >>> 7), 61 | r); return ((r ^ (r >>> 14)) >>> 0) / 4294967296; };
+}
+function cardPriceHistory(id, days) {
+  const c = CARDS[id]; if (!c) return [];
+  const rng = seededRng(parseInt(id) * 7919 + 42);
+  let p = c.low + rng() * (c.high - c.low) * 0.3;
+  const pts = [];
+  for (let i = 0; i < days; i++) { p += (rng() - 0.48) * p * 0.06; p = Math.max(c.low, Math.min(c.high, p)); pts.push(+p.toFixed(4)); }
+  pts.push(c.floor);
+  return pts;
+}
