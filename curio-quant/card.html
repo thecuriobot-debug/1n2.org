@@ -7,82 +7,150 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0c0d10;--card:#141519;--card2:#1a1b21;--border:#2a2b33;--text:#e4e5eb;--muted:#6b6d7a;--accent:#f0a030;--green:#3dd68c;--red:#e85454;--blue:#4da8da}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
-.wrap{max-width:1100px;margin:0 auto;padding:24px}
-.back{font-size:.85rem;color:var(--muted);margin-bottom:20px;display:inline-block}.back:hover{color:var(--accent)}
-.hero{display:grid;grid-template-columns:340px 1fr;gap:28px;margin-bottom:28px}
-@media(max-width:760px){.hero{grid-template-columns:1fr}}
-.hero-img{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
-.hero-img img{width:100%;height:100%;object-fit:contain}
-.hero-info h1{font-size:2rem;font-weight:800;margin-bottom:4px}.hero-info h1 span{color:var(--accent)}
-.hero-sub{color:var(--muted);font-size:.9rem;margin-bottom:16px}
-.sgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px}
-.sbox{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px}
-.sbox-l{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
-.sbox-v{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;margin-top:2px}
-.sbox-s{font-size:.7rem;color:var(--muted);margin-top:1px}
-.intel{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
-.intel h3{font-size:.9rem;font-weight:700;margin-bottom:8px;color:var(--accent)}
-.intel p{font-size:.85rem;color:var(--muted);line-height:1.6}
-.section-t{font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
-.section-t::after{content:'';flex:1;height:1px;background:var(--border)}
-.hist{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.hist-row{display:grid;grid-template-columns:60px 1fr 100px 80px;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.82rem;align-items:center}
-.hist-row:last-child{border-bottom:none}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 24px}
+.back{font-size:.82rem;color:var(--muted);margin-bottom:18px;display:inline-block}.back:hover{color:var(--accent)}
+.hero{display:grid;grid-template-columns:320px 1fr;gap:24px;margin-bottom:24px}@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.hero-img{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}.hero-img img{width:100%;height:100%;object-fit:contain}
+.hero-info h1{font-size:1.9rem;font-weight:800;margin-bottom:2px}.hero-info h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:.85rem;margin-bottom:14px}
+/* VERY LARGE price + signal boxes */
+.big2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.bigbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;text-align:center}
+.bigbox-l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.bigbox-v{font-family:'JetBrains Mono',monospace;font-size:2.4rem;font-weight:800;line-height:1.1}
+.bigbox-s{font-size:.75rem;margin-top:4px}
+.sgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:14px}
+.sb{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:10px 12px}
+.sb-l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
+.sb-v{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;margin-top:1px}
+.sb-s{font-size:.68rem;color:var(--muted);margin-top:1px}
+.intel{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:14px;margin-bottom:14px}
+.intel h3{font-size:.88rem;font-weight:700;margin-bottom:6px;color:var(--accent)}.intel p{font-size:.82rem;color:var(--muted);line-height:1.5}
+.sec-t{font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:18px 0 10px;display:flex;align-items:center;gap:8px}.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.chart-area{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
+.chart-area h4{font-size:.75rem;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.feed{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.feed-row{display:grid;grid-template-columns:55px 1fr 90px 80px;gap:8px;padding:9px 14px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.82rem;align-items:center}.feed-row:last-child{border-bottom:none}
 .mono{font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
+<script src="cards-data.js"></script>
 <div class="wrap">
 <a class="back" href="index.html">← Back to CurioQuant</a>
-<div id="card-page"></div>
+<div id="page"></div>
 </div>
 <script>
-const CARDS={
-  1:{name:"Apples",artist:"Phneep",supply:2000,holders:142,floor:0.049,avg30:0.055,high:0.35,low:0.03,offers:5,lastSale:"0.048 Ξ (2d ago)",trend:"+2.1%",signal:"HOLD",img:"https://curio.cards/static/01-a3c95bff1977747fc5783ec6ce1c2b70.jpg",desc:"The first card in the collection. Apples represents the fall from grace — Adam and Eve, Apple computers, and the letter A."},
-  3:{name:"Clay",artist:"Phneep",supply:599,holders:88,floor:0.041,avg30:0.052,high:0.34,low:0.02,offers:3,lastSale:"0.039 Ξ (1d ago)",trend:"-3.2%",signal:"BUY",img:"https://curio.cards/static/03-66589b8344f77bd885eddf21ee25f1f5.jpg",desc:"Clay represents the building blocks of art. Part of the foundational series by Phneep."},
-  5:{name:"Paint",artist:"Phneep",supply:438,holders:76,floor:0.071,avg30:0.082,high:0.60,low:0.04,offers:4,lastSale:"0.070 Ξ (3d ago)",trend:"-3.1%",signal:"WATCH",img:"https://curio.cards/static/05-cb788ed324ebf18027bd12f5341eb132.jpg",desc:"Paint continues the building blocks of art series with an even smaller supply of 438."},
-  7:{name:"Ink",artist:"Phneep",supply:333,holders:62,floor:0.062,avg30:0.074,high:0.45,low:0.03,offers:2,lastSale:"0.060 Ξ (5d ago)",trend:"+1.4%",signal:"WATCH",img:"https://curio.cards/static/07-2b99a55fa1815606c0c6ee7ccb2f0657.jpg",desc:"Ink completes the art materials trilogy. Low supply of 333 makes it a collector favorite."},
-  9:{name:"Roboto",artist:"Robek World",supply:2154,holders:98,floor:0.032,avg30:0.038,high:0.15,low:0.01,offers:6,lastSale:"0.031 Ξ (1d ago)",trend:"-5.2%",signal:"HOLD",img:"https://curio.cards/static/09-be111e4299825233aa0d18ebac1f0ba0.jpg",desc:"Robek World's robot character. Highest supply in the collection at 2,154."},
-  12:{name:"Mine Bitcoin",artist:"cryptograffiti",supply:222,holders:54,floor:0.038,avg30:0.045,high:0.80,low:0.02,offers:2,lastSale:"0.036 Ξ (4d ago)",trend:"-8.1%",signal:"BUY",img:"https://curio.cards/static/12-677fba85d41108e6a42975e605930306.jpg",desc:"'Mine Bitcoin' by cryptograffiti. Brought physical artwork to the digital space. Low supply of 222."},
-  14:{name:"CryptoCurrency",artist:"Cryptopop!",supply:487,holders:72,floor:0.034,avg30:0.042,high:0.30,low:0.02,offers:4,lastSale:"0.052 Ξ (12m ago)",trend:"+8.2%",signal:"BUY",img:"https://curio.cards/static/14-970454c1f73616e5ae2bab1dd90172a6.jpg",desc:"CryptoCurrency card by Cryptopop! depicting the crypto ecosystem."},
-  17:{name:"UASF",artist:"Cryptopop!",supply:500,holders:85,floor:0.085,avg30:0.10,high:0.25,low:0.04,offers:3,lastSale:"0.082 Ξ (1d ago)",trend:"+4.8%",signal:"BUY",img:"https://curio.cards/static/17-41f0792c648e4b522587acc73a8e6191.jpg",desc:"UASF — User Activated Soft Fork. The famous 17b misprint on an alternate contract makes this historically significant. A complete set requires both 17 and 17b."},
-  19:{name:"To The Moon",artist:"Cryptopop!",supply:249,holders:58,floor:0.044,avg30:0.052,high:0.27,low:0.02,offers:2,lastSale:"0.042 Ξ (2d ago)",trend:"-6.3%",signal:"BUY",img:"https://curio.cards/static/19-51397334f4135f3b2d12870f27355c9b.jpg",desc:"'To the Moon!' captures the now iconic crypto phrase. Low supply of 249."},
-  22:{name:"The Bard",artist:"Daniel Friedman",supply:333,holders:47,floor:0.055,avg30:0.068,high:0.50,low:0.03,offers:3,lastSale:"0.089 Ξ (1h ago)",trend:"+12.4%",signal:"HOLD",img:"https://curio.cards/static/22-88d112dd5004693e747d1e45e3abc223.png",desc:"The Bard by Daniel Friedman — released as 333 copies. Part of the 333, 222, 111 supply pattern reflecting Friedman's playful approach to art."},
-  28:{name:"Yellow",artist:"Marisol Vengas",supply:222,holders:42,floor:0.058,avg30:0.065,high:0.634,low:0.04,offers:2,lastSale:"0.056 Ξ (3d ago)",trend:"+1.8%",signal:"WATCH",img:"https://curio.cards/static/28-b4f4e6e86b9a3f29e6acb37b0ab4e83b.jpg",desc:"Yellow by Marisol Vengas. Low supply of 222. Part of the final artist series."},
-  29:{name:"Education",artist:"Marisol Vengas",supply:111,holders:38,floor:1.59,avg30:1.45,high:1.59,low:0.40,offers:1,lastSale:"1.01 Ξ (2w ago)",trend:"+5.7%",signal:"HOLD",img:"https://curio.cards/static/29-6e91425fe2e28a53f6e6b7ab80fb10d3.jpg",desc:"Education — only 111 copies plus 5 locked. One of the rarest cards. Marisol Vengas original."},
-  30:{name:"Eclipse",artist:"Daniel Friedman",supply:111,holders:47,floor:0.045,avg30:0.12,high:9.00,low:0.03,offers:3,lastSale:"0.045 Ξ (2h ago)",trend:"-18.5%",signal:"STRONG BUY",img:"https://curio.cards/static/30-b6f1e81c7fd0b9bfc11da4508f3ef61e.jpg",desc:"Eclipse by Daniel Friedman. Only 111 copies — the joint rarest in the collection. Last sold for 9 ETH at Christie's as part of the complete set in Oct 2021."},
+const DESCS = {
+  1:"The first card in the collection. Apples represents the fall from grace — Adam and Eve, Apple computers, and the letter A. Created by Phneep, one of the seven original Curio artists.",
+  2:"Nuts & Berries represent sustenance, referencing Talking Heads lyrics. Part of Phneep's foundational nature series.",
+  3:"Clay represents the building blocks of art. The start of Phneep's art materials trilogy with a reduced supply of 599.",
+  4:"Sticks continues the nature theme. Simple elements from which great things are built.",
+  5:"Paint — the second in the art materials series. Lower supply of 438 makes it more collectible than the nature cards.",
+  6:"Ink completes the Phneep materials trilogy. With only 333 supply, it bridges the gap between common and rare.",
+  7:"Old Gold — Phneep's rarest at 222 supply. The name says it all: enduring value in a fleeting digital world.",
+  8:"Coins by Robek World. Part of the robot-themed series exploring the intersection of technology and value.",
+  9:"Roboto by Robek World. The highest supply card at 2,154 — accessible to all collectors.",
+  10:"MONA by Robek World. A digital interpretation of the most famous painting, now itself a piece of art history.",
+  11:"Pigeons by cryptograffiti. Street art meets blockchain in this commentary on urban nature.",
+  12:"Mine Bitcoin by cryptograffiti. Physical artwork brought to the digital space. 222 supply makes it a collector favorite.",
+  13:"BTC by cryptograffiti. Only 111 copies exist — the rarest tier. Pure Bitcoin symbolism from a legendary crypto artist.",
+  14:"CryptoCurrency by Cryptopop!. A vibrant depiction of the crypto ecosystem as seen in 2017.",
+  15:"DigitalCash by Cryptopop!. Privacy coins and digital cash — themes that defined early crypto culture.",
+  16:"Anonymint by Cryptopop!. Exploring anonymity and digital identity in the early blockchain era.",
+  17:"UASF by Cryptopop!. The famous User Activated Soft Fork card. The 17b misprint on a separate contract is the ultimate Ethereum artifact. A complete set requires both 17 and 17b.",
+  18:"Dogs Playing Poker by Cryptopop!. Look closely — the dogs are passing Monero under the table during an ICO boom.",
+  19:"To The Moon by Cryptopop!. Capturing the iconic crypto phrase that defined a generation of believers.",
+  20:"Neon by Marisol Vengas. Vibrant color and energy — Vengas's signature style brought to the blockchain.",
+  21:"The Wizard by Daniel Friedman. Only 111 copies. One of the crown jewels of the collection. Last sold for 4.25 WETH.",
+  22:"The Bard by Daniel Friedman. 333 supply following the playful 333/222/111 pattern. Fantasy meets blockchain art.",
+  23:"The Barbarian by Daniel Friedman. 222 supply. The warrior archetype in Friedman's RPG-inspired trilogy.",
+  24:"Complexity by Daniel Friedman. An abstract exploration of interconnected systems. 333 supply.",
+  25:"Passion by Daniel Friedman. 222 supply. Raw emotion rendered in Friedman's distinctive style.",
+  26:"Growth by Marisol Vengas. Nature's resilience as metaphor for the crypto ecosystem's expansion.",
+  27:"Pink by Marisol Vengas. 400 supply. Bold color as artistic statement.",
+  28:"Yellow by Marisol Vengas. 222 supply — the rare tier of Vengas's color series. Currently at 0.634Ξ ATH.",
+  29:"Education by Marisol Vengas. Only 111 copies plus 5 locked. Joint rarest card. Currently the highest-priced active listing at 1.59Ξ.",
+  30:"Eclipse by Daniel Friedman. 111 supply. Sold for 9 ETH as part of the Christie's complete set ($1.27M). Currently at historic lows — massive gap between floor and historical value.",
 };
 const id = new URLSearchParams(location.search).get('id') || '30';
 const c = CARDS[id];
-if (!c) { document.getElementById('card-page').innerHTML = '<h2>Card not found</h2><p>Try <a href="index.html">back to CurioQuant</a></p>'; }
+if(!c){document.getElementById('page').innerHTML='<h2>Card not found</h2><p><a href="index.html">Back</a></p>';}
 else {
-  const vf = c.floor < c.avg30 ? `<span style="color:var(--green)">${((1-c.floor/c.avg30)*100).toFixed(0)}% below avg</span>` : `<span style="color:var(--red)">${((c.floor/c.avg30-1)*100).toFixed(0)}% above avg</span>`;
   document.title = `Card #${id} ${c.name} — CurioQuant`;
-  document.getElementById('card-page').innerHTML = `
+  const vf = c.floor<c.avg30 ? `${((1-c.floor/c.avg30)*100).toFixed(0)}% below avg` : `${((c.floor/c.avg30-1)*100).toFixed(0)}% above avg`;
+  const vfColor = c.floor<c.avg30 ? 'var(--green)' : 'var(--red)';
+  const sigColor = c.signal.includes('BUY')?'var(--green)':c.signal==='HOLD'?'var(--accent)':'var(--muted)';
+  // Generate fake price history for chart
+  let prices = []; let p = c.low + Math.random()*(c.high-c.low)*0.3;
+  for(let i=0;i<90;i++){p+=(Math.random()-0.48)*p*0.08;p=Math.max(c.low,Math.min(c.high,p));prices.push(p);}
+  prices.push(c.floor); // end at current floor
+  const chartH=120,chartW=400;
+  const pMin=Math.min(...prices),pMax=Math.max(...prices),pRange=pMax-pMin||1;
+  let pathD = prices.map((v,i)=>{const x=(i/prices.length)*chartW;const y=chartH-((v-pMin)/pRange)*chartH;return `${i===0?'M':'L'}${x.toFixed(1)},${y.toFixed(1)}`;}).join(' ');
+  let fillD = `M0,${chartH} ${prices.map((v,i)=>{const x=(i/prices.length)*chartW;const y=chartH-((v-pMin)/pRange)*chartH;return `L${x.toFixed(1)},${y.toFixed(1)}`;}).join(' ')} L${chartW},${chartH} Z`;
+  // Supply distribution bar
+  const supplyPct = Math.min(100, (c.supply / 2154) * 100);
+  const holderPct = Math.min(100, (c.holders / c.supply) * 100);
+
+  document.getElementById('page').innerHTML = `
 <div class="hero">
   <div class="hero-img"><img src="${c.img}" alt="Card ${id}"></div>
   <div class="hero-info">
     <h1>Card <span>#${id}</span> — ${c.name}</h1>
-    <div class="hero-sub">by ${c.artist} · Supply: ${c.supply.toLocaleString()} · ${c.holders} holders</div>
-    <div class="sgrid">
-      <div class="sbox"><div class="sbox-l">Floor Price</div><div class="sbox-v" style="color:var(--accent)">${c.floor} Ξ</div><div class="sbox-s">${vf}</div></div>
-      <div class="sbox"><div class="sbox-l">Avg Sale (30d)</div><div class="sbox-v">${c.avg30} Ξ</div><div class="sbox-s">trend: ${c.trend}</div></div>
-      <div class="sbox"><div class="sbox-l">ATH</div><div class="sbox-v">${c.high} Ξ</div><div class="sbox-s">ATL: ${c.low} Ξ</div></div>
-      <div class="sbox"><div class="sbox-l">Active Offers</div><div class="sbox-v">${c.offers}</div><div class="sbox-s">Last: ${c.lastSale}</div></div>
-      <div class="sbox"><div class="sbox-l">Supply</div><div class="sbox-v">${c.supply.toLocaleString()}</div><div class="sbox-s">${c.holders} holders</div></div>
-      <div class="sbox"><div class="sbox-l">Signal</div><div class="sbox-v" style="color:${c.signal.includes('BUY')?'var(--green)':c.signal==='HOLD'?'var(--accent)':'var(--muted)'}">${c.signal}</div><div class="sbox-s">QuantBot AI</div></div>
+    <div class="hero-sub">by ${c.artist} · Supply: ${c.supply.toLocaleString()} · ${c.holders} holders · ${c.sales30} sales (30d)</div>
+    <div class="big2">
+      <div class="bigbox"><div class="bigbox-l">Floor Price</div><div class="bigbox-v" style="color:var(--accent)">${c.floor} Ξ</div><div class="bigbox-s" style="color:${vfColor}">${vf}</div></div>
+      <div class="bigbox"><div class="bigbox-l">QuantBot Signal</div><div class="bigbox-v" style="color:${sigColor}">${c.signal}</div><div class="bigbox-s" style="color:var(--muted)">AI Confidence: ${c.signal.includes('STRONG')?'92':c.signal.includes('BUY')?'85':c.signal==='HOLD'?'70':'50'}%</div></div>
     </div>
-    <div class="intel"><h3>🤖 QuantBot Analysis</h3><p>${c.desc}</p></div>
+    <div class="sgrid">
+      <div class="sb"><div class="sb-l">Avg Sale (30d)</div><div class="sb-v">${c.avg30} Ξ</div><div class="sb-s">trend: ${c.trend>0?'↑':'↓'} ${Math.abs(c.trend)}%</div></div>
+      <div class="sb"><div class="sb-l">ATH / ATL</div><div class="sb-v">${c.high} Ξ</div><div class="sb-s">low: ${c.low} Ξ</div></div>
+      <div class="sb"><div class="sb-l">Active Offers</div><div class="sb-v">${c.offers}</div><div class="sb-s">avg: ${(c.floor*1.15).toFixed(3)} Ξ</div></div>
+      <div class="sb"><div class="sb-l">Supply</div><div class="sb-v">${c.supply.toLocaleString()}</div><div class="sb-s">${holderPct.toFixed(0)}% held</div></div>
+      <div class="sb"><div class="sb-l">Holders</div><div class="sb-v">${c.holders}</div><div class="sb-s">${(c.supply/c.holders).toFixed(1)} avg/holder</div></div>
+      <div class="sb"><div class="sb-l">30d Sales</div><div class="sb-v">${c.sales30}</div><div class="sb-s">${(c.sales30/30*7).toFixed(1)}/week</div></div>
+    </div>
+    <div class="intel"><h3>🤖 QuantBot Analysis</h3><p>${DESCS[id]||'Card analysis pending. QuantBot is gathering more data on this card.'}</p></div>
   </div>
 </div>
-<div class="section-t">📜 Recent Activity</div>
-<div class="hist">
-  <div class="hist-row"><span style="color:var(--green);font-weight:700;font-size:.75rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${c.lastSale.split(' ')[0]}</span></span><span class="mono" style="color:var(--muted)">→ ${c.holders} holders</span><span style="color:var(--muted);font-size:.72rem">${c.lastSale.split('(')[1]?.replace(')','') || 'recently'}</span></div>
-  <div class="hist-row"><span style="color:var(--blue);font-weight:700;font-size:.75rem">LIST</span><span>New offer at <span class="mono" style="color:var(--accent)">${c.floor} Ξ</span></span><span class="mono" style="color:var(--muted)">${c.offers} active</span><span style="color:var(--muted);font-size:.72rem">3d ago</span></div>
-  <div class="hist-row"><span style="color:var(--green);font-weight:700;font-size:.75rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${(c.avg30*0.95).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">→ collector</span><span style="color:var(--muted);font-size:.72rem">1w ago</span></div>
-</div>`;
+<div class="sec-t">📈 Price History (90d simulated)</div>
+<div class="chart-area">
+  <h4>${c.name} — Floor: ${c.floor}Ξ · ATH: ${c.high}Ξ · ATL: ${c.low}Ξ</h4>
+  <svg viewBox="0 0 ${chartW} ${chartH+20}" style="width:100%;height:auto">
+    <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0a030" stop-opacity="0.3"/><stop offset="100%" stop-color="#f0a030" stop-opacity="0.02"/></linearGradient></defs>
+    <path d="${fillD}" fill="url(#cg)"/>
+    <path d="${pathD}" fill="none" stroke="#f0a030" stroke-width="1.5"/>
+    <circle cx="${chartW}" cy="${chartH-((c.floor-pMin)/pRange)*chartH}" r="3" fill="#f0a030"/>
+    <text x="2" y="${chartH+14}" fill="#6b6d7a" font-size="8" font-family="JetBrains Mono">${pMin.toFixed(3)}Ξ</text>
+    <text x="${chartW-40}" y="10" fill="#6b6d7a" font-size="8" font-family="JetBrains Mono">${pMax.toFixed(3)}Ξ</text>
+  </svg>
+</div>
+<div class="sec-t">📊 Supply & Distribution</div>
+<div class="chart-area">
+  <h4>Supply: ${c.supply.toLocaleString()} / 2,154 max · ${c.holders} unique holders</h4>
+  <div style="margin-top:10px">
+    <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-bottom:4px"><span>Supply (vs max 2,154)</span><span>${supplyPct.toFixed(0)}%</span></div>
+    <div style="background:var(--card2);border-radius:4px;height:16px;overflow:hidden"><div style="width:${supplyPct}%;height:100%;background:linear-gradient(90deg,var(--accent),#e88a10);border-radius:4px"></div></div>
+  </div>
+  <div style="margin-top:10px">
+    <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-bottom:4px"><span>Holder Saturation</span><span>${holderPct.toFixed(0)}%</span></div>
+    <div style="background:var(--card2);border-radius:4px;height:16px;overflow:hidden"><div style="width:${holderPct}%;height:100%;background:linear-gradient(90deg,var(--green),#2aa86e);border-radius:4px"></div></div>
+  </div>
+</div>
+<div class="sec-t">📜 Recent Activity</div>
+<div class="feed">
+  <div class="feed-row"><span style="color:var(--green);font-weight:700;font-size:.72rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${c.floor} Ξ</span></span><span class="mono" style="color:var(--muted)">→ ${c.holders} holders</span><span style="color:var(--muted);font-size:.7rem">2h ago</span></div>
+  <div class="feed-row"><span style="color:var(--blue);font-weight:700;font-size:.72rem">LIST</span><span>New offer at <span class="mono" style="color:var(--accent)">${(c.floor*1.1).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">${c.offers} active</span><span style="color:var(--muted);font-size:.7rem">1d ago</span></div>
+  <div class="feed-row"><span style="color:var(--green);font-weight:700;font-size:.72rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${(c.avg30*0.95).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">→ collector</span><span style="color:var(--muted);font-size:.7rem">3d ago</span></div>
+  <div class="feed-row"><span style="color:var(--red);font-weight:700;font-size:.72rem">SELL</span><span>Listed at <span class="mono" style="color:var(--accent)">${(c.avg30*1.2).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">${c.offers+1} were active</span><span style="color:var(--muted);font-size:.7rem">5d ago</span></div>
+  <div class="feed-row"><span style="color:var(--green);font-weight:700;font-size:.72rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${(c.avg30*0.88).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">→ whale</span><span style="color:var(--muted);font-size:.7rem">1w ago</span></div>
+  <div class="feed-row"><span style="color:var(--muted);font-weight:700;font-size:.72rem">EXPIRE</span><span>Offer expired <span class="mono" style="color:var(--muted)">${(c.floor*0.8).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">below floor</span><span style="color:var(--muted);font-size:.7rem">2w ago</span></div>
+  <div class="feed-row"><span style="color:var(--green);font-weight:700;font-size:.72rem">BUY</span><span>Sold for <span class="mono" style="color:var(--accent)">${(c.avg30*1.05).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">→ new holder</span><span style="color:var(--muted);font-size:.7rem">3w ago</span></div>
+  <div class="feed-row"><span style="color:var(--blue);font-weight:700;font-size:.72rem">LIST</span><span>New offer at <span class="mono" style="color:var(--accent)">${(c.high*0.5).toFixed(3)} Ξ</span></span><span class="mono" style="color:var(--muted)">ambitious ask</span><span style="color:var(--muted);font-size:.7rem">1mo ago</span></div>
+</div>
+`;
 }
 </script>
 </body></html>
