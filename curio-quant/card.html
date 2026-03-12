@@ -161,7 +161,18 @@ ${sales.map((s,i)=>{
   const tc = s.type==='BUY'?'var(--green)':s.type==='SELL'?'var(--red)':s.type==='LIST'?'var(--blue)':'var(--muted)';
   return `<div class="feed-row"><span class="mono" style="color:${tc};font-weight:700;font-size:.72rem">${s.type}</span><span><span class="mono" style="color:var(--accent)">${s.price} Ξ</span> <span style="color:var(--muted);font-size:.78rem">— ${comments[i]}</span></span><span style="color:var(--muted);font-size:.75rem">${s.time} ago</span><span></span></div>`;
 }).join('')}
-</div>`;
+</div>
+${id==='1'?`
+<div class="sec-t">🗺️ Distribution Map — Curio Map</div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:14px">
+  <iframe src="/curio-map/" style="width:100%;height:600px;border:none;display:block"></iframe>
+  <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+    <span style="font-size:.82rem;color:var(--muted)">Interactive distribution network — drag nodes, zoom, hover for details</span>
+    <a href="/curio-map/" target="_blank" style="font-size:.82rem;color:var(--accent)">Open full map →</a>
+  </div>
+</div>
+`:''}
+`;
 }
 </script>
 </body></html>
