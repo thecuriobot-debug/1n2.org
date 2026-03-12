@@ -467,12 +467,12 @@ const CARDS = {
 };
 
 const QUOTES = [
-  "Card #30 Eclipse at 0.045\u039e with 111 supply? That's a misprint in the pricing. \ud83c\udfaf",
+  "Card #30 Eclipse at 0.045Ξ with 821 supply? That's a misprint in the pricing. \ud83c\udfaf",
   "The first art NFTs on Ethereum, predating CryptoPunks. History doesn't repeat, but it rhymes.",
   "I've been watching Card #17 UASF all week. 4 new buys. Someone's accumulating. \ud83d\udc40",
-  "111 supply cards are generational holds. Education, Eclipse, BTC, Wizard \u2014 the crown jewels.",
+  "111 supply cards are generational holds. Education, BTC, Wizard \u2014 the crown jewels.",
   "Floor at 0.049\u039e for the oldest art NFTs in existence? My circuits can't compute this undervaluation.",
-  "Daniel Friedman's Wizard has 50 owners and 111 supply. The math is simple: scarcity wins.",
+  "Robek World's Wizard has 50 owners and 111 supply. The math is simple: scarcity wins.",
   "October 2021: a complete set sold at Christie's for $1.27M. The market has a short memory.",
   "Cryptopop!'s dogs are playing poker while the market sleeps. Wake up call incoming.",
   "When CryptoPunks were $1, people laughed. Curio Cards launched 3 months earlier. Think about it.",
@@ -544,7 +544,7 @@ const HOLDERS = [
       30,
       "17b"
     ],
-    "style": "Only buys the rarest cards (111 supply). Pays premium prices without flinching. Last purchase was Eclipse at 4.2 ETH.",
+    "style": "Only buys the rarest cards. Pays premium prices without flinching. Last purchase was Eclipse at 4.2 ETH.",
     "personality": "Bold, confident, slightly theatrical. The kind of collector who names their wallet. Posts 'gm' every morning in Discord. Unshakeable conviction.",
     "total_spent": 28.7,
     "avg_hold_days": 520
@@ -708,7 +708,7 @@ const GROUPS = [
     "emoji": "\ud83d\udc8e",
     "card_img": "img/type-diamond.svg",
     "count": 8,
-    "desc": "Only interested in 111-supply cards (BTC, Wizard, Education, Eclipse). Pay premium, hold forever.",
+    "desc": "Only interested in rare cards (BTC 111, Wizard 111, Education 111, Eclipse 821). Pay premium, hold forever.",
     "members": [
       "Captain Diamond Hands",
       "The Friedman Scholar"
@@ -882,7 +882,7 @@ const EXTRA_HOLDERS = [
       29,
       30
     ],
-    "style": "Owns exactly two cards: Education and Eclipse. Both 111 supply. Believes in maximum concentration on the rarest pieces.",
+    "style": "Owns exactly two cards: Education (111 supply) and Eclipse (821 supply). Believes in maximum concentration on significant pieces.",
     "personality": "Zen-like, decisive, allergic to diversification. 'Two cards, infinite patience.' Has been offered 50x their purchase price and declined. Rarely speaks in Discord but when they do, everyone listens.",
     "total_spent": 15.6,
     "avg_hold_days": 720
