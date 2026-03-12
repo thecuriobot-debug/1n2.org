@@ -1,0 +1,4512 @@
+{
+  "holders": [
+    {
+      "id": "h-000",
+      "name": "The Archivist",
+      "wallet": "0x3eb...53f",
+      "type": "inactive",
+      "group": "Rare Cards Only",
+      "cards": [
+        "24"
+      ],
+      "total_spent": 20.13,
+      "avg_hold_days": 214,
+      "status": "inactive",
+      "last_active": "23mo ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "Autoglyphs",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "24",
+          "price": 0.071,
+          "days_ago": 72
+        },
+        {
+          "type": "BUY",
+          "card": "24",
+          "price": 0.0776,
+          "days_ago": 82
+        },
+        {
+          "type": "SELL",
+          "card": "24",
+          "price": 0.034,
+          "days_ago": 100
+        },
+        {
+          "type": "LIST",
+          "card": "24",
+          "price": 0.0829,
+          "days_ago": 128
+        },
+        {
+          "type": "BUY",
+          "card": "24",
+          "price": 0.0525,
+          "days_ago": 221
+        },
+        {
+          "type": "LIST",
+          "card": "24",
+          "price": 0.0921,
+          "days_ago": 271
+        },
+        {
+          "type": "LIST",
+          "card": "24",
+          "price": 0.0432,
+          "days_ago": 285
+        },
+        {
+          "type": "SELL",
+          "card": "24",
+          "price": 0.0936,
+          "days_ago": 285
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Patient, meticulous, deeply knowledgeable about crypto art history."
+    },
+    {
+      "id": "h-001",
+      "name": "Captain Diamond Hands",
+      "wallet": "0x658...a2f",
+      "type": "flipper",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "6",
+        "7",
+        "12"
+      ],
+      "total_spent": 63.18,
+      "avg_hold_days": 1332,
+      "status": "active",
+      "last_active": "5h ago",
+      "other_nfts": [
+        "MoonCats",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0315,
+          "days_ago": 58
+        },
+        {
+          "type": "BUY",
+          "card": "7",
+          "price": 0.0557,
+          "days_ago": 253
+        },
+        {
+          "type": "LIST",
+          "card": "7",
+          "price": 0.0467,
+          "days_ago": 323
+        },
+        {
+          "type": "SELL",
+          "card": "7",
+          "price": 0.144,
+          "days_ago": 371
+        },
+        {
+          "type": "BUY",
+          "card": "6",
+          "price": 0.1074,
+          "days_ago": 411
+        },
+        {
+          "type": "BUY",
+          "card": "6",
+          "price": 0.1238,
+          "days_ago": 522
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.051,
+          "days_ago": 599
+        },
+        {
+          "type": "SELL",
+          "card": "6",
+          "price": 0.092,
+          "days_ago": 659
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Bold, confident, slightly theatrical. Unshakeable conviction."
+    },
+    {
+      "id": "h-002",
+      "name": "The Velocity Trader",
+      "wallet": "0x273...308",
+      "type": "flipper",
+      "group": "Rare Cards Only",
+      "cards": [
+        "28"
+      ],
+      "total_spent": 56.49,
+      "avg_hold_days": 1398,
+      "status": "active",
+      "last_active": "28h ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "28",
+          "price": 0.0668,
+          "days_ago": 4
+        },
+        {
+          "type": "SELL",
+          "card": "28",
+          "price": 0.0811,
+          "days_ago": 20
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0959,
+          "days_ago": 115
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.1136,
+          "days_ago": 520
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0423,
+          "days_ago": 553
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.1047,
+          "days_ago": 655
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0882,
+          "days_ago": 699
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Impatient, data-driven, allergic to sentiment. Zero emotional attachment."
+    },
+    {
+      "id": "h-003",
+      "name": "The Cryptopop Devotee",
+      "wallet": "0x378...56c",
+      "type": "whale",
+      "group": "Cross-Collection Whales",
+      "cards": [
+        "2",
+        "3",
+        "5",
+        "8",
+        "9",
+        "10",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "total_spent": 19.1,
+      "avg_hold_days": 1109,
+      "status": "diamond_hands",
+      "last_active": "12mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0402,
+          "days_ago": 22
+        },
+        {
+          "type": "DELIST",
+          "card": "2",
+          "price": 0.0255,
+          "days_ago": 61
+        },
+        {
+          "type": "SELL",
+          "card": "23",
+          "price": 0.1202,
+          "days_ago": 124
+        },
+        {
+          "type": "LIST",
+          "card": "28",
+          "price": 0.0772,
+          "days_ago": 226
+        },
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0289,
+          "days_ago": 339
+        },
+        {
+          "type": "SELL",
+          "card": "28",
+          "price": 0.0701,
+          "days_ago": 417
+        },
+        {
+          "type": "BUY",
+          "card": "24",
+          "price": 0.0427,
+          "days_ago": 585
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.0903,
+          "days_ago": 686
+        }
+      ],
+      "completed_subsets": [
+        "cryptopop",
+        "robek_world",
+        "vengas_colors",
+        "mad_bitcoins_holders"
+      ],
+      "personality": "Passionate, tribal, slightly obsessive. Knows the lore behind every card."
+    },
+    {
+      "id": "h-004",
+      "name": "The Phneep Purist",
+      "wallet": "0xc11...95a",
+      "type": "collector",
+      "group": "Rare Cards Only",
+      "cards": [
+        "12",
+        "14",
+        "15",
+        "22",
+        "28",
+        "30"
+      ],
+      "total_spent": 4.92,
+      "avg_hold_days": 1343,
+      "status": "diamond_hands",
+      "last_active": "11mo ago",
+      "other_nfts": [
+        "CryptoPunks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "12",
+          "price": 0.0562,
+          "days_ago": 16
+        },
+        {
+          "type": "LIST",
+          "card": "12",
+          "price": 0.0443,
+          "days_ago": 101
+        },
+        {
+          "type": "SELL",
+          "card": "14",
+          "price": 0.0267,
+          "days_ago": 144
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0718,
+          "days_ago": 171
+        },
+        {
+          "type": "SELL",
+          "card": "22",
+          "price": 0.0426,
+          "days_ago": 256
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.0676,
+          "days_ago": 411
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Artistic, principled, quietly stubborn. Sees the collection as unified artwork."
+    },
+    {
+      "id": "h-005",
+      "name": "The Friedman Scholar",
+      "wallet": "0x3a2...bcc",
+      "type": "whale",
+      "group": "Apple Buyers Club",
+      "cards": [
+        "1",
+        "2",
+        "5",
+        "6",
+        "7",
+        "9",
+        "10",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "18",
+        "19",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "28",
+        "29",
+        "17b"
+      ],
+      "total_spent": 42.94,
+      "avg_hold_days": 1092,
+      "status": "diamond_hands",
+      "last_active": "3mo ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "26",
+          "price": 0.0296,
+          "days_ago": 41
+        },
+        {
+          "type": "SELL",
+          "card": "17b",
+          "price": 0.2151,
+          "days_ago": 123
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0437,
+          "days_ago": 210
+        },
+        {
+          "type": "DELIST",
+          "card": "28",
+          "price": 0.0361,
+          "days_ago": 598
+        }
+      ],
+      "completed_subsets": [
+        "brand_mashups",
+        "friedman",
+        "rare_111",
+        "apple_holders"
+      ],
+      "personality": "Intellectual, deliberate. Compares Friedman's work to early digital art movements."
+    },
+    {
+      "id": "h-006",
+      "name": "The GIF Hunter",
+      "wallet": "0x25c...c3c",
+      "type": "inactive",
+      "group": "Friedman Scholars",
+      "cards": [
+        "8",
+        "9",
+        "13"
+      ],
+      "total_spent": 58.11,
+      "avg_hold_days": 941,
+      "status": "inactive",
+      "last_active": "16mo ago",
+      "other_nfts": [
+        "Autoglyphs"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.0464,
+          "days_ago": 46
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0403,
+          "days_ago": 53
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0224,
+          "days_ago": 71
+        },
+        {
+          "type": "LIST",
+          "card": "8",
+          "price": 0.0291,
+          "days_ago": 216
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.0557,
+          "days_ago": 271
+        },
+        {
+          "type": "LIST",
+          "card": "13",
+          "price": 0.0435,
+          "days_ago": 307
+        },
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.0337,
+          "days_ago": 449
+        },
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.0195,
+          "days_ago": 519
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Tech-forward, visually minded, slightly contrarian."
+    },
+    {
+      "id": "h-007",
+      "name": "The Curious Newcomer",
+      "wallet": "0xe11...9b1",
+      "type": "fan",
+      "group": "Apple Buyers Club",
+      "cards": [
+        "1",
+        "3",
+        "4",
+        "14",
+        "15",
+        "18",
+        "23",
+        "30"
+      ],
+      "total_spent": 62.21,
+      "avg_hold_days": 310,
+      "status": "active",
+      "last_active": "27d ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "14",
+          "price": 0.0306,
+          "days_ago": 111
+        },
+        {
+          "type": "DELIST",
+          "card": "23",
+          "price": 0.1274,
+          "days_ago": 159
+        },
+        {
+          "type": "SELL",
+          "card": "23",
+          "price": 0.1175,
+          "days_ago": 228
+        },
+        {
+          "type": "SELL",
+          "card": "14",
+          "price": 0.0586,
+          "days_ago": 359
+        },
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0377,
+          "days_ago": 422
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0611,
+          "days_ago": 423
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.051,
+          "days_ago": 574
+        },
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0906,
+          "days_ago": 699
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": "Enthusiastic, slightly overwhelmed, asks a lot of questions."
+    },
+    {
+      "id": "h-008",
+      "name": "The Vengas Vault",
+      "wallet": "0x0d3...0c2",
+      "type": "fan",
+      "group": "OG Holders",
+      "cards": [
+        "1",
+        "7",
+        "8",
+        "22"
+      ],
+      "total_spent": 25.11,
+      "avg_hold_days": 147,
+      "status": "semi-active",
+      "last_active": "12d ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.089,
+          "days_ago": 183
+        },
+        {
+          "type": "LIST",
+          "card": "8",
+          "price": 0.0178,
+          "days_ago": 445
+        },
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.051,
+          "days_ago": 447
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": "Refined, understated, appreciates color theory."
+    },
+    {
+      "id": "h-009",
+      "name": "The Arbitrageur",
+      "wallet": "0x06f...b22",
+      "type": "newbie",
+      "group": "cryptograffiti Collectors",
+      "cards": [
+        "13"
+      ],
+      "total_spent": 17.15,
+      "avg_hold_days": 95,
+      "status": "semi-active",
+      "last_active": "1d ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "13",
+          "price": 0.122,
+          "days_ago": 128
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.0711,
+          "days_ago": 151
+        },
+        {
+          "type": "DELIST",
+          "card": "13",
+          "price": 0.1077,
+          "days_ago": 174
+        },
+        {
+          "type": "DELIST",
+          "card": "13",
+          "price": 0.067,
+          "days_ago": 389
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.121,
+          "days_ago": 416
+        },
+        {
+          "type": "DELIST",
+          "card": "13",
+          "price": 0.1072,
+          "days_ago": 419
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.0812,
+          "days_ago": 441
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.0938,
+          "days_ago": 568
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Calculating, efficient, zero sentimentality."
+    },
+    {
+      "id": "h-010",
+      "name": "The Historian",
+      "wallet": "0xb8d...493",
+      "type": "collector",
+      "group": "Friedman Scholars",
+      "cards": [
+        "1",
+        "4",
+        "5",
+        "6",
+        "8",
+        "13",
+        "14",
+        "16",
+        "21",
+        "23",
+        "29"
+      ],
+      "total_spent": 62.65,
+      "avg_hold_days": 956,
+      "status": "diamond_hands",
+      "last_active": "1mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "8",
+          "price": 0.0321,
+          "days_ago": 83
+        },
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0296,
+          "days_ago": 241
+        },
+        {
+          "type": "BUY",
+          "card": "21",
+          "price": 0.1166,
+          "days_ago": 282
+        },
+        {
+          "type": "DELIST",
+          "card": "8",
+          "price": 0.0521,
+          "days_ago": 284
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.1107,
+          "days_ago": 425
+        },
+        {
+          "type": "LIST",
+          "card": "21",
+          "price": 0.1083,
+          "days_ago": 457
+        },
+        {
+          "type": "SELL",
+          "card": "5",
+          "price": 0.1147,
+          "days_ago": 461
+        },
+        {
+          "type": "LIST",
+          "card": "29",
+          "price": 2.0617,
+          "days_ago": 610
+        }
+      ],
+      "completed_subsets": [
+        "art_materials",
+        "apple_holders"
+      ],
+      "personality": "Quiet, resolute, plays the infinite game. Cultural artifact custodian."
+    },
+    {
+      "id": "h-011",
+      "name": "The Moon Caller",
+      "wallet": "0x2e7...8af",
+      "type": "flipper",
+      "group": "Quick Flip Artists",
+      "cards": [
+        "2",
+        "7",
+        "14",
+        "27"
+      ],
+      "total_spent": 81.44,
+      "avg_hold_days": 1201,
+      "status": "active",
+      "last_active": "45h ago",
+      "other_nfts": [
+        "CryptoPunks"
+      ],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "27",
+          "price": 0.0714,
+          "days_ago": 131
+        },
+        {
+          "type": "SELL",
+          "card": "2",
+          "price": 0.0263,
+          "days_ago": 139
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0278,
+          "days_ago": 346
+        },
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0348,
+          "days_ago": 389
+        },
+        {
+          "type": "BUY",
+          "card": "7",
+          "price": 0.0961,
+          "days_ago": 447
+        },
+        {
+          "type": "SELL",
+          "card": "14",
+          "price": 0.0554,
+          "days_ago": 552
+        },
+        {
+          "type": "LIST",
+          "card": "2",
+          "price": 0.0781,
+          "days_ago": 578
+        },
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0245,
+          "days_ago": 685
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Evangelical, persistent, quotes Satoshi in conversations."
+    },
+    {
+      "id": "h-012",
+      "name": "The Silent Accumulator",
+      "wallet": "0xe50...ae7",
+      "type": "og",
+      "group": "Cross-Collection Whales",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "8",
+        "9",
+        "12",
+        "14",
+        "16",
+        "18",
+        "22",
+        "25",
+        "26",
+        "27",
+        "17b"
+      ],
+      "total_spent": 85.47,
+      "avg_hold_days": 413,
+      "status": "active",
+      "last_active": "20d ago",
+      "other_nfts": [
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0778,
+          "days_ago": 111
+        },
+        {
+          "type": "DELIST",
+          "card": "22",
+          "price": 0.0776,
+          "days_ago": 118
+        },
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0744,
+          "days_ago": 172
+        },
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.108,
+          "days_ago": 407
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.0296,
+          "days_ago": 590
+        },
+        {
+          "type": "LIST",
+          "card": "26",
+          "price": 0.0271,
+          "days_ago": 708
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": "Disciplined, emotionless, algorithmic approach."
+    },
+    {
+      "id": "h-013",
+      "name": "The Art Student",
+      "wallet": "0xce4...248",
+      "type": "og",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "2",
+        "4",
+        "10",
+        "12",
+        "18",
+        "19",
+        "20",
+        "22",
+        "23",
+        "25",
+        "17b"
+      ],
+      "total_spent": 33.38,
+      "avg_hold_days": 1041,
+      "status": "diamond_hands",
+      "last_active": "11mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0541,
+          "days_ago": 89
+        },
+        {
+          "type": "BUY",
+          "card": "2",
+          "price": 0.0521,
+          "days_ago": 187
+        },
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.0821,
+          "days_ago": 345
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.1002,
+          "days_ago": 476
+        },
+        {
+          "type": "LIST",
+          "card": "17b",
+          "price": 0.1086,
+          "days_ago": 496
+        },
+        {
+          "type": "DELIST",
+          "card": "10",
+          "price": 0.0404,
+          "days_ago": 535
+        },
+        {
+          "type": "DELIST",
+          "card": "22",
+          "price": 0.0634,
+          "days_ago": 607
+        },
+        {
+          "type": "SELL",
+          "card": "17b",
+          "price": 0.2205,
+          "days_ago": 725
+        }
+      ],
+      "completed_subsets": [
+        "mad_bitcoins_holders"
+      ],
+      "personality": "Academic, curious, asks thoughtful questions."
+    },
+    {
+      "id": "h-014",
+      "name": "The Minimalist",
+      "wallet": "0xe8e...a14",
+      "type": "flipper",
+      "group": "MadBitcoins Fans",
+      "cards": [
+        "9",
+        "11",
+        "26"
+      ],
+      "total_spent": 53.67,
+      "avg_hold_days": 570,
+      "status": "active",
+      "last_active": "36h ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "Autoglyphs"
+      ],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "26",
+          "price": 0.0533,
+          "days_ago": 18
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0506,
+          "days_ago": 123
+        },
+        {
+          "type": "DELIST",
+          "card": "26",
+          "price": 0.0443,
+          "days_ago": 190
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0363,
+          "days_ago": 237
+        },
+        {
+          "type": "SELL",
+          "card": "9",
+          "price": 0.0264,
+          "days_ago": 284
+        },
+        {
+          "type": "LIST",
+          "card": "9",
+          "price": 0.0307,
+          "days_ago": 378
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0532,
+          "days_ago": 436
+        },
+        {
+          "type": "DELIST",
+          "card": "26",
+          "price": 0.0557,
+          "days_ago": 488
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "Zen-like, decisive, allergic to diversification."
+    },
+    {
+      "id": "h-015",
+      "name": "Satoshi's Ghost",
+      "wallet": "0x295...7bd",
+      "type": "inactive",
+      "group": "Brand Mashup Club",
+      "cards": [
+        "4",
+        "7",
+        "10",
+        "20",
+        "27"
+      ],
+      "total_spent": 32.51,
+      "avg_hold_days": 624,
+      "status": "inactive",
+      "last_active": "6mo ago",
+      "other_nfts": [
+        "MoonCats",
+        "Autoglyphs",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "7",
+          "price": 0.1136,
+          "days_ago": 106
+        },
+        {
+          "type": "BUY",
+          "card": "20",
+          "price": 0.0364,
+          "days_ago": 259
+        },
+        {
+          "type": "LIST",
+          "card": "4",
+          "price": 0.0276,
+          "days_ago": 312
+        },
+        {
+          "type": "BUY",
+          "card": "20",
+          "price": 0.0242,
+          "days_ago": 411
+        },
+        {
+          "type": "SELL",
+          "card": "4",
+          "price": 0.0517,
+          "days_ago": 491
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0757,
+          "days_ago": 572
+        },
+        {
+          "type": "DELIST",
+          "card": "20",
+          "price": 0.022,
+          "days_ago": 703
+        }
+      ],
+      "completed_subsets": [
+        "mad_bitcoins_holders"
+      ],
+      "personality": "Mysterious, early adopter energy. Was there in 2017."
+    },
+    {
+      "id": "h-016",
+      "name": "The Eclipse Chaser",
+      "wallet": "0xf3d...1a5",
+      "type": "og",
+      "group": "Floor Sweepers",
+      "cards": [
+        "2",
+        "4",
+        "7",
+        "8",
+        "10",
+        "11",
+        "13",
+        "14",
+        "15",
+        "17",
+        "19",
+        "20",
+        "22",
+        "24",
+        "25",
+        "26",
+        "17b"
+      ],
+      "total_spent": 59.46,
+      "avg_hold_days": 326,
+      "status": "active",
+      "last_active": "6d ago",
+      "other_nfts": [
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "26",
+          "price": 0.0393,
+          "days_ago": 41
+        },
+        {
+          "type": "SELL",
+          "card": "17",
+          "price": 0.1321,
+          "days_ago": 73
+        },
+        {
+          "type": "BUY",
+          "card": "10",
+          "price": 0.0652,
+          "days_ago": 74
+        },
+        {
+          "type": "LIST",
+          "card": "13",
+          "price": 0.0967,
+          "days_ago": 231
+        },
+        {
+          "type": "LIST",
+          "card": "24",
+          "price": 0.0833,
+          "days_ago": 257
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.1317,
+          "days_ago": 513
+        },
+        {
+          "type": "DELIST",
+          "card": "14",
+          "price": 0.0641,
+          "days_ago": 604
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0285,
+          "days_ago": 610
+        }
+      ],
+      "completed_subsets": [
+        "friedman",
+        "rare_111",
+        "mad_bitcoins_holders"
+      ],
+      "personality": "Obsessed with the Eclipse card. Has it as wallpaper on every device."
+    },
+    {
+      "id": "h-017",
+      "name": "Punk Crossover",
+      "wallet": "0xe57...d3d",
+      "type": "whale",
+      "group": "Rare Cards Only",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "6",
+        "9",
+        "15",
+        "16",
+        "17",
+        "19",
+        "22",
+        "23",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "17b"
+      ],
+      "total_spent": 39.26,
+      "avg_hold_days": 1012,
+      "status": "diamond_hands",
+      "last_active": "2mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "27",
+          "price": 0.0774,
+          "days_ago": 38
+        },
+        {
+          "type": "SELL",
+          "card": "23",
+          "price": 0.0726,
+          "days_ago": 296
+        },
+        {
+          "type": "BUY",
+          "card": "29",
+          "price": 1.005,
+          "days_ago": 332
+        },
+        {
+          "type": "LIST",
+          "card": "1",
+          "price": 0.0728,
+          "days_ago": 474
+        },
+        {
+          "type": "SELL",
+          "card": "6",
+          "price": 0.1212,
+          "days_ago": 527
+        }
+      ],
+      "completed_subsets": [
+        "vengas_colors",
+        "apple_holders"
+      ],
+      "personality": "Punk holder who discovered Curio after CryptoPunks."
+    },
+    {
+      "id": "h-018",
+      "name": "MoonCat Migrant",
+      "wallet": "0xf3f...307",
+      "type": "flipper",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "12",
+        "17"
+      ],
+      "total_spent": 44.89,
+      "avg_hold_days": 910,
+      "status": "active",
+      "last_active": "4h ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "12",
+          "price": 0.0715,
+          "days_ago": 140
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.1006,
+          "days_ago": 194
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0505,
+          "days_ago": 231
+        },
+        {
+          "type": "DELIST",
+          "card": "12",
+          "price": 0.0474,
+          "days_ago": 299
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.1471,
+          "days_ago": 306
+        },
+        {
+          "type": "SELL",
+          "card": "12",
+          "price": 0.0347,
+          "days_ago": 349
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.045,
+          "days_ago": 393
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0516,
+          "days_ago": 421
+        }
+      ],
+      "completed_subsets": [],
+      "personality": "MoonCat rescuer who branched into historical NFTs."
+    },
+    {
+      "id": "h-019",
+      "name": "The Floor Machine",
+      "wallet": "0xf39...ed1",
+      "type": "whale",
+      "group": "Quick Flip Artists",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "7",
+        "8",
+        "9",
+        "11",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "26",
+        "28",
+        "29",
+        "30",
+        "17b"
+      ],
+      "total_spent": 23.89,
+      "avg_hold_days": 1281,
+      "status": "diamond_hands",
+      "last_active": "12mo ago",
+      "other_nfts": [
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "29",
+          "price": 1.5092,
+          "days_ago": 48
+        },
+        {
+          "type": "LIST",
+          "card": "28",
+          "price": 0.05,
+          "days_ago": 147
+        },
+        {
+          "type": "SELL",
+          "card": "29",
+          "price": 2.8761,
+          "days_ago": 171
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0742,
+          "days_ago": 175
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0519,
+          "days_ago": 233
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.0305,
+          "days_ago": 241
+        },
+        {
+          "type": "BUY",
+          "card": "15",
+          "price": 0.0762,
+          "days_ago": 368
+        },
+        {
+          "type": "DELIST",
+          "card": "17",
+          "price": 0.1642,
+          "days_ago": 500
+        }
+      ],
+      "completed_subsets": [
+        "art_creations",
+        "cryptopop",
+        "robek_world",
+        "rare_111",
+        "apple_holders",
+        "mad_bitcoins_holders"
+      ],
+      "personality": "Automated floor sweeper. Probably runs a bot."
+    },
+    {
+      "id": "h-020",
+      "name": "AppleSeed",
+      "wallet": "0x432...166",
+      "type": "collector",
+      "group": "Story Set Completionists",
+      "cards": [
+        "1",
+        "3",
+        "6",
+        "9",
+        "10",
+        "12",
+        "15",
+        "18",
+        "22",
+        "24",
+        "25",
+        "26",
+        "28",
+        "30",
+        "17b"
+      ],
+      "total_spent": 38.22,
+      "avg_hold_days": 517,
+      "status": "semi-active",
+      "last_active": "28d ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.0324,
+          "days_ago": 35
+        },
+        {
+          "type": "DELIST",
+          "card": "10",
+          "price": 0.0179,
+          "days_ago": 51
+        },
+        {
+          "type": "LIST",
+          "card": "9",
+          "price": 0.0466,
+          "days_ago": 257
+        },
+        {
+          "type": "SELL",
+          "card": "17b",
+          "price": 0.1692,
+          "days_ago": 294
+        },
+        {
+          "type": "LIST",
+          "card": "28",
+          "price": 0.0985,
+          "days_ago": 361
+        },
+        {
+          "type": "DELIST",
+          "card": "10",
+          "price": 0.0187,
+          "days_ago": 406
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0317,
+          "days_ago": 643
+        },
+        {
+          "type": "DELIST",
+          "card": "25",
+          "price": 0.0947,
+          "days_ago": 698
+        }
+      ],
+      "completed_subsets": [
+        "friedman",
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-021",
+      "name": "Dog Whisperer",
+      "wallet": "0x658...de2",
+      "type": "newbie",
+      "group": "Quick Flip Artists",
+      "cards": [
+        "3",
+        "5",
+        "30"
+      ],
+      "total_spent": 67.29,
+      "avg_hold_days": 364,
+      "status": "active",
+      "last_active": "5d ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "5",
+          "price": 0.0451,
+          "days_ago": 15
+        },
+        {
+          "type": "SELL",
+          "card": "3",
+          "price": 0.0363,
+          "days_ago": 303
+        },
+        {
+          "type": "SELL",
+          "card": "5",
+          "price": 0.0926,
+          "days_ago": 378
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0813,
+          "days_ago": 480
+        },
+        {
+          "type": "SELL",
+          "card": "30",
+          "price": 0.068,
+          "days_ago": 571
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0731,
+          "days_ago": 599
+        },
+        {
+          "type": "BUY",
+          "card": "3",
+          "price": 0.0292,
+          "days_ago": 693
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-022",
+      "name": "The Mona Lisa Fan",
+      "wallet": "0xbcb...df7",
+      "type": "flipper",
+      "group": "OG Holders",
+      "cards": [
+        "4",
+        "8",
+        "22"
+      ],
+      "total_spent": 55.78,
+      "avg_hold_days": 1154,
+      "status": "active",
+      "last_active": "21h ago",
+      "other_nfts": [
+        "Autoglyphs"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.0611,
+          "days_ago": 34
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.0768,
+          "days_ago": 52
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0417,
+          "days_ago": 126
+        },
+        {
+          "type": "LIST",
+          "card": "4",
+          "price": 0.0245,
+          "days_ago": 139
+        },
+        {
+          "type": "BUY",
+          "card": "8",
+          "price": 0.0472,
+          "days_ago": 144
+        },
+        {
+          "type": "DELIST",
+          "card": "22",
+          "price": 0.0621,
+          "days_ago": 159
+        },
+        {
+          "type": "DELIST",
+          "card": "8",
+          "price": 0.0421,
+          "days_ago": 368
+        },
+        {
+          "type": "SELL",
+          "card": "22",
+          "price": 0.0581,
+          "days_ago": 456
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-023",
+      "name": "Book Worm",
+      "wallet": "0xe60...471",
+      "type": "collector",
+      "group": "Rare Cards Only",
+      "cards": [
+        "1",
+        "5",
+        "7",
+        "8",
+        "9",
+        "11",
+        "19",
+        "20",
+        "23",
+        "24",
+        "25",
+        "27",
+        "17b"
+      ],
+      "total_spent": 71.88,
+      "avg_hold_days": 230,
+      "status": "active",
+      "last_active": "5d ago",
+      "other_nfts": [
+        "CryptoPunks"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "9",
+          "price": 0.0185,
+          "days_ago": 432
+        },
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.0436,
+          "days_ago": 488
+        },
+        {
+          "type": "DELIST",
+          "card": "1",
+          "price": 0.078,
+          "days_ago": 534
+        },
+        {
+          "type": "LIST",
+          "card": "20",
+          "price": 0.06,
+          "days_ago": 608
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.0836,
+          "days_ago": 630
+        }
+      ],
+      "completed_subsets": [
+        "art_creations",
+        "apple_holders",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-024",
+      "name": "Future Thinker",
+      "wallet": "0xd53...3b8",
+      "type": "fan",
+      "group": "Story Set Completionists",
+      "cards": [
+        "1",
+        "2",
+        "4",
+        "13",
+        "14",
+        "16",
+        "22",
+        "17b"
+      ],
+      "total_spent": 81.88,
+      "avg_hold_days": 155,
+      "status": "active",
+      "last_active": "11d ago",
+      "other_nfts": [
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "17b",
+          "price": 0.0721,
+          "days_ago": 96
+        },
+        {
+          "type": "SELL",
+          "card": "16",
+          "price": 0.0722,
+          "days_ago": 363
+        },
+        {
+          "type": "DELIST",
+          "card": "22",
+          "price": 0.0355,
+          "days_ago": 382
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.0973,
+          "days_ago": 424
+        },
+        {
+          "type": "SELL",
+          "card": "16",
+          "price": 0.0836,
+          "days_ago": 426
+        },
+        {
+          "type": "LIST",
+          "card": "14",
+          "price": 0.0401,
+          "days_ago": 441
+        },
+        {
+          "type": "LIST",
+          "card": "16",
+          "price": 0.0514,
+          "days_ago": 544
+        },
+        {
+          "type": "LIST",
+          "card": "4",
+          "price": 0.0507,
+          "days_ago": 576
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-025",
+      "name": "Sticker Bomber",
+      "wallet": "0x750...3fe",
+      "type": "og",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "2",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "12",
+        "14",
+        "15",
+        "16",
+        "17",
+        "19",
+        "20",
+        "23",
+        "24",
+        "27",
+        "28",
+        "17b"
+      ],
+      "total_spent": 25.11,
+      "avg_hold_days": 468,
+      "status": "semi-active",
+      "last_active": "28d ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.064,
+          "days_ago": 7
+        },
+        {
+          "type": "BUY",
+          "card": "17b",
+          "price": 0.0753,
+          "days_ago": 160
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.096,
+          "days_ago": 162
+        },
+        {
+          "type": "LIST",
+          "card": "2",
+          "price": 0.0268,
+          "days_ago": 221
+        },
+        {
+          "type": "DELIST",
+          "card": "5",
+          "price": 0.0645,
+          "days_ago": 435
+        },
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0464,
+          "days_ago": 582
+        },
+        {
+          "type": "DELIST",
+          "card": "17",
+          "price": 0.0514,
+          "days_ago": 649
+        },
+        {
+          "type": "LIST",
+          "card": "8",
+          "price": 0.0578,
+          "days_ago": 674
+        }
+      ],
+      "completed_subsets": [
+        "art_materials",
+        "art_creations",
+        "brand_mashups",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-026",
+      "name": "Mine Everything",
+      "wallet": "0x528...3a7",
+      "type": "flipper",
+      "group": "Brand Mashup Club",
+      "cards": [
+        "7",
+        "9",
+        "14",
+        "25"
+      ],
+      "total_spent": 31.1,
+      "avg_hold_days": 232,
+      "status": "active",
+      "last_active": "19h ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.1146,
+          "days_ago": 8
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0318,
+          "days_ago": 8
+        },
+        {
+          "type": "DELIST",
+          "card": "14",
+          "price": 0.0207,
+          "days_ago": 44
+        },
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.094,
+          "days_ago": 133
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0305,
+          "days_ago": 141
+        },
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.0753,
+          "days_ago": 513
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-027",
+      "name": "BTC Maximalist",
+      "wallet": "0xba9...b96",
+      "type": "flipper",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "3",
+        "11",
+        "28",
+        "30"
+      ],
+      "total_spent": 51.63,
+      "avg_hold_days": 1316,
+      "status": "active",
+      "last_active": "27h ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "11",
+          "price": 0.0561,
+          "days_ago": 78
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0483,
+          "days_ago": 79
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0787,
+          "days_ago": 91
+        },
+        {
+          "type": "DELIST",
+          "card": "28",
+          "price": 0.0923,
+          "days_ago": 152
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0262,
+          "days_ago": 203
+        },
+        {
+          "type": "SELL",
+          "card": "30",
+          "price": 0.0579,
+          "days_ago": 318
+        },
+        {
+          "type": "DELIST",
+          "card": "28",
+          "price": 0.1042,
+          "days_ago": 324
+        },
+        {
+          "type": "BUY",
+          "card": "3",
+          "price": 0.0531,
+          "days_ago": 358
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-028",
+      "name": "Code Is It",
+      "wallet": "0x7f9...6ac",
+      "type": "inactive",
+      "group": "Animated or Nothing",
+      "cards": [
+        "2",
+        "12",
+        "19"
+      ],
+      "total_spent": 27.97,
+      "avg_hold_days": 930,
+      "status": "inactive",
+      "last_active": "7mo ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "Autoglyphs"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "19",
+          "price": 0.0586,
+          "days_ago": 43
+        },
+        {
+          "type": "SELL",
+          "card": "19",
+          "price": 0.0612,
+          "days_ago": 474
+        },
+        {
+          "type": "SELL",
+          "card": "2",
+          "price": 0.0413,
+          "days_ago": 514
+        },
+        {
+          "type": "LIST",
+          "card": "12",
+          "price": 0.0708,
+          "days_ago": 668
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-029",
+      "name": "Digital Casher",
+      "wallet": "0xb32...c50",
+      "type": "collector",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "2",
+        "3",
+        "4",
+        "6",
+        "8",
+        "11",
+        "17",
+        "21",
+        "23",
+        "26",
+        "27",
+        "29"
+      ],
+      "total_spent": 89.19,
+      "avg_hold_days": 1078,
+      "status": "diamond_hands",
+      "last_active": "9mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "6",
+          "price": 0.124,
+          "days_ago": 80
+        },
+        {
+          "type": "LIST",
+          "card": "29",
+          "price": 3.1732,
+          "days_ago": 96
+        },
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0451,
+          "days_ago": 97
+        },
+        {
+          "type": "DELIST",
+          "card": "11",
+          "price": 0.0249,
+          "days_ago": 145
+        },
+        {
+          "type": "LIST",
+          "card": "29",
+          "price": 2.826,
+          "days_ago": 154
+        },
+        {
+          "type": "SELL",
+          "card": "11",
+          "price": 0.0769,
+          "days_ago": 197
+        },
+        {
+          "type": "BUY",
+          "card": "2",
+          "price": 0.0438,
+          "days_ago": 220
+        },
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.0986,
+          "days_ago": 259
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-030",
+      "name": "Anonymouse",
+      "wallet": "0x821...4c9",
+      "type": "og",
+      "group": "cryptograffiti Collectors",
+      "cards": [
+        "2",
+        "5",
+        "6",
+        "7",
+        "11",
+        "13",
+        "15",
+        "17",
+        "18",
+        "19",
+        "20",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "29",
+        "17b"
+      ],
+      "total_spent": 87.26,
+      "avg_hold_days": 1255,
+      "status": "diamond_hands",
+      "last_active": "5mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "22",
+          "price": 0.1043,
+          "days_ago": 55
+        },
+        {
+          "type": "LIST",
+          "card": "7",
+          "price": 0.1222,
+          "days_ago": 128
+        },
+        {
+          "type": "SELL",
+          "card": "23",
+          "price": 0.0815,
+          "days_ago": 166
+        },
+        {
+          "type": "BUY",
+          "card": "15",
+          "price": 0.0766,
+          "days_ago": 257
+        },
+        {
+          "type": "BUY",
+          "card": "19",
+          "price": 0.0275,
+          "days_ago": 280
+        },
+        {
+          "type": "SELL",
+          "card": "17b",
+          "price": 0.2372,
+          "days_ago": 289
+        },
+        {
+          "type": "BUY",
+          "card": "6",
+          "price": 0.0659,
+          "days_ago": 327
+        },
+        {
+          "type": "DELIST",
+          "card": "7",
+          "price": 0.1372,
+          "days_ago": 344
+        }
+      ],
+      "completed_subsets": [
+        "cryptopop",
+        "friedman",
+        "rare_111",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-031",
+      "name": "UASF Believer",
+      "wallet": "0x5a9...399",
+      "type": "newbie",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "1"
+      ],
+      "total_spent": 75.15,
+      "avg_hold_days": 1128,
+      "status": "diamond_hands",
+      "last_active": "12mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "1",
+          "price": 0.0709,
+          "days_ago": 248
+        },
+        {
+          "type": "SELL",
+          "card": "1",
+          "price": 0.0291,
+          "days_ago": 612
+        },
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0459,
+          "days_ago": 630
+        },
+        {
+          "type": "DELIST",
+          "card": "1",
+          "price": 0.042,
+          "days_ago": 638
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-032",
+      "name": "Dog Trader",
+      "wallet": "0xfee...665",
+      "type": "fan",
+      "group": "MadBitcoins Fans",
+      "cards": [
+        "3",
+        "6",
+        "12",
+        "14",
+        "17",
+        "22",
+        "29"
+      ],
+      "total_spent": 47.37,
+      "avg_hold_days": 1044,
+      "status": "diamond_hands",
+      "last_active": "9mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "3",
+          "price": 0.0645,
+          "days_ago": 38
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0305,
+          "days_ago": 43
+        },
+        {
+          "type": "BUY",
+          "card": "12",
+          "price": 0.0616,
+          "days_ago": 70
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.067,
+          "days_ago": 139
+        },
+        {
+          "type": "DELIST",
+          "card": "3",
+          "price": 0.0679,
+          "days_ago": 341
+        },
+        {
+          "type": "LIST",
+          "card": "6",
+          "price": 0.0351,
+          "days_ago": 347
+        },
+        {
+          "type": "DELIST",
+          "card": "29",
+          "price": 2.3281,
+          "days_ago": 476
+        },
+        {
+          "type": "DELIST",
+          "card": "12",
+          "price": 0.0327,
+          "days_ago": 644
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-033",
+      "name": "Lunar Lander",
+      "wallet": "0x9cf...5b6",
+      "type": "fan",
+      "group": "Cross-Collection Whales",
+      "cards": [
+        "13",
+        "16",
+        "17",
+        "18",
+        "27"
+      ],
+      "total_spent": 67.81,
+      "avg_hold_days": 396,
+      "status": "semi-active",
+      "last_active": "12d ago",
+      "other_nfts": [
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "17",
+          "price": 0.0887,
+          "days_ago": 34
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0502,
+          "days_ago": 77
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0304,
+          "days_ago": 242
+        },
+        {
+          "type": "LIST",
+          "card": "18",
+          "price": 0.0578,
+          "days_ago": 274
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.0835,
+          "days_ago": 336
+        },
+        {
+          "type": "SELL",
+          "card": "27",
+          "price": 0.0329,
+          "days_ago": 380
+        },
+        {
+          "type": "LIST",
+          "card": "17",
+          "price": 0.0816,
+          "days_ago": 437
+        },
+        {
+          "type": "BUY",
+          "card": "13",
+          "price": 0.1352,
+          "days_ago": 441
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-034",
+      "name": "Mad Portrait",
+      "wallet": "0xfd3...c40",
+      "type": "fan",
+      "group": "Story Set Completionists",
+      "cards": [
+        "5",
+        "17",
+        "19"
+      ],
+      "total_spent": 28.33,
+      "avg_hold_days": 575,
+      "status": "active",
+      "last_active": "4d ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "MoonCats"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.068,
+          "days_ago": 76
+        },
+        {
+          "type": "DELIST",
+          "card": "17",
+          "price": 0.0645,
+          "days_ago": 456
+        },
+        {
+          "type": "DELIST",
+          "card": "17",
+          "price": 0.1413,
+          "days_ago": 457
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.1416,
+          "days_ago": 711
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-035",
+      "name": "Wizard Apprentice",
+      "wallet": "0x669...076",
+      "type": "whale",
+      "group": "Vengas Gallery",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "17b"
+      ],
+      "total_spent": 35.86,
+      "avg_hold_days": 985,
+      "status": "diamond_hands",
+      "last_active": "9mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "17b",
+          "price": 0.2294,
+          "days_ago": 81
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.1586,
+          "days_ago": 128
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.062,
+          "days_ago": 166
+        },
+        {
+          "type": "LIST",
+          "card": "9",
+          "price": 0.0254,
+          "days_ago": 282
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0761,
+          "days_ago": 355
+        },
+        {
+          "type": "BUY",
+          "card": "19",
+          "price": 0.034,
+          "days_ago": 444
+        },
+        {
+          "type": "LIST",
+          "card": "17",
+          "price": 0.0864,
+          "days_ago": 656
+        },
+        {
+          "type": "SELL",
+          "card": "21",
+          "price": 0.0581,
+          "days_ago": 697
+        }
+      ],
+      "completed_subsets": [
+        "story_set",
+        "art_materials",
+        "art_creations",
+        "cryptograffiti",
+        "brand_mashups",
+        "cryptopop",
+        "robek_world",
+        "friedman",
+        "vengas_colors",
+        "rare_111",
+        "full_set",
+        "apple_holders",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-036",
+      "name": "Bard's Companion",
+      "wallet": "0x0b9...bb9",
+      "type": "collector",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "3",
+        "5",
+        "6",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "25"
+      ],
+      "total_spent": 56.22,
+      "avg_hold_days": 1244,
+      "status": "diamond_hands",
+      "last_active": "6mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "18",
+          "price": 0.0812,
+          "days_ago": 427
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0805,
+          "days_ago": 495
+        },
+        {
+          "type": "DELIST",
+          "card": "3",
+          "price": 0.0511,
+          "days_ago": 559
+        }
+      ],
+      "completed_subsets": [
+        "cryptopop",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-037",
+      "name": "Barbarian's Shield",
+      "wallet": "0x7d8...c45",
+      "type": "collector",
+      "group": "Vengas Gallery",
+      "cards": [
+        "2",
+        "3",
+        "5",
+        "6",
+        "7",
+        "10",
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "19",
+        "23",
+        "24",
+        "29"
+      ],
+      "total_spent": 28.77,
+      "avg_hold_days": 712,
+      "status": "diamond_hands",
+      "last_active": "7mo ago",
+      "other_nfts": [
+        "CryptoPunks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "16",
+          "price": 0.0579,
+          "days_ago": 9
+        },
+        {
+          "type": "SELL",
+          "card": "13",
+          "price": 0.1546,
+          "days_ago": 24
+        },
+        {
+          "type": "BUY",
+          "card": "6",
+          "price": 0.051,
+          "days_ago": 50
+        },
+        {
+          "type": "BUY",
+          "card": "3",
+          "price": 0.0369,
+          "days_ago": 145
+        },
+        {
+          "type": "BUY",
+          "card": "29",
+          "price": 2.1728,
+          "days_ago": 195
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0349,
+          "days_ago": 336
+        },
+        {
+          "type": "LIST",
+          "card": "3",
+          "price": 0.0786,
+          "days_ago": 469
+        },
+        {
+          "type": "LIST",
+          "card": "23",
+          "price": 0.048,
+          "days_ago": 479
+        }
+      ],
+      "completed_subsets": [
+        "brand_mashups"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-038",
+      "name": "Complex Mind",
+      "wallet": "0xb76...8be",
+      "type": "og",
+      "group": "Rare Cards Only",
+      "cards": [
+        "2",
+        "5",
+        "7",
+        "9",
+        "12",
+        "13",
+        "18",
+        "19",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "29"
+      ],
+      "total_spent": 26.01,
+      "avg_hold_days": 796,
+      "status": "diamond_hands",
+      "last_active": "9mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.0716,
+          "days_ago": 47
+        },
+        {
+          "type": "LIST",
+          "card": "7",
+          "price": 0.085,
+          "days_ago": 307
+        },
+        {
+          "type": "LIST",
+          "card": "5",
+          "price": 0.1399,
+          "days_ago": 316
+        },
+        {
+          "type": "LIST",
+          "card": "7",
+          "price": 0.0774,
+          "days_ago": 327
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.0492,
+          "days_ago": 404
+        },
+        {
+          "type": "BUY",
+          "card": "2",
+          "price": 0.0296,
+          "days_ago": 486
+        },
+        {
+          "type": "BUY",
+          "card": "19",
+          "price": 0.0688,
+          "days_ago": 487
+        },
+        {
+          "type": "LIST",
+          "card": "23",
+          "price": 0.0771,
+          "days_ago": 528
+        }
+      ],
+      "completed_subsets": [
+        "friedman",
+        "rare_111"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-039",
+      "name": "Passionate Collector",
+      "wallet": "0x3db...4d3",
+      "type": "og",
+      "group": "Cross-Collection Whales",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "6",
+        "8",
+        "9",
+        "11",
+        "13",
+        "14",
+        "16",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "26",
+        "28",
+        "29",
+        "30"
+      ],
+      "total_spent": 51.55,
+      "avg_hold_days": 230,
+      "status": "active",
+      "last_active": "1d ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "DELIST",
+          "card": "26",
+          "price": 0.0615,
+          "days_ago": 64
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0438,
+          "days_ago": 178
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0481,
+          "days_ago": 253
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0455,
+          "days_ago": 305
+        },
+        {
+          "type": "LIST",
+          "card": "8",
+          "price": 0.0409,
+          "days_ago": 333
+        },
+        {
+          "type": "SELL",
+          "card": "29",
+          "price": 1.7006,
+          "days_ago": 354
+        },
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.1214,
+          "days_ago": 560
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0332,
+          "days_ago": 574
+        }
+      ],
+      "completed_subsets": [
+        "robek_world",
+        "rare_111",
+        "apple_holders",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-040",
+      "name": "Education First",
+      "wallet": "0x370...6b4",
+      "type": "og",
+      "group": "Vengas Gallery",
+      "cards": [
+        "2",
+        "3",
+        "9",
+        "10",
+        "12",
+        "15",
+        "16",
+        "21",
+        "23",
+        "17b"
+      ],
+      "total_spent": 74.52,
+      "avg_hold_days": 560,
+      "status": "semi-active",
+      "last_active": "5d ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0361,
+          "days_ago": 38
+        },
+        {
+          "type": "DELIST",
+          "card": "17b",
+          "price": 0.1018,
+          "days_ago": 39
+        },
+        {
+          "type": "BUY",
+          "card": "10",
+          "price": 0.051,
+          "days_ago": 103
+        },
+        {
+          "type": "SELL",
+          "card": "16",
+          "price": 0.0478,
+          "days_ago": 103
+        },
+        {
+          "type": "LIST",
+          "card": "9",
+          "price": 0.0162,
+          "days_ago": 162
+        },
+        {
+          "type": "BUY",
+          "card": "3",
+          "price": 0.0776,
+          "days_ago": 292
+        },
+        {
+          "type": "BUY",
+          "card": "16",
+          "price": 0.0807,
+          "days_ago": 297
+        },
+        {
+          "type": "BUY",
+          "card": "10",
+          "price": 0.0572,
+          "days_ago": 329
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-041",
+      "name": "Pink Panther",
+      "wallet": "0x6e6...11d",
+      "type": "flipper",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "5",
+        "28",
+        "29",
+        "17b"
+      ],
+      "total_spent": 24.59,
+      "avg_hold_days": 235,
+      "status": "active",
+      "last_active": "22h ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "29",
+          "price": 2.1842,
+          "days_ago": 12
+        },
+        {
+          "type": "BUY",
+          "card": "29",
+          "price": 2.2609,
+          "days_ago": 137
+        },
+        {
+          "type": "DELIST",
+          "card": "29",
+          "price": 2.354,
+          "days_ago": 242
+        },
+        {
+          "type": "BUY",
+          "card": "29",
+          "price": 3.0269,
+          "days_ago": 268
+        },
+        {
+          "type": "DELIST",
+          "card": "29",
+          "price": 2.4413,
+          "days_ago": 303
+        },
+        {
+          "type": "SELL",
+          "card": "5",
+          "price": 0.1066,
+          "days_ago": 315
+        },
+        {
+          "type": "BUY",
+          "card": "17b",
+          "price": 0.1024,
+          "days_ago": 338
+        },
+        {
+          "type": "BUY",
+          "card": "17b",
+          "price": 0.1528,
+          "days_ago": 411
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-042",
+      "name": "Yellow Submarine",
+      "wallet": "0x216...4aa",
+      "type": "og",
+      "group": "cryptograffiti Collectors",
+      "cards": [
+        "2",
+        "3",
+        "4",
+        "7",
+        "8",
+        "9",
+        "12",
+        "14",
+        "15",
+        "17",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "17b"
+      ],
+      "total_spent": 13.53,
+      "avg_hold_days": 676,
+      "status": "diamond_hands",
+      "last_active": "9mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0537,
+          "days_ago": 23
+        },
+        {
+          "type": "LIST",
+          "card": "26",
+          "price": 0.0382,
+          "days_ago": 60
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0498,
+          "days_ago": 71
+        },
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0315,
+          "days_ago": 122
+        },
+        {
+          "type": "SELL",
+          "card": "24",
+          "price": 0.0891,
+          "days_ago": 136
+        },
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.0318,
+          "days_ago": 185
+        },
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.0485,
+          "days_ago": 224
+        },
+        {
+          "type": "SELL",
+          "card": "28",
+          "price": 0.0354,
+          "days_ago": 353
+        }
+      ],
+      "completed_subsets": [
+        "art_creations",
+        "robek_world",
+        "friedman",
+        "mad_bitcoins_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-043",
+      "name": "Blue Ocean",
+      "wallet": "0x270...e2f",
+      "type": "collector",
+      "group": "cryptograffiti Collectors",
+      "cards": [
+        "1",
+        "5",
+        "8",
+        "10",
+        "15",
+        "17",
+        "18",
+        "24",
+        "25",
+        "26",
+        "27"
+      ],
+      "total_spent": 34.17,
+      "avg_hold_days": 475,
+      "status": "active",
+      "last_active": "15d ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0422,
+          "days_ago": 104
+        },
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0425,
+          "days_ago": 412
+        },
+        {
+          "type": "SELL",
+          "card": "1",
+          "price": 0.084,
+          "days_ago": 630
+        },
+        {
+          "type": "LIST",
+          "card": "26",
+          "price": 0.0187,
+          "days_ago": 689
+        }
+      ],
+      "completed_subsets": [
+        "friedman",
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-044",
+      "name": "Eclipse Watcher",
+      "wallet": "0x550...561",
+      "type": "flipper",
+      "group": "MadBitcoins Fans",
+      "cards": [
+        "25",
+        "28"
+      ],
+      "total_spent": 12.66,
+      "avg_hold_days": 597,
+      "status": "active",
+      "last_active": "15h ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.065,
+          "days_ago": 63
+        },
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.1092,
+          "days_ago": 95
+        },
+        {
+          "type": "DELIST",
+          "card": "25",
+          "price": 0.0552,
+          "days_ago": 148
+        },
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.0946,
+          "days_ago": 247
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0645,
+          "days_ago": 386
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0775,
+          "days_ago": 398
+        },
+        {
+          "type": "LIST",
+          "card": "28",
+          "price": 0.1086,
+          "days_ago": 423
+        },
+        {
+          "type": "SELL",
+          "card": "25",
+          "price": 0.0835,
+          "days_ago": 570
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-045",
+      "name": "The Completionist",
+      "wallet": "0x6b1...2be",
+      "type": "newbie",
+      "group": "Brand Mashup Club",
+      "cards": [
+        "28"
+      ],
+      "total_spent": 72.43,
+      "avg_hold_days": 1208,
+      "status": "diamond_hands",
+      "last_active": "12mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0474,
+          "days_ago": 121
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.1085,
+          "days_ago": 321
+        },
+        {
+          "type": "SELL",
+          "card": "28",
+          "price": 0.0965,
+          "days_ago": 478
+        },
+        {
+          "type": "DELIST",
+          "card": "28",
+          "price": 0.0695,
+          "days_ago": 481
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0558,
+          "days_ago": 526
+        },
+        {
+          "type": "BUY",
+          "card": "28",
+          "price": 0.0635,
+          "days_ago": 566
+        },
+        {
+          "type": "DELIST",
+          "card": "28",
+          "price": 0.1086,
+          "days_ago": 619
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-046",
+      "name": "Sweep King",
+      "wallet": "0xd35...562",
+      "type": "flipper",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "5",
+        "24"
+      ],
+      "total_spent": 49.82,
+      "avg_hold_days": 1201,
+      "status": "active",
+      "last_active": "38h ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "24",
+          "price": 0.0774,
+          "days_ago": 7
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.0427,
+          "days_ago": 10
+        },
+        {
+          "type": "BUY",
+          "card": "5",
+          "price": 0.0894,
+          "days_ago": 62
+        },
+        {
+          "type": "SELL",
+          "card": "5",
+          "price": 0.1169,
+          "days_ago": 141
+        },
+        {
+          "type": "LIST",
+          "card": "24",
+          "price": 0.0269,
+          "days_ago": 282
+        },
+        {
+          "type": "DELIST",
+          "card": "24",
+          "price": 0.0619,
+          "days_ago": 361
+        },
+        {
+          "type": "LIST",
+          "card": "5",
+          "price": 0.0504,
+          "days_ago": 501
+        },
+        {
+          "type": "SELL",
+          "card": "24",
+          "price": 0.0461,
+          "days_ago": 658
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-047",
+      "name": "Flip Master",
+      "wallet": "0x10f...9b5",
+      "type": "flipper",
+      "group": "Vengas Gallery",
+      "cards": [
+        "4",
+        "30"
+      ],
+      "total_spent": 13.44,
+      "avg_hold_days": 398,
+      "status": "active",
+      "last_active": "40h ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "4",
+          "price": 0.0243,
+          "days_ago": 387
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0607,
+          "days_ago": 541
+        },
+        {
+          "type": "DELIST",
+          "card": "4",
+          "price": 0.0321,
+          "days_ago": 581
+        },
+        {
+          "type": "SELL",
+          "card": "4",
+          "price": 0.0237,
+          "days_ago": 661
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0361,
+          "days_ago": 670
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0408,
+          "days_ago": 701
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0535,
+          "days_ago": 714
+        },
+        {
+          "type": "BUY",
+          "card": "30",
+          "price": 0.0263,
+          "days_ago": 720
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-048",
+      "name": "OG Diamond",
+      "wallet": "0x090...26e",
+      "type": "fan",
+      "group": "Cross-Collection Whales",
+      "cards": [
+        "1",
+        "2",
+        "6",
+        "7",
+        "11",
+        "19",
+        "22"
+      ],
+      "total_spent": 67.72,
+      "avg_hold_days": 820,
+      "status": "diamond_hands",
+      "last_active": "2mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0647,
+          "days_ago": 55
+        },
+        {
+          "type": "DELIST",
+          "card": "22",
+          "price": 0.109,
+          "days_ago": 81
+        },
+        {
+          "type": "BUY",
+          "card": "19",
+          "price": 0.0477,
+          "days_ago": 110
+        },
+        {
+          "type": "DELIST",
+          "card": "11",
+          "price": 0.0399,
+          "days_ago": 144
+        },
+        {
+          "type": "BUY",
+          "card": "19",
+          "price": 0.0269,
+          "days_ago": 158
+        },
+        {
+          "type": "DELIST",
+          "card": "7",
+          "price": 0.1223,
+          "days_ago": 158
+        },
+        {
+          "type": "SELL",
+          "card": "22",
+          "price": 0.1094,
+          "days_ago": 234
+        },
+        {
+          "type": "BUY",
+          "card": "1",
+          "price": 0.0813,
+          "days_ago": 253
+        }
+      ],
+      "completed_subsets": [
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-049",
+      "name": "The Hibernator",
+      "wallet": "0xcec...bc3",
+      "type": "whale",
+      "group": "Complete Set Hunters",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "9",
+        "12",
+        "14",
+        "15",
+        "17",
+        "18",
+        "21",
+        "23",
+        "24",
+        "25",
+        "27",
+        "28",
+        "17b"
+      ],
+      "total_spent": 53.84,
+      "avg_hold_days": 669,
+      "status": "diamond_hands",
+      "last_active": "7mo ago",
+      "other_nfts": [
+        "CryptoPunks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0421,
+          "days_ago": 172
+        },
+        {
+          "type": "BUY",
+          "card": "21",
+          "price": 0.0717,
+          "days_ago": 309
+        },
+        {
+          "type": "SELL",
+          "card": "17",
+          "price": 0.1498,
+          "days_ago": 338
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0267,
+          "days_ago": 406
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.039,
+          "days_ago": 408
+        },
+        {
+          "type": "BUY",
+          "card": "25",
+          "price": 0.0807,
+          "days_ago": 469
+        },
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.0594,
+          "days_ago": 496
+        },
+        {
+          "type": "DELIST",
+          "card": "24",
+          "price": 0.0521,
+          "days_ago": 609
+        }
+      ],
+      "completed_subsets": [
+        "art_materials",
+        "apple_holders"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-050",
+      "name": "Newly Minted",
+      "wallet": "0x745...09e",
+      "type": "fan",
+      "group": "Animated or Nothing",
+      "cards": [
+        "8",
+        "11",
+        "13",
+        "16",
+        "19",
+        "21",
+        "23",
+        "26"
+      ],
+      "total_spent": 70.74,
+      "avg_hold_days": 752,
+      "status": "diamond_hands",
+      "last_active": "2mo ago",
+      "other_nfts": [
+        "MoonCats",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "21",
+          "price": 0.0712,
+          "days_ago": 46
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0377,
+          "days_ago": 119
+        },
+        {
+          "type": "BUY",
+          "card": "11",
+          "price": 0.0206,
+          "days_ago": 228
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0241,
+          "days_ago": 248
+        },
+        {
+          "type": "DELIST",
+          "card": "23",
+          "price": 0.0846,
+          "days_ago": 429
+        },
+        {
+          "type": "DELIST",
+          "card": "19",
+          "price": 0.0655,
+          "days_ago": 434
+        },
+        {
+          "type": "BUY",
+          "card": "23",
+          "price": 0.1268,
+          "days_ago": 441
+        },
+        {
+          "type": "SELL",
+          "card": "16",
+          "price": 0.0561,
+          "days_ago": 475
+        }
+      ],
+      "completed_subsets": [
+        "rare_111"
+      ],
+      "personality": ""
+    },
+    {
+      "id": "h-051",
+      "name": "Whale Song",
+      "wallet": "0x8c9...3fd",
+      "type": "og",
+      "group": "Friedman Scholars",
+      "cards": [
+        "7",
+        "10",
+        "11",
+        "12",
+        "15",
+        "16",
+        "17",
+        "24",
+        "26",
+        "17b"
+      ],
+      "total_spent": 64.99,
+      "avg_hold_days": 931,
+      "status": "diamond_hands",
+      "last_active": "6mo ago",
+      "other_nfts": [
+        "CryptoPunks",
+        "MoonCats",
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "LIST",
+          "card": "10",
+          "price": 0.0478,
+          "days_ago": 192
+        },
+        {
+          "type": "SELL",
+          "card": "26",
+          "price": 0.0387,
+          "days_ago": 238
+        },
+        {
+          "type": "BUY",
+          "card": "10",
+          "price": 0.053,
+          "days_ago": 250
+        },
+        {
+          "type": "BUY",
+          "card": "7",
+          "price": 0.1215,
+          "days_ago": 286
+        },
+        {
+          "type": "BUY",
+          "card": "26",
+          "price": 0.0259,
+          "days_ago": 339
+        },
+        {
+          "type": "SELL",
+          "card": "12",
+          "price": 0.0446,
+          "days_ago": 399
+        },
+        {
+          "type": "DELIST",
+          "card": "17",
+          "price": 0.0929,
+          "days_ago": 629
+        },
+        {
+          "type": "BUY",
+          "card": "17",
+          "price": 0.1228,
+          "days_ago": 656
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-052",
+      "name": "The Accumulator",
+      "wallet": "0x770...64e",
+      "type": "fan",
+      "group": "Quick Flip Artists",
+      "cards": [
+        "4",
+        "9",
+        "15",
+        "22"
+      ],
+      "total_spent": 47.52,
+      "avg_hold_days": 1313,
+      "status": "diamond_hands",
+      "last_active": "6mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0573,
+          "days_ago": 121
+        },
+        {
+          "type": "SELL",
+          "card": "9",
+          "price": 0.0436,
+          "days_ago": 191
+        },
+        {
+          "type": "SELL",
+          "card": "9",
+          "price": 0.0426,
+          "days_ago": 296
+        },
+        {
+          "type": "DELIST",
+          "card": "9",
+          "price": 0.0551,
+          "days_ago": 305
+        },
+        {
+          "type": "BUY",
+          "card": "9",
+          "price": 0.0307,
+          "days_ago": 383
+        },
+        {
+          "type": "BUY",
+          "card": "4",
+          "price": 0.0683,
+          "days_ago": 497
+        },
+        {
+          "type": "SELL",
+          "card": "9",
+          "price": 0.0254,
+          "days_ago": 576
+        },
+        {
+          "type": "SELL",
+          "card": "9",
+          "price": 0.0405,
+          "days_ago": 611
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-053",
+      "name": "Set Builder",
+      "wallet": "0xc84...cd6",
+      "type": "newbie",
+      "group": "Robek RPG Guild",
+      "cards": [
+        "14",
+        "22"
+      ],
+      "total_spent": 63.93,
+      "avg_hold_days": 914,
+      "status": "diamond_hands",
+      "last_active": "8mo ago",
+      "other_nfts": [
+        "Art Blocks"
+      ],
+      "trades": [
+        {
+          "type": "BUY",
+          "card": "22",
+          "price": 0.046,
+          "days_ago": 173
+        },
+        {
+          "type": "BUY",
+          "card": "14",
+          "price": 0.0462,
+          "days_ago": 557
+        },
+        {
+          "type": "SELL",
+          "card": "22",
+          "price": 0.0742,
+          "days_ago": 563
+        }
+      ],
+      "completed_subsets": [],
+      "personality": ""
+    },
+    {
+      "id": "h-054",
+      "name": "Art Dealer",
+      "wallet": "0x5a6...b76",
+      "type": "og",
+      "group": "Quick Flip Artists",
+      "cards": [
+        "2",
+        "4",
+        "7",
+        "8",
+        "9",
+        "10",
+        "14",
+        "15",
+        "18",
+        "21",
+        "24",
+        "25",
+        "26",
+        "27",
+        "29",
+        "30"
+      ],
+      "total_spent": 73.51,
+      "avg_hold_days": 904,
+      "status": "diamond_hands",
+      "last_active": "2mo ago",
+      "other_nfts": [],
+      "trades": [
+        {
+          "type": "SELL",
+          "card": "8",
+          "price": 0.0225,
+          "days_ago": 61
+        },
+        {
+          "type": "BUY",
+          "card": "27",
+          "price": 0.0337,
+          "days_ago": 212
+        },
+        {
+          "type": "DELIST",
+          "card": "9",
+          "price": 0.028,
+          "days_ago": 330
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.0767,
+          "days_ago": 332
+        },
+        {
+          "type": "LIST",
+          "card": "14",
+          "price": 0.0581,
+          "days_ago": 360
+        },
+        {
+          "type": "DELIST",
+          "card": "15",
+          "price": 0.0739,
+          "days_ago": 403
+        },
+        {
+          "type": "BUY",
+          "card": "21",
+          "price": 0.0887,
+          "days_ago": 527
+        },
+        {
+          "type": "BUY",
+          "card": "18",
+          "price": 0.099,
+          "days_ago": 719
+        }
+      ],
+      "completed_subsets": [
+        "art_creations",
+        "friedman"
+      ],
+      "personality": ""
+    }
+  ],
+  "subsets": {
+    "story_set": {
+      "name": "Story Set",
+      "emoji": "\ud83d\udcd6",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "desc": "Phneep's complete 10-card narrative of art's evolution from sustenance to the digital future."
+    },
+    "art_materials": {
+      "name": "Art Materials",
+      "emoji": "\ud83c\udfa8",
+      "cards": [
+        "4",
+        "5",
+        "6"
+      ],
+      "desc": "Clay, Paint, Ink \u2014 the building blocks trilogy."
+    },
+    "art_creations": {
+      "name": "Art Creations",
+      "emoji": "\ud83d\uddbc\ufe0f",
+      "cards": [
+        "7",
+        "8",
+        "9"
+      ],
+      "desc": "Sculpture, Painting, Book \u2014 what the materials become."
+    },
+    "cryptograffiti": {
+      "name": "cryptograffiti Set",
+      "emoji": "\ud83c\udfe6",
+      "cards": [
+        "11",
+        "12",
+        "13"
+      ],
+      "desc": "Bank-resistance Bitcoin propaganda by cryptograffiti."
+    },
+    "brand_mashups": {
+      "name": "Brand Mashups",
+      "emoji": "\ud83e\udd64",
+      "cards": [
+        "14",
+        "15",
+        "16"
+      ],
+      "desc": "Phneep's corporate logo satire \u2014 Coke, Wendy's, Heineken."
+    },
+    "cryptopop": {
+      "name": "Cryptopop Dogs",
+      "emoji": "\ud83d\udc15",
+      "cards": [
+        "17",
+        "18",
+        "19"
+      ],
+      "desc": "UASF, Dogs Trading, To The Moon \u2014 Cryptopop's Bitcoin dogs."
+    },
+    "robek_world": {
+      "name": "Robek World RPG",
+      "emoji": "\u2694\ufe0f",
+      "cards": [
+        "21",
+        "22",
+        "23"
+      ],
+      "desc": "The Wizard (Thomas), The Bard (Travis), The Barbarian (Rhett)."
+    },
+    "friedman": {
+      "name": "Friedman Trio",
+      "emoji": "\ud83c\udfad",
+      "cards": [
+        "24",
+        "25",
+        "26"
+      ],
+      "desc": "Complexity, Passion, Education \u2014 Daniel Friedman's abstract art."
+    },
+    "vengas_colors": {
+      "name": "Vengas Colors",
+      "emoji": "\ud83c\udf08",
+      "cards": [
+        "27",
+        "28",
+        "29"
+      ],
+      "desc": "Pink, Yellow, Blue \u2014 Marisol Vengas's fine art color series."
+    },
+    "rare_111": {
+      "name": "Ultra Rare (111)",
+      "emoji": "\ud83d\udc8e",
+      "cards": [
+        "13",
+        "26"
+      ],
+      "desc": "Only 111 supply each. The crown jewels of the collection."
+    },
+    "full_set": {
+      "name": "Complete 31",
+      "emoji": "\ud83c\udfc6",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "17b"
+      ],
+      "desc": "All 30 cards plus the 17b misprint. The holy grail."
+    },
+    "apple_holders": {
+      "name": "Apple Holders",
+      "emoji": "\ud83c\udf4e",
+      "cards": [
+        "1"
+      ],
+      "desc": "Everyone who holds at least one Apple \u2014 the gateway card."
+    },
+    "mad_bitcoins_holders": {
+      "name": "Mad Bitcoins Holders",
+      "emoji": "\ud83c\udfac",
+      "cards": [
+        "20"
+      ],
+      "desc": "Holders of the first portrait on Ethereum."
+    }
+  },
+  "subset_clubs": {
+    "story_set": {
+      "name": "Story Set",
+      "emoji": "\ud83d\udcd6",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "desc": "Phneep's complete 10-card narrative of art's evolution from sustenance to the digital future.",
+      "member_count": 1,
+      "member_ids": [
+        "h-035"
+      ]
+    },
+    "art_materials": {
+      "name": "Art Materials",
+      "emoji": "\ud83c\udfa8",
+      "cards": [
+        "4",
+        "5",
+        "6"
+      ],
+      "desc": "Clay, Paint, Ink \u2014 the building blocks trilogy.",
+      "member_count": 4,
+      "member_ids": [
+        "h-010",
+        "h-025",
+        "h-035",
+        "h-049"
+      ]
+    },
+    "art_creations": {
+      "name": "Art Creations",
+      "emoji": "\ud83d\uddbc\ufe0f",
+      "cards": [
+        "7",
+        "8",
+        "9"
+      ],
+      "desc": "Sculpture, Painting, Book \u2014 what the materials become.",
+      "member_count": 6,
+      "member_ids": [
+        "h-019",
+        "h-023",
+        "h-025",
+        "h-035",
+        "h-042",
+        "h-054"
+      ]
+    },
+    "cryptograffiti": {
+      "name": "cryptograffiti Set",
+      "emoji": "\ud83c\udfe6",
+      "cards": [
+        "11",
+        "12",
+        "13"
+      ],
+      "desc": "Bank-resistance Bitcoin propaganda by cryptograffiti.",
+      "member_count": 1,
+      "member_ids": [
+        "h-035"
+      ]
+    },
+    "brand_mashups": {
+      "name": "Brand Mashups",
+      "emoji": "\ud83e\udd64",
+      "cards": [
+        "14",
+        "15",
+        "16"
+      ],
+      "desc": "Phneep's corporate logo satire \u2014 Coke, Wendy's, Heineken.",
+      "member_count": 4,
+      "member_ids": [
+        "h-005",
+        "h-025",
+        "h-035",
+        "h-037"
+      ]
+    },
+    "cryptopop": {
+      "name": "Cryptopop Dogs",
+      "emoji": "\ud83d\udc15",
+      "cards": [
+        "17",
+        "18",
+        "19"
+      ],
+      "desc": "UASF, Dogs Trading, To The Moon \u2014 Cryptopop's Bitcoin dogs.",
+      "member_count": 5,
+      "member_ids": [
+        "h-003",
+        "h-019",
+        "h-030",
+        "h-035",
+        "h-036"
+      ]
+    },
+    "robek_world": {
+      "name": "Robek World RPG",
+      "emoji": "\u2694\ufe0f",
+      "cards": [
+        "21",
+        "22",
+        "23"
+      ],
+      "desc": "The Wizard (Thomas), The Bard (Travis), The Barbarian (Rhett).",
+      "member_count": 5,
+      "member_ids": [
+        "h-003",
+        "h-019",
+        "h-035",
+        "h-039",
+        "h-042"
+      ]
+    },
+    "friedman": {
+      "name": "Friedman Trio",
+      "emoji": "\ud83c\udfad",
+      "cards": [
+        "24",
+        "25",
+        "26"
+      ],
+      "desc": "Complexity, Passion, Education \u2014 Daniel Friedman's abstract art.",
+      "member_count": 9,
+      "member_ids": [
+        "h-005",
+        "h-016",
+        "h-020",
+        "h-030",
+        "h-035",
+        "h-038",
+        "h-042",
+        "h-043",
+        "h-054"
+      ]
+    },
+    "vengas_colors": {
+      "name": "Vengas Colors",
+      "emoji": "\ud83c\udf08",
+      "cards": [
+        "27",
+        "28",
+        "29"
+      ],
+      "desc": "Pink, Yellow, Blue \u2014 Marisol Vengas's fine art color series.",
+      "member_count": 3,
+      "member_ids": [
+        "h-003",
+        "h-017",
+        "h-035"
+      ]
+    },
+    "rare_111": {
+      "name": "Ultra Rare (111)",
+      "emoji": "\ud83d\udc8e",
+      "cards": [
+        "13",
+        "26"
+      ],
+      "desc": "Only 111 supply each. The crown jewels of the collection.",
+      "member_count": 8,
+      "member_ids": [
+        "h-005",
+        "h-016",
+        "h-019",
+        "h-030",
+        "h-035",
+        "h-038",
+        "h-039",
+        "h-050"
+      ]
+    },
+    "full_set": {
+      "name": "Complete 31",
+      "emoji": "\ud83c\udfc6",
+      "cards": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "17b"
+      ],
+      "desc": "All 30 cards plus the 17b misprint. The holy grail.",
+      "member_count": 1,
+      "member_ids": [
+        "h-035"
+      ]
+    },
+    "apple_holders": {
+      "name": "Apple Holders",
+      "emoji": "\ud83c\udf4e",
+      "cards": [
+        "1"
+      ],
+      "desc": "Everyone who holds at least one Apple \u2014 the gateway card.",
+      "member_count": 16,
+      "member_ids": [
+        "h-005",
+        "h-007",
+        "h-008",
+        "h-010",
+        "h-012",
+        "h-017",
+        "h-019",
+        "h-020",
+        "h-023",
+        "h-024",
+        "h-031",
+        "h-035",
+        "h-039",
+        "h-043",
+        "h-048",
+        "h-049"
+      ]
+    },
+    "mad_bitcoins_holders": {
+      "name": "Mad Bitcoins Holders",
+      "emoji": "\ud83c\udfac",
+      "cards": [
+        "20"
+      ],
+      "desc": "Holders of the first portrait on Ethereum.",
+      "member_count": 12,
+      "member_ids": [
+        "h-003",
+        "h-013",
+        "h-015",
+        "h-016",
+        "h-019",
+        "h-023",
+        "h-025",
+        "h-030",
+        "h-035",
+        "h-036",
+        "h-039",
+        "h-042"
+      ]
+    }
+  },
+  "activity_clubs": {
+    "active_buyers": {
+      "name": "Active Buyers Club",
+      "emoji": "\ud83d\udfe2",
+      "count": 21,
+      "desc": "Currently buying cards. Last trade within 30 days."
+    },
+    "active_sellers": {
+      "name": "Active Sellers Club",
+      "emoji": "\ud83d\udd34",
+      "count": 18,
+      "desc": "Currently selling or listing cards."
+    },
+    "active_flippers": {
+      "name": "Flip Artists",
+      "emoji": "\u26a1",
+      "count": 12,
+      "desc": "Buy low, sell high, repeat. Average hold under 14 days."
+    },
+    "diamond_hands": {
+      "name": "Diamond Hands",
+      "emoji": "\ud83d\udc8e",
+      "count": 24,
+      "desc": "Haven't sold in 6+ months. True believers."
+    },
+    "inactive": {
+      "name": "Hibernating",
+      "emoji": "\ud83d\ude34",
+      "count": 4,
+      "desc": "No activity in 6+ months. Cards locked away."
+    },
+    "new_holders": {
+      "name": "Newly Minted",
+      "emoji": "\ud83c\udd95",
+      "count": 0,
+      "desc": "Bought their first Curio Card within the last 30 days."
+    },
+    "cross_collection": {
+      "name": "Cross-Collection",
+      "emoji": "\ud83c\udf10",
+      "count": 36,
+      "desc": "Also hold CryptoPunks, MoonCats, or other historical NFTs."
+    }
+  },
+  "stats": {
+    "total_holders": 55,
+    "total_unique_cards_held": 31,
+    "total_trades": 389,
+    "active_count": 21,
+    "inactive_count": 4,
+    "cross_collection_count": 36,
+    "avg_cards_per_holder": 9.2
+  }
+}

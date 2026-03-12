@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — CurioQuant</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0d10;--card:#141519;--card2:#1a1b21;--border:#2a2b33;--text:#e4e5eb;--muted:#6b6d7a;--accent:#f0a030;--green:#3dd68c;--red:#e85454;--blue:#4da8da}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.wrap{max-width:1300px;margin:0 auto;padding:20px 24px}
+.back{font-size:.9rem;color:var(--muted);margin-bottom:14px;display:inline-block}
+h1{font-size:2.2rem;font-weight:800;margin-bottom:4px}h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:1rem;margin-bottom:18px}
+.sec-t{font-size:.72rem;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);margin:22px 0 10px;display:flex;align-items:center;gap:8px}.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.stat-pill{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center}
+.stat-pill .n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:700;color:var(--accent)}.stat-pill .l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:14px}
+.club{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;transition:border-color .2s;cursor:pointer;display:block;color:inherit}
+.club:hover{border-color:var(--accent)}
+.club h3{font-size:1.05rem;font-weight:700;margin-bottom:3px}.club .cnt{font-size:.78rem;color:var(--accent);margin-bottom:5px}
+.club .desc{font-size:.85rem;color:var(--muted);line-height:1.4}
+.holder-row{display:grid;grid-template-columns:2fr 80px 80px 80px 90px 80px;gap:6px;padding:9px 14px;border-bottom:1px solid rgba(42,43,51,.3);font-size:.88rem;align-items:center}
+.holder-row:last-child{border-bottom:none}
+.feed{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.feed-hdr{display:grid;grid-template-columns:2fr 80px 80px 80px 90px 80px;gap:6px;padding:7px 14px;background:rgba(0,0,0,.25);font-size:.6rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.mono{font-family:'JetBrains Mono',monospace}
+.status{font-size:.6rem;padding:2px 6px;border-radius:4px;font-weight:600;text-transform:uppercase}
+.status.active{background:rgba(61,214,140,.12);color:var(--green)}
+.status.inactive{background:rgba(107,109,122,.12);color:var(--muted)}
+.status.diamond{background:rgba(77,168,218,.12);color:var(--blue)}
+</style>
+</head>
+<body>
+<script src="cards-data.js"></script>
+<div class="wrap">
+<a class="back" href="index.html">← Back to CurioQuant</a>
+<h1>🌐 Curio Cards <span>Community</span></h1>
+<div class="sub">55 profiled collectors. 31 cards. 13 subset clubs. 7 activity groups. Every trade tracked.</div>
+
+<div class="stats-row" id="stats"></div>
+
+<div class="sec-t">📦 Subset Completion Clubs</div>
+<div class="grid" id="subsets"></div>
+
+<div class="sec-t">🔄 Activity Clubs</div>
+<div class="grid" id="activity"></div>
+
+<div class="sec-t">🌐 Cross-Collection Holders</div>
+<div id="cross"></div>
+
+<div class="sec-t">🏆 All-Time Leaderboards</div>
+<div class="grid" id="boards"></div>
+
+<div class="sec-t">👤 All 55 Collectors — Full Roster</div>
+<div class="feed" id="roster"></div>
+
+</div>
+<script>
+fetch('community-data.json').then(r=>r.json()).then(D=>{
+  const H=D.holders, S=D.stats, SUB=D.subset_clubs, ACT=D.activity_clubs;
+  
+  // Stats
+  document.getElementById('stats').innerHTML = [
+    {n:S.total_holders,l:'Collectors'},{n:S.total_unique_cards_held,l:'Cards Tracked'},{n:S.total_trades,l:'Trades'},
+    {n:S.active_count,l:'Active'},{n:S.inactive_count,l:'Inactive'},{n:S.cross_collection_count,l:'Cross-NFT'},
+    {n:S.avg_cards_per_holder,l:'Avg Cards/Holder'}
+  ].map(s=>`<div class="stat-pill"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join('');
+
+  // Subset clubs
+  document.getElementById('subsets').innerHTML = Object.entries(SUB).map(([id,s])=>`<div class="club"><h3>${s.emoji} ${s.name}</h3><div class="cnt">${s.member_count} members completed</div><div class="desc">${s.desc}</div><div style="margin-top:6px;font-size:.72rem;color:var(--muted)">${s.cards.length} cards: ${s.cards.map(c=>'#'+c).join(', ')}</div></div>`).join('');
+
+  // Activity clubs
+  document.getElementById('activity').innerHTML = Object.entries(ACT).map(([id,a])=>`<div class="club"><h3>${a.emoji} ${a.name}</h3><div class="cnt">${a.count} members</div><div class="desc">${a.desc}</div></div>`).join('');
+
+  // Cross collection
+  const cross = H.filter(h=>h.other_nfts&&h.other_nfts.length>0);
+  document.getElementById('cross').innerHTML = `<div class="feed"><div class="feed-hdr"><span>Collector</span><span>Cards</span><span>Also Holds</span><span>Spent</span><span>Status</span><span>Hold</span></div>${cross.slice(0,15).map(h=>`<div class="holder-row"><span><a href="collector.html?id=${h.id}" style="font-weight:600">${h.name}</a></span><span class="mono">${h.cards.length}</span><span style="font-size:.72rem">${h.other_nfts.join(', ')}</span><span class="mono">${h.total_spent}Ξ</span><span><span class="status ${h.status==='active'?'active':h.status==='diamond_hands'?'diamond':'inactive'}">${h.status}</span></span><span class="mono" style="font-size:.78rem">${h.avg_hold_days}d</span></div>`).join('')}</div>`;
+
+  // Leaderboards
+  const lbs = [
+    {t:'Most Cards',e:'🃏',data:[...H].sort((a,b)=>b.cards.length-a.cards.length).slice(0,8),k:h=>h.cards.length,s:''},
+    {t:'Biggest Spender',e:'🔥',data:[...H].sort((a,b)=>b.total_spent-a.total_spent).slice(0,8),k:h=>h.total_spent+'Ξ',s:''},
+    {t:'Diamond Hands',e:'💎',data:[...H].sort((a,b)=>b.avg_hold_days-a.avg_hold_days).slice(0,8),k:h=>h.avg_hold_days+'d',s:''},
+    {t:'Most Subsets',e:'📦',data:[...H].sort((a,b)=>(b.completed_subsets||[]).length-(a.completed_subsets||[]).length).slice(0,8),k:h=>(h.completed_subsets||[]).length,s:''},
+    {t:'Most Trades',e:'📊',data:[...H].sort((a,b)=>(b.trades||[]).length-(a.trades||[]).length).slice(0,8),k:h=>(h.trades||[]).length,s:''},
+  ];
+  document.getElementById('boards').innerHTML = lbs.map(b=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px"><div style="font-size:1.2rem;margin-bottom:8px">${b.e} <span style="font-weight:700">${b.t}</span></div>${b.data.map((h,i)=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(42,43,51,.3);font-size:.88rem"><span><span style="color:${i===0?'var(--accent)':'var(--muted)'};font-weight:${i===0?700:400};margin-right:6px">${i+1}.</span><a href="collector.html?id=${h.id}" style="color:${i===0?'var(--accent)':'var(--text)'}">${h.name}</a></span><span class="mono" style="font-weight:600;color:${i===0?'var(--accent)':'var(--text)'}">${b.k(h)}${b.s}</span></div>`).join('')}</div>`).join('');
+
+  // Full roster
+  document.getElementById('roster').innerHTML = `<div class="feed-hdr"><span>Collector</span><span>Cards</span><span>Type</span><span>Spent</span><span>Status</span><span>Hold</span></div>${H.map(h=>`<div class="holder-row"><span><a href="collector.html?id=${h.id}" style="font-weight:600">${h.name}</a></span><span class="mono">${h.cards.length}</span><span style="font-size:.72rem;color:var(--muted)">${h.type}</span><span class="mono">${h.total_spent}Ξ</span><span><span class="status ${h.status==='active'?'active':h.status==='diamond_hands'?'diamond':'inactive'}">${h.status}</span></span><span class="mono" style="font-size:.78rem">${h.avg_hold_days}d</span></div>`).join('')}`;
+});
+</script>
+</body></html>

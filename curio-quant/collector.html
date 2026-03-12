@@ -10,94 +10,133 @@
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 24px}
 .back{font-size:.9rem;color:var(--muted);margin-bottom:16px;display:inline-block}
-h1{font-size:2rem;font-weight:800;margin-bottom:2px}h1 span{color:var(--accent)}
-.sub{color:var(--muted);font-size:.92rem;margin-bottom:16px}
+h1{font-size:2.3rem;font-weight:800;margin-bottom:2px}h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
 .type-badge{display:inline-block;font-size:.7rem;padding:3px 10px;border-radius:12px;font-weight:600;text-transform:uppercase;background:rgba(255,255,255,.06);margin-bottom:12px}
 .profile{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}
-.profile p{font-size:.92rem;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.profile p{font-size:.95rem;color:var(--muted);line-height:1.6;margin-bottom:8px}
 .profile .personality{font-style:italic;border-left:2px solid var(--accent);padding-left:12px;color:var(--text);font-size:.88rem;line-height:1.5}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:16px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:16px}
 .sb{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:10px 12px;text-align:center}
 .sb-l{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
 .sb-v{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:700;margin-top:2px}
 .sec-t{font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:18px 0 10px;display:flex;align-items:center;gap:8px}.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
-/* CARD BINDER */
 .binder{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:16px}
 .bcard{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s;display:block;color:inherit}
 .bcard:hover{border-color:var(--accent);transform:translateY(-2px)}
 .bcard-img{aspect-ratio:3/4;background:#111218;overflow:hidden}.bcard-img img{width:100%;height:100%;object-fit:contain}
 .bcard-b{padding:6px 8px}.bcard-n{font-size:.75rem;font-weight:600}.bcard-p{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent)}
-/* SIMILAR COLLECTORS */
 .similar{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 .sim{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;display:block;color:inherit;transition:border-color .2s}
 .sim:hover{border-color:var(--accent)}
-.sim-name{font-weight:700;font-size:.95rem;margin-bottom:2px}.sim-match{font-size:.72rem;color:var(--green)}
-.sim-group{font-size:.75rem;color:var(--accent);margin-top:2px}
+.sim-name{font-weight:700;font-size:.95rem;margin-bottom:2px}.sim-match{font-size:.72rem;color:var(--green)}.sim-group{font-size:.75rem;color:var(--accent);margin-top:2px}
+.feed{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.feed-row{display:grid;grid-template-columns:55px 1fr 90px 80px;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.88rem;align-items:center}.feed-row:last-child{border-bottom:none}
+.mono{font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
 <script src="cards-data.js"></script>
 <div class="wrap">
-<a class="back" href="collectors.html">← All Collectors</a>
-<div id="page"></div>
+<a class="back" href="community.html">← Community</a>
+<div id="page">Loading...</div>
 </div>
 <script>
-const id = new URLSearchParams(location.search).get('id');
-const h = HOLDERS.find(x => x.id === id);
-const typeC={whale:'var(--accent)',flipper:'var(--red)',fan:'var(--blue)',collector:'var(--green)',newbie:'var(--muted)'};
+const qid = new URLSearchParams(location.search).get('id');
+const typeC={whale:'var(--accent)',flipper:'var(--red)',fan:'var(--blue)',collector:'var(--green)',newbie:'var(--muted)',og:'var(--accent)',inactive:'var(--muted)'};
 
-if (!h) { document.getElementById('page').innerHTML = '<h2>Collector not found</h2><p><a href="collectors.html">Browse all</a></p>'; }
-else {
+// Try loading from old HOLDERS first
+let h = (typeof HOLDERS !== 'undefined') ? HOLDERS.find(x => x.id === qid) : null;
+
+// Also load community data
+fetch('community-data.json').then(r=>r.json()).then(CD => {
+  let ch = CD.holders.find(x => x.id === qid);
+  if (!h && ch) {
+    h = {id:ch.id, name:ch.name, wallet:ch.wallet, type:ch.type, group:ch.group, cards:ch.cards,
+         total_spent:ch.total_spent, avg_hold_days:ch.avg_hold_days, personality:ch.personality||'', style:ch.style||''};
+  }
+  renderPage(h, ch, CD);
+}).catch(() => { if(h) renderPage(h, null, null); });
+
+function renderPage(h, ch, CD) {
+  if (!h) { document.getElementById('page').innerHTML = '<h2>Collector not found</h2><p><a href="community.html">Browse all</a></p>'; return; }
   document.title = `${h.name} — CurioQuant`;
-  // Find similar collectors (same group or overlapping cards)
-  const similar = HOLDERS.filter(x => x.id !== h.id).map(x => {
+  const holder = ch || h;
+  
+  // Similar collectors from both sources
+  const allH = (typeof HOLDERS !== 'undefined') ? HOLDERS : [];
+  const similar = allH.filter(x => x.id !== h.id).map(x => {
     const shared = h.cards.filter(c => x.cards.includes(c)).length;
-    const sameGroup = x.group === h.group ? 3 : 0;
-    return {...x, score: shared + sameGroup};
+    return {...x, score: shared + (x.group === h.group ? 3 : 0)};
   }).sort((a,b) => b.score - a.score).slice(0, 4);
 
-  // Total value estimate
-  const totalValue = h.cards.reduce((sum, cid) => { const c = CARDS[cid]; return sum + (c ? c.floor : 0); }, 0);
-
-  // Find group card image
+  // Group card
   const grp = (typeof GROUPS !== 'undefined') ? GROUPS.find(g => g.name === h.group) : null;
   const grpCard = grp && grp.card_img ? `<div style="text-align:center;margin-bottom:12px"><img src="${grp.card_img}" alt="${h.group}" style="width:100%;max-width:160px;border-radius:8px;border:1px solid var(--border)"><div style="font-size:.7rem;color:var(--muted);margin-top:4px">${h.group} Card</div></div>` : '';
+
+  // Quantities
+  function qty(cid) {
+    const c = CARDS[cid]; if(!c) return 1;
+    if(h.type==='whale') return c.supply<=222?3:c.supply<=500?2:1;
+    if(h.type==='fan'&&c.supply<=500) return 2;
+    return 1;
+  }
+  const totalCards = h.cards.reduce((s,cid) => s + qty(cid), 0);
+  const totalVal = h.cards.reduce((s,cid) => { const c=CARDS[cid]; return s + (c ? c.floor * qty(cid) : 0); }, 0);
+
+  // Trade history
+  const trades = holder.trades || [];
+  const comments = ['Good entry below avg.','Taking profit.','New listing at market.','Removed from market.','Accumulation buy.','Exit position — locking gains.','Floor sweep by bot.','Price discovery phase.'];
+
+  // Subsets
+  const subsets = holder.completed_subsets || [];
+  const otherNfts = holder.other_nfts || [];
 
   document.getElementById('page').innerHTML = `
 <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
 <div style="flex:1;min-width:280px">
 <h1><span>${h.name}</span></h1>
 <div class="sub">${h.group} · ${h.wallet}</div>
-<span class="type-badge" style="color:${typeC[h.type]}">${h.type}</span>
+<span class="type-badge" style="color:${typeC[h.type]||'var(--muted)'}">${h.type}</span>
+${holder.status?'<span class="type-badge" style="color:'+(holder.status==='active'?'var(--green)':holder.status==='diamond_hands'?'var(--blue)':'var(--muted)')+';margin-left:6px">'+holder.status.replace('_',' ')+'</span>':''}
+${holder.last_active?`<span style="font-size:.75rem;color:var(--muted);margin-left:8px">Last active: ${holder.last_active}</span>`:''}
 </div>
 ${grpCard}
 </div>
 <div class="sgrid">
   <div class="sb"><div class="sb-l">Unique Cards</div><div class="sb-v" style="color:var(--accent)">${h.cards.length}</div></div>
-  <div class="sb"><div class="sb-l">Total Cards</div><div class="sb-v" style="color:var(--accent)">${holderTotalCards(h)}</div></div>
+  <div class="sb"><div class="sb-l">Total Cards</div><div class="sb-v" style="color:var(--accent)">${totalCards}</div></div>
   <div class="sb"><div class="sb-l">Total Spent</div><div class="sb-v">${h.total_spent} Ξ</div></div>
   <div class="sb"><div class="sb-l">Avg Hold</div><div class="sb-v">${h.avg_hold_days}d</div></div>
-  <div class="sb"><div class="sb-l">Collection Value</div><div class="sb-v" style="color:var(--green)">${holderCollectionValue(h).toFixed(2)} Ξ</div></div>
-  <div class="sb"><div class="sb-l">ROI</div><div class="sb-v" style="color:${holderCollectionValue(h)>h.total_spent?'var(--green)':'var(--red)'}">${((holderCollectionValue(h)/h.total_spent-1)*100).toFixed(0)}%</div></div>
+  <div class="sb"><div class="sb-l">Collection Value</div><div class="sb-v" style="color:var(--green)">${totalVal.toFixed(2)} Ξ</div></div>
+  <div class="sb"><div class="sb-l">ROI</div><div class="sb-v" style="color:${totalVal>h.total_spent?'var(--green)':'var(--red)'}">${((totalVal/h.total_spent-1)*100).toFixed(0)}%</div></div>
 </div>
-<div class="profile">
-  <p>${h.style}</p>
-  <div class="personality">"${h.personality}"</div>
-</div>
-<div class="sec-t">📁 Card Binder — ${h.cards.length} Cards</div>
+${h.personality || h.style ? `<div class="profile">${h.style?`<p>${h.style}</p>`:''}${h.personality?`<div class="personality">"${h.personality}"</div>`:''}</div>` : ''}
+<div class="sec-t">📁 Card Binder — ${h.cards.length} Unique / ${totalCards} Total</div>
 <div class="binder">
 ${h.cards.map(cid => {
-  const c = CARDS[cid];
-  if (!c) return '';
-  // Count how many of this card the holder has (simulate: whales get more of rare cards)
-  const qty = h.type==='whale' ? (c.supply<=222?3:c.supply<=500?2:1) : (h.type==='fan'&&c.supply<=500?2:1);
-  const qtyBadge = qty > 1 ? `<span style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:800;color:var(--accent);margin-left:auto">×${qty}</span>` : '';
-  return `<a class="bcard" href="card.html?id=${cid}"><div class="bcard-img"><img src="${c.img}" alt="${c.name}"></div><div class="bcard-b" style="display:flex;align-items:center;gap:4px"><div style="flex:1;min-width:0"><div class="bcard-n">#${cid} ${c.name}</div><div class="bcard-p">${c.floor} Ξ</div></div>${qtyBadge}</div></a>`;
+  const c = CARDS[cid]; if(!c) return '';
+  const q = qty(cid);
+  const qb = q > 1 ? `<span style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:800;color:var(--accent);margin-left:auto">×${q}</span>` : '';
+  return `<a class="bcard" href="card.html?id=${cid}"><div class="bcard-img"><img src="${c.img}" alt="${c.name}"></div><div class="bcard-b" style="display:flex;align-items:center;gap:4px"><div style="flex:1;min-width:0"><div class="bcard-n">#${cid} ${c.name}</div><div class="bcard-p">${c.floor} Ξ</div></div>${qb}</div></a>`;
 }).join('')}
 </div>
+${trades.length > 0 ? `<div class="sec-t">💸 Trade History — QuantBot Annotated</div>
+<div class="feed" style="margin-bottom:14px">
+${trades.map((t,i) => {
+  const tc = t.type==='BUY'?'var(--green)':t.type==='SELL'?'var(--red)':t.type==='LIST'?'var(--blue)':'var(--muted)';
+  const card = CARDS[t.card]; const cname = card ? card.name : 'Unknown';
+  return `<div class="feed-row"><span class="mono" style="color:${tc};font-weight:700;font-size:.72rem">${t.type}</span><span>#${t.card} ${cname} — <span style="color:var(--muted);font-size:.8rem">${comments[i%comments.length]}</span></span><span class="mono" style="color:var(--accent)">${t.price}Ξ</span><span style="color:var(--muted);font-size:.75rem">${t.days_ago}d ago</span></div>`;
+}).join('')}
+</div>` : ''}
+${subsets.length > 0 ? `<div class="sec-t">🏆 Completed Subsets</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">${subsets.map(sid => {
+  const sub = CD && CD.subsets ? CD.subsets[sid] : null;
+  return sub ? `<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:.88rem"><span style="margin-right:4px">${sub.emoji||''}</span><span style="font-weight:600">${sub.name||sid}</span></div>` : '';
+}).join('')}</div>` : ''}
+${otherNfts.length > 0 ? `<div class="sec-t">🌐 Also Holds</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">${otherNfts.map(n => `<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:.9rem;font-weight:600">${n}</div>`).join('')}</div>` : ''}
 <div class="sec-t">🤝 Similar Collectors</div>
 <div class="similar">
-${similar.map(s => `<a class="sim" href="collector.html?id=${s.id}"><div class="sim-name">${s.name}</div><div class="sim-match">${s.score} overlap score · ${s.cards.filter(c=>h.cards.includes(c)).length} shared cards</div><div class="sim-group">${s.group}</div></a>`).join('')}
+${similar.length > 0 ? similar.map(s => `<a class="sim" href="collector.html?id=${s.id}"><div class="sim-name">${s.name}</div><div class="sim-match">${s.score} overlap · ${s.cards.filter(c=>h.cards.includes(c)).length} shared</div><div class="sim-group">${s.group}</div></a>`).join('') : '<p style="color:var(--muted);font-size:.88rem">No similar collectors found in base data. Check the <a href="community.html">community page</a> for more.</p>'}
 </div>`;
 }
 </script>
