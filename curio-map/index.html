@@ -3,160 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CURIO MAP — Card #1 Apples Distribution</title>
+<title>CURIO MAP — Distribution Network Explorer</title>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#060810;--card:#0e1118;--border:#1e2030;--text:#d0d2dc;--muted:#555770;--accent:#f0a030;--green:#3dd68c;--red:#e85454;--blue:#4da8da;--purple:#8b5cf6}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow:hidden;height:100vh}
-.hdr{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(6,8,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
-.hdr h1{font-size:1.3rem;font-weight:800;letter-spacing:1px}.hdr h1 span{color:var(--accent)}
-.hdr-links{display:flex;gap:12px;font-size:.8rem}
-.hdr-links a{color:var(--muted);text-decoration:none}.hdr-links a:hover{color:var(--accent)}
-#graph{width:100vw;height:100vh;cursor:grab}
-#graph:active{cursor:grabbing}
-.tooltip{position:fixed;background:rgba(14,17,24,.95);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:.82rem;pointer-events:none;z-index:20;max-width:300px;display:none}
-.tooltip .tt-title{font-weight:700;color:var(--accent);margin-bottom:3px;font-size:.95rem}
-.tooltip .tt-type{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.tooltip .tt-detail{margin-top:4px;color:var(--text);line-height:1.4}
-.sidebar{position:fixed;right:0;top:44px;bottom:0;width:320px;background:rgba(14,17,24,.95);border-left:1px solid var(--border);overflow-y:auto;padding:14px;z-index:10;font-size:.85rem}
-.sidebar h2{font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:10px}
-.sb-stat{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(30,32,48,.5)}
-.sb-stat .l{color:var(--muted)}.sb-stat .v{font-family:'JetBrains Mono',monospace;font-weight:600}
-.phase-bar{margin-top:12px}
-.phase{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.78rem;cursor:pointer;transition:opacity .2s}
-.phase:hover{opacity:1!important}
-.phase .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.phase .name{flex:1}.phase .count{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.72rem}
-.legend{position:fixed;left:20px;bottom:20px;background:rgba(14,17,24,.9);border:1px solid var(--border);border-radius:8px;padding:10px;z-index:10;font-size:.72rem}
-.legend-item{display:flex;align-items:center;gap:6px;margin:3px 0}
-.legend-dot{width:10px;height:10px;border-radius:50%}
-.timeline{position:fixed;left:340px;bottom:20px;right:340px;background:rgba(14,17,24,.85);border:1px solid var(--border);border-radius:8px;padding:8px 14px;z-index:10}
-.timeline h4{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.tl-bar{height:20px;display:flex;border-radius:4px;overflow:hidden}
-.tl-seg{cursor:pointer;transition:opacity .2s;position:relative}.tl-seg:hover{opacity:.8}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(6,8,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:14px}
+.hdr h1{font-size:1.2rem;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.hdr h1 span{color:var(--accent)}
+.card-nav{display:flex;gap:4px;overflow-x:auto;flex:1;padding:2px 0}
+.card-nav::-webkit-scrollbar{height:0}
+.cn{padding:3px 8px;border-radius:5px;font-size:.68rem;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid transparent;transition:all .15s;font-family:'JetBrains Mono',monospace}
+.cn:hover{border-color:var(--accent);color:var(--accent)}
+.cn.active{background:var(--accent);color:#000;border-color:var(--accent)}
+.hdr-links{display:flex;gap:10px;font-size:.75rem;white-space:nowrap}
+#graph{width:100vw;height:100vh;cursor:grab}#graph:active{cursor:grabbing}
+.tooltip{position:fixed;background:rgba(14,17,24,.95);border:1px solid var(--accent);border-radius:8px;padding:8px 12px;font-size:.8rem;pointer-events:none;z-index:20;max-width:280px;display:none}
+.tooltip .tt-t{font-weight:700;color:var(--accent);font-size:.9rem}.tooltip .tt-s{font-size:.65rem;color:var(--muted);text-transform:uppercase}
+.sidebar{position:fixed;right:0;top:42px;bottom:0;width:300px;background:rgba(14,17,24,.95);border-left:1px solid var(--border);overflow-y:auto;padding:12px;z-index:10;font-size:.82rem}
+.sidebar h2{font-size:1rem;font-weight:700;color:var(--accent);margin:10px 0 6px}
+.sidebar h2:first-child{margin-top:0}
+.sb-s{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(30,32,48,.4)}
+.sb-s .l{color:var(--muted)}.sb-s .v{font-family:'JetBrains Mono',monospace;font-weight:600}
+.phase{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:.75rem}
+.phase .d{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.phase .n{flex:1}.phase .c{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.68rem}
+.ev{padding:4px 0;border-bottom:1px solid rgba(30,32,48,.3);font-size:.74rem}
+.legend{position:fixed;left:16px;bottom:16px;background:rgba(14,17,24,.9);border:1px solid var(--border);border-radius:6px;padding:8px;z-index:10;font-size:.68rem}
+.legend-i{display:flex;align-items:center;gap:5px;margin:2px 0}
+.legend-d{width:8px;height:8px;border-radius:50%}
+.card-img{width:100%;max-width:140px;border-radius:6px;border:1px solid var(--border);margin-bottom:8px}
 </style>
 </head>
 <body>
 <div class="hdr">
-  <h1>CURIO <span>MAP</span> — Card #1 Apples</h1>
-  <div class="hdr-links">
-    <a href="/curio-quant/">CurioQuant</a>
-    <a href="/curio-quant/community.html">Community</a>
-    <a href="/">1n2.org</a>
-  </div>
+  <h1>CURIO <span>MAP</span></h1>
+  <div class="card-nav" id="nav"></div>
+  <div class="hdr-links"><a href="/curio-quant/">QuantBot</a><a href="/">1n2</a></div>
 </div>
-
 <svg id="graph"></svg>
 <div class="tooltip" id="tip"></div>
-
-<div class="sidebar" id="sidebar">
-  <h2>🍎 Card #1 — Apples</h2>
-  <div id="stats"></div>
-  <h2 style="margin-top:14px">📅 Phases</h2>
-  <div id="phases"></div>
-  <h2 style="margin-top:14px">📜 Latest Events</h2>
-  <div id="events"></div>
-</div>
-
+<div class="sidebar" id="sb"></div>
 <div class="legend">
-  <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div> Contract / Genesis</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Burn Address</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> OG Buyer (2017)</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Holder</div>
-  <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div> Wrapper</div>
+  <div class="legend-i"><div class="legend-d" style="background:var(--accent)"></div>Contract</div>
+  <div class="legend-i"><div class="legend-d" style="background:var(--red)"></div>Burn</div>
+  <div class="legend-i"><div class="legend-d" style="background:var(--green)"></div>OG (2017)</div>
+  <div class="legend-i"><div class="legend-d" style="background:var(--blue)"></div>Holder</div>
+  <div class="legend-i"><div class="legend-d" style="background:var(--purple)"></div>Wrapper</div>
 </div>
-
 <script>
-fetch('apple-map-data.json').then(r=>r.json()).then(D=>{
-  const {card, events, nodes, links, phases, stats} = D;
-  
-  // Stats sidebar
-  document.getElementById('stats').innerHTML = [
-    {l:'Total Minted',v:card.total_minted.toLocaleString()},
-    {l:'Burned',v:card.burned.toLocaleString()},
-    {l:'Current Supply',v:'~'+card.current_supply.toLocaleString()},
-    {l:'Current Owners',v:card.current_owners},
-    {l:'Total Events',v:stats.total_events},
-    {l:'OG Buyers (2017)',v:stats.og_buyers},
-    {l:'All Wallets Seen',v:stats.total_wallets},
-    {l:'Published',v:card.published},
-    {l:'Original Contract',v:card.contract},
-  ].map(s=>`<div class="sb-stat"><span class="l">${s.l}</span><span class="v">${s.v}</span></div>`).join('');
+let ALL, currentCard='1';
+const params = new URLSearchParams(location.search);
+if(params.get('card')) currentCard = params.get('card');
 
-  // Phases
-  const phaseCounts = {};
-  events.forEach(e=>{phaseCounts[e.phase]=(phaseCounts[e.phase]||0)+1;});
-  document.getElementById('phases').innerHTML = phases.map(p=>`<div class="phase"><div class="dot" style="background:${p.color}"></div><span class="name">${p.name}</span><span class="count">${phaseCounts[p.name]||0}</span></div>`).join('');
+fetch('all-maps-data.json').then(r=>r.json()).then(data=>{
+  ALL=data;
+  buildNav();
+  renderMap(currentCard);
+});
 
-  // Events
-  document.getElementById('events').innerHTML = events.slice(-12).reverse().map(e=>{
-    const tc = e.type==='BUY'||e.type==='SALE'?'var(--green)':e.type==='BURN'?'var(--red)':e.type==='WRAP'?'var(--purple)':'var(--muted)';
-    return `<div style="padding:5px 0;border-bottom:1px solid rgba(30,32,48,.4);font-size:.78rem"><span style="color:${tc};font-weight:700;font-size:.68rem">${e.type}</span> <span style="color:var(--muted)">${e.date}</span><br>${e.note}</div>`;
+function buildNav(){
+  const ids = Object.keys(ALL).sort((a,b)=>{
+    const na=a==='17b'?17.5:+a, nb=b==='17b'?17.5:+b; return na-nb;
+  });
+  document.getElementById('nav').innerHTML = ids.map(id=>{
+    const c=ALL[id].card;
+    return `<div class="cn${id===currentCard?' active':''}" onclick="switchCard('${id}')">#${id}</div>`;
   }).join('');
+}
 
-  // D3 FORCE GRAPH
-  const W = window.innerWidth - 320, H = window.innerHeight - 44;
-  const svg = d3.select('#graph').attr('width',W).attr('height',H);
-  const g = svg.append('g');
+function switchCard(id){
+  currentCard=id;
+  history.replaceState(null,'',`?card=${id}`);
+  document.querySelectorAll('.cn').forEach(el=>{
+    el.classList.toggle('active', el.textContent==='#'+id);
+  });
+  renderMap(id);
+}
+
+function renderMap(id){
+  const D=ALL[id]; if(!D) return;
+  const {card,events,nodes,links,phases,stats}=D;
   
-  // Zoom
-  svg.call(d3.zoom().scaleExtent([0.2,5]).on('zoom',e=>g.attr('transform',e.transform)));
+  // Sidebar
+  const imgNum = id==='17b'?'17':id.padStart(2,'0');
+  const imgExt = ['21','22','23','24','25','26','27'].includes(id)?'png':['23','30'].includes(id)?'gif':'jpg';
+  const imgSrc = `/curio-quant/img/card-${imgNum}.${['21','22'].includes(id)?'png':'jpg'}`;
+  
+  document.getElementById('sb').innerHTML = `
+    <img class="card-img" src="/curio-quant/img/card-${imgNum.padStart(2,'0')}.${['21','22','23','24','25','26','27'].includes(id)?'png':id==='30'||id==='23'?'gif':'jpg'}" alt="${card.name}" onerror="this.style.display='none'">
+    <h2>#${id} ${card.name}</h2>
+    <div style="font-size:.72rem;color:var(--muted);margin-bottom:8px">by ${card.artist}</div>
+    ${[{l:'Minted',v:card.total_minted.toLocaleString()},{l:'Burned',v:card.burned.toLocaleString()},{l:'Supply',v:'~'+card.current_supply.toLocaleString()},{l:'Owners',v:card.current_owners},{l:'Events',v:stats.total_events},{l:'OG Buyers',v:stats.og_buyers},{l:'Wallets',v:stats.total_wallets},{l:'Contract',v:card.contract}].map(s=>`<div class="sb-s"><span class="l">${s.l}</span><span class="v">${s.v}</span></div>`).join('')}
+    <h2>Phases</h2>
+    ${phases.map(p=>`<div class="phase"><div class="d" style="background:${p.color}"></div><span class="n">${p.name}</span><span class="c">${p.count}</span></div>`).join('')}
+    <h2>Latest Events</h2>
+    ${events.slice(-8).reverse().map(e=>{
+      const tc=e.type==='BUY'||e.type==='SALE'?'var(--green)':e.type==='BURN'?'var(--red)':e.type==='WRAP'?'var(--purple)':'var(--muted)';
+      return `<div class="ev"><span style="color:${tc};font-weight:700;font-size:.65rem">${e.type}</span> <span style="color:var(--muted)">${e.date}</span><br>${e.note}</div>`;
+    }).join('')}
+    <div style="margin-top:12px"><a href="/curio-quant/card.html?id=${id}" style="font-size:.8rem">View on CurioQuant →</a></div>
+  `;
 
-  const nodeColor = d => {
-    if(d.type==='contract') return '#f0a030';
-    if(d.type==='burn') return '#e85454';
-    if(d.type==='event') return '#f0a030';
-    if(d.type==='og') return '#3dd68c';
-    return '#4da8da';
-  };
+  // D3 Graph
+  const svgEl = document.getElementById('graph');
+  svgEl.innerHTML = '';
+  const W = window.innerWidth - 300, H = window.innerHeight - 42;
+  const svg = d3.select(svgEl).attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+  const g = svg.append('g').attr('transform',`translate(0,42)`);
+  svg.call(d3.zoom().scaleExtent([0.15,5]).on('zoom',e=>g.attr('transform',`translate(${e.transform.x},${e.transform.y+42}) scale(${e.transform.k})`)));
 
-  const linkColor = d => {
-    if(d.type==='BURN') return '#e85454';
-    if(d.type==='BUY'||d.type==='SALE') return '#3dd68c';
-    if(d.type==='WRAP') return '#8b5cf6';
-    return '#2a2b33';
-  };
+  const nc = d=>{if(d.type==='contract')return'#f0a030';if(d.type==='burn')return'#e85454';if(d.type==='og')return'#3dd68c';return'#4da8da';};
+  const lc = d=>{if(d.type==='BURN')return'#e85454';if(d.type==='BUY'||d.type==='SALE')return'#3dd68c';if(d.type==='WRAP')return'#8b5cf6';return'#2a2b33';};
 
-  // Filter links to only include those with valid node IDs
   const nodeIds = new Set(nodes.map(n=>n.id));
-  const validLinks = links.filter(l=>nodeIds.has(l.source)&&nodeIds.has(l.target));
-  console.log(`Nodes: ${nodes.length}, Valid links: ${validLinks.length} (filtered from ${links.length})`);
+  const vLinks = links.filter(l=>nodeIds.has(l.source)&&nodeIds.has(l.target));
 
   const sim = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(validLinks).id(d=>d.id).distance(60))
-    .force('charge', d3.forceManyBody().strength(-80))
-    .force('center', d3.forceCenter(W/2, H/2))
-    .force('collision', d3.forceCollide().radius(d=>d.size+2));
+    .force('link',d3.forceLink(vLinks).id(d=>d.id).distance(55))
+    .force('charge',d3.forceManyBody().strength(-70))
+    .force('center',d3.forceCenter(W/2,H/2-21))
+    .force('collision',d3.forceCollide().radius(d=>d.size+2));
 
-  const link = g.append('g').selectAll('line').data(validLinks).join('line')
-    .attr('stroke', linkColor).attr('stroke-width', d=>Math.min(3,Math.log(d.amount+1))).attr('stroke-opacity', 0.3);
+  const link = g.append('g').selectAll('line').data(vLinks).join('line')
+    .attr('stroke',lc).attr('stroke-width',d=>Math.min(3,Math.log((d.amount||1)+1))).attr('stroke-opacity',0.25);
 
   const node = g.append('g').selectAll('circle').data(nodes).join('circle')
-    .attr('r', d=>d.size).attr('fill', nodeColor).attr('stroke','#222').attr('stroke-width',1).attr('stroke-opacity',0.5).style('filter','drop-shadow(0 0 3px rgba(255,255,255,0.15))')
+    .attr('r',d=>d.size).attr('fill',nc).attr('stroke','#222').attr('stroke-width',1).attr('stroke-opacity',0.4)
+    .style('filter','drop-shadow(0 0 2px rgba(255,255,255,0.1))')
     .call(d3.drag().on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y;})
       .on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y;}).on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}));
 
-  // Labels for special nodes
-  const labels = g.append('g').selectAll('text').data(nodes.filter(d=>d.size>12)).join('text')
-    .text(d=>d.label).attr('font-size','10px').attr('fill','#888').attr('text-anchor','middle').attr('dy',d=>d.size+12);
+  const labels = g.append('g').selectAll('text').data(nodes.filter(d=>d.size>14)).join('text')
+    .text(d=>d.label).attr('font-size','9px').attr('fill','#777').attr('text-anchor','middle').attr('dy',d=>d.size+10).attr('font-family','JetBrains Mono');
 
-  // Tooltip
   const tip = document.getElementById('tip');
   node.on('mouseover',(e,d)=>{
-    const conns = links.filter(l=>(l.source.id||l.source)===d.id||(l.target.id||l.target)===d.id);
+    const conns = vLinks.filter(l=>(l.source.id||l.source)===d.id||(l.target.id||l.target)===d.id);
     tip.style.display='block';
-    tip.innerHTML=`<div class="tt-title">${d.label}</div><div class="tt-type">${d.type}</div><div class="tt-detail">${conns.length} connections</div>`;
-  }).on('mousemove',(e)=>{
-    tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY-10)+'px';
-  }).on('mouseout',()=>{tip.style.display='none';});
+    tip.innerHTML=`<div class="tt-t">${d.label}</div><div class="tt-s">${d.type}</div><div style="margin-top:3px;color:var(--text)">${conns.length} connections</div>`;
+  }).on('mousemove',e=>{tip.style.left=(e.clientX+10)+'px';tip.style.top=(e.clientY-8)+'px';})
+    .on('mouseout',()=>{tip.style.display='none';});
 
   sim.on('tick',()=>{
     link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
     node.attr('cx',d=>d.x).attr('cy',d=>d.y);
     labels.attr('x',d=>d.x).attr('y',d=>d.y);
   });
-});
+}
 </script>
 </body></html>
