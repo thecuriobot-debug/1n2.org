@@ -981,3 +981,39 @@ function cardPriceHistory(id, days) {
   }
   return pts;
 }
+
+// Generate trade events for chart markers
+function cardTradeEvents(id, days) {
+  const c = CARDS[id]; if (!c) return [];
+  const rng = seededRng(parseInt(id) * 4217 + 99);
+  const events = [];
+  const types = ['BUY','SELL','LIST','BUY','BUY','LIST','SELL','BUY'];
+  const count = Math.floor(8 + rng() * 12); // 8-20 events
+  for (let i = 0; i < count; i++) {
+    const day = Math.floor(rng() * days);
+    const price = +(c.low + rng() * (c.high - c.low) * 0.6).toFixed(4);
+    events.push({ day, price, type: types[i % types.length] });
+  }
+  return events.sort((a,b) => a.day - b.day);
+}
+
+// Total cards held by a holder (including quantities)
+function holderTotalCards(h) {
+  let total = 0;
+  for (const cid of h.cards) {
+    const c = CARDS[cid]; if (!c) { total++; continue; }
+    if (h.type === 'whale') total += c.supply <= 222 ? 3 : c.supply <= 500 ? 2 : 1;
+    else if (h.type === 'fan' && c.supply <= 500) total += 2;
+    else total += 1;
+  }
+  return total;
+}
+function holderCollectionValue(h) {
+  let val = 0;
+  for (const cid of h.cards) {
+    const c = CARDS[cid]; if (!c) continue;
+    const qty = h.type === 'whale' ? (c.supply <= 222 ? 3 : c.supply <= 500 ? 2 : 1) : (h.type === 'fan' && c.supply <= 500 ? 2 : 1);
+    val += c.floor * qty;
+  }
+  return +val.toFixed(3);
+}

@@ -12,20 +12,20 @@
 .back{font-size:.9rem;color:var(--muted);margin-bottom:16px;display:inline-block}
 .hero{display:grid;grid-template-columns:300px 1fr;gap:22px;margin-bottom:20px}@media(max-width:760px){.hero{grid-template-columns:1fr}}
 .hero-img{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}.hero-img img{width:100%;height:100%;object-fit:contain}
-h1{font-size:2rem;font-weight:800;margin-bottom:2px}h1 span{color:var(--accent)}
-.hero-sub{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+h1{font-size:2.3rem;font-weight:800;margin-bottom:2px}h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:1rem;margin-bottom:12px}
 .big2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .bigbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;text-align:center}
 .bigbox-l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
-.bigbox-v{font-family:'JetBrains Mono',monospace;font-size:2.8rem;font-weight:800;line-height:1}
+.bigbox-v{font-family:'JetBrains Mono',monospace;font-size:3.2rem;font-weight:800;line-height:1}
 .bigbox-s{font-size:.8rem;margin-top:4px}
 .sgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px}
 .sb{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:9px 11px}
 .sb-l{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
-.sb-v{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;margin-top:1px}
+.sb-v{font-family:'JetBrains Mono',monospace;font-size:1.25rem;font-weight:700;margin-top:1px}
 .sb-s{font-size:.72rem;color:var(--muted);margin-top:1px}
 .intel{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:14px;margin-bottom:12px}
-.intel h3{font-size:.95rem;font-weight:700;margin-bottom:5px;color:var(--accent)}.intel p{font-size:.88rem;color:var(--muted);line-height:1.5}
+.intel h3{font-size:1.05rem;font-weight:700;margin-bottom:5px;color:var(--accent)}.intel p{font-size:.95rem;color:var(--muted);line-height:1.5}
 .sec-t{font-size:.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:16px 0 8px;display:flex;align-items:center;gap:8px}.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
 .chart-row{display:grid;grid-template-columns:1fr 280px;gap:12px;margin-bottom:12px}@media(max-width:760px){.chart-row{grid-template-columns:1fr}}
 .chart-box{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:14px}
@@ -34,7 +34,7 @@ h1{font-size:2rem;font-weight:800;margin-bottom:2px}h1 span{color:var(--accent)}
 .sstat{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
 .sstat-l{font-size:.72rem;color:var(--muted)}.sstat-v{font-family:'JetBrains Mono',monospace;font-size:.95rem;font-weight:600}
 .feed{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden}
-.feed-row{display:grid;grid-template-columns:55px 1fr 95px 85px;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.88rem;align-items:center}.feed-row:last-child{border-bottom:none}
+.feed-row{display:grid;grid-template-columns:55px 1fr 95px 85px;gap:8px;padding:11px 14px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.95rem;align-items:center}.feed-row:last-child{border-bottom:none}
 .mono{font-family:'JetBrains Mono',monospace}
 .bar-wrap{margin-top:6px}.bar-label{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-bottom:3px}
 .bar-bg{background:var(--card2);border-radius:3px;height:12px;overflow:hidden}.bar-fill{height:100%;border-radius:3px}
@@ -60,7 +60,9 @@ else {
   const sigC = c.signal.includes('BUY')?'var(--green)':c.signal==='HOLD'?'var(--accent)':'var(--muted)';
   const conf = c.signal.includes('STRONG')?92:c.signal.includes('BUY')?85:c.signal==='HOLD'?70:50;
   // SEEDED chart
-  const prices = cardPriceHistory(id.replace('b',''), 730); // 2 years of history
+  const numDays = 730;
+  const prices = cardPriceHistory(id.replace('b',''), numDays);
+  const trades = cardTradeEvents(id.replace('b',''), numDays);
   const cH=100,cW=380,pMin=Math.min(...prices),pMax=Math.max(...prices),pR=pMax-pMin||0.001;
   let pathD=prices.map((v,i)=>`${i===0?'M':'L'}${(i/prices.length*cW).toFixed(1)},${(cH-((v-pMin)/pR)*cH).toFixed(1)}`).join(' ');
   let fillD=`M0,${cH} ${prices.map((v,i)=>`L${(i/prices.length*cW).toFixed(1)},${(cH-((v-pMin)/pR)*cH).toFixed(1)}`).join(' ')} L${cW},${cH} Z`;
@@ -126,8 +128,20 @@ else {
       <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0a030" stop-opacity="0.25"/><stop offset="100%" stop-color="#f0a030" stop-opacity="0.02"/></linearGradient></defs>
       <path d="${fillD}" fill="url(#cg)"/><path d="${pathD}" fill="none" stroke="#f0a030" stroke-width="1.5"/>
       <circle cx="${cW}" cy="${cH-((c.floor-pMin)/pR)*cH}" r="3" fill="#f0a030"/>
+      ${trades.map(t => {
+        const tx = (t.day / numDays * cW).toFixed(1);
+        const ty = (cH - ((t.price - pMin) / pR) * cH).toFixed(1);
+        const col = t.type==='BUY'?'#3dd68c':t.type==='SELL'?'#e85454':'#4da8da';
+        const shape = t.type==='BUY' ? `<polygon points="${tx},${+ty+4} ${+tx-3},${+ty-2} ${+tx+3},${+ty-2}" fill="${col}" opacity="0.8"/>` :
+                      t.type==='SELL' ? `<polygon points="${tx},${+ty-4} ${+tx-3},${+ty+2} ${+tx+3},${+ty+2}" fill="${col}" opacity="0.8"/>` :
+                      `<rect x="${+tx-2}" y="${+ty-2}" width="4" height="4" fill="${col}" opacity="0.6"/>`;
+        return shape;
+      }).join('')}
       <text x="2" y="${cH+12}" fill="#6b6d7a" font-size="8" font-family="JetBrains Mono">${pMin.toFixed(3)}Ξ</text>
       <text x="${cW-38}" y="8" fill="#6b6d7a" font-size="8" font-family="JetBrains Mono">${pMax.toFixed(3)}Ξ</text>
+      <text x="${cW-120}" y="${cH+12}" fill="#3dd68c" font-size="7" font-family="Outfit">▲ Buy</text>
+      <text x="${cW-80}" y="${cH+12}" fill="#e85454" font-size="7" font-family="Outfit">▼ Sell</text>
+      <text x="${cW-45}" y="${cH+12}" fill="#4da8da" font-size="7" font-family="Outfit">■ List</text>
     </svg>
   </div>
   <div class="side-stats">

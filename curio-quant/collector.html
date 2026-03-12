@@ -73,11 +73,12 @@ else {
 ${grpCard}
 </div>
 <div class="sgrid">
-  <div class="sb"><div class="sb-l">Cards Held</div><div class="sb-v" style="color:var(--accent)">${h.cards.length}</div></div>
+  <div class="sb"><div class="sb-l">Unique Cards</div><div class="sb-v" style="color:var(--accent)">${h.cards.length}</div></div>
+  <div class="sb"><div class="sb-l">Total Cards</div><div class="sb-v" style="color:var(--accent)">${holderTotalCards(h)}</div></div>
   <div class="sb"><div class="sb-l">Total Spent</div><div class="sb-v">${h.total_spent} Ξ</div></div>
   <div class="sb"><div class="sb-l">Avg Hold</div><div class="sb-v">${h.avg_hold_days}d</div></div>
-  <div class="sb"><div class="sb-l">Collection Value</div><div class="sb-v" style="color:var(--green)">${totalValue.toFixed(2)} Ξ</div></div>
-  <div class="sb"><div class="sb-l">ROI</div><div class="sb-v" style="color:${totalValue>h.total_spent?'var(--green)':'var(--red)'}">${((totalValue/h.total_spent-1)*100).toFixed(0)}%</div></div>
+  <div class="sb"><div class="sb-l">Collection Value</div><div class="sb-v" style="color:var(--green)">${holderCollectionValue(h).toFixed(2)} Ξ</div></div>
+  <div class="sb"><div class="sb-l">ROI</div><div class="sb-v" style="color:${holderCollectionValue(h)>h.total_spent?'var(--green)':'var(--red)'}">${((holderCollectionValue(h)/h.total_spent-1)*100).toFixed(0)}%</div></div>
 </div>
 <div class="profile">
   <p>${h.style}</p>
