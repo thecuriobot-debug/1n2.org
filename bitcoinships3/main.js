@@ -4,7 +4,7 @@
   const ctx = canvas.getContext("2d");
 
   const PHASES = [
-    { name: "storm", label: "荒波 · Riding the Storm", duration: 40 },
+    { name: "storm", label: "荒波 · Riding the Storm", duration: 28 },
     { name: "zoom_out", label: "大浪 · The Great Wave", duration: 14 },
     { name: "calm_hunt", label: "静寂 · Finding Calm", duration: 9 },
     { name: "zoom_in", label: "安心 · Settling In", duration: 11 },
@@ -23,7 +23,8 @@
     const v=p.map(x=>x.price); PMIN=Math.min(...v); PMAX=Math.max(...v);
     PMEAN=v.reduce((a,b)=>a+b,0)/v.length;
     const r=PMAX-PMIN;
-    return smooth(v.map(x=>((x-PMEAN)/(r*0.5))*280), 2, 1);
+    // Amplify the waves — make drops DEEP and rises HIGH
+    return smooth(v.map(x=>((x-PMEAN)/(r*0.5))*420), 1, 1);
   }
   function smooth(s, rad, passes) {
     let src=s.slice(); const o=new Array(src.length);
@@ -57,7 +58,7 @@
   const SHIP_NAMES = ['丸木舟 Marukibune','ベカ舟 Bekabune','釣船 Tsuribune','弁才船 Bezaisen','千石船 Sengokubune'];
 
   function createState() {
-    const start = Math.floor(SURFACE.length * 0.08);
+    const start = 2; // Start from the very beginning of BTC history
     const sl = view.height * 0.52;
     return {
       mode:"playing", seqT:0, phI:0, phT:0, tlX:start, camX:start,
@@ -77,7 +78,7 @@
     if(Number.isFinite(c.duration) && S.phT>=c.duration) { S.phT-=c.duration; S.phI=Math.min(S.phI+1,PHASES.length-1); }
     const p=ph();
     let spd=20, dZ=1.18, tT=0.82;
-    if(p.name==="storm") { spd=95; dZ=1; tT=1.4; }
+    if(p.name==="storm") { spd=220; dZ=1; tT=1.6; }
     else if(p.name==="zoom_out") { spd=55; const t=S.phT/p.duration; dZ=lerp(1,0.05,easeInOutCubic(t)); tT=1.0; S.chartOp=clamp(S.chartOp+dt*0.22,0,0.5); }
     else if(p.name==="calm_hunt") { spd=6; dZ=0.05; tT=0.85; S.chartOp=0.5; const s=1-Math.exp(-dt*1.4); S.tlX=lerp(S.tlX,CALM_IDX-80,s); }
     else if(p.name==="zoom_in") { spd=18; const t=S.phT/p.duration; dZ=lerp(0.05,1.18,easeInOutCubic(t)); tT=0.65; S.chartOp=clamp(S.chartOp-dt*0.16,0,0.5); if(S.tlX<CALM_IDX-60) S.tlX+=(CALM_IDX-60-S.tlX)*Math.min(1,dt*1.3); }
@@ -95,8 +96,8 @@
     const surfY = S.sl - wv * vz;
     // Very stiff spring — boat hugs the wave surface
     const desired = surfY - 6 * clamp(S.zoom, 0.3, 1.2);
-    const spring = (desired - S.bY) * 22;  // very stiff
-    const damp = -S.bVY * 6.5;
+    const spring = (desired - S.bY) * 30;  // extremely stiff — glued to wave
+    const damp = -S.bVY * 5.5;  // less damping = more bounce
     S.bVY += (spring + damp) * dt;
     S.bY += S.bVY * dt;
 
@@ -109,8 +110,8 @@
     S.hDrift += dt * (8 + S.zoom * 5);
 
     // Spray on impacts
-    if (Math.abs(S.bVY) > 60 && Math.random() < 0.4) {
-      for (let i = 0; i < 6; i++) {
+    if (Math.abs(S.bVY) > 40 && Math.random() < 0.5) {
+      for (let i = 0; i < 8; i++) {
         S.spray.push({
           x: view.width*0.5 + (Math.random()-0.5)*80,
           y: S.bY + 8,
@@ -193,10 +194,11 @@
     ctx.beginPath();
     for (let x = 0; x <= view.width+2; x += 2) {
       const wx = w2s(x), by = sy4w(wx);
-      // Multi-frequency sloshing — waves crash and recede
-      const slosh = Math.sin(x*0.01 + wt*3.0) * (4 + tb*5)
-                  + Math.sin(x*0.022 + wt*5.2) * (2 + tb*3)
-                  + Math.sin(x*0.04 + wt*7.8) * (1 + tb*1.5);
+      // Multi-frequency sloshing — waves crash and recede HARD
+      const slosh = Math.sin(x*0.01 + wt*3.5) * (6 + tb*8)
+                  + Math.sin(x*0.022 + wt*6.0) * (3 + tb*5)
+                  + Math.sin(x*0.04 + wt*9.5) * (2 + tb*3)
+                  + Math.sin(x*0.008 + wt*1.8) * (4 + tb*4);
       x===0 ? ctx.moveTo(x, by+slosh) : ctx.lineTo(x, by+slosh);
     }
     ctx.lineTo(view.width, view.height); ctx.lineTo(0, view.height); ctx.closePath();
@@ -209,7 +211,7 @@
     ctx.beginPath();
     for (let x = 0; x <= view.width+2; x += 2) {
       const wx = w2s(x), by = sy4w(wx);
-      const slosh = Math.sin(x*0.01+wt*3)*( 4+tb*5) + Math.sin(x*0.022+wt*5.2)*(2+tb*3) + Math.sin(x*0.04+wt*7.8)*(1+tb*1.5);
+      const slosh = Math.sin(x*0.01+wt*3.5)*(6+tb*8) + Math.sin(x*0.022+wt*6)*(3+tb*5) + Math.sin(x*0.04+wt*9.5)*(2+tb*3) + Math.sin(x*0.008+wt*1.8)*(4+tb*4);
       const curl = Math.max(0, Math.sin(x*0.016+wt*3.5))**2 * tb * 4;
       x===0 ? ctx.moveTo(x, by+slosh-curl) : ctx.lineTo(x, by+slosh-curl);
     }
