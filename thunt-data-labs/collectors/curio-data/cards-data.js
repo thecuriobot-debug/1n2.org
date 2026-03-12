@@ -15,7 +15,7 @@ const CARDS = {
     "img": "img/card-01.jpg"
   },
   "2": {
-    "name": "Nuts & Berries",
+    "name": "Nuts",
     "artist": "Phneep",
     "supply": 1750,
     "holders": 128,
@@ -30,7 +30,7 @@ const CARDS = {
     "img": "img/card-02.jpg"
   },
   "3": {
-    "name": "Clay",
+    "name": "Berries",
     "artist": "Phneep",
     "supply": 599,
     "holders": 88,
@@ -45,7 +45,7 @@ const CARDS = {
     "img": "img/card-03.jpg"
   },
   "4": {
-    "name": "Sticks",
+    "name": "Clay",
     "artist": "Phneep",
     "supply": 1500,
     "holders": 112,
@@ -90,7 +90,7 @@ const CARDS = {
     "img": "img/card-06.jpg"
   },
   "7": {
-    "name": "Old Gold",
+    "name": "Sculpture",
     "artist": "Phneep",
     "supply": 222,
     "holders": 54,
@@ -105,9 +105,9 @@ const CARDS = {
     "img": "img/card-07.jpg"
   },
   "8": {
-    "name": "Coins",
-    "artist": "Robek World",
-    "supply": 2154,
+    "name": "Painting",
+    "artist": "Phneep",
+    "supply": 2000,
     "holders": 108,
     "floor": 0.032,
     "avg30": 0.038,
@@ -120,9 +120,9 @@ const CARDS = {
     "img": "img/card-08.jpg"
   },
   "9": {
-    "name": "Roboto",
-    "artist": "Robek World",
-    "supply": 2154,
+    "name": "Book",
+    "artist": "Phneep",
+    "supply": 1817,
     "holders": 98,
     "floor": 0.032,
     "avg30": 0.038,
@@ -135,9 +135,9 @@ const CARDS = {
     "img": "img/card-09.jpg"
   },
   "10": {
-    "name": "MONA",
-    "artist": "Robek World",
-    "supply": 1122,
+    "name": "Future",
+    "artist": "Phneep",
+    "supply": 1500,
     "holders": 86,
     "floor": 0.035,
     "avg30": 0.042,
@@ -150,7 +150,7 @@ const CARDS = {
     "img": "img/card-10.jpg"
   },
   "11": {
-    "name": "Pigeons",
+    "name": "Bitcoin Sticker",
     "artist": "cryptograffiti",
     "supply": 800,
     "holders": 72,
@@ -196,7 +196,7 @@ const CARDS = {
   },
   "14": {
     "name": "CryptoCurrency",
-    "artist": "Cryptopop!",
+    "artist": "Phneep",
     "supply": 487,
     "holders": 72,
     "floor": 0.034,
@@ -211,7 +211,7 @@ const CARDS = {
   },
   "15": {
     "name": "DigitalCash",
-    "artist": "Cryptopop!",
+    "artist": "Phneep",
     "supply": 350,
     "holders": 58,
     "floor": 0.045,
@@ -226,7 +226,7 @@ const CARDS = {
   },
   "16": {
     "name": "Anonymint",
-    "artist": "Cryptopop!",
+    "artist": "Phneep",
     "supply": 300,
     "holders": 52,
     "floor": 0.048,
@@ -241,7 +241,7 @@ const CARDS = {
   },
   "17": {
     "name": "UASF",
-    "artist": "Cryptopop!",
+    "artist": "Cryptopop",
     "supply": 500,
     "holders": 85,
     "floor": 0.085,
@@ -255,8 +255,8 @@ const CARDS = {
     "img": "img/card-17.jpg"
   },
   "18": {
-    "name": "Dogs Playing",
-    "artist": "Cryptopop!",
+    "name": "Dogs Trading",
+    "artist": "Cryptopop",
     "supply": 253,
     "holders": 55,
     "floor": 0.055,
@@ -271,7 +271,7 @@ const CARDS = {
   },
   "19": {
     "name": "To The Moon",
-    "artist": "Cryptopop!",
+    "artist": "Cryptopop",
     "supply": 249,
     "holders": 58,
     "floor": 0.044,
@@ -285,8 +285,8 @@ const CARDS = {
     "img": "img/card-19.jpg"
   },
   "20": {
-    "name": "Neon",
-    "artist": "Marisol Vengas",
+    "name": "Mad Bitcoins",
+    "artist": "Phneep",
     "supply": 700,
     "holders": 78,
     "floor": 0.036,
@@ -301,7 +301,7 @@ const CARDS = {
   },
   "21": {
     "name": "The Wizard",
-    "artist": "Daniel Friedman",
+    "artist": "Robek World",
     "supply": 111,
     "holders": 50,
     "floor": 0.095,
@@ -316,7 +316,7 @@ const CARDS = {
   },
   "22": {
     "name": "The Bard",
-    "artist": "Daniel Friedman",
+    "artist": "Robek World",
     "supply": 333,
     "holders": 47,
     "floor": 0.055,
@@ -331,7 +331,7 @@ const CARDS = {
   },
   "23": {
     "name": "The Barbarian",
-    "artist": "Daniel Friedman",
+    "artist": "Robek World",
     "supply": 222,
     "holders": 45,
     "floor": 0.065,
@@ -375,9 +375,9 @@ const CARDS = {
     "img": "img/card-25.jpg"
   },
   "26": {
-    "name": "Growth",
-    "artist": "Marisol Vengas",
-    "supply": 700,
+    "name": "Education",
+    "artist": "Daniel Friedman",
+    "supply": 111,
     "holders": 72,
     "floor": 0.034,
     "avg30": 0.04,
@@ -420,9 +420,9 @@ const CARDS = {
     "img": "img/card-28.jpg"
   },
   "29": {
-    "name": "Education",
+    "name": "Blue",
     "artist": "Marisol Vengas",
-    "supply": 111,
+    "supply": 200,
     "holders": 38,
     "floor": 1.59,
     "avg30": 1.45,
@@ -436,8 +436,8 @@ const CARDS = {
   },
   "30": {
     "name": "Eclipse",
-    "artist": "Daniel Friedman",
-    "supply": 111,
+    "artist": "Thoros of Myr",
+    "supply": 821,
     "holders": 47,
     "floor": 0.045,
     "avg30": 0.12,
