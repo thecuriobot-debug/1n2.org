@@ -32,8 +32,9 @@ h1 span{color:var(--accent)}
 <div class="wrap">
 <header>
 <h1>1n2<span>.org</span></h1>
-<div class="tagline">One human. One AI. Building tools, collecting data, making things. <a href="ai-usage/" style="color:var(--muted);font-size:.85rem">🤖 usage</a> · <a href="health/" style="color:var(--muted);font-size:.85rem">💚 check</a></div>
+<div class="tagline">One human. One AI. Building tools, collecting data, making things.</div>
 <div class="stats" id="stats"><span><b>30</b> projects</span><span><b>110K+</b> records</span><span><b>5,400+</b> videos</span><span><b>38K+</b> comments</span><span><b>14</b> daily jobs</span></div>
+<div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end;flex-wrap:wrap"><a href="thunt-data-labs/web/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace">🔬 labs</a><a href="daily-logs/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace">📋 logs</a><a href="ai-usage/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace">🤖 usage</a><a href="health/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace">💚 check</a></div>
 </header>
 <script>
 fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
@@ -43,9 +44,11 @@ fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
 </script>
 
 <div class="group">
-<div class="group-title">📰 Daily Reader</div>
+<div class="group-title">⭐ Primary Projects</div>
 <div class="items">
 <a href="dashboarder/" class="item"><span class="icon">📰</span>Dashboarder<span class="tag">dashboard</span></a>
+<a href="medialog/" class="item"><span class="icon">🎥</span>Media Log<span class="tag">movies + books</span></a>
+<a href="thomashuntfilms/" class="item"><span class="icon">🎬</span>Thomas Hunt Films<span class="tag">portfolio</span></a>
 </div>
 </div>
 
@@ -68,24 +71,7 @@ fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
 </div>
 </div>
 
-<div class="group">
-<div class="group-title">🔬 Data &amp; Infrastructure</div>
-<div class="items">
-<a href="thunt-data-labs/web/" class="item"><span class="icon">🔬</span>Data Labs<span class="tag" id="tag-datalabs">110K records</span></a>
-<a href="daily-logs/" class="item"><span class="icon">📋</span>Daily Logs<span class="tag">auto</span></a>
 
-
-</div>
-</div>
-
-<div class="group">
-<div class="group-title">📖 Knowledge &amp; Media</div>
-<div class="items">
-<a href="medialog/" class="item"><span class="icon">🎥</span>Media Log<span class="tag">movies + books</span></a>
-<a href="thomashuntfilms/" class="item"><span class="icon">🎬</span>Thomas Hunt Films<span class="tag">portfolio</span></a>
-
-</div>
-</div>
 
 <div class="group">
 <div class="group-title">▶️ YouTube &amp; Podcast Archive</div>
