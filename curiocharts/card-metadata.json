@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "Apples",
+    "artist": "Phneep",
+    "image": "QmZGrL7HrUmkLuUxp7NV4n1H8tHkurmBAdsx8jzJp4v1tn",
+    "symbol": "CRO1",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 2,
+    "name": "Nuts",
+    "artist": "Phneep",
+    "image": "QmR1PfBWWNwku1Ywshyn3iwhM5oVMm9rvgPj1EFUd34ZzY",
+    "symbol": "CRO2",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 3,
+    "name": "Berries",
+    "artist": "Phneep",
+    "image": "QmZ74F1trdUaKksS2YkScXxD7zDkSrrmnMX6wTusAXYeYz",
+    "symbol": "CRO3",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 4,
+    "name": "Clay",
+    "artist": "Phneep",
+    "image": "QmdZ8JZZAWfWcLRnXvccBdXTJ6KwiaHMU8wEB1tRcYRK9E",
+    "symbol": "CRO4",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 5,
+    "name": "Paint",
+    "artist": "Phneep",
+    "image": "QmQX4o64AoNhBdvsn77rYLNaeHsiY62Cqschoqok3ebAim",
+    "symbol": "CRO5",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 6,
+    "name": "Ink",
+    "artist": "Phneep",
+    "image": "QmNQJq8zLphvPmGbcKopUqioFF1tED3ykPdQjR7KXCQxVn",
+    "symbol": "CRO6",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 7,
+    "name": "Sculpture",
+    "artist": "Phneep",
+    "image": "QmRexYVZTDq5pnqukVia99jPUv19M9RRg53B87aueFfLYD",
+    "symbol": "CRO7",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 8,
+    "name": "Painting",
+    "artist": "Phneep",
+    "image": "QmT1qiYcVQuR4Zqqkdj3auDBULhDqstxqMBZRLCm67G19J",
+    "symbol": "CRO8",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 9,
+    "name": "Book",
+    "artist": "Phneep",
+    "image": "QmWSGCGTt5tJUquaTmi2cezM5VfDju3LPhRqQKKJbmSNzL",
+    "symbol": "CRO9",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 10,
+    "name": "Future",
+    "artist": "Phneep",
+    "image": "QmZUUXdi4cWsJVKLBYW4SyFz6rj4Ftp5SDU9CQLny9crnD",
+    "symbol": "CRO10",
+    "description": "The first 10 cards exist as a collection, and tell a story that has since been forgotten, unless you can track it down."
+  },
+  {
+    "id": 11,
+    "name": "BTC Keys",
+    "artist": "Cryptograffiti",
+    "image": "QmWUpgvfRY1PLQ7ZehAsoMz9nptKde1huidWbqz5Nxd3gi",
+    "symbol": "CRO11",
+    "description": "\"I used to put these logos on neighborhood ATMs. Repurposing banking materials has remained a theme in my work. I like the idea of using soon-to-be extinct items to help spread the new cryptocurrency movement.\" - Cryptograffiti"
+  },
+  {
+    "id": 12,
+    "name": "Mine Bitcoin",
+    "artist": "Cryptograffiti",
+    "image": "Qmcard2X4E71TjJCEUgy1B9HpuciBqv7Q4TM9VR5F9DQ4d",
+    "symbol": "CRO12",
+    "description": "\"I used to put these logos on neighborhood ATMs. Repurposing banking materials has remained a theme in my work. I like the idea of using soon-to-be extinct items to help spread the new cryptocurrency movement.\" - Cryptograffiti"
+  },
+  {
+    "id": 13,
+    "name": "BTC",
+    "artist": "Cryptograffiti",
+    "image": "QmdzhK28Uama6xJstZZbTRh8RPT2dbT4dBoxjdAaC6gN7N",
+    "symbol": "CRO13",
+    "description": "\"I used to put these logos on neighborhood ATMs. Repurposing banking materials has remained a theme in my work. I like the idea of using soon-to-be extinct items to help spread the new cryptocurrency movement.\" - Cryptograffiti"
+  },
+  {
+    "id": 14,
+    "name": "CryptoCurrency",
+    "artist": "Phneep",
+    "image": "QmaSnfjfwzzxfuLSV4xwbYy3UkHEEKupPrxYDgyCYTD46R",
+    "symbol": "CRO14",
+    "description": "All proceeds from the initial sale of this card were donated to seansoutpost.com"
+  },
+  {
+    "id": 15,
+    "name": "DigitalCash",
+    "artist": "Phneep",
+    "image": "QmdzQMqmW2tVSezd9odrbAwvXy8Gx43K3rfG9rtcVaZk5v",
+    "symbol": "CRO15",
+    "description": "All proceeds from the initial sale of this card were donated to seansoutpost.com"
+  },
+  {
+    "id": 16,
+    "name": "OriginalCoin",
+    "artist": "Phneep",
+    "image": "Qmf1STAkk5yoDsBHw8ncxQT5T6ZBH6hk2ri8oj8AaB73yt",
+    "symbol": "CRO16",
+    "description": "All proceeds from the initial sale of this card were donated to seansoutpost.com"
+  },
+  {
+    "id": 17,
+    "name": "UASF",
+    "artist": "Cryptopop",
+    "image": "QmY2qTLrNmUvwVyKQF1JFqxSyZPtDH9cBo4CteLY3mtUYb",
+    "symbol": "CRO17",
+    "description": "UASF"
+  },
+  {
+    "id": 18,
+    "name": "To The Moon",
+    "artist": "Cryptopop",
+    "image": "QmajPpYuqQVasd9AzTYUaDrPW6nzjigY91evEUDoNiuefW",
+    "symbol": "CRO18",
+    "description": "To The Moon"
+  },
+  {
+    "id": 19,
+    "name": "Dogs Trading",
+    "artist": "Cryptopop",
+    "image": "QmTKfVeZFaqawgoayTLqgYdfaxabGNkoXrS9FjZBHeqoui",
+    "symbol": "CRO19",
+    "description": "Dogs Trading"
+  },
+  {
+    "id": 20,
+    "name": "MadBitcoins",
+    "artist": "Phneep",
+    "image": "QmS19CRKqSLDNcs6gEhs28W8qMUmd44DiDbZoR2Dd5cwpc",
+    "symbol": "CRO20",
+    "description": "The MadBitcoins trading card. http://www.madbitcoins.com"
+  },
+  {
+    "id": 21,
+    "name": "The Wizard",
+    "artist": "Robek World",
+    "image": "QmVyhSDjwRi8WAeR1M8C8w2oEVNnvubdoLSkempio5UkBV",
+    "symbol": "CRO21",
+    "description": "The Wizard - Bears a striking resemblance to an ancient mad bitcoiner. https://youtu.be/SZagM-shBMU"
+  },
+  {
+    "id": 22,
+    "name": "The Bard",
+    "artist": "Robek World",
+    "image": "QmNTGskeNwg4JA31YkavEd1wRMpXWas6Cd1qGdmVTaHnX1",
+    "symbol": "CRO22",
+    "description": "The Bard - A handsome, CEO looking songster. https://youtu.be/SZagM-shBMU"
+  },
+  {
+    "id": 23,
+    "name": "The Barbarian",
+    "artist": "Robek World",
+    "image": "QmZy6RuSuADSErzpWAoMkbBNanrvPLmAz4pwNxu9RKmnAC",
+    "symbol": "CRO23",
+    "description": "The Barbarian - Voted most likely to hack through solidity. https://youtu.be/SZagM-shBMU"
+  },
+  {
+    "id": 24,
+    "name": "Complexity",
+    "artist": "Daniel Friedman",
+    "image": "QmSzLBMA2xwX3usGb7PpNQpFR8Ca2aRGA8Ef21Z1jxWdrM",
+    "symbol": "CRO24",
+    "description": "\"Inspired by brains, ant colonies, and other complex systems, my art explores how global patterns arise via local relationships. The production of a drawing for me is actually not unlike the mining of a blockchain: an intricate process that can be laborious to perform perfectly, but with an intrinsic coherence that is self-evident after completion. Now with the creation of Curio Cards, the metaphorical mapping between cryptocurrencies and my art is meaningfully strengthened. Indeed now more than ever we are seeing the fusion of art with technology and science, reminding me of a favorite quotation by Goethe: '...science arose from poetry, and when times change the two can meet again on a higher level as friends....'. \" - Daniel Friedman"
+  },
+  {
+    "id": 25,
+    "name": "Passion",
+    "artist": "Daniel Friedman",
+    "image": "QmehM1Q3AWhAQjLoX4v7qEHK3gMumu9YrhTE784f5Uw6XT",
+    "symbol": "CRO25",
+    "description": "\"Inspired by brains, ant colonies, and other complex systems, my art explores how global patterns arise via local relationships. The production of a drawing for me is actually not unlike the mining of a blockchain: an intricate process that can be laborious to perform perfectly, but with an intrinsic coherence that is self-evident after completion. Now with the creation of Curio Cards, the metaphorical mapping between cryptocurrencies and my art is meaningfully strengthened. Indeed now more than ever we are seeing the fusion of art with technology and science, reminding me of a favorite quotation by Goethe: '...science arose from poetry, and when times change the two can meet again on a higher level as friends....'. \" - Daniel Friedman"
+  },
+  {
+    "id": 26,
+    "name": "Education",
+    "artist": "Daniel Friedman",
+    "image": "QmZjuWa7igycc85i11tE46VMGYhP64g5JX95zVyZkePBar",
+    "symbol": "CRO26",
+    "description": "\"Inspired by brains, ant colonies, and other complex systems, my art explores how global patterns arise via local relationships. The production of a drawing for me is actually not unlike the mining of a blockchain: an intricate process that can be laborious to perform perfectly, but with an intrinsic coherence that is self-evident after completion. Now with the creation of Curio Cards, the metaphorical mapping between cryptocurrencies and my art is meaningfully strengthened. Indeed now more than ever we are seeing the fusion of art with technology and science, reminding me of a favorite quotation by Goethe: '...science arose from poetry, and when times change the two can meet again on a higher level as friends....'. \" - Daniel Friedman"
+  },
+  {
+    "id": 27,
+    "name": "Blue",
+    "artist": "Marisol Vengas",
+    "image": "QmZ4zQtN2PNEw3jMkjvTF1qQaTKYpvPpAdGYMnrAjpnPvW",
+    "symbol": "CRO27",
+    "description": "Blue"
+  },
+  {
+    "id": 28,
+    "name": "Pink",
+    "artist": "Marisol Vengas",
+    "image": "QmYcTX1xpFYiDGSQsjXWm4v1QkjWjDij8zUHHXbz32MLGt",
+    "symbol": "CRO28",
+    "description": "Pink"
+  },
+  {
+    "id": 29,
+    "name": "Yellow",
+    "artist": "Marisol Vengas",
+    "image": "QmTa5bXZUnQyN2BvjhuUcNzGvhxkwvhUDZ3CgGsyzNukoL",
+    "symbol": "CRO29",
+    "description": "Yellow"
+  },
+  {
+    "id": 30,
+    "name": "Eclipse",
+    "artist": "Thoros of Myr",
+    "image": "QmZH7MZK6XGELZNhHre2LJiBcXFpsi1wzhmx1MGcApahnD",
+    "symbol": "CRO30",
+    "description": "North America watched a cosmic event together when an eclipse happened on 8/21. To commemorate this lining up with the release of the 30th card, a special edition animated Eclipse Card with a total amount of 821 cards was created by the anonymous artist Thoros of Myr."
+  }
+]

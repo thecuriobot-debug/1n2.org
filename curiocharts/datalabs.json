@@ -1,0 +1,498 @@
+{
+  "source": "thunt-data-labs",
+  "updated": "2026-03-12",
+  "collection_floor_eth": 0.0486,
+  "price_history": [
+    {
+      "date": "2026-03-06",
+      "floor": 0.047
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.047
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-06",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-07",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-08",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-09",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-09",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-09",
+      "floor": 0.04899999
+    },
+    {
+      "date": "2026-03-10",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-10",
+      "floor": 0.049
+    },
+    {
+      "date": "2026-03-11",
+      "floor": 0.0489
+    },
+    {
+      "date": "2026-03-11",
+      "floor": 0.0489
+    },
+    {
+      "date": "2026-03-12",
+      "floor": 0.0486
+    }
+  ],
+  "total_owners": 4968,
+  "total_sales": 75,
+  "total_transfers": 1055,
+  "cards": [
+    {
+      "id": 1,
+      "name": "Apples",
+      "owners": 635,
+      "total_held": 20539,
+      "sales_count": 8,
+      "last_sale_eth": 0.8,
+      "avg_sale_eth": 0.8085,
+      "transfers": 48
+    },
+    {
+      "id": 2,
+      "name": "Nuts",
+      "owners": 633,
+      "total_held": 19627,
+      "sales_count": 3,
+      "last_sale_eth": 0.11,
+      "avg_sale_eth": 0.1103,
+      "transfers": 59
+    },
+    {
+      "id": 3,
+      "name": "Berries",
+      "owners": 637,
+      "total_held": 24852,
+      "sales_count": 1,
+      "last_sale_eth": 0.078,
+      "avg_sale_eth": 0.078,
+      "transfers": 12
+    },
+    {
+      "id": 4,
+      "name": "Clay",
+      "owners": 236,
+      "total_held": 7752,
+      "sales_count": 1,
+      "last_sale_eth": 0.2437,
+      "avg_sale_eth": 0.2437,
+      "transfers": 12
+    },
+    {
+      "id": 5,
+      "name": "Paint",
+      "owners": 206,
+      "total_held": 6403,
+      "sales_count": 1,
+      "last_sale_eth": 0.3761,
+      "avg_sale_eth": 0.3761,
+      "transfers": 8
+    },
+    {
+      "id": 6,
+      "name": "Ink",
+      "owners": 207,
+      "total_held": 6479,
+      "sales_count": 1,
+      "last_sale_eth": 0.25,
+      "avg_sale_eth": 0.25,
+      "transfers": 9
+    },
+    {
+      "id": 7,
+      "name": "Sculpture",
+      "owners": 1088,
+      "total_held": 32357,
+      "sales_count": 1,
+      "last_sale_eth": 0.0878,
+      "avg_sale_eth": 0.0878,
+      "transfers": 40
+    },
+    {
+      "id": 8,
+      "name": "Painting",
+      "owners": 1055,
+      "total_held": 31920,
+      "sales_count": 5,
+      "last_sale_eth": 0.0984,
+      "avg_sale_eth": 0.1091,
+      "transfers": 38
+    },
+    {
+      "id": 9,
+      "name": "Book",
+      "owners": 804,
+      "total_held": 31882,
+      "sales_count": 4,
+      "last_sale_eth": 0.0868,
+      "avg_sale_eth": 0.0829,
+      "transfers": 42
+    },
+    {
+      "id": 10,
+      "name": "Future",
+      "owners": 1018,
+      "total_held": 32965,
+      "sales_count": 5,
+      "last_sale_eth": 0.0868,
+      "avg_sale_eth": 0.0743,
+      "transfers": 50
+    },
+    {
+      "id": 11,
+      "name": "BTC Keys",
+      "owners": 1030,
+      "total_held": 31711,
+      "sales_count": 8,
+      "last_sale_eth": 0.0815,
+      "avg_sale_eth": 0.0822,
+      "transfers": 45
+    },
+    {
+      "id": 12,
+      "name": "Mine Bitcoin",
+      "owners": 979,
+      "total_held": 27056,
+      "sales_count": 4,
+      "last_sale_eth": 0.112,
+      "avg_sale_eth": 0.0983,
+      "transfers": 22
+    },
+    {
+      "id": 13,
+      "name": "BTC",
+      "owners": 964,
+      "total_held": 30362,
+      "sales_count": 6,
+      "last_sale_eth": 0.0877,
+      "avg_sale_eth": 0.08,
+      "transfers": 52
+    },
+    {
+      "id": 14,
+      "name": "CryptoCurrency",
+      "owners": 288,
+      "total_held": 8284,
+      "sales_count": 3,
+      "last_sale_eth": 0.22,
+      "avg_sale_eth": 0.22,
+      "transfers": 5
+    },
+    {
+      "id": 15,
+      "name": "DigitalCash",
+      "owners": 214,
+      "total_held": 5738,
+      "sales_count": 1,
+      "last_sale_eth": 0.41,
+      "avg_sale_eth": 0.41,
+      "transfers": 14
+    },
+    {
+      "id": 16,
+      "name": "OriginalCoin",
+      "owners": 277,
+      "total_held": 8474,
+      "sales_count": 1,
+      "last_sale_eth": 0.2412,
+      "avg_sale_eth": 0.2412,
+      "transfers": 23
+    },
+    {
+      "id": 17,
+      "name": "UASF",
+      "owners": 220,
+      "total_held": 5890,
+      "sales_count": 4,
+      "last_sale_eth": 0.238,
+      "avg_sale_eth": 0.3061,
+      "transfers": 10
+    },
+    {
+      "id": 18,
+      "name": "To The Moon",
+      "owners": 192,
+      "total_held": 5339,
+      "sales_count": 1,
+      "last_sale_eth": 0.7623,
+      "avg_sale_eth": 0.7623,
+      "transfers": 35
+    },
+    {
+      "id": 19,
+      "name": "Dogs Trading",
+      "owners": 207,
+      "total_held": 5529,
+      "sales_count": 2,
+      "last_sale_eth": 0.7913,
+      "avg_sale_eth": 0.6482,
+      "transfers": 41
+    },
+    {
+      "id": 20,
+      "name": "MadBitcoins",
+      "owners": 794,
+      "total_held": 27151,
+      "sales_count": 6,
+      "last_sale_eth": 0.0772,
+      "avg_sale_eth": 0.0729,
+      "transfers": 57
+    },
+    {
+      "id": 21,
+      "name": "The Wizard",
+      "owners": 44,
+      "total_held": 1045,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 0
+    },
+    {
+      "id": 22,
+      "name": "The Bard",
+      "owners": 30,
+      "total_held": 741,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 0
+    },
+    {
+      "id": 23,
+      "name": "The Barbarian",
+      "owners": 36,
+      "total_held": 836,
+      "sales_count": 1,
+      "last_sale_eth": 4.825,
+      "avg_sale_eth": 4.825,
+      "transfers": 0
+    },
+    {
+      "id": 24,
+      "name": "Complexity",
+      "owners": 29,
+      "total_held": 703,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 0
+    },
+    {
+      "id": 25,
+      "name": "Passion",
+      "owners": 29,
+      "total_held": 703,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 0
+    },
+    {
+      "id": 26,
+      "name": "Education",
+      "owners": 85,
+      "total_held": 2812,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 3
+    },
+    {
+      "id": 27,
+      "name": "Blue",
+      "owners": 283,
+      "total_held": 10184,
+      "sales_count": 3,
+      "last_sale_eth": 0.282,
+      "avg_sale_eth": 0.294,
+      "transfers": 82
+    },
+    {
+      "id": 28,
+      "name": "Pink",
+      "owners": 224,
+      "total_held": 6992,
+      "sales_count": 0,
+      "last_sale_eth": null,
+      "avg_sale_eth": null,
+      "transfers": 87
+    },
+    {
+      "id": 29,
+      "name": "Yellow",
+      "owners": 96,
+      "total_held": 3268,
+      "sales_count": 1,
+      "last_sale_eth": 1.95,
+      "avg_sale_eth": 1.95,
+      "transfers": 30
+    },
+    {
+      "id": 30,
+      "name": "Eclipse",
+      "owners": 374,
+      "total_held": 12863,
+      "sales_count": 4,
+      "last_sale_eth": 0.222,
+      "avg_sale_eth": 0.2182,
+      "transfers": 231
+    }
+  ],
+  "top_holders": [
+    {
+      "address": "0xeD47015B...",
+      "unique_cards": 30,
+      "total_qty": 3439
+    },
+    {
+      "address": "0xFe5F622d...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0xEdae46bc...",
+      "unique_cards": 30,
+      "total_qty": 741
+    },
+    {
+      "address": "0xE80FD2eE...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0xD9a657AC...",
+      "unique_cards": 30,
+      "total_qty": 2413
+    },
+    {
+      "address": "0xD7f53A44...",
+      "unique_cards": 30,
+      "total_qty": 836
+    },
+    {
+      "address": "0xD402514D...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0xB45470a9...",
+      "unique_cards": 30,
+      "total_qty": 608
+    },
+    {
+      "address": "0x97870B59...",
+      "unique_cards": 30,
+      "total_qty": 2261
+    },
+    {
+      "address": "0x96A6913B...",
+      "unique_cards": 30,
+      "total_qty": 627
+    },
+    {
+      "address": "0x64f2a8CE...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0x6291d496...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0x5eeF66C0...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0x46376A53...",
+      "unique_cards": 30,
+      "total_qty": 950
+    },
+    {
+      "address": "0x3b449551...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0x38820BC3...",
+      "unique_cards": 30,
+      "total_qty": 570
+    },
+    {
+      "address": "0x1B06c244...",
+      "unique_cards": 30,
+      "total_qty": 6726
+    },
+    {
+      "address": "0x1488F516...",
+      "unique_cards": 30,
+      "total_qty": 2052
+    },
+    {
+      "address": "0x6af0E6C8...",
+      "unique_cards": 29,
+      "total_qty": 589
+    },
+    {
+      "address": "0x49468F70...",
+      "unique_cards": 29,
+      "total_qty": 2033
+    }
+  ]
+}

@@ -1,345 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CurioCharts — Curio Cards NFT Market Intelligence</title>
-<meta name="description" content="Track all 31 Curio Cards NFTs. Real-time floor prices, volume, sales history, and market analytics."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.15.0/Recharts.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CurioCharts — Floor Prices & Market Data</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body,#root{height:100%}
-body{background:#0d0d1a;color:#e0e0f0;font-family:'JetBrains Mono','Fira Code','SF Mono',monospace;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:#0d0d1a}::-webkit-scrollbar-thumb{background:#2a2a4a;border-radius:3px}
-input::placeholder{color:#4a4a6a}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+:root{--bg:#060810;--card:#0e1118;--border:#1e2030;--text:#d0d2dc;--muted:#555770;--accent:#f0a030;--green:#3dd68c;--red:#e85454;--blue:#4da8da;--purple:#8b5cf6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.hdr{background:rgba(6,8,16,.95);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10}
+.hdr h1{font-size:1.15rem;font-weight:800;letter-spacing:1px;white-space:nowrap}h1 span{color:var(--accent)}
+.nav-links{display:flex;gap:10px;font-size:.75rem;margin-left:auto;white-space:nowrap}
+.wrap{max-width:1200px;margin:0 auto;padding:16px}
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:16px}
+.ov-stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center}
+.ov-stat .n{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--accent)}
+.ov-stat .l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.src{font-size:.6rem;color:var(--muted);text-align:right;margin-bottom:8px}
+.src b{color:var(--green)}
+.sort-bar{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.sort-btn{padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);color:var(--muted);background:transparent;font-family:'Outfit',sans-serif;transition:.15s}
+.sort-btn:hover,.sort-btn.on{border-color:var(--accent);color:var(--accent)}.sort-btn.on{background:rgba(240,160,48,.08)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s,transform .15s;cursor:pointer;display:block;color:inherit}
+.cc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cc-img{height:140px;background:#111218;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cc-img img{height:100%;object-fit:contain}
+.cc-body{padding:10px}
+.cc-name{font-size:.85rem;font-weight:700;margin-bottom:4px}
+.cc-floor{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--accent)}
+.cc-row{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);margin-top:3px}
+.cc-row .v{font-family:'JetBrains Mono',monospace}
+.cc-bar{height:3px;border-radius:2px;margin-top:6px;background:var(--border);overflow:hidden}
+.cc-bar .fill{height:100%;border-radius:2px}
+.signal{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.6rem;font-weight:700;text-transform:uppercase;margin-left:4px}
+.signal.buy{background:rgba(61,214,140,.12);color:var(--green)}.signal.sell{background:rgba(232,84,84,.12);color:var(--red)}.signal.hold{background:rgba(85,87,112,.12);color:var(--muted)}
+@media(max-width:600px){.card-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}.cc-img{height:110px}.hdr{flex-wrap:wrap}}
 </style>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-const{useState,useEffect,useMemo,useCallback,useRef}=React;
-const{LineChart,Line,AreaChart,Area,BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,ResponsiveContainer,ComposedChart,Cell}=Recharts;
-
-const CURIO_CARDS=[
-{id:1,name:"Misidentified",artist:"Travis LeRoy Southworth",supply:2000,rarity:"Common"},
-{id:2,name:"Sea of Light",artist:"Travis LeRoy Southworth",supply:70,rarity:"Ultra Rare"},
-{id:3,name:"Torched",artist:"Travis LeRoy Southworth",supply:300,rarity:"Rare"},
-{id:4,name:"Cat in a Bag",artist:"Travis LeRoy Southworth",supply:500,rarity:"Uncommon"},
-{id:5,name:"Dead Will Rise",artist:"Marisol Vengas",supply:500,rarity:"Uncommon"},
-{id:6,name:"Robbie Raccoon",artist:"Phneep",supply:1000,rarity:"Common"},
-{id:7,name:"Switch",artist:"Travis LeRoy Southworth",supply:400,rarity:"Rare"},
-{id:8,name:"Rube Goldberg Machine",artist:"Travis LeRoy Southworth",supply:250,rarity:"Rare"},
-{id:9,name:"The King",artist:"Travis LeRoy Southworth",supply:100,rarity:"Very Rare"},
-{id:10,name:"Citrus Bliss",artist:"Marisol Vengas",supply:700,rarity:"Uncommon"},
-{id:11,name:"Full Curio",artist:"Travis LeRoy Southworth",supply:100,rarity:"Very Rare"},
-{id:12,name:"Spectrum",artist:"Travis LeRoy Southworth",supply:600,rarity:"Uncommon"},
-{id:13,name:"Paper Airplane",artist:"Travis LeRoy Southworth",supply:500,rarity:"Uncommon"},
-{id:14,name:"Blooming",artist:"Marisol Vengas",supply:800,rarity:"Common"},
-{id:15,name:"Moondust",artist:"Travis LeRoy Southworth",supply:300,rarity:"Rare"},
-{id:16,name:"Franky",artist:"Phneep",supply:400,rarity:"Rare"},
-{id:17,name:"XVII",artist:"Travis LeRoy Southworth",supply:17,rarity:"Legendary"},
-{id:18,name:"Meow Mixer",artist:"Phneep",supply:200,rarity:"Rare"},
-{id:19,name:"Patience",artist:"Travis LeRoy Southworth",supply:350,rarity:"Rare"},
-{id:20,name:"Ink Blot",artist:"Travis LeRoy Southworth",supply:500,rarity:"Uncommon"},
-{id:21,name:"Energy",artist:"Marisol Vengas",supply:600,rarity:"Uncommon"},
-{id:22,name:"Skull and Bones",artist:"Phneep",supply:150,rarity:"Very Rare"},
-{id:23,name:"Ancient Beast",artist:"Travis LeRoy Southworth",supply:200,rarity:"Rare"},
-{id:24,name:"Plaid",artist:"Travis LeRoy Southworth",supply:500,rarity:"Uncommon"},
-{id:25,name:"Wanderlust",artist:"Marisol Vengas",supply:700,rarity:"Uncommon"},
-{id:26,name:"Trippy",artist:"Phneep",supply:300,rarity:"Rare"},
-{id:27,name:"Fomo",artist:"Travis LeRoy Southworth",supply:1000,rarity:"Common"},
-{id:28,name:"Moon Cat",artist:"Phneep",supply:400,rarity:"Rare"},
-{id:29,name:"Creation",artist:"Travis LeRoy Southworth",supply:50,rarity:"Ultra Rare"},
-{id:30,name:"Final Form",artist:"Travis LeRoy Southworth",supply:30,rarity:"Legendary"},
-{id:31,name:"Genesis",artist:"Travis LeRoy Southworth",supply:10,rarity:"Mythic"},
-];
-
-const seededRandom=(seed)=>{let s=seed;return()=>{s=(s*16807+0)%2147483647;return(s-1)/2147483646}};
-
-const generatePriceHistory=(cardId,supply,days=90)=>{
-const rng=seededRandom(cardId*137+42);
-const basePrice=Math.max(0.005,(1/(supply/100))*(0.5+rng()*2));
-const data=[];let price=basePrice;
-for(let i=0;i<days;i++){
-const date=new Date();date.setDate(date.getDate()-(days-i));
-const volatility=0.02+rng()*0.08;
-const trend=Math.sin(i/15+cardId)*0.01;
-price=Math.max(0.001,price*(1+(rng()-0.48+trend)*volatility));
-const dailyVolume=Math.floor(rng()*supply*0.02*price*(0.5+rng()));
-const sales=Math.floor(rng()*8);
-data.push({date:date.toISOString().split("T")[0],dateShort:`${date.getMonth()+1}/${date.getDate()}`,price:parseFloat(price.toFixed(4)),volume:parseFloat(dailyVolume.toFixed(2)),sales,high:parseFloat((price*(1+rng()*0.05)).toFixed(4)),low:parseFloat((price*(1-rng()*0.05)).toFixed(4)),marketCap:parseFloat((price*supply).toFixed(2))});
-}return data};
-
-const buildMarketData=()=>CURIO_CARDS.map((card)=>{
-const history=generatePriceHistory(card.id,card.supply);
-const cur=history[history.length-1],p1=history[history.length-2];
-const p7=history[Math.max(0,history.length-8)],p30=history[Math.max(0,history.length-31)];
-const ch24=((cur.price-p1.price)/p1.price)*100;
-const ch7=((cur.price-p7.price)/p7.price)*100;
-const ch30=((cur.price-p30.price)/p30.price)*100;
-const rng=seededRandom(card.id*99);
-return{...card,history,price:cur.price,volume24h:cur.volume,sales24h:cur.sales,
-change24h:ch24,change7d:ch7,change30d:ch30,marketCap:cur.marketCap,
-totalVolume:parseFloat(history.reduce((s,d)=>s+d.volume,0).toFixed(2)),
-totalSales:history.reduce((s,d)=>s+d.sales,0),
-ath:parseFloat(Math.max(...history.map(d=>d.high)).toFixed(4)),
-atl:parseFloat(Math.min(...history.map(d=>d.low)).toFixed(4)),
-sparkline:history.slice(-14).map(d=>d.price),
-floorPrice:parseFloat((cur.price*0.85).toFixed(4)),
-owners:Math.floor(card.supply*(0.3+rng()*0.5)),
-listed:Math.floor(card.supply*(0.05+seededRandom(card.id*77)()*0.15))}});
-
-const RARITY_COLORS={Common:"#8b95a5",Uncommon:"#4ade80",Rare:"#60a5fa","Very Rare":"#c084fc","Ultra Rare":"#f472b6",Legendary:"#fbbf24",Mythic:"#f97316"};
-const pctColor=v=>v>=0?"#22c55e":"#ef4444";
-const pctArrow=v=>v>=0?"\u25B2":"\u25BC";
-const fmt=(n,d=2)=>typeof n==="number"?n.toFixed(d):"\u2014";
-const fmtEth=n=>`\u039E${fmt(n,4)}`;
-const fmtPct=n=>`${n>=0?"+":""}${fmt(n,2)}%`;
-const fmtK=n=>n>=1000?`${(n/1000).toFixed(1)}K`:n.toFixed(2);
-
-const RaccoonMascot=({size=48})=>(
-<svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-<ellipse cx="35" cy="22" rx="18" ry="22" fill="#4a4a5a"/><ellipse cx="85" cy="22" rx="18" ry="22" fill="#4a4a5a"/>
-<ellipse cx="35" cy="22" rx="12" ry="16" fill="#f5c6d0"/><ellipse cx="85" cy="22" rx="12" ry="16" fill="#f5c6d0"/>
-<ellipse cx="60" cy="58" rx="42" ry="38" fill="#6b6b7b"/><ellipse cx="60" cy="54" rx="36" ry="26" fill="#2a2a3a"/>
-<ellipse cx="60" cy="68" rx="22" ry="16" fill="#e8e8f0"/>
-<ellipse cx="44" cy="52" rx="11" ry="10" fill="#e8e8f0"/><ellipse cx="76" cy="52" rx="11" ry="10" fill="#e8e8f0"/>
-<ellipse cx="46" cy="52" rx="5.5" ry="6" fill="#1a1a2e"/><ellipse cx="78" cy="52" rx="5.5" ry="6" fill="#1a1a2e"/>
-<circle cx="48" cy="49" r="2.5" fill="white"/><circle cx="80" cy="49" r="2.5" fill="white"/>
-<ellipse cx="60" cy="66" rx="5" ry="3.5" fill="#2a2a3a"/>
-<path d="M55 70 Q60 75 65 70" stroke="#2a2a3a" strokeWidth="1.5" fill="none"/>
-<path d="M48 34 L52 28 L58 32 L64 24 L70 30" stroke="#22c55e" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-<circle cx="70" cy="30" r="2" fill="#22c55e"/>
-</svg>);
-
-const Sparkline=({data,color="#22c55e",width=100,height=32})=>{
-if(!data||data.length<2)return null;
-const min=Math.min(...data),max=Math.max(...data),range=max-min||1;
-const points=data.map((v,i)=>`${(i/(data.length-1))*width},${height-((v-min)/range)*height}`).join(" ");
-return <svg width={width} height={height} style={{display:"block"}}><polyline points={points} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>};
-
-const ChartTooltip=({active,payload,label})=>{
-if(!active||!payload?.length)return null;
-return(<div style={{background:"#1e1e2f",border:"1px solid #2a2a4a",borderRadius:8,padding:"10px 14px",boxShadow:"0 8px 32px rgba(0,0,0,0.5)"}}>
-<div style={{color:"#8b8ba0",fontSize:11,marginBottom:4}}>{label}</div>
-{payload.map((p,i)=>(<div key={i} style={{color:p.color||"#e0e0f0",fontSize:13,fontWeight:600}}>
-{p.name}: {p.name.includes("Price")||p.name.includes("price")||p.name.includes("Avg")||p.name.includes("Mkt")?fmtEth(p.value):p.name.includes("Vol")?`\u039E${fmtK(p.value)}`:p.value}
-</div>))}</div>)};
-
-function CurioCharts(){
-const[marketData,setMarketData]=useState(()=>buildMarketData());
-const[view,setView]=useState("overview");
-const[selectedCard,setSelectedCard]=useState(null);
-const[sortKey,setSortKey]=useState("marketCap");
-const[sortDir,setSortDir]=useState("desc");
-const[searchQuery,setSearchQuery]=useState("");
-const[chartRange,setChartRange]=useState("30d");
-const[chartType,setChartType]=useState("price");
-const[isUpdating,setIsUpdating]=useState(false);
-const[lastUpdated,setLastUpdated]=useState(new Date());
-const[showWelcome,setShowWelcome]=useState(true);
-const[hoveredRow,setHoveredRow]=useState(null);
-const[activeTab,setActiveTab]=useState("table");
-
-const globalStats=useMemo(()=>{
-const totalMcap=marketData.reduce((s,c)=>s+c.marketCap,0);
-const totalVol=marketData.reduce((s,c)=>s+c.volume24h,0);
-const totalSales=marketData.reduce((s,c)=>s+c.sales24h,0);
-const avgChange=marketData.reduce((s,c)=>s+c.change24h,0)/marketData.length;
-const totalOwners=marketData.reduce((s,c)=>s+c.owners,0);
-const totalListed=marketData.reduce((s,c)=>s+c.listed,0);
-return{totalMcap,totalVol,totalSales,avgChange,totalOwners,totalListed}},[marketData]);
-
-const sortedData=useMemo(()=>{
-let filtered=marketData;
-if(searchQuery){const q=searchQuery.toLowerCase();filtered=marketData.filter(c=>c.name.toLowerCase().includes(q)||c.artist.toLowerCase().includes(q)||c.id.toString()===q)}
-return[...filtered].sort((a,b)=>sortDir==="asc"?(a[sortKey]>b[sortKey]?1:-1):(a[sortKey]<b[sortKey]?1:-1))},[marketData,sortKey,sortDir,searchQuery]);
-
-const trending=useMemo(()=>{
-const byChange=[...marketData].sort((a,b)=>Math.abs(b.change24h)-Math.abs(a.change24h));
-return{gainers:byChange.filter(c=>c.change24h>0).slice(0,5),losers:byChange.filter(c=>c.change24h<0).slice(0,5)}},[marketData]);
-
-const handleSort=(key)=>{if(sortKey===key)setSortDir(d=>d==="asc"?"desc":"asc");else{setSortKey(key);setSortDir("desc")}};
-const handleUpdate=useCallback(()=>{setIsUpdating(true);setTimeout(()=>{setMarketData(buildMarketData());setLastUpdated(new Date());setIsUpdating(false)},2000)},[]);
-const openCard=(card)=>{setSelectedCard(card);setView("card");setChartRange("30d");setChartType("price")};
-const goBack=()=>{setView("overview");setSelectedCard(null)};
-const getChartData=(card,range)=>{if(!card)return[];const days=range==="7d"?7:range==="14d"?14:range==="30d"?30:range==="60d"?60:90;return card.history.slice(-days)};
-
-const S={
-page:{background:"#0d0d1a",color:"#e0e0f0",minHeight:"100vh",fontFamily:"'JetBrains Mono','Fira Code','SF Mono',monospace",position:"relative",overflow:"hidden"},
-header:{background:"linear-gradient(180deg,#12122a 0%,#0d0d1a 100%)",borderBottom:"1px solid #1a1a3a",padding:"0 24px",position:"sticky",top:0,zIndex:100,backdropFilter:"blur(20px)"},
-headerInner:{maxWidth:1400,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:64,flexWrap:"wrap",gap:12},
-logo:{display:"flex",alignItems:"center",gap:12,cursor:"pointer"},
-logoText:{fontSize:22,fontWeight:800,background:"linear-gradient(135deg,#22c55e,#3b82f6)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"},
-logoSub:{fontSize:10,color:"#5a5a7a",letterSpacing:3,textTransform:"uppercase",marginTop:-2},
-searchBox:{background:"#1a1a2e",border:"1px solid #2a2a4a",borderRadius:10,padding:"8px 14px",color:"#e0e0f0",fontSize:13,width:260,outline:"none",fontFamily:"inherit",transition:"all 0.2s"},
-updateBtn:{background:isUpdating?"#1a1a3a":"linear-gradient(135deg,#22c55e,#16a34a)",color:isUpdating?"#5a5a7a":"#fff",border:"none",borderRadius:10,padding:"8px 20px",fontSize:12,fontWeight:700,cursor:isUpdating?"wait":"pointer",fontFamily:"inherit",display:"flex",alignItems:"center",gap:8,transition:"all 0.3s",letterSpacing:0.5},
-container:{maxWidth:1400,margin:"0 auto",padding:"20px 24px"},
-statsRow:{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:12,marginBottom:24},
-statCard:{background:"linear-gradient(145deg,#14142a,#1a1a34)",border:"1px solid #1e1e3a",borderRadius:14,padding:"16px 18px",position:"relative",overflow:"hidden"},
-statLabel:{fontSize:10,color:"#6b6b8a",textTransform:"uppercase",letterSpacing:1.5,marginBottom:6},
-statValue:{fontSize:20,fontWeight:800,color:"#e0e0f0"},
-statSub:{fontSize:11,marginTop:4},
-table:{width:"100%",borderCollapse:"separate",borderSpacing:"0 2px"},
-th:{textAlign:"left",padding:"10px 12px",fontSize:10,color:"#6b6b8a",textTransform:"uppercase",letterSpacing:1.5,cursor:"pointer",userSelect:"none",borderBottom:"1px solid #1a1a3a",whiteSpace:"nowrap",transition:"color 0.2s"},
-td:{padding:"12px",fontSize:13,borderBottom:"1px solid rgba(30,30,60,0.5)",whiteSpace:"nowrap",transition:"background 0.15s"},
-cardName:{fontWeight:700,color:"#e0e0f0",cursor:"pointer",transition:"color 0.2s"},
-badge:(color)=>({display:"inline-block",padding:"2px 8px",borderRadius:6,fontSize:10,fontWeight:700,background:`${color}20`,color,letterSpacing:0.5}),
-tabs:{display:"flex",gap:4,marginBottom:20,background:"#12122a",borderRadius:12,padding:4,border:"1px solid #1a1a3a"},
-tab:(active)=>({padding:"8px 20px",borderRadius:8,fontSize:12,fontWeight:600,cursor:"pointer",border:"none",background:active?"#22c55e":"transparent",color:active?"#0d0d1a":"#6b6b8a",fontFamily:"inherit",transition:"all 0.2s",letterSpacing:0.5}),
-chartTabs:{display:"flex",gap:4,marginBottom:12},
-chartTab:(active)=>({padding:"6px 14px",borderRadius:8,fontSize:11,fontWeight:600,cursor:"pointer",border:active?"1px solid #22c55e":"1px solid #2a2a4a",background:active?"#22c55e15":"transparent",color:active?"#22c55e":"#6b6b8a",fontFamily:"inherit",transition:"all 0.2s"}),
-backBtn:{background:"none",border:"1px solid #2a2a4a",color:"#8b8ba0",borderRadius:8,padding:"6px 16px",fontSize:12,cursor:"pointer",fontFamily:"inherit",display:"flex",alignItems:"center",gap:6,transition:"all 0.2s"},
-detailGrid:{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))",gap:10,marginBottom:24},
-glowDot:{width:6,height:6,borderRadius:"50%",display:"inline-block",marginRight:6,animation:"pulse 2s infinite"}};
-
-// ═══ CARD DETAIL VIEW ═══
-if(view==="card"&&selectedCard){
-const card=selectedCard;
-const chartData=getChartData(card,chartRange);
-const chartKey=chartType==="price"?"price":chartType==="volume"?"volume":chartType==="sales"?"sales":"marketCap";
-const chartColor=chartType==="price"?"#22c55e":chartType==="volume"?"#3b82f6":chartType==="sales"?"#f59e0b":"#c084fc";
-return(
-<div style={S.page}>
-<div style={{position:"fixed",top:-200,right:-200,width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(34,197,94,0.04) 0%,transparent 70%)",pointerEvents:"none"}}/>
-<div style={S.header}><div style={S.headerInner}>
-<div style={S.logo} onClick={goBack}><RaccoonMascot size={40}/><div><div style={S.logoText}>CurioCharts</div><div style={S.logoSub}>NFT Intelligence</div></div></div>
-<button style={S.backBtn} onClick={goBack}>{"\u2190"} Back to Market</button>
-</div></div>
-<div style={S.container}>
-<div style={{animation:"slideUp 0.4s ease",marginBottom:24}}>
-<div style={{display:"flex",alignItems:"center",gap:16,marginBottom:16,flexWrap:"wrap"}}>
-<div style={{width:64,height:64,borderRadius:16,background:`linear-gradient(135deg,${RARITY_COLORS[card.rarity]}40,${RARITY_COLORS[card.rarity]}10)`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:24,fontWeight:800,color:RARITY_COLORS[card.rarity],border:`2px solid ${RARITY_COLORS[card.rarity]}40`}}>#{card.id}</div>
-<div><div style={{fontSize:28,fontWeight:800,fontFamily:"'Space Grotesk',sans-serif"}}>{card.name}</div>
-<div style={{fontSize:13,color:"#6b6b8a",marginTop:2}}>by {card.artist} {"\u00B7"} <span style={S.badge(RARITY_COLORS[card.rarity])}>{card.rarity}</span></div></div>
-<div style={{marginLeft:"auto",textAlign:"right"}}>
-<div style={{fontSize:32,fontWeight:800,fontFamily:"'Space Grotesk',sans-serif"}}>{fmtEth(card.price)}</div>
-<div style={{fontSize:14,color:pctColor(card.change24h),fontWeight:700}}>{pctArrow(card.change24h)} {fmtPct(card.change24h)} <span style={{color:"#5a5a7a",fontWeight:400,marginLeft:8}}>24h</span></div>
-</div></div></div>
-<div style={{...S.detailGrid,animation:"slideUp 0.5s ease"}}>
-{[{label:"Market Cap",value:`\u039E${fmtK(card.marketCap)}`,sub:`Supply: ${card.supply.toLocaleString()}`},{label:"Floor Price",value:fmtEth(card.floorPrice),sub:`${card.listed} listed`},{label:"24h Volume",value:`\u039E${fmt(card.volume24h)}`,sub:`${card.sales24h} sales`},{label:"All-Time High",value:fmtEth(card.ath),sub:`ATL: ${fmtEth(card.atl)}`},{label:"7d Change",value:fmtPct(card.change7d),color:pctColor(card.change7d)},{label:"30d Change",value:fmtPct(card.change30d),color:pctColor(card.change30d)},{label:"Owners",value:card.owners.toLocaleString(),sub:`${((card.owners/card.supply)*100).toFixed(0)}% of supply`},{label:"Total Vol",value:`\u039E${fmtK(card.totalVolume)}`,sub:`${card.totalSales} all-time sales`}].map((s,i)=>(
-<div key={i} style={S.statCard}><div style={S.statLabel}>{s.label}</div><div style={{...S.statValue,fontSize:16,color:s.color||"#e0e0f0"}}>{s.value}</div>{s.sub&&<div style={{...S.statSub,color:"#5a5a7a"}}>{s.sub}</div>}</div>))}
+<div class="hdr">
+  <h1>📊 Curio<span>Charts</span></h1>
+  <div class="nav-links">
+    <a href="/curio-quant/">QuantBot</a>
+    <a href="/curio-map/">Map</a>
+    <a href="/curio-quant/community.html">Community</a>
+    <a href="/curio-wiki/">Wiki</a>
+    <a href="/">1n2</a>
+  </div>
 </div>
-<div style={{...S.statCard,padding:24,animation:"slideUp 0.6s ease"}}>
-<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,flexWrap:"wrap",gap:8}}>
-<div style={S.chartTabs}>{["price","volume","sales","marketCap"].map(t=><button key={t} style={S.chartTab(chartType===t)} onClick={()=>setChartType(t)}>{t==="marketCap"?"Mkt Cap":t.charAt(0).toUpperCase()+t.slice(1)}</button>)}</div>
-<div style={S.chartTabs}>{["7d","14d","30d","60d","90d"].map(r=><button key={r} style={S.chartTab(chartRange===r)} onClick={()=>setChartRange(r)}>{r.toUpperCase()}</button>)}</div>
+<div class="wrap">
+  <div class="src">Data from <b>Data Labs</b> · Updated <span id="updated"></span></div>
+  <div class="overview" id="overview"></div>
+  <div class="sort-bar" id="sortbar"></div>
+  <div class="card-grid" id="grid"></div>
 </div>
-<ResponsiveContainer width="100%" height={360}>
-<ComposedChart data={chartData} margin={{top:10,right:10,left:0,bottom:0}}>
-<defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={chartColor} stopOpacity={0.3}/><stop offset="100%" stopColor={chartColor} stopOpacity={0}/></linearGradient></defs>
-<CartesianGrid strokeDasharray="3 3" stroke="#1a1a3a"/><XAxis dataKey="dateShort" stroke="#3a3a5a" fontSize={10} tickLine={false}/><YAxis stroke="#3a3a5a" fontSize={10} tickLine={false} tickFormatter={v=>chartType==="sales"?v:`\u039E${v<1?v.toFixed(3):fmtK(v)}`}/>
-<Tooltip content={<ChartTooltip/>}/>
-<Area type="monotone" dataKey={chartKey} stroke={chartColor} strokeWidth={2} fill="url(#areaGrad)" name={chartType==="marketCap"?"Mkt Cap":chartType.charAt(0).toUpperCase()+chartType.slice(1)}/>
-{chartType==="price"&&<Line type="monotone" dataKey="high" stroke="#22c55e40" strokeWidth={1} strokeDasharray="4 4" dot={false} name="High"/>}
-{chartType==="price"&&<Line type="monotone" dataKey="low" stroke="#ef444440" strokeWidth={1} strokeDasharray="4 4" dot={false} name="Low"/>}
-</ComposedChart></ResponsiveContainer></div>
-<div style={{...S.statCard,padding:20,marginTop:16,animation:"slideUp 0.7s ease"}}>
-<div style={{fontSize:14,fontWeight:700,marginBottom:12,color:"#8b8ba0"}}>Recent Activity</div>
-<div style={{maxHeight:300,overflowY:"auto"}}><table style={{...S.table,fontSize:12}}>
-<thead><tr>{["Date","Price","High","Low","Volume","Sales"].map((h,i)=><th key={h} style={{...S.th,fontSize:9,textAlign:i>0?"right":"left"}}>{h}</th>)}</tr></thead>
-<tbody>{[...chartData].reverse().slice(0,20).map((d,i)=>(
-<tr key={i}><td style={S.td}>{d.date}</td><td style={{...S.td,textAlign:"right",fontWeight:600}}>{fmtEth(d.price)}</td><td style={{...S.td,textAlign:"right",color:"#22c55e"}}>{fmtEth(d.high)}</td><td style={{...S.td,textAlign:"right",color:"#ef4444"}}>{fmtEth(d.low)}</td><td style={{...S.td,textAlign:"right"}}>{"\u039E"}{fmt(d.volume)}</td><td style={{...S.td,textAlign:"right"}}>{d.sales}</td></tr>
-))}</tbody></table></div></div>
-<div style={{textAlign:"center",marginTop:24,marginBottom:40}}><a href="https://opensea.io/collection/curiocardswrapper" target="_blank" rel="noopener noreferrer" style={{color:"#3b82f6",fontSize:13,textDecoration:"none",borderBottom:"1px dashed #3b82f640"}}>View on OpenSea {"\u2192"}</a></div>
-</div></div>)}
+<script src="/curio-quant/cards-data.js"></script>
+<script>
+let DL=null, sortKey='id';
+const ids=Object.keys(CARDS).sort((a,b)=>(a==='17b'?17.5:+a)-(b==='17b'?17.5:+b));
 
-// ═══ OVERVIEW / MARKET VIEW ═══
-return(
-<div style={S.page}>
-<div style={{position:"fixed",top:-200,right:-200,width:600,height:600,borderRadius:"50%",background:"radial-gradient(circle,rgba(34,197,94,0.04) 0%,transparent 70%)",pointerEvents:"none"}}/>
-<div style={{position:"fixed",bottom:-200,left:-200,width:500,height:500,borderRadius:"50%",background:"radial-gradient(circle,rgba(59,130,246,0.03) 0%,transparent 70%)",pointerEvents:"none"}}/>
-<div style={S.header}><div style={S.headerInner}>
-<div style={S.logo}><RaccoonMascot size={40}/><div><div style={S.logoText}>CurioCharts</div><div style={S.logoSub}>NFT Intelligence</div></div></div>
-<div style={{display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-<input style={S.searchBox} placeholder={"🔍  Search cards, artists..."} value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} onFocus={e=>{e.target.style.borderColor="#22c55e";e.target.style.boxShadow="0 0 0 3px #22c55e20"}} onBlur={e=>{e.target.style.borderColor="#2a2a4a";e.target.style.boxShadow="none"}}/>
-<button style={S.updateBtn} onClick={handleUpdate} disabled={isUpdating}>{isUpdating?<><span style={{display:"inline-block",animation:"spin 1s linear infinite"}}>{"\u27F3"}</span> Fetching...</>:<>{"\u27F3"} Update Data</>}</button>
-</div></div></div>
-<div style={S.container}>
-{showWelcome&&(<div style={{background:"linear-gradient(135deg,#14142a 0%,#1a1a34 50%,#14142a 100%)",border:"1px solid #22c55e30",borderRadius:16,padding:"20px 24px",marginBottom:24,display:"flex",alignItems:"center",gap:20,animation:"slideUp 0.4s ease",position:"relative"}}>
-<RaccoonMascot size={72}/><div style={{flex:1}}>
-<div style={{fontSize:18,fontWeight:800,fontFamily:"'Space Grotesk',sans-serif",marginBottom:4}}>Welcome to CurioCharts {"\uD83C\uDCCF"}</div>
-<div style={{fontSize:13,color:"#8b8ba0",lineHeight:1.6}}>Track all 31 Curio Cards — the OG NFT collection from 2017. Real-time floor prices, volume, sales history, and market analytics. Click any card for detailed charts.</div>
-<div style={{fontSize:11,color:"#5a5a7a",marginTop:6}}><span style={{...S.glowDot,background:"#22c55e"}}/> Last updated: {lastUpdated.toLocaleTimeString()}</div>
-</div><button onClick={()=>setShowWelcome(false)} style={{position:"absolute",top:12,right:16,background:"none",border:"none",color:"#4a4a6a",cursor:"pointer",fontSize:16}}>{"\u2715"}</button></div>)}
-<div style={{...S.statsRow,animation:"slideUp 0.45s ease"}}>
-{[{label:"Total Market Cap",value:`\u039E${fmtK(globalStats.totalMcap)}`,color:"#22c55e",icon:"\uD83D\uDC8E"},{label:"24h Volume",value:`\u039E${fmtK(globalStats.totalVol)}`,color:"#3b82f6",icon:"\uD83D\uDCCA"},{label:"24h Sales",value:globalStats.totalSales.toString(),color:"#f59e0b",icon:"\uD83D\uDD25"},{label:"Avg 24h Change",value:fmtPct(globalStats.avgChange),color:pctColor(globalStats.avgChange),icon:globalStats.avgChange>=0?"\uD83D\uDCC8":"\uD83D\uDCC9"},{label:"Total Owners",value:globalStats.totalOwners.toLocaleString(),color:"#c084fc",icon:"\uD83D\uDC65"},{label:"Listed",value:globalStats.totalListed.toLocaleString(),color:"#f472b6",icon:"\uD83C\uDFF7\uFE0F"}].map((s,i)=>(
-<div key={i} style={S.statCard}><div style={{position:"absolute",top:12,right:14,fontSize:20,opacity:0.3}}>{s.icon}</div><div style={S.statLabel}>{s.label}</div><div style={{...S.statValue,color:s.color}}>{s.value}</div></div>))}
-</div>
-<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:20,flexWrap:"wrap",gap:12}}>
-<div style={S.tabs}>{[{key:"table",label:"\uD83D\uDCCB All Cards"},{key:"trending",label:"\uD83D\uDD25 Trending"},{key:"stats",label:"\uD83D\uDCCA Analytics"}].map(t=><button key={t.key} style={S.tab(activeTab===t.key)} onClick={()=>setActiveTab(t.key)}>{t.label}</button>)}</div>
-<div style={{fontSize:11,color:"#4a4a6a"}}>{sortedData.length} of 31 cards {"\u00B7"} Sorted by {sortKey} {sortDir==="desc"?"\u2193":"\u2191"}</div>
-</div>
-{activeTab==="table"&&(
-<div style={{animation:"fadeIn 0.3s ease",overflowX:"auto"}}><table style={S.table}><thead><tr>
-{[{key:"id",label:"#",w:40},{key:"name",label:"Card",w:200},{key:"price",label:"Price (ETH)",w:110},{key:"change24h",label:"24h %",w:90},{key:"change7d",label:"7d %",w:90},{key:"volume24h",label:"24h Vol",w:100},{key:"marketCap",label:"Mkt Cap",w:100},{key:"supply",label:"Supply",w:70},{key:null,label:"14d Chart",w:110}].map(col=>(
-<th key={col.label} style={{...S.th,width:col.w,textAlign:col.key==="id"?"center":col.key==="name"?"left":"right",color:sortKey===col.key?"#22c55e":"#6b6b8a"}} onClick={()=>col.key&&handleSort(col.key)}>{col.label} {sortKey===col.key?(sortDir==="desc"?"\u2193":"\u2191"):""}</th>))}
-</tr></thead><tbody>
-{sortedData.map((card)=>(
-<tr key={card.id} style={{background:hoveredRow===card.id?"#14142e":"transparent",cursor:"pointer",transition:"background 0.15s"}} onMouseEnter={()=>setHoveredRow(card.id)} onMouseLeave={()=>setHoveredRow(null)} onClick={()=>openCard(card)}>
-<td style={{...S.td,textAlign:"center",color:"#5a5a7a",fontWeight:700,fontSize:12}}>{card.id}</td>
-<td style={S.td}><div style={{display:"flex",alignItems:"center",gap:10}}>
-<div style={{width:32,height:32,borderRadius:8,background:`linear-gradient(135deg,${RARITY_COLORS[card.rarity]}30,${RARITY_COLORS[card.rarity]}10)`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:800,color:RARITY_COLORS[card.rarity],flexShrink:0}}>{card.id}</div>
-<div><div style={S.cardName}>{card.name}</div><div style={{fontSize:10,color:"#5a5a7a"}}>{card.artist}</div></div></div></td>
-<td style={{...S.td,textAlign:"right",fontWeight:700,fontFamily:"'JetBrains Mono',monospace"}}>{fmtEth(card.price)}</td>
-<td style={{...S.td,textAlign:"right",color:pctColor(card.change24h),fontWeight:600}}>{pctArrow(card.change24h)} {fmtPct(card.change24h)}</td>
-<td style={{...S.td,textAlign:"right",color:pctColor(card.change7d),fontWeight:600}}>{pctArrow(card.change7d)} {fmtPct(card.change7d)}</td>
-<td style={{...S.td,textAlign:"right"}}>{"\u039E"}{fmt(card.volume24h)}</td>
-<td style={{...S.td,textAlign:"right",fontWeight:600}}>{"\u039E"}{fmtK(card.marketCap)}</td>
-<td style={{...S.td,textAlign:"right",color:"#6b6b8a"}}>{card.supply.toLocaleString()}</td>
-<td style={{...S.td,textAlign:"right"}}><Sparkline data={card.sparkline} color={card.change7d>=0?"#22c55e":"#ef4444"}/></td>
-</tr>))}</tbody></table></div>)}
-{activeTab==="trending"&&(
-<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,animation:"fadeIn 0.3s ease"}}>
-<div style={S.statCard}><div style={{fontSize:14,fontWeight:700,color:"#22c55e",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{"\uD83D\uDCC8"} Top Gainers <span style={{fontSize:10,color:"#5a5a7a"}}>24h</span></div>
-{trending.gainers.map((card,i)=>(<div key={card.id} onClick={()=>openCard(card)} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"10px 0",borderBottom:i<trending.gainers.length-1?"1px solid #1a1a3a":"none",cursor:"pointer"}}>
-<div style={{display:"flex",alignItems:"center",gap:10}}><span style={{color:"#3a3a5a",fontWeight:800,fontSize:14,width:24}}>{i+1}</span><div><div style={{fontWeight:700,fontSize:13}}>#{card.id} {card.name}</div><div style={{fontSize:11,color:"#5a5a7a"}}>{fmtEth(card.price)}</div></div></div>
-<div style={{color:"#22c55e",fontWeight:700,fontSize:14}}>{fmtPct(card.change24h)}</div></div>))}</div>
-<div style={S.statCard}><div style={{fontSize:14,fontWeight:700,color:"#ef4444",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{"\uD83D\uDCC9"} Top Losers <span style={{fontSize:10,color:"#5a5a7a"}}>24h</span></div>
-{trending.losers.map((card,i)=>(<div key={card.id} onClick={()=>openCard(card)} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"10px 0",borderBottom:i<trending.losers.length-1?"1px solid #1a1a3a":"none",cursor:"pointer"}}>
-<div style={{display:"flex",alignItems:"center",gap:10}}><span style={{color:"#3a3a5a",fontWeight:800,fontSize:14,width:24}}>{i+1}</span><div><div style={{fontWeight:700,fontSize:13}}>#{card.id} {card.name}</div><div style={{fontSize:11,color:"#5a5a7a"}}>{fmtEth(card.price)}</div></div></div>
-<div style={{color:"#ef4444",fontWeight:700,fontSize:14}}>{fmtPct(card.change24h)}</div></div>))}</div>
-<div style={{...S.statCard,gridColumn:"1 / -1"}}><div style={{fontSize:14,fontWeight:700,color:"#3b82f6",marginBottom:16}}>{"\uD83D\uDCCA"} Volume Leaders (24h)</div>
-<ResponsiveContainer width="100%" height={200}><BarChart data={[...marketData].sort((a,b)=>b.volume24h-a.volume24h).slice(0,10)} margin={{top:0,right:0,left:0,bottom:0}}>
-<CartesianGrid strokeDasharray="3 3" stroke="#1a1a3a"/><XAxis dataKey="name" stroke="#3a3a5a" fontSize={9} angle={-20} textAnchor="end" height={50}/><YAxis stroke="#3a3a5a" fontSize={9} tickFormatter={v=>`\u039E${v}`}/>
-<Tooltip content={<ChartTooltip/>}/><Bar dataKey="volume24h" fill="#3b82f6" radius={[4,4,0,0]} name="Volume"/></BarChart></ResponsiveContainer></div></div>)}
-{activeTab==="stats"&&(
-<div style={{animation:"fadeIn 0.3s ease"}}>
-<div style={{...S.statCard,padding:24,marginBottom:16}}><div style={{fontSize:14,fontWeight:700,color:"#c084fc",marginBottom:16}}>{"\uD83D\uDC8E"} Market Cap by Card</div>
-<ResponsiveContainer width="100%" height={280}><BarChart data={[...marketData].sort((a,b)=>b.marketCap-a.marketCap)} margin={{top:0,right:0,left:0,bottom:0}}>
-<CartesianGrid strokeDasharray="3 3" stroke="#1a1a3a"/><XAxis dataKey="id" stroke="#3a3a5a" fontSize={9}/><YAxis stroke="#3a3a5a" fontSize={9} tickFormatter={v=>`\u039E${fmtK(v)}`}/>
-<Tooltip content={<ChartTooltip/>}/><Bar dataKey="marketCap" name="Mkt Cap" radius={[3,3,0,0]}>{[...marketData].sort((a,b)=>b.marketCap-a.marketCap).map((c,i)=><Cell key={i} fill={RARITY_COLORS[c.rarity]}/>)}</Bar>
-</BarChart></ResponsiveContainer></div>
-<div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
-<div style={S.statCard}><div style={{fontSize:14,fontWeight:700,color:"#f59e0b",marginBottom:16}}>{"\uD83C\uDFA8"} Rarity Distribution</div>
-{Object.entries(marketData.reduce((acc,c)=>{acc[c.rarity]=(acc[c.rarity]||0)+1;return acc},{})).sort((a,b)=>b[1]-a[1]).map(([rarity,count])=>(
-<div key={rarity} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid #1a1a3a"}}>
-<div style={{display:"flex",alignItems:"center",gap:10}}><div style={{width:10,height:10,borderRadius:3,background:RARITY_COLORS[rarity]}}/><span style={{fontSize:13,fontWeight:600}}>{rarity}</span></div>
-<div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:80,height:6,borderRadius:3,background:"#1a1a3a"}}><div style={{width:`${(count/31)*100}%`,height:"100%",borderRadius:3,background:RARITY_COLORS[rarity]}}/></div><span style={{fontSize:12,color:"#8b8ba0",fontWeight:700,width:24,textAlign:"right"}}>{count}</span></div></div>))}</div>
-<div style={S.statCard}><div style={{fontSize:14,fontWeight:700,color:"#22c55e",marginBottom:16}}>{"\uD83D\uDCE6"} Rarest by Supply</div>
-{[...marketData].sort((a,b)=>a.supply-b.supply).slice(0,8).map((card)=>(
-<div key={card.id} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid #1a1a3a",cursor:"pointer"}} onClick={()=>openCard(card)}>
-<div style={{display:"flex",alignItems:"center",gap:10}}><span style={{fontSize:11,color:"#5a5a7a",width:30}}>#{card.id}</span><span style={{fontSize:13,fontWeight:600}}>{card.name}</span></div>
-<span style={S.badge(RARITY_COLORS[card.rarity])}>{card.supply}</span></div>))}</div></div>
-<div style={{...S.statCard,padding:24,marginTop:16}}><div style={{fontSize:14,fontWeight:700,color:"#3b82f6",marginBottom:16}}>{"\uD83D\uDCC8"} Collection Average Price (90d)</div>
-<ResponsiveContainer width="100%" height={220}><AreaChart data={(()=>{const avg=[];for(let d=0;d<90;d++){const prices=marketData.map(c=>c.history[d]?.price||0);avg.push({date:marketData[0].history[d]?.dateShort||"",avgPrice:parseFloat((prices.reduce((s,p)=>s+p,0)/prices.length).toFixed(4))})}return avg})()} margin={{top:10,right:10,left:0,bottom:0}}>
-<defs><linearGradient id="avgGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3b82f6" stopOpacity={0.3}/><stop offset="100%" stopColor="#3b82f6" stopOpacity={0}/></linearGradient></defs>
-<CartesianGrid strokeDasharray="3 3" stroke="#1a1a3a"/><XAxis dataKey="date" stroke="#3a3a5a" fontSize={10}/><YAxis stroke="#3a3a5a" fontSize={10} tickFormatter={v=>`\u039E${v}`}/>
-<Tooltip content={<ChartTooltip/>}/><Area type="monotone" dataKey="avgPrice" stroke="#3b82f6" strokeWidth={2} fill="url(#avgGrad)" name="Avg Price"/></AreaChart></ResponsiveContainer></div></div>)}
-<div style={{borderTop:"1px solid #1a1a3a",marginTop:40,padding:"24px 0",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12}}>
-<div style={{display:"flex",alignItems:"center",gap:10}}><RaccoonMascot size={28}/><span style={{fontSize:12,color:"#4a4a6a"}}>CurioCharts {"\u00A9"} 2025 {"\u00B7"} Tracking the OG NFTs since 2017</span></div>
-<div style={{display:"flex",gap:16,fontSize:11}}><a href="https://opensea.io/collection/curiocardswrapper" target="_blank" rel="noopener noreferrer" style={{color:"#5a5a7a",textDecoration:"none"}}>OpenSea</a><a href="https://curio.cards" target="_blank" rel="noopener noreferrer" style={{color:"#5a5a7a",textDecoration:"none"}}>Curio Cards</a><span style={{color:"#3a3a5a"}}>v1.0.0</span></div></div>
-</div></div>)}
-ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(CurioCharts));
+function getExt(id){return['21','22'].includes(id)?'png':['23','30'].includes(id)?'gif':'jpg';}
+
+async function init(){
+  try{DL=await(await fetch('datalabs.json')).json();}catch(e){DL=null;}
+  document.getElementById('updated').textContent=DL?.updated||'demo data';
+  buildOverview();buildSortBar();renderGrid();
+}
+
+function buildOverview(){
+  const s=[];
+  if(DL){
+    s.push({n:DL.collection_floor_eth+' Ξ',l:'Collection Floor'});
+    s.push({n:DL.total_owners?.toLocaleString()||'—',l:'Unique Owners'});
+    s.push({n:DL.total_sales||'—',l:'Total Sales'});
+    s.push({n:DL.total_transfers?.toLocaleString()||'—',l:'Transfers'});
+    s.push({n:DL.cards?.length||30,l:'Cards'});
+    s.push({n:DL.price_history?.length||'—',l:'Days Tracked'});
+  } else {
+    const floors=ids.map(id=>CARDS[id].floor);
+    s.push({n:(floors.reduce((a,b)=>a+b,0)/floors.length).toFixed(3)+' Ξ',l:'Avg Floor'});
+    s.push({n:ids.reduce((a,id)=>a+CARDS[id].holders,0).toLocaleString(),l:'Total Holders'});
+    s.push({n:ids.length,l:'Cards'});
+  }
+  document.getElementById('overview').innerHTML=s.map(x=>`<div class="ov-stat"><div class="n">${x.n}</div><div class="l">${x.l}</div></div>`).join('');
+}
+
+function buildSortBar(){
+  const sorts=[{k:'id',l:'# Number'},{k:'floor',l:'Floor ↑'},{k:'floor_d',l:'Floor ↓'},{k:'owners',l:'Owners'},{k:'supply',l:'Supply'},{k:'name',l:'Name'}];
+  document.getElementById('sortbar').innerHTML=sorts.map(s=>
+    `<button class="sort-btn${s.k===sortKey?' on':''}" onclick="setSort('${s.k}')">${s.l}</button>`
+  ).join('');
+}
+function setSort(k){sortKey=k;buildSortBar();renderGrid();}
+
+function getDLCard(id){
+  if(!DL?.cards) return null;
+  const numId=id==='17b'?17:parseInt(id);
+  return DL.cards.find(c=>c.id===numId);
+}
+
+function sortedIds(){
+  const arr=[...ids];
+  if(sortKey==='floor') arr.sort((a,b)=>CARDS[a].floor-CARDS[b].floor);
+  else if(sortKey==='floor_d') arr.sort((a,b)=>CARDS[b].floor-CARDS[a].floor);
+  else if(sortKey==='owners'){
+    arr.sort((a,b)=>{
+      const da=getDLCard(a), db=getDLCard(b);
+      return (db?.owners||CARDS[b].holders)-(da?.owners||CARDS[a].holders);
+    });
+  }
+  else if(sortKey==='supply') arr.sort((a,b)=>CARDS[a].supply-CARDS[b].supply);
+  else if(sortKey==='name') arr.sort((a,b)=>CARDS[a].name.localeCompare(CARDS[b].name));
+  return arr;
+}
+
+function renderGrid(){
+  const maxFloor=Math.max(...ids.map(id=>CARDS[id].floor));
+  document.getElementById('grid').innerHTML=sortedIds().map(id=>{
+    const c=CARDS[id];
+    const dl=getDLCard(id);
+    const num=id==='17b'?'17':id.padStart(2,'0');
+    const ext=getExt(id);
+    const barW=Math.max(5,Math.round(c.floor/maxFloor*100));
+    const sig=c.floor<c.avg30?'buy':c.floor>c.high*0.8?'sell':'hold';
+    const sigLabel=sig==='buy'?'BUY':sig==='sell'?'SELL':'HOLD';
+    const owners=dl?dl.owners:c.holders;
+    const lastSale=dl?.last_sale_eth?dl.last_sale_eth+' Ξ':'—';
+    const salesCount=dl?.sales_count||'—';
+    const transfers=dl?.transfers||'—';
+    return `<a class="cc" href="/curio-quant/card.html?id=${id}">
+      <div class="cc-img"><img src="/curio-quant/img/card-${num}.${ext}" alt="${c.name}" loading="lazy"></div>
+      <div class="cc-body">
+        <div class="cc-name">#${id} ${c.name} <span class="signal ${sig}">${sigLabel}</span></div>
+        <div class="cc-floor">${c.floor} Ξ</div>
+        <div class="cc-row"><span>Owners</span><span class="v">${owners.toLocaleString()}</span></div>
+        <div class="cc-row"><span>Supply</span><span class="v">${c.supply.toLocaleString()}</span></div>
+        <div class="cc-row"><span>Last Sale</span><span class="v">${lastSale}</span></div>
+        <div class="cc-row"><span>Sales</span><span class="v">${salesCount}</span></div>
+        <div class="cc-row"><span>Transfers</span><span class="v">${transfers}</span></div>
+        <div class="cc-bar"><div class="fill" style="width:${barW}%;background:${sig==='buy'?'var(--green)':sig==='sell'?'var(--red)':'var(--accent)'}"></div></div>
+      </div></a>`;
+  }).join('');
+}
+
+init();
 </script>
-</body>
-</html>
+</body></html>
