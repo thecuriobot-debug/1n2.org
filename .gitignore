@@ -23,7 +23,10 @@ bitcoingroup-audio/video/
 **/*.sqlite3
 
 # Large JSON data files (regeneratable)
-thunt-data-labs/db/
+thunt-data-labs/db/*.db
+thunt-data-labs/db/*.sqlite
+thunt-data-labs/db/*.sqlite3
+# database.py is tracked (NOT excluded)
 dashboarder/data/comments.json
 old-projects/reader/data/comments.json
 
