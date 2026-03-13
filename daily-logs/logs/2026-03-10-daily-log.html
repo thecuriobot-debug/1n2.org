@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Daily Log — 2026-03-10</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Log — 2026-03-10</title>
 <style>
-  body{font-family:'JetBrains Mono',monospace;background:#0d0d0d;color:#e0e0e0;max-width:800px;margin:0 auto;padding:2rem}
-  h1{color:#7eb8f7;font-size:1.4rem}h2{color:#a0cfaa;font-size:1rem;margin-top:2rem}
-  a{color:#7eb8f7}li{margin:.3rem 0}
-  .meta{color:#666;font-size:.8rem}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:40px 20px}
+.container{max-width:800px;margin:0 auto;background:white;border-radius:20px;padding:50px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.back-link{display:inline-block;margin-bottom:24px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
+.date-label{font-size:.8rem;color:#888;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+h1{font-size:1.9rem;color:#333;margin-bottom:12px;line-height:1.3}
+.summary{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:28px;padding:16px;background:#f8f9ff;border-radius:8px;border-left:4px solid #667eea}
+h2{font-size:1.1rem;color:#764ba2;margin:24px 0 10px;}
+ul{margin-left:20px}
+li{margin:.4rem 0;color:#444;line-height:1.5}
+.tags{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:3px 10px;border-radius:12px;background:#f0ecff;color:#764ba2;font-size:.75rem;font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid #eee}
+.links a{color:#667eea;text-decoration:none;font-size:.85rem}
+.meta{font-size:.75rem;color:#aaa;margin-top:20px}
 </style>
 </head>
 <body>
-<p><a href="../index.html">← Daily Logs</a></p>
-<h1>📅 Tuesday, March 10, 2026<span style="opacity:.5;font-size:.8em"> (reconstructed)</span></h1>
-<p class="meta">1n2.org Ecosystem Log</p>
+<div class="container">
+<a href="../index.html" class="back-link">← All Daily Logs</a>
+<div class="date-label">Tuesday, March 10, 2026</div>
+<h1>TBG Mirrors mega-session — 30+ features in one day</h1>
+<div class="summary">Massive TBG Mirrors build day. Added: Guest DB (263 guests, 92 profile pages), Narratives (28 storylines), Quotes (200 notable), Predictions tracker (567 predictions, leaderboard), Magic 8-Ball (49.2% accuracy), Word Cloud, Timeline, Network graph. Standardized nav across all pages. Price verification with YouTube API.</div>
+<div class="tags"><span class="tag">tbg</span> <span class="tag">mega-session</span> <span class="tag">milestone</span></div>
 
-<h2>📊 Data Snapshot</h2>
-<ul>
+<h2>🚀 Projects Built / Updated</h2>
+<ul><li>🔨 TBG Guest DB (263 guests)</li>
+<li>🔨 TBG Narratives (28 storylines)</li>
+<li>🔨 TBG Quotes (200)</li>
+<li>🔨 TBG Predictions + 8-Ball</li>
+<li>🔨 TBG Word Cloud + Timeline</li></ul>
 
+<h2>📝 Git Commits (38)</h2>
+<ul><li>Guest pages: show Active Streak + Longest Streak columns, ∞ for both on Thomas Hunt</li>
+<li>Quotes page: 200 notable quotes (predictions, prescient calls, wisdom, memorable), filterable by category, linked to transcripts + guest profiles, added to nav</li>
+<li>Word Cloud: bitcoin hero, better sizing, line graph, haikus/poems/short story. Narratives: orange active sort, color-coded values</li>
+<li>Narratives: bigger charts on left, all episodes shown, sortable buttons. Word Cloud: line graph, top 15 bars, detailed stats</li>
+<li>Standardize nav across ALL TBG Mirrors pages: Episodes · Transcripts · Search · Guests · Narratives · Topics · Words · Stats · Predictions · 8-Ball · Missing</li>
+<li>Narratives page: 28 storylines (Ross/Silk Road, Mt Gox, SBF/FTX, Scaling Wars, ETF, Halving, etc) with timelines, episode links, categories</li>
+<li>Guest fixes: Price Weiner->Bryce Weiner, Martino->Ian DeMartino, Andreas Antonopoulos 3->8 appearances, remove false positives</li>
+<li>Guest fixes: Gabriel->Gabriel DeVine, Martin->Martin Wismeijer, Ben->Ben Arc, Todd Zhunt/Tom Hutt->Thomas Hunt, Ellis->Chris Ellis, Bill Pangman->Will Pangman, remove Vaughan/Anon/Republican</li>
+<li>Guest fixes: Tavi/Donnie/David Barker->Davi, Chris Aless/Christoff Ellis/Abyssoft->Kristov Atlas, Theo->Theo Goodman, remove Money/Marnie/Silk Road/Inclus</li>
+<li>Thomas Hunt: 486 shows, range #1-#486, streak ∞ — host of every episode</li>
+<li>Guest fixes: Ark->Ben Arc, Chris->Chris Ellis, Atlas->Kristov Atlas, Lords->MK Lords, Daniel->The Daniel, Jesse->Jesse Dr. Bitcoin, Davi Barker, JD Weatherman, Christian Rootzoll, remove Live/Rijal/Raffi/Tom/Oreo</li>
+<li>Price changes colored: green for gains, red for losses on predictions + 8-ball pages</li>
+<li>8-Ball: add sentiment breakdown — 146 bullish (50.3%), 33 bearish (51.5%), 28 wouldn't answer, all answer phrases shown</li>
+<li>8-Ball: min 5 predictions to appear on leaderboard, below-threshold guests shown at bottom</li>
+<li>8-Ball: 3-tier verification (★★★ segment, ★★ intro, ★ YouTube API), 232 episodes, 178 verified guest predictions</li>
+<li>Predictions page uses verified data + YouTube API descriptions, 8-ball updated with verified guest calls + stars</li>
+<li>Verified predictions: YouTube API descriptions for Level 1, word boundary fix (Gabriel 92→6), Unknown hidden, 534 YT descriptions cached</li>
+<li>3-tier verified predictions: ★★★ named in segment, ★★ in intro, ★ YouTube exists — 567 predictions, leaderboard weighted by confidence</li>
+<li>TBG Analytics: Word Cloud, Topics with timelines, Stats with eras, enhanced Guest pages with activity charts + co-panelists + predictions</li>
+<li>Remove Vin Armani (not real) — Vine/Vin was Whisper mishearing Gabriel D. Vine (Gabriel DeVine from FutureRant)</li></ul>
 
-
-<li>Log generated: 2026-03-13 11:22</li>
-</ul>
-
-<h2>🔗 Live Sites</h2>
-<ul>
-<li><a href="https://1n2.org">1n2.org</a> — Main hub</li>
-<li><a href="https://1n2.org/dashboarder/">Dashboarder</a></li>
-<li><a href="https://1n2.org/curiocharts/">CurioCharts</a></li>
-<li><a href="https://1n2.org/thunt-data-labs/web/">Data Labs</a></li>
-</ul>
-</body></html>
+<div class="links">
+<a href="https://1n2.org">🏠 1n2.org</a>
+<a href="https://1n2.org/thunt-data-labs/web/">🔬 Data Labs</a>
+<a href="https://1n2.org/dashboarder/">📰 Dashboarder</a>
+<a href="https://1n2.org/curiocharts/">🃏 CurioCharts</a>
+<a href="https://1n2.org/health/">💚 Health</a>
+</div>
+<div class="meta">Generated 2026-03-13 16:00 · 1n2.org Daily Log</div>
+</div>
+</body>
+</html>

@@ -1,31 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Daily Log — 2026-03-12</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Log — 2026-03-12</title>
 <style>
-  body{font-family:'JetBrains Mono',monospace;background:#0d0d0d;color:#e0e0e0;max-width:800px;margin:0 auto;padding:2rem}
-  h1{color:#7eb8f7;font-size:1.4rem}h2{color:#a0cfaa;font-size:1rem;margin-top:2rem}
-  a{color:#7eb8f7}li{margin:.3rem 0}
-  .meta{color:#666;font-size:.8rem}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:40px 20px}
+.container{max-width:800px;margin:0 auto;background:white;border-radius:20px;padding:50px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.back-link{display:inline-block;margin-bottom:24px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
+.date-label{font-size:.8rem;color:#888;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+h1{font-size:1.9rem;color:#333;margin-bottom:12px;line-height:1.3}
+.summary{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:28px;padding:16px;background:#f8f9ff;border-radius:8px;border-left:4px solid #667eea}
+h2{font-size:1.1rem;color:#764ba2;margin:24px 0 10px;}
+ul{margin-left:20px}
+li{margin:.4rem 0;color:#444;line-height:1.5}
+.tags{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:3px 10px;border-radius:12px;background:#f0ecff;color:#764ba2;font-size:.75rem;font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid #eee}
+.links a{color:#667eea;text-decoration:none;font-size:.85rem}
+.meta{font-size:.75rem;color:#aaa;margin-top:20px}
 </style>
 </head>
 <body>
-<p><a href="../index.html">← Daily Logs</a></p>
-<h1>📅 Thursday, March 12, 2026<span style="opacity:.5;font-size:.8em"> (reconstructed)</span></h1>
-<p class="meta">1n2.org Ecosystem Log</p>
+<div class="container">
+<a href="../index.html" class="back-link">← All Daily Logs</a>
+<div class="date-label">Thursday, March 12, 2026</div>
+<h1>1n2.org homepage reorganization + CurioQuant v9 overhaul</h1>
+<div class="summary">Major homepage reorganization: renamed Daily Reader → Primary Projects, added MediaLog + TH Films, moved MB Games/Mad Ninja/Cases/Workflows to old-projects. Merged Commentzor into My YouTube. Renamed MadWikipedia → Curio Wiki. CurioQuant v9: 3x bigger signals, trade markers on charts, dynamic leaderboards.</div>
+<div class="tags"><span class="tag">homepage</span> <span class="tag">curio</span> <span class="tag">redesign</span></div>
 
-<h2>📊 Data Snapshot</h2>
-<ul>
+<h2>🚀 Projects Built / Updated</h2>
+<ul><li>🔨 Homepage reorganization</li>
+<li>🔨 CurioQuant v9</li>
+<li>🔨 Curio Wiki rebrand</li>
+<li>🔨 My YouTube + Commentzor merge</li></ul>
 
+<h2>📝 Git Commits (31)</h2>
+<ul><li>CurioQuant nav: rename to CurioCommunity CurioCharts CurioMap CurioWiki, remove 1n2 link</li>
+<li>CurioCharts restyled to match CurioQuant/Map dark theme. Uses real Data Labs blockchain data (4,968 owners, 75 sales, 1,055 transfers). Cross-linked all 5 Curio projects: CurioQuant, CurioCharts, Curio Map, Community, Curio Wiki. Removed all CurioHub references.</li>
+<li>BitcoinVision: combine Ships, Ships 3, Trains into one app. Random visualization on load. Buttons to switch between all 3. Original dirs preserved under bitcoin-vision/ for future edits. Added to Primary Projects. Bitcoin Ships/Ships3/Trains moved to old projects.</li>
+<li>Homepage reorganization: rename Daily Reader → Primary Projects (add Media Log, TH Films). Move AI Usage + Health Check + Labs + Logs to right-aligned button row below stats. Remove Data & Infrastructure and Knowledge & Media sections. Move MB Games + Mad Ninja to old projects.</li>
+<li>Move MB Games, Mad Ninja to old projects. Move AI Usage and Health Check to tagline nav (🤖 usage · 💚 check). Games section now just Mad Patrol 1-3. Data section trimmed to Data Labs + Daily Logs.</li>
+<li>Move Case Studies, Workflows to old projects. Merge Commentzor into My YouTube as 'My Comments' tab. Fixed comment data field names (author_name, c, likes, text_content, by_channel). Removed standalone Commentzor from homepage.</li>
+<li>Rename MadWikipedia → Curio Wiki, move to Curio Cards section. Move MadWikipedia and Curio Archive to old projects. Curio Wiki at /curio-wiki/ with updated branding (title, logo, welcome text).</li>
+<li>Add Mad Patrol 2 & 3 to homepage games section, full server sync</li>
+<li>Fix bad character after Curio Map — removed Unicode variation selector from map emoji</li>
+<li>Curio Map: autoplay animation — cycles through all 31 cards every 15s. Play/Pause button in header. ?auto=1 URL param to start automatically. Nav auto-scrolls to active card. Manual click stops autoplay.</li>
+<li>Fix Curio Map card images 23-27: corrected file extensions (21-22=png, 23=gif, 24-27=jpg, 30=gif)</li>
+<li>1n2.org cleanup: separate Bitcoin section (Ships3/Ships/Trains), move Newszor/Daily THunt/thunt.net to old projects, Curio Cards own section (4 items), Daily Reader just Dashboarder</li>
+<li>Clean up 1n2.org: moved Tweetster, Facebooker, Curio Oracle/Atlas/Hub/Review/Terminal/DID/Data, Checklister to old-projects. Added Curio Map + Bitcoin Ships 3 to homepage. Created old-projects/index.html archive page. Footer links to Old Projects.</li>
+<li>CURIO MAP v2: full site with all 31 card distribution maps. Navigation bar for instant switching. 1,768 total events, 1,391 nodes across all cards. Each card shows supply-scaled network (rare cards = sparse graphs, common cards = dense networks). Card images in sidebar. Phase breakdowns. Link to CurioQuant card pages. URL params (?card=N) for deep linking.</li>
+<li>CurioQuant: fix all Card #30 Eclipse references — supply 821 not 111, artist Thoros of Myr not Daniel Friedman. Fixed home page pick description, QuantBot quotes, holder profiles, and group descriptions.</li>
+<li>CurioQuant: reduce #1/#2 rank from 5.5rem to 4rem, thinner stroke</li>
+<li>CurioQuant: massive #1 and #2 rank numbers (5.5rem, 900 weight, thick black stroke/outline) replacing small pill badges</li>
+<li>CurioQuant: 3x bigger STRONG BUY/BUY signals (2rem), bigger card names (2rem), bigger stat values (1.4rem), bigger quotes (1.25rem), bigger pick descriptions (1rem)</li>
+<li>CurioQuant: embed Curio Map on Card #1 Apples page — interactive D3 distribution graph shown only for card id=1, with iframe, footer bar, and link to full map</li>
+<li>CURIO MAP v1: New project — interactive D3 force graph showing Card #1 Apples distribution network. 167 events, 161 nodes, 151 wallets tracked. Shows vending machine → OG buyers → wrapping → NFT boom → bear market flow. Old Curio Atlas copied to old-projects/. Real contract addresses (0x6Aa2...3d6c original, 0x73DA...F313 wrapper).</li></ul>
 
-
-<li>Log generated: 2026-03-13 11:22</li>
-</ul>
-
-<h2>🔗 Live Sites</h2>
-<ul>
-<li><a href="https://1n2.org">1n2.org</a> — Main hub</li>
-<li><a href="https://1n2.org/dashboarder/">Dashboarder</a></li>
-<li><a href="https://1n2.org/curiocharts/">CurioCharts</a></li>
-<li><a href="https://1n2.org/thunt-data-labs/web/">Data Labs</a></li>
-</ul>
-</body></html>
+<div class="links">
+<a href="https://1n2.org">🏠 1n2.org</a>
+<a href="https://1n2.org/thunt-data-labs/web/">🔬 Data Labs</a>
+<a href="https://1n2.org/dashboarder/">📰 Dashboarder</a>
+<a href="https://1n2.org/curiocharts/">🃏 CurioCharts</a>
+<a href="https://1n2.org/health/">💚 Health</a>
+</div>
+<div class="meta">Generated 2026-03-13 16:00 · 1n2.org Daily Log</div>
+</div>
+</body>
+</html>

@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Daily Log — 2026-03-13</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Log — 2026-03-13</title>
 <style>
-  body{font-family:'JetBrains Mono',monospace;background:#0d0d0d;color:#e0e0e0;max-width:800px;margin:0 auto;padding:2rem}
-  h1{color:#7eb8f7;font-size:1.4rem}h2{color:#a0cfaa;font-size:1rem;margin-top:2rem}
-  a{color:#7eb8f7}li{margin:.3rem 0}
-  .meta{color:#666;font-size:.8rem}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:40px 20px}
+.container{max-width:800px;margin:0 auto;background:white;border-radius:20px;padding:50px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.back-link{display:inline-block;margin-bottom:24px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
+.date-label{font-size:.8rem;color:#888;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+h1{font-size:1.9rem;color:#333;margin-bottom:12px;line-height:1.3}
+.summary{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:28px;padding:16px;background:#f8f9ff;border-radius:8px;border-left:4px solid #667eea}
+h2{font-size:1.1rem;color:#764ba2;margin:24px 0 10px;}
+ul{margin-left:20px}
+li{margin:.4rem 0;color:#444;line-height:1.5}
+.tags{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:3px 10px;border-radius:12px;background:#f0ecff;color:#764ba2;font-size:.75rem;font-weight:600}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid #eee}
+.links a{color:#667eea;text-decoration:none;font-size:.85rem}
+.meta{font-size:.75rem;color:#aaa;margin-top:20px}
 </style>
 </head>
 <body>
-<p><a href="../index.html">← Daily Logs</a></p>
-<h1>📅 Friday, March 13, 2026</h1>
-<p class="meta">1n2.org Ecosystem Log</p>
+<div class="container">
+<a href="../index.html" class="back-link">← All Daily Logs</a>
+<div class="date-label">Friday, March 13, 2026</div>
+<h1>Ecosystem automation + GitHub overhaul + Health check</h1>
+<div class="summary">Full ecosystem automation: 22-job cron pipeline covering MediaLog RSS, ThomasHuntFilms, WCN/TBG podcasts, Curio suite, articles, daily logs, AI usage. GitHub: README for all 14 repos, profile page, deploy workflow. Health check rebuilt with 40 sites. All Curio sites cross-linked.</div>
+<div class="tags"><span class="tag">automation</span> <span class="tag">github</span> <span class="tag">infrastructure</span> <span class="tag">milestone</span></div>
 
-<h2>📊 Data Snapshot</h2>
+<h2>🚀 Projects Built / Updated</h2>
+<ul><li>🔨 Unified cron (22 jobs)</li>
+<li>🔨 GitHub docs overhaul</li>
+<li>🔨 Health check page</li>
+<li>🔨 All Curio sites cross-linked</li>
+<li>🔨 Database.py rebuilt</li></ul>
+
+<h2>📝 Git Commits (18)</h2>
+<ul><li>fix: health check // double-slash bug on homepage, stats.json no longer overwritten</li>
+<li>fix: stats.json no longer overwritten by homepage_stats, thomashuntfilms generate_site schema fixed</li>
+<li>fix: all collectors working — curio wiki/map/ai-usage/podcasts fixed, health check rebuilt</li>
+<li>fix: podcast updater handles real data structures, generate_site youtube_id key fixed, health check rebuilt with all 40 sites</li>
+<li>auto: add database.py, all new collectors, unified master-run, fix gitignore</li>
+<li>GitHub: add README, DEPLOY.md, master deploy.sh with full workflow docs</li>
+<li>add: all untracked projects, content, and deploy scripts</li>
+<li>gitignore: exclude large media, db, node_modules, large JSON - move audio to LargeData</li>
+<li>Full project sync March 13 2026: all Curio sites cross-linked, BitcoinVision, My YouTube+Commentzor merged, CurioCharts with Data Labs</li>
+<li>Restore CurioQuant index.html from git (was overwritten by rsync). Redeploy with correct nav: CurioCommunity CurioCharts CurioMap CurioWiki</li>
+<li>CurioMap: match header size to other Curio sites (top bar + card rows below). Deploy all CurioQuant updates to server.</li>
+<li>CurioWiki: add dark nav bar matching other Curio sites (CurioQuant/CurioCharts/CurioMap/CurioCommunity). Remove scrolling Floor/comments data ticker. Replace remaining MadWikipedia reference with Curio Wiki.</li>
+<li>CurioMap: break card nav after #17 (row 1: #1-#17, row 2: #17b-#30)</li>
+<li>CurioMap header: 3-line layout — Curio nav + Auto button on line 1, cards #1-#15 on line 2, cards #16-#30 on line 3. All card links visible without scrolling.</li>
+<li>CurioMap: expand header to two lines — card nav on line 1, Curio project links on line 2 (right-aligned with separator)</li>
+<li>CurioMap nav: match other Curio sites — CurioQuant CurioCharts CurioCommunity CurioWiki</li>
+<li>CurioCharts nav: match other Curio sites — CurioQuant CurioCommunity CurioMap CurioWiki</li>
+<li>CurioCommunity: add sticky header nav bar matching CurioQuant style — links to CurioQuant, CurioCharts, CurioMap, CurioWiki</li></ul>
+
+<h2>📊 Live Data Snapshot</h2>
 <ul>
+<li>Total DB records: <b>3,563</b></li>
 <li>Curio Cards floor: <b>0.0486 ETH</b></li>
-<li>Article archive: <b>244</b> articles</li>
-<li>Data Labs records: <b>391</b> total</li>
-<li>Log generated: 2026-03-13 15:36</li>
+<li>YouTube videos: <b>146</b></li>
+<li>YouTube comments: <b>749</b></li>
+<li>Articles: <b>244</b></li>
+<li>Movies tracked: <b>1,569</b></li>
+<li>Books tracked: <b>779</b></li>
 </ul>
-
-<h2>🔗 Live Sites</h2>
-<ul>
-<li><a href="https://1n2.org">1n2.org</a> — Main hub</li>
-<li><a href="https://1n2.org/dashboarder/">Dashboarder</a></li>
-<li><a href="https://1n2.org/curiocharts/">CurioCharts</a></li>
-<li><a href="https://1n2.org/thunt-data-labs/web/">Data Labs</a></li>
-</ul>
-</body></html>
+<div class="links">
+<a href="https://1n2.org">🏠 1n2.org</a>
+<a href="https://1n2.org/thunt-data-labs/web/">🔬 Data Labs</a>
+<a href="https://1n2.org/dashboarder/">📰 Dashboarder</a>
+<a href="https://1n2.org/curiocharts/">🃏 CurioCharts</a>
+<a href="https://1n2.org/health/">💚 Health</a>
+</div>
+<div class="meta">Generated 2026-03-13 16:00 · 1n2.org Daily Log</div>
+</div>
+</body>
+</html>
