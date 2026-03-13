@@ -3,3 +3,26 @@ thunt-data-labs/.DS_Store
 **/__pycache__/
 *.pyc
 **/.DS_Store
+
+# Large media files - stored in ~/LargeData/ not in git
+# See ~/LargeData/README.md for details
+bitcoingroup-audio/audio/
+bitcoingroup-audio/video/
+**/*.m4a
+**/*.mp4
+**/*.mov
+**/*.avi
+**/*.mkv
+
+# Node modules - never commit
+**/node_modules/
+
+# Large database files
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Large JSON data files (regeneratable)
+thunt-data-labs/db/
+dashboarder/data/comments.json
+old-projects/reader/data/comments.json
