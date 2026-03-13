@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Usage — Analytics Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<title>AI Usage — 1n2.org</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;
-  --claude:#c084fc;--chatgpt:#10b981;--codex:#3b82f6;--openclaw:#f59e0b;--gemini:#4285f4;--amber:#fbbf24;--red:#f87171;--cyan:#22d3ee}
+:root{--bg:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--text:#e0e0e0;--muted:#888;
+  --claude:#c084fc;--chatgpt:#10b981;--codex:#3b82f6;--openclaw:#f59e0b;--gemini:#4285f4;--amber:#e8c547;--red:#f87171;--cyan:#e8c547;--accent:#e8c547}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
-a{color:var(--cyan);text-decoration:none}a:hover{color:#fff}
-header{padding:14px 24px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
-header h1{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--text)}
-header p{color:var(--muted);font-size:.78rem}
-nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);padding:0 12px;overflow-x:auto;position:sticky;top:62px;z-index:19}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+.n2-nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.n2-nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;height:48px}
+.n2-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:20px;flex-shrink:0}
+.n2-logo img{width:30px;height:30px;border-radius:5px}
+.n2-logo-text{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-1px}
+.n2-logo-text span{color:var(--accent)}
+.n2-links{display:flex;align-items:center;gap:2px;overflow-x:auto;flex:1}
+.n2-links::-webkit-scrollbar{height:0}
+.n2-link{padding:6px 12px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border:1px solid transparent;transition:all .15s}
+.n2-link:hover{color:var(--accent);border-color:var(--border)}
+.n2-link.active{color:#0f0f0f;background:var(--accent);border-color:var(--accent)}
+nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);padding:0 12px;overflow-x:auto;position:sticky;top:48px;z-index:19}
 nav a{padding:10px 16px;font-size:.82rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:.2s}
 nav a:hover{color:var(--text)}nav a.on{border-color:var(--amber);color:var(--amber)}
 nav a[data-p="claude"].on{color:var(--claude);border-color:var(--claude)}
@@ -45,10 +53,19 @@ td{padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.4)}
 </style>
 </head>
 <body>
-<header>
-<h1>🤖 AI Usage — Analytics Dashboard</h1>
-<p>1n2.org multi-AI collaboration · Feb 7 – Mar 8, 2026 · 30 days</p>
-</header>
+<nav class="n2-nav">
+  <div class="n2-nav-inner">
+    <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
+    <div class="n2-links">
+      <a href="/" class="n2-link">🏠 home</a>
+      <a href="/thunt-data-labs/web/" class="n2-link">🔬 labs</a>
+      <a href="/daily-logs/" class="n2-link">📋 logs</a>
+      <a href="/ai-usage/" class="n2-link active">🤖 usage</a>
+      <a href="/health/" class="n2-link">💚 check</a>
+      <a href="https://github.com/thecuriobot-debug" target="_blank" class="n2-link">⚙️ github</a>
+    </div>
+  </div>
+</nav>
 <nav id="tabs">
 <a href="#overview" data-p="overview"><span class="dot" style="background:var(--amber)"></span> Overview</a>
 <a href="#claude" data-p="claude"><span class="dot" style="background:var(--claude)"></span> Claude</a>
