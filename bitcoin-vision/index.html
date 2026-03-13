@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitcoinVision — Price Chart Visualizations</title>
+<style>
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#e0e0e0;--muted:#666;--accent:#f7931a;--green:#3dd68c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden}
+.bar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:6px 16px;display:flex;align-items:center;gap:12px}
+.bar h1{font-size:1rem;font-weight:800;letter-spacing:.5px}
+.bar h1 span{color:var(--accent)}
+.bar .btns{display:flex;gap:4px;margin-left:auto}
+.bar .btn{padding:3px 10px;border-radius:4px;font-size:.72rem;font-weight:600;cursor:pointer;border:1px solid var(--border);color:var(--muted);background:transparent;transition:.15s;font-family:inherit}
+.bar .btn:hover,.bar .btn.on{border-color:var(--accent);color:var(--accent)}
+.bar .btn.on{background:rgba(247,147,26,.1)}
+.bar a{color:var(--muted);font-size:.72rem;text-decoration:none}.bar a:hover{color:var(--accent)}
+iframe{width:100%;height:calc(100vh - 38px);margin-top:38px;border:none}
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>₿ Bitcoin<span>Vision</span></h1>
+  <div class="btns">
+    <button class="btn" onclick="load('ships')" id="b-ships">⛵ Ships</button>
+    <button class="btn" onclick="load('ships3')" id="b-ships3">🚀 Ships 3</button>
+    <button class="btn" onclick="load('trains')" id="b-trains">🚂 Trains</button>
+    <button class="btn" onclick="loadRandom()" id="b-random">🎲 Random</button>
+  </div>
+  <a href="/">1n2.org</a>
+</div>
+<iframe id="frame" src=""></iframe>
+<script>
+const VIZS = {
+  ships: {src:'bitcoinships/index.html', btn:'b-ships'},
+  ships3: {src:'bitcoinships3/index.html', btn:'b-ships3'},
+  trains: {src:'bitcoin-trains/index.html', btn:'b-trains'}
+};
+const keys = Object.keys(VIZS);
+
+function load(k){
+  document.getElementById('frame').src = VIZS[k].src;
+  document.querySelectorAll('.btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById(VIZS[k].btn).classList.add('on');
+}
+
+function loadRandom(){
+  const k = keys[Math.floor(Math.random()*keys.length)];
+  load(k);
+  document.getElementById('b-random').classList.add('on');
+}
+
+// Load random on start
+loadRandom();
+</script>
+</body>
+</html>
