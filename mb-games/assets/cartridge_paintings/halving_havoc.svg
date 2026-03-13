@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Halving Havoc cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f1834"/>
+      <stop offset="56%" stop-color="#5a272b"/>
+      <stop offset="100%" stop-color="#1b1017"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="360" cy="250" r="140" fill="#ffa24a"/>
+  <circle cx="360" cy="250" r="92" fill="#ffd876"/>
+  <circle cx="360" cy="250" r="42" fill="#fff2b8"/>
+  <rect x="196" y="184" width="46" height="46" rx="8" fill="#ff6d8a"/>
+  <rect x="488" y="196" width="56" height="56" rx="8" fill="#b08fff"/>
+  <rect x="210" y="316" width="48" height="48" rx="8" fill="#bc9dff"/>
+  <rect x="468" y="322" width="48" height="48" rx="8" fill="#ff7394"/>
+  <rect x="336" y="356" width="48" height="64" rx="8" fill="#ffca63"/>
+</svg>

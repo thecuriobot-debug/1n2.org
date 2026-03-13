@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Hunt Films - Ships Only Edits & Movie Remixes</title>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    background: #0a0a0a; 
+    color: #fff; 
+}
+.container { max-width: 1400px; margin: 0 auto; }
+header { 
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+    padding: 60px 40px; 
+    text-align: center; 
+    border-bottom: 3px solid #e94560;
+}
+header h1 { 
+    font-size: 56px; 
+    font-weight: 700; 
+    margin-bottom: 15px; 
+    background: linear-gradient(45deg, #e94560, #0f3460);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+header .tagline { 
+    font-size: 20px; 
+    color: #ccc; 
+    font-weight: 300; 
+}
+nav { 
+    background: #16213e; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center;
+    border-bottom: 1px solid #333;
+}
+nav a { 
+    color: #fff; 
+    padding: 20px 40px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: all 0.3s; 
+    border-right: 1px solid #333;
+}
+nav a:hover { background: #e94560; }
+.hero { 
+    background: url('https://via.placeholder.com/1400x400/1a1a2e/e94560?text=Thomas+Hunt+Films') center/cover; 
+    height: 400px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.hero h2 { 
+    font-size: 48px; 
+    margin-bottom: 20px; 
+}
+.hero p { 
+    font-size: 20px; 
+    max-width: 800px; 
+    margin: 0 auto;
+}
+.content { padding: 60px 40px; }
+.section-title { 
+    font-size: 36px; 
+    margin-bottom: 40px; 
+    color: #e94560; 
+    border-bottom: 3px solid #e94560; 
+    padding-bottom: 15px;
+}
+.video-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 60px;
+}
+.video-card { 
+    background: #1a1a2e; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #16213e;
+}
+.video-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+    border-color: #e94560;
+}
+.video-thumbnail { 
+    width: 100%; 
+    height: 200px; 
+    background: #000; 
+    position: relative; 
+    overflow: hidden;
+}
+.video-thumbnail img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.play-button { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 60px; 
+    height: 60px; 
+    background: rgba(233, 69, 96, 0.9); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 24px;
+}
+.video-info { padding: 20px; }
+.video-title { 
+    font-size: 18px; 
+    font-weight: 600; 
+    margin-bottom: 10px; 
+    color: #fff;
+}
+.video-meta { 
+    font-size: 13px; 
+    color: #888; 
+    margin-bottom: 10px;
+}
+.video-stats { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 12px; 
+    color: #666;
+}
+.press-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 25px; 
+    margin-bottom: 60px;
+}
+.press-card { 
+    background: #1a1a2e; 
+    padding: 25px; 
+    border-radius: 8px; 
+    border-left: 4px solid #e94560;
+    transition: all 0.3s;
+}
+.press-card:hover { 
+    background: #16213e; 
+    border-left-width: 8px;
+}
+.press-article { 
+    background: #1a1a2e; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #16213e;
+}
+.press-article:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+    border-color: #e94560;
+}
+.press-thumbnail { 
+    width: 100%; 
+    height: 220px; 
+    background: #000; 
+    overflow: hidden;
+}
+.press-thumbnail img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.press-content { padding: 25px; }
+.press-date { 
+    color: #888; 
+    font-size: 13px; 
+    margin-bottom: 12px;
+}
+.press-links { 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap;
+}
+.press-link.local {
+    background: #e94560;
+    color: #fff;
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.press-link.local:hover {
+    background: #ff5571;
+}
+.press-link.original {
+    background: #16213e;
+    color: #fff;
+    border: 2px solid #e94560;
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.press-link.original:hover {
+    background: #1a1a2e;
+}
+.press-publication { 
+    color: #e94560; 
+    font-weight: 700; 
+    font-size: 14px; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.press-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 12px;
+}
+.press-excerpt { 
+    color: #aaa; 
+    line-height: 1.6; 
+    margin-bottom: 15px;
+}
+.press-link { 
+    color: #e94560; 
+    text-decoration: none; 
+    font-weight: 600;
+}
+.press-link:hover { text-decoration: underline; }
+.comment-box { 
+    background: #16213e; 
+    padding: 20px; 
+    border-radius: 8px; 
+    margin-bottom: 20px;
+    border-left: 3px solid #e94560;
+}
+.comment-text { 
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 12px;
+}
+.comment-meta { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 13px; 
+    color: #888;
+}
+.comment-author { font-weight: 600; color: #e94560; }
+.comment-likes { color: #666; }
+footer { 
+    background: #0f0f0f; 
+    padding: 40px; 
+    text-align: center; 
+    color: #666; 
+    border-top: 1px solid #333;
+}
+.stats { 
+    display: flex; 
+    justify-content: center; 
+    gap: 60px; 
+    margin: 40px 0;
+    padding: 40px;
+    background: #16213e;
+    border-radius: 12px;
+}
+.stat-box { text-align: center; }
+.stat-number { 
+    font-size: 48px; 
+    font-weight: 700; 
+    color: #e94560; 
+    margin-bottom: 8px;
+}
+.stat-label { 
+    font-size: 14px; 
+    color: #aaa; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.filter-tabs { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin: 40px 0; 
+    flex-wrap: wrap;
+}
+.filter-btn { 
+    background: #16213e; 
+    color: #fff; 
+    border: 2px solid #16213e;
+    padding: 12px 30px; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: 600;
+    transition: all 0.3s;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.filter-btn:hover { 
+    background: #1a1a2e; 
+    border-color: #e94560;
+}
+.filter-btn.active { 
+    background: #e94560; 
+    border-color: #e94560;
+}
+.video-card[data-series] { display: block; }
+.video-card.hidden { display: none; }
+
+.series-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 40px auto 30px;
+    max-width: 1000px;
+    border-bottom: 3px solid #e94560;
+    flex-wrap: wrap;
+}
+.series-tab {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px 20px;
+    background: #16213e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-right: 1px solid #0a0a0a;
+}
+.series-tab:last-child {
+    border-right: none;
+}
+.series-tab:hover {
+    background: #1a1a2e;
+}
+.series-tab.active {
+    background: #e94560;
+    transform: translateY(-3px);
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    background: #1a1a2e;
+    padding: 0;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a, nav button {
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 24px;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-right: 1px solid #0a0a0a;
+}
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+nav a:hover, nav button:hover {
+    background: #16213e;
+}
+nav a.active, nav button.active {
+    background: #e94560;
+    color: #fff;
+}
+.series-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.series-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>THOMAS HUNT FILMS</h1>
+        <div class="tagline">Ships Only Edits • Movie Remixes • Themed Supercuts</div>
+        <div style="margin-top: 15px; font-size: 14px; color: #888;">
+            <span style="color: #e94560; font-weight: 600;">3.9M total views</span> • 
+            42 videos
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#star_trek">⭐ Star Trek</a>
+        <a href="#star_wars">🚀 Star Wars</a>
+        <a href="#john_wick">🥋 John Wick</a>
+        <a href="#movies">🎬 Movies</a>
+        <a href="#batman">🦇 Batman '66</a>
+        <a href="#other">📽️ Other</a>
+        <a href="#ig-88">🤖 IG-88</a>
+        <a href="#press">📰 Press</a>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <div id="star_trek" class="series-content">
+                <h2 class="section-title">⭐ Star Trek Ships Only</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    10 videos • TOS & TNG Films<br>
+                    <span style="color: #e94560; font-weight: 600;">1.6M views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=qHWlccpsYIA" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/qHWlccpsYIA/hqdefault.jpg" alt="Star Trek: The Motion Picture (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek: The Motion Picture (ships only)</div>
+                                <div class="video-stats">158.5K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=3EQ9cFey-3U" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/3EQ9cFey-3U/hqdefault.jpg" alt="Star Trek II: The Wrath of Khan (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek II: The Wrath of Khan (ships only)</div>
+                                <div class="video-stats">57.2K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=iHMXrxXCfWs" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/iHMXrxXCfWs/hqdefault.jpg" alt="Star Trek III: The Search for Spock (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek III: The Search for Spock (ships only)</div>
+                                <div class="video-stats">193.9K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=n0WnsAwsG8s" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/n0WnsAwsG8s/hqdefault.jpg" alt="Star Trek IV: The Voyage Home (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek IV: The Voyage Home (ships only)</div>
+                                <div class="video-stats">68.4K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=6RGTyaJrbj0" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/6RGTyaJrbj0/hqdefault.jpg" alt="Star Trek V: The Final Frontier (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek V: The Final Frontier (ships only)</div>
+                                <div class="video-stats">40.5K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=ILcCcldyB7M" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/ILcCcldyB7M/hqdefault.jpg" alt="Star Trek VI: The Undiscovered Country (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek VI: The Undiscovered Country (ships only)</div>
+                                <div class="video-stats">77.2K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=0gywz1PgM_I" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/0gywz1PgM_I/hqdefault.jpg" alt="Star Trek: Generations (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek: Generations (ships only)</div>
+                                <div class="video-stats">496.4K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=yRhQ1ydXT6c" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/yRhQ1ydXT6c/hqdefault.jpg" alt="Star Trek: First Contact (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek: First Contact (ships only)</div>
+                                <div class="video-stats">80.1K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=5LOtf5Yq39Y" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/5LOtf5Yq39Y/hqdefault.jpg" alt="Star Trek: Insurrection (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek: Insurrection (ships only)</div>
+                                <div class="video-stats">322.1K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=IQ0rpNEupfA" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/IQ0rpNEupfA/hqdefault.jpg" alt="Star Trek: Nemesis (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Trek: Nemesis (ships only)</div>
+                                <div class="video-stats">87.4K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+            <div id="star_wars" class="series-content">
+                <h2 class="section-title">🚀 Star Wars Ships Only</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    3 videos • Original Trilogy<br>
+                    <span style="color: #e94560; font-weight: 600;">2.2M views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=jgGr15RvpiI" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/jgGr15RvpiI/hqdefault.jpg" alt="Star Wars (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Star Wars (ships only)</div>
+                                <div class="video-stats">164.3K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=TYrq1mLsPlo" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/TYrq1mLsPlo/hqdefault.jpg" alt="Empire Strikes Back (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Empire Strikes Back (ships only)</div>
+                                <div class="video-stats">1.7M views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=jTMK8McUdE0" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/jTMK8McUdE0/hqdefault.jpg" alt="Return of the Jedi (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Return of the Jedi (ships only)</div>
+                                <div class="video-stats">346.8K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+            <div id="john_wick" class="series-content">
+                <h2 class="section-title">🥋 John Wick Gun-Fu</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    4 videos • Action Choreography<br>
+                    <span style="color: #e94560; font-weight: 600;">383 views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=7Z9dyeeLKt8" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/7Z9dyeeLKt8/hqdefault.jpg" alt="John Wick (Gun-Fu)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">John Wick (Gun-Fu)</div>
+                                <div class="video-stats">195 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=Je0cLFxdk-Q" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/Je0cLFxdk-Q/hqdefault.jpg" alt="John Wick 2 (Gun-Fu)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">John Wick 2 (Gun-Fu)</div>
+                                <div class="video-stats">48 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=e0n2qfc8FBA" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/e0n2qfc8FBA/hqdefault.jpg" alt="John Wick 2 (thrown out)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">John Wick 2 (thrown out)</div>
+                                <div class="video-stats">23 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=HjqsPt9U6UQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/HjqsPt9U6UQ/hqdefault.jpg" alt="John Wick 3 (Gun-Fu)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">John Wick 3 (Gun-Fu)</div>
+                                <div class="video-stats">117 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+            <div id="batman" class="series-content">
+                <h2 class="section-title">🦇 Batman '66 Remixes</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    6 videos • Camp Classic TV<br>
+                    <span style="color: #e94560; font-weight: 600;">47.4K views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=PPsVE6JERGo" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/PPsVE6JERGo/hqdefault.jpg" alt="Batman and Robin on a Balloon" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Batman and Robin on a Balloon</div>
+                                <div class="video-stats">341 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=c1beuePqCYk" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/c1beuePqCYk/hqdefault.jpg" alt="Will the real Batman please stand up?" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Will the real Batman please stand up?</div>
+                                <div class="video-stats">783 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=VeIOuWlmZrk" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/VeIOuWlmZrk/hqdefault.jpg" alt="Same Bat Time, Same Bat Channel (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Same Bat Time, Same Bat Channel (remix)</div>
+                                <div class="video-stats">44.7K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=b6QeQVKicko" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/b6QeQVKicko/hqdefault.jpg" alt="Another Glorious Morning in Gotham City (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Another Glorious Morning in Gotham City (remix)</div>
+                                <div class="video-stats">564 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=oOv5xh4Mah4" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/oOv5xh4Mah4/hqdefault.jpg" alt="Next Week on Batman! (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Next Week on Batman! (remix)</div>
+                                <div class="video-stats">824 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=2DdamyuIwQg" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/2DdamyuIwQg/hqdefault.jpg" alt="My only problem now is whether to buy amalgamated or consolidated." loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">My only problem now is whether to buy amalgamated or consolidated.</div>
+                                <div class="video-stats">111 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+            <div id="movies" class="series-content">
+                <h2 class="section-title">Movie Edits</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    7 videos • Ships Only, aTomMix, Silent<br>
+                    <span style="color: #e94560; font-weight: 600;">77.9K views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=NixclLOskjc" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/NixclLOskjc/hqdefault.jpg" alt="Spaceballs (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Spaceballs (ships only)</div>
+                                <div class="video-stats">14.2K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=afGFDYy8RNc" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/afGFDYy8RNc/hqdefault.jpg" alt="Hunt for Red October (ships only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Hunt for Red October (ships only)</div>
+                                <div class="video-stats">3.3K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=pYuxe-1IHos" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/pYuxe-1IHos/hqdefault.jpg" alt="Jaws (sharks only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Jaws (sharks only)</div>
+                                <div class="video-stats">193 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=kpp246b2tCY" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/kpp246b2tCY/hqdefault.jpg" alt="Pulp Fiction (Silent Version)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Pulp Fiction (Silent Version)</div>
+                                <div class="video-stats">78 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=XdgKDqBQy00" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/XdgKDqBQy00/hqdefault.jpg" alt="Top Gun (planes only)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Top Gun (planes only)</div>
+                                <div class="video-stats">1.5K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=tCu-fQPUU-4" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/tCu-fQPUU-4/hqdefault.jpg" alt="San Andreas (aTomMix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">San Andreas (aTomMix)</div>
+                                <div class="video-stats">43 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=nhqtz1uixk0" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/nhqtz1uixk0/hqdefault.jpg" alt="The Last Boy Scout (aTomMix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Last Boy Scout (aTomMix)</div>
+                                <div class="video-stats">58.5K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+            <div id="other" class="series-content">
+                <h2 class="section-title">Other Edits</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 30px;">
+                    12 videos • Tributes, Music Remixes & More<br>
+                    <span style="color: #e94560; font-weight: 600;">4.8K views</span>
+                </p>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=R5Gcva1QfsQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/R5Gcva1QfsQ/hqdefault.jpg" alt="David Lynch Tribute at the 2025 Academy Awards (fixed)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">David Lynch Tribute at the 2025 Academy Awards (fixed)</div>
+                                <div class="video-stats">299 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=Wjz4EbyIFiQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/Wjz4EbyIFiQ/hqdefault.jpg" alt="How to Fire a Player" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">How to Fire a Player</div>
+                                <div class="video-stats">22 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=cgnyT_Hx59M" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/cgnyT_Hx59M/hqdefault.jpg" alt="I am at a baseball game (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">I am at a baseball game (remix)</div>
+                                <div class="video-stats">30 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=9LkSG23GsW0" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/9LkSG23GsW0/hqdefault.jpg" alt="Just keep swinging" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Just keep swinging</div>
+                                <div class="video-stats">71 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=abLvddIog0I" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/abLvddIog0I/hqdefault.jpg" alt="Now this is driving" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Now this is driving</div>
+                                <div class="video-stats">110 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=NAemnMNuhcQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/NAemnMNuhcQ/hqdefault.jpg" alt="The Jackrabbit Always Wins (The Hunt Remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">The Jackrabbit Always Wins (The Hunt Remix)</div>
+                                <div class="video-stats">77 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=Wmj_PMt8mto" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/Wmj_PMt8mto/hqdefault.jpg" alt="MIDGET (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">MIDGET (remix)</div>
+                                <div class="video-stats">66 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=0Lcx03bAiOQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/0Lcx03bAiOQ/hqdefault.jpg" alt="California Girls (remix)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">California Girls (remix)</div>
+                                <div class="video-stats">156 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=aozd-EpUAII" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/aozd-EpUAII/hqdefault.jpg" alt="Six Punches of Ali (silent less cuts)" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Six Punches of Ali (silent less cuts)</div>
+                                <div class="video-stats">138 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=HOBOymqo-WY" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/HOBOymqo-WY/hqdefault.jpg" alt="Six Punches of Ali" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Six Punches of Ali</div>
+                                <div class="video-stats">103 views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=s6aHrIyT5n0" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/s6aHrIyT5n0/hqdefault.jpg" alt="Hear this Crowd go Crazy" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Hear this Crowd go Crazy</div>
+                                <div class="video-stats">1.1K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=wvsZ9d-q9FQ" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/wvsZ9d-q9FQ/hqdefault.jpg" alt="Citizen Kane: The Musical" loading="lazy">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="video-title">Citizen Kane: The Musical</div>
+                                <div class="video-stats">2.6K views</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div></div>
+
+        </div>
+    </div>
+
+<!-- IG-88 Section -->
+            <div id="ig-88" class="series-content">
+                <h2 class="section-title">🤖 IG-88 - Stolen Channel Story</h2>
+                
+                <div style="max-width: 1200px; margin: 0 auto;">
+                    <div style="margin-bottom: 20px;">
+                        <span style="background: #e94560; color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase;">
+                            ⚠️ Stolen Channel
+                        </span>
+                    </div>
+                    
+                    <h3 style="color: #e94560; margin-bottom: 30px; font-size: 36px;">
+                        MC Chris - IG-88 (music video)
+                    </h3>
+                    
+                    <div style="max-width: 900px; margin: 0 auto 40px;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 12px; overflow: hidden;">
+                            <iframe 
+                                src="https://www.youtube.com/embed/Ut-KyLQujQA" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                                frameborder="0" 
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                    
+                    <div style="max-width: 900px; margin: 0 auto;">
+                        <div style="background: #1a1a2e; padding: 35px; border-radius: 12px; margin-bottom: 40px; border: 2px solid #16213e;">
+                            <h3 style="color: #e94560; margin-bottom: 20px; font-size: 24px;">About This Video</h3>
+                            <p style="line-height: 1.8; margin-bottom: 20px; font-size: 16px; color: #ccc;">
+                                A Star Wars music video celebrating the legendary bounty hunter droid IG-88, created by MC Chris. 
+                                This video accumulated 893,000 views and built a community of fans over 16 years.
+                            </p>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; margin-top: 25px; padding-top: 25px; border-top: 1px solid #16213e;">
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Year</div>
+                                    <div style="font-size: 18px; font-weight: 600; color: #fff;">2008</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Runtime</div>
+                                    <div style="font-size: 18px; font-weight: 600; color: #fff;">2:42</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Views</div>
+                                    <div style="font-size: 18px; font-weight: 600; color: #fff;">893K</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Comments</div>
+                                    <div style="font-size: 18px; font-weight: 600; color: #fff;">478</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: #16213e; padding: 35px; border-radius: 12px; margin-bottom: 40px; border: 2px solid #e94560;">
+                            <h3 style="color: #e94560; margin-bottom: 25px; font-size: 24px;">⚠️ Stolen Channel Alert</h3>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Original Channel</div>
+                                    <div style="font-size: 24px; font-weight: 700; color: #fff;">MC Fanb0y</div>
+                                    <div style="font-size: 14px; color: #aaa; margin-top: 5px;">Thomas Hunt</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Current (Hacker)</div>
+                                    <div style="font-size: 24px; font-weight: 700; color: #e94560;">Hoàng Quân SC XSMB</div>
+                                    <div style="font-size: 14px; color: #aaa; margin-top: 5px;">Unauthorized Control</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: #1a1a2e; padding: 35px; border-radius: 12px; margin-bottom: 40px; border: 2px solid #16213e;">
+                            <h2 style="color: #e94560; margin-bottom: 25px; font-size: 28px;">The Stolen YouTube Channel</h2>
+                            
+                            <p style="line-height: 1.8; margin-bottom: 20px; font-size: 16px; color: #ccc;">
+                                In the early days of YouTube, Thomas Hunt operated a channel called <strong style="color: #fff;">MC Fanb0y</strong>. 
+                                Among the content was this beloved music video: MC Chris's "IG-88," a Star Wars-themed track celebrating the legendary bounty hunter droid.
+                            </p>
+                            
+                            <p style="line-height: 1.8; margin-bottom: 20px; font-size: 16px; color: #ccc;">
+                                The video found its audience. Over 16 years, it accumulated <strong style="color: #e94560;">893,000 views</strong>, 
+                                <strong style="color: #e94560;">4,900 likes</strong>, and <strong style="color: #e94560;">478 comments</strong> 
+                                from fans who appreciated the niche intersection of hip-hop and Star Wars lore.
+                            </p>
+
+                            <p style="line-height: 1.8; margin-bottom: 20px; font-size: 16px; color: #ccc;">
+                                At some point, a user operating under the name <strong style="color: #e94560;">"Hoàng Quân SC XSMB"</strong> 
+                                gained unauthorized access to the MC Fanb0y channel. The channel name was changed, branding was altered, 
+                                and the original creator was locked out. YouTube, despite being notified, has not returned the channel.
+                            </p>
+                            
+                            <div style="background: rgba(233, 69, 96, 0.1); border-left: 4px solid #e94560; padding: 20px; margin: 30px 0;">
+                                <p style="font-size: 18px; font-weight: 600; color: #e94560; margin: 0;">
+                                    The IG-88 music video should say MC Fanb0y.<br>
+                                    Instead, it says Hoàng.<br>
+                                    YouTube won't give it back.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Press Section -->
+            <div id="press" class="series-content">
+                <h2 class="section-title">📰 Press Coverage</h2>
+                <p style="text-align: center; color: #888; margin-bottom: 50px; font-size: 18px;">
+                    Featured across major tech and culture sites • March 2015
+                </p>
+                
+                <div class="press-grid">
+                    <div class="press-article">
+                        <div class="press-thumbnail">
+                            <img src="press/avclub_thumb.png" alt="All the Star Trek movies cut down to just spaceships" loading="lazy">
+                        </div>
+                        <div class="press-content">
+                            <div class="press-publication">The A.V. Club</div>
+                            <h2 class="press-title">All the Star Trek movies cut down to just spaceships</h2>
+                            <div class="press-date">March 2015</div>
+                            <p class="press-excerpt">Great Job, Internet! Someone edited all the Star Trek movies to show only the spaceships.</p>
+                            <div class="press-links">
+                                <a href="press/avclub.html" class="press-link local">📄 Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="press-article">
+                        <div class="press-thumbnail">
+                            <img src="press/boingboing_thumb.png" alt="Star Trek movie supercuts: just the spaceships" loading="lazy">
+                        </div>
+                        <div class="press-content">
+                            <div class="press-publication">Boing Boing</div>
+                            <h2 class="press-title">Star Trek movie supercuts: just the spaceships</h2>
+                            <div class="press-date">March 2015</div>
+                            <p class="press-excerpt">Thomas Hunt edited the Star Trek films to show nothing but spaceships.</p>
+                            <div class="press-links">
+                                <a href="press/boingboing.html" class="press-link local">📄 Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="press-article">
+                        <div class="press-thumbnail">
+                            <img src="press/popularmechanics_thumb.png" alt="This Genius Slices 'Star Trek' Movies Down to Just the Ships" loading="lazy">
+                        </div>
+                        <div class="press-content">
+                            <div class="press-publication">Popular Mechanics</div>
+                            <h2 class="press-title">This Genius Slices 'Star Trek' Movies Down to Just the Ships</h2>
+                            <div class="press-date">March 2015</div>
+                            <p class="press-excerpt">A YouTuber has edited all ten Star Trek films to feature only the spaceship sequences.</p>
+                            <div class="press-links">
+                                <a href="press/popularmechanics.html" class="press-link local">📄 Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="press-article">
+                        <div class="press-thumbnail">
+                            <img src="press/jwz_thumb.png" alt="All ten Star Trek movies, condensed down to just the spaceship scenes" loading="lazy">
+                        </div>
+                        <div class="press-content">
+                            <div class="press-publication">jwz: Jamie Zawinski's Blog</div>
+                            <h2 class="press-title">All ten Star Trek movies, condensed down to just the spaceship scenes</h2>
+                            <div class="press-date">March 2015</div>
+                            <p class="press-excerpt">Thomas Hunt has edited all ten Star Trek movies to show only the spaceships.</p>
+                            <div class="press-links">
+                                <a href="press/jwz.html" class="press-link local">📄 Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="press-article">
+                        <div class="press-thumbnail">
+                            <img src="press/metafilter_thumb.png" alt="All the Star Trek movies but only the spaceships" loading="lazy">
+                        </div>
+                        <div class="press-content">
+                            <div class="press-publication">MetaFilter</div>
+                            <h2 class="press-title">All the Star Trek movies but only the spaceships</h2>
+                            <div class="press-date">March 2015</div>
+                            <p class="press-excerpt">An editor has created supercuts of all Star Trek films showing only spaceship footage.</p>
+                            <div class="press-links">
+                                <a href="press/metafilter.html" class="press-link local">📄 Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Thomas Hunt Films © 2015-2026</p>
+        <p style="margin-top: 10px;">
+            <a href="https://www.youtube.com/@ThomasHuntFilms" target="_blank" style="color: #e94560;">YouTube Channel</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Prevent auto-scroll on page load
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        
+        // Handle hash navigation
+        function showSection(e) {
+            // Prevent default anchor scroll
+            if (e) {
+                e.preventDefault();
+            }
+            
+            let hash = window.location.hash;
+            
+            // If no hash, randomly select a section
+            if (!hash) {
+                const sections = ['star-trek', 'star-wars', 'john-wick', 'movies', 'batman', 'other', 'ig-88', 'press'];
+                const randomSection = sections[Math.floor(Math.random() * sections.length)];
+                hash = '#' + randomSection;
+                // Set the hash without triggering hashchange event
+                history.replaceState(null, null, hash);
+            }
+            
+            const sectionId = hash.substring(1);
+            
+            // Scroll to top FIRST
+            window.scrollTo(0, 0);
+            
+            // Hide all sections
+            document.querySelectorAll('.series-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active');
+            }
+            
+            // Update nav active state
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Force scroll to top again after render
+            setTimeout(() => window.scrollTo(0, 0), 0);
+        }
+        
+        // Prevent default hash navigation
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                window.location.hash = e.target.getAttribute('href');
+            }
+        });
+        
+        // Show correct section on hash change
+        window.addEventListener('hashchange', showSection);
+        
+        // Show correct section on load
+        window.addEventListener('load', function() {
+            showSection();
+            window.scrollTo(0, 0);
+        });
+        
+        // Emergency scroll to top
+        setTimeout(() => window.scrollTo(0, 0), 100);
+    </script>
+</body>
+</html>

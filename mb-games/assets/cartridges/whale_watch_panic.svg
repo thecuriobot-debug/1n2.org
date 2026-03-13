@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="980" viewBox="0 0 600 980" role="img" aria-label="WHALE WATCH PANIC MB GAMES classic cartridge">
+  <defs>
+    <linearGradient id="shellGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d2d2d"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <pattern id="paper" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.9" fill="rgba(0,0,0,0.055)"/>
+      <circle cx="8" cy="6" r="0.8" fill="rgba(255,255,255,0.08)"/>
+      <circle cx="5" cy="10" r="0.7" fill="rgba(0,0,0,0.05)"/>
+    </pattern>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d52b2f"/>
+      <stop offset="100%" stop-color="#f34863"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="66" y="38" width="468" height="914" rx="26" fill="url(#shellGrad)"/>
+  <rect x="66" y="38" width="468" height="914" rx="26" fill="none" stroke="#3e3e3e" stroke-width="4"/>
+
+  <path d="M172 38H428V88C428 102 416 114 402 114H198C184 114 172 102 172 88Z" fill="#0a0a0a"/>
+
+  <g opacity="0.42">
+    <rect x="96" y="140" width="408" height="14" rx="7" fill="#0a0a0a"/>
+    <rect x="104" y="170" width="392" height="8" fill="#333"/>
+    <rect x="104" y="188" width="392" height="8" fill="#2a2a2a"/>
+    <rect x="104" y="206" width="392" height="8" fill="#333"/>
+    <rect x="104" y="224" width="392" height="8" fill="#2a2a2a"/>
+  </g>
+
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="#d6d6d3"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="#f3f3f2"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="url(#paper)"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="none" stroke="#b7b7b2" stroke-width="2"/>
+
+  <rect x="189" y="292" width="54" height="20" rx="4" fill="#d2232a"/>
+  <rect x="245" y="292" width="54" height="20" rx="4" fill="#f3c218"/>
+  <rect x="301" y="292" width="54" height="20" rx="4" fill="#0b5ea8"/>
+  <rect x="357" y="292" width="54" height="20" rx="4" fill="#2f9c48"/>
+
+  <text x="300" y="366" text-anchor="middle" fill="#d2232a" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="0.7">MB GAMES</text>
+
+  <rect x="132" y="666" width="336" height="44" fill="url(#stripe)"/>
+  <text x="300" y="694" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900" letter-spacing="0.8">WHALE WATCH PANIC</text>
+
+  <rect x="136" y="388" width="328" height="270" fill="#f5f5f5"/>
+  <rect x="140" y="392" width="320" height="262" fill="#0d0d0d"/>
+  <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjAiIGhlaWdodD0iNDgwIiB2aWV3Qm94PSIwIDAgNzIwIDQ4MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJXaGFsZSBXYXRjaCBQYW5pYyBjYXJ0b29uLXJlYWwgcGFpbnRpbmciPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTQzODVmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTIlIiBzdG9wLWNvbG9yPSIjMWY2ZmEyIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBkMjg0MiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSI0ODAiIGZpbGw9InVybCgjYmcpIi8+CiAgPHBhdGggZD0iTTAgMzE0UTg4IDI3NCAxODAgMzEyVDM2MiAzMDRUNTQ4IDMxOFQ3MjAgMjkyVjQ4MEgwWiIgZmlsbD0iIzMxOTBjMiIvPgogIDxwYXRoIGQ9Ik0wIDM2NlE5NiAzMzYgMjAwIDM3NFQzOTIgMzYyVDU3NiAzODBUNzIwIDM1MFY0ODBIMFoiIGZpbGw9IiMxZDZmOWQiLz4KICA8cGF0aCBkPSJNMTk2IDI0OFEyOTIgMTcyIDM5MiAyMTJUNTQ4IDIyNFE1MzAgMjU4IDQ2OCAyNzZRNDEwIDI5MiAzMzQgMjkyUTI1OCAyOTIgMjA4IDI2NFoiIGZpbGw9IiM5MmI0ZmYiLz4KICA8Y2lyY2xlIGN4PSI0MzAiIGN5PSIyMzYiIHI9IjYiIGZpbGw9IiMxMDE5MzYiLz4KICA8cGF0aCBkPSJNNTQ4IDIyMkw2MDIgMTk2TDU4NCAyNDhaIiBmaWxsPSIjNmY4ZGUwIi8+CiAgPHBhdGggZD0iTTEyMiAzMThMMTY4IDI5NEwxOTAgMzI4TDE1MCAzNTJaIiBmaWxsPSIjZmZkNDczIi8+CiAgPGNpcmNsZSBjeD0iMTk4IiBjeT0iMjg4IiByPSIxMSIgZmlsbD0iI2ZmZDg2NyIvPgogIDxjaXJjbGUgY3g9IjIzOCIgY3k9IjI3MCIgcj0iMTEiIGZpbGw9IiNmZmQ4NjciLz4KPC9zdmc+Cg==" x="140" y="392" width="320" height="262" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="140" y="392" width="320" height="262" fill="none" stroke="#ededed" stroke-width="2"/>
+
+
+  <g opacity="0.28">
+    <rect x="126" y="776" width="348" height="10" rx="3" fill="#6c6c6c"/>
+    <rect x="126" y="792" width="348" height="10" rx="3" fill="#5c5c5c"/>
+    <rect x="126" y="808" width="348" height="10" rx="3" fill="#6c6c6c"/>
+    <rect x="126" y="824" width="348" height="10" rx="3" fill="#5c5c5c"/>
+    <rect x="126" y="840" width="348" height="10" rx="3" fill="#6c6c6c"/>
+  </g>
+</svg>

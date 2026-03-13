@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Claude Usage — Token Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#c084fc;--green:#34d399;--amber:#fbbf24;--red:#f87171;--cyan:#22d3ee}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding:20px;max-width:1200px;margin:0 auto}
+a{color:var(--cyan);text-decoration:none}a:hover{color:#fff}
+h1{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:1.6rem;margin-bottom:8px}
+h2{color:var(--cyan);font-size:1rem;margin:24px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.sub{color:var(--muted);font-size:.75rem;margin-bottom:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.7rem;font-weight:700;color:var(--accent)}
+.stat .l{font-size:.68rem;color:var(--muted);margin-top:2px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.cols{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8rem}
+th{background:var(--card);color:var(--cyan);font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;padding:7px 8px;text-align:left;border-bottom:2px solid var(--border);position:sticky;top:0}
+td{padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.3)}
+tr:hover{background:rgba(192,132,252,.03)}
+.tag{font-size:.6rem;padding:2px 5px;border-radius:3px;font-weight:600;white-space:nowrap}
+.tag-xl{background:rgba(192,132,252,.2);color:var(--accent)}.tag-l{background:rgba(34,211,238,.15);color:var(--cyan)}
+.tag-m{background:rgba(251,191,36,.12);color:var(--amber)}.tag-s{background:rgba(100,116,139,.15);color:var(--muted)}
+.bar{height:10px;border-radius:4px;display:inline-block;vertical-align:middle;min-width:2px}
+.cat{font-size:.6rem;padding:1px 5px;border-radius:2px;font-weight:600}
+.cat-app{background:rgba(34,211,238,.1);color:var(--cyan)}.cat-inf{background:rgba(251,191,36,.1);color:var(--amber)}
+.cat-nft{background:rgba(192,132,252,.1);color:var(--accent)}.cat-game{background:rgba(52,211,153,.1);color:var(--green)}
+.cat-data{background:rgba(248,113,113,.1);color:var(--red)}.cat-ai{background:rgba(192,132,252,.15);color:#d8b4fe}
+.phase{font-size:.7rem;font-weight:700;color:var(--accent);padding:10px 0 4px;border-top:1px solid var(--border);margin-top:4px}
+.ft{text-align:center;color:var(--muted);font-size:.65rem;padding:20px 0;border-top:1px solid var(--border);margin-top:20px}
+.ft a{color:var(--cyan)}
+.insight{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin:8px 0;font-size:.82rem;line-height:1.5}
+.insight b{color:var(--accent)}
+</style>
+</head>
+<body>
+<h1>Claude Usage — Token Analytics</h1>
+<p style="color:var(--muted);font-size:.85rem;margin-bottom:16px">1n2.org × Claude · Feb 7 – Mar 8, 2026 · 30 days of collaboration</p>
+
+<div style="background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(124,58,237,.15));border:1px solid rgba(124,58,237,.3);border-radius:10px;padding:16px 20px;margin-bottom:20px">
+<h2 style="border:none;margin:0 0 6px;padding:0;color:#a78bfa;font-size:1rem">💬 Watch Our Conversation</h2>
+<p style="font-size:.85rem;color:var(--text);margin-bottom:10px">An iMessage-style animated replay of every prompt and response from our 28-day collaboration — from setting up a Mac Mini to building 40 projects, a data warehouse, an animated Bitcoin train with Mad Bitcoins conductor, and this very page. Messages appear with typing indicators and result cards showing what we built together.</p>
+<a href="conversation.html" style="display:inline-block;background:#c084fc;color:#000;padding:8px 18px;border-radius:6px;font-weight:700;font-size:.85rem;text-decoration:none">▶ Play Conversation Animation</a>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="n">36</div><div class="l">Chat Sessions</div></div>
+<div class="stat"><div class="n">~8.5M</div><div class="l">Est. Tokens</div></div>
+<div class="stat"><div class="n">40</div><div class="l">Projects Built</div></div>
+<div class="stat"><div class="n">105K</div><div class="l">Lines of Code</div></div>
+<div class="stat"><div class="n">8,475</div><div class="l">Files Created</div></div>
+<div class="stat"><div class="n">30</div><div class="l">Days Active</div></div>
+<div class="stat"><div class="n">75.6K</div><div class="l">Transcript Lines</div></div>
+<div class="stat"><div class="n">176K</div><div class="l">DB Records</div></div>
+</div>
+
+<h2>Analysis & Insights</h2>
+<div class="cols">
+<div class="insight"><b>Productivity Pattern:</b> Work occurred in two main phases — a Feb 7–19 burst building the core Curio Cards ecosystem and 1n2.org infrastructure, then a gap, followed by an intense Mar 5–8 sprint building the daily pipeline, data warehouse, and creative projects like Bitcoin Trains.</div>
+<div class="insight"><b>Token Distribution:</b> Top 4 sessions consumed ~4.2M tokens (~49% of total). The long tail of 20+ smaller sessions accounts for ~1.5M. Building new full-stack apps uses 3–10x more tokens than configuration or debugging.</div>
+<div class="insight"><b>Project Categories:</b> 12 Curio Cards / NFT tools, 7 content aggregators, 5 dashboards, 4 games, 4 AI/automation tools, 3 creative projects, 5 infrastructure/config sessions.</div>
+<div class="insight"><b>Stack Evolution:</b> Started with PHP/MySQL (MediaLog), shifted to Python + SQLite (Data Labs), then HTML/JS canvas (Bitcoin Trains). The collaboration evolved from "build me an app" to "build me an ecosystem with automated daily pipelines."</div>
+</div>
+
+<h2>Complete Chronological Timeline</h2>
+<p class="sub">Every chat session and project in order — sessions sorted by date, projects grouped with their session</p>
+<table>
+<tr><th>Date</th><th>Session / Project</th><th>Category</th><th>Est. Tokens</th><th>What Was Built</th></tr>
+<tr><td colspan="5" class="phase">📅 PHASE 1 — Foundation (Feb 7–11)</td></tr>
+<tr><td>Feb 7</td><td>GLM-4.flash model loading error in LMStudio</td><td><span class="cat cat-ai">AI</span></td><td>~50K</td><td>Debugging local AI model loading on Mac Mini M4</td></tr>
+<tr><td>Feb 7</td><td>Mac mini M4 GPU compatibility with LMStudio</td><td><span class="cat cat-ai">AI</span></td><td>~50K</td><td>GPU setup for local inference, model selection</td></tr>
+<tr><td>Feb 9</td><td>MediaLog project ⭐</td><td><span class="cat cat-app">App</span></td><td>~500K</td><td>Full PHP/MySQL app: 10 pages, visualizations, lists, export, 782 books tracked</td></tr>
+<tr><td>Feb 9</td><td>→ Case Studies</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Portfolio case studies site documenting MediaLog build</td></tr>
+<tr><td>Feb 10</td><td>Building a topic-based Twitter reader</td><td><span class="cat cat-app">App</span></td><td>~300K</td><td>Tweetster: Nitter backend, topic tracking, harvest system</td></tr>
+<tr><td>Feb 10</td><td>Creating a new tweetster project directory</td><td><span class="cat cat-inf">Infra</span></td><td>~200K</td><td>Tweetster dark mode, read tracking, fetch button patches</td></tr>
+<tr><td>Feb 10</td><td>→ MadPatrol</td><td><span class="cat cat-game">Game</span></td><td>—</td><td>Moon Patrol: Bitcoin Battle retro game</td></tr>
+<tr><td>Feb 10</td><td>Configuring OpenClaw with Sonnet</td><td><span class="cat cat-ai">AI</span></td><td>~50K</td><td>OpenClaw gateway config, model switching</td></tr>
+<tr><td>Feb 10</td><td>Openclaw command for logs and updates</td><td><span class="cat cat-ai">AI</span></td><td>~50K</td><td>Log viewing, update commands</td></tr>
+<tr><td>Feb 11</td><td>Deploying local site to droplet</td><td><span class="cat cat-inf">Infra</span></td><td>~200K</td><td>DigitalOcean droplet, Nginx, SSL, SSH deployment</td></tr>
+<tr><td>Feb 11</td><td>Finding short domain names</td><td><span class="cat cat-inf">Infra</span></td><td>~50K</td><td>Domain research → chose 1n2.org</td></tr>
+<tr><td>Feb 11</td><td>Local app access and file editing</td><td><span class="cat cat-inf">Infra</span></td><td>~50K</td><td>Local dev environment, PHP server, file access</td></tr>
+<tr><td>Feb 11</td><td>→ Checklister</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Task management app</td></tr>
+<tr><td>Feb 11</td><td>→ AI Workflows</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Workflow documentation site</td></tr>
+
+<tr><td colspan="5" class="phase">🃏 PHASE 2 — Curio Cards Ecosystem (Feb 13–19)</td></tr>
+<tr><td>Feb 13</td><td>Curio Cards NFT tracking and charting website</td><td><span class="cat cat-nft">NFT</span></td><td>~400K</td><td>CurioCharts: React dashboard, OpenSea data, 31 cards tracked</td></tr>
+<tr><td>Feb 14</td><td>CurioCharts program status check</td><td><span class="cat cat-nft">NFT</span></td><td>~150K</td><td>Debugging and completing CurioCharts features</td></tr>
+<tr><td>Feb 14</td><td>Building Curio Archive site ⭐</td><td><span class="cat cat-nft">NFT</span></td><td>~400K</td><td>Encyclopedic history of Curio Cards with full card database</td></tr>
+<tr><td>Feb 15</td><td>Connecting a droplet to a domain name</td><td><span class="cat cat-inf">Infra</span></td><td>~200K</td><td>DNS config, Nginx vhosts, SSL certs for 1n2.org</td></tr>
+<tr><td>Feb 15</td><td>→ Homepage v2</td><td><span class="cat cat-app">App</span></td><td>—</td><td>1n2.org redesign: product showcase, dev timeline, icons</td></tr>
+<tr><td>Feb 17</td><td>→ Thomas Hunt Films</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Film portfolio: 38 videos, 5.5M views, 7 categories</td></tr>
+<tr><td>Feb 17</td><td>Bulk follow accounts on X</td><td><span class="cat cat-inf">Infra</span></td><td>~80K</td><td>Twitter automation for following crypto accounts</td></tr>
+<tr><td>Feb 18</td><td>Finishing CurioCharts project</td><td><span class="cat cat-nft">NFT</span></td><td>~300K</td><td>Polish, deploy, final features for CurioCharts</td></tr>
+<tr><td>Feb 18</td><td>Update 1n2.org droplet and mirror host files</td><td><span class="cat cat-inf">Infra</span></td><td>~200K</td><td>Server mirroring, file sync, deployment scripts</td></tr>
+<tr><td>Feb 18</td><td>→ Curio Terminal</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Professional analytics dashboard for Curio Cards</td></tr>
+<tr><td>Feb 18</td><td>→ Curio Atlas</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Network & ecosystem mapping tool</td></tr>
+<tr><td>Feb 18</td><td>→ Curio Data API</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Live market data service</td></tr>
+<tr><td>Feb 18</td><td>→ Curio Review</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Weekly AI-generated review essays</td></tr>
+<tr><td>Feb 19</td><td>→ CurioQuant</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>AI trading signals platform</td></tr>
+<tr><td>Feb 19</td><td>→ CurioHub</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Central Curio Cards ecosystem hub</td></tr>
+<tr><td>Feb 19</td><td>→ Daily Logs</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>AI + Human collaboration journal</td></tr>
+
+<tr><td colspan="5" class="phase">⚙️ PHASE 3 — AI Pipeline & Config (Mar 4–5)</td></tr>
+<tr><td>Mar 4</td><td>Switching AI models with limited credits</td><td><span class="cat cat-ai">AI</span></td><td>~80K</td><td>Model fallback chains, cost optimization</td></tr>
+<tr><td>Mar 4</td><td>PHP server startup configuration</td><td><span class="cat cat-inf">Infra</span></td><td>~80K</td><td>@reboot cron, localhost:8000 PHP server</td></tr>
+<tr><td>Mar 4</td><td>Switching Openclaw to Kimi 2.5</td><td><span class="cat cat-ai">AI</span></td><td>~80K</td><td>Testing Kimi 2.5 as alternative to Claude</td></tr>
+<tr><td>Mar 5</td><td>Configuring OPENCLAW after returning home</td><td><span class="cat cat-ai">AI</span></td><td>~150K</td><td>Full OpenClaw reconfiguration: Ollama, Telegram, models</td></tr>
+<tr><td>Mar 5</td><td>Local PHP server startup configuration</td><td><span class="cat cat-inf">Infra</span></td><td>~100K</td><td>Persistent PHP server via LaunchAgent</td></tr>
+<tr><td>Mar 5</td><td>Openclaw command for live log viewing</td><td><span class="cat cat-ai">AI</span></td><td>~100K</td><td>Real-time log tailing, debugging tools</td></tr>
+<tr><td>Mar 5</td><td>Telegram connectivity</td><td><span class="cat cat-inf">Infra</span></td><td>~100K</td><td>Telegram bot integration with OpenClaw</td></tr>
+
+<tr><td colspan="5" class="phase">🚀 PHASE 4 — Full-Stack Sprint (Mar 5–8)</td></tr>
+<tr><td>Mar 5</td><td>→ MB Games</td><td><span class="cat cat-game">Game</span></td><td>—</td><td>Mad Bitcoins Retro Game Lab (collection of games)</td></tr>
+<tr><td>Mar 5</td><td>→ Newszor</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>Google News aggregator, 32 articles/day, topic scraping</td></tr>
+<tr><td>Mar 5</td><td>→ MadWikipedia</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Encyclopedia of Mad Bitcoins / WCN / Curio Cards</td></tr>
+<tr><td>Mar 5</td><td>→ Curio-DID</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>Causal analysis tool with academic research paper</td></tr>
+<tr><td>Mar 6</td><td>Daily THunt video pipeline automation ⭐</td><td><span class="cat cat-ai">AI</span></td><td>~800K</td><td>Text extraction → TTS (Voicebox) → Hedra video → Telegram publish</td></tr>
+<tr><td>Mar 6</td><td>Building Curio Terminal backend ⭐</td><td><span class="cat cat-nft">NFT</span></td><td>~1.5M</td><td>Full backend scripts, MVP frontend, analytics dashboard</td></tr>
+<tr><td>Mar 6</td><td>→ Data Labs</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>Central SQLite warehouse: 16 tables, 176K records, 33MB</td></tr>
+<tr><td>Mar 6</td><td>→ Commentzor</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>YouTube comments aggregator (38K+ comments)</td></tr>
+<tr><td>Mar 6</td><td>→ Bitcoin Trains</td><td><span class="cat cat-game">Game</span></td><td>—</td><td>Full BTC history replay: animated train, Mad Bitcoins conductor</td></tr>
+<tr><td>Mar 6</td><td>→ Facebooker</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>Facebook page digest tool</td></tr>
+<tr><td>Mar 6</td><td>→ Health Check</td><td><span class="cat cat-inf">Infra</span></td><td>—</td><td>System health monitoring: DB tables, site checks, cron status</td></tr>
+<tr><td>Mar 6</td><td>→ Mad Ninja</td><td><span class="cat cat-game">Game</span></td><td>—</td><td>Shadow of the Blockchain (ninja platformer game)</td></tr>
+<tr><td>Mar 7</td><td>YouTube comment database aggregator ⭐</td><td><span class="cat cat-data">Data</span></td><td>~1.2M</td><td>YouTube API: 4 channels, 5,439 videos, 38,597 comments, Alchemy NFT data</td></tr>
+<tr><td>Mar 7</td><td>Setting up cron jobs ⭐</td><td><span class="cat cat-inf">Infra</span></td><td>~700K</td><td>14-job cron pipeline (master-run.sh), Letterboxd/Goodreads import</td></tr>
+<tr><td>Mar 7</td><td>→ Dashboarder</td><td><span class="cat cat-app">App</span></td><td>—</td><td>6-tab dark dashboard: Briefing, Personal, Media, Comments, Theater, Museums</td></tr>
+<tr><td>Mar 7</td><td>→ Signal Studio</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>Curio trading signal generator</td></tr>
+<tr><td>Mar 7</td><td>→ Curio Oracle</td><td><span class="cat cat-nft">NFT</span></td><td>—</td><td>AI-powered Curio Cards price oracle</td></tr>
+<tr><td>Mar 8</td><td>→ Agent Hangar</td><td><span class="cat cat-ai">AI</span></td><td>—</td><td>AI agent management hub</td></tr>
+<tr><td>Mar 8</td><td>→ Briefsmith</td><td><span class="cat cat-app">App</span></td><td>—</td><td>Content briefing tool</td></tr>
+<tr><td>Mar 8</td><td>→ Claude Usage</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>This page — token analytics & collaboration history</td></tr>
+<tr><td>Mar 8</td><td>→ Clip Arcade</td><td><span class="cat cat-game">Game</span></td><td>—</td><td>Video clip collection</td></tr>
+<tr><td>Mar 8</td><td>→ Codex Night Shift</td><td><span class="cat cat-ai">AI</span></td><td>—</td><td>Overnight automation hub</td></tr>
+<tr><td>Mar 8</td><td>→ Trend Weaver</td><td><span class="cat cat-data">Data</span></td><td>—</td><td>Trend analysis tool</td></tr>
+</table>
+
+<h2>Token Usage by Category</h2>
+<div class="cols">
+<div>
+<table>
+<tr><th>Category</th><th>Sessions</th><th>Est. Tokens</th><th>Visual</th></tr>
+<tr><td><span class="cat cat-nft">NFT / Curio</span></td><td>12 projects</td><td>~2.8M</td><td><div class="bar" style="width:200px;background:var(--accent)"></div></td></tr>
+<tr><td><span class="cat cat-data">Data / Pipeline</span></td><td>8 projects</td><td>~2.2M</td><td><div class="bar" style="width:157px;background:var(--red)"></div></td></tr>
+<tr><td><span class="cat cat-app">Apps</span></td><td>9 projects</td><td>~1.5M</td><td><div class="bar" style="width:107px;background:var(--cyan)"></div></td></tr>
+<tr><td><span class="cat cat-inf">Infrastructure</span></td><td>10 sessions</td><td>~1.2M</td><td><div class="bar" style="width:86px;background:var(--amber)"></div></td></tr>
+<tr><td><span class="cat cat-ai">AI / Config</span></td><td>8 sessions</td><td>~0.6M</td><td><div class="bar" style="width:43px;background:#d8b4fe"></div></td></tr>
+<tr><td><span class="cat cat-game">Games</span></td><td>4 projects</td><td>~0.2M</td><td><div class="bar" style="width:14px;background:var(--green)"></div></td></tr>
+</table>
+</div>
+<div>
+<table>
+<tr><th>Phase</th><th>Duration</th><th>Projects</th><th>Tokens</th></tr>
+<tr><td>Phase 1 — Foundation</td><td>Feb 7–11 (5 days)</td><td>8</td><td>~1.5M</td></tr>
+<tr><td>Phase 2 — Curio Ecosystem</td><td>Feb 13–19 (7 days)</td><td>12</td><td>~1.7M</td></tr>
+<tr><td style="color:var(--muted)"><em>Gap — Feb 20–Mar 3</em></td><td><em>12 days</em></td><td>—</td><td>—</td></tr>
+<tr><td>Phase 3 — AI Pipeline</td><td>Mar 4–5 (2 days)</td><td>7</td><td>~0.7M</td></tr>
+<tr><td>Phase 4 — Full Sprint</td><td>Mar 5–8 (4 days)</td><td>20</td><td>~4.6M</td></tr>
+</table>
+</div>
+</div>
+
+<h2>Infrastructure Stack</h2>
+<table>
+<tr><th>Component</th><th>Details</th></tr>
+<tr><td>Server</td><td>DigitalOcean Droplet · 157.245.186.58 · Ubuntu · Nginx + SSL</td></tr>
+<tr><td>Domain</td><td>1n2.org — 40 subdirectory projects</td></tr>
+<tr><td>Databases</td><td>SQLite (Data Labs: 16 tables, 176K records, 33MB) + MySQL (MediaLog: 782 books, 1,568 movies)</td></tr>
+<tr><td>Cron Pipeline</td><td>14 daily jobs via master-run.sh at 1:00 AM — news, tweets, YouTube, charts, deploy</td></tr>
+<tr><td>APIs</td><td>YouTube Data v3, Alchemy (Ethereum NFT data), CoinGecko (BTC prices), Google News RSS, Nitter</td></tr>
+<tr><td>AI Stack</td><td>Claude Opus 4.6 (primary), Ollama gpt-oss:20b (local fallback), OpenClaw gateway, Telegram bot</td></tr>
+<tr><td>Local Dev</td><td>Mac Mini M4 · PHP 8.3 · Python 3.12 · Node.js · localhost:8000</td></tr>
+<tr><td>Deployment</td><td>SCP to droplet via SSH (ed25519 key, no password) — automated in cron</td></tr>
+</table>
+
+<h2>Key Metrics</h2>
+<div class="cols">
+<div class="insight"><b>Most productive day:</b> Mar 6 — 8 new projects, ~2.3M estimated tokens, YouTube API integration, Curio Terminal, Bitcoin Trains, and the full daily pipeline.</div>
+<div class="insight"><b>Largest single session:</b> "Building Curio Terminal" at ~1.5M tokens — full backend scripts, data fetching, MVP frontend with charts. Close second: "YouTube comment database aggregator" at ~1.2M tokens.</div>
+<div class="insight"><b>Data collected:</b> 5,439 YouTube videos, 38,597 comments, 1,568 movies, 779 books, 263 tweets, 435 news articles, 103K Curio Card owners, 75 NFT sales.</div>
+<div class="insight"><b>Avg tokens per active day:</b> ~470K. Phase 4 averaged ~1.15M/day — 2.4x the overall average. The collaboration intensified dramatically in the final sprint.</div>
+</div>
+
+<div class="ft"><a href="/">1n2.org</a> · <a href="/dashboarder/">Dashboarder</a> · <a href="/bitcoin-trains/">Bitcoin Trains</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/health/">Health</a> · Built with Claude · March 2026</div>
+</body></html>

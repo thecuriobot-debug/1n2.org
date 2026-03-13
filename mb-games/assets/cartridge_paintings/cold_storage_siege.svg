@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Cold Storage Siege cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12253c"/>
+      <stop offset="56%" stop-color="#29597e"/>
+      <stop offset="100%" stop-color="#101522"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <rect x="224" y="158" width="272" height="224" rx="20" fill="#7eb7ef"/>
+  <rect x="256" y="194" width="208" height="152" rx="14" fill="#21486b"/>
+  <circle cx="360" cy="270" r="56" fill="#ffd56d"/>
+  <rect x="346" y="232" width="28" height="78" fill="#875d1b"/>
+  <rect x="322" y="258" width="76" height="28" fill="#875d1b"/>
+  <path d="M150 222L196 202L210 242L172 260Z" fill="#ff6f7f"/>
+  <path d="M544 236L596 212L610 254L566 272Z" fill="#ff6f7f"/>
+  <path d="M156 312L198 294L212 330L176 346Z" fill="#ff6f7f"/>
+  <path d="M534 314L580 296L594 332L556 348Z" fill="#ff6f7f"/>
+</svg>

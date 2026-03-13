@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Arcade | MAD BITCOINS RETRO GAME LAB</title>
+  <meta name="description" content="Play browser demos from MAD BITCOINS RETRO GAME LAB including Halving Havoc, Citadel Climb, Node Hopper Drift, and more crypto-meme arcade games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>MAD BITCOINS RETRO GAME LAB</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html">Main Site</a>
+        <a href="cartridge-select.html">Cartridge Select</a>
+        <a href="challenge-ladder.html">Challenge Ladder</a>
+        <a href="../marketing-package.html">Marketing Package</a>
+        <a href="../studio-design-meeting.html">Studio Meeting</a>
+        <a href="../package/mad-bitcoins-full-marketing-package.zip" class="btn">Download ZIP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="status-pill">LIVE ARCADE HUB</span>
+        <h2>Play The Games In Browser</h2>
+        <p>
+          Instant keyboard-play demos inspired by Atari, NES, and Genesis pacing.
+          Each game tracks local performance, supports pause with <strong>P</strong>, and includes touch controls.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>Arcade Snapshot</h3>
+        <div id="hub-stats" class="hub-stats"></div>
+        <div class="hub-controls">
+          <label for="game-search">Search</label>
+          <input id="game-search" type="search" placeholder="Find a game (moon, WCN, meme...)">
+          <label for="game-sort">Sort</label>
+          <select id="game-sort">
+            <option value="featured">Featured</option>
+            <option value="best">Best Score</option>
+            <option value="plays">Most Played</option>
+            <option value="title">Title (A-Z)</option>
+          </select>
+        </div>
+        <div class="actions-row">
+          <button id="random-game" type="button" class="btn">Play Random Game</button>
+          <a class="btn btn-secondary" href="cartridge-select.html">Choose By Cartridge</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Playable Games</h3>
+        <div class="game-grid">
+          <article class="game-card" data-game-id="bear_breakout">
+            <span class="tag">ATARI STYLE</span>
+            <h4>Bear Market Breakout</h4>
+            <p>Break FUD bricks, catch powerups, and stack sats in a crypto brick-breaker.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="bear-market-breakout.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="mempool_meltdown">
+            <span class="tag">NES STYLE</span>
+            <h4>Mempool Meltdown</h4>
+            <p>Drop and rotate transaction blocks before the mempool meter explodes.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="mempool-meltdown.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="laser_eyes_lancer">
+            <span class="tag">GENESIS STYLE</span>
+            <h4>Laser Eyes Lancer</h4>
+            <p>Side-scroll shooter: blast scam drones, dodge chaos, and survive wave spikes.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="laser-eyes-lancer.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="bull_signal_barrage">
+            <span class="tag">GENESIS STYLE</span>
+            <h4>Bull Signal Barrage</h4>
+            <p>Vertical shmup surge: melt bears, dodge whale bombers, and charge HEAT blast.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="bull-signal-barrage.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="hashrate_highway">
+            <span class="tag">ARCADE DODGER</span>
+            <h4>Hashrate Highway</h4>
+            <p>Switch lanes, dodge blackouts, and collect ASIC crates for score combos.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="hashrate-highway.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="moon_miner_dash">
+            <span class="tag">RUNNER</span>
+            <h4>Moon Miner Dash</h4>
+            <p>Leap over rug traps, collect sats, and push your HODL streak to orbit.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="moon-miner-dash.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="cold_storage_siege">
+            <span class="tag">DEFENSE</span>
+            <h4>Cold Storage Siege</h4>
+            <p>Defend the vault from scam waves and spend key blasts at peak pressure.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="cold-storage-siege.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="whale_watch_panic">
+            <span class="tag">SURVIVAL</span>
+            <h4>Whale Watch Panic</h4>
+            <p>Outswim hunting whales in open water and grab sats before they collapse the lane.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="whale-watch-panic.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="wcn_signal_jam">
+            <span class="tag">WCN SPECIAL</span>
+            <h4>WCN Signal Jam</h4>
+            <p>Defend the broadcast from jammer fleets and trigger burst mode at full signal.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="wcn-signal-jam.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="mad_meme_blaster">
+            <span class="tag">MEME SHOOTER</span>
+            <h4>Mad Meme Blaster</h4>
+            <p>Blast paper-hands formations and fire the Mad Rant screen-clear attack.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="mad-meme-blaster.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="halving_havoc">
+            <span class="tag">ARENA CHAOS</span>
+            <h4>Halving Havoc</h4>
+            <p>Survive market swarms, stack charge, and clear the board with a halving blast.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="halving-havoc.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="citadel_climb">
+            <span class="tag">VERTICAL CLIMBER</span>
+            <h4>Citadel Climb</h4>
+            <p>Bounce tower platforms, grab seed shards, and race the collapsing skyline.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="citadel-climb.html">Play Now</a>
+            </div>
+          </article>
+
+          <article class="game-card" data-game-id="node_hopper_drift">
+            <span class="tag">RIVER SURVIVAL</span>
+            <h4>Node Hopper Drift</h4>
+            <p>Drift the stream, dodge rogue barriers, and maintain fuel under wave pressure.</p>
+            <div class="badge-row">
+              <span class="score-badge" data-best>BEST 0</span>
+              <span class="plays-badge" data-plays>0 plays</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="node-hopper-drift.html">Play Now</a>
+            </div>
+          </article>
+        </div>
+        <p class="note">Tip: Desktop keyboard is ideal. Touch controls are available on each game page. Track your rank in the <a href="challenge-ladder.html">Challenge Ladder</a>.</p>
+      </section>
+
+      <p class="footer-note">© <span id="year"></span> MAD BITCOINS RETRO GAME LAB</p>
+    </main>
+  </div>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+  <script type="module" src="js/arcade-hub.js"></script>
+</body>
+</html>

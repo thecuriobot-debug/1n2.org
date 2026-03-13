@@ -1,0 +1,62 @@
+{
+  "id": "stage8",
+  "label": "METRO SIEGE",
+  "name": "Metro Siege",
+  "width": 1280,
+  "height": 240,
+  "spawn": { "x": 24, "y": 182 },
+  "background": {
+    "top": "#1b1f2c",
+    "bottom": "#0b0e18",
+    "stars": "#8fa4ca",
+    "starCount": 38
+  },
+  "tiles": {
+    "ground": "#46506d",
+    "climb": "#7f8cb3"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1280, "h": 16, "color": "#31394f", "oneWay": false },
+
+    { "x": 90, "y": 196, "w": 72, "h": 28, "oneWay": false },
+    { "x": 188, "y": 176, "w": 88, "h": 10, "oneWay": true },
+    { "x": 304, "y": 158, "w": 100, "h": 10, "oneWay": true },
+
+    { "x": 432, "y": 138, "w": 110, "h": 10, "oneWay": true },
+    { "x": 564, "y": 170, "w": 96, "h": 10, "oneWay": true },
+    { "x": 694, "y": 184, "w": 76, "h": 40, "oneWay": false },
+
+    { "x": 790, "y": 154, "w": 100, "h": 10, "oneWay": true },
+    { "x": 920, "y": 136, "w": 88, "h": 10, "oneWay": true },
+    { "x": 1034, "y": 118, "w": 90, "h": 10, "oneWay": true },
+
+    { "x": 1144, "y": 152, "w": 96, "h": 10, "oneWay": true },
+    { "x": 1228, "y": 136, "w": 52, "h": 10, "oneWay": true },
+
+    { "x": 356, "y": 102, "w": 54, "h": 8, "oneWay": true },
+    { "x": 860, "y": 96, "w": 56, "h": 8, "oneWay": true }
+  ],
+  "climbZones": [
+    { "x": 278, "y": 120, "w": 8, "h": 104 },
+    { "x": 548, "y": 122, "w": 8, "h": 102 },
+    { "x": 1008, "y": 96, "w": 8, "h": 128 }
+  ],
+  "enemySpawns": [
+    { "type": "hacker_ninja", "x": 126, "y": 178 },
+    { "type": "exchange_bot", "x": 224, "y": 160 },
+    { "type": "regulator_drone", "x": 392, "y": 108 },
+    { "type": "hacker_ninja", "x": 604, "y": 160 },
+    { "type": "exchange_bot", "x": 832, "y": 144 },
+    { "type": "fud_ghost", "x": 1048, "y": 94 },
+    { "type": "hacker_ninja", "x": 1220, "y": 204 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 208, "y": 168, "amount": 140, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 478, "y": 130, "amount": 140, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 718, "y": 176, "w": 7, "h": 6 },
+    { "type": "lightning_mode", "x": 938, "y": 128, "w": 6, "h": 6 },
+    { "type": "hodl_mode", "x": 1160, "y": 144, "w": 7, "h": 6 },
+    { "type": "satoshi_spirit", "x": 1238, "y": 126, "w": 6, "h": 6 }
+  ],
+  "bossSpawn": { "type": "compliance_train", "x": 1248, "y": 132 }
+}

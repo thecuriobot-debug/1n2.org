@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ayar Labs taps Wiwynn to cram 1,024 GPUs into a photonic rack system</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/ayar_labs_wiwynn_photonics/" target="_blank">Original article ↗</a></div>
+
+<h1>Ayar Labs taps Wiwynn to cram 1,024 GPUs into a photonic rack system</h1>
+<div class="meta">The Register AI · 2026-03-11</div>
+<div class="summary">Ayar Labs taps Wiwynn to cram 1,024 GPUs into a photonic rack system
+Reference design to stitch more than a thousand accelerators into a single enormous server.
+Exclusive If you thought Nvidia or AMD&#x27;s 72-GPU rack systems were enormous, silicon Ayar </div>
+<p>Ayar Labs taps Wiwynn to cram 1,024 GPUs into a photonic rack system</p>
+<p>Reference design to stitch more than a thousand accelerators into a single enormous server.</p>
+<p>Exclusive If you thought Nvidia or AMD&#x27;s 72-GPU rack systems were enormous, silicon Ayar Labs has something much bigger in the works.</p>
+<p>On Wednesday, the silicon photonics startup revealed it was working with ODM partner Wywinn to develop a new rack-scale reference platform capable of stitching more than 1,024 GPUs into a single unified system.</p>
+<p>More importantly for datacenter operators, the optical interconnects used to connect these GPUs together won&#x27;t require powering and cooling 600+ kilowatt racks to do it.</p>
+<p>Instead, the reference design is expected to pull somewhere between 100 and 200 kilowatts per rack, putting them in line with contemporary rack systems. To reach their 1,024 accelerator target, the duo will simply add more racks, something that&#x27;s not possible today using the copper interconnects found in AMD and Nvidia&#x27;s latest system.</p>
+<p>&quot;Looking at the current racks, you&#x27;re forced to have everything in that one rack. You&#x27;re forced to have GPUs there, you&#x27;re forced to have CPUs there. You&#x27;re forced to have switches, just because copper doesn&#x27;t take you that far,&quot; Ayar CTO Vladimir Stojanovic told El Reg in an exclusive interview.</p>
+<p>Copper is one of the reasons that racks, like Nvidia&#x27;s 600 kilowatt Vera Rubin Ultra systems, keep getting hotter. At the speed those interconnects operate, copper can only reach a few feet without signal degradation, while conventional pluggable optics are too inefficient to be viable.</p>
+<p>Ayar aims to sidestep this issue by co-packaging the optics with the compute, dramatically reducing the power consumption compared to pluggables while boosting reach and bandwidth by a factor of up to 3x.</p>
+<p>At Super Computing last fall, we got our best look yet at what these accelerators might look like. On display was a prototype designed in collaboration with Alchip which featured eight of Ayar&#x27;s TeraPHY optical engines boasting more than 100 Tbps of bandwidth.</p>
+<p>![At SC25, Ayar Labs showed what an XPU using its CPO chiplets (the eight dies located at the ends of the package) might look like. At SC25, Ayar Labs showed what an XPU using its CPO chiplets (the eight dies located at the ends of the package) might look like.)](https://regmedia.co.uk/2025/11/21/alchip_ayar_reference.jpg?x=648&amp;y=433&amp;infer_y=1)</p>
+<p>At SC25, Ayar Labs showed what an XPU using its CPO chiplets (the eight dies located at the ends of the package) might look like</p>
+<p>But before you can deploy a chip like this, you need somewhere to put it.</p>
+<p>&quot;We want to iron out every single detail here, because, at the end of the day, a hyperscaler&#x27;s unit of purchase so to speak is a rack, and I would say even maybe more, a cluster,&quot; Stojanovic said.</p>
+<p>Compared to your average 19-inch server chassis, rack scale systems are a fair bit more complex. Systems like Nvidia&#x27;s liquid-cooled NVL72 contain miles of cabling and dozens of blind mate connectors for networking, power, and cooling. Packaging all of that in a chassis that&#x27;s reliable and serviceable is hard enough before you add photonics to the mix.</p>
+<p>The introduction of photonics introduces new design decisions, like how you route the liquid cooling, Stojanovic explained. &quot;As the cold water is coming in, what do you cool first? What do you cool second?&quot;</p>
+<p>&quot;If you look at the original ELSFP [laser module] specification, it was never meant to work in a liquid-cooled environment.&quot;</p>
+<p>Another consideration is software management and monitoring. One of the barriers to adoption for co-packaged optics has been the increased blast radius. With pluggable transceivers, a bad optic can be swapped, but if an optical engine goes bad, it&#x27;ll take the entire chip with it.</p>
+<p>This makes software monitoring and telemetry essential for narrowing down whether potential problems are related to the optics or if another factor may be at play. Along with the mechanical design, Ayar is also working with Wiwynn to tap into the embedded firmware on its chips for this reason.</p>
+<p>At the Optical Fiber Communciation (OFC) Conference next week, Ayar and Wiwynn will unveil the fruits of their labor, a rack scale reference design that integrates the photonics startup&#x27;s optical engines and pluggable laser modules with the server makers expertise in mechanical and systems engineering.</p>
+<p>The reference design, which El Reg has gotten a sneak peak of ahead of the event, appears to sport two optically interconnected accelerators, a single CPU. At the front of the system are 16 of Ayar&#x27;s user-serviceable SuperNova laser modules, along with a slew of hyperscale-style front-mount network interfaces.</p>
+<p>- Nvidia-backed photonics startup Ayar Labs fills its wallet to mass-produce CPO chiplets</p>
+<p>- Nvidia burns $4B to light up American photonics manufacturing</p>
+<p>- Bill Gates-backed startup aims to revive Moore&#x27;s Law with optical transistors</p>
+<p>- Copackaged optics have officially found their killer app - of course it&#x27;s AI</p>
+<p>Compared to the compute blades we&#x27;ve seen from Nvidia and AMD, the reference design is about half as dense, but because it uses optical interconnects it doesn&#x27;t have to be.</p>
+<p>Rather than 18 blades connected by super-short run copper cables, Ayar can connect hundreds of these systems to form a single enormous logical server. What&#x27;s more, because the company isn&#x27;t constrained by copper interconnects, those racks don&#x27;t have to have all the switching, compute, and storage on board.</p>
+<p>&quot;This allows you to do a disaggregated architecture, where you build a rack monolithically as a compute rack, and then you have another rack that&#x27;s a switch rack, and of course, you could have an extended memory rack,&quot; Stojanovic said.</p>
+<p>Wednesday&#x27;s announcement comes barely a week after Ayar closed a $500 million Series E funding round to accelerate the mass production of its co-packaged optics, and nearly six months after the startup tapped Global Unichip Corp (GUC) to develop reference designs based on its optical I/O chiplets.</p>
+<p>The startup&#x27;s work with Wiwynn now addresses the other side of the equation: where to put those chips when ready. ®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/ayar_labs_wiwynn_photonics/" target="_blank">Read original →</a></div>
+</body></html>

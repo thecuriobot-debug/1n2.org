@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="WCN Signal Jam cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1c58"/>
+      <stop offset="56%" stop-color="#1f4f95"/>
+      <stop offset="100%" stop-color="#11152a"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <path d="M154 360Q236 324 314 360T458 356V404H154Z" fill="#173868"/>
+  <path d="M212 360L306 226L398 360Z" fill="#85b7ec"/>
+  <circle cx="306" cy="228" r="12" fill="#ffd977"/>
+  <path d="M306 222Q398 188 492 206" stroke="#a8e9ff" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M306 238Q412 252 534 292" stroke="#84dcff" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <rect x="520" y="192" width="90" height="38" rx="8" fill="#9c7fff"/>
+  <rect x="560" y="286" width="104" height="42" rx="8" fill="#ff6f8a"/>
+  <rect x="466" y="336" width="88" height="36" rx="8" fill="#90beff"/>
+</svg>

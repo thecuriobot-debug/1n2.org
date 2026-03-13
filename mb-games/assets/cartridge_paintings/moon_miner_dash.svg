@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Moon Miner Dash cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1e49"/>
+      <stop offset="58%" stop-color="#2f356f"/>
+      <stop offset="100%" stop-color="#1d1529"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="560" cy="112" r="72" fill="#ffe4a5"/>
+  <path d="M0 374Q98 332 192 372T372 364T560 376T720 354V480H0Z" fill="#5f503f"/>
+  <path d="M216 296Q260 250 308 286T356 366H224Z" fill="#f2be62"/>
+  <rect x="244" y="286" width="38" height="66" rx="8" fill="#f7c45d"/>
+  <rect x="222" y="334" width="20" height="20" fill="#ff7079"/>
+  <rect x="286" y="328" width="20" height="24" fill="#ff7079"/>
+  <circle cx="356" cy="272" r="13" fill="#ffd45f"/>
+  <circle cx="418" cy="246" r="13" fill="#ffd45f"/>
+  <circle cx="478" cy="274" r="13" fill="#ffd45f"/>
+</svg>

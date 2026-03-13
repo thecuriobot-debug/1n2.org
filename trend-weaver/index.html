@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trend Weaver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1d2230;
+      --muted: #667086;
+      --paper: #fcf8ef;
+      --panel: #fffdf7;
+      --line: rgba(29, 34, 48, 0.14);
+      --red: #f14545;
+      --blue: #3769ff;
+      --gold: #ffb947;
+      --green: #40b97b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at 95% 0%, rgba(55, 105, 255, 0.12), transparent 33%),
+        radial-gradient(circle at 0% 100%, rgba(241, 69, 69, 0.12), transparent 34%),
+        var(--paper);
+      padding: 18px;
+    }
+    .shell { max-width: 1200px; margin: 0 auto; }
+    h1 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 0.94;
+      letter-spacing: -0.02em;
+    }
+    .kicker {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .subtitle {
+      margin: 8px 0 16px;
+      color: var(--muted);
+      max-width: 680px;
+      line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 14px 28px rgba(29, 34, 48, 0.08);
+    }
+    .head {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .head h2 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-size: 1.1rem;
+    }
+    .head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+    .controls { padding: 12px 16px 16px; display: grid; gap: 12px; }
+    .ctrl label {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .ctrl input[type="range"] { width: 100%; accent-color: var(--blue); }
+    .button-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      padding: 9px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button.primary {
+      border-color: rgba(55, 105, 255, 0.4);
+      background: linear-gradient(120deg, rgba(55, 105, 255, 0.14), rgba(55, 105, 255, 0.06));
+    }
+    .report { padding: 14px 16px 16px; display: grid; gap: 10px; }
+    .headline {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-size: 1.32rem;
+      line-height: 1.2;
+    }
+    .blurb { margin: 0; color: var(--muted); line-height: 1.5; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      background: white;
+    }
+    .plan {
+      border: 1px dashed var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      display: grid;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .plan-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.84rem;
+    }
+    .plan-row span { color: var(--muted); }
+    canvas {
+      margin-top: 2px;
+      width: 100%;
+      height: 220px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95));
+    }
+    .foot {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    a { color: var(--blue); }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <p class="kicker">Scenario Synthesis Engine</p>
+    <h1>Trend Weaver</h1>
+    <p class="subtitle">Tune risk, hype, and liquidity to generate a forward narrative, tactical plan, and publish-ready framing in real time.</p>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="head">
+          <h2>Input Mixer</h2>
+          <p>Slide the factors, then run scenario synthesis.</p>
+        </div>
+        <div class="controls">
+          <div class="ctrl">
+            <label for="risk"><span>Risk Pressure</span><b id="risk-v">55</b></label>
+            <input id="risk" type="range" min="0" max="100" value="55">
+          </div>
+          <div class="ctrl">
+            <label for="hype"><span>Narrative Hype</span><b id="hype-v">70</b></label>
+            <input id="hype" type="range" min="0" max="100" value="70">
+          </div>
+          <div class="ctrl">
+            <label for="liq"><span>Liquidity Quality</span><b id="liq-v">62</b></label>
+            <input id="liq" type="range" min="0" max="100" value="62">
+          </div>
+          <div class="button-row">
+            <button id="remix" class="primary">Remix Scenario</button>
+            <button id="reset">Reset Baseline</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="head">
+          <h2>Output</h2>
+          <p>Narrative + tactical playbook generated from current signal mix.</p>
+        </div>
+        <div class="report">
+          <h3 id="headline" class="headline"></h3>
+          <p id="blurb" class="blurb"></p>
+          <div id="chips" class="chips"></div>
+          <div class="plan" id="plan"></div>
+          <canvas id="canvas" width="900" height="240" aria-label="Scenario bars"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <p class="foot"><a href="/codex-nightshift/">Back to Night Shift Hub</a></p>
+  </main>
+
+  <script>
+    const els = {
+      risk: document.getElementById("risk"),
+      hype: document.getElementById("hype"),
+      liq: document.getElementById("liq"),
+      riskV: document.getElementById("risk-v"),
+      hypeV: document.getElementById("hype-v"),
+      liqV: document.getElementById("liq-v"),
+      headline: document.getElementById("headline"),
+      blurb: document.getElementById("blurb"),
+      chips: document.getElementById("chips"),
+      plan: document.getElementById("plan"),
+      remix: document.getElementById("remix"),
+      reset: document.getElementById("reset"),
+      canvas: document.getElementById("canvas")
+    };
+
+    const baseline = { risk: 55, hype: 70, liq: 62 };
+
+    const headlines = {
+      breakout: "Narrative momentum can outrun fragile liquidity.",
+      mean: "Market likely mean-reverts as hype cools.",
+      grind: "Slow grind higher with selective leadership.",
+      stress: "High-risk tape: downside spikes probable."
+    };
+
+    function asNum(el) { return Number(el.value); }
+
+    function scenario() {
+      const risk = asNum(els.risk);
+      const hype = asNum(els.hype);
+      const liq = asNum(els.liq);
+      const thrust = hype * 0.52 + liq * 0.38 - risk * 0.44;
+
+      let mode = "grind";
+      if (risk > 68 && liq < 45) mode = "stress";
+      else if (hype > 74 && liq < 58) mode = "breakout";
+      else if (hype < 46 && risk > 52) mode = "mean";
+
+      const confidence = Math.max(42, Math.min(93, Math.round(56 + thrust * 0.38)));
+      const volatility = Math.max(18, Math.min(90, Math.round(risk * 0.72 + (100 - liq) * 0.25)));
+      const followThrough = Math.max(20, Math.min(92, Math.round((hype + liq) * 0.48 - risk * 0.2 + 26)));
+
+      return { risk, hype, liq, mode, confidence, volatility, followThrough };
+    }
+
+    function render() {
+      const s = scenario();
+      els.riskV.textContent = s.risk;
+      els.hypeV.textContent = s.hype;
+      els.liqV.textContent = s.liq;
+
+      els.headline.textContent = headlines[s.mode];
+      els.blurb.textContent = `Confidence is ${s.confidence}%. Volatility profile is ${s.volatility} and follow-through expectation is ${s.followThrough}. Use this as a briefing skeleton, then layer channel-specific context.`;
+
+      els.chips.innerHTML = [
+        `Mode: ${s.mode}`,
+        `Confidence ${s.confidence}%`,
+        `Volatility ${s.volatility}`,
+        `Follow-through ${s.followThrough}`
+      ].map((c) => `<span class="chip">${c}</span>`).join("");
+
+      const rows = [
+        ["Lead angle", s.mode === "stress" ? "Protect capital first" : s.mode === "breakout" ? "Momentum with caution" : "Selective rotation"],
+        ["Top action", s.volatility > 62 ? "Tighten position sizing" : "Press strongest trend"],
+        ["Clip hook", s.hype > 68 ? "Narrative whiplash explained" : "Quiet setup, asymmetric payoff"],
+        ["Report close", "3 scenarios for next 24 hours"]
+      ];
+
+      els.plan.innerHTML = rows.map((r) => `<div class="plan-row"><span>${r[0]}</span><strong>${r[1]}</strong></div>`).join("");
+      drawBars(s);
+    }
+
+    function drawBars(s) {
+      const ctx = els.canvas.getContext("2d");
+      const w = els.canvas.width;
+      const h = els.canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const pad = { l: 54, r: 28, t: 18, b: 34 };
+      const chartW = w - pad.l - pad.r;
+      const chartH = h - pad.t - pad.b;
+      const items = [
+        ["Risk", s.risk, "#f14545"],
+        ["Hype", s.hype, "#3769ff"],
+        ["Liquidity", s.liq, "#40b97b"],
+        ["Confidence", s.confidence, "#ffb947"],
+        ["Volatility", s.volatility, "#a44aff"],
+        ["Follow", s.followThrough, "#0fb6b6"]
+      ];
+
+      ctx.strokeStyle = "rgba(29, 34, 48, 0.2)";
+      for (let i = 0; i <= 5; i += 1) {
+        const y = pad.t + (chartH / 5) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad.l, y);
+        ctx.lineTo(w - pad.r, y);
+        ctx.stroke();
+      }
+
+      const barW = chartW / items.length - 14;
+      items.forEach((it, i) => {
+        const x = pad.l + i * (barW + 14);
+        const bh = (it[1] / 100) * chartH;
+        const y = pad.t + chartH - bh;
+
+        ctx.fillStyle = it[2];
+        ctx.fillRect(x, y, barW, bh);
+
+        ctx.fillStyle = "#1d2230";
+        ctx.font = "700 12px Manrope";
+        ctx.fillText(String(it[1]), x + 4, y - 5);
+        ctx.fillStyle = "#667086";
+        ctx.font = "600 12px Manrope";
+        ctx.fillText(it[0], x, h - 10);
+      });
+    }
+
+    function remix() {
+      const nudge = () => Math.round(Math.random() * 100);
+      els.risk.value = nudge();
+      els.hype.value = nudge();
+      els.liq.value = nudge();
+      render();
+    }
+
+    function reset() {
+      els.risk.value = baseline.risk;
+      els.hype.value = baseline.hype;
+      els.liq.value = baseline.liq;
+      render();
+    }
+
+    [els.risk, els.hype, els.liq].forEach((el) => el.addEventListener("input", render));
+    els.remix.addEventListener("click", remix);
+    els.reset.addEventListener("click", reset);
+    render();
+  </script>
+</body>
+</html>

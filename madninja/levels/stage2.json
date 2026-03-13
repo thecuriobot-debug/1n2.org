@@ -1,0 +1,49 @@
+{
+  "id": "stage2",
+  "label": "MINING FARM",
+  "name": "Mining Farm",
+  "width": 1024,
+  "height": 240,
+  "spawn": { "x": 24, "y": 180 },
+  "background": {
+    "top": "#1d2d32",
+    "bottom": "#0c1619",
+    "stars": "#8db6a6",
+    "starCount": 36
+  },
+  "tiles": {
+    "ground": "#36535a",
+    "climb": "#4f7a75"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1024, "h": 16, "color": "#2f4a52" },
+    { "x": 96, "y": 190, "w": 88, "h": 10 },
+    { "x": 226, "y": 170, "w": 80, "h": 10 },
+    { "x": 364, "y": 186, "w": 92, "h": 10 },
+    { "x": 510, "y": 162, "w": 88, "h": 10 },
+    { "x": 640, "y": 142, "w": 84, "h": 10 },
+    { "x": 776, "y": 166, "w": 90, "h": 10 },
+    { "x": 914, "y": 146, "w": 86, "h": 10 },
+    { "x": 316, "y": 116, "w": 56, "h": 8 },
+    { "x": 706, "y": 104, "w": 58, "h": 8 }
+  ],
+  "climbZones": [
+    { "x": 188, "y": 132, "w": 8, "h": 92 },
+    { "x": 598, "y": 124, "w": 8, "h": 100 }
+  ],
+  "enemySpawns": [
+    { "type": "hacker_ninja", "x": 144, "y": 206 },
+    { "type": "exchange_bot", "x": 390, "y": 172 },
+    { "type": "hacker_ninja", "x": 552, "y": 142 },
+    { "type": "exchange_bot", "x": 808, "y": 152 },
+    { "type": "regulator_drone", "x": 942, "y": 108 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 116, "y": 182, "amount": 120, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 262, "y": 162, "amount": 120, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 532, "y": 154, "w": 7, "h": 6 },
+    { "type": "lightning_mode", "x": 710, "y": 96, "w": 6, "h": 6 },
+    { "type": "satoshi_spirit", "x": 936, "y": 138, "w": 6, "h": 6 }
+  ],
+  "bossSpawn": { "type": "hashrate_monster", "x": 990, "y": 132 }
+}

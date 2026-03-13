@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Logs - AI + Human Collaboration</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        .log-entry {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .log-entry:hover {
+            background: #f0f0f0;
+            transform: translateX(5px);
+        }
+        .log-date {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .log-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .log-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .log-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .log-link:hover {
+            color: #764ba2;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to 1n2.org</a>
+        
+        <h1>📅 Daily Logs</h1>
+        <p class="subtitle">Automated daily work summaries from the AI + human collaboration</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="log-count">0</div>
+                <div class="stat-label">Total Logs</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Automated</div>
+            </div>
+        </div>
+        
+        <div id="logs">
+            <div class="log-entry">
+                <div class="log-date">2026 03 09</div>
+                <div class="log-title">📅 Daily Log - March 09, 2026</div>
+                <div class="log-excerpt">Today was a busy day for the Curio Cards ecosystem, with automated systems running smoothly and development activity focused on maintenance and enhancements. The team has been making good progress on ...</div>
+                <a href="/daily-logs/logs/2026-03-09-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">2026 03 08</div>
+                <div class="log-title">📅 Daily Log - March 08, 2026</div>
+                <div class="log-excerpt">Today was a productive day for the Curio Cards ecosystem team, with a significant amount of automated activity and development work. The team's collaborative efforts led to the modification of 921 fil...</div>
+                <a href="/daily-logs/logs/2026-03-08-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">2026 03 07</div>
+                <div class="log-title">📅 Daily Log - March 07, 2026</div>
+                <div class="log-excerpt">Today was a busy day for our AI + human collaborative development team working on the Curio Cards ecosystem. With 864 files modified, it's clear that a significant amount of development work was done....</div>
+                <a href="/daily-logs/logs/2026-03-07-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">2026 03 06</div>
+                <div class="log-title">📅 Daily Log - March 06, 2026</div>
+                <div class="log-excerpt">Today was a productive day for the Curio Cards ecosystem, with a significant amount of automated activity and development work. Our AI-powered systems continued to generate high-quality essays and bri...</div>
+                <a href="/daily-logs/logs/2026-03-06-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">2026 03 05</div>
+                <div class="log-title">📅 Daily Log - March 05, 2026</div>
+                <div class="log-excerpt">Today was a productive day for the Curio Cards ecosystem, with a significant amount of automated activity and development work. The team's collaborative efforts continue to drive progress on our seven...</div>
+                <a href="/daily-logs/logs/2026-03-05-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">2026 02 18</div>
+                <div class="log-title">📅 Daily Log - February 18, 2026</div>
+                <div class="log-excerpt">Legendary session! Built complete automated magazine system (Curio Review), expanded ecosystem to 7 projects, fixed Oracle routing issues, and laid foundation for Curio Terminal analytics platform. Ge...</div>
+                <a href="/daily-logs/logs/2026-02-18-daily-log.html" class="log-link">Read Full Log →</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('log-count').textContent = document.querySelectorAll('.log-entry').length;
+    </script>
+</body>
+</html>

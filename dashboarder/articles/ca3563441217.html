@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>As wildfires intensify, researchers test if AI can improve fire spread prediction</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://phys.org/news/2026-03-wildfires-ai.html" target="_blank">Original article ↗</a></div>
+
+<h1>As wildfires intensify, researchers test if AI can improve fire spread prediction</h1>
+<div class="meta">Phys.org · 2026-03-11</div>
+<div class="summary">As wildfires intensify, researchers test if AI can improve fire spread prediction
+![Credit: Unsplash/CC0 Public Domain wildfire](https://scx1.b-cdn.net/csz/news/800a/2025/wildfire-2.jpg)
+With wildfires growing more destructive both in the United Stat</div>
+<p>As wildfires intensify, researchers test if AI can improve fire spread prediction</p>
+<p>![Credit: Unsplash/CC0 Public Domain wildfire](https://scx1.b-cdn.net/csz/news/800a/2025/wildfire-2.jpg)</p>
+<p>With wildfires growing more destructive both in the United States and around the world, University at Buffalo researchers have conducted one of the most extensive evaluations to date of artificial intelligence-based deep learning models for predicting wildfire spread. Their findings show how AI can complement but not yet fully replace established physics-based fire modeling tools.</p>
+<p>The UB team evaluated several deep learning models designed to forecast wildfire spread, drawing on more than a decade of wildfire data from Hawaii. They then used the 2023 Maui fires as a case study to compare the top-performing models with FARSITE (Fire Area Simulator), a widely used physics-based fire spread model.</p>
+<p>&quot;Wildfires are becoming more frequent and more destructive, and communities need tools that can anticipate how these events will unfold,&quot; said Yingjie Hu, Ph.D., associate professor of geography in the UB College of Arts and Science. &quot;As AI has advanced, researchers have developed a range of deep learning models to predict wildfire spread. However, there is limited understanding of how these models compare to conventional fire-modeling approaches. Our goal was to rigorously evaluate these AI models and understand where they excel and where traditional fire science still has an edge.&quot;</p>
+<p>Hu, also adjunct professor of computer science and engineering at UB, is one of the co-authors of the UB study, &quot;Assessment of deep learning models integrated with weather and environmental variables for wildfire spread prediction and a case study of the 2023 Maui fires.&quot; It was published in the journal Natural Hazards. Additional co-authors include Negar Elhami-Khorasani, Ph.D., associate professor of civil, structural and environmental engineering at UB; Kai Sun, Ph.D., postdoctoral associate in Hu&#x27;s GeoAI lab; and Jiyeon Kim and Ryan Zhenqi Zhou, both Ph.D. students in Hu&#x27;s GeoAI lab.</p>
+<p>Comparing AI models with traditional fire science</p>
+<p>Using wildfire data collected across Hawaii from January 2012 to August 2023, researchers extracted 221 wildfires that lasted at least four days to train and test five commonly used open-source deep learning models: LSTM, U-Net, U-Net with attention, ConvLSTM and ConvLSTM with attention. Each model was trained on weather and environmental variables known to influence fire spread behavior. These variables were grouped into four categories: weather, topography, vegetation and anthropogenic activity. In addition, the researchers applied an explainable AI method called integrated gradients to identify which variables most strongly influenced each model&#x27;s predictions.</p>
+<p>Of the models tested, ConvLSTM and ConvLSTM with attention performed the best. ConvLSTM achieved the highest precision, while the attention-enhanced version showed higher recall, meaning it was less likely to miss true fire spread. The remaining models tended to overpredict fire growth, resulting in high recall but low precision.</p>
+<p>The next step was to understand how the two top-performing AI models compare with FARSITE, a fire spread model that wildfire agencies and firefighting personnel have used since the mid-1990s. To do that, the team examined the four major wildfires that devastated Maui in 2023.</p>
+<p>Their analysis found that FARSITE demonstrated higher precision, lower recall and a higher F1 score than the AI models. The F1 score is a standard metric used to measure a classification model&#x27;s performance by balancing precision and recall. A higher F1 score indicates that FARSITE was better at correctly identifying where fire will spread while also avoiding incorrect predictions of spread where it will not.</p>
+<p>In addition, the deep learning models offered greater flexibility and were able to work with a wider range of input data. Hu explains that AI models can adapt to new data available for a region, including satellite imagery that provides more timely updates and datasets from newly launched satellite missions. In contrast, FARSITE depends on structured inputs such as detailed fuel data and other information that is labor-intensive to produce and can often be significantly out of date. This adaptability allowed the research team to integrate diverse, real-time data sources and generate more dynamic, region-specific insights.</p>
+<p>&quot;By combining AI with detailed weather and environmental data, we were able to reveal the factors that drive extreme fire behavior. In the case of Maui, the models identified temperature, humidity, precipitation, wind and vegetation as the primary factors influencing fire spread,&quot; Hu said.</p>
+<p>Advancing hybrid wildfire modeling to meet real-world conditions</p>
+<p>A major challenge for AI wildfire models is generalizing across regions with different terrain, vegetation and climate. To address this limitation, the UB team is now working to integrate Earth foundation models to improve how wildfire predictions perform across diverse landscapes. They also plan to incorporate higher-resolution environmental data, which will provide more detailed measurements of the landscape and atmosphere and enable the models to capture on-the-ground conditions with greater clarity.</p>
+<p>Although the study is exploratory, Hu said the team is seeking additional funding to expand the project. He hopes their findings will deepen understanding of how different fire spread models work and help guide future wildfire research and management.</p>
+<p>&quot;Our work highlights the potential of hybrid modeling approaches that combine the strengths of physics-based fire science with the adaptability of AI,&quot; Hu said. &quot;As we saw in Maui and again in Southern California last year, wildfire conditions can shift rapidly. By integrating both approaches to better anticipate where a fire may spread in the next 12 or 24 hours, we can provide fire management agencies with information that supports faster, more effective decisions and ultimately helps reduce the impacts of wildfires on communities.&quot;</p>
+<p>More information</p>
+<p>Jiyeon Kim et al, Assessment of deep learning models integrated with weather and environmental variables for wildfire spread prediction and a case study of the 2023 Maui fires, Natural Hazards (2025). DOI: 10.1007/s11069-025-07807-x</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://phys.org/news/2026-03-wildfires-ai.html" target="_blank">Read original →</a></div>
+</body></html>

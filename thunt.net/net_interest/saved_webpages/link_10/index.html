@@ -1,0 +1,666 @@
+<HTML>
+<HEAD>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2592123340226719" crossorigin="anonymous"></script>
+<HTTP-EQUIV=PRAGMA CONTENT=NO-CACHE>
+<link rel="icon" type="image/x-icon" href="http://www.dvdpricesearch.com/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.dvdpricesearch.com/favicon.ico">
+<TITLE>Compare DVD Prices Online at DVD Price Search - The Smartest DVD Price Comparison Engine Online!</TITLE>
+<META NAME="description" CONTENT="Compare DVD Prices Online using the smartest DVD price comparison engine. Find online coupons, special deals and the lowest prices on DVD movies all with the click of a button!">
+<META NAME="keywords" CONTENT="DVD,compare dvd prices,compare prices,compare movie prices,dvd movies,price comparison,online shopping,comparison shopping, dvd price comparison, price comparison website, dvd coupons, dvd bargains, dvd deals, DVD new releases, DVD coming soon, DVD upcoming releases, DVD top sellers, video">
+<META NAME="copyright" CONTENT="1998-2020 DVD Price Search. All Rights Reserved">
+<meta name="msvalidate.01" content="7987AF97A6B9A761424D3EF49DA9CDA6" />
+<meta name="ir-site-verification-token" value="-422017480" />
+<STYLE>
+<!--
+A:hover {color:green; text-decoration:underline font-weight:bolder}
+-->
+</STYLE>
+<SCRIPT LANGUAGE=JAVASCRIPT1.1>
+<!-- Hide script from old browsers
+
+expireDate=new Date 
+expireDate.setTime(expireDate.getTime() + (24*60*60*1000*365)); 
+
+var addFlagsArray = new Array()
+
+ 
+function ssearch(sstype, sstext, ssstore) 
+{ 
+   document.ssSubmitForm.cmd.value = "simpleSearch" 
+   document.ssSubmitForm.sstype.value = sstype 
+   document.ssSubmitForm.sstext.value = sstext 
+   if (ssstore == "ALL") 
+      document.ssSubmitForm.ssstore.value = "ALL,All Stores" 
+   else 
+      document.ssSubmitForm.ssstore.value = ssstore 
+   document.ssSubmitForm.addTitles.value = getAddedTitles() 
+   document.ssSubmitForm.page.value = 1 
+   document.ssSubmitForm.totalRows.value = -1 
+   document.ssSubmitForm.submit() 
+} 
+ 
+function getHtmlPage(cmd) 
+{ 
+   document.htmlSubmitForm.cmd.value = cmd  
+   document.htmlSubmitForm.addTitles.value = getAddedTitles() 
+   document.htmlSubmitForm.submit() 
+} 
+ 
+function getHtmlAPage(cmd) 
+{ 
+   document.htmlaSubmitForm.cmd.value = cmd  
+   document.htmlaSubmitForm.addTitles.value = getAddedTitles() 
+   document.htmlaSubmitForm.submit() 
+} 
+ 
+function gotoCart(cmd) 
+{ 
+   document.cartSubmitForm.cmd.value = cmd 
+   document.cartSubmitForm.addTitles.value = getAddedTitles() 
+   document.cartSubmitForm.submit() 
+} 
+ 
+function loadCart(cmd) 
+{ 
+   if (document.cartSubmitForm.cart.value != "" && 
+       document.cartSubmitForm.cart.value != null) { 
+      returnVal = confirm("Your current cart will be lost.  " + 
+         "Are you sure you want to load another cart?") 
+      if (!returnVal) 
+         return  
+   } 
+   document.cartSubmitForm.cmd.value = cmd 
+   document.cartSubmitForm.submit() 
+} 
+ 
+function getVendorPage(cmd) 
+{ 
+   if (cmd != "_pr:None") {  
+      document.vrevSubmitForm.cmd.value = cmd  
+      document.vrevSubmitForm.page.value = 1 
+      document.vrevSubmitForm.addTitles.value = getAddedTitles() 
+      document.vrevSubmitForm.submit() 
+   } 
+} 
+ 
+function getAddedTitles() 
+{ 
+   cartString = "" 
+   for (i=0; i<addFlagsArray.length; i++) { 
+      if (addFlagsArray[i] != "") {  
+         val = parseInt(addFlagsArray[i]) 
+         if (!isNaN(val)) {  
+            if (cartString != "") { 
+               cartString = cartString + "," 
+            } 
+            cartString = cartString + val 
+         } 
+      } 
+   } 
+   return cartString 
+} 
+ 
+function sendHeaderSimpleSearch() 
+{ 
+   if (prepareHeaderSimpleSearch()) 
+      document.headerSubmitForm.submit() 
+} 
+ 
+function prepareHeaderSimpleSearch() 
+{ 
+   if (isValidSSText(document.headerSubmitForm)) { 
+      document.headerSubmitForm.cmd.value = "simpleSearch" 
+      document.headerSubmitForm.addTitles.value = getAddedTitles() 
+      document.headerSubmitForm.page.value = 1 
+      document.headerSubmitForm.totalRows.value = -1 
+      return true 
+   } 
+   else { 
+      document.headerSubmitForm.sstext.focus() 
+      document.headerSubmitForm.sstext.select() 
+      return false 
+   } 
+} 
+ 
+function isValidRegExpr(keywords) 
+{ 
+   invalidChars = "\_\"%" 
+ 
+   for (i=0; i<invalidChars.length; i++) { 
+      badChar = invalidChars.charAt(i) 
+      if (keywords.indexOf(badChar,0) != -1) { 
+         return false 
+      } 
+   } 
+   return true 
+} 
+ 
+function hasValidKeyword(keywords) 
+{ 
+   for (i=0; i<keywords.length; i++) { 
+      ch = keywords.charAt(i) 
+      if (! (ch == '|' || ch == ' ')) { 
+         return true 
+      } 
+   } 
+   return false 
+} 
+ 
+function isValidSSText(inputForm) 
+{ 
+   if (inputForm.sstext.value == "" || 
+       !hasValidKeyword(inputForm.sstext.value)) { 
+      alert("You must enter a valid search value.") 
+      return false 
+   } 
+   sstype = inputForm.sstype.options[inputForm.sstype.selectedIndex].value 
+   if (sstype == "title" || sstype == "person") { 
+      if (!isValidRegExpr(inputForm.sstext.value)) { 
+         alert("You have entered an invalid search character. " + 
+               "Invalid characters include: \_\"%") 
+         return false 
+      } 
+   } 
+ 
+   if (sstype == "lessThan" || 
+       sstype == "moreThan") { 
+      floatVal = parseFloat(inputForm.sstext.value) 
+      if (isNaN(floatVal)) { 
+         alert("You must enter a numeric value representing price.") 
+         return false 
+      } 
+      if (floatVal < 0.0) { 
+         alert("The price must be greater than $0.00") 
+         return false 
+      } 
+   } 
+   if (sstype == "msrp") { 
+      floatVal = parseFloat(inputForm.sstext.value) 
+      if (isNaN(floatVal) || floatVal < 0.0) { 
+         alert("You must enter a positive numeric value representing some percent off " +  
+               "MSRP. For example, enter 50 for 50% off MSRP.") 
+         return false 
+      } 
+   } 
+   if (sstype == "priceRange") { 
+      priceArray = inputForm.sstext.value.split("-") 
+      if (priceArray.length != 2) { 
+         alert("Please enter a low price and a high price separated by dash (-)") 
+         return false 
+      } 
+      floatVal1 = parseFloat(priceArray[0]) 
+      if (isNaN(floatVal1) || floatVal1 < 0.0) { 
+         alert("Please enter a numeric value for the low price.")  
+         return false 
+      } 
+      floatVal2 = parseFloat(priceArray[1]) 
+      if (isNaN(floatVal2) || floatVal2 < 0.0) { 
+         alert("Please enter a numeric value for the high price.")  
+         return false 
+      } 
+      if (floatVal2 < floatVal1) { 
+         alert("The first price must be lower than the second price.") 
+         return false 
+      } 
+   } 
+   return true 
+} 
+
+function integratedPC(titleId) 
+{ 
+   document.cartSubmitForm.tmpCart.value = titleId  
+   gotoCart('calcIntPCInfo') 
+} 
+
+
+function getUpcomingRelByDate(reldate)
+{
+      document.ssSubmitForm.srfilterSelect.value = reldate
+      ssearch('category', 'upcomingReleases', 'ALL')
+}
+
+
+function applyUpdateDays() 
+{  
+      // this will only be called from home htmlSubmitForm 
+      //note: only apply to "standard" forms that could be called NEXT 
+      days = document.localHtmlSubmitForm.updateDays.options[ 
+         document.localHtmlSubmitForm.updateDays.selectedIndex].value 
+      document.htmlSubmitForm.updateDays.value = days 
+      document.ssSubmitForm.updateDays.value = days 
+      document.headerSubmitForm.updateDays.value = days 
+      document.cartSubmitForm.updateDays.value = days 
+      document.vrevSubmitForm.updateDays.value = days 
+ 
+      //save values to cookies 
+      document.cookie = "updateDays=" + days + "," + 
+         document.htmlSubmitForm.advancedUser.value + 
+         ";path=/;expires="+expireDate.toGMTString() 
+} 
+ 
+function applyAdvancedUser() 
+{ 
+      // this will only be called from home htmlSubmitForm 
+      //note: only apply to "standard" forms that could be called NEXT 
+      days = document.localHtmlSubmitForm.updateDays.options[ 
+         document.localHtmlSubmitForm.updateDays.selectedIndex].value 
+      advancedUser = 1 
+      document.ssSubmitForm.advancedUser.value = advancedUser 
+      document.headerSubmitForm.advancedUser.value = advancedUser 
+      document.cartSubmitForm.advancedUser.value = advancedUser 
+      document.htmlSubmitForm.advancedUser.value = advancedUser 
+      document.localHtmlSubmitForm.advancedUser.value = advancedUser 
+      document.vrevSubmitForm.advancedUser.value = advancedUser 
+ 
+      //save values to cookies 
+      document.cookie = "updateDays=" + days + "," + advancedUser + 
+         ";path=/;expires="+expireDate.toGMTString() 
+} 
+// End hiding script from old browsers -->
+</SCRIPT>
+<NOSCRIPT>
+<TABLE BGCOLOR=White WIDTH="98%" BORDER=0 CELLPADDING=8>
+<TR><TD VALIGN=TOP><FONT FACE="VERDANA,ARIAL,HELVETICA" COLOR="#083194"><B><FONT SIZE=3>W</FONT><FONT SIZE=2>ELCOME TO </FONT><FONT SIZE=3><U>DVD Price Search</U>!</FONT></B></FONT><TABLE WIDTH="100%" BGCOLOR="#9999CC" BORDER=0 CELLSPACING=0 CELLPADDING=1><TR><TD ALIGN=CENTER><TABLE BGCOLOR=white BORDER=0 CELLSPACING=0 CELLPADDING=10 WIDTH=100%><TR><TD BGCOLOR="#EEEECC"><FONT FACE="ARIAL,HELVETICA" SIZE="-1">Welcome to our online price comparison shopping site specifically tailored for DVDs! Come compare prices, find online coupons and bargains, and great deals that only we can tell you about!<P><B>Not Just Another Price Comparison Website</B><BR>Online shopping can be a real challenge and there are many price comparison shopping websites out there that will scour the web to help you compare prices on DVDs.  But, all too often, you end up with too much information which is nearly impossible to make sense of. That's because the other price comparison engines just aren't good at matching the data with what you are looking for and filtering the information before presenting it you.  We are different! DVDs are our business and we have designed our site specifically for the purpose of comparing prices and identifying great deals for DVDs. The information we present to you will be exactly what you want to see!<P><B>Unique Offering - Hidden Online Bargains Revealed!</B><BR>We collect the pricing information from all the top online DVD vendors on a daily basis and analyze it so that we can tell you about the "hidden" best deals to be had on the web.  For instance, in our "Great Deals!" section, we'll show you DVD titles whose lowest price is at least 25% less than the next lowest price available online. Now that's a great deal that is worth knowing about and our site is the only place to find it!  And, each day in our "Latest Updates" section, we'll announce the newest of these "Great Deals!"<P><B>DVD Information Galore!</B><BR>Because we are tailored for DVDs, we provide detailed information on each DVD including descriptions, screen formats, audio formats and more.  We also keep you up-to-date on the new and upcoming DVD releases.<P>There are so many DVD websites online, many of which are providing redundant information. We are uniquely, the DVD price comparison shopping specialists who can give you the information that you really need to find great deals on DVDs online!<P><B>All the info you need In One Place</B><BR>Of course, we also list all the latest online coupons and specials daily so that you are poised to get the best deal possible when you are ready to buy.  All promotional coupons and deals are listed as part of the price comparison information so that you have all the pertinent money-saving information right where you need it.<P>Online shopping can be tedious if you have to go from site to site yourself in search of a good deal. Why not simply check our site regularly?  We'll keep you steps ahead of everyone else when it comes to finding those great deals on DVDs online.
+</FONT><CENTER><FONT SIZE=3 FACE="ARIAL,HELVETICA" COLOR=RED><BR><B>Warning... Your browser is not Javascript enabled.</B><BR><FONT SIZE=2>This website requires the use of Javascript enabled browsers. Javascript gives us more flexibility in designing a powerful and user friendly interface for you. Please either enable Javascript on your browser now or upgrade your browser to a version that supports Javascript 1.1 or up.<BR>Don't miss out on our site!</FONT><BR><BR><FONT SIZE=2 COLOR=Black><A HREF="http://www.netscape.com/download/index.html">Click here</A> to download the latest version of Netscape Communicator<BR><BR><A HREF="http://www.microsoft.com/windows/ie">Click here</A> to download the latest version of Microsoft Internet Explorer<BR></FONT></FONT>
+<P><TABLE BORDER=1 CELLPADDING=10><TR><TD ALIGN=CENTER><FONT SIZE=3 FACE="ARIAL,HELVETICA" COLOR=BLUE><B>If you would like to use the original (JavaScript-lite) version of our site, click<P><A HREF="http://www.dvdpricesearch.com/indexA.shtml"><IMG SRC="dvdps.gif" WIDTH=88 HEIGHT=31 HSPACE=10 ALIGN=CENTER BORDER=1></A></B></FONT></TD></TR></TABLE></CENTER></TD></TR></TABLE>
+</TD></TR></TABLE>
+</TD></TR></TABLE><BR>
+</NOSCRIPT>
+</HEAD>
+
+<BODY BGCOLOR=WHITE>
+<A NAME="top"> </A>
+<CENTER>
+<MAP name="menu">
+<AREA ALT="Home Page" shape="rect" coords="0,0 60,23" HREF='javascript:getHtmlPage("home")'><AREA ALT="Specials/Coupons/Bargains" shape="rect" coords="62,0 176,17" HREF='javascript:getHtmlPage("specials")'><AREA ALT="Set Preferences" shape="rect" coords="178,0 253,23" HREF='javascript:getHtmlPage("customize")'><AREA ALT="My Coupons" shape="rect" coords="255,0 332,23" HREF='javascript:getHtmlPage("mycoupons")'><AREA ALT="View Info on Vendors" shape="rect" coords="334,0 411,23" HREF='javascript:getVendorPage("vendorInfo")'><AREA ALT="Power Search" shape="rect" coords="413,0 495,23" HREF='javascript:getHtmlPage("psearch")'><AREA ALT="About the Site" shape="rect" coords="497,0 600,23" HREF='javascript:getHtmlPage("aboutus")'></MAP>
+<MAP name="tabs">
+<AREA ALT="View Top 40 DVDs" shape="rect" coords="1,0 85,18" HREF='javascript:ssearch("category", "topN", "ALL")'><AREA ALT="View Great Deals" shape="rect" coords="86,0 174,18" HREF='javascript:ssearch("category", "greatDeals", "ALL")'><AREA ALT="View Upcoming Releases" shape="rect" coords="175,0 300,18" HREF='javascript:ssearch("category", "upcomingReleases", "ALL")'><AREA ALT="View New Releases" shape="rect" coords="301,0 392,18" HREF='javascript:ssearch("category", "newReleases", "ALL")'><AREA ALT="Browse by Genre and Store" shape="rect" coords="393,0 514,18" HREF='javascript:getHtmlPage("baisles")'></MAP>
+<MAP name="pic">
+<AREA ALT="Load Saved Cart" shape="rect" coords="0,0 22,22" HREF='javascript:loadCart("loadCart")'><AREA ALT="View Current Cart" shape="rect" coords="22,0 44,22" HREF='javascript:gotoCart("viewCart")'><AREA ALT="Compare Prices" shape="rect" coords="44,0 66,22" HREF='javascript:gotoCart("calcCart")'><AREA ALT="Help" shape="rect" coords="66,0 88,22" HREF='javascript:alert("Help is still under construction!")'></MAP>
+<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=100%>
+<TR><TD WIDTH=507 HEIGHT=1><IMG SRC="blank.gif" ALT="" WIDTH=507 HEIGHT=1></TD><TD WIDTH=86 HEIGHT=1><IMG SRC="blank.gif" ALT="" WIDTH=86 HEIGHT=1></TD><TD></TD><TD WIDTH=7 HEIGHT=1><IMG SRC="blank.gif" ALT="" WIDTH=7 HEIGHT=1></TD></TR><TR><TD VALIGN=TOP COLSPAN=4><A HREF='javascript:getHtmlPage("home")'><IMG SRC="Logo.gif" ALT="DVD Price Search" BORDER=0 WIDTH=120 HEIGHT=69 ALIGN=TOP></A><IMG SRC="blank.gif" ALT="" BORDER=0 WIDTH=5 HEIGHT=1 ALIGN=TOP><iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=26&l=ur1&category=mostwishforitem&banner=1M2GXANPMRX5Z7KV4202&f=ifr&linkID=728bbda20cdd6127690b43fc7d2bb585&t=dvdpricesearch&tracking_id=dvdpricesearch" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</TD></TR>
+<TR><TD COLSPAN=2 WIDTH=593 BGCOLOR="#083194" ALIGN=LEFT>
+<IMG src="Menu3.gif" ALT="" width="593" height="23" border="0" usemap="#menu"></TD><TD BGCOLOR="#083194">&nbsp;</TD><TD BGCOLOR="#083194" WIDTH=7 ALIGN=RIGHT><IMG src="MenuEnd.gif" width="7" height="23" border="0"></TD></TR>
+<TR>
+<TD COLSPAN=4 BGCOLOR="#9999CC">
+<FORM METHOD=POST NAME=headerSubmitForm ACTION="/cgi-bin/dvdsearch2"onSubmit="return prepareHeaderSimpleSearch()">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="NOINIT">
+<IMG SRC="blank.gif" ALT="" WIDTH=1 HEIGHT=3>
+&nbsp;&nbsp;<FONT FACE=HELVETICA SIZE=-1>
+      <B>Search by:</B>&nbsp;<SELECT NAME="sstype">          <OPTION VALUE="title" SELECTED>Title keywords          <OPTION VALUE="moreThan">Price greater than          <OPTION VALUE="lessThan">Price less than          <OPTION VALUE="priceRange">Price range (e.g. 5-9)          <OPTION VALUE="msrp">Percent Off MSRP          <OPTION VALUE="person">Actor/Director       </SELECT>       <INPUT TYPE=TEXT NAME="sstext" size=17>  	  <script language=Javascript>document.headerSubmitForm.sstext.focus();</script>       &nbsp;<B>at:</B>&nbsp;<SELECT NAME="ssstore">          <OPTION VALUE="ALL">All Stores             <OPTION VALUE="0,Amazon">Amazon
+         <OPTION VALUE="34,Barnes & Noble">Barnes & Noble
+         <OPTION VALUE="1,Best Buy">Best Buy
+         <OPTION VALUE="3,Rakuten.com">Rakuten.com
+         <OPTION VALUE="17,CD Universe">CD Universe
+         <OPTION VALUE="41,Deep Discount">Deep Discount
+         <OPTION VALUE="10,DVD Empire">DVD Empire
+         <OPTION VALUE="44,Movies Unlimited">Movies Unlimited
+         <OPTION VALUE="56,Walmart.com">Walmart.com
+</SELECT><A HREF="javascript:sendHeaderSimpleSearch()"><IMG SRC="Go.gif" ALT="Go" BORDER=0 WIDTH=25 HEIGHT=25 ALIGN=MIDDLE></A>      </FONT>       <A HREF='javascript:getHtmlPage("searchtips")'><FONT SIZE=-2>Tips</FONT></A><BR><IMG SRC="blank.gif" ALT="" WIDTH=1 HEIGHT=5></TD></TR>
+<TR><TD ALIGN=LEFT WIDTH=507 VALIGN=TOP>
+<IMG src="/beta/images/tabs3.gif" ALT="" width="507" height="18" border="0" usemap="#tabs"></TD><TD COLSPAN=3 ALIGN=RIGHT><IMG SRC="/beta/images/PicMenu3.gif" ALT="" ALIGN=TOP BORDER=0 WIDTH=88 HEIGHT=22 usemap="#pic"></TD><INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="page" VALUE=1>
+<INPUT TYPE="hidden" NAME="totalRows" VALUE=-1>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+</TR>
+</FORM>
+</TABLE>
+<BR><TABLE BGCOLOR="#9999CC" WIDTH="95%" CELLPADDING=1 CELLSPACING=0 BORDER=0>
+<TR><TD BGCOLOR=#9999CC>
+<TABLE BGCOLOR="#9999CC" BORDER=0 CELLSPACING=2 CELLPADDING=2 WIDTH="100%">
+<FORM METHOD=POST NAME="htmlSubmitForm"           ACTION="/cgi-bin/dvdhtml2">
+<INPUT TYPE="hidden" NAME="cmd" VALUE=>
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+</FORM>
+<FORM METHOD=POST NAME="htmlaSubmitForm"           ACTION="/cgi-bin/dvdhtmla">
+<INPUT TYPE="hidden" NAME="cmd" VALUE=>
+<INPUT TYPE="hidden" NAME="em_pageName" VALUE=>
+<INPUT TYPE="hidden" NAME="em_pageGet" VALUE=>
+<INPUT TYPE="hidden" NAME="em_pagePost" VALUE=>
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+</FORM>
+<FORM METHOD=POST NAME="ssSubmitForm"           ACTION="/cgi-bin/dvdsearch2">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="NOINIT">
+<INPUT TYPE="hidden" NAME="sstype" VALUE=>
+<INPUT TYPE="hidden" NAME="sstext" VALUE=>
+<INPUT TYPE="hidden" NAME="ssstore" VALUE="ALL,All Stores">
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="page" VALUE=1>
+<INPUT TYPE="hidden" NAME="totalRows" VALUE=-1>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+<INPUT TYPE="hidden" NAME="srfilterSelect" VALUE="None">
+</FORM>
+<FORM METHOD=POST NAME="cartSubmitForm"           ACTION="/cgi-bin/dvdcalc2">
+<INPUT TYPE="hidden" NAME="cmd" VALUE=>
+<INPUT TYPE="hidden" NAME="tmpCart" VALUE=>
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+</FORM>
+<FORM METHOD=POST NAME="vrevSubmitForm" ACTION="/cgi-bin/vreviews2">
+<INPUT TYPE=HIDDEN NAME="cmd" VALUE=>
+<INPUT TYPE=HIDDEN NAME="page" VALUE=1>
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<INPUT TYPE="hidden" NAME="updateDays" VALUE=4>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+</FORM>
+<TR><TD COLSPAN=2 BGCOLOR=#9999CC><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=+1><B>Welcome to DVD Price Search</B></FONT><br><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=-1>The Smartest Way to Compare DVD Prices Online!</FONT></TD><TD ROWSPAN=20 ALIGN=CENTER VALIGN=TOP WIDTH=140 BGCOLOR=#FFFFFF>
+<FONT SIZE=-1 FACE="ARIAL,HELVETICA">Visit Our Sponsors</FONT><BR>
+<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=29&l=ur1&category=homeaudiohometheater&banner=0T4YJ6YBNCMJM9GGAK02&f=ifr&linkID=afec8763722b29d04b4575bc0b398f07&t=dvdpricesearch&tracking_id=dvdpricesearch" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe><P><!-- Facebook Badge START --><a href="http://www.facebook.com/pages/DVD-Price-Search/82355472818" title="DVD Price Search" target="_TOP"><img src="http://badge.facebook.com/badge/82355472818.4281.408367826.png" width="137" height="84" style="border: 0px;" /></a><!-- Facebook Badge END --><BR><BR>
+<HR SIZE=1 WIDTH=90% NOSHADE>
+<FONT FACE="ARIAL,.HELVETICA" SIZE=-1>
+<B>Did you save your cart from your last visit?</B><BR><A HREF="javascript:loadCart('loadCart')"><IMG SRC="/beta/images/SideLoadCart.gif" WIDTH=100 HEIGHT=20 VSPACE=3 BORDER=0 ALT="[ Load Cart ]"></A><BR>
+<A HREF="javascript:loadCart('loadcalc')"><IMG SRC="/beta/images/SideLoadCalc.gif" WIDTH=100 HEIGHT=20 VSPACE=3 BORDER=0 ALT="[ Load Cart & Compare Prices ]"></A><BR>
+<HR SIZE=1 WIDTH=90% NOSHADE>
+<FONT SIZE=2 FACE="VERDANA,ARIAL,HELVETICA"><B><A HREF="javascript:getHtmlAPage('recommendUs')">Recomend<BR>This Site<BR>to a Friend</A></B></FONT>
+<HR SIZE=1 WIDTH=90% NOSHADE>
+<A HREF="javascript:ssearch('category', 'dts', 'ALL')"><IMG SRC="/images/dts.gif" ALT="[ DTS ]" WIDTH=120 HEIGHT=60 BORDER=1></A>
+<HR SIZE=1 WIDTH=90% NOSHADE></FONT>
+<A target="sideWin" href="/cgi-bin/goto?st=misc&ty=donate"><IMG SRC="https://www.paypal.com/images/x-click-but04.gif" BORDER=0 WIDTH=62 HEIGHT=31></A>
+<HR SIZE=1 WIDTH=90% NOSHADE></FONT>
+<div id="eXTReMe"><a href="http://extremetracking.com/open?login=dvdps2">
+<img src="http://t1.extreme-dm.com/i.gif" style="border: 0;"
+height="38" width="41" id="EXim" alt="eXTReMe Tracker" /></a>
+<script type="text/javascript"><!--
+var EXlogin='dvdps2'
+var EXvsrv='s10'
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;EXsrc="src";
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img "+EXsrc+"=http://e1.extreme-dm.com",
+"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+</script><noscript><div id="neXTReMe"><img height="1" width="1" alt=""
+src="http://e1.extreme-dm.com/s10.g?login=dvdps2&amp;j=n&amp;jv=n" />
+</div></noscript></div>
+<P><A HREF="javascript:getHtmlPage('oscar')">_</A><br>
+</TD></TR>
+<FORM METHOD=POST NAME="localHtmlSubmitForm" ACTION="/cgi-bin/dvdhtml2">
+<INPUT TYPE="hidden" NAME="cmd" VALUE=>
+<INPUT TYPE="hidden" NAME="sid" VALUE="Feb161428222266">
+<INPUT TYPE="hidden" NAME="cart" VALUE=>
+<INPUT TYPE="hidden" NAME="addTitles" VALUE=>
+<INPUT TYPE="hidden" NAME="srcolnames" VALUE="Genre,Studio,Lowest Price">
+<INPUT TYPE="hidden" NAME="srsortcol" VALUE=0>
+<INPUT TYPE="hidden" NAME="pageLength" VALUE=20>
+<INPUT TYPE="hidden" NAME="numStoresDisplayed" VALUE=8,0.10>
+<INPUT TYPE="hidden" NAME="adultFilter" VALUE=0>
+<INPUT TYPE="hidden" NAME="hdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="blrFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="stdDvdFilter" VALUE=1>
+<INPUT TYPE="hidden" NAME="lowPriceToler" VALUE=0.10>
+<INPUT TYPE="hidden" NAME="coupons" VALUE=>
+<INPUT TYPE="hidden" NAME="state" VALUE="ZZ">
+<INPUT TYPE="hidden" NAME="country" VALUE="USA">
+<INPUT TYPE="hidden" NAME="include" VALUE=>
+<INPUT TYPE="hidden" NAME="exclude" VALUE=>
+<TR><TD COLSPAN=2 VALIGN=TOP BGCOLOR=#EEEECC><FONT FACE="ARIAL,HELVETICA" SIZE=-1>
+Besides keeping you informed of the latest 
+DVD coupons, bargains and specials on the web, DVD Price Search 
+helps you compare prices on the newest and hottest DVD and Blu-Ray movies.
+Price comparison shopping online has never been easier with our 
+search engine which is capable of finding those hidden deals that 
+other price comparison websites just don't know about! Try us out... start by finding 
+specific DVD titles using the search bar above or
+just browse the aisles.  Don't forget to check out each day's newest deals (below).  Let us help you build your personal 
+DVD collection at the lowest cost possible! Click <A HREF="javascript:getHtmlPage('aboutus')">here</A> to 
+find out more about the site, including our unique "Comparison Cart" feature.<BR>&nbsp;
+<INPUT TYPE="checkbox" onClick="applyAdvancedUser()"> Don't show this next time.<br>
+</FONT></TD></TR>
+<INPUT TYPE="hidden" NAME="advancedUser" VALUE=0>
+<TR><TD COLSPAN=2 BGCOLOR=#9999CC><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=+1><B>Latest Updates</B></FONT><FONT SIZE=-1>&nbsp;&nbsp;<A HREF="#customizeDays">[customize]</A></FONT></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP><!--HR SIZE=1-->
+<FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+<SCRIPT LANGUAGE=JAVASCRIPT1.1> 
+<!-- Hide script from old browsers 
+function submitExactPersonSearch(ids) 
+{ 
+   document.ssSubmitForm.cmd.value = "simpleSearch" 
+   document.ssSubmitForm.sstype.value = "exactPerson" 
+   if (ids == "") 
+      document.ssSubmitForm.sstext.value = collectPeople() 
+   else 
+      document.ssSubmitForm.sstext.value = ids 
+   document.ssSubmitForm.totalRows.value = -1 
+   document.ssSubmitForm.submit() 
+} 
+ 
+// End hiding script from old browsers --> 
+</SCRIPT> 
+
+<!--<BR><A HREF="javascript:getHtmlPage('oscar')"><IMG SRC=/images/oscar.gif WIDTH=78 HEIGHT=137 ALIGN=RIGHT BORDER=0></A>--> 
+	<BR><FONT SIZE=3 FACE=ARIAL,HELVETICA COLOR=RED><B>HOT COUPONS/OFFERS</B></FONT> 
+<FONT FACE=ARIAL,HELVETICA SIZE=1>[<A HREF="javascript:getHtmlPage('specials')">See All Coupons/Offers</A>]</FONT><BR> 
+<!-- 
+<FONT FACE=ARIAL,HELVETICA SIZE=1 COLOR=RED>* NEW *</FONT>  
+--> 
+<TABLE><TR><TD VALIGN=TOP><FONT FACE=ARIAL,HELVETICA SIZE=2> 
+<B>Gruv.com</B> - <A HREF="https://www.gruv.com" TARGET="sideWin">Hot 4K/Blu-Ray/DVD Deals @ Gruv.com</A> including - 4K December deals (3 for $39) (plus get 20% off your first purchase)<BR><B>BestBuy.com</B> - <a rel="sponsored" target="sideWin" href="https://bestbuy.7tiv.net/c/1805224/3406758/10014">Save Up To 50% On Select Cyber Monday Deals</a><BR><B>DeepDiscount.com</B> -  <A HREF="http://www.pjatr.com/t/Qz9ISERDP0NCRklISD9ISERD?url=http%3A%2F%2Fwww.deepdiscount.com%2F70-or-more--movies-sale/b137433" TARGET="sideWin">Movies and TV - 70% off or more</A><BR><B>Amazon.com</B> - <A HREF="https://amzn.to/3ZcRfYm" TARGET="sideWin">Oscar Winners available on Amazon Prime Video</A><BR><BR><FONT SIZE=3 COLOR=ORANGE><B>2025 ACADEMY AWARD NOMINEES/WINNERS</B></FONT><BR><!--Checkout the <A HREF="javascript:getHtmlPage('oscar')">Nominee & Winner List for the 95th Annual Academy Awards</A> which includes many titles already announced on DVD + Blu-Ray + 4K<BR>--><BR><A HREF="javascript:integratedPC(237772)"><IMG SRC="/beta/images/covers/237772.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(238470)"><IMG SRC="/beta/images/covers/238470.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(238477)"><IMG SRC="/beta/images/covers/238477.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237556)"><IMG SRC="/beta/images/covers/237556.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(234041)"><IMG SRC="/beta/images/covers/234041.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237742)"><IMG SRC="/beta/images/covers/237742.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(235503)"><IMG SRC="/beta/images/covers/235503.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><BR><A HREF="javascript:integratedPC(238525)"><IMG SRC="/beta/images/covers/238525.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(236934)"><IMG SRC="/beta/images/covers/236934.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237715)"><IMG SRC="/beta/images/covers/237715.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237772)"><IMG SRC="/beta/images/covers/237772.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237089)"><IMG SRC="/beta/images/covers/237089.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(237954)"><IMG SRC="/beta/images/covers/237954.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(238773)"><IMG SRC="/beta/images/covers/238773.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><BR><BR><FONT SIZE=3 COLOR=ORANGE><B>2025 EMMY AWARD NOMINEES/WINNERS</B></FONT><BR><BR><A HREF="javascript:integratedPC(238460)"><IMG SRC="/beta/images/covers/238460.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(222462)"><IMG SRC="/beta/images/covers/222462.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(214514)"><IMG SRC="/beta/images/covers/214514.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(238301)"><IMG SRC="/beta/images/covers/238301.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(240468)"><IMG SRC="/beta/images/covers/240468.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(240904)"><IMG SRC="/beta/images/covers/240904.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><A HREF="javascript:integratedPC(240695)"><IMG SRC="/beta/images/covers/240695.jpg" WIDTH=75 HEIGHT=100 HSPACE=5></A><BR><BR><CENTER><BR> 
+<A HREF="javascript:ssearch('title','4k','ALL')"><IMG SRC=/images/4kultrahd.jpg WIDTH=100 HEIGHT=33 HSPACE=5 BORDER=1></A> 
+<!--<FONT FACE=ARIAL,HELVETICA SIZE=2><B><A HREF="javascript:getHtmlPage('oscar')"><IMG SRC=/images/OscarWinners.gif WIDTH=100 HEIGHT=33 HSPACE=5 BORDER=1></A> 
+--><A HREF="javascript:ssearch('title','blu-ray','ALL')"><IMG SRC=/images/bluray.gif WIDTH=100 HEIGHT=33 HSPACE=5 BORDER=1></A> 
+ 
+</TD><TD VALIGN=TOP> 
+<CENTER> 
+<SCRIPT SRC="http://www.dvdpricesearch.com/top_dvd.js"></SCRIPT> 
+</CENTER> 
+</TD></TR></TABLE> 
+ 
+ <BR> 
+ </FONT></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP>
+<A NAME=MON></A><B>February 16, 2026</B><BR>
+<UL><FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+ 	<IMG SRC="/partners/amazon.gif" HSPACE=6 BORDER=0 WIDTH=100 HEIGHT=30 ALIGN=RIGHT ALT="[ Amazon.com ]"><FONT SIZE=3 COLOR=ORANGE><B>DVDPS HOT DEAL FINDER</B></FONT><BR>Check out these <FONT COLOR=RED>HOT</FONT> DVD deals at <B>Amazon.com</B>! (<FONT SIZE=1>prices include U.S. shipping)</FONT><BR>* <A href="javascript:integratedPC(215969)">Beasts Of No Nation BD (Blu-Ray)</a> - $23.96 (40% OFF) (<FONT SIZE=1>next lowest price: $33.97</FONT>)<BR>* <A href="javascript:integratedPC(224141)">Belle (Collector's Edition) (4K Ultra HD + Blu-Ray)</a> - $45.49 (30% OFF) (<FONT SIZE=1>next lowest price: $55.51</FONT>)<BR>* <A href="javascript:integratedPC(218754)">Billions: Season 5 (Widescreen)</a> - $22.47 (44% OFF) (<FONT SIZE=1>next lowest price: $32.48</FONT>)<BR>* <A href="javascript:integratedPC(172437)">Boardwalk Empire: Season #3 (Repackaged)</a> - $17.24 (57% OFF) (<FONT SIZE=1>next lowest price: $27.3</FONT>)<BR>* <A href="javascript:integratedPC(91463)">Christmas Favorites Collection</a> - $15.96 (60% OFF) (<FONT SIZE=1>next lowest price: $25.97</FONT>)<BR>* <A href="javascript:integratedPC(180381)">DC's Legends Of Tomorrow: Season #1 (Blu-Ray + UltraViolet)</a> - $15.93 (36% OFF) (<FONT SIZE=1>next lowest price: $26.01</FONT>)<BR>* <A href="javascript:integratedPC(155747)">Doctor Who: The Doctors Revisited: 9-11</a> - $15.27 (62% OFF) (<FONT SIZE=1>next lowest price: $25.35</FONT>)<BR>* <A href="javascript:integratedPC(221166)">Funeral, The BD (Blu-Ray)</a> - $23.96 (40% OFF) (<FONT SIZE=1>next lowest price: $33.97</FONT>)<BR>* <A href="javascript:integratedPC(105350)">Girlfriends: Season #7</a> - $12.81 (70% OFF) (<FONT SIZE=1>next lowest price: $22.96</FONT>)<BR>* <A href="javascript:integratedPC(164726)">Heatstroke (Blu-Ray)</a> - $13.64 (55% OFF) (<FONT SIZE=1>next lowest price: $23.83</FONT>)<BR>* <A href="javascript:integratedPC(140597)">Heineken Kidnapping, The (Blu-Ray)</a> - $15.58 (48% OFF) (<FONT SIZE=1>next lowest price: $25.77</FONT>)<BR>* <A href="javascript:integratedPC(166602)">Hobbit, The: The Desolation Of Smaug: Extended Edition (Blu-Ray + UltraViolet)</a> - $13.97 (61% OFF) (<FONT SIZE=1>next lowest price: $24.05</FONT>)<BR>* <A href="javascript:integratedPC(173226)">Lost Soul: Doomed Journey Of Richard Stanley's (Blu-Ray)</a> - $19.72 (44% OFF) (<FONT SIZE=1>next lowest price: $29.86</FONT>)<BR>* <A href="javascript:integratedPC(137000)">Midsomer Murders: Set 19 (Blu-Ray)</a> - $31.89 (47% OFF) (<FONT SIZE=1>next lowest price: $41.94</FONT>)<BR>* <A href="javascript:integratedPC(57668)">My Family: Season #2</a> - $19.90 (34% OFF) (<FONT SIZE=1>next lowest price: $29.99</FONT>)<BR>* <A href="javascript:integratedPC(218673)">My Life Is Murder Series 2 (Blu-Ray)</a> - $33.94 (43% OFF) (<FONT SIZE=1>next lowest price: $43.97</FONT>)<BR>* <A href="javascript:integratedPC(90348)">Naked Brothers Band, The: Season #2</a> - $12.81 (53% OFF) (<FONT SIZE=1>next lowest price: $22.82</FONT>)<BR>* <A href="javascript:integratedPC(116442)">Office, The: Season #6 (American Series) (Blu-Ray)</a> - $13.93 (77% OFF) (<FONT SIZE=1>next lowest price: $24.06</FONT>)<BR>* <A href="javascript:integratedPC(162580)">Orphan Black: Season #2 (Blu-Ray)</a> - $13.92 (60% OFF) (<FONT SIZE=1>next lowest price: $23.96</FONT>)<BR>* <A href="javascript:integratedPC(169906)">Outcast (Blu-Ray) (Widescreen)</a> - $13.92 (54% OFF) (<FONT SIZE=1>next lowest price: $23.99</FONT>)<BR>* <A href="javascript:integratedPC(168620)">Outlander: Season #1: Volume 1: Collector's (Blu-Ray)</a> - $24.85 (56% OFF) (<FONT SIZE=1>next lowest price: $34.96</FONT>)<BR>* <A href="javascript:integratedPC(169909)">Parenthood: The Complete Series</a> - $49.04 (59% OFF) (<FONT SIZE=1>next lowest price: $59.07</FONT>)<BR>* <A href="javascript:integratedPC(187694)">Pirates (2017)</a> - $9.78 (61% OFF) (<FONT SIZE=1>next lowest price: $19.97</FONT>)<BR>* <A href="javascript:integratedPC(71834)">Rome: Season #2</a> - $19.88 (80% OFF) (<FONT SIZE=1>next lowest price: $29.99</FONT>)<BR>* <A href="javascript:integratedPC(126057)">Rookie Blue: Season #1</a> - $13.97 (69% OFF) (<FONT SIZE=1>next lowest price: $24.1</FONT>)<BR>* <A href="javascript:integratedPC(161532)">Rookie Blue: Season #4</a> - $19.64 (51% OFF) (<FONT SIZE=1>next lowest price: $29.83</FONT>)<BR>* <A href="javascript:integratedPC(37798)">S.W.A.T. (Superbit)</a> - $14.88 (45% OFF) (<FONT SIZE=1>next lowest price: $24.97</FONT>)<BR>* <A href="javascript:integratedPC(181813)">Scott And Bailey: Season #5</a> - $15.88 (36% OFF) (<FONT SIZE=1>next lowest price: $25.91</FONT>)<BR>* <A href="javascript:integratedPC(3803)">Shakespeare In Love</a> - $9.78 (67% OFF) (<FONT SIZE=1>next lowest price: $19.94</FONT>)<BR>* <A href="javascript:integratedPC(145503)">Shakugan No Shana: Season #2, Part 1: Limited Edition (Blu-Ray + DVD)</a> - $42.90 (39% OFF) (<FONT SIZE=1>next lowest price: $53.07</FONT>)<BR>* <A href="javascript:integratedPC(164669)">Sleeping Beauty: Diamond Edition (Blu-Ray + DVD + UltraViolet)</a> - $14.89 (60% OFF) (<FONT SIZE=1>next lowest price: $24.96</FONT>)<BR>* <A href="javascript:integratedPC(227545)">Streets of Fire: Collector's Edition (4K Ultra HD + Blu-Ray)</a> - $24.97 (36% OFF) (<FONT SIZE=1>next lowest price: $35.07</FONT>)<BR>* <A href="javascript:integratedPC(95991)">Tess Of The D'Urbervilles</a> - $17.97 (49% OFF) (<FONT SIZE=1>next lowest price: $27.99</FONT>)<BR>* <A href="javascript:integratedPC(226802)">The Batman (4K Ultra HD + Blu-Ray + Digital)</a> - $16.47 (98% OFF) (<FONT SIZE=1>next lowest price: $26.5</FONT>)<BR>* <A href="javascript:integratedPC(118850)">Thirtysomething: The Complete Final Season</a> - $35.47 (41% OFF) (<FONT SIZE=1>next lowest price: $45.48</FONT>)<BR>* <A href="javascript:integratedPC(6407)">Tumbleweeds</a> - $15.46 (38% OFF) (<FONT SIZE=1>next lowest price: $25.47</FONT>)<BR>* <A href="javascript:integratedPC(186622)">Van Helsing: Season #1 (Blu-Ray)</a> - $18.98 (24% OFF) (<FONT SIZE=1>next lowest price: $29.05</FONT>)<BR><BR><FONT SIZE=3 COLOR=PURPLE><B>TODAY IN HISTORY (ON DVD)</B></FONT><BR>Click on the links below to find DVDs for these actors/directors who were born today:<BR>* <A HREF="javascript:submitExactPersonSearch(44683)">LeVar Burton</A> (69)<BR>* <A HREF="javascript:submitExactPersonSearch(104572)">Ice T</A> (68)<BR>* <A HREF="javascript:submitExactPersonSearch(37504)">John McEnroe</A> (67)<BR>* <A HREF="javascript:submitExactPersonSearch(13372)">Christopher Eccleston</A> (62)<BR>* <A HREF="javascript:submitExactPersonSearch(2731)">Amanda Holden</A> (55)<BR>* <A HREF="javascript:submitExactPersonSearch(67303)">Sarah Clarke</A> (54)<BR>* <A HREF="javascript:submitExactPersonSearch(88445)">Mahershala Ali</A> (52)<BR>* <A HREF="javascript:submitExactPersonSearch(33134)">Janet Varney</A> (50)<BR>* <A HREF="javascript:submitExactPersonSearch(80644)">Valentino Rossi</A> (47)<BR>* <A HREF="javascript:submitExactPersonSearch(47531)">Lupe Fiasco</A> (44)<BR>* <A HREF="javascript:submitExactPersonSearch(82061)">Elizabeth Olsen</A> (37)<BR>* <A HREF="javascript:submitExactPersonSearch(115789)">Jimmy Tatro</A> (34)<BR>* <A HREF="javascript:submitExactPersonSearch(51210)">Matthew Knight</A> (32)<BR>* <A HREF="javascript:submitExactPersonSearch(115793)">Chloe East</A> (25)<BR>
+  </FONT></UL><UL><HR>
+<FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+<SCRIPT SRC="http://www.dvdpricesearch.com/dodAMAZONTV.js"></SCRIPT> 
+ 
+<SCRIPT SRC="http://www.dvdpricesearch.com/goldboxDOD.js"></SCRIPT> 
+ 
+<!-- <SCRIPT SRC="http://www.dvdpricesearch.com/elec_gift.js"></SCRIPT> -->
+ 
+<!--SCRIPT SRC="http://www.dvdpricesearch.com/blu-rayDOW.js"></SCRIPT> -->
+ 
+<!--<SCRIPT SRC="http://www.dvdpricesearch.com/dod_barnes.js"></SCRIPT> 
+ 
+<SCRIPT SRC="http://www.dvdpricesearch.com/DailyDeepDeal.js"></SCRIPT>-->
+ 
+<!--<SCRIPT SRC="http://www.dvdpricesearch.com/dod.js"></SCRIPT>--> 
+<BR></FONT></UL>
+<div id="amzn-assoc-ad-fed7d6d0-3aab-47af-b5b8-d691d790c6e7"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=fed7d6d0-3aab-47af-b5b8-d691d790c6e7"></script><div id="amzn-assoc-ad-fed7d6d0-3aab-47af-b5b8-d691d790c6e7"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=fed7d6d0-3aab-47af-b5b8-d691d790c6e7"></script></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP><!--HR SIZE=1-->
+<A NAME=SUN></A><B>February 15, 2025</B><BR>
+<UL><FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+ 	<IMG SRC="/partners/amazon.gif" HSPACE=6 BORDER=0 WIDTH=100 HEIGHT=30 ALIGN=RIGHT ALT="[ Amazon.com ]"><FONT SIZE=3 COLOR=ORANGE><B>DVDPS HOT DEAL FINDER</B></FONT><BR>Check out these <FONT COLOR=RED>HOT</FONT> DVD deals at <B>Amazon.com</B>! (<FONT SIZE=1>prices include U.S. shipping)</FONT><BR>* <A href="javascript:integratedPC(19180)">24: Season #1</a> - $15.98 (73% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(74861)">Angel Collector's Set</a> - $83.53 (40% OFF) (<FONT SIZE=1>next lowest price: $120.97</FONT>)<BR>* <A href="javascript:integratedPC(21919)">Angel: Season 1</a> - $17.97 (70% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(88989)">BBC Natural History Collection (Widescreen)</a> - $30.93 (85% OFF) (<FONT SIZE=1>next lowest price: $64.96</FONT>)<BR>* <A href="javascript:integratedPC(198502)">Batman: Complete Animated Series</a> - $23.97 (14% OFF) (<FONT SIZE=1>next lowest price: $61.48</FONT>)<BR>* <A href="javascript:integratedPC(167526)">Batman: The Complete Television Series (Blu-Ray)</a> - $44.99 (81% OFF) (<FONT SIZE=1>next lowest price: $79.68</FONT>)<BR>* <A href="javascript:integratedPC(175633)">Call the Midwife: Seasons One/Two/Three</a> - $31.65 (70% OFF) (<FONT SIZE=1>next lowest price: $66.47</FONT>)<BR>* <A href="javascript:integratedPC(114258)">Clint Eastwood Collection (10-pack) (Blu-Ray)</a> - $64.74 (57% OFF) (<FONT SIZE=1>next lowest price: $99.85</FONT>)<BR>* <A href="javascript:integratedPC(43082)">Cold Feet: Season #2</a> - $26.81 (55% OFF) (<FONT SIZE=1>next lowest price: $61.97</FONT>)<BR>* <A href="javascript:integratedPC(195595)">Community Complete Series</a> - $23.17 (17% OFF) (<FONT SIZE=1>next lowest price: $56.97</FONT>)<BR>* <A href="javascript:integratedPC(194386)">Criterion Collection: Dietrich & Von Sternberg In</a> - $62.48 (50% OFF) (<FONT SIZE=1>next lowest price: $94.82</FONT>)<BR>* <A href="javascript:integratedPC(210826)">Criterion Collection: Martin Scorsese's World Cine (Blu-Ray)</a> - $62.48 (50% OFF) (<FONT SIZE=1>next lowest price: $97.98</FONT>)<BR>* <A href="javascript:integratedPC(175124)">DC Comics Starter Pack: (Flash/Arrow/Gotham Seasons #1) (Blu-Ray)</a> - $48.88 (68% OFF) (<FONT SIZE=1>next lowest price: $82.89</FONT>)<BR>* <A href="javascript:integratedPC(153610)">Damages: The Complete Series</a> - $33.97 (65% OFF) (<FONT SIZE=1>next lowest price: $67.15</FONT>)<BR>* <A href="javascript:integratedPC(117795)">Doctor Who (2005): Series #5</a> - $35.95 (55% OFF) (<FONT SIZE=1>next lowest price: $70.97</FONT>)<BR>* <A href="javascript:integratedPC(153504)">Doctor Who: The Complete Seventh Series (Blu-Ray)</a> - $37.78 (58% OFF) (<FONT SIZE=1>next lowest price: $69.89</FONT>)<BR>* <A href="javascript:integratedPC(174953)">Downton Abbey: Seasons #1-#5</a> - $27.93 (72% OFF) (<FONT SIZE=1>next lowest price: $62.27</FONT>)<BR>* <A href="javascript:integratedPC(212266)">Entourage: Complete Series</a> - $95.83 (44% OFF) (<FONT SIZE=1>next lowest price: $132.48</FONT>)<BR>* <A href="javascript:integratedPC(127758)">Everybody Loves Raymond: The Complete Series (HBO)</a> - $72.81 (64% OFF) (<FONT SIZE=1>next lowest price: $111.55</FONT>)<BR>* <A href="javascript:integratedPC(169874)">Frank Sinatra Collection (Blu-Ray)</a> - $23.97 (66% OFF) (<FONT SIZE=1>next lowest price: $58.42</FONT>)<BR>* <A href="javascript:integratedPC(166916)">Happy Days: The Complete Seasons #1-#6</a> - $46.96 (69% OFF) (<FONT SIZE=1>next lowest price: $82.48</FONT>)<BR>* <A href="javascript:integratedPC(56265)">Invasion: Season #1</a> - $21.98 (63% OFF) (<FONT SIZE=1>next lowest price: $55.18</FONT>)<BR>* <A href="javascript:integratedPC(189411)">J.K. Rowling's Wizarding World: 9-Film Collection</a> - $22.23 (81% OFF) (<FONT SIZE=1>next lowest price: $60.7</FONT>)<BR>* <A href="javascript:integratedPC(35958)">Keeping Up Appearances: The Full Bouquet</a> - $66.90 (49% OFF) (<FONT SIZE=1>next lowest price: $102.97</FONT>)<BR>* <A href="javascript:integratedPC(35730)">Law & Order: Season #14</a> - $15.21 (75% OFF) (<FONT SIZE=1>next lowest price: $50.53</FONT>)<BR>* <A href="javascript:integratedPC(119114)">Leading Men Collection</a> - $18.97 (79% OFF) (<FONT SIZE=1>next lowest price: $54.82</FONT>)<BR>* <A href="javascript:integratedPC(43593)">Lois & Clark: Season #1</a> - $20.95 (65% OFF) (<FONT SIZE=1>next lowest price: $55.97</FONT>)<BR>* <A href="javascript:integratedPC(223475)">Martin Scorsese's World Cinema Project No 4 BD / DVD (Blu-Ray)</a> - $62.48 (50% OFF) (<FONT SIZE=1>next lowest price: $97.98</FONT>)<BR>* <A href="javascript:integratedPC(36890)">Marx Brothers Silver Screen Collection</a> - $16.67 (72% OFF) (<FONT SIZE=1>next lowest price: $53.98</FONT>)<BR>* <A href="javascript:integratedPC(157571)">Mary Hartman, Mary Hartman: The Complete Series</a> - $99.99 (60% OFF) (<FONT SIZE=1>next lowest price: $136.86</FONT>)<BR>* <A href="javascript:integratedPC(174578)">Mrs. Brown's Boys: The Complete Series</a> - $36.95 (63% OFF) (<FONT SIZE=1>next lowest price: $72.32</FONT>)<BR>* <A href="javascript:integratedPC(91749)">Nip/Tuck: Season #5: Part 1</a> - $17.90 (70% OFF) (<FONT SIZE=1>next lowest price: $55.97</FONT>)<BR>* <A href="javascript:integratedPC(57356)">One Tree Hill: Season #3</a> - $18.99 (68% OFF) (<FONT SIZE=1>next lowest price: $55.97</FONT>)<BR>* <A href="javascript:integratedPC(78410)">One Tree Hill: Season #4</a> - $17.56 (71% OFF) (<FONT SIZE=1>next lowest price: $55.97</FONT>)<BR>* <A href="javascript:integratedPC(89163)">One Tree Hill: Season #5</a> - $17.97 (70% OFF) (<FONT SIZE=1>next lowest price: $55.97</FONT>)<BR>* <A href="javascript:integratedPC(56107)">Prison Break: Season #1</a> - $16.69 (72% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(73533)">Prison Break: Season #2</a> - $16.91 (72% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(19412)">Project Greenlight / Stolen Summer: Special Edition</a> - $19.96 (71% OFF) (<FONT SIZE=1>next lowest price: $54.97</FONT>)<BR>* <A href="javascript:integratedPC(202972)">Scooby-Doo Where Are You: Complete Series (Blu-Ray)</a> - $57.03 (37% OFF) (<FONT SIZE=1>next lowest price: $92.48</FONT>)<BR>* <A href="javascript:integratedPC(180515)">Selector Spread WIXOSS: Season Two (Blu-Ray)</a> - $16.94 (74% OFF) (<FONT SIZE=1>next lowest price: $54.13</FONT>)<BR>* <A href="javascript:integratedPC(121263)">Shadow Of The Tower, The</a> - $19.78 (67% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(18614)">Star Trek: The Next Generation Season 4 Box Set: Special Edition</a> - $15.46 (89% OFF) (<FONT SIZE=1>next lowest price: $52.13</FONT>)<BR>* <A href="javascript:integratedPC(32954)">Star Trek: Voyager Season 2</a> - $17.96 (86% OFF) (<FONT SIZE=1>next lowest price: $52.13</FONT>)<BR>* <A href="javascript:integratedPC(6953)">Stephen Hawking's Universe (Discontinued)</a> - $27.97 (53% OFF) (<FONT SIZE=1>next lowest price: $61.97</FONT>)<BR>* <A href="javascript:integratedPC(164631)">Welcome Back, Kotter: The Complete Series</a> - $43.65 (66% OFF) (<FONT SIZE=1>next lowest price: $79.03</FONT>)<BR>* <A href="javascript:integratedPC(65546)">Without A Trace: Season #2</a> - $21.84 (64% OFF) (<FONT SIZE=1>next lowest price: $55.18</FONT>)<BR><BR><FONT SIZE=3 COLOR=PURPLE><B>TODAY IN HISTORY (ON DVD)</B></FONT><BR>Click on the links below to find DVDs for these actors/directors who were born today:<BR>* <A HREF="javascript:submitExactPersonSearch(28720)">Harvey Korman</A><BR>* <A HREF="javascript:submitExactPersonSearch(12746)">Chris Farley</A><BR>* <A HREF="javascript:submitExactPersonSearch(33050)">Jane Seymour</A><BR>* <A HREF="javascript:submitExactPersonSearch(47689)">Lynn Whitfield</A> (73)<BR>* <A HREF="javascript:submitExactPersonSearch(51027)">Matt Groening</A> (72)<BR>* <A HREF="javascript:submitExactPersonSearch(13465)">Christopher McDonald</A> (71)<BR>* <A HREF="javascript:submitExactPersonSearch(84577)">Olga Merediz</A> (70)<BR>* <A HREF="javascript:submitExactPersonSearch(1699)">Alex Borstein</A> (55)<BR>* <A HREF="javascript:submitExactPersonSearch(1758)">Alex Gonzalez</A> (49)<BR>* <A HREF="javascript:submitExactPersonSearch(106666)">Natalie Morales</A> (41)<BR>* <A HREF="javascript:submitExactPersonSearch(2805)">Amber Riley</A> (40)<BR>* <A HREF="javascript:submitExactPersonSearch(87074)">Jessica De Gouw</A> (38)<BR>* <A HREF="javascript:submitExactPersonSearch(125405)">Callum Turner</A> (36)<BR>* <A HREF="javascript:submitExactPersonSearch(79676)">Zachary Gordon</A> (28)<BR>
+  </FONT></UL></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP><!--HR SIZE=1-->
+<A NAME=SAT></A><B>February 14, 2026</B><BR>
+<UL><FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+<A HREF="javascript:integratedPC(233131)"><IMG SRC="/beta/images/covers/233131.jpg" WIDTH=100 HEIGHT=134 ALIGN=RIGHT HSPACE=5></A><FONT SIZE=3 COLOR=orange><B>NEW 4K DEALS</B></FONT><BR>* <A href="javascript:integratedPC(236615)">Alfred Hitchcock: The Iconic Film Collection: Limited Edition (4K Ultra HD + Digital)</a> - now $74.99 (58% OFF)<BR>* <A href="javascript:integratedPC(231616)">Barbie (4K Ultra HD + Digital)</a> - now $14.37 (64% OFF)<BR>* <A href="javascript:integratedPC(239912)">Battle Beyond the Stars: Collector's Edition (4K Ultra HD + Blu-Ray)</a> - now $17.77 (56% OFF)<BR>* <A href="javascript:integratedPC(233131)">Contagion (2011) (4K Ultra HD + Digital)</a> - now $17.52 (98% OFF)<BR>* <A href="javascript:integratedPC(238127)">Kraven The Hunter (Steelbook) (4K Ultra HD + Blu-Ray + Digital)</a> - now $30.09 (54% OFF)<BR>* <A href="javascript:integratedPC(240893)">Superman (2025) (4K Ultra HD + Digital)</a> - now $16.00 (98% OFF)<BR>* <A href="javascript:integratedPC(235677)">The Blob (1988) (Limited Edition Steelbook) (4K Ultra HD + Blu-Ray)</a> - now $18.49 (59% OFF)<BR>* <A href="javascript:integratedPC(240241)">Wolf Children (Limited Edition Steelbook) (4K Ultra HD + Blu-Ray)</a> - now $26.55 (97% OFF)<BR><BR><FONT SIZE=3 COLOR=purple><B>NEW LOWEST PRICES</B></FONT> (click on the title to compare prices)<BR><IMG SRC="/partners/walmart.gif" HSPACE=6 BORDER=0 WIDTH=100 HEIGHT=30 ALIGN=RIGHT ALT="[ Walmart.com ]"><B>Walmart.com</B><BR>* <A href="javascript:integratedPC(240545)">50s SCI-FI 4-FILM COLLECTION</a> - now $29.99 (97% OFF) <FONT SIZE=1>(Previous lowest price: $43.84)</FONT><BR>* <A href="javascript:integratedPC(236615)">Alfred Hitchcock: The Iconic Film Collection: Limited Edition (4K Ultra HD + Digital)</a> - now $74.99 (58% OFF) <FONT SIZE=1>(Previous lowest price: $116.99)</FONT><BR>* <A href="javascript:integratedPC(222239)">All In The Family: The Complete Series (DVD)</a> - now $31.00 (61% OFF) <FONT SIZE=1>(Previous lowest price: $54.96)</FONT><BR>* <A href="javascript:integratedPC(141407)">All In The Family: The Complete Series</a> - now $39.90 (80% OFF) <FONT SIZE=1>(Previous lowest price: $88.90)</FONT><BR>* <A href="javascript:integratedPC(231616)">Barbie (4K Ultra HD + Digital)</a> - now $14.37 (64% OFF) <FONT SIZE=1>(Previous lowest price: $32.99)</FONT><BR>* <A href="javascript:integratedPC(237467)">Bastard!! Heavy Metal, Dark Fantasy: Season #1 (Blu-Ray)</a> - now $35.99 (96% OFF) <FONT SIZE=1>(Previous lowest price: $51.11)</FONT><BR>* <A href="javascript:integratedPC(239912)">Battle Beyond the Stars: Collector's Edition (4K Ultra HD + Blu-Ray)</a> - now $17.77 (56% OFF) <FONT SIZE=1>(Previous lowest price: $30.73)</FONT><BR>* <A href="javascript:integratedPC(125973)">Being Human: Season #3</a> - now $9.96 (80% OFF) <FONT SIZE=1>(Previous lowest price: $27.41)</FONT><BR>* <A href="javascript:integratedPC(232410)">Billions: The Complete Series</a> - now $32.00 (97% OFF) <FONT SIZE=1>(Previous lowest price: $42.99)</FONT><BR>* <A href="javascript:integratedPC(43752)">Bullitt: SE</a> - now $12.98 (52% OFF) <FONT SIZE=1>(Previous lowest price: $24.19)</FONT><BR>* <A href="javascript:integratedPC(240095)">Chainsaw Man: Season #1 Limited Edition (Blu-Ray)</a> - now $49.99 (95% OFF) <FONT SIZE=1>(Previous lowest price: $61.99)</FONT><BR>* <A href="javascript:integratedPC(92572)">Chronicles Of Narnia, The: Prince Caspian: 3-Disc Collector's Edition</a> - now $19.99 (50% OFF) <FONT SIZE=1>(Previous lowest price: $36.49)</FONT><BR>* <A href="javascript:integratedPC(233131)">Contagion (2011) (4K Ultra HD + Digital)</a> - now $17.52 (98% OFF) <FONT SIZE=1>(Previous lowest price: $36.09)</FONT><BR>* <A href="javascript:integratedPC(193709)">Disobedience</a> - now $7.99 (68% OFF) <FONT SIZE=1>(Previous lowest price: $18.03)</FONT><BR>* <A href="javascript:integratedPC(239407)">Doctor Who: Jon Pertwee: Season #1 (Blu-Ray)</a> - now $28.07 (57% OFF) <FONT SIZE=1>(Previous lowest price: $47.99)</FONT><BR>* <A href="javascript:integratedPC(239600)">Doctor Who: Season #1 (Blu-Ray)</a> - now $21.74 (98% OFF) <FONT SIZE=1>(Previous lowest price: $38.49)</FONT><BR>* <A href="javascript:integratedPC(75753)">Explore Your Mind: Animals</a> - now $9.43 (92% OFF) <FONT SIZE=1>(Previous lowest price: $95.95)</FONT><BR>* <A href="javascript:integratedPC(231189)">Farscape: Complete Series (Blu-Ray)</a> - now $99.99 (55% OFF) <FONT SIZE=1>(Previous lowest price: $131.68)</FONT><BR>* <A href="javascript:integratedPC(230605)">Fast & Furious: 10-Movie Collection</a> - now $53.55 (53% OFF) <FONT SIZE=1>(Previous lowest price: $64.67)</FONT><BR>* <A href="javascript:integratedPC(207495)">Helpful Fox Senko-San: Complete Series (Blu-Ray)</a> - now $25.99 (60% OFF) <FONT SIZE=1>(Previous lowest price: $36.49)</FONT><BR>* <A href="javascript:integratedPC(224808)">Hogan's Heroes: Complete Series Box Set (Blu-Ray)</a> - now $50.00 (60% OFF) <FONT SIZE=1>(Previous lowest price: $92.87)</FONT><BR>* <A href="javascript:integratedPC(240288)">How to Train Your Dragon: 2-Movie Collection</a> - now $10.00 (99% OFF) <FONT SIZE=1>(Previous lowest price: $20.87)</FONT><BR>* <A href="javascript:integratedPC(176786)">Into Thin Air: Death on Everest</a> - now $9.79 (53% OFF) <FONT SIZE=1>(Previous lowest price: $19.99)</FONT><BR>* <A href="javascript:integratedPC(99980)">Jon & Kate Plus Ei8ht: Season #4</a> - now $15.47 (56% OFF) <FONT SIZE=1>(Previous lowest price: $27.96)</FONT><BR>* <A href="javascript:integratedPC(238127)">Kraven The Hunter (Steelbook) (4K Ultra HD + Blu-Ray + Digital)</a> - now $30.09 (54% OFF) <FONT SIZE=1>(Previous lowest price: $42.49)</FONT><BR>* <A href="javascript:integratedPC(152225)">Many Loves Of Dobie Gillis, The: The Complete Series</a> - now $69.99 (50% OFF) <FONT SIZE=1>(Previous lowest price: $87.34)</FONT><BR>* <A href="javascript:integratedPC(166524)">Masterpiece: Downton Abbey: Seasons 1-4</a> - now $14.60 (85% OFF) <FONT SIZE=1>(Previous lowest price: $59.36)</FONT><BR>* <A href="javascript:integratedPC(239041)">Mentalist, The: The Complete Series (Repackaged/DVD)</a> - now $36.00 (96% OFF) <FONT SIZE=1>(Previous lowest price: $62.96)</FONT><BR>* <A href="javascript:integratedPC(220427)">My Hero Academia: Season 5: Part 1 (Blu-Ray)</a> - now $28.91 (66% OFF) <FONT SIZE=1>(Previous lowest price: $63.74)</FONT><BR>* <A href="javascript:integratedPC(126404)">No Strings Attached (Blu-Ray + DVD + Digital Copy)</a> - now $2.49 (94% OFF) <FONT SIZE=1>(Previous lowest price: $18.99)</FONT><BR>* <A href="javascript:integratedPC(233190)">Orphan Black Complete Series (Blu-Ray)</a> - now $26.56 (59% OFF) <FONT SIZE=1>(Previous lowest price: $38.89)</FONT><BR>* <A href="javascript:integratedPC(195729)">Rescue Me: Complete Series (Blu-Ray)</a> - now $20.00 (87% OFF) <FONT SIZE=1>(Previous lowest price: $39.86)</FONT><BR>* <A href="javascript:integratedPC(241101)">Rocky Horror Picture Show (1975) (Blu-Ray)</a> - now $11.38 (99% OFF) <FONT SIZE=1>(Previous lowest price: $25.99)</FONT><BR>* <A href="javascript:integratedPC(238307)">Shameless: The Complete Series</a> - now $40.00 (96% OFF) <FONT SIZE=1>(Previous lowest price: $56.39)</FONT><BR>* <A href="javascript:integratedPC(224008)">Six Million Dollar Man: Complete Series</a> - now $39.49 (96% OFF) <FONT SIZE=1>(Previous lowest price: $51.99)</FONT><BR>* <A href="javascript:integratedPC(239985)">Stop! Look! And Laugh! (Blu-Ray)</a> - now $14.39 (99% OFF) <FONT SIZE=1>(Previous lowest price: $30.11)</FONT><BR>* <A href="javascript:integratedPC(240893)">Superman (2025) (4K Ultra HD + Digital)</a> - now $16.00 (98% OFF) <FONT SIZE=1>(Previous lowest price: $29.95)</FONT><BR>* <A href="javascript:integratedPC(240894)">Superman (2025) (Blu-Ray + Digital)</a> - now $9.00 (99% OFF) <FONT SIZE=1>(Previous lowest price: $24.95)</FONT><BR>* <A href="javascript:integratedPC(235677)">The Blob (1988) (Limited Edition Steelbook) (4K Ultra HD + Blu-Ray)</a> - now $18.49 (59% OFF) <FONT SIZE=1>(Previous lowest price: $31.49)</FONT><BR>* <A href="javascript:integratedPC(201322)">Thundercats: Complete Series</a> - now $26.73 (67% OFF) <FONT SIZE=1>(Previous lowest price: $74.99)</FONT><BR>* <A href="javascript:integratedPC(38053)">Touch Of Frost: Season #4</a> - now $13.09 (74% OFF) <FONT SIZE=1>(Previous lowest price: $59.99)</FONT><BR>* <A href="javascript:integratedPC(240700)">Uzumaki Limited Edition (BD)</a> - now $22.49 (41% OFF) <FONT SIZE=1>(Previous lowest price: $34.95)</FONT><BR>* <A href="javascript:integratedPC(237737)">Wayans Bros. Complete Series, The</a> - now $30.00 (97% OFF) <FONT SIZE=1>(Previous lowest price: $47.49)</FONT><BR>* <A href="javascript:integratedPC(129927)">Without Men (Blu-Ray)</a> - now $9.99 (67% OFF) <FONT SIZE=1>(Previous lowest price: $24.99)</FONT><BR>* <A href="javascript:integratedPC(240241)">Wolf Children (Limited Edition Steelbook) (4K Ultra HD + Blu-Ray)</a> - now $26.55 (97% OFF) <FONT SIZE=1>(Previous lowest price: $36.98)</FONT><BR>* <A href="javascript:integratedPC(236100)">Zom 100 Bucket List of the Dead: Season #1 Limited Edition (Blu-Ray)</a> - now $34.99 (50% OFF) <FONT SIZE=1>(Previous lowest price: $50.39)</FONT><BR><BR><FONT SIZE=3 COLOR=PURPLE><B>TODAY IN HISTORY (ON DVD)</B></FONT><BR>Click on the links below to find DVDs for these actors/directors who were born today:<BR>* <A HREF="javascript:submitExactPersonSearch(22074)">Enrico Colantoni</A> (63)<BR>* <A HREF="javascript:submitExactPersonSearch(60482)">Phill Lewis</A> (58)<BR>* <A HREF="javascript:submitExactPersonSearch(69532)">Simon Pegg</A> (56)<BR>* <A HREF="javascript:submitExactPersonSearch(15808)">Danai Gurira</A> (48)<BR>* <A HREF="javascript:submitExactPersonSearch(89168)">Brett Dier</A> (36)<BR>* <A HREF="javascript:submitExactPersonSearch(24723)">Freddie Highmore</A> (34)<BR>* <A HREF="javascript:submitExactPersonSearch(87069)">Shane Harper</A> (33)<BR>* <A HREF="javascript:submitExactPersonSearch(107674)">Madison Iseman</A> (29)<BR>* <A HREF="javascript:submitExactPersonSearch(122640)">Emily Kelavos</A> (20)<BR>
+
+ </FONT></UL></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP><!--HR SIZE=1-->
+<A NAME=FRI></A><B>February 13, 2026</B><BR>
+<UL><FONT SIZE=2 FACE="ARIAL,HELVETICA"> 
+<IMG SRC="/partners/amazon.gif" HSPACE=6 BORDER=0 WIDTH=100 HEIGHT=30 ALIGN=RIGHT ALT="[ Amazon.com ]"><FONT SIZE=3 COLOR=ORANGE><B>DVDPS HOT DEAL FINDER</B></FONT><BR>Check out these <FONT COLOR=RED>HOT</FONT> DVD deals at <B>Amazon.com</B>! (<FONT SIZE=1>prices include U.S. shipping)</FONT><BR>* <A href="javascript:integratedPC(29547)">Angel: Season 3</a> - $27.85 (54% OFF) (<FONT SIZE=1>next lowest price: $53.97</FONT>)<BR>* <A href="javascript:integratedPC(102377)">BBC History Of World War II (12-Disc)</a> - $74.98 (38% OFF) (<FONT SIZE=1>next lowest price: $102.97</FONT>)<BR>* <A href="javascript:integratedPC(148021)">Back To The Future: 25th Anniversary Trilogy (Blu-Ray) (Repackage)</a> - $22.92 (62% OFF) (<FONT SIZE=1>next lowest price: $47.96</FONT>)<BR>* <A href="javascript:integratedPC(140517)">Boardwalk Empire: Season #2 (Blu-Ray + DVD + Digital Copy)</a> - $10.95 (86% OFF) (<FONT SIZE=1>next lowest price: $38.22</FONT>)<BR>* <A href="javascript:integratedPC(225780)">Breaking Bad: The Complete Series (Blu-Ray) (Repackage)</a> - $87.28 (45% OFF) (<FONT SIZE=1>next lowest price: $112.48</FONT>)<BR>* <A href="javascript:integratedPC(209135)">Bruce Lee: His Greatest Hits (Blu-Ray)</a> - $70.81 (43% OFF) (<FONT SIZE=1>next lowest price: $98.22</FONT>)<BR>* <A href="javascript:integratedPC(41536)">Columbo: Season #2</a> - $12.38 (69% OFF) (<FONT SIZE=1>next lowest price: $37.87</FONT>)<BR>* <A href="javascript:integratedPC(202048)">Criss Cross (Blu-Ray)</a> - $14.54 (48% OFF) (<FONT SIZE=1>next lowest price: $40.35</FONT>)<BR>* <A href="javascript:integratedPC(194385)">Criterion Collection: Dietrich & Von Sternberg In (Blu-Ray)</a> - $71.72 (43% OFF) (<FONT SIZE=1>next lowest price: $98.22</FONT>)<BR>* <A href="javascript:integratedPC(151946)">Doctor Who (2005): Series #3 (Repackage)</a> - $17.88 (78% OFF) (<FONT SIZE=1>next lowest price: $43.72</FONT>)<BR>* <A href="javascript:integratedPC(131931)">Doctor Who (2005): Series #6 (Blu-Ray)</a> - $38.97 (57% OFF) (<FONT SIZE=1>next lowest price: $66.62</FONT>)<BR>* <A href="javascript:integratedPC(153965)">Eureka Seven AO: Part One: Alternate Art (Blu-Ray + DVD)</a> - $19.75 (70% OFF) (<FONT SIZE=1>next lowest price: $44.85</FONT>)<BR>* <A href="javascript:integratedPC(146220)">Game Of Thrones: Season #1 (Blu-Ray + DVD + Digital Copy)</a> - $24.95 (69% OFF) (<FONT SIZE=1>next lowest price: $51.53</FONT>)<BR>* <A href="javascript:integratedPC(227565)">Haikyu!! Season 4 (Blu-Ray)</a> - $59.99 (67% OFF) (<FONT SIZE=1>next lowest price: $87.96</FONT>)<BR>* <A href="javascript:integratedPC(230672)">Jackie Chan: Emergence Of A Superstar (Blu-Ray)</a> - $70.58 (44% OFF) (<FONT SIZE=1>next lowest price: $97.6</FONT>)<BR>* <A href="javascript:integratedPC(214295)">John Wayne: Essential 14 Movie Collection</a> - $36.39 (55% OFF) (<FONT SIZE=1>next lowest price: $61.48</FONT>)<BR>* <A href="javascript:integratedPC(225951)">Lyle Lyle Crocodile (Blu-Ray)</a> - $18.86 (71% OFF) (<FONT SIZE=1>next lowest price: $44.92</FONT>)<BR>* <A href="javascript:integratedPC(225250)">Mai Zetterling:3 Films</a> - $39.95 (50% OFF) (<FONT SIZE=1>next lowest price: $67.48</FONT>)<BR>* <A href="javascript:integratedPC(216959)">Melvin Van Peebles: Essential Films BD (Blu-Ray)</a> - $71.03 (43% OFF) (<FONT SIZE=1>next lowest price: $97.98</FONT>)<BR>* <A href="javascript:integratedPC(169469)">New Tricks Collection: Seasons 6-10</a> - $39.95 (68% OFF) (<FONT SIZE=1>next lowest price: $67.87</FONT>)<BR>* <A href="javascript:integratedPC(232676)">Northern Exposure: The Complete Series (Blu-Ray)</a> - $70.60 (93% OFF) (<FONT SIZE=1>next lowest price: $98.05</FONT>)<BR>* <A href="javascript:integratedPC(218516)">Once Upon A Time In China: The Complete Films BD (Blu-Ray)</a> - $70.17 (44% OFF) (<FONT SIZE=1>next lowest price: $97.33</FONT>)<BR>* <A href="javascript:integratedPC(58689)">Only Fools and Horses: Series #7</a> - $18.81 (69% OFF) (<FONT SIZE=1>next lowest price: $44.29</FONT>)<BR>* <A href="javascript:integratedPC(179288)">Place to Call Home: Season 3</a> - $17.55 (71% OFF) (<FONT SIZE=1>next lowest price: $42.79</FONT>)<BR>* <A href="javascript:integratedPC(176184)">Riddle Story of Devil:The Complete Series</a> - $23.97 (4% OFF) (<FONT SIZE=1>next lowest price: $50.96</FONT>)<BR>* <A href="javascript:integratedPC(110303)">SGU: Stargate Universe: Season #1.0</a> - $11.97 (76% OFF) (<FONT SIZE=1>next lowest price: $39.47</FONT>)<BR>* <A href="javascript:integratedPC(16492)">Star Trek: The Next Generation Season 2 Box Set: Special Edition</a> - $26.06 (81% OFF) (<FONT SIZE=1>next lowest price: $51.63</FONT>)<BR>* <A href="javascript:integratedPC(142668)">Torchwood: Season #2 (Repackage)</a> - $21.97 (73% OFF) (<FONT SIZE=1>next lowest price: $48.08</FONT>)<BR>* <A href="javascript:integratedPC(32599)">Touch Of Frost: Season Two</a> - $13.97 (72% OFF) (<FONT SIZE=1>next lowest price: $40.93</FONT>)<BR>* <A href="javascript:integratedPC(145226)">Western Classics Collection (Repackage)</a> - $28.47 (52% OFF) (<FONT SIZE=1>next lowest price: $54.97</FONT>)<BR>* <A href="javascript:integratedPC(19611)">X-Files: Season #6 (Old)</a> - $47.01 (69% OFF) (<FONT SIZE=1>next lowest price: $74.96</FONT>)<BR>* <A href="javascript:integratedPC(162485)">Yu-Gi-Oh!: The Official Fifth Season</a> - $20.56 (66% OFF) (<FONT SIZE=1>next lowest price: $46.08</FONT>)<BR><BR><A HREF="javascript:integratedPC(239881)"><IMG SRC="/beta/images/covers/239881.jpg" WIDTH=100 HEIGHT=134 ALIGN=RIGHT HSPACE=5></A><FONT SIZE=3 COLOR=RED><B>TOP 5 DVD'S</B></FONT><BR>Check out the top 5 DVD's in January:<BR>* <A HREF="javascript:integratedPC(239881)">Sinners (2025) (4K Ultra HD + Digital)</A><BR>* <A HREF="javascript:integratedPC(241232)">Mission: Impossible: The Final Reckoning (4K Ultra HD + Blu-Ray + Digital)</A><BR>* <A HREF="javascript:integratedPC(240643)">Jurassic World Rebirth (4K Ultra HD + Blu-Ray + Digital)</A><BR>* <A HREF="javascript:integratedPC(237742)">Wicked (2024) (4K Ultra HD + Blu-Ray+ Digital)</A><BR>* <A HREF="javascript:integratedPC(240606)">Ballerina: From The World Of John Wick (4K Ultra HD + Blu-Ray + Digital)</A><BR><BR><FONT SIZE=3 COLOR=PURPLE><B>TODAY IN HISTORY (ON DVD)</B></FONT><BR>Click on the links below to find DVDs for these actors/directors who were born today:<BR>* <A HREF="javascript:submitExactPersonSearch(57324)">Oliver Smith</A><BR>* <A HREF="javascript:submitExactPersonSearch(35135)">Jerry Springer</A><BR>* <A HREF="javascript:submitExactPersonSearch(26060)">George Segal</A><BR>* <A HREF="javascript:submitExactPersonSearch(19586)">Donald Sumpter</A> (83)<BR>* <A HREF="javascript:submitExactPersonSearch(71366)">Stockard Channing</A> (82)<BR>* <A HREF="javascript:submitExactPersonSearch(20909)">Edward James Olmos</A> (79)<BR>* <A HREF="javascript:submitExactPersonSearch(59764)">Peter Gabriel</A> (76)<BR>* <A HREF="javascript:submitExactPersonSearch(87053)">Andy Buckley</A> (61)<BR>* <A HREF="javascript:submitExactPersonSearch(55902)">Neal McDonough</A> (60)<BR>* <A HREF="javascript:submitExactPersonSearch(10972)">Carolyn Lawrence</A> (59)<BR>* <A HREF="javascript:submitExactPersonSearch(41767)">Kelly Hu</A> (58)<BR>* <A HREF="javascript:submitExactPersonSearch(25045)">Gabriel Porras</A> (58)<BR>* <A HREF="javascript:submitExactPersonSearch(63852)">Robbie Williams</A> (52)<BR>* <A HREF="javascript:submitExactPersonSearch(52047)">Mena Suvari</A> (47)<BR>* <A HREF="javascript:submitExactPersonSearch(133744)">Brody Wellmaker</A> (35)<BR>* <A HREF="javascript:submitExactPersonSearch(91562)">Sophia Lillis</A> (24)<BR>
+
+ </FONT></UL></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2><BR><FONT FACE="ARIAL,HELVETICA" SIZE=-1>Click <A HREF="javascript:getHtmlPage('specials')">here</A>
+ to see <U>all</U> current <FONT COLOR=RED>bargains and coupons</FONT> organized by store. <IMG SRC="/cgi-bin/serve.pl?page=home&cb=509371090" WIDTH=1 HEIGHT=1 NOSAVE>
+(This is also accessible through "Specials" in the main menu bar)
+</FONT></TD></TR>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2><A NAME="customizeDays"> </A>    <!--HR SIZE=1--><BR>
+<FONT FACE=HELVETICA COLOR=NAVY SIZE=3><B>Customize the Latest Updates!</B><BR><FONT SIZE=2 COLOR=BLACK>The "Latest Updates" are organized by the date they are announced over the past week, starting with the most recent day. Pick the number of days of updates you'd like to see each time you visit. Your selection will take effect the next time you visit this page.  Or, click on "Apply Now" to refresh this page now.<BR><CENTER>Show <SELECT NAME="updateDays" onChange="applyUpdateDays()">
+<OPTION VALUE=1>1
+<OPTION VALUE=2>2
+<OPTION VALUE=3>3
+<OPTION VALUE=4 SELECTED>4
+<OPTION VALUE=5>5
+<OPTION VALUE=6>6
+<OPTION VALUE=7>7
+</SELECT>day(s) of updates&nbsp;&nbsp;
+<INPUT TYPE="submit" VALUE="Apply Now">
+</CENTER></FONT></TD></TR>
+</FORM>
+<TR><TD BGCOLOR="#EEEECC" COLSPAN=2 VALIGN=TOP>
+    <!--HR SIZE=1--><BR>
+<CENTER><FONT SIZE=-0>Current online stores listed (<I>Price Database updated <U>daily</U></I>)</FONT>
+<TABLE CELLPADDING=8>
+<TR><TD>&nbsp;</TD>
+    <TD VALIGN=TOP><FONT SIZE=-1>
+<A HREF="/cgi-bin/goto?st=amazon&ty=home" TARGET="sideWin">Amazon</A><BR>
+<A HREF="/cgi-bin/goto?st=barnes&ty=home" TARGET="sideWin">Barnes & Noble</A><BR>
+<A HREF="/cgi-bin/goto?st=bestbuy&ty=home" TARGET="sideWin">Best Buy</A><BR>
+<A HREF="/cgi-bin/goto?st=buyvideos&ty=home" TARGET="sideWin">Rakuten.com</A><BR>
+</FONT>
+</TD>
+<TD VALIGN=TOP><FONT SIZE=-1>
+<A HREF="/cgi-bin/goto?st=megadvd&ty=home" TARGET="sideWin">CD Universe</A><BR>
+<A HREF="/cgi-bin/goto?st=deepdiscountdvd&ty=home" TARGET="sideWin">DeepDiscount.com</A><BR>
+<A HREF="/cgi-bin/goto?st=dvdempire&ty=home" TARGET="sideWin">DVD Empire</A><BR>
+</TD>
+<TD VALIGN=TOP><FONT SIZE=-1>
+<A HREF="/cgi-bin/goto?st=moviesunlimited&ty=home" TARGET="sideWin">Movies Unlimited</A><BR>
+<A HREF="/cgi-bin/goto?st=walmart&ty=home" TARGET="sideWin">Walmart.com</A><BR>
+</FONT>
+</TD>
+</TR>
+<TR><TD>&nbsp;</TD>
+<TD COLSPAN=4><FONT SIZE=-1><A HREF="javascript:getVendorPage('vendorInfo')">[More Vendor Info]</A><P><TABLE BGCOLOR="#9999CC" CELLPADING=5 CELLSPACING=3>
+<TR><TD COLSPAN=2>
+<TABLE BGCOLOR=white>
+<FORM NAME="storeSearchForm">
+<TR><TD>&nbsp;
+<FONT FACE=HELVETICA SIZE=-1>
+<B>View DVDs Priced Lowest at:</B>
+<SELECT NAME="storeSelectA">
+   <OPTION VALUE="0,Amazon">Amazon
+   <OPTION VALUE="34,Barnes & Noble">Barnes & Noble
+   <OPTION VALUE="1,Best Buy">Best Buy
+   <OPTION VALUE="3,Rakuten.com">Rakuten.com
+   <OPTION VALUE="17,CD Universe">CD Universe
+   <OPTION VALUE="41,Deep Discount">Deep Discount
+   <OPTION VALUE="10,DVD Empire">DVD Empire
+   <OPTION VALUE="44,Movies Unlimited">Movies Unlimited
+   <OPTION VALUE="56,Walmart.com">Walmart.com
+</SELECT>
+<INPUT TYPE="BUTTON" VALUE="Ok" onClick="ssearch('store', '', document.storeSearchForm.storeSelectA.options[document.storeSearchForm.storeSelectA.selectedIndex].value)">&nbsp;</FORM></TD></TR></TABLE></TD></TR></TABLE>
+</CENTER></FONT></TD></TR>
+</TABLE>
+<CENTER>
+<HR SIZE=2 NOSHADE>
+<P><FONT SIZE=-1>Please send comments/suggestions to <A HREF="mailto:feedback@dvdpricesearch.com">feedback@dvdpricesearch.com</A>
+<P><B><I>Copyright 1998-2023 DVD Price Search.</I>  All rights reserved</B>
+<BR><A HREF="javascript:getHtmlPage('disclaimer')">User Agreement/Disclaimer</A>
+ | <A HREF="javascript:getHtmlPage('privacy')">DVD Price Search's Privacy Policy</A></FONT></TD></TR>
+</TABLE>
+</TD></TR></TABLE>
+</CENTER>
+</BODY>
+</HTML>

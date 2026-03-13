@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nvidia Drops Nemotron 3 Super Amid $26 Billion Open-Model AI Bet—America&#x27;s Answer to Qwen?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://decrypt.co/360929/nvidia-drops-nemotron-3-super-26-billion-open-model-ai-bet" target="_blank">Original article ↗</a></div>
+
+<h1>Nvidia Drops Nemotron 3 Super Amid $26 Billion Open-Model AI Bet—America&#x27;s Answer to Qwen?</h1>
+<div class="meta">Decrypt · 2026-03-12</div>
+<div class="summary">In brief
+- Nvidia launched Nemotron 3 Super, a 120B open-weight AI model optimized for autonomous agents and ultra-long context tasks.
+- The hybrid Mamba-Transformer MoE architecture delivers faster reasoning and over 5× throughput while running at 4</div>
+<p>In brief</p>
+<p>- Nvidia launched Nemotron 3 Super, a 120B open-weight AI model optimized for autonomous agents and ultra-long context tasks.</p>
+<p>- The hybrid Mamba-Transformer MoE architecture delivers faster reasoning and over 5× throughput while running at 4-bit precision.</p>
+<p>- Nvidia’s $26 billion investment into open-source AI wants to counter China&#x27;s rise in the field.</p>
+<p>Nvidia just shipped Nemotron 3 Super, a 120-billion-parameter open-weight model built to do one thing well: run autonomous AI agents without bleeding your compute budget dry.</p>
+<p>That&#x27;s not a small problem. Multi-agent systems generate a lot more tokens than a normal chat—every tool call, reasoning step, and slice of context gets re-sent from scratch. As a result, costs explode, models tend to drift, and the agents slowly forget what they were supposed to be doing in the first place… or at least decrease in accuracy.</p>
+<p>Nemotron 3 Super is Nvidia&#x27;s answer to all of that. The model runs 12 billion active parameters out of 120 billion total, using a mixture-of-experts (MoE) design that keeps inference cheap while retaining the reasoning depth complex workflows need. It packs a 1-million-token context window, so agents can hold an entire codebase, or nearly 750,000 words in memory before collapsing.</p>
+<p>To build its model, Nvidia combined three components that rarely appear together in the same architecture: Mamba-2 state-space layers—a faster, memory-efficient alternative to attention for handling long token streams—along with Transformer attention layers for precise recall, and a new “Latent MoE” design that compresses token embeddings before routing them to experts. That allows the model to activate four times as many specialists at the same compute cost.</p>
+<p>Introducing NVIDIA Nemotron 3 Super 🎉</p>
+<p>Open 120B-parameter (12B active) hybrid Mamba-Transformer MoE model</p>
+<p>Native 1M-token context</p>
+<p>Built for compute-efficient, high-accuracy multi-agent applications</p>
+<p>Plus, fully open weights, datasets and recipes for easy customization and… pic.twitter.com/kMFI23noFc</p>
+<p>— NVIDIA AI Developer (@NVIDIAAIDev) March 11, 2026</p>
+<p>The model was also pretrained natively in NVFP4, Nvidia’s 4-bit floating-point format. In practice, that means the system learned to operate accurately within 4-bit arithmetic from the very first gradient update, rather than being trained at high precision and compressed afterward, which often causes models to lose accuracy.</p>
+<p>For context, a model’s precision is measured in bits. Full precision, known as FP32, is the gold standard—but it is also extremely expensive to run at scale. Developers often reduce precision to save compute while trying to preserve useful performance.</p>
+<p>Think of it like shrinking a 4K image down to 1080p: The picture still looks the same at a glance, just with less detail. Normally, dropping from 32-bit precision all the way to 4-bit would cripple a model’s reasoning ability. Nemotron avoids that problem by learning to operate at low precision from the start, instead of being squeezed into it later.</p>
+<p>Compared to its own predecessor, Nemotron 3 Super delivers more than five times the throughput. Against external rivals, it&#x27;s 2.2x faster than OpenAI&#x27;s GPT-OSS 120B on inference throughput, and 7.5x faster than Alibaba&#x27;s Qwen3.5-122B.</p>
+<p>We ran our own quick test. The reasoning held up well, including on prompts that were deliberately vague, badly worded, or based on wrong information. The model caught small errors in context without being asked to, handled math and logic problems cleanly, and didn&#x27;t fall apart when the question itself was slightly off.</p>
+<p>![](https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2026/03/Captura-de-pantalla-2026-03-12-a-las-14.07.19.png@webp)</p>
+<p>The full training pipeline is public: weights on Hugging Face, 10 trillion curated pretraining tokens seen over 25 trillion total during training, 40 million post-training samples, and reinforcement learning recipes across 21 environment configurations. Perplexity, Palantir, Cadence, and Siemens are already integrating the model in their workflows.</p>
+<p>The $26 billion bet</p>
+<p>The model may be one piece of a larger strategy. A 2025 financial filing shows Nvidia plans to spend $26 billion over the next five years building open-weight AI models. Executives confirmed it, too.</p>
+<p>Bryan Catanzaro, VP of applied deep learning research, told Wired the company recently finished pretraining a 550-billion-parameter model. Nvidia released its first Nemotron model back in November 2023, but that filing makes clear this is no longer a side project.</p>
+<p>The investment is strategic considering Nvidia&#x27;s chips are still the default infrastructure for training and running frontier models. Models tuned to its hardware give customers a built-in reason to stay on Nvidia despite efforts from competitors to use other hardware. But there&#x27;s a more urgent pressure behind the move: America is losing the open-source AI race, and losing it fast.</p>
+<p>Chinese open models went from barely 1.2% of global open-model usage in late 2024 to roughly 30% by the end of 2025, according to research by OpenRouter and Andreessen Horowitz. Alibaba&#x27;s Qwen overtook Meta&#x27;s Llama as the most-used self-hosted open-source model, according to Runpod. American companies including Airbnb adopted it for customer service. Startups worldwide are building on top of it. Beyond market share, that kind of adoption creates infrastructure dependencies that are hard to reverse.</p>
+<p>While U.S. giants like OpenAI, Anthropic, and Google keep their best models locked behind APIs, Chinese labs from DeepSeek to Alibaba have been flooding the open ecosystem. Meta was the one major American player competing in open source with Llama, but Zuckerberg recently signaled the company might not make future models fully open.</p>
+<p>The gap between &quot;best proprietary model&quot; and &quot;best open model&quot; used to be massive—and in America&#x27;s favor. That gap is now very small, and the open side of the ledger is increasingly Chinese.</p>
+<p>Incredible graph. In just one year, China completely overtook the U.S. in free AI models.</p>
+<p>Not a single U.S. model in the top 5 today when last year the top 3 were all American. pic.twitter.com/34ErpBv8rg</p>
+<p>— Arnaud Bertrand (@RnaudBertrand) October 14, 2025</p>
+<p>There&#x27;s also a hardware threat underneath all of this. A new DeepSeek model is widely expected to drop soon, and it&#x27;s rumored to have been trained entirely on chips made by Huawei—a sanctioned Chinese company. If that&#x27;s confirmed, then it would give developers around the world, particularly in China, a concrete reason to start testing Huawei&#x27;s hardware. China’s Ziphu AI is already doing that.</p>
+<p>That&#x27;s the scenario Nvidia most needs to prevent: Chinese open models and Chinese chips building an ecosystem that doesn&#x27;t need Nvidia at all.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://decrypt.co/360929/nvidia-drops-nemotron-3-super-26-billion-open-model-ai-bet" target="_blank">Read original →</a></div>
+</body></html>

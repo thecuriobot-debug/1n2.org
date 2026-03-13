@@ -1,0 +1,314 @@
+[
+  {
+    "id": "pack-2026-03-08-crypto",
+    "date": "2026-03-08",
+    "channel": "Crypto",
+    "topic": "Weekend Liquidity + ETF Rotation",
+    "urgency": "medium",
+    "status": "published",
+    "records_ingested": 2944,
+    "comments_analyzed": 931,
+    "transcript_words": 1824,
+    "narration_seconds": 188,
+    "video_seconds": 92,
+    "report_pages": 11,
+    "engagement_score": 79,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "ETF inflows are steady, but weekend depth is thin.",
+      "transcript": "Today\u2019s tape shows quieter order books with fast reversals around major round numbers. Retail participation is up, while large wallets appear to be rotating into lower-volatility exposure.",
+      "voice_script": "Good morning. Markets are stable on the surface, but depth is still shallow. Watch for rapid fake-outs around major price bands.",
+      "storyboard": [
+        "Open with 7-day volatility heat strip",
+        "Cut to top wallet flow delta",
+        "Overlay support/resistance ladder",
+        "Close with 24-hour risk scenarios"
+      ],
+      "artifacts": [
+        "briefing-2026-03-08.pdf",
+        "narration-2026-03-08.mp3",
+        "clip-2026-03-08.mp4",
+        "social-card-2026-03-08.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-07-curio",
+    "date": "2026-03-07",
+    "channel": "Curio",
+    "topic": "Floor Compression + Holder Retention",
+    "urgency": "high",
+    "status": "published",
+    "records_ingested": 1578,
+    "comments_analyzed": 244,
+    "transcript_words": 1332,
+    "narration_seconds": 155,
+    "video_seconds": 80,
+    "report_pages": 9,
+    "engagement_score": 74,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Curio floor dipped, but unique holders stayed resilient.",
+      "transcript": "Volume cooled while holder count edged up. That combination often precedes either a sharp trend day or another flat range with isolated card spikes.",
+      "voice_script": "Curio market is calm but not weak. Holder retention remains healthy, and supply-side pressure is still selective.",
+      "storyboard": [
+        "Snapshot: floor, sales, holders",
+        "Compare treated card cluster vs controls",
+        "Highlight 3-day listing velocity",
+        "End with tactical watchlist"
+      ],
+      "artifacts": [
+        "briefing-2026-03-07.pdf",
+        "narration-2026-03-07.mp3",
+        "clip-2026-03-07.mp4",
+        "social-card-2026-03-07.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-06-news",
+    "date": "2026-03-06",
+    "channel": "News",
+    "topic": "Macro + AI Cycle Headlines",
+    "urgency": "medium",
+    "status": "published",
+    "records_ingested": 3110,
+    "comments_analyzed": 512,
+    "transcript_words": 1715,
+    "narration_seconds": 176,
+    "video_seconds": 89,
+    "report_pages": 12,
+    "engagement_score": 72,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "AI headlines are expanding faster than real deployment stats.",
+      "transcript": "Sentiment is positive across major publications, but enterprise deployment metrics still lag. Markets are pricing narrative momentum ahead of fundamentals.",
+      "voice_script": "Today\u2019s signal: strong narrative momentum, moderate operational follow-through.",
+      "storyboard": [
+        "Headline velocity by topic",
+        "Source credibility weighting",
+        "Cross-market reaction map",
+        "Tomorrow\u2019s catalyst calendar"
+      ],
+      "artifacts": [
+        "briefing-2026-03-06.pdf",
+        "narration-2026-03-06.mp3",
+        "clip-2026-03-06.mp4",
+        "social-card-2026-03-06.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-05-youtube",
+    "date": "2026-03-05",
+    "channel": "YouTube",
+    "topic": "Comment Heat + Video Retention",
+    "urgency": "low",
+    "status": "published",
+    "records_ingested": 2255,
+    "comments_analyzed": 1288,
+    "transcript_words": 1988,
+    "narration_seconds": 201,
+    "video_seconds": 97,
+    "report_pages": 10,
+    "engagement_score": 81,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Short-form clips drove comment velocity 1.4x above baseline.",
+      "transcript": "Audience tone shifted positive in the first two hours after release. High-retention segments matched moments with direct host takes and strong narrative framing.",
+      "voice_script": "Your audience is reacting quickly to short clips with direct opinion framing. Keep the opening 20 seconds punchy.",
+      "storyboard": [
+        "Comment heatmap by minute",
+        "Top recurring themes",
+        "Retention drop-off checkpoints",
+        "Next edit recommendations"
+      ],
+      "artifacts": [
+        "briefing-2026-03-05.pdf",
+        "narration-2026-03-05.mp3",
+        "clip-2026-03-05.mp4",
+        "social-card-2026-03-05.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-04-crypto",
+    "date": "2026-03-04",
+    "channel": "Crypto",
+    "topic": "Derivatives Positioning",
+    "urgency": "high",
+    "status": "published",
+    "records_ingested": 3388,
+    "comments_analyzed": 1032,
+    "transcript_words": 2101,
+    "narration_seconds": 224,
+    "video_seconds": 103,
+    "report_pages": 13,
+    "engagement_score": 84,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Open interest climbed while funding stayed neutral.",
+      "transcript": "A build in open interest without aggressive funding suggests positioning rather than panic. Break direction likely depends on external macro triggers.",
+      "voice_script": "Watch derivatives closely: this setup can release energy quickly once direction is chosen.",
+      "storyboard": [
+        "Open interest trend",
+        "Funding and basis spread",
+        "Liquidation pocket map",
+        "Risk-on / risk-off scenarios"
+      ],
+      "artifacts": [
+        "briefing-2026-03-04.pdf",
+        "narration-2026-03-04.mp3",
+        "clip-2026-03-04.mp4",
+        "social-card-2026-03-04.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-03-curio",
+    "date": "2026-03-03",
+    "channel": "Curio",
+    "topic": "Listing Velocity + Rarity Premium",
+    "urgency": "medium",
+    "status": "published",
+    "records_ingested": 1499,
+    "comments_analyzed": 173,
+    "transcript_words": 1224,
+    "narration_seconds": 141,
+    "video_seconds": 74,
+    "report_pages": 8,
+    "engagement_score": 69,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Rarity spread widened while total sales stayed low.",
+      "transcript": "Rare cards held price better than the floor, suggesting selective demand from informed buyers rather than broad speculative activity.",
+      "voice_script": "The market is selective: rarity and narrative strength are outperforming broad floor behavior.",
+      "storyboard": [
+        "Rarity quartile performance",
+        "Top wallet accumulation",
+        "Median time-to-sale",
+        "Premium sustainability check"
+      ],
+      "artifacts": [
+        "briefing-2026-03-03.pdf",
+        "narration-2026-03-03.mp3",
+        "clip-2026-03-03.mp4",
+        "social-card-2026-03-03.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-02-news",
+    "date": "2026-03-02",
+    "channel": "News",
+    "topic": "Regulation + Exchange Policy",
+    "urgency": "high",
+    "status": "published",
+    "records_ingested": 2881,
+    "comments_analyzed": 498,
+    "transcript_words": 1680,
+    "narration_seconds": 182,
+    "video_seconds": 95,
+    "report_pages": 12,
+    "engagement_score": 76,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Policy headlines lifted uncertainty premium across exchanges.",
+      "transcript": "The broad media cycle over-indexed on enforcement narratives, while practical product impact remained limited in the near term.",
+      "voice_script": "Regulatory narrative is loud; measurable platform impact is still moderate.",
+      "storyboard": [
+        "Regulatory timeline",
+        "Exchange exposure matrix",
+        "Risk premium heat",
+        "Two-week watchlist"
+      ],
+      "artifacts": [
+        "briefing-2026-03-02.pdf",
+        "narration-2026-03-02.mp3",
+        "clip-2026-03-02.mp4",
+        "social-card-2026-03-02.png"
+      ]
+    }
+  },
+  {
+    "id": "pack-2026-03-01-youtube",
+    "date": "2026-03-01",
+    "channel": "YouTube",
+    "topic": "Archive Indexing + Topic Clusters",
+    "urgency": "low",
+    "status": "published",
+    "records_ingested": 1902,
+    "comments_analyzed": 844,
+    "transcript_words": 1491,
+    "narration_seconds": 160,
+    "video_seconds": 83,
+    "report_pages": 9,
+    "engagement_score": 67,
+    "stages": {
+      "ingest": 100,
+      "transcribe": 100,
+      "narrate": 100,
+      "storyboard": 100,
+      "publish": 100
+    },
+    "outputs": {
+      "headline": "Historic clips remain high leverage for new audience onboarding.",
+      "transcript": "Older high-signal episodes generated stronger completion rates than expected, especially when paired with concise context intros.",
+      "voice_script": "Archive content still performs. Use short intros and clear context to improve retention.",
+      "storyboard": [
+        "Archive resurfacing candidates",
+        "Cluster map by topic",
+        "Retention uplift after reframing",
+        "Weekly release suggestions"
+      ],
+      "artifacts": [
+        "briefing-2026-03-01.pdf",
+        "narration-2026-03-01.mp3",
+        "clip-2026-03-01.mp4",
+        "social-card-2026-03-01.png"
+      ]
+    }
+  }
+]

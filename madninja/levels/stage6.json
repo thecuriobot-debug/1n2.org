@@ -1,0 +1,49 @@
+{
+  "id": "stage6",
+  "label": "BLOCKCHAIN CORE",
+  "name": "Blockchain Core",
+  "width": 1024,
+  "height": 240,
+  "spawn": { "x": 24, "y": 180 },
+  "background": {
+    "top": "#143043",
+    "bottom": "#061621",
+    "stars": "#79d7ff",
+    "starCount": 54
+  },
+  "tiles": {
+    "ground": "#2d6079",
+    "climb": "#4f8faa"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1024, "h": 16, "color": "#27546b" },
+    { "x": 96, "y": 188, "w": 86, "h": 10 },
+    { "x": 234, "y": 168, "w": 88, "h": 10 },
+    { "x": 370, "y": 150, "w": 84, "h": 10 },
+    { "x": 506, "y": 170, "w": 92, "h": 10 },
+    { "x": 642, "y": 148, "w": 86, "h": 10 },
+    { "x": 778, "y": 126, "w": 90, "h": 10 },
+    { "x": 912, "y": 154, "w": 92, "h": 10 },
+    { "x": 316, "y": 110, "w": 56, "h": 8 },
+    { "x": 688, "y": 98, "w": 58, "h": 8 }
+  ],
+  "climbZones": [
+    { "x": 188, "y": 128, "w": 8, "h": 96 },
+    { "x": 608, "y": 124, "w": 8, "h": 100 }
+  ],
+  "enemySpawns": [
+    { "type": "hacker_ninja", "x": 146, "y": 206 },
+    { "type": "regulator_drone", "x": 312, "y": 120 },
+    { "type": "exchange_bot", "x": 544, "y": 156 },
+    { "type": "fud_ghost", "x": 806, "y": 106 },
+    { "type": "hacker_ninja", "x": 944, "y": 206 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 122, "y": 180, "amount": 120, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 392, "y": 142, "amount": 120, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 660, "y": 140, "w": 7, "h": 6 },
+    { "type": "satoshi_spirit", "x": 810, "y": 118, "w": 6, "h": 6 },
+    { "type": "hodl_mode", "x": 944, "y": 146, "w": 7, "h": 6 }
+  ],
+  "bossSpawn": { "type": "attacker_51_percent", "x": 996, "y": 130 }
+}

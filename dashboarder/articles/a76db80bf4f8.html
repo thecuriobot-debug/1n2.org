@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Microsoft ships VS Code weekly, adds Autopilot mode so AI can wreak havoc without bothering you</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/visual_studio_code_moves_to/" target="_blank">Original article ↗</a></div>
+
+<h1>Microsoft ships VS Code weekly, adds Autopilot mode so AI can wreak havoc without bothering you</h1>
+<div class="meta">The Register AI · 2026-03-11</div>
+<div class="summary">Microsoft ships VS Code weekly, adds Autopilot mode so AI can wreak havoc without bothering you
+Google also enables auto-approval of AI agents while their documentation warns against it
+Microsoft&#x27;s Visual Studio Code (VS Code) is moving to a weekly r</div>
+<p>Microsoft ships VS Code weekly, adds Autopilot mode so AI can wreak havoc without bothering you</p>
+<p>Google also enables auto-approval of AI agents while their documentation warns against it</p>
+<p>Microsoft&#x27;s Visual Studio Code (VS Code) is moving to a weekly release cycle, as well as joining Google in encouraging agentic AI development without manual approval with a new Autopilot feature.</p>
+<p>VS Code has always had a rapid release cycle, formerly based on a monthly update which included an &quot;Endgame&quot; week where code was temporarily frozen, tested, and any identified issues fixed before release. Endgame plans were published on GitHub, for example this one for November 2025. There was also one or more recovery releases following the update, to address urgent issues discovered by users.</p>
+<p>Now the release cycle has been further accelerated. Microsoft distinguished engineer Kai Maetzel, who runs the VS Code engineering team, said that after &quot;streamlining our development and delivery process … we&#x27;ll ship a new Stable release every week. Endgame will now be folded into our weekly activities.&quot;</p>
+<p>VS Code users on Reddit had questions. &quot;What&#x27;s the point of Insider build?&quot; said one, this being a monthly preview of the next release in the old schedule; and another asked, &quot;Is there a way to stay behind a few versions so you can be sure that stuff is actually fixed?&quot;</p>
+<p>Another developer commented that the change is &quot;confusing and concerning.&quot; Some releases require settings changes and having to review and amend settings every week is a burden.</p>
+<p>In the release notes for version 1.111, the first weekly stable release, the team expanded on what has enabled the change. AI is part of it. &quot;We added a one-click experience for creating test plans from feature request issues,&quot; state the notes, reducing the manual steps previously required.</p>
+<p>All the new features in version 1.111 are AI-related, including a preview of Autopilot, in which an AI agent works autonomously until a task is completed. Autopilot is a permission level in Copilot Chat, in which all tool calls are approved automatically, errors are automatically retried, and questions raised by tools auto-respond &quot;so that the agent does not stall waiting for a reply.&quot;</p>
+<p>Although it speeds development, auto approval is a security risk because of the non-deterministic nature of generative AI and its vulnerability to prompt injection. Having agents call third-party tools using MCP (Model Context Protocol) adds risk since it widens the scope of the agent beyond the coding environment and is vulnerable to poorly coded tools or attacks such as tool poisoning. Having an agent auto-answer prompts raised by tools removes an important protection.</p>
+<p>- Amazon insists AI coding isn&#x27;t source of outages</p>
+<p>- AI vs AI: Agent hacked McKinsey&#x27;s chatbot and gained full read-write access in just two hours</p>
+<p>- Microsoft Azure CTO set Claude on his 1986 Apple II code, says it found vulns</p>
+<p>- Dev stunned by $82K Gemini bill after unknown API key thief goes to town</p>
+<p>- Bcachefs creator insists his custom LLM is female and &#x27;fully conscious&#x27;</p>
+<p>Microsoft intends to have Autopilot enabled by default, though this is not quite as bad as it sounds. Enabling Autopilot only makes it available as an option in Chat. There are three levels of agentic permission, these being Default, Bypass Approvals and the new Autopilot. Autopilot goes beyond Bypass Approvals by auto-answering tool prompts and continuing to work until it thinks that a task is done.</p>
+<p>The documentation recommends enabling experimental terminal sandboxing to restrict file system and network access for agent-executed commands – but this only works on macOS and Linux. &quot;If prompt injection is a concern, use terminal sandboxing or run VS Code in a dev container instead of relying on auto-approval rules alone,&quot; it states.</p>
+<p>Microsoft is not alone in promoting YOLO (you only live once) development. Google yesterday bragged about its new Auto Approve Mode in Gemini Code Assist. According to the team, Auto Approve Mode lets the agent act without manual steps. We are told that this &quot;transforms tedious, multi-file updates that once took hours into a single, automated command, powerfully freeing you up to focus on more complex architectural challenges.&quot;</p>
+<p>![The global Auto Approve setting for Google Gemini in VS Code complete with warning never to use it The global Auto Approve setting for Google Gemini in VS Code complete with warning never to use it](https://regmedia.co.uk/2026/03/11/gemini-warning.jpg?x=648&amp;y=426&amp;infer_y=1)</p>
+<p>The global Auto Approve setting for Google Gemini in VS Code complete with warning never to use it - Click to enlarge</p>
+<p>Developers who head to Google&#x27;s documentation though will find it littered with warnings. &quot;The agent has access to your machine&#x27;s file system and terminal actions as well as any tools you&#x27;ve configured for use. Be extremely careful where and when you automatically allow agent actions,&quot; it says.</p>
+<p>The description of Auto Approve in the global setting is even more emphatic. &quot;This is extremely dangerous and is never recommended … this feature disables critical security protections,&quot; it says.</p>
+<p>It is perplexing that Google&#x27;s blog post promotes this feature, while the documentation warns against using it.®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/visual_studio_code_moves_to/" target="_blank">Read original →</a></div>
+</body></html>

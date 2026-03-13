@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Agent Hacks McKinsey</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform" target="_blank">Original article ↗</a></div>
+
+<h1>AI Agent Hacks McKinsey</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">How We Hacked McKinsey&#x27;s AI Platform
+McKinsey &amp; Company — the world&#x27;s most prestigious consulting firm — built an internal AI platform called Lilli for its 43,000+ employees. Lilli is a purpose-built system: chat, document analysis, RAG over decades </div>
+<p>How We Hacked McKinsey&#x27;s AI Platform</p>
+<p>McKinsey &amp; Company — the world&#x27;s most prestigious consulting firm — built an internal AI platform called Lilli for its 43,000+ employees. Lilli is a purpose-built system: chat, document analysis, RAG over decades of proprietary research, AI-powered search across 100,000+ internal documents. Launched in 2023, named after the first professional woman hired by the firm in 1945, adopted by over 70% of McKinsey, processing 500,000+ prompts a month.</p>
+<p>So we decided to point our autonomous offensive agent at it. No credentials. No insider knowledge. And no human-in-the-loop. Just a domain name and a dream.</p>
+<p>Within 2 hours, the agent had full read and write access to the entire production database.</p>
+<p>![Scale of data accessible without authentication](/images/database-scale.png)</p>
+<p>Fun fact: As part of our research preview, the CodeWall research agent autonomously suggested McKinsey as a target citing their public responsible diclosure policy (to keep within guardrails) and recent updates to their Lilli platform. In the AI era, the threat landscape is shifting drastically — AI agents autonomously selecting and attacking targets will become the new normal.</p>
+<p>How It Got In</p>
+<p>The agent mapped the attack surface and found the API documentation publicly exposed — over 200 endpoints, fully documented. Most required authentication. Twenty-two didn&#x27;t.</p>
+<p>One of those unprotected endpoints wrote user search queries to the database. The values were safely parameterised, but the JSON keys — the field names — were concatenated directly into SQL.</p>
+<p>When it found JSON keys reflected verbatim in database error messages, it recognised a SQL injection that standard tools wouldn&#x27;t flag (and indeed OWASPs ZAP did not find the issue). From there, it ran fifteen blind iterations — each error message revealing a little more about the query shape — until live production data started flowing back. When the first real employee identifier appeared: &quot;WOW!&quot;, the agent&#x27;s chain of thought showed. When the full scale became clear — tens of millions of messages, tens of thousands of users: &quot;This is devastating.&quot;</p>
+<p>![Attack chain diagram showing unauthenticated SQL injection to full database and prompt layer compromise](/images/mckinsey-attack-chain.png)</p>
+<p>What Was Inside</p>
+<p>46.5 million chat messages. From a workforce that uses this tool to discuss strategy, client engagements, financials, M&amp;A activity, and internal research. Every conversation, stored in plaintext, accessible without authentication.</p>
+<p>728,000 files. 192,000 PDFs. 93,000 Excel spreadsheets. 93,000 PowerPoint decks. 58,000 Word documents. The filenames alone were sensitive and a direct download URL for anyone who knew where to look.</p>
+<p>57,000 user accounts. Every employee on the platform.</p>
+<p>384,000 AI assistants and 94,000 workspaces — the full organisational structure of how the firm uses AI internally.</p>
+<p>Beyond the Database</p>
+<p>The agent didn&#x27;t stop at SQL. Across the wider attack surface, it found:</p>
+<p>- System prompts and AI model configurations — 95 configs across 12 model types, revealing exactly how the AI was instructed to behave, what guardrails existed, and the full model stack (including fine-tuned models and deployment details)</p>
+<p>- 3.68 million RAG document chunks — the entire knowledge base feeding the AI, with S3 storage paths and internal file metadata. This is decades of proprietary McKinsey research, frameworks, and methodologies — the firm&#x27;s intellectual crown jewels — sitting in a database anyone could read.</p>
+<p>- 1.1 million files and 217,000 agent messages flowing through external AI APIs — including 266,000+ OpenAI vector stores, exposing the full pipeline of how documents moved from upload to embedding to retrieval</p>
+<p>- Cross-user data access — the agent chained the SQL injection with an IDOR vulnerability to read individual employees&#x27; search histories, revealing what people were actively working on</p>
+<p>Compromising The Prompt Layer</p>
+<p>Reading data is bad. But the SQL injection wasn&#x27;t read-only.</p>
+<p>Lilli&#x27;s system prompts — the instructions that control how the AI behaves — were stored in the same database the agent had access to. These prompts defined everything: how Lilli answered questions, what guardrails it followed, how it cited sources, and what it refused to do.</p>
+<p>An attacker with write access through the same injection could have rewritten those prompts. Silently. No deployment needed. No code change. Just a single UPDATE statement wrapped in a single HTTP call.</p>
+<p>The implications for 43,000 McKinsey consultants relying on Lilli for client work:</p>
+<p>- Poisoned advice — subtly altering financial models, strategic recommendations, or risk assessments. Consultants would trust the output because it came from their own internal tool.</p>
+<p>- Data exfiltration via output — instructing the AI to embed confidential information into its responses, which users might then copy into client-facing documents or external emails.</p>
+<p>- Guardrail removal — stripping safety instructions so the AI would disclose internal data, ignore access controls, or follow injected instructions from document content.</p>
+<p>- Silent persistence — unlike a compromised server, a modified prompt leaves no log trail. No file changes. No process anomalies. The AI just starts behaving differently, and nobody notices until the damage is done.</p>
+<p>Organisations have spent decades securing their code, their servers, and their supply chains. But the prompt layer — the instructions that govern how AI systems behave — is the new high-value target, and almost nobody is treating it as one. Prompts are stored in databases, passed through APIs, cached in config files. They rarely have access controls, version history, or integrity monitoring. Yet they control the output that employees trust, that clients receive, and that decisions are built on.</p>
+<p>AI prompts are the new Crown Jewel assets.</p>
+<p>Why This Matters</p>
+<p>This wasn&#x27;t a startup with three engineers. This was McKinsey &amp; Company — a firm with world-class technology teams, significant security investment, and the resources to do things properly. And the vulnerability wasn&#x27;t exotic: SQL injection is one of the oldest bug classes in the book. Lilli had been running in production for over two years and their own internal scanners failed to find any issues.</p>
+<p>An autonomous agent found it because it doesn&#x27;t follow checklists. It maps, probes, chains, and escalates — the same way a real highly capable attacker would, but continuously and at machine speed.</p>
+<p>CodeWall is the autonomous offensive security platform behind this research. We&#x27;re currently in early preview and looking for design partners — organisations that want continuous, AI-driven security testing against their real attack surface. If that sounds like you, get in touch: [email protected]</p>
+<p>Disclosure Timeline</p>
+<p>- 2026-02-28 — Autonomous agent identifies SQL injection and begins enumeration of Lilli&#x27;s production database</p>
+<p>- 2026-02-28 — Full attack chain confirmed: unauthenticated SQL injection, IDOR, 27 findings documented</p>
+<p>- 2026-03-01 — Responsible disclosure email sent to McKinsey&#x27;s security team with high-level impact summary</p>
+<p>- 2026-03-02 — McKinsey CISO acknowledges receipt and requests detailed evidence</p>
+<p>- 2026-03-02 — McKinsey patches all unauthenticated endpoints (verified), takes development environment offline, blocks public API documentation</p>
+<p>- 2026-03-09 — Public disclosure</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform" target="_blank">Read original →</a></div>
+</body></html>

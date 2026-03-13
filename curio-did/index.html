@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Curio-DID — Causal Analysis for Curio Cards</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--bdr:#30363d;--tx:#e6edf3;--mu:#8b949e;--acc:#58a6ff;--green:#3fb950;--red:#f85149;--gold:#d29922;--purple:#bc8cff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.wrap{max-width:1100px;margin:0 auto;padding:1.5rem}
+header{border-bottom:1px solid var(--bdr);padding-bottom:1rem;margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:baseline}
+header h1{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--acc)}
+header h1 span{color:var(--gold)}
+header .sub{color:var(--mu);font-size:.85rem}
+.intro{background:var(--card);border:1px solid var(--bdr);border-radius:6px;padding:1rem 1.2rem;margin-bottom:1.5rem;font-size:.9rem;color:var(--mu)}
+.intro strong{color:var(--tx)}
+.intro code{background:#1c2129;padding:.1rem .3rem;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--gold)}
+.event{background:var(--card);border:1px solid var(--bdr);border-radius:6px;margin-bottom:1.2rem;overflow:hidden}
+.event-header{padding:.8rem 1rem;border-bottom:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center}
+.event-header h2{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--tx)}
+.event-header .date{color:var(--mu);font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.event-body{padding:1rem}
+.event-desc{color:var(--mu);font-size:.85rem;margin-bottom:.8rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1rem}
+.stat{background:var(--bg);border:1px solid var(--bdr);border-radius:4px;padding:.5rem;text-align:center}
+.stat-label{font-size:.65rem;color:var(--mu);text-transform:uppercase;letter-spacing:.5px}
+.stat-value{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:600}
+.stat-value.pos{color:var(--green)}
+.stat-value.neg{color:var(--red)}
+.stat-value.sig{color:var(--gold)}
+.stat-value.ns{color:var(--mu)}
+.chart-wrap{height:250px;margin-top:.5rem}
+.cards-info{display:flex;gap:1rem;margin-top:.8rem;font-size:.8rem}
+.cards-info span{color:var(--mu)}
+.cards-info .treated{color:var(--acc)}
+.cards-info .control{color:var(--gold)}
+.footer{text-align:center;padding-top:1rem;margin-top:1rem;border-top:1px solid var(--bdr);font-size:.75rem;color:var(--mu);font-family:'JetBrains Mono',monospace}
+.footer a{color:var(--acc);text-decoration:none}
+.badge{display:inline-block;font-size:.65rem;padding:.15rem .4rem;border-radius:3px;font-family:'JetBrains Mono',monospace}
+.badge.sig{background:rgba(63,185,80,.15);color:var(--green);border:1px solid rgba(63,185,80,.3)}
+.badge.ns{background:rgba(139,148,158,.1);color:var(--mu);border:1px solid var(--bdr)}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head><body>
+<div class="wrap">
+<header>
+<h1>Curio-<span>DID</span></h1>
+<div class="sub">Difference-in-Differences Analysis for Curio Cards · <a href="curio-did-paper.pdf" style="color:var(--acc)">📄 Research Paper (PDF)</a></div>
+</header>
+
+<div class="intro">
+<strong>What is this?</strong> Curio-DID runs causal inference on Curio Cards NFT data using the
+Difference-in-Differences method. For each event (marketplace listing, viral tweet, whale buy),
+we estimate whether it <em>caused</em> a change in prices — not just correlation.
+The model: <code>Y = β₀ + β₁·Treatment + β₂·Post + β₃·(Treatment×Post) + ε</code>
+where <code>β₃</code> is the causal treatment effect.
+</div>
+
+<div id="events-container">Loading analysis...</div>
+
+<div class="footer">
+Data: <a href="/curiocharts/">Curio Data Hub</a> · Analysis: statsmodels OLS · 
+<a href="/">1n2.org</a> · <a href="/reader/">Reader</a> · <a href="/curio-quant/">CurioQuant</a>
+</div>
+</div>
+
+<script>
+async function loadResults() {
+    try {
+        const resp = await fetch('data/results.json');
+        const results = await resp.json();
+        renderEvents(results);
+    } catch(e) {
+        document.getElementById('events-container').innerHTML = 
+            '<div class="intro">Error loading results. Run the analysis first: <code>python3.12 analysis/did_model.py</code></div>';
+    }
+}
+
+function renderEvents(results) {
+    const container = document.getElementById('events-container');
+    
+    // STEP 1: Build ALL HTML first, then insert once
+    let allHtml = '';
+    const chartConfigs = [];
+    let chartIdx = 0;
+    
+    for (const [id, event] of Object.entries(results)) {
+        if (event.did?.error) continue;
+        
+        const did = event.did || {};
+        const pval = did.p_value ?? 1;
+        const coeff = did.coefficient ?? 0;
+        const sigLabel = pval < 0.01 ? '***' : pval < 0.05 ? '**' : pval < 0.1 ? '*' : 'ns';
+        const sigBadge = pval < 0.05 ? 'sig' : 'ns';
+        const coeffClass = coeff > 0 ? 'pos' : coeff < 0 ? 'neg' : '';
+        
+        allHtml += `
+        <div class="event">
+            <div class="event-header">
+                <h2>${event.name} <span class="badge ${sigBadge}">${sigLabel}</span></h2>
+                <span class="date">${event.date}</span>
+            </div>
+            <div class="event-body">
+                <div class="event-desc">${event.description}</div>
+                ${event.hypothesis ? `<div class="event-desc" style="color:var(--purple);font-style:italic;margin-top:4px"><b>Hypothesis:</b> ${event.hypothesis}</div>` : ''}
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">DID Effect (β₃)</div>
+                        <div class="stat-value ${coeffClass}">${coeff > 0 ? '+' : ''}${coeff.toFixed(4)} ETH</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">p-value</div>
+                        <div class="stat-value ${pval < 0.05 ? 'sig' : 'ns'}">${pval.toFixed(4)}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">95% CI</div>
+                        <div class="stat-value" style="font-size:.8rem">[${did.ci_lower?.toFixed(4)}, ${did.ci_upper?.toFixed(4)}]</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Observations</div>
+                        <div class="stat-value">${did.n_obs || '?'}</div>
+                    </div>
+                </div>
+                <div class="chart-wrap"><canvas id="chart-${chartIdx}"></canvas></div>
+                <div class="cards-info">
+                    <span class="treated">Treatment: Cards ${event.treated_cards?.join(', ')}</span>
+                    <span class="control">Control: Cards ${event.control_cards?.join(', ')}</span>
+                </div>
+            </div>
+        </div>`;
+        
+        if (event.chart) {
+            chartConfigs.push({ idx: chartIdx, chart: event.chart });
+        }
+        chartIdx++;
+    }
+    
+    // STEP 2: Insert all HTML at once
+    container.innerHTML = allHtml;
+    
+    // STEP 3: Now create charts on the existing canvases
+    chartConfigs.forEach(({ idx, chart }) => {
+        const ctx = document.getElementById(`chart-${idx}`);
+        if (!ctx) return;
+        const eventIdx = chart.dates.indexOf(chart.event_date);
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chart.dates,
+                datasets: [
+                    {
+                        label: 'Treatment Group',
+                        data: chart.treatment,
+                        borderColor: '#58a6ff',
+                        backgroundColor: 'rgba(88,166,255,.08)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 3,
+                        pointBackgroundColor: '#58a6ff',
+                        borderWidth: 2,
+                    },
+                    {
+                        label: 'Control Group',
+                        data: chart.control,
+                        borderColor: '#d29922',
+                        backgroundColor: 'rgba(210,153,34,.08)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 3,
+                        pointBackgroundColor: '#d29922',
+                        borderWidth: 2,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { intersect: false, mode: 'index' },
+                plugins: {
+                    legend: {
+                        labels: { color: '#8b949e', font: { family: 'JetBrains Mono', size: 11 }, usePointStyle: true, pointStyle: 'circle' }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1c2129',
+                        borderColor: '#30363d',
+                        borderWidth: 1,
+                        titleColor: '#e6edf3',
+                        bodyColor: '#8b949e',
+                        callbacks: {
+                            label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(4)} ETH`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#8b949e', font: { size: 9 }, maxRotation: 45 },
+                        grid: { color: 'rgba(48,54,61,.4)' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Avg Price (ETH)', color: '#8b949e', font: { size: 10 } },
+                        ticks: { color: '#8b949e', font: { size: 9 }, callback: v => v.toFixed(3) },
+                        grid: { color: 'rgba(48,54,61,.4)' }
+                    }
+                }
+            },
+            plugins: [{
+                afterDraw: (chart) => {
+                    if (eventIdx >= 0) {
+                        const xScale = chart.scales.x;
+                        const x = xScale.getPixelForValue(eventIdx);
+                        const c = chart.ctx;
+                        c.save();
+                        c.strokeStyle = '#f85149';
+                        c.lineWidth = 2;
+                        c.setLineDash([6, 4]);
+                        c.beginPath();
+                        c.moveTo(x, chart.chartArea.top);
+                        c.lineTo(x, chart.chartArea.bottom);
+                        c.stroke();
+                        c.setLineDash([]);
+                        c.fillStyle = 'rgba(248,81,73,.15)';
+                        c.fillRect(x, chart.chartArea.top, chart.chartArea.right - x, chart.chartArea.bottom - chart.chartArea.top);
+                        c.fillStyle = '#f85149';
+                        c.font = '600 10px JetBrains Mono';
+                        c.fillText('EVENT', x + 5, chart.chartArea.top + 13);
+                        c.restore();
+                    }
+                }
+            }]
+        });
+    });
+}
+
+loadResults();
+</script>
+</body></html>

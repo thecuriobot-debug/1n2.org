@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Ships Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="tracker" data-boat="sailboat">
+      <header class="app-header">
+        <h1>Bitcoin Ships Tracker</h1>
+        <p class="refresh-note">Auto-refreshes every 30 seconds</p>
+      </header>
+
+      <section class="tracker-card" aria-live="polite">
+        <div class="scene-frame" id="sceneFrame">
+          <div class="storm-layer" aria-hidden="true"></div>
+          <div class="boat-wrapper direction-flat" id="boatWrapper">
+            <div class="boat-media">
+              <img
+                id="boatImage"
+                src="assets/sailboat.png"
+                alt="Sailboat"
+                data-fallback="true"
+              />
+              <div class="boat-emoji" id="boatEmoji" aria-hidden="true">⛵</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="price" id="priceValue">$--</p>
+
+        <p class="status-label">Market Status:</p>
+        <p class="status-message" id="statusMessage">Loading market data...</p>
+
+        <div class="meta-row">
+          <span id="changeValue">Change: --</span>
+          <span id="updatedAt">Updated: --</span>
+        </div>
+      </section>
+
+      <section class="ocean" aria-hidden="true">
+        <div class="wave wave-back"></div>
+        <div class="wave wave-front"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

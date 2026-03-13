@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mad Patrol 3</title>
+    <style>
+      :root {
+        color-scheme: only light;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: radial-gradient(circle at 30% 20%, #2f365a 0%, #111426 58%, #07090f 100%);
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      }
+
+      canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        touch-action: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game" aria-label="Mad Patrol 3"></canvas>
+    <script src="main.js"></script>
+  </body>
+</html>

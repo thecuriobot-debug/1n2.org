@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "collection": "Curio Cards",
+  "contract": "0x73da73ef3a6982109c4d5bdb0db9dd3e3783f313",
+  "data": {
+    "floor_price_eth": 0.0486,
+    "volume_24h_eth": 0,
+    "sales_24h": 1,
+    "total_holders": 387,
+    "total_supply": 30,
+    "last_updated": "2026-03-13T08:12:04Z"
+  },
+  "source": "Alchemy API",
+  "rate_limit": "Updates every 24h at 6 AM PST"
+}

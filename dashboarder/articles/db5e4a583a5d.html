@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Show HN: Understudy – Teach a desktop agent by demonstrating a task once</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/understudy-ai/understudy" target="_blank">Original article ↗</a></div>
+
+<h1>Show HN: Understudy – Teach a desktop agent by demonstrating a task once</h1>
+<div class="meta">Hacker News · 2026-03-12</div>
+<div class="summary">An understudy watches. Then performs.
+Overview · 中文展示页 · Product Design · Showcase · Contributing · 中文 README
+AI tools are changing how we use software — but they still cover only a fraction of our work. Our daily tasks are scattered across browsers,</div>
+<p>An understudy watches. Then performs.</p>
+<p>Overview · 中文展示页 · Product Design · Showcase · Contributing · 中文 README</p>
+<p>AI tools are changing how we use software — but they still cover only a fraction of our work. Our daily tasks are scattered across browsers, desktop apps, terminals, and messaging tools — each with its own interface and habits, disconnected from each other.</p>
+<p>Understudy is a teachable desktop agent. It operates your computer like a human colleague — GUI, browser, shell, file system, all in one local runtime. You show it a task once, it extracts the intent (not just the coordinates), remembers the successful path, discovers faster execution routes over time, and eventually handles routine work on its own. No API integrations required. No workflow builders. Just demonstrate once.</p>
+<p>Understudy is designed as a layered progression — the same journey a new hire takes when they grow into a reliable colleague.</p>
+<p>Day 1: Watches how things are done</p>
+<p>Week 1: Imitates the process, asks questions</p>
+<p>Month 1: Remembers the routine, does it independently</p>
+<p>Month 3: Finds shortcuts and better ways</p>
+<p>Month 6: Anticipates needs, acts proactively</p>
+<p>That&#x27;s why it&#x27;s called Understudy — in theater, an understudy watches the lead, learns the role, and steps in when needed.</p>
+<p>Each of the five layers maps to a stage of this journey:</p>
+<p>Layer 1 ┃ Operate Software Natively Operate any app a human can — see, click, type, verify</p>
+<p>────────╋──────────────────────────────────────────────────────────────────────────────────</p>
+<p>Layer 2 ┃ Learn from Demonstrations User shows a task once — agent extracts intent, validates, learns</p>
+<p>────────╋──────────────────────────────────────────────────────────────────────────────────</p>
+<p>Layer 3 ┃ Crystallized Memory Agent accumulates experience from daily use, hardens successful paths</p>
+<p>────────╋──────────────────────────────────────────────────────────────────────────────────</p>
+<p>Layer 4 ┃ Route Optimization Automatically discover and upgrade to faster execution routes</p>
+<p>────────╋──────────────────────────────────────────────────────────────────────────────────</p>
+<p>Layer 5 ┃ Proactive Autonomy Notice and act in its own workspace, without disrupting the user</p>
+<p>Current status: Layers 1-2 are implemented and usable today. Layers 3-4 are partially implemented. Layer 5 is still the long-term direction.</p>
+<p>Every layer depends on the one below it. No shortcuts — the system earns its way up. Read the full story: Overview → | Chinese Overview → | Product Design →</p>
+<p>Demo environment: macOS + GPT-5.4 via Codex. See Supported Models for all providers.</p>
+<p>The video has been sped up. Full-length original: Google Drive. For inline playback, visit the Overview page.</p>
+<p>The published skill artifact generated from this showcase demo is available at examples/published-skills/taught-person-photo-cutout-bc88ec/SKILL.md, so you can inspect the exact output directly.</p>
+<p>Status: implemented today on macOS.</p>
+<p>Understudy is not just a GUI clicker. It&#x27;s a unified desktop runtime that mixes every execution route your computer offers — in one agent loop, one session, one policy pipeline:</p>
+<p>| Route | Implementation | What it covers |</p>
+<p>|---|---|---|</p>
+<p>| GUI | 13 tools + screenshot grounding + native input | Any macOS desktop app |</p>
+<p>| Browser | Playwright managed + Chrome extension relay | Any website, with login sessions |</p>
+<p>| Shell | bash tool with full local access |</p>
+<p>CLI tools, scripts, file system |</p>
+<p>| Web | web_search + web_fetch |</p>
+<p>Real-time information retrieval |</p>
+<p>| Memory | Semantic memory across sessions | Persistent context and preferences |</p>
+<p>| Messaging | 8 channel adapters | Telegram, Slack, Discord, WhatsApp, Signal, LINE, iMessage, Web |</p>
+<p>| Scheduling | Cron + one-shot timers | Automated recurring tasks |</p>
+<p>| Subagents | Child sessions for parallel work | Complex multi-step delegation |</p>
+<p>The planner decides which route to use for each step. A single task might browse a website, run a shell command, click through a native app, and send a message — all in one session.</p>
+<p>GUI grounding — dual-model architecture: the main model decides what to do, a separate grounding model decides where on screen. HiDPI-aware across Retina displays, with automatic high-res refinement for small targets and two grounding modes (simple prediction or multi-round validation with simulation overlays). Grounding benchmark: 30/30 targets resolved — explicit labels, ambiguous targets, icon-only elements, fuzzy prompts.</p>
+<p>For implementation details (coordinate spaces, stabilization, cross-attempt feedback, capture modes), see Product Design.</p>
+<p>Status: implemented today. Teach can record a demo, analyze it, clarify the task, optionally validate the replay, and publish a reusable skill.</p>
+<p>Explicit teaching: you deliberately show the agent how to do a task. Not a macro recorder — Understudy learns intent, not coordinates.</p>
+<p>/teach start Start dual-track recording (screen video + semantic events)</p>
+<p>→ Perform the task once with mouse and keyboard</p>
+<p>/teach stop &quot;file the weekly expense report&quot; AI analyzes the recording → extracts intent, parameters,</p>
+<p>steps, success criteria → creates a teach draft</p>
+<p>→ Multi-turn dialogue to refine the task</p>
+<p>/teach confirm [--validate] Lock the task card; optionally replay to validate</p>
+<p>/teach publish &lt;draftId&gt; [skill-name] Generate SKILL.md → hot-load into active sessions</p>
+<p>The published SKILL.md is a three-layer abstraction: intent procedure (natural language steps), route options (preferred / fallback paths), and GUI replay hints (last resort only, re-grounded from the current screenshot each time). UI redesigns, window resizing, even switching to a similar app — as long as the semantic target still exists, the skill works.</p>
+<p>A real published output example is available at examples/published-skills/taught-person-photo-cutout-bc88ec/SKILL.md. It is kept under examples/</p>
+<p>on purpose, so the repo documents the artifact format without auto-loading it as a real workspace skill.</p>
+<p>For the full teach pipeline, evidence pack construction, and validation details, see Product Design.</p>
+<p>Status: partially implemented. Understudy now has a working workflow crystallization loop for repeated day-to-day use, but promotion policy and automatic route upgrading are still early.</p>
+<p>Implicit learning: as you use Understudy day-to-day, it automatically identifies recurring patterns and crystallizes successful paths — no explicit teaching needed:</p>
+<p>| Stage | What Happens | User Experience |</p>
+<p>|---|---|---|</p>
+<p>| Stage 0 | Full exploration | &quot;The AI is figuring it out&quot; |</p>
+<p>| Stage 1 | Remembered path | &quot;It&#x27;s faster than last time&quot; |</p>
+<p>| Stage 2 | Deterministic substeps | &quot;It knows the routine&quot; |</p>
+<p>| Stage 3 | Crystallized execution | &quot;One-click&quot; |</p>
+<p>| Stage 4 | Proactive triggering | &quot;It did it before I asked&quot; |</p>
+<p>What the user experiences today</p>
+<p>- You use Understudy normally; no</p>
+<p>/teach</p>
+<p>command is required. - Repeated multi-turn work in the same workspace is compacted in the background.</p>
+<p>- Once a pattern repeats often enough, Understudy publishes a workspace skill automatically, hot-loads it into active sessions, and sends a notification that a crystallized workflow is ready.</p>
+<p>- From that point on, the agent can pick the new skill through the normal</p>
+<p>## Skills (mandatory)</p>
+<p>flow, just like a taught skill.</p>
+<p>Current boundaries</p>
+<p>- The learning loop is intentionally conservative: if the pattern is not clear enough, Understudy keeps exploring instead of pretending it has learned it.</p>
+<p>- Segmentation, clustering, and skill synthesis are currently LLM-first.</p>
+<p>- Promotion thresholds are still heuristic rather than fully policy-driven.</p>
+<p>- Layer 4 style route upgrading is still limited; crystallization mainly produces reusable skills today rather than fully automatic route replacement.</p>
+<p>For the implementation details (crystallization pipeline, segmentation, clustering, skill synthesis), see Product Design.</p>
+<p>Status: partially implemented. Route preferences, route guard policies, and teach route annotations are working today. Fully automatic route discovery and promotion are still in progress.</p>
+<p>The same feature can be accomplished in multiple ways. Take &quot;send a Slack message&quot; as an example:</p>
+<p>Fastest ──→ 1. API call Hit the Slack API directly (milliseconds)</p>
+<p>2. CLI tool slack-cli send (seconds)</p>
+<p>3. Browser Type and send in Slack&#x27;s web app (seconds)</p>
+<p>Slowest ──→ 4. GUI Screenshot-ground, click, type in the Slack desktop client (seconds~10s)</p>
+<p>Starts at GUI on Day 1 — because GUI is the universal fallback that works with any app. As usage accumulates, Understudy progressively discovers faster ways to accomplish the same feature, upgrading after safe verification.</p>
+<p>What the user experiences today</p>
+<p>- The system prompt explicitly steers the agent toward faster routes: direct tool/API &gt; Shell/CLI &gt; browser &gt; GUI.</p>
+<p>- A route guard tracks consecutive failures per route. If one route keeps failing (e.g., GUI grounding is unreliable for a particular app), the agent is prompted to switch to an alternative.</p>
+<p>- Teach-produced skills annotate each step with</p>
+<p>preferred</p>
+<p>/fallback</p>
+<p>/observed</p>
+<p>routes, so the agent can skip GUI when a faster path is available. - Browser mode auto-falls back: tries Chrome extension relay first, switches to managed Playwright if that fails.</p>
+<p>- The GUI capability matrix dynamically enables/disables tool subsets based on available permissions, so the agent never attempts a route it can&#x27;t execute.</p>
+<p>What this looks like in practice</p>
+<p>- A newly learned task may start with GUI as the observed fallback path.</p>
+<p>- Over time, the agent starts preferring higher-level routes — an existing skill, browser flow, or shell command — when those preserve the same result.</p>
+<p>- In practice this usually feels like fewer brittle GUI steps, faster execution, and fewer repeated detours.</p>
+<p>- When a better route is uncertain, the agent falls back to the slower but safer path rather than risk a failure.</p>
+<p>Current boundaries</p>
+<p>- Route optimization today is guidance and safe preference ordering, not a fully autonomous optimizer.</p>
+<p>- The agent can prefer a known faster route, but does not yet run a broad automatic search over all possib</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/understudy-ai/understudy" target="_blank">Read original →</a></div>
+</body></html>

@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Reviews - Thunt.net</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, serif; font-size: 14px; background: #f5deb3; color: #000; }
+.container { max-width: 1000px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.3); }
+header { background: linear-gradient(180deg, #800020 0%, #600010 100%); color: #f5deb3; padding: 40px 20px; text-align: center; border-bottom: 5px solid #f5deb3; }
+header h1 { font-size: 56px; font-weight: bold; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); margin-bottom: 10px; letter-spacing: 3px; }
+header .tagline { font-size: 22px; font-style: italic; color: #f5deb3; }
+.tabs { background: #800020; padding: 0; display: flex; border-bottom: 3px solid #600010; }
+.tab { flex: 1; padding: 18px 20px; background: #600010; color: #f5deb3; text-align: center; cursor: pointer; border-right: 2px solid #800020; font-size: 16px; font-weight: bold; transition: all 0.3s; text-decoration: none; display: block; }
+.tab:hover { background: #800020; }
+.tab.active { background: #f5deb3; color: #800020; }
+.content { padding: 40px; }
+.post-list { list-style: none; }
+.post-item { padding: 12px 0; border-bottom: 1px solid #d2b48c; display: flex; justify-content: space-between; align-items: baseline; }
+.post-item:hover { background: #fff8dc; padding-left: 10px; }
+.post-title { font-size: 16px; color: #800020; font-weight: bold; flex: 1; }
+.post-date { font-size: 13px; color: #666; min-width: 120px; text-align: right; font-family: Verdana, sans-serif; }
+.year-sep { background: #800020; color: #f5deb3; padding: 15px 20px; margin: 30px 0 20px 0; font-size: 24px; font-weight: bold; text-align: center; }
+.dvd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; margin-top: 30px; }
+.dvd-card { background: #fff; border: 3px solid #800020; padding: 0; text-align: center; transition: transform 0.3s; cursor: pointer; }
+.dvd-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(128,0,32,0.3); }
+.dvd-poster { width: 100%; height: 250px; background: linear-gradient(135deg, #800020 0%, #600010 100%); display: flex; align-items: center; justify-content: center; color: #f5deb3; font-size: 14px; padding: 20px; text-align: center; font-weight: bold; }
+.dvd-info { padding: 15px; background: #f5deb3; }
+.dvd-title { font-size: 14px; font-weight: bold; color: #800020; margin-bottom: 8px; min-height: 40px; }
+.dvd-meta { font-size: 11px; color: #666; margin: 4px 0; }
+.genre-badge { display: inline-block; background: #800020; color: #f5deb3; padding: 3px 8px; font-size: 10px; border-radius: 3px; margin-top: 5px; }
+.review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+.review-card { background: #f5deb3; border-left: 8px solid #800020; padding: 20px; }
+.review-card.highlight { border: 4px solid #800020; background: #fff8dc; }
+.review-title { font-size: 20px; font-weight: bold; color: #800020; margin-bottom: 5px; }
+.review-meta { font-size: 13px; color: #666; margin-bottom: 10px; }
+.stars { color: #ffd700; font-size: 20px; margin: 10px 0; }
+.review-text { font-size: 14px; line-height: 1.6; margin-top: 10px; }
+.random-box { background: #fff8dc; border: 5px solid #800020; padding: 40px; margin: 40px 0; text-align: center; }
+.random-content { font-size: 18px; line-height: 1.8; margin: 20px 0; min-height: 150px; }
+.random-btn { background: #800020; color: #f5deb3; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 5px; font-family: Georgia, serif; }
+.random-btn:hover { background: #600010; }
+.link-item { padding: 15px; margin: 10px 0; background: #fff8dc; border-left: 5px solid #800020; }
+.link-title { font-size: 16px; font-weight: bold; color: #800020; margin-bottom: 5px; }
+.link-url { color: #600010; text-decoration: none; font-size: 14px; }
+.link-url:hover { text-decoration: underline; }
+.section-title { font-size: 32px; color: #800020; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 4px solid #800020; }
+footer { background: #800020; color: #f5deb3; text-align: center; padding: 25px; font-size: 14px; }
+.highlight-section { background: #fff8dc; padding: 30px; margin: 30px 0; border: 3px solid #800020; }
+
+.review-poster { 
+    width: 100%; 
+    height: 220px; 
+    overflow: hidden; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+    background: linear-gradient(135deg, #800020 0%, #600010 100%); 
+}
+.review-poster img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+.review-card { 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+.review-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(128,0,32,0.3); 
+}
+</style></head><body><div class="container">
+<header><h1>Thunt.net</h1><div class="tagline">Inform the masses</div></header>
+<div class="tabs">
+<a href="index.html" class="tab">Blog Posts</a>
+<a href="links.html" class="tab">Net Interest</a>
+<a href="messages.html" class="tab">Messages</a>
+<a href="dvds.html" class="tab">DVD Collection</a>
+<a href="reviews.html" class="tab active">Reviews</a>
+<a href="random.html" class="tab">Random</a>
+</div><div class="content">
+<h2 class="section-title">Movie Reviews (93 total)</h2>
+
+<div style="background: #fff8dc; padding: 20px; margin-bottom: 30px; border-left: 5px solid #800020;">
+<div style="display: flex; justify-content: space-around; text-align: center;">
+<div>
+<div style="font-size: 32px; font-weight: bold; color: #800020;">93</div>
+<div style="font-size: 13px; color: #666;">Total Reviews</div>
+</div>
+<div>
+<div style="font-size: 32px; font-weight: bold; color: #28a745;">68</div>
+<div style="font-size: 13px; color: #666;">With Posters</div>
+</div>
+<div>
+<div style="font-size: 32px; font-weight: bold; color: #ffd700;">8</div>
+<div style="font-size: 13px; color: #666;">Highly Rated</div>
+</div>
+</div>
+</div>
+
+<div class="highlight-section">
+<h3 style="font-size: 28px; color: #800020; margin-bottom: 20px;">⭐ Highly Rated (8)</h3>
+<div class="review-grid"><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_93.jpg" alt="Cape Fear" loading="lazy"></div>
+<div class="review-title">Cape Fear (1991)</div>
+<div class="review-meta">Directed by Martin Scorssese</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"Same plot as Cape Fear (1962).  But slightly 
+different.  Man who is chased by evil convict is 
+guilty.  He fixed the convict's case so he would 
+loos..."</div>
+</div><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_84.jpg" alt="Henry Fool" loading="lazy"></div>
+<div class="review-title">Henry Fool (1998)</div>
+<div class="review-meta">Directed by Hal Hartly</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"A garbage man writes an epic poem or is it 
+pornography.  He is inspired to write by a wandering 
+ex-child molester.  ..."</div>
+</div><div class="review-card highlight">
+
+<div class="review-title">Microserfs (1995)</div>
+<div class="review-meta">Directed by Douglas Coupland</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"Nerds at microsoft join a startup and regain their 
+lives.  Sad ending, unexpected and unneccessary...."</div>
+</div><div class="review-card highlight">
+
+<div class="review-title">Requim for a Dream ()</div>
+<div class="review-meta">Directed by </div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"Several characters discover drugs, and loose too much 
+to be described.  Highlight:  The split screen used 
+perfectly to show the seperation of two ch..."</div>
+</div><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_32.jpg" alt="The Sun also Rises" loading="lazy"></div>
+<div class="review-title">The Sun also Rises ()</div>
+<div class="review-meta">Directed by Ernest Hemingway</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"A crew of misfits visit Pampaloma for some 
+bullfighting action...."</div>
+</div><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_31.jpg" alt="Junky" loading="lazy"></div>
+<div class="review-title">Junky ()</div>
+<div class="review-meta">Directed by William S. Burroughs</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"A man develops a habit.  A habit for heroin...."</div>
+</div><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_20.jpg" alt="Fight Club" loading="lazy"></div>
+<div class="review-title">Fight Club ()</div>
+<div class="review-meta">Directed by Chuck Palahniuk</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"A man who can\\'t sleep becomes addicted to self help 
+groups, then starts one of his own: Fight Club.  You 
+know the plot, you watched the movie...."</div>
+</div><div class="review-card highlight">
+<div class="review-poster"><img src="posters/review_16.jpg" alt="Basketball Diaries, The" loading="lazy"></div>
+<div class="review-title">Basketball Diaries, The ()</div>
+<div class="review-meta">Directed by Jim Carroll</div>
+<div class="stars">★★★★</div>
+<div class="review-text" style="font-weight: bold; font-style: italic;">"A story about the streets of New York.  Mainly 
+features a young man\\'s journey through basketball, 
+drugs and sex...."</div>
+</div></div></div>
+
+<h3 style="font-size: 28px; color: #800020; margin: 40px 0 20px 0;">All Reviews</h3>
+<div class="review-grid"><div class="review-card">
+<div class="review-poster"><img src="posters/review_95.jpg" alt="Boxing Helena" loading="lazy"></div>
+<div class="review-title">Boxing Helena ()</div>
+<div class="review-meta">Directed by Jennifer Lynch • Nov 30, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A crazed surgen dreams about "boxing helena", ie: 
+Cutting off her arms and legs and keeping her locked 
+up in his house.  Pretty sick.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_94.jpg" alt="Harry Potter and the Chamber of Secrets" loading="lazy"></div>
+<div class="review-title">Harry Potter and the Chamber of Secrets ()</div>
+<div class="review-meta">Directed by J.K. Rowling • Nov 30, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Harry is back at Hogwarts for Year 2.  He and his 
+friends fight another monster.  They win.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_93.jpg" alt="Cape Fear" loading="lazy"></div>
+<div class="review-title">Cape Fear (1991)</div>
+<div class="review-meta">Directed by Martin Scorssese • Nov 29, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> Same plot as Cape Fear (1962).  But slightly 
+different.  Man who is chased by evil convict is 
+guilty.  He fixed the convict's case so he would 
+loose, and was cheating on his wife on multiple 
+occas...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_92.jpg" alt="Winslow Boy, The" loading="lazy"></div>
+<div class="review-title">Winslow Boy, The ()</div>
+<div class="review-meta">Directed by David Mamet • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> English.  A young boy is kicked out of school for a 
+crime he didn't commit.  His family comes together and 
+fights for his honor.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_91.jpg" alt="Thin Blue Line, The" loading="lazy"></div>
+<div class="review-title">Thin Blue Line, The ()</div>
+<div class="review-meta">Directed by Errol Morris • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Documentary.  A man is falsely accused of murdering a 
+police officer.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_90.jpg" alt="Spanish Prisoner, The" loading="lazy"></div>
+<div class="review-title">Spanish Prisoner, The ()</div>
+<div class="review-meta">Directed by David Mamet • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man developing a process is caught in a complicated 
+confidence scam.  People try to steal the process.  
+Lots of twists and turns.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_89.jpg" alt="Dead Man" loading="lazy"></div>
+<div class="review-title">Dead Man ()</div>
+<div class="review-meta">Directed by Jim Jarmush • Nov 28, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> William Blake (Johnny Depp) travels to the wild west 
+and looses his job.  He meets a girl and then gets in 
+a gun fight with her boyfriend, kills him, the girl 
+killed and he's on the run.  Travels w...</div>
+</div><div class="review-card">
+
+<div class="review-title">Generation of Swine ()</div>
+<div class="review-meta">Directed by Hunter S. Thompson • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Collection of articles from the 80s.  Mainly focusing 
+on the 1988 presidential election, and the Iran Contra 
+affair.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_87.jpg" alt="Spy Game" loading="lazy"></div>
+<div class="review-title">Spy Game (2001)</div>
+<div class="review-meta">Directed by Tony Scott • Nov 28, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Old CIA agent trained young CIA agent.  Young CIA 
+agent ignores his teaching and falls for a girl and 
+then puts his life on the line for her but he and she 
+are saved by old CIA agent.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_86.jpg" alt="Urban Legends 2: Final Cut" loading="lazy"></div>
+<div class="review-title">Urban Legends 2: Final Cut ()</div>
+<div class="review-meta">Directed by  • Nov 28, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Film students making a film about urban legends get 
+killed by their film proffessor who uses urban legends 
+to kill them.  </div>
+</div><div class="review-card">
+
+<div class="review-title">Luzhen Defence, The ()</div>
+<div class="review-meta">Directed by Marleen Gorris • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A brilliant withdrawn chess player falls in love and 
+has to choose between chess and life.  Sad ending:  he 
+committs suicide.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_84.jpg" alt="Henry Fool" loading="lazy"></div>
+<div class="review-title">Henry Fool (1998)</div>
+<div class="review-meta">Directed by Hal Hartly • Nov 28, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> A garbage man writes an epic poem or is it 
+pornography.  He is inspired to write by a wandering 
+ex-child molester.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_83.jpg" alt="Cape Fear" loading="lazy"></div>
+<div class="review-title">Cape Fear (1962)</div>
+<div class="review-meta">Directed by  • Nov 28, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man released from jail seeks revenge.  Gregory Peck 
+tries to protect his family from this madman (Mitchum).</div>
+</div><div class="review-card">
+
+<div class="review-title">Bridget Jones: the edge of reason (1999)</div>
+<div class="review-meta">Directed by Helen Fielding • Nov 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Sequal to Bridget Jones' Diary.  Jones, now with a 
+boyfriend, manages to screw that up, get locked up in 
+Thailand, but gets free and gets back together with 
+boyfriend.</div>
+</div><div class="review-card">
+
+<div class="review-title">Dave Berry's Complete Guide to Guys (1995)</div>
+<div class="review-meta">Directed by Dave berry • Nov 18, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non fiction (Humor).  Berry writes about guys through 
+the ages, from medievil times until modern times (ex: 
+using a trebuchet to launch a dead horse, or using a 
+trebuchet to launch a buick).</div>
+</div><div class="review-card">
+
+<div class="review-title">Zen and the art of screenwriting (1996)</div>
+<div class="review-meta">Directed by William Froug • Nov 15, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non fiction.  Interviews with screen writers and 
+advice from former UCLA proffessor William Froug.</div>
+</div><div class="review-card">
+
+<div class="review-title">Smith of Wooton Major & Farmer Giles of Ham (1969)</div>
+<div class="review-meta">Directed by J.R.R. Tolkien • Nov 14, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Two novella length stories.  Wooton Major is about 
+fairies and cooking.  While Farmer Giles is about 
+dragons and giants.</div>
+</div><div class="review-card">
+
+<div class="review-title">Glengarry Glen Ross (1982)</div>
+<div class="review-meta">Directed by David Mamet • Nov 14, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> The troubles of salesmen are explored in this awesome 
+play.</div>
+</div><div class="review-card">
+
+<div class="review-title">Adventures in a TV Nation (1998)</div>
+<div class="review-meta">Directed by Michael Moore • Nov 14, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non fiction.  The behind the scenes story of Michael 
+Moore's television show TV Nation.  Details several of 
+their shows.</div>
+</div><div class="review-card">
+
+<div class="review-title">Downsize This! (1996)</div>
+<div class="review-meta">Directed by Michael Moore • Nov 12, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non-fiction/humor.  Collection of chapters ("essays") 
+on various political issues.</div>
+</div><div class="review-card">
+
+<div class="review-title">Generation X (1991)</div>
+<div class="review-meta">Directed by Douglas Coupland • Nov 11, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Three disafected youths escape their lives to the 
+desert to tell stories and try to figure life out.</div>
+</div><div class="review-card">
+
+<div class="review-title">Harry Potter and the Sorcerer's Stone (1998)</div>
+<div class="review-meta">Directed by J.K. Rowling • Nov 11, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A young boy discovers that he is the son of a great 
+wizard (and witch) and joins a wizard school. Similar 
+to Star Wars, Hitchhiker's Guide, and of course The 
+Lord of the Rings.</div>
+</div><div class="review-card">
+
+<div class="review-title">Microserfs (1995)</div>
+<div class="review-meta">Directed by Douglas Coupland • Nov 10, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> Nerds at microsoft join a startup and regain their 
+lives.  Sad ending, unexpected and unneccessary.</div>
+</div><div class="review-card">
+
+<div class="review-title">Lord of the Rings, The (1954)</div>
+<div class="review-meta">Directed by J.R.R. Tolkien • Nov 10, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Mystical.  A hobbit must travel far to destroy an evil 
+ring.  Many twists and turns.</div>
+</div><div class="review-card">
+
+<div class="review-title">Regulators, The (1996)</div>
+<div class="review-meta">Directed by Richard Bachman • Nov 10, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> An evil spirit enchants a kid, then uses the child\\'s 
+heroes (cartoon characters and cowboys) to wreck havoc 
+in a suburban setting.</div>
+</div><div class="review-card">
+
+<div class="review-title">Music for Chameleons (1975)</div>
+<div class="review-meta">Directed by Truman Capote • Nov 10, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Multiple plots.  Collection of short stories, self 
+interviews and jouranlistic fiction.</div>
+</div><div class="review-card">
+
+<div class="review-title">Spike, Mike, Slackers and Dikes (1995)</div>
+<div class="review-meta">Directed by John Pierson • Nov 10, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non-Fiction.  An overview of American Independant film 
+from the 80s to the mid ninties.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_64.jpg" alt="The Odd Couple" loading="lazy"></div>
+<div class="review-title">The Odd Couple ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Two people who shouldn\\'t live together do.  They 
+fight, they fight and it\\'s hilarious.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_68.jpg" alt="Finding Forester" loading="lazy"></div>
+<div class="review-title">Finding Forester ()</div>
+<div class="review-meta">Directed by Gus Van Sant • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Good Will Hunting on racial lines.  Sean Connery 
+pretends to be J.D. Saldinger and teaches a young 
+black man to write.  Uplifting.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_67.jpg" alt="Paths of Glory" loading="lazy"></div>
+<div class="review-title">Paths of Glory ()</div>
+<div class="review-meta">Directed by Stanley Kubrick • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A general is blamed for not forcing his men to 
+committe suicide on the battlefield.  Courtroom drama, 
+three men are held accountable and tried of 
+cowardess.  They die.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_66.jpg" alt="Hope and Glory" loading="lazy"></div>
+<div class="review-title">Hope and Glory ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A look at the homelife during the Blitz of WWII.  
+Highlight: The gang of little boys bribes a girl to 
+show them her privates, hilarious.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_65.jpg" alt="Muriel\\'s Wedding" loading="lazy"></div>
+<div class="review-title">Muriel\\'s Wedding ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Wierd british woman wants to get married.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_63.jpg" alt="Simon Birch" loading="lazy"></div>
+<div class="review-title">Simon Birch ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A freakishly small boy helps foster belief in God for 
+a young boy.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_62.jpg" alt="Pretty in Pink" loading="lazy"></div>
+<div class="review-title">Pretty in Pink ()</div>
+<div class="review-meta">Directed by John Hughes • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Cinderella.  Teenage dating.  Redhead wants rich boy, 
+but she should date Ducky, the charming nerd character.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_61.jpg" alt="Magnificant Seven, The" loading="lazy"></div>
+<div class="review-title">Magnificant Seven, The ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Seven cowboys protect a small village.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_60.jpg" alt="Purple Rose of Cairo, The" loading="lazy"></div>
+<div class="review-title">Purple Rose of Cairo, The ()</div>
+<div class="review-meta">Directed by Woody Allen • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A character from a movie jumps off the screen and 
+falls in love with a real woman.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_59.jpg" alt="Hurricane, The" loading="lazy"></div>
+<div class="review-title">Hurricane, The ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Here is the story of the hurricane.
+A man the authorities came to blame.
+For something he never done.
+Put in a prison cell, but one time he could have been, 
+the champion of the world.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_58.jpg" alt="McCabe & Mrs. Miller" loading="lazy"></div>
+<div class="review-title">McCabe & Mrs. Miller ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A wild west entrepuner falls in love with a Madam.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_57.jpg" alt="Evolution" loading="lazy"></div>
+<div class="review-title">Evolution ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★</div>
+<div class="review-text"><strong>Plot:</strong> A gang of idiots fight aliens.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_56.jpg" alt="Nashville" loading="lazy"></div>
+<div class="review-title">Nashville ()</div>
+<div class="review-meta">Directed by Robert Altman • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Several characters explore the music scene of 
+Nashville, TN.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_54.jpg" alt="Unbreakable" loading="lazy"></div>
+<div class="review-title">Unbreakable ()</div>
+<div class="review-meta">Directed by M. Night Shamlahan • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Issue #0 for a comic book series.  Genesis.  A man who 
+is incredibly strong discovers his powers and his 
+enemy.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_53.jpg" alt="Coyote Ugly" loading="lazy"></div>
+<div class="review-title">Coyote Ugly ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A hot girl gets a job in a bar.  She records a song 
+and sings it at the bar to become a major songwriter.  
+Horatio Alger exploitive.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_52.jpg" alt="The shop around the corner" loading="lazy"></div>
+<div class="review-title">The shop around the corner ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A young man (Stewart) falls in love with his co-
+worker.  Ups and downs, he gets fired, he gets re-
+hired.  Heartwarming.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_51.jpg" alt="Truman" loading="lazy"></div>
+<div class="review-title">Truman ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Details the life of President Harry S. Truman</div>
+</div><div class="review-card">
+
+<div class="review-title">Crimes and Misdemenors ()</div>
+<div class="review-meta">Directed by Woody Allen • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man (Landau) has his mistress murdered and feels 
+bad.  Another man (Allen) looses the girl he loves to 
+a pompous ass (Alda).  Highlight:  Allen makes a film 
+within a film where he compairs Alda\\...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_49.jpg" alt="Shadows and Fog" loading="lazy"></div>
+<div class="review-title">Shadows and Fog ()</div>
+<div class="review-meta">Directed by Woody Allen • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man is chased by death througout the city of New 
+York. (based on the play: Death)</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_48.jpg" alt="Dear God" loading="lazy"></div>
+<div class="review-title">Dear God ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Mailmen start answering mail sent to God and doing 
+good deeds.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_47.jpg" alt="Little Shop of Horrors" loading="lazy"></div>
+<div class="review-title">Little Shop of Horrors ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> An evil man eating plant goes wild in this MUSICAL.</div>
+</div><div class="review-card">
+
+<div class="review-title">Requim for a Dream ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> Several characters discover drugs, and loose too much 
+to be described.  Highlight:  The split screen used 
+perfectly to show the seperation of two characters 
+when they\\'re incredibly close.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_45.jpg" alt="I shot Andy Warhol" loading="lazy"></div>
+<div class="review-title">I shot Andy Warhol ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A look inside the life of the woman who wrote the 
+S.C.U.M. Manifesto and shot Andy Warhol (hence the 
+catchy title).</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_44.jpg" alt="I know what you did last summer" loading="lazy"></div>
+<div class="review-title">I know what you did last summer ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Stupid teenagers run over a stranger with their car 
+and are \\"haunted\\" by him, one year later.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_43.jpg" alt="Marty" loading="lazy"></div>
+<div class="review-title">Marty ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A guy who can\\'t seem to get a date, but is such a nice 
+guy.  He takes care of his family and he always makes 
+sacrifices.  But in the end, he gets a date, and she 
+likes him and all is well.  Uplif...</div>
+</div><div class="review-card">
+
+<div class="review-title">The day of the jackel ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> The President of France is to be assassinated by The 
+Jackel.  Dramatic game of cat and mouse.  Unfortuately 
+the cop succeeds and the Jackel fails, but it\\'s 
+exciting.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_41.jpg" alt="The Hustler" loading="lazy"></div>
+<div class="review-title">The Hustler ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A pool shark gets on a bad streak, falls in love, gets 
+on a hot streak and his girl kills herself.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_40.jpg" alt="Outbreak" loading="lazy"></div>
+<div class="review-title">Outbreak ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A bad monkey spreads a bad virus.  The world\\'s only 
+hope is a rouge scientist named Rainman.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_39.jpg" alt="Bait" loading="lazy"></div>
+<div class="review-title">Bait ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A black ex-con is used as bait for a \\"genius\\" thief.</div>
+</div><div class="review-card">
+
+<div class="review-title">Sugar and Spice ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Idiotic cheerleaders decide to rob a bank.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_37.jpg" alt="Saving Silverman" loading="lazy"></div>
+<div class="review-title">Saving Silverman ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> An idiot is getting married to a woman who is bad for 
+him.  His friends try to save him by kidnapping his 
+fiance.</div>
+</div><div class="review-card">
+
+<div class="review-title">Girl Interupted ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A girl pretends to be a boy.  Later killed by 
+rednecks.  Based on a true story.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_35.jpg" alt="Save the last dance" loading="lazy"></div>
+<div class="review-title">Save the last dance ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A white girl in the ghetto falls in love with a black 
+guy.  She also learns how to hip hop dance and uses 
+her new found ghetto-sense to win a ballet scholarship.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_34.jpg" alt="The Family Man" loading="lazy"></div>
+<div class="review-title">The Family Man ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Have you seen It\\'s a Wonderful Life?  It\\'s pretty much 
+the same thing.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_33.jpg" alt="Proof of Life" loading="lazy"></div>
+<div class="review-title">Proof of Life ()</div>
+<div class="review-meta">Directed by  • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man (Dennis Quad) is kidnapped.  A proffessional 
+negoatior is sent to negoiate for his release.  He 
+falls in love with the man\\'s wife (Meg Ryan).</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_32.jpg" alt="The Sun also Rises" loading="lazy"></div>
+<div class="review-title">The Sun also Rises ()</div>
+<div class="review-meta">Directed by Ernest Hemingway • Oct 27, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> A crew of misfits visit Pampaloma for some 
+bullfighting action.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_31.jpg" alt="Junky" loading="lazy"></div>
+<div class="review-title">Junky ()</div>
+<div class="review-meta">Directed by William S. Burroughs • Oct 27, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man develops a habit.  A habit for heroin.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_30.jpg" alt="Queer" loading="lazy"></div>
+<div class="review-title">Queer ()</div>
+<div class="review-meta">Directed by William S. Burroughs • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> While taking some time off from heroin, Bill Lee 
+(burroughs) discovers his sex drive and has a serious 
+of not so great affairs with men in Mexico.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_29.jpg" alt="Timequake" loading="lazy"></div>
+<div class="review-title">Timequake ()</div>
+<div class="review-meta">Directed by Kurt Vonnegut • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A mix between fiction and non fiction.  A timequake 
+occurs, making the world repeat, but then the 
+timequake ends and the world awakes.  Kilgore Trout is 
+needed to make them wake up.</div>
+</div><div class="review-card">
+
+<div class="review-title">Another Roadside Attraction ()</div>
+<div class="review-meta">Directed by Tom Robbins • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> The mummfied body of Christ is found and set up in a 
+roadside circus.  So much more than just another 
+roadside attraction.</div>
+</div><div class="review-card">
+
+<div class="review-title">Riding the Rap ()</div>
+<div class="review-meta">Directed by Elmore Leonard • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A cop tracks down a killer or something.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_26.jpg" alt=" Faust" loading="lazy"></div>
+<div class="review-title"> Faust ()</div>
+<div class="review-meta">Directed by Goethe • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man sells his soul to the devil.  Obviously a 
+mistake.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_25.jpg" alt="Carrie" loading="lazy"></div>
+<div class="review-title">Carrie ()</div>
+<div class="review-meta">Directed by Stephen King • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A young girl is made fun of, until she develops 
+supernatural powers and kicks everyones fucking ass.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_24.jpg" alt="Even Cowgirls get the Blues" loading="lazy"></div>
+<div class="review-title">Even Cowgirls get the Blues ()</div>
+<div class="review-meta">Directed by Tom Robbins • Oct 27, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> The story of a female hitchhiker.  A woman with 
+extraordinary thumbs.  The tale of a cowgirl and her 
+ranch.  Attempting to describe the plot of a Tom 
+Robbins book is like trying to explain the 
+con...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_23.jpg" alt="On Writing" loading="lazy"></div>
+<div class="review-title">On Writing ()</div>
+<div class="review-meta">Directed by Stephen King • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non Fiction.  King discusses how he writes, why he 
+writes and touches on the time he got run over by a 
+car.</div>
+</div><div class="review-card">
+
+<div class="review-title">Survivor : A Novel ()</div>
+<div class="review-meta">Directed by Chuck Palahniuk • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A refugee from a religious cult starts a suicide 
+promotion hotline.  Twists and turns, then a SUPRISE 
+ENDING.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_21.jpg" alt="Invisible Monsters" loading="lazy"></div>
+<div class="review-title">Invisible Monsters ()</div>
+<div class="review-meta">Directed by Chuck Palahniuk • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A fashion model goes a bit whacked.  Interesting plot 
+twists and a TYPICAL PALAHNIUK suprise ending.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_20.jpg" alt="Fight Club" loading="lazy"></div>
+<div class="review-title">Fight Club ()</div>
+<div class="review-meta">Directed by Chuck Palahniuk • Oct 26, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man who can\\'t sleep becomes addicted to self help 
+groups, then starts one of his own: Fight Club.  You 
+know the plot, you watched the movie.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_19.jpg" alt="Bright Lights, Big City" loading="lazy"></div>
+<div class="review-title">Bright Lights, Big City ()</div>
+<div class="review-meta">Directed by Jay McInerney • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> An un-named character (you) journeys through 
+depression in New York City.  Through sex and 
+joblessness, love and despair.  Similar to The Catcher 
+in the Rye.  Side note:  Great supporting character...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_18.jpg" alt="Easy Riders, Raging Bulls: How the sex-drugs-and-rock\\'n\\'roll generation saved hollywood" loading="lazy"></div>
+<div class="review-title">Easy Riders, Raging Bulls: How the sex-drugs-and-rock\\'n\\'roll generation saved hollywood ()</div>
+<div class="review-meta">Directed by Peter Biskind • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non Fiction.  An excellent account of Hollywood\\'s 
+rising directors of the 1970s and how they failed.</div>
+</div><div class="review-card">
+
+<div class="review-title">Secrets and Lies: Digital Security in a Networked World ()</div>
+<div class="review-meta">Directed by Bruce Schneider • Oct 26, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Non Fiction.  Schneider details the ins and outs of 
+computer security.  Highlights: The Chapter on Users 
+is hilarious, and the opening in which Schneider 
+admits that total security is impossible du...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_16.jpg" alt="Basketball Diaries, The" loading="lazy"></div>
+<div class="review-title">Basketball Diaries, The ()</div>
+<div class="review-meta">Directed by Jim Carroll • Oct 26, 2001</div>
+<div class="stars">★★★★</div>
+<div class="review-text"><strong>Plot:</strong> A story about the streets of New York.  Mainly 
+features a young man\\'s journey through basketball, 
+drugs and sex.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_14.jpg" alt="Driven" loading="lazy"></div>
+<div class="review-title">Driven (2001)</div>
+<div class="review-meta">Directed by Renny Harlin • Oct 06, 2001</div>
+<div class="stars">★</div>
+<div class="review-text"><strong>Plot:</strong> A young driver needs help from an old driver to be all 
+he can be. </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_13.jpg" alt="Party Girl" loading="lazy"></div>
+<div class="review-title">Party Girl (1995)</div>
+<div class="review-meta">Directed by Daisy von Scherler Mayer • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A young Party Girl grows up and gets a job without 
+loosing her party roots.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_12.jpg" alt="Dial 'M' for Murder" loading="lazy"></div>
+<div class="review-title">Dial 'M' for Murder (1954)</div>
+<div class="review-meta">Directed by Alfred Hitchcock • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> A man wants his wife dead. He blackmailes another man 
+to do it, but everything goes wrong. </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_11.jpg" alt="Bounce" loading="lazy"></div>
+<div class="review-title">Bounce (2000)</div>
+<div class="review-meta">Directed by Don Roos • Oct 06, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A guy dies on a plane crash with someone else's 
+ticket. Someone else feels bad about it and goes and 
+fucks, falls in love with that dead guy's wife.</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_10.jpg" alt="Little Nicky" loading="lazy"></div>
+<div class="review-title">Little Nicky (2000)</div>
+<div class="review-meta">Directed by Steven Brill • Oct 06, 2001</div>
+<div class="stars">★</div>
+<div class="review-text"><strong>Plot:</strong> The devil's son returns to earth to stop the other 
+devil's sons from causing the devil to die. And he 
+falls in love. </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_9.jpg" alt="Shrek" loading="lazy"></div>
+<div class="review-title">Shrek (2001)</div>
+<div class="review-meta">Directed by Andrew Adamson • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> An ogre rescues a princess and they fall in love.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_8.jpg" alt="Story of Us, The" loading="lazy"></div>
+<div class="review-title">Story of Us, The (1999)</div>
+<div class="review-meta">Directed by Rob Reiner • Oct 06, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> A married couple on the rocks. Will they split or not. 
+Do they have a history? Are they an us? Who gives a 
+fuck? </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_7.jpg" alt="AntiTrust" loading="lazy"></div>
+<div class="review-title">AntiTrust (2001)</div>
+<div class="review-meta">Directed by Peter Howitt (II) • Oct 06, 2001</div>
+<div class="stars">★</div>
+<div class="review-text"><strong>Plot:</strong> A Bill Gates character is triumphing in the software 
+market by stealing code from kids in garages and 
+occasionally killing them. But it all goes wrong when 
+a young silly programmer double crosses h...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_6.jpg" alt="House of Yes, The" loading="lazy"></div>
+<div class="review-title">House of Yes, The (1997)</div>
+<div class="review-meta">Directed by Mark S. Waters • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Parker Posey plays an insane woman who has a serious 
+Jackie-O obsession. Her brother returns home with a 
+finace and leaves in pine box.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_5.jpg" alt="Speechless" loading="lazy"></div>
+<div class="review-title">Speechless (1994)</div>
+<div class="review-meta">Directed by Ron Underwood • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Based on James Carville and Mary Madson, two speech 
+writers, one republican, one democrat, fight, fuck and 
+fall in love. </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_4.jpg" alt="Absence of Malice" loading="lazy"></div>
+<div class="review-title">Absence of Malice (1981)</div>
+<div class="review-meta">Directed by Syndey Pollack • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Paul Newman plays a son of a mobster who is being 
+invesigated in the disaperance of another mobster. The 
+kicker is he's only being investigated because the 
+feds are trying to get him to help them f...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_3.jpg" alt="Legend of Bagger Vance, The" loading="lazy"></div>
+<div class="review-title">Legend of Bagger Vance, The (2000)</div>
+<div class="review-meta">Directed by Robert Redford • Oct 06, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Matt Damon, a golfer returns from WWI with a broken 
+spirit. Will Smith (Bagger Vance), a black caddy, 
+Jesus/God type figure appears and helps Damon regain 
+his game. Because after all, golf is life?...</div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_2.jpg" alt="Ghost in the Shell" loading="lazy"></div>
+<div class="review-title">Ghost in the Shell (1995)</div>
+<div class="review-meta">Directed by Mamoru Oshii • Oct 06, 2001</div>
+<div class="stars">★★★</div>
+<div class="review-text"><strong>Plot:</strong> Humans, cyborgs, the future. Plot deals with AI & 
+Consciousness. Do the cyborgs have souls? Follows the 
+trail of a few cyborg cops from Section 9. Film is 
+Japanese Animation.  </div>
+</div><div class="review-card">
+<div class="review-poster"><img src="posters/review_1.jpg" alt="Object of My Affection, The" loading="lazy"></div>
+<div class="review-title">Object of My Affection, The (1998)</div>
+<div class="review-meta">Directed by Nicholas Hytner • Oct 06, 2001</div>
+<div class="stars">★★</div>
+<div class="review-text"><strong>Plot:</strong> Chasing Amy, reversed. Aniston falls in love with a 
+gay guy. Mildly interesting plot twist, she's 
+pregnant, they're going to raise the baby together...  </div>
+</div></div></div>
+<footer><p>Thunt.net - Thomas Hunt (2000-2001)</p>
+<p style="margin-top: 10px;">93 reviews • Posters from The Movie Database (TMDb)</p>
+</footer>
+</div></body></html>

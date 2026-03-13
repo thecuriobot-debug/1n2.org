@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Show HN: s@: decentralized social networking over static sites</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="http://satproto.org/" target="_blank">Original article ↗</a></div>
+
+<h1>Show HN: s@: decentralized social networking over static sites</h1>
+<div class="meta">Hacker News · 2026-03-12</div>
+<div class="summary">s@
+: social networking over static sites simple *
+static * social networking
+self-reliant *
+satellite
+)main
+branch).https://username.github.io/satellite/
+)While this sample implementation uses GitHub, the protocol is agnostic to the hosting service.
+</div>
+<p>s@</p>
+<p>: social networking over static sites simple *</p>
+<p>static * social networking</p>
+<p>self-reliant *</p>
+<p>satellite</p>
+<p>)main</p>
+<p>branch).https://username.github.io/satellite/</p>
+<p>)While this sample implementation uses GitHub, the protocol is agnostic to the hosting service.</p>
+<p>Using a custom repo name:</p>
+<p>by default, the client looks for data at https://{domain}/satellite/</p>
+<p>.</p>
+<p>If you already have a satellite/</p>
+<p>path for something else, add a satproto_root.json</p>
+<p>file to the root of your main site (e.g. the username.github.io</p>
+<p>repo)</p>
+<p>pointing to the actual repo:</p>
+<p>{ &quot;sat_root&quot;: &quot;my-custom-repo&quot; }</p>
+<p>sAT Protocol (s@</p>
+<p>) is a decentralized social networking protocol based on static sites.</p>
+<p>Each user owns a static website storing all their data in encrypted JSON stores.</p>
+<p>A client running in the browser aggregates feeds and publishes posts.</p>
+<p>It does not rely on any servers or relays.</p>
+<p>In plain terms, s@</p>
+<p>is designed for you and your friends, and no one else.</p>
+<p>This applies to both the technical implementation and the user experience.</p>
+<p>At the technical level, data only moves from your own website to your friend’s browser.</p>
+<p>There are no servers (like Mastodon) or relays (like the AT Protocol) in the middle1.</p>
+<p>And unlike almost all social media platform today,</p>
+<p>s@</p>
+<p>is not designed for influencers.</p>
+<p>To see a friend’s post or to have a friend see your post, you must follow each other2.</p>
+<p>A user’s identity is their domain name. Identity is authenticated by HTTPS/TLS - fetching content from a domain proves the domain owner published it.</p>
+<p>A s@</p>
+<p>-enabled site exposes a discovery document at:</p>
+<p>GET https://{domain}/satellite/satproto.json</p>
+<p>The discovery document simply contains the protocol version and the user’s public key:</p>
+<p>{</p>
+<p>&quot;satproto_version&quot;: &quot;0.1.0&quot;,</p>
+<p>&quot;public_key&quot;: &quot;&lt;base64-encoded X25519 public key&gt;&quot;</p>
+<p>}</p>
+<p>By convention, the client looks under /satellite/</p>
+<p>by default.</p>
+<p>If that path is already taken, place a satproto_root.json</p>
+<p>file at the domain</p>
+<p>root containing { &quot;sat_root&quot;: &quot;my-custom-repo&quot; }</p>
+<p>— the client checks this first.</p>
+<p>All user data is stored in an encrypted JSON store. Only the user and users in the owner’s follow list can decrypt it.</p>
+<p>crypto_box_seal</p>
+<p>with the follower’s X25519 public key)</p>
+<p>and stored at keys/{follower-domain}.json</p>
+<p>.keys/_self.json</p>
+<p>)The user’s content key and publishing secrets (e.g. GitHub access tokens)</p>
+<p>are bundled into a single sealed box (crypto_box_seal</p>
+<p>with the user’s own public key)</p>
+<p>and stored at keys/_self.json</p>
+<p>. Only the user’s private key can open it.</p>
+<p>This allows a user to sign back in on a new device or after clearing browser storage — they only need their domain and private key.</p>
+<p>When the user unfollows someone:</p>
+<p>keys/_self.json</p>
+<p>with the new content keyWhen Bob visits Alice’s site:</p>
+<p>satproto_root.json</p>
+<p>or the default /satellite/</p>
+<p>)keys/bob.example.com.json</p>
+<p>crypto_box_seal_open</p>
+<p>)posts/index.json</p>
+<p>to get the list of post IDsposts/{id}.json.enc</p>
+<p>(XChaCha20-Poly1305 with the content key)Each post is stored as an individually encrypted file. The post index</p>
+<p>(posts/index.json</p>
+<p>) is a plaintext JSON file listing post IDs</p>
+<p>newest-first, allowing clients to lazily load only recent posts.</p>
+<p>A post object:</p>
+<p>{</p>
+<p>&quot;id&quot;: &quot;20260309T141500Z-a1b2&quot;,</p>
+<p>&quot;author&quot;: &quot;alice.com&quot;,</p>
+<p>&quot;created_at&quot;: &quot;2026-03-09T14:15:00Z&quot;,</p>
+<p>&quot;text&quot;: &quot;Hello, decentralized world!&quot;,</p>
+<p>&quot;reply_to&quot;: null,</p>
+<p>&quot;reply_to_author&quot;: null</p>
+<p>}</p>
+<p>Post IDs are {ISO8601-compact-UTC}-{4-hex-random}</p>
+<p>, e.g. 20260309T141500Z-a1b2</p>
+<p>.</p>
+<p>The timestamp prefix gives natural sort order; the random suffix prevents collisions.</p>
+<p>The follow list is stored as a plain JSON file (unencrypted, since the key envelopes already reveal follows):</p>
+<p>GET https://{domain}/satellite/follows/index.json</p>
+<p>{</p>
+<p>&quot;follows&quot;: [&quot;bob.example.com&quot;, &quot;carol.example.com&quot;]</p>
+<p>}</p>
+<p>The client builds a feed by:</p>
+<p>created_at</p>
+<p>descendingA reply is a post with reply_to</p>
+<p>and reply_to_author</p>
+<p>set.</p>
+<p>Replies are grouped as flat threads under the original post — nested replies</p>
+<p>(replying to a reply) are not supported; you can only reply to top-level posts.</p>
+<p>Threads are positioned in the timeline by the original post’s created_at</p>
+<p>;</p>
+<p>replies within a thread are sorted by their own created_at</p>
+<p>ascending.</p>
+<p>If the original post is inaccessible (e.g. the viewer doesn’t follow the author), the reply is hidden entirely. A user only sees replies from people they follow — this is the spam prevention mechanism.</p>
+<p>The client publishes posts by:</p>
+<p>posts/{id}.json.enc</p>
+<p>to user’s static site (e.g. via the GitHub Contents API)posts/index.json</p>
+<p>to include the new post IDAny secrets needed for publishing (e.g. GitHub token)</p>
+<p>is encrypted in keys/_self.json</p>
+<p>(see Self Key).</p>
+<p>{domain}/satellite/</p>
+<p>satproto.json # Discovery + profile + public key</p>
+<p>posts/</p>
+<p>index.json # Post ID list (plaintext, newest first)</p>
+<p>{id}.json.enc # Individually encrypted post files</p>
+<p>follows/</p>
+<p>index.json # Follow list (unencrypted)</p>
+<p>keys/</p>
+<p>_self.json # Sealed box: content key + credentials (owner only)</p>
+<p>{domain}.json # Sealed box: content key for follower</p>
+<p>Is this just RSS + PGP?</p>
+<p>Yes!</p>
+<p>Is this just AT Protocol but no firehose?</p>
+<p>Yes!</p>
+<p>Does this scale?</p>
+<p>No! Neither does friendship.</p>
+<p>Does the “s” also stand for “slow” and “shitty”?</p>
+<p>Absolutely!</p>
+<p>Wait so I can self-host this?</p>
+<p>Yes, you’ll need to enable CORS.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="http://satproto.org/" target="_blank">Read original →</a></div>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Coverage - Thomas Hunt Films</title>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    background: #0a0a0a; 
+    color: #fff; 
+}
+.container { max-width: 1400px; margin: 0 auto; }
+header { 
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+    padding: 60px 40px; 
+    text-align: center; 
+    border-bottom: 3px solid #e94560;
+}
+header h1 { 
+    font-size: 56px; 
+    font-weight: 700; 
+    margin-bottom: 15px; 
+    background: linear-gradient(45deg, #e94560, #0f3460);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+header .tagline { 
+    font-size: 20px; 
+    color: #ccc; 
+    font-weight: 300; 
+}
+nav { 
+    background: #16213e; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center;
+    border-bottom: 1px solid #333;
+}
+nav a { 
+    color: #fff; 
+    padding: 20px 40px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: all 0.3s; 
+    border-right: 1px solid #333;
+}
+nav a:hover { background: #e94560; }
+.content { padding: 60px 40px; }
+.section-title { 
+    font-size: 36px; 
+    margin-bottom: 40px; 
+    color: #e94560; 
+    border-bottom: 3px solid #e94560; 
+    padding-bottom: 15px;
+}
+.press-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 60px;
+}
+.press-article { 
+    background: #1a1a2e; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #16213e;
+}
+.press-article:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+    border-color: #e94560;
+}
+.press-thumbnail { 
+    width: 100%; 
+    height: 220px; 
+    background: #000; 
+    overflow: hidden;
+}
+.press-thumbnail img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.press-content { padding: 25px; }
+.press-publication { 
+    color: #e94560; 
+    font-weight: 700; 
+    font-size: 14px; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.press-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 12px;
+    color: #fff;
+}
+.press-date { 
+    color: #888; 
+    font-size: 13px; 
+    margin-bottom: 12px;
+}
+.press-excerpt { 
+    color: #aaa; 
+    line-height: 1.6; 
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.press-links { 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap;
+}
+.press-link { 
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.press-link.local {
+    background: #e94560;
+    color: #fff;
+}
+.press-link.local:hover {
+    background: #ff5571;
+}
+.press-link.original {
+    background: #16213e;
+    color: #fff;
+    border: 2px solid #e94560;
+}
+.press-link.original:hover {
+    background: #1a1a2e;
+}
+footer { 
+    background: #0f0f0f; 
+    padding: 40px; 
+    text-align: center; 
+    color: #666; 
+    border-top: 1px solid #333;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>THOMAS HUNT FILMS</h1>
+        <div class="tagline">Spaceship Supercuts</div>
+    </header>
+    
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="index.html#star-trek">⭐ Star Trek</a>
+        <a href="index.html#star-wars">🚀 Star Wars</a>
+        <a href="index.html#john-wick">🥋 John Wick</a>
+        <a href="index.html#movies">🎬 Movie Edits</a>
+        <a href="index.html#batman">🦇 Batman '66</a>
+        <a href="index.html#other">📽️ Other</a>
+        <a href="index.html#ig-88">🤖 IG-88</a>
+        <a href="press.html">📰 Press</a>
+    </nav>
+    
+    <div class="container">
+        <div class="content">
+            <h1 class="section-title">Press Coverage</h1>
+            <p style="text-align: center; color: #888; margin-bottom: 50px; font-size: 18px;">
+                Featured across major tech and culture sites • March 2015
+            </p>
+            
+            <div class="press-grid">
+                <div class="press-article">
+                    <div class="press-thumbnail">
+                        <img src="press/avclub_thumb.png" alt="All the Star Trek movies cut down to just spaceships" loading="lazy">
+                    </div>
+                    <div class="press-content">
+                        <div class="press-publication">The A.V. Club</div>
+                        <h2 class="press-title">All the Star Trek movies cut down to just spaceships</h2>
+                        <div class="press-date">March 2015</div>
+                        <p class="press-excerpt">Great Job, Internet! Someone edited all the Star Trek movies to show only the spaceships.</p>
+                        <div class="press-links">
+                            <a href="press/avclub.html" class="press-link local">📄 Read Local Copy</a>
+                            <a href="https://www.avclub.com/all-the-star-trek-movies-cut-down-to-just-spaceships-1798276638" target="_blank" class="press-link original">🔗 View Original</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="press-article">
+                    <div class="press-thumbnail">
+                        <img src="press/boingboing_thumb.png" alt="Star Trek movie supercuts: just the spaceships" loading="lazy">
+                    </div>
+                    <div class="press-content">
+                        <div class="press-publication">Boing Boing</div>
+                        <h2 class="press-title">Star Trek movie supercuts: just the spaceships</h2>
+                        <div class="press-date">March 2015</div>
+                        <p class="press-excerpt">Thomas Hunt edited the Star Trek films to show nothing but spaceships.</p>
+                        <div class="press-links">
+                            <a href="press/boingboing.html" class="press-link local">📄 Read Local Copy</a>
+                            <a href="https://boingboing.net/2015/03/07/star-trek-movie-supercuts-ju.html" target="_blank" class="press-link original">🔗 View Original</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="press-article">
+                    <div class="press-thumbnail">
+                        <img src="press/popularmechanics_thumb.png" alt="This Genius Slices 'Star Trek' Movies Down to Just the Ships" loading="lazy">
+                    </div>
+                    <div class="press-content">
+                        <div class="press-publication">Popular Mechanics</div>
+                        <h2 class="press-title">This Genius Slices 'Star Trek' Movies Down to Just the Ships</h2>
+                        <div class="press-date">March 2015</div>
+                        <p class="press-excerpt">A YouTuber has edited all ten Star Trek films to feature only the spaceship sequences.</p>
+                        <div class="press-links">
+                            <a href="press/popularmechanics.html" class="press-link local">📄 Read Local Copy</a>
+                            <a href="https://www.popularmechanics.com/culture/movies/a14489/star-trek-ships-only-supercut/" target="_blank" class="press-link original">🔗 View Original</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="press-article">
+                    <div class="press-thumbnail">
+                        <img src="press/jwz_thumb.png" alt="All ten Star Trek movies, condensed down to just the spaceship scenes" loading="lazy">
+                    </div>
+                    <div class="press-content">
+                        <div class="press-publication">jwz: Jamie Zawinski's Blog</div>
+                        <h2 class="press-title">All ten Star Trek movies, condensed down to just the spaceship scenes</h2>
+                        <div class="press-date">March 2015</div>
+                        <p class="press-excerpt">Thomas Hunt has edited all ten Star Trek movies to show only the spaceships.</p>
+                        <div class="press-links">
+                            <a href="press/jwz.html" class="press-link local">📄 Read Local Copy</a>
+                            <a href="https://www.jwz.org/blog/2015/03/all-ten-star-trek-movies-condensed-down-to-just-the-spaceship-scenes/" target="_blank" class="press-link original">🔗 View Original</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="press-article">
+                    <div class="press-thumbnail">
+                        <img src="press/metafilter_thumb.png" alt="All the Star Trek movies but only the spaceships" loading="lazy">
+                    </div>
+                    <div class="press-content">
+                        <div class="press-publication">MetaFilter</div>
+                        <h2 class="press-title">All the Star Trek movies but only the spaceships</h2>
+                        <div class="press-date">March 2015</div>
+                        <p class="press-excerpt">An editor has created supercuts of all Star Trek films showing only spaceship footage.</p>
+                        <div class="press-links">
+                            <a href="press/metafilter.html" class="press-link local">📄 Read Local Copy</a>
+                            <a href="https://www.metafilter.com/147846/" target="_blank" class="press-link original">🔗 View Original</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Thomas Hunt Films © 2015-2026</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "card_slug": "curio-card-1",
+    "card_number": 1,
+    "wallet_transfers": null,
+    "longest_holding_period": null,
+    "latest_observed_holder": null,
+    "last_observed_transfer_date": null
+  },
+  {
+    "card_slug": "curio-card-17",
+    "card_number": 17,
+    "wallet_transfers": null,
+    "longest_holding_period": null,
+    "latest_observed_holder": null,
+    "last_observed_transfer_date": null
+  }
+]

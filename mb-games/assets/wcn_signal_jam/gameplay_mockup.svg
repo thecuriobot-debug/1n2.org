@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="WCN Signal Jam mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06163c"/>
+      <stop offset="100%" stop-color="#0c0a18"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect x="0" y="0" width="640" height="30" fill="#12264f"/>
+  <text x="14" y="20" fill="#8ed8ff" font-family="monospace" font-size="14">WCN SIGNAL JAM</text>
+
+  <g opacity="0.55">
+    <circle cx="70" cy="90" r="2" fill="#86bcff"/>
+    <circle cx="220" cy="150" r="2" fill="#86bcff"/>
+    <circle cx="540" cy="110" r="2" fill="#86bcff"/>
+    <circle cx="430" cy="210" r="2" fill="#86bcff"/>
+    <circle cx="150" cy="260" r="2" fill="#86bcff"/>
+    <circle cx="500" cy="300" r="2" fill="#86bcff"/>
+  </g>
+
+  <rect x="110" y="84" width="44" height="24" fill="#9d7cff"/>
+  <rect x="116" y="92" width="32" height="8" fill="#24154e"/>
+  <rect x="250" y="126" width="30" height="18" fill="#ff6482"/>
+  <rect x="255" y="132" width="20" height="6" fill="#4b1628"/>
+  <rect x="398" y="98" width="62" height="28" fill="#4ed9ff"/>
+  <rect x="406" y="109" width="46" height="8" fill="#0d3043"/>
+
+  <rect x="320" y="240" width="6" height="14" fill="#8efac0"/>
+  <rect x="150" y="200" width="6" height="12" fill="#ffb261"/>
+
+  <rect x="297" y="406" width="46" height="26" fill="#f7c657"/>
+  <rect x="306" y="412" width="28" height="8" fill="#20395f"/>
+  <rect x="313" y="398" width="14" height="10" fill="#9df0ff"/>
+
+  <rect x="458" y="8" width="170" height="14" fill="#182a45"/>
+  <rect x="460" y="10" width="102" height="10" fill="#7effb2"/>
+
+  <text x="180" y="458" fill="#ffe8b8" font-family="monospace" font-size="18">WORLD CRYPTO NETWORK SPECIAL</text>
+</svg>

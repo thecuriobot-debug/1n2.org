@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clip Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff6dd;
+      --ink: #201a2f;
+      --muted: #645d74;
+      --line: rgba(32, 26, 47, 0.15);
+      --p1: #ff4e7a;
+      --p2: #6a56ff;
+      --p3: #ffb548;
+      --p4: #09c8a7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Outfit", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 5% 5%, rgba(255, 78, 122, 0.2), transparent 28%),
+        radial-gradient(circle at 95% 95%, rgba(9, 200, 167, 0.22), transparent 34%),
+        var(--bg);
+      padding: 16px;
+    }
+    .shell { max-width: 1220px; margin: 0 auto; }
+    .title {
+      margin: 0;
+      font-family: "Rubik Mono One", sans-serif;
+      font-size: clamp(1.8rem, 5vw, 3.4rem);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .subtitle {
+      margin: 8px 0 14px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 12px;
+    }
+    .panel {
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 12px 26px rgba(32, 26, 47, 0.1);
+    }
+    .ctrl {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .ctrl h2,
+    .board h2 {
+      margin: 0;
+      font-size: 1.02rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    label {
+      display: grid;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    select,
+    input[type="range"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+      padding: 10px;
+    }
+    input[type="range"] {
+      padding: 0;
+      accent-color: var(--p2);
+    }
+    .len {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 0.8rem;
+    }
+    .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.8rem;
+      background: white;
+      color: var(--ink);
+    }
+    button.primary {
+      background: linear-gradient(130deg, var(--p1), var(--p2));
+      color: white;
+      border: none;
+    }
+    .board { padding: 14px; }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .head p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px;
+      background: white;
+      display: grid;
+      gap: 8px;
+    }
+    .badge {
+      width: fit-content;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #fff;
+    }
+    .hook {
+      margin: 0;
+      font-weight: 700;
+      line-height: 1.3;
+      font-size: 0.94rem;
+    }
+    .small { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+    .shots {
+      margin: 0;
+      padding-left: 17px;
+      font-size: 0.76rem;
+      color: #3f3953;
+      display: grid;
+      gap: 4px;
+    }
+    .progress {
+      margin-top: 6px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(32, 26, 47, 0.12);
+      overflow: hidden;
+    }
+    .progress > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--p3), var(--p4));
+      width: 0%;
+      transition: width .35s ease;
+    }
+    .foot {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    a { color: var(--p2); }
+    @media (max-width: 1000px) {
+      .grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1 class="title">Clip Arcade</h1>
+    <p class="subtitle">Remix source streams into short-form clip concepts with hooks, shot lists, and CTA lines tuned for daily publishing.</p>
+
+    <section class="grid">
+      <article class="panel ctrl">
+        <h2>Generator</h2>
+        <label>
+          Source Channel
+          <select id="channel">
+            <option>Crypto</option>
+            <option>Curio</option>
+            <option>News</option>
+            <option>YouTube</option>
+          </select>
+        </label>
+        <label>
+          Clip Style
+          <select id="style">
+            <option>Fast Breakdown</option>
+            <option>Calm Explainer</option>
+            <option>Debate Spark</option>
+            <option>Data Story</option>
+          </select>
+        </label>
+        <label>
+          Clip Length
+          <input id="length" type="range" min="20" max="90" value="42">
+          <div class="len"><span>20s</span><b id="len-v">42s</b><span>90s</span></div>
+        </label>
+        <div class="btns">
+          <button id="shuffle" class="primary">Generate 3 Concepts</button>
+          <button id="micro">Micro Burst</button>
+        </div>
+        <div class="progress"><span id="progress"></span></div>
+      </article>
+
+      <article class="panel board">
+        <div class="head">
+          <h2>Concept Deck</h2>
+          <p id="stamp">Ready</p>
+        </div>
+        <div id="cards" class="cards"></div>
+      </article>
+    </section>
+
+    <p class="foot"><a href="/codex-nightshift/">Back to Night Shift Hub</a></p>
+  </main>
+
+  <script>
+    const hooks = {
+      Crypto: [
+        "Three levels every trader is pretending not to watch",
+        "Why this breakout still looks fragile",
+        "Funding says calm. Positioning says fireworks"
+      ],
+      Curio: [
+        "The floor dipped, but serious holders did not flinch",
+        "Rarity spread is widening again",
+        "One quiet metric that hints at a trend shift"
+      ],
+      News: [
+        "The headline is loud, the data is quieter",
+        "Narrative speed just outpaced reality",
+        "This policy story is being misread"
+      ],
+      YouTube: [
+        "Your archive still has untapped winners",
+        "Comment heat points to this exact moment",
+        "The first 18 seconds decide everything"
+      ]
+    };
+
+    const styles = {
+      "Fast Breakdown": ["Hard open with claim", "Rapid evidence stack", "Single tactical close"],
+      "Calm Explainer": ["Context in one sentence", "Two balanced interpretations", "Practical takeaway"],
+      "Debate Spark": ["Set opposing views", "Drop one surprising data point", "Ask a loaded question"],
+      "Data Story": ["Lead with chart anomaly", "Narrate cause and effect", "Forecast next checkpoint"]
+    };
+
+    const ctas = [
+      "Drop your scenario in the comments.",
+      "Vote: breakout or fake-out?",
+      "Want the full report? Follow for daily drops.",
+      "Next clip compares all four outcomes."
+    ];
+
+    const els = {
+      channel: document.getElementById("channel"),
+      style: document.getElementById("style"),
+      length: document.getElementById("length"),
+      lenV: document.getElementById("len-v"),
+      shuffle: document.getElementById("shuffle"),
+      micro: document.getElementById("micro"),
+      cards: document.getElementById("cards"),
+      stamp: document.getElementById("stamp"),
+      progress: document.getElementById("progress")
+    };
+
+    function pick(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function shotList(style, length) {
+      const base = styles[style];
+      const slices = length < 35 ? ["2 shots", "3 shots"] : length < 55 ? ["4 shots", "5 shots"] : ["6 shots", "7 shots"];
+      return [...base, `Total pacing: ${pick(slices)}`];
+    }
+
+    async function animateProgress() {
+      els.progress.style.width = "0%";
+      await new Promise((r) => setTimeout(r, 40));
+      els.progress.style.width = "100%";
+      await new Promise((r) => setTimeout(r, 260));
+      els.progress.style.width = "32%";
+    }
+
+    async function renderDeck(micro = false) {
+      await animateProgress();
+
+      const channel = els.channel.value;
+      const style = els.style.value;
+      const length = Number(els.length.value);
+      const count = micro ? 2 : 3;
+
+      const concepts = Array.from({ length: count }).map((_, i) => {
+        const hook = pick(hooks[channel]);
+        const shots = shotList(style, micro ? Math.max(20, length - 15) : length);
+        const cta = pick(ctas);
+        const energy = Math.max(45, Math.min(95, Math.round((length * 0.7 + Math.random() * 25))));
+        return { hook, shots, cta, energy, label: `concept ${i + 1}` };
+      });
+
+      els.cards.innerHTML = concepts.map((c, i) => `
+        <article class="card">
+          <span class="badge" style="color:${["#ff4e7a", "#6a56ff", "#09c8a7"][i % 3]}">${c.label}</span>
+          <p class="hook">${c.hook}</p>
+          <p class="small">CTA: ${c.cta}</p>
+          <ul class="shots">${c.shots.map((s) => `<li>${s}</li>`).join("")}</ul>
+          <p class="small">Energy score: <b>${c.energy}</b></p>
+        </article>
+      `).join("");
+
+      els.stamp.textContent = `${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })} · ${channel} · ${style}`;
+    }
+
+    els.length.addEventListener("input", () => {
+      els.lenV.textContent = `${els.length.value}s`;
+    });
+
+    els.shuffle.addEventListener("click", () => renderDeck(false));
+    els.micro.addEventListener("click", () => renderDeck(true));
+
+    els.lenV.textContent = `${els.length.value}s`;
+    renderDeck(false);
+  </script>
+</body>
+</html>

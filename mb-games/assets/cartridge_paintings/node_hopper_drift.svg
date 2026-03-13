@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Node Hopper Drift cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d3556"/>
+      <stop offset="56%" stop-color="#1d70a1"/>
+      <stop offset="100%" stop-color="#102230"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <path d="M208 0Q158 126 204 242T198 480H524Q490 330 528 206T520 0Z" fill="#31a1d0"/>
+  <path d="M250 0Q218 112 248 224T242 480H474Q448 340 478 238T470 0Z" fill="#57c4ee"/>
+  <rect x="326" y="328" width="48" height="76" rx="8" fill="#ffcb64"/>
+  <rect x="266" y="236" width="60" height="30" rx="8" fill="#80bbff"/>
+  <rect x="408" y="284" width="120" height="20" rx="8" fill="#ff6f89"/>
+  <rect x="282" y="184" width="18" height="18" fill="#ffd568"/>
+  <rect x="438" y="162" width="18" height="18" fill="#85ffb9"/>
+</svg>

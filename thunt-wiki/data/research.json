@@ -1,0 +1,17 @@
+{
+  "wcn_guests_130": ["DJ Booth","Thomas Hunt","Martijn Wismeijer","Jed Grant","Dan Eve","Joshua Scigala","Ben Arc","Stephan Kinsella","Adam McBride","Vortex","Adam","Oskar Giese","Rodolfo Andragnes","Juan S. Galt","Christian Rootzool","Kyle Torpey","Max San","Travis Uhrig","Cory Hughes","Theo Goodman","Max Hillebrand","Rhett Creighton","Tone Vays","Robek Dirstein","Max Infeld","Daniel Friedman","Luis Buenaventura","Andy Hoffman","Blake Anderson","Shinobi","Gabriel D Vine","JW Weatherman","Shem Booth-Spain","Adam Meister","Jeffrey Jones","Samson Mow","Lee Camp","Simon Dixon","Alejandro De La Torre","Jack Mallers","Jimmy Song","Richard Heart","Chris Ellis","Joe Saz","Aaron van Wirdum","John Light","Chris DeRose","Junseth","Ian DeMartino","Alex Sterk","Arthur van Pelt"],
+  "mb_guests_25": ["Mad Bitcoins","Chris DeRose","Tatiana Moroz","Robek Dirstein","Jimmy Song","Eric Lombrozo","Tone Vays","Rhett Creighton","Jameson Lopp","Peter Todd","Roger Ver","Empty Blocks","Anthem Vault","Cryptograffiti","Chris Ellis","Anthem Blanchard","Bitcoin Value","Bitcoin Belle","Stephanie Murphy","Joseph Salerno","Blake Anderson","Nick Szabo","Davi Barker","MK Lords","Darknet"],
+  "wcn_shows_19": ["The Bitcoin Group","Today in Bitcoin","NFT's","Adventures in NFTs","Flipside Bits","Lightning Hacksprint","Conferences","Tutorials","Interview","Bitcoin Halving","BTCIOT","Bitcoin Headlines","WCN Reacts","Proof Of Work","Bitcoin Live","Bitcoin Community Chat","SBF","Shorts","Bitcoin"],
+  "curio_artists_7": ["Phneep","Cryptograffiti","Cryptopop","Daniel Friedman","Marisol Vengas","Robek World","Thoros of Myr"],
+  "curio_founders_3": ["Thomas Hunt","Travis Uhrig","Rhett Creighton"],
+  "key_dates": {
+    "curio_launch": "2017-05-09",
+    "curio_rediscovered": "2021-03",
+    "christies_sale": "2021-10-01",
+    "christies_price": "$1,267,320 (393 ETH)",
+    "card_17b_misprint": true,
+    "total_supply": 29700,
+    "total_cards": 31,
+    "buyer": "Taylor Gerring"
+  }
+}

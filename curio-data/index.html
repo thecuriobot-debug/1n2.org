@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curio Data API - Live Market Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            background: #0a0a14;
+            color: #e0e0e8;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #2a2a3e;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .endpoint {
+            background: #1a1a2e;
+            border: 1px solid #2a2a3e;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .endpoint-url {
+            background: #0a0a14;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #4ade80;
+            font-size: 1.1rem;
+            color: #4ade80;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+
+        .endpoint-desc {
+            color: #aaa;
+            margin-bottom: 16px;
+        }
+
+        pre {
+            background: #0a0a14;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        .button {
+            background: #60a5fa;
+            color: #0a0a14;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 12px;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #4ade80;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #2a2a3e;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4ade80;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .badge-live {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .badge-free {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💾 Curio Data API</h1>
+            <p class="subtitle">Live Curio Cards market data • Free • No auth required</p>
+            <p style="margin-top: 12px;">
+                <span class="badge badge-live">🟢 Live</span>
+                <span class="badge badge-free">✨ Free Forever</span>
+            </p>
+        </header>
+
+        <div class="stats" id="live-stats">
+            <div class="stat-card">
+                <div class="stat-value" id="floor-price">...</div>
+                <div class="stat-label">Floor Price (ETH)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="volume-24h">...</div>
+                <div class="stat-label">24h Volume (ETH)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="sales-24h">...</div>
+                <div class="stat-label">24h Sales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="holders">...</div>
+                <div class="stat-label">Holders</div>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2 style="color: #fff; margin-bottom: 16px;">📊 Main Endpoint</h2>
+            <div class="endpoint-url">
+                GET http://1n2.org/curio-data/v1.json
+            </div>
+            <p class="endpoint-desc">
+                Returns current Curio Cards market data including floor price, 24h volume, 
+                sales count, and holder statistics. Updates daily at 6 AM PST.
+            </p>
+            <a href="/curio-data/v1.json" class="button" target="_blank">View JSON</a>
+            <button class="button" onclick="copyEndpoint()">Copy URL</button>
+        </div>
+
+        <div class="endpoint">
+            <h2 style="color: #fff; margin-bottom: 16px;">📝 Example Response</h2>
+            <pre><code>{
+  "version": "1.0",
+  "collection": "Curio Cards",
+  "contract": "0x73da73ef3a6982109c4d5bdb0db9dd3e3783f313",
+  "data": {
+    "floor_price_eth": 0.051,
+    "volume_24h_eth": 0.2,
+    "sales_24h": 3,
+    "total_holders": 387,
+    "total_supply": 30,
+    "last_updated": "2026-02-18T22:54:55Z"
+  },
+  "source": "Alchemy API",
+  "rate_limit": "Updates every 24h at 6 AM PST"
+}</code></pre>
+        </div>
+
+        <div class="endpoint">
+            <h2 style="color: #fff; margin-bottom: 16px;">🔧 Usage Examples</h2>
+            
+            <h3 style="color: #aaa; margin: 20px 0 12px;">JavaScript / Fetch</h3>
+            <pre><code>fetch('http://1n2.org/curio-data/v1.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Floor:', data.data.floor_price_eth, 'ETH');
+    console.log('Volume:', data.data.volume_24h_eth, 'ETH');
+  });</code></pre>
+
+            <h3 style="color: #aaa; margin: 20px 0 12px;">Python</h3>
+            <pre><code>import requests
+
+response = requests.get('http://1n2.org/curio-data/v1.json')
+data = response.json()
+
+print(f"Floor: {data['data']['floor_price_eth']} ETH")
+print(f"Holders: {data['data']['total_holders']}")</code></pre>
+
+            <h3 style="color: #aaa; margin: 20px 0 12px;">cURL</h3>
+            <pre><code>curl http://1n2.org/curio-data/v1.json | jq '.data'</code></pre>
+        </div>
+
+        <div class="endpoint">
+            <h2 style="color: #fff; margin-bottom: 16px;">ℹ️ Information</h2>
+            <ul style="color: #aaa; line-height: 2;">
+                <li>✅ <strong>Free forever</strong> - No API key required</li>
+                <li>✅ <strong>CORS enabled</strong> - Use from any domain</li>
+                <li>✅ <strong>Daily updates</strong> - Fresh data every 6 AM PST</li>
+                <li>✅ <strong>Reliable</strong> - Powered by Alchemy API</li>
+                <li>✅ <strong>Low latency</strong> - Served from DigitalOcean</li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #2a2a3e; text-align: center; color: #666;">
+            <p>
+                Part of the <a href="/curiohub/" style="color: #60a5fa;">CurioHub Ecosystem</a><br>
+                Powered by <strong>Curio Data Hub</strong>
+            </p>
+            <p style="margin-top: 12px; font-size: 0.875rem;">
+                Last updated: <span id="last-updated">Loading...</span>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Load live data
+        fetch('/curio-data/v1.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('floor-price').textContent = 
+                    data.data.floor_price_eth.toFixed(4);
+                document.getElementById('volume-24h').textContent = 
+                    data.data.volume_24h_eth.toFixed(4);
+                document.getElementById('sales-24h').textContent = 
+                    data.data.sales_24h;
+                document.getElementById('holders').textContent = 
+                    data.data.total_holders;
+                
+                const date = new Date(data.data.last_updated);
+                document.getElementById('last-updated').textContent = 
+                    date.toLocaleString();
+            })
+            .catch(e => {
+                console.error('Error loading data:', e);
+            });
+
+        function copyEndpoint() {
+            navigator.clipboard.writeText('http://1n2.org/curio-data/v1.json');
+            alert('Endpoint URL copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

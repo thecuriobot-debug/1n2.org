@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Mad Meme Blaster poster">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b0f3d"/>
+      <stop offset="100%" stop-color="#220d16"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect x="70" y="90" width="940" height="1170" rx="22" fill="rgba(20,9,26,0.74)" stroke="#ffba61" stroke-width="6"/>
+
+  <text x="540" y="250" text-anchor="middle" fill="#ffcf72" font-family="monospace" font-size="74">MAD MEME BLASTER</text>
+  <text x="540" y="320" text-anchor="middle" fill="#a1ddff" font-family="monospace" font-size="34">NO PAPER HANDS ALLOWED</text>
+
+  <rect x="235" y="470" width="610" height="400" fill="#0b1229" stroke="#b78dff" stroke-width="4"/>
+  <rect x="286" y="540" width="56" height="38" fill="#85ddff"/>
+  <rect x="356" y="540" width="56" height="38" fill="#ff6a82"/>
+  <rect x="426" y="540" width="56" height="38" fill="#b792ff"/>
+  <rect x="496" y="540" width="56" height="38" fill="#85ddff"/>
+  <rect x="566" y="540" width="56" height="38" fill="#ff6a82"/>
+  <rect x="636" y="540" width="56" height="38" fill="#b792ff"/>
+  <rect x="506" y="792" width="68" height="34" fill="#ffcc62"/>
+
+  <rect x="260" y="970" width="560" height="74" fill="#20153c" stroke="#ffb167" stroke-width="3"/>
+  <text x="540" y="1016" text-anchor="middle" fill="#cbffe2" font-family="monospace" font-size="30">MAD BITCOINS RETRO GAME LAB</text>
+
+  <text x="540" y="1140" text-anchor="middle" fill="#ffd895" font-family="monospace" font-size="32">CHARGE RANT. WIPE THE SCREEN.</text>
+</svg>

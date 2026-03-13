@@ -1,0 +1,46 @@
+[
+  {
+    "number": 1,
+    "slug": "curio-card-1",
+    "title": "Curio Card #1",
+    "artist": "Artist record pending",
+    "mint_date": "2017-05-09",
+    "supply": null,
+    "metadata": {
+      "collection": "Curio Cards",
+      "note": "Example record"
+    },
+    "sales_stats": {
+      "total_volume_eth": null,
+      "average_sale_eth": null,
+      "sales_count": null
+    },
+    "notable_sales": [],
+    "holder_distribution": {
+      "unique_wallets": null,
+      "top_10_share_percent": null
+    }
+  },
+  {
+    "number": 17,
+    "slug": "curio-card-17",
+    "title": "Curio Card #17",
+    "artist": "Artist record pending",
+    "mint_date": "2017-06-20",
+    "supply": null,
+    "metadata": {
+      "collection": "Curio Cards",
+      "note": "Example record"
+    },
+    "sales_stats": {
+      "total_volume_eth": null,
+      "average_sale_eth": null,
+      "sales_count": null
+    },
+    "notable_sales": [],
+    "holder_distribution": {
+      "unique_wallets": null,
+      "top_10_share_percent": null
+    }
+  }
+]

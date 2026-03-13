@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Node Hopper Drift poster">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d2758"/><stop offset="100%" stop-color="#101527"/></linearGradient></defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect x="70" y="90" width="940" height="1170" rx="22" fill="rgba(9,18,38,0.76)" stroke="#7edbff" stroke-width="6"/>
+  <text x="540" y="250" text-anchor="middle" fill="#91dcff" font-family="monospace" font-size="70">NODE HOPPER DRIFT</text>
+  <text x="540" y="320" text-anchor="middle" fill="#ffe1a0" font-family="monospace" font-size="34">RIVER SURVIVAL SCORE ATTACK</text>
+  <rect x="235" y="470" width="610" height="400" fill="#08193a" stroke="#73cdff" stroke-width="4"/>
+  <rect x="508" y="792" width="68" height="96" fill="#ffcb63"/>
+  <rect x="300" y="640" width="70" height="40" fill="#7db8ff"/>
+  <rect x="580" y="710" width="200" height="24" fill="#ff6d83"/>
+  <rect x="260" y="970" width="560" height="74" fill="#102448" stroke="#6ec3ff" stroke-width="3"/>
+  <text x="540" y="1016" text-anchor="middle" fill="#caffdf" font-family="monospace" font-size="30">MAD BITCOINS ARCADE LINEUP</text>
+  <text x="540" y="1140" text-anchor="middle" fill="#ffd895" font-family="monospace" font-size="32">DRIFT. REFUEL. SURVIVE.</text>
+</svg>

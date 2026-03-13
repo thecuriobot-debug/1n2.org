@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Citadel Climb gameplay mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#091631"/>
+      <stop offset="100%" stop-color="#170b1d"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect x="0" y="0" width="640" height="30" fill="#112349"/>
+  <text x="12" y="20" fill="#8fd9ff" font-family="monospace" font-size="14">CITADEL CLIMB</text>
+  <rect x="110" y="400" width="180" height="12" fill="#ffd279"/>
+  <rect x="360" y="332" width="130" height="12" fill="#8ec3ff"/>
+  <rect x="210" y="260" width="120" height="12" fill="#ffd279"/>
+  <rect x="440" y="190" width="96" height="12" fill="#8ec3ff"/>
+  <rect x="220" y="224" width="30" height="36" fill="#f4c55d"/>
+  <rect x="228" y="233" width="14" height="10" fill="#263e65"/>
+  <rect x="430" y="312" width="14" height="14" fill="#ffd564"/>
+  <rect x="250" y="240" width="14" height="14" fill="#ffd564"/>
+</svg>

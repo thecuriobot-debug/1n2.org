@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Is crypto needed to protect the security of AI agents paying each other online?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://cryptoslate.com/ai-agents-can-talk-use-tools-and-pay-but-crypto-wants-to-control-the-escrow-moment/" target="_blank">Original article ↗</a></div>
+
+<h1>Is crypto needed to protect the security of AI agents paying each other online?</h1>
+<div class="meta">CryptoSlate · 2026-03-11</div>
+<div class="summary">![The Market Maker’s Exchange Checklist (Liquidity, Latency, and Risk Controls)](https://cryptoslate.com/wp-content/uploads/2025/12/whitebit-instituional-1-1024x683.jpg)
+The infrastructure race for agentic commerce is already producing winners.
+Anthr</div>
+<p>![The Market Maker’s Exchange Checklist (Liquidity, Latency, and Risk Controls)](https://cryptoslate.com/wp-content/uploads/2025/12/whitebit-instituional-1-1024x683.jpg)</p>
+<p>The infrastructure race for agentic commerce is already producing winners.</p>
+<p>Anthropic&#x27;s Model Context Protocol now runs on more than 10,000 public servers and pulls 97 million monthly SDK downloads, connecting AI applications to external tools and data.</p>
+<p>Google&#x27;s Agent-to-Agent protocol launched in April 2025 with 50 partners and scaled to more than 100 supporting companies before moving under Linux Foundation governance.</p>
+<p>On Jan. 11, Google unveiled the Universal Commerce Protocol, pulling in Shopify, Walmart, Target, Mastercard, Stripe, Visa, and American Express as early supporters, aiming to standardize how agents navigate live checkout flows.</p>
+<p>Coinbase&#x27;s x402 protocol handles the payment transport layer, enabling automatic stablecoin payments over HTTP. The project reported more than 100 million payments processed across APIs, apps, and AI agents by late 2025.</p>
+<p>That is a lot of standardization for a technology category that barely existed three years ago.</p>
+<p>However, every one of those protocols addresses the same narrow slice: how agents connect, coordinate, and initiate payments.</p>
+<p>None of them answers the harder commercial question sitting one step further down the stack: Who decides the work was actually done?</p>
+<p>| Protocol / standard | What it does | What it does not solve | Why it matters in this story |</p>
+<p>|---|---|---|---|</p>
+<p>| MCP (Model Context Protocol) | Connects AI applications and agents to external tools, APIs, and data sources | Does not verify whether a task outcome was actually delivered | It handles the tool/data layer, not the trust layer around completed work |</p>
+<p>| A2A (Agent-to-Agent) | Lets agents communicate and coordinate across systems or organizations | Does not hold funds in escrow or judge deliverable quality | It solves agent interoperability, but not conditional settlement |</p>
+<p>| UCP (Universal Commerce Protocol) | Standardizes agent-driven commerce and checkout flows | Does not determine whether a purchased service or task was satisfactorily completed | It pushes agents deeper into real transactions, making the missing verification layer more visible |</p>
+<p>| AP2 (Agent Payment Protocol) | Uses signed payment mandates to prove what an agent is authorized to spend | Proves permission, not whether the paid-for outcome materialized | It is an authorization standard, not a work-verification standard |</p>
+<p>| x402 | Enables automatic payments over HTTP, including stablecoin payments | Moves money, but does not decide whether money should move only after work is verified | It is the payment transport rail, not the escrow/adjudication layer |</p>
+<p>| Mastercard Verifiable Intent | Creates a trust and audit layer for proving user purchase authorization | Focuses on sanctioned purchases and dispute trails, not task completion itself | It shows incumbents are standardizing intent and accountability, but still not full outcome verification |</p>
+<p>| ERC-8183 | Defines a job-based escrow flow: funds locked, work submitted, evaluator completes or rejects, expiry can refund client | Does not solve evaluator trust, disputes, or “agentic” identity by itself | It is the article’s hook because it targets the missing conditional payment / verification step |</p>
+<p>| ERC-8004 | Provides a trust/reputation framework for agents and counterparties | Is not itself an escrow or payment-release mechanism | It is the likely composition layer for making ERC-8183-style evaluation more trustworthy |</p>
+<p>| Oracle / staking / zkML / TEE-style trust systems | Potential ways to verify outcomes or back evaluator judgments with stronger guarantees | None is a settled standard for broad agentic commerce yet | These are possible answers to the article’s central question: who gets to judge that the job was done? |</p>
+<p>Escrow as the missing primitive</p>
+<p>ERC-8183, a draft Ethereum standard published Feb. 25, is crypto&#x27;s attempt to make that judgment programmable.</p>
+<p>Strip the jargon, and the proposal is a minimal state machine for task-based commerce: a client locks the budget into escrow, a provider submits work, and an evaluator marks the job complete or rejects it.</p>
+<p>Expiry refunds the client automatically. The spec calls this sequence: Open, Funded, Submitted, Terminal. Additionally, it explicitly states that the evaluator alone may mark a job as completed once work lands.</p>
+<p>That architecture is narrower than its “agentic commerce” framing implies.</p>
+<p>Critics in the Ethereum Magicians discussion thread pointed out that there is “nothing especially ‘agentic&#x27;” about the proposal. One commenter called it “a job registry with escrowed funds.”</p>
+<p>The critique is accurate, and also the most useful thing about the story.</p>
+<p>What ERC-8183 actually specifies is a programmable escrow primitive applicable to any task-based transaction, human or machine.</p>
+<p>The AI framing is layered on top of a structure that predates agents entirely. The more interesting question is whether that structure is the one piece the stack currently lacks.</p>
+<p>![Agent actions flow chart](https://cryptoslate.com/wp-content/uploads/2026/03/brave_szhY4hmm55.jpg)</p>
+<p>The authorization-verification gap</p>
+<p>The payments incumbents building around agentic commerce are solving authorization, not verification.</p>
+<p>Google&#x27;s Agent Payment Protocol frames payments around cryptographically signed mandates that prove what an agent was permitted to spend.</p>
+<p>Mastercard&#x27;s Verifiable Intent, co-developed with Google and introduced on Mar. 5, creates a trust layer for proving what a user authorized and an audit trail designed for dispute resolution.</p>
+<p>Those are robust answers to “Was this purchase sanctioned?” They say nothing about whether the purchased outcome materialized.</p>
+<p>That gap is the productive contradiction in the stack.</p>
+<p>A2A ensures agents can talk across organizational boundaries. MCP ensures they can reach the right tools and data. AP2 and x402 ensure money moves automatically. ERC-8183 proposes that the funds be held conditionally until an evaluator attests that the deliverable has cleared.</p>
+<p>Whether that evaluator is the client, an oracle network, a staking system, or a zkML proof is left to implementers, but the spec explicitly names ERC-8004&#x27;s trust and reputation layer as the recommended composition point for higher-value jobs.</p>
+<p>The power center nobody named</p>
+<p>The evaluator role is where the proposal becomes politically interesting.</p>
+<p>ERC-8183&#x27;s security section warns that a malicious evaluator can arbitrarily complete or reject jobs, recommends reputation or staking mechanisms for higher-value contracts, and acknowledges that there is no dispute resolution within the core spec.</p>
+<p>One builder in the Magicians thread wrote that “the Evaluator is where the real complexity lives.” Another summarized the broader problem as “everyone verifies the payment, nobody verifies the work.”</p>
+<p>Those observations point to a structural dynamic in any open agent marketplace: whoever controls evaluation controls the marketplace.</p>
+<p>The spec&#x27;s design makes the tension explicit.</p>
+<p>For enterprise deployments where the client and evaluator are the same entity, the complexity is manageable. For multi-party agent networks where a provider in one organization submits work to a client in another, the evaluator becomes a trust bottleneck with platform-level leverage.</p>
+<p>ERC-8183 names the choke point without yet having a durable answer for it.</p>
+<p>Where the stack actually stands</p>
+<p>The adoption numbers suggest the surrounding layers are moving faster than verification.</p>
+<p>Gartner says 33% of enterprise software applications will include agentic AI by 2028, and 15% of day-to-day work decisions will run autonomously by that year, up from 0% in 2024.</p>
+<p>Deloitte pegs the global agentic AI market at $8.5 billion in 2026, rising toward $35 billion by 2030, with 75% of companies potentially investing in the category by the end of this year.</p>
+<p>IBM and NRF reported in January that 45% of consumers already use AI during buying journeys, including 41% for product research.</p>
+<p>That volume of agentic activity needs settlement infrastructure.</p>
+<p>The bull case for ERC-8183 and its surrounding stack is that open agent marketplaces, covering research, code, inference, data, and microservices, generate enough cross-organizational, machine-to-machine commerce that on-chain conditional settlement becomes genuinely necessary.</p>
+<p>The bear case is that payments incumbents and enterprise software absorb the verification problem before crypto builds a durable wedge.</p>
+<p>AP2&#x27;s cryptographic mandates, Verifiable Intent&#x27;s authorization audit trail, and UCP&#x27;s live retailer integrations are already positioning card networks and Big Tech at exactly the layer that ERC-8183 targets from the other direction.</p>
+<p>![Surrounding layers scale faster](https://cryptoslate.com/wp-content/uploads/2026/03/brave_DV2R6pESdQ.jpg)</p>
+<p>Who owns the judgment layer</p>
+<p>If Gartner&#x27;s 2028 projections hold, and agentic AI handles a meaningful share of enterprise procurement, research outsourcing, and service buying, the highest-margin position in that stack will not be held by the model provider.</p>
+<p>It will belong to whoever owns the moment of conditional payment, which is the infrastructure that holds funds, attests to outcomes, and releases money only when the work clears verification.</p>
+<p>ERC-8183 may be that layer, or it may be marketplace escrow wearing better branding.</p>
+<p>The Magicians thread is right that the underlying structure predates AI entirely. Yet the same holds for most financial primitives that turned out to matter.</p>
+<p>Escrow predates the internet. Conditional payment predates blockchains.</p>
+<p>The theory being stress-tested right now is whether the verification problem in agentic commerce is best solved by Big Tech&#x27;s authorization standards or by programmable on-chain escrow with composable trust layers.</p>
+<p>Both approaches are live, neither is settled, and the answer will likely depend on where agents are doing the most</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://cryptoslate.com/ai-agents-can-talk-use-tools-and-pay-but-crypto-wants-to-control-the-escrow-moment/" target="_blank">Read original →</a></div>
+</body></html>

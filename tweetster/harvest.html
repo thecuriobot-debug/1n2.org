@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweetster - Tweet Harvester</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #15202b; color: #e7e9ea; min-height: 100vh; padding: 20px; }
+        .container { max-width: 700px; margin: 0 auto; }
+        h1 { color: #1DA1F2; font-size: 1.6em; margin-bottom: 4px; }
+        h1 span { color: #71767b; font-size: 0.55em; display: block; margin-top: 4px; }
+        .card { background: #192734; border-radius: 16px; padding: 20px; margin: 16px 0; border: 1px solid #38444d; }
+        .card h2 { color: #e7e9ea; font-size: 1.1em; margin-bottom: 10px; }
+        .card p { color: #8899a6; font-size: 0.88em; line-height: 1.5; margin-bottom: 10px; }
+        .btn { display: inline-block; padding: 10px 20px; background: #1DA1F2; color: #fff; border: none; border-radius: 25px; font-size: 0.9em; font-weight: 700; cursor: pointer; font-family: inherit; }
+        .btn:hover { background: #1a91da; }
+        .btn:disabled { background: #38444d; cursor: not-allowed; }
+        .btn-green { background: #17bf63; }
+        .btn-green:hover { background: #14a857; }
+        .btn-sm { padding: 6px 14px; font-size: 0.8em; }
+        .status { padding: 10px 14px; border-radius: 8px; margin: 10px 0; font-size: 0.85em; }
+        .status-ok { background: #132a1a; border: 1px solid #17bf63; color: #17bf63; }
+        .status-warn { background: #2a2010; border: 1px solid #f7931a; color: #f7931a; }
+        .status-err { background: #2a1015; border: 1px solid #e0245e; color: #e0245e; }
+        .status-info { background: #0f1f2e; border: 1px solid #1DA1F2; color: #1DA1F2; }
+        .log { background: #0d1117; border-radius: 8px; padding: 12px; font-family: 'SF Mono', monospace; font-size: 0.78em; white-space: pre-wrap; max-height: 250px; overflow-y: auto; margin-top: 10px; color: #8b949e; line-height: 1.5; }
+        .progress { width: 100%; height: 6px; background: #253341; border-radius: 3px; margin: 10px 0; overflow: hidden; }
+        .progress-bar { height: 100%; background: #1DA1F2; border-radius: 3px; transition: width 0.3s; }
+        label { display: block; color: #71767b; font-size: 0.82em; margin: 10px 0 4px; }
+        input, textarea { width: 100%; padding: 10px; background: #253341; border: 1px solid #38444d; border-radius: 8px; color: #e7e9ea; font-size: 0.9em; font-family: inherit; }
+        input:focus, textarea:focus { outline: none; border-color: #1DA1F2; }
+        textarea { min-height: 80px; resize: vertical; font-family: 'SF Mono', monospace; font-size: 0.8em; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .counter { font-size: 2em; font-weight: 800; color: #1DA1F2; }
+        .counter span { font-size: 0.4em; color: #71767b; font-weight: 400; display: block; }
+        .embed-frame { border: 1px solid #38444d; border-radius: 8px; overflow: hidden; margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐦 Tweetster Harvester
+            <span>Fetch real tweets using Twitter's free syndication API. No API key needed.</span>
+        </h1>
+
+        <div id="statusBar"></div>
+
+        <!-- METHOD 1: Embedded Timeline Scraping -->
+        <div class="card">
+            <h2>Method 1: Embedded Timeline (Automatic)</h2>
+            <p>This loads Twitter's official embedded timeline widget in a hidden iframe, then extracts tweet IDs. Works from your browser — no server auth needed.</p>
+            
+            <label>Twitter handles to scrape (one per line, without @)</label>
+            <textarea id="handles" placeholder="MadBitcoins
+elikiiba
+neiltyson
+BillGates">MadBitcoins</textarea>
+            
+            <div style="margin-top:12px">
+                <button class="btn" onclick="harvestFromEmbeds()">🔄 Harvest from Embeds</button>
+                <button class="btn btn-sm" onclick="loadFollowing()" style="margin-left:8px">Load Following List</button>
+            </div>
+            
+            <div class="progress" id="progressWrap" style="display:none">
+                <div class="progress-bar" id="progressBar" style="width:0%"></div>
+            </div>
+            <div id="embedStatus"></div>
+        </div>
+
+        <!-- METHOD 2: Manual Tweet ID Paste -->
+        <div class="card">
+            <h2>Method 2: Paste Tweet IDs or URLs</h2>
+            <p>Copy tweet URLs from your browser. Paste them here (one per line). We'll extract the IDs and fetch full data.</p>
+            <textarea id="manualIds" placeholder="https://x.com/MadBitcoins/status/1889371059913502987
+https://twitter.com/jack/status/20
+1889371059913502987"></textarea>
+            <button class="btn" onclick="harvestManual()" style="margin-top:10px">📥 Fetch These Tweets</button>
+        </div>
+
+        <!-- METHOD 3: Bookmarklet -->
+        <div class="card">
+            <h2>Method 3: Bookmarklet (Power Users)</h2>
+            <p>Drag this bookmarklet to your bookmarks bar. Then visit any Twitter profile or your home feed, click it, and it'll collect all visible tweet IDs and send them here:</p>
+            <p>
+                <a href="javascript:void(function(){var ids=[];document.querySelectorAll('a[href*=%22/status/%22]').forEach(function(a){var m=a.href.match(/status\/(\d{10,25})/);if(m)ids.push(m[1])});ids=[...new Set(ids)];if(ids.length===0){alert('No tweets found on this page. Scroll down to load more tweets first.');}else{var url='https://1n2.org/tweetster/api/ingest.php?ids='+ids.join(',');fetch(url).then(r=>r.json()).then(d=>{alert('Sent '+ids.length+' tweet IDs to Tweetster! '+JSON.stringify(d))}).catch(e=>{prompt('Copy these IDs and paste in Tweetster harvester:',ids.join('\n'))})}}())" 
+                   style="display:inline-block;padding:8px 16px;background:#1DA1F2;color:white;border-radius:20px;text-decoration:none;font-weight:700;font-size:0.85em;">
+                    📌 Tweetster Harvest
+                </a>
+                ← drag this to your bookmarks bar
+            </p>
+        </div>
+
+        <!-- Stats & Fetch -->
+        <div class="card">
+            <h2>Collected Tweet IDs</h2>
+            <div class="grid-2">
+                <div>
+                    <div class="counter" id="idCount">0<span>tweet IDs collected</span></div>
+                </div>
+                <div>
+                    <div class="counter" id="fetchedCount">0<span>tweets fetched & saved</span></div>
+                </div>
+            </div>
+            <div style="margin-top:12px">
+                <button class="btn btn-green" onclick="fetchAllCollected()">🚀 Fetch All via Syndication API</button>
+                <button class="btn btn-sm" onclick="clearCollected()" style="margin-left:8px">Clear</button>
+            </div>
+            <div class="progress" id="fetchProgress" style="display:none">
+                <div class="progress-bar" id="fetchProgressBar" style="width:0%"></div>
+            </div>
+            <div id="fetchStatus"></div>
+        </div>
+
+        <!-- Log -->
+        <div class="card">
+            <h2>Log</h2>
+            <div class="log" id="log">Ready. Choose a method above to start collecting tweets.</div>
+        </div>
+    </div>
+
+    <script>
+    const API = '/tweetster/api';
+    let collectedIds = new Set();
+    let fetchedTweets = [];
+
+    function log(msg) {
+        const el = document.getElementById('log');
+        el.textContent += '\n' + new Date().toLocaleTimeString() + ' ' + msg;
+        el.scrollTop = el.scrollHeight;
+    }
+
+    function updateCounters() {
+        document.getElementById('idCount').innerHTML = collectedIds.size + '<span>tweet IDs collected</span>';
+        document.getElementById('fetchedCount').innerHTML = fetchedTweets.length + '<span>tweets fetched & saved</span>';
+    }
+
+    // Load following list from server
+    async function loadFollowing() {
+        try {
+            const r = await fetch(API + '/get-tweets.php?following=1');
+            const data = await r.json();
+            if (data.following && data.following.length) {
+                const handles = data.following
+                    .sort((a,b) => (b.followers||0) - (a.followers||0))
+                    .slice(0, 50)
+                    .map(f => f.handle.replace('@',''))
+                    .join('\n');
+                document.getElementById('handles').value = handles;
+                log(`Loaded ${data.following.length} following accounts (showing top 50)`);
+            }
+        } catch(e) {
+            log('Error loading following: ' + e.message);
+        }
+    }
+
+    // Method 1: Use Twitter embeds to discover tweet IDs
+    async function harvestFromEmbeds() {
+        const handles = document.getElementById('handles').value.trim().split('\n').filter(h => h.trim());
+        if (!handles.length) { alert('Enter at least one handle'); return; }
+
+        document.getElementById('progressWrap').style.display = 'block';
+        log(`Starting embed harvest for ${handles.length} accounts...`);
+
+        let totalFound = 0;
+        for (let i = 0; i < handles.length; i++) {
+            const handle = handles[i].trim().replace('@','');
+            const pct = Math.round((i / handles.length) * 100);
+            document.getElementById('progressBar').style.width = pct + '%';
+            document.getElementById('embedStatus').innerHTML = 
+                `<div class="status status-info">Processing @${handle} (${i+1}/${handles.length})...</div>`;
+
+            try {
+                const ids = await harvestEmbedTimeline(handle);
+                ids.forEach(id => collectedIds.add(id));
+                totalFound += ids.length;
+                log(`  @${handle}: ${ids.length} tweet IDs`);
+            } catch(e) {
+                log(`  @${handle}: error - ${e.message}`);
+            }
+
+            // Small delay between accounts
+            await new Promise(r => setTimeout(r, 500));
+        }
+
+        document.getElementById('progressBar').style.width = '100%';
+        document.getElementById('embedStatus').innerHTML = 
+            `<div class="status status-ok">✅ Found ${totalFound} tweet IDs from ${handles.length} accounts</div>`;
+        updateCounters();
+        log(`Harvest complete: ${totalFound} IDs from ${handles.length} accounts`);
+    }
+
+    async function harvestEmbedTimeline(handle) {
+        return new Promise((resolve, reject) => {
+            const ids = [];
+            
+            // Create a hidden iframe with Twitter's embedded timeline
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = 'position:absolute;left:-9999px;width:600px;height:800px;';
+            iframe.src = `https://platform.twitter.com/embed/Timeline.html?dnt=true&embedId=tweetster_${handle}&frame=false&hideCard=false&hideThread=false&id=${handle}&lang=en&maxHeight=800&origin=https://1n2.org&screenName=${handle}&showHeader=false&showReplies=false&siteScreenName=${handle}&theme=dark&transparent=false&widgetsVersion=2615f7e52b7e0%3A1702314776716`;
+            
+            document.body.appendChild(iframe);
+            
+            // Wait for load, then try to extract IDs
+            let timeout = setTimeout(() => {
+                iframe.remove();
+                resolve(ids);
+            }, 8000);
+
+            // Listen for messages from the iframe
+            const handler = (event) => {
+                if (event.origin.includes('twitter.com') || event.origin.includes('x.com')) {
+                    try {
+                        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+                        // Twitter embed sends messages with tweet info
+                        if (data && data['twttr.embed']) {
+                            const html = data['twttr.embed']?.params?.html || '';
+                            const matches = html.match(/status\/(\d{10,25})/g) || [];
+                            matches.forEach(m => {
+                                const id = m.replace('status/', '');
+                                if (!ids.includes(id)) ids.push(id);
+                            });
+                        }
+                    } catch(e) {}
+                }
+            };
+            window.addEventListener('message', handler);
+
+            iframe.onload = () => {
+                // Also try to read the iframe content (will fail due to CORS, but worth trying)
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const links = doc.querySelectorAll('a[href*="/status/"]');
+                    links.forEach(a => {
+                        const m = a.href.match(/status\/(\d{10,25})/);
+                        if (m && !ids.includes(m[1])) ids.push(m[1]);
+                    });
+                } catch(e) {
+                    // Expected: CORS blocks this
+                }
+                
+                // Give it a moment for messages
+                setTimeout(() => {
+                    clearTimeout(timeout);
+                    window.removeEventListener('message', handler);
+                    iframe.remove();
+                    resolve(ids);
+                }, 3000);
+            };
+        });
+    }
+
+    // Method 2: Manual paste
+    function harvestManual() {
+        const text = document.getElementById('manualIds').value;
+        const matches = text.match(/\d{10,25}/g) || [];
+        const unique = [...new Set(matches)];
+        unique.forEach(id => collectedIds.add(id));
+        updateCounters();
+        log(`Added ${unique.length} tweet IDs from manual input`);
+        if (unique.length > 0) {
+            document.getElementById('fetchStatus').innerHTML = 
+                `<div class="status status-ok">Added ${unique.length} IDs. Click "Fetch All" to download tweet data.</div>`;
+        }
+    }
+
+    // Fetch tweets via syndication API (server-side proxy)
+    async function fetchAllCollected() {
+        const ids = [...collectedIds];
+        if (!ids.length) { alert('No tweet IDs collected yet. Use one of the methods above first.'); return; }
+
+        document.getElementById('fetchProgress').style.display = 'block';
+        log(`Fetching ${ids.length} tweets via syndication API...`);
+
+        // Send IDs to server in batches
+        const batchSize = 20;
+        let fetched = 0;
+        let errors = 0;
+
+        for (let i = 0; i < ids.length; i += batchSize) {
+            const batch = ids.slice(i, i + batchSize);
+            const pct = Math.round((i / ids.length) * 100);
+            document.getElementById('fetchProgressBar').style.width = pct + '%';
+            document.getElementById('fetchStatus').innerHTML = 
+                `<div class="status status-info">Fetching batch ${Math.floor(i/batchSize)+1}/${Math.ceil(ids.length/batchSize)} (${fetched} done, ${errors} errors)...</div>`;
+
+            try {
+                const r = await fetch(API + '/ingest.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ids: batch })
+                });
+                const result = await r.json();
+                fetched += result.fetched || 0;
+                errors += result.errors || 0;
+                fetchedTweets.push(...(result.tweets || []));
+                log(`  Batch ${Math.floor(i/batchSize)+1}: ${result.fetched || 0} fetched, ${result.errors || 0} errors`);
+            } catch(e) {
+                log(`  Batch error: ${e.message}`);
+                errors += batch.length;
+            }
+
+            // Small delay between batches
+            await new Promise(r => setTimeout(r, 300));
+        }
+
+        document.getElementById('fetchProgressBar').style.width = '100%';
+        document.getElementById('fetchStatus').innerHTML = 
+            `<div class="status status-ok">✅ Fetched ${fetched} tweets! (${errors} errors). Refresh Tweetster to see them.</div>`;
+        updateCounters();
+        log(`Done! ${fetched} tweets fetched and saved.`);
+    }
+
+    function clearCollected() {
+        collectedIds.clear();
+        fetchedTweets = [];
+        updateCounters();
+        log('Cleared all collected IDs');
+    }
+
+    // Check current status
+    async function checkStatus() {
+        try {
+            const r = await fetch(API + '/get-tweets.php');
+            const data = await r.json();
+            const count = (data.tweets || []).length;
+            document.getElementById('statusBar').innerHTML = 
+                `<div class="status status-${count > 0 ? 'ok' : 'warn'}">
+                    📊 ${count} tweets currently cached in Tweetster
+                </div>`;
+        } catch(e) {}
+    }
+
+    checkStatus();
+    </script>
+</body>
+</html>

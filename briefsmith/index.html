@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefsmith</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #131a24;
+      --muted: #5c667a;
+      --line: rgba(19, 26, 36, 0.18);
+      --paper: #fffef9;
+      --sky: #6f8cff;
+      --mint: #20b88f;
+      --sun: #f1a849;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 18px;
+      font-family: "Public Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(111, 140, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 100% 100%, rgba(32, 184, 143, 0.17), transparent 30%),
+        #f7f8fb;
+    }
+    .shell { max-width: 1160px; margin: 0 auto; }
+    h1 {
+      margin: 0;
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: .94;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 8px 0 14px;
+      max-width: 730px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.98rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 12px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 24px rgba(19, 26, 36, 0.08);
+    }
+    .left { padding: 14px; display: grid; gap: 10px; }
+    .left h2, .right h2 { margin: 0; font-size: 1rem; }
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+    select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+    textarea { min-height: 120px; resize: vertical; line-height: 1.4; }
+    .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 9px 12px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .primary {
+      border: none;
+      background: linear-gradient(120deg, var(--sky), var(--mint));
+      color: #fff;
+    }
+    .right { padding: 14px; }
+    .doc {
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .doc h3 {
+      margin: 0;
+      font-family: "Instrument Serif", serif;
+      font-size: 1.46rem;
+      line-height: 1.2;
+    }
+    .doc p { margin: 0; line-height: 1.55; color: #202837; }
+    .row {
+      display: grid;
+      gap: 4px;
+      border-top: 1px dashed var(--line);
+      padding-top: 8px;
+    }
+    .row b { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .tagline {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    a { color: #2b57e5; }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1>Briefsmith</h1>
+    <p class="sub">Generate a clean daily briefing structure (lead, snapshot, analysis, outlook, action items) with style and horizon controls.</p>
+
+    <section class="grid">
+      <article class="panel left">
+        <h2>Inputs</h2>
+        <label>
+          Tone
+          <select id="tone">
+            <option>Analyst</option>
+            <option>Urgent</option>
+            <option>Calm</option>
+            <option>Contrarian</option>
+          </select>
+        </label>
+        <label>
+          Time Horizon
+          <select id="horizon">
+            <option>24 Hours</option>
+            <option>3 Days</option>
+            <option>1 Week</option>
+          </select>
+        </label>
+        <label>
+          Core Observation
+          <textarea id="obs">ETF inflows are steady while liquidity remains thin during off-peak sessions.</textarea>
+        </label>
+        <label>
+          Risk Signal
+          <textarea id="risk">Leverage buildup without decisive directional confirmation.</textarea>
+        </label>
+        <div class="btns">
+          <button class="primary" id="build">Build Brief</button>
+          <button id="shuffle">Shuffle Inputs</button>
+        </div>
+      </article>
+
+      <article class="panel right">
+        <h2>Generated Brief</h2>
+        <div class="doc" id="doc"></div>
+      </article>
+    </section>
+
+    <p class="tagline"><a href="/codex-nightshift/">Back to Night Shift Hub</a></p>
+  </main>
+
+  <script>
+    const els = {
+      tone: document.getElementById("tone"),
+      horizon: document.getElementById("horizon"),
+      obs: document.getElementById("obs"),
+      risk: document.getElementById("risk"),
+      build: document.getElementById("build"),
+      shuffle: document.getElementById("shuffle"),
+      doc: document.getElementById("doc")
+    };
+
+    const templates = {
+      Analyst: {
+        lead: "Structure remains constructive, but conviction should stay selective.",
+        close: "Bias remains tactical rather than trend-chasing."
+      },
+      Urgent: {
+        lead: "Conditions are unstable; speed and risk discipline matter now.",
+        close: "Execution quality will matter more than prediction."
+      },
+      Calm: {
+        lead: "Signals are mixed but manageable with patient positioning.",
+        close: "Favor consistency over dramatic repositioning."
+      },
+      Contrarian: {
+        lead: "Consensus is leaning one way; edge likely sits in neglected paths.",
+        close: "Assume the obvious narrative is overpriced."
+      }
+    };
+
+    function buildBrief() {
+      const tone = els.tone.value;
+      const horizon = els.horizon.value;
+      const obs = els.obs.value.trim();
+      const risk = els.risk.value.trim();
+      const t = templates[tone];
+
+      const title = `${tone} Brief · ${horizon}`;
+      const snapshot = `Observation: ${obs}. Risk: ${risk}.`;
+      const analysis = `${t.lead} ${obs} This creates asymmetry if participants over-interpret short-term noise.`;
+      const outlook = horizon === "24 Hours"
+        ? "Expect choppy directional tests with frequent fake-outs around major levels."
+        : horizon === "3 Days"
+          ? "Watch for narrative decay versus realized flow to confirm the dominant path."
+          : "A cleaner trend can emerge if liquidity broadens and leverage normalizes.";
+
+      const actions = [
+        "Define one invalidation level before entry.",
+        "Pre-plan two scenario responses, not one forecast.",
+        tone === "Urgent" ? "Reduce size, increase decision speed." : "Scale only when confirmation improves."
+      ];
+
+      els.doc.innerHTML = `
+        <h3>${title}</h3>
+        <p>${snapshot}</p>
+        <div class="row"><b>Analysis</b><p>${analysis}</p></div>
+        <div class="row"><b>Outlook</b><p>${outlook}</p></div>
+        <div class="row"><b>Action Items</b><p>${actions.join(" ")}</p></div>
+        <div class="row"><b>Closing Note</b><p>${t.close}</p></div>
+      `;
+    }
+
+    function shuffleInputs() {
+      const observations = [
+        "Social sentiment is bullish while realized volatility is flattening.",
+        "Comment activity is concentrated in a narrow set of recurring narratives.",
+        "Liquidity improved intraday but deteriorated after the U.S. close.",
+        "Selective sectors are outperforming broad market beta."
+      ];
+      const risks = [
+        "Positioning is crowded and sensitive to headline shocks.",
+        "Macro catalysts may create gap risk outside normal sessions.",
+        "False breakouts are becoming more frequent in low depth windows.",
+        "Narrative velocity is outrunning measurable adoption data."
+      ];
+
+      els.obs.value = observations[Math.floor(Math.random() * observations.length)];
+      els.risk.value = risks[Math.floor(Math.random() * risks.length)];
+      buildBrief();
+    }
+
+    els.build.addEventListener("click", buildBrief);
+    els.shuffle.addEventListener("click", shuffleInputs);
+    [els.tone, els.horizon].forEach((el) => el.addEventListener("change", buildBrief));
+    buildBrief();
+  </script>
+</body>
+</html>

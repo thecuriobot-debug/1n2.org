@@ -1,0 +1,52 @@
+[
+  {
+    "id": "star-trek-tmp",
+    "title": "Star Trek: The Motion Picture (Ships Only)",
+    "youtube_id": "0gywz1PgM_I",
+    "year": 1979,
+    "runtime": "11:30",
+    "description": "All the spaceship scenes from Star Trek: The Motion Picture, edited together.",
+    "series": "Star Trek",
+    "views": "500K+"
+  },
+  {
+    "id": "star-trek-wrath-khan",
+    "title": "Star Trek II: The Wrath of Khan (Ships Only)",
+    "youtube_id": "rFG58m7xAig",
+    "year": 1982,
+    "runtime": "9:45",
+    "description": "The space battle sequences from The Wrath of Khan.",
+    "series": "Star Trek",
+    "views": "400K+"
+  },
+  {
+    "id": "star-trek-search-spock",
+    "title": "Star Trek III: The Search for Spock (Ships Only)",
+    "youtube_id": "3EQ9cFey-3U",
+    "year": 1984,
+    "runtime": "8:20",
+    "description": "Ship sequences from The Search for Spock.",
+    "series": "Star Trek",
+    "views": "300K+"
+  },
+  {
+    "id": "star-trek-voyage-home",
+    "title": "Star Trek IV: The Voyage Home (Ships Only)",
+    "youtube_id": "6RGTyaJrbj0",
+    "year": 1986,
+    "runtime": "5:15",
+    "description": "Spaceship scenes from The Voyage Home.",
+    "series": "Star Trek",
+    "views": "250K+"
+  },
+  {
+    "id": "star-trek-final-frontier",
+    "title": "Star Trek V: The Final Frontier (Ships Only)",
+    "youtube_id": "5LOtf5Yq39Y",
+    "year": 1989,
+    "runtime": "6:30",
+    "description": "All ship sequences from The Final Frontier.",
+    "series": "Star Trek",
+    "views": "200K+"
+  }
+]

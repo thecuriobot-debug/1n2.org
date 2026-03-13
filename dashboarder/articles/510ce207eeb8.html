@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Many SWE-bench-Passing PRs would not be merged</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/" target="_blank">Original article ↗</a></div>
+
+<h1>Many SWE-bench-Passing PRs would not be merged</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">Summary: We find that roughly half of test-passing SWE-bench Verified PRs written by mid-2024 to mid/late-2025 agents would not be merged into main by repo maintainers, even after adjusting for noise in maintainer merge decisions. Since the agents ar</div>
+<p>Summary: We find that roughly half of test-passing SWE-bench Verified PRs written by mid-2024 to mid/late-2025 agents would not be merged into main by repo maintainers, even after adjusting for noise in maintainer merge decisions. Since the agents are not given a chance to iterate on their solution in response to feedback the way a human developer would, we do not claim that this represents a fundamental capability limitation. Rather, our results indicate that a naive interpretation of benchmark scores may lead one to overestimate how useful agents are without more elicitation or human feedback.</p>
+<p>Introduction</p>
+<p>It is often unclear how to translate benchmark scores into real-world usefulness. For example, if a model’s SWE-bench Verified score is 60%, does that mean it can resolve 60% of real-world open-source issues? One reason to doubt this is that benchmarks are clean and verifiable in ways the real world is not. To study this quantitatively, we take SWE-bench Verified and zoom in on one such difference — it uses an automated grader rather than the real-world standard of maintainer review.</p>
+<p>To study how agent success on benchmark tasks relates to real-world usefulness, we had 4 active maintainers from 3 SWE-bench Verified repositories review 296 AI-generated pull requests (PRs). We had maintainers (hypothetically) accept or request changes for patches as well as provide the core reason they were requesting changes: core functionality failure, patch breaks other code or code quality issues.</p>
+<p>To deal with noise in maintainer decisions, we also record maintainer merge decisions on 47 original human-written PRs that were actually merged into main (hereafter “golden patches”). We report all our scores as % of golden baseline, e.g., as the golden baseline is 68%, if a model gets 34%, then the golden-baseline-adjusted score is 50%.1</p>
+<p>Figure 1 shows our main result that on average maintainer merge decisions are about 24 percentage points lower than SWE-bench scores supplied by the automated grader. Moreover, the rate of improvement, as measured by percentage points gained per year (pp/yr), is 9.6 pp/yr slower for maintainer merge decisions. However, we believe our results on the rate of improvement are shakier and only provide suggestive evidence that it is slower for maintainer merge decisions.</p>
+<p>![Normalized pass rates chart](/assets/images/many-swe-bench-passing-prs-would-not-be-merged-into-main/fig1_pass_rates_normalized.png)</p>
+<p>Figure 1: Pass rates normalized as a percentage of the golden baseline, where 100% represents golden patch performance. SWE-bench Automated Grader (orange) records the percentage of patches that pass the automated grader, divided by the golden baseline (100%) and then converted back into a percent. Maintainer Merge (blue) records percent of patches that are merged by maintainers, divided by the golden baseline (68%) and then converted back into a percent. Error bars indicate 95% confidence intervals.</p>
+<p>Our central claim is about comparing a naive interpretation of benchmark scores with a richer view of agent usefulness. It is important to note what we are not doing:</p>
+<p>- We are not claiming that agents have a capability limitation that prevents them from passing maintainer review. It seems likely that better prompting and agent elicitation could resolve many of the remaining problems of code quality, not following repo standards, etc.</p>
+<p>- We are not comparing AI to humans in equal conditions. While models only have one attempt at submitting a solution, human developers iterate with feedback in most cases.</p>
+<p>- We are not claiming benchmarks have no signal or that you should not use benchmarks to compare models. Instead, we are showing that mapping benchmarks to real-world AI capabilities is difficult and has many subtle problems. Therefore, those forecasting AI progress and its real-world impact should view benchmarks as one piece of evidence, rather than as decisive.</p>
+<p>Previous Post</p>
+<p>In a previous blog post, we compared a small number of PRs that passed algorithmic tests vs. our own code review. This investigation makes 5 advances over that post:</p>
+<p>- We use actual maintainers for code review rather than reviewing it ourselves.</p>
+<p>- We focus on SWE-bench Verified scores, making results more interpretable.</p>
+<p>- We cover 95 unique tasks vs. 18 tasks and cover 5 language models instead of 1.</p>
+<p>- We account for noise in human review by normalizing our results by the golden baseline.</p>
+<p>- Reviewers were blinded to whether the PR was written by a human or an AI.</p>
+<p>While we believe these advances make our current results more reliable, they are not strictly comparable to the results in our previous post. In particular, the previous post considered much more difficult PRs. In our sample of SWE-Bench Verified golden patches, the average lines of code changed is about 17 while for our previous post this was over 500.</p>
+<p>Data and Methods</p>
+<p>Our basic methodology is to take PRs that are scored as correct by the SWE-bench automated grader, and have current maintainers review whether the patches would be merged into main.</p>
+<p>Maintainers and Repositories</p>
+<p>We recruited 4 active maintainers covering 3 SWE-bench Verified repos: 2 from scikit-learn, 1 from Sphinx, and 1 from pytest. Therefore, we have coverage for 3/12 (25%) of the repos in SWE-bench Verified, covering 95/500 (19%) of the issues. Maintainers were recruited via cold email. In the appendix, we show that our sample is representative of SWE-bench Verified when measured by pass rates. Maintainers are paid hourly with a bonus if peers label their reviews as high quality.</p>
+<p>Agent Runs</p>
+<p>We use the SWE-bench Verified agent runs from Epoch’s benchmarking hub (Epoch AI, 2025).2 We pull patches from the following:</p>
+<p>- Claude 3.5 Sonnet (Old)</p>
+<p>- Claude 3.7 Sonnet</p>
+<p>- Claude 4 Opus</p>
+<p>- Claude 4.5 Sonnet</p>
+<p>- GPT-5</p>
+<p>- Golden patches (original human solutions)</p>
+<p>We focus primarily on Anthropic models because they have been state-of-the-art on SWE-bench Verified for most of its history.</p>
+<p>We use patches in their original state, except we manually remove miscellaneous debugging files to avoid penalizing agents for artifacts they were not instructed to remove prior to submission.3 We upload the patches to a private copy of the repo in its historical state on GitHub.</p>
+<p>For our main analysis, we only submit PRs for review if they pass the SWE-bench automated grader. We impute maintainer review as failure if the PR fails the automated grader. This amounts to assuming SWE-bench Verified has no false negatives (cases where the automated grader says fail, but the maintainer would actually merge it). We think this is a fairly reasonable assumption because:</p>
+<p>- SWE-bench Verified was human-verified to screen out unit tests that would reject valid fixes. Although this process is imperfect, it likely reduced the false negative rate substantially.</p>
+<p>- We had maintainers review a small subset of 31 patches covering 27 issues. We found only 1/27 (3.7%) issues where the automated grader rejected valid patches.4</p>
+<p>The appendix has results without this assumption and results that try to relax it.</p>
+<p>Maintainer Review</p>
+<p>For AI-generated patches, maintainers review all of the patches that pass the SWE-bench automated grader.5 For the golden patches, we have maintainers review only half of them (randomly selected) to save time. In the case of scikit-learn, where we have more than one maintainer, we randomly split which patches are reviewed by which maintainer.</p>
+<p>Maintainer review is done in GitHub, to match real code review as closely as possible. The review is done in waves. Each wave contains non-overlapping issues attempted by different models. The maintainers are not told the source of the pull request.6</p>
+<p>We ask maintainers to review these PRs exactly as they do PRs in real life, with two exceptions:</p>
+<p>- Lack of CI: Because we are uploading the patch to the repo in its historical state, it is not possible to keep Continuous Integration tools active. Therefore, maintainers do not have access to linting or tests. To supplement this, we tell them that the patches passed an automated grader built from tests. We ask the maintainers to review to the best of their ability without these tools.</p>
+<p>- Testing Requirements: We ask them to ignore testing requirements in the PR, as agents are not elicited to include proper tests. This is generous to AI-generated patches, as it removes one requirement of a good patch.</p>
+<p>We ask the maintainers to give an accept/request changes decision, structured feedback, and natural language feedback. The structured feedback covers:</p>
+<p>- Rejection Reason (if applicable):</p>
+<p>- Core functionality: The PR does not correctly resolve the issue or the solution has bugs.</p>
+<p>- Breaks other code: The PR touches unrelated code and causes breakages.</p>
+<p>- Code quality: The code is verbose, does not conform to standards, etc.</p>
+<p>- Progress: How much progress the PR makes (0-100%).</p>
+<p>- Review Time: How long it took to review the PR.</p>
+<p>- Baseline Time: How long it would take them to write a proper PR from scratch.</p>
+<p>- Confidence: Confidence in the decision (1-10).</p>
+<p>Finally, maintainer reviews may be noisy, as they involve subjective decisions on code quality, etc. Therefore, we benchmark agent pass rates vs. the level of noise in the golden patches. Recall that SWE-bench Verified is made from real-world PRs that were merged. We take these real-world PRs and re-submit them to our maintainers to establish a baseline for noise in our maintainer merge pipeline.7 We found that about 68% of golden patches are indeed merged by our maintainers, and the average progress towards a mergeable PR among all golden patches is about 90%. Moreover, around 85% of golden patches are rated as making 80% or more progress towards a mergeable PR. The percentage merged is low, but the percentage rated as making 80% or more progress toward a mergeable PR is high, indicating that there is a degree of maintainer subjectivity playing a role in the last mile of PR acceptance. We report all our scores as %</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/" target="_blank">Read original →</a></div>
+</body></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Road Not Taken: A World Where IPv4 Evolved</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://owl.billpg.com/ipv4x/" target="_blank">Original article ↗</a></div>
+
+<h1>The Road Not Taken: A World Where IPv4 Evolved</h1>
+<div class="meta">Hacker News · 2026-03-12</div>
+<div class="summary">IP address exhaustion is still with us. Back in the early 1990s, when the scale of the problem first became obvious, the projections were grim. Some estimates had us running out of IPv4 addresses as early as 2005 and even the optimistic ones didn’t p</div>
+<p>IP address exhaustion is still with us. Back in the early 1990s, when the scale of the problem first became obvious, the projections were grim. Some estimates had us running out of IPv4 addresses as early as 2005 and even the optimistic ones didn’t push much beyond the following decade.</p>
+<p>As the years passed, we got clever. Or perhaps, more desperate.</p>
+<p>We managed to put off that imminent exhaustion for decades, breaking the Internet in the process in small, subtle ways. Want multiple home machines behind a single IP? No problem — we invented NAT. ISPs want in on that “multiple devices, one address” trick? Sure, have some Carrier‑Grade NAT. Want to run a server on your home machine? Er… no.</p>
+<p>And through all of this, IPv6 has been sitting there patiently. It fixes the address shortage. It fixes autoconfiguration. It fixes fragmentation. It fixes multicast. It fixes almost everything people complain about in IPv4.</p>
+<p>But hardly anyone wants it.</p>
+<p>The problem isn’t that IPv6 is bad, but that deploying it means spending money before your neighbors do and no one wants to be the first penguin off the ice shelf. So we’ve ended up in a long, awkward stalemate. IPv6 is waiting for adoption and IPv4 is stretched far beyond what anyone in 1981 imagined.</p>
+<p>But what if it hadn’t gone that way? What if the “IP Next Generation” team that designed IPv6 had chosen a different path? One that extended IPv4 instead of replacing it.</p>
+<p>Let’s take a visit to that parallel universe.</p>
+<p>![](https://owl.billpg.com/wp-content/uploads/2026/02/Chiricahua_Mountains_Portal_AZ_by_Karen_Fasimpaur-300x225.jpg)</p>
+<p>1993 — The Birth of IPv4x</p>
+<p>It’s 1993, and the IP‑Next‑Generation working group has gathered to decide the future of the Internet. The mood is earnest, a little anxious, and very aware that the world is depending on them.</p>
+<p>One engineer proposes a bold idea: a brand‑new version of IP with 128‑bit addresses. It would need a new version number but it would finally give the Internet the address space it deserved. Clean. Modern. A fresh start. IPv6!</p>
+<p>Another engineer pushes back. A brand‑new protocol sounds elegant but IPv4 is already everywhere. Routers, stacks, firmware, embedded systems, dial‑up modems, university labs, corporate backbones. Replacing it outright would take decades and no one wants to be the first to deploy something incompatible with the rest of the world.</p>
+<p>So the group settles down and agrees what that would look like. People want the same IP they’re used to but with more space. But if this idea is going to have legs, there is one requirement that is going to be unavoidable.</p>
+<p>The new protocol must work across existing IPv4 networks from day one.</p>
+<p>- The Version field must remain 4.</p>
+<p>- The destination must remain a globally routable 32‑bit IPv4 address.</p>
+<p>- The packet must look, smell, and route like IPv4 to any router that doesn’t understand the new system.</p>
+<p>And so IPv4x is born.</p>
+<p>In a nutshell, an IPv4x packet is a normal IPv4 packet, just with 128‑bit addresses. The first 32 bits of both the source and target address sit in their usual place in the header, while the extra 96 bits of each address (the “subspace”) are tucked into the first 24 bytes of the IPv4 body. A flag in the header marks the packet as IPv4x, so routers that understand the extension can read the full address, while routers that don’t simply ignore the extra data and forward it as usual.</p>
+<p>Who owns all these new addresses? You do. If you own an IPv4 address, you automatically own the entire 96‑bit subspace beneath it. Every IPv4 address becomes the root of a vast extended address tree. It has to work this way because any router that doesn’t understand IPv4x will still route purely on the old 32‑bit address. There’s no point assigning part of your subspace to someone else — their packets will still land on your router whether you like it or not.</p>
+<p>An IPv4 router sees a normal IPv4 packet and routes according to the 32‑bit target address in the header, while an IPv4x router sees the full 128‑bit target address and routes according to that instead.</p>
+<p>This does mean that an ordinary home user with a single IPv4 address will suddenly find themselves in charge of 96-bits of address space they never asked for nor will ever use, but that’s fine. There are still large regions of the IPv4 space going unused.</p>
+<p>![](https://owl.billpg.com/wp-content/uploads/2026/02/Splitting_Up_by_Damian_Gadal-300x169.jpg)</p>
+<p>1996 — The First IPv4x RFC</p>
+<p>By 1996, the IPv4x design had stabilized enough for the working group to publish its first formal RFC. It wasn’t a revolution so much as a careful extension of what already worked.</p>
+<p>DNS received a modest update. A normal query still returned the familiar A record, but clients could now set a flag indicating “I understand IPv4x”. If the server had an extended address available, it could return a 128‑bit IPv4x record alongside the traditional one. Old resolvers ignored it. New resolvers used it. Nothing broke.</p>
+<p>DHCP was updated in the same spirit. Servers could hand out either 32‑bit or 128‑bit addresses depending on client capability.</p>
+<p>Dial‑up stacks were still distributed with modem software, not the OS, which turned out to be a blessing: the major dial‑up packages all added IPv4x support within a year.</p>
+<p>Adoption was slow but steady. The key advantage was that the network didn’t have to change. If your machine spoke IPv4x but the next router didn’t, the packet still flowed. Old routers forwarded based on the top 32 bits. New routers used the full 128.</p>
+<p>MIT and the First Large‑Scale Deployment</p>
+<p>The first major adopter was MIT. They had been allocated the entire 18.0.0.0/8 block in the early ARPANET era and they were famously reluctant to give it up. Stories circulated about individual buildings — some zoned for fewer than a dozen residents — sitting on entire /24s simply because no one had ever needed to conserve addresses.</p>
+<p>IPv4x gave them a way forward and to show their credentials as responsible stewards. Every IPv4 address in their /8 became the root of a 96‑bit subspace. MIT deployed IPv4x experimentally across their campus backbone and the results were encouraging. Nothing broke. Nothing needed to be replaced overnight. It was the perfect demonstration of the “no flag day” philosophy the IPng group had hoped for.</p>
+<p>Their success reassured everyone else that IPv4x was not only viable, but practical. Other large networks began making small updates during their weekend maintenance windows.</p>
+<p>Buoyed by this success, IANA announced a new policy. All /8 blocks that are currently unused are reserved for IPv4x only.</p>
+<p>![](https://owl.billpg.com/wp-content/uploads/2026/02/Reminder_Note_by_Donal_Mountain-300x300.jpg)</p>
+<p>2006 — Ten Years of IPv4x</p>
+<p>By 2006, IPv4x had firmly established itself. Dial‑up was fading, broadband was everywhere, and homes with multiple computers were now normal. IPv4 hadn’t vanished — some ISPs and server farms stuck to an “if it ain’t broke” philosophy.</p>
+<p>“IPv4x when we can. NAT when we must.”</p>
+<p>Windows XP embodied this mindset. It always asked DNS for an IPv4x address first, falling back to IPv4 when necessary and relying on NAT only as a last resort.</p>
+<p>Residential ISPs began deploying IPv4x in earnest. Customers who wanted a dedicated IPv4 address could still have one — for a fee. Everyone else received an IPv4x /64, giving them 64 bits for their own devices. ISPs used carrier‑grade NAT as a compatibility shim rather than a lifeline: if you needed to reach an IPv4‑only service, CGNAT stepped in while IPv4x traffic flowed natively and without ceremony.</p>
+<p>The old IPv4 pool finally ran dry in 2006, just in time for the anniversary. There were still plenty of unused /8 blocks, but these had all been earmarked for IPv4x, and IANA refused to budge. If you wanted more addresses, they would have to be the IPv4x kind.</p>
+<p>Peer‑to‑Peer and the IPv4x Backlash</p>
+<p>IPv4x had its fans, but it also had one determined opponent: the music industry.</p>
+<p>Under IPv4 and NAT, peer‑to‑peer networking had always been awkward, especially if you weren’t a nerd who understood IP addresses. If you wanted to participate in peer-to-peer, you needed to log into your router’s admin panel and mess with arcane configurations which every router manufacturer had a different name for. Many gave up and simply decided music piracy wasn’t for them.</p>
+<p>IPv4x removed all that friction. Every device had a stable and globally reachable address. File‑sharing exploded as peer-to-peer software was simple to use. You didn’t need to poke about with your router, it all just worked.</p>
+<p>One trade group identified IPv4x as the cause of the growth in music file sharing and ran with the slogan “The X is for exterminating your favorite bands.” That stung a little but it didn’t stick. Cheap international calls, multiplayer games, chat systems and early collaboration tools all flourished. IPv4x didn’t just make peer‑to‑peer easier but it made direct communication the default again.</p>
+<p>![](https://owl.billpg.com/wp-content/uploads/2026/02/Cat_on_Laptop_by_Doug_Woods-300x225.jpg)</p>
+<p>2016 — The Tipping Point</p>
+<p>By 2016, IPv4x was the norm. The only major holdouts were the tier‑1 backbones, but that had always been part of the plan. They didn’t need IPv4x at all as the top 32 bits were enough for global routing between continents. But mostly, their eye‑wateringly expensive hardware didn’t really need replacing.</p>
+<p>A few websites still clung to IPv4, forcing ISPs to maintain CGNAT systems, until one popular residential ISP broke ranks.</p>
+<p>“IPv4x, or don’t.”</p>
+<p>For customers of this ISP, those last few IPv4‑only sites simply failed. Support staff were given a list of known‑broken websites and trained to offer an alternative plan if a customer insisted the fault lay with the ISP. Most customers just shrugged and moved on. As far as they were concerned, those websites were simply malfunctioning.</p>
+<p>Eventually, a technically minded customer pieced together what was happening and blew the whistle. A few dogs barked, but almost no one cared. The ISP spun the story that these web</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://owl.billpg.com/ipv4x/" target="_blank">Read original →</a></div>
+</body></html>

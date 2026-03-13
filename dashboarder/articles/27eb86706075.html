@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Standardizing source maps</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://bloomberg.github.io/js-blog/post/standardizing-source-maps/" target="_blank">Original article ↗</a></div>
+
+<h1>Standardizing source maps</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">Source Maps: Shipping Features Through Standards
+Source maps are a vital part of modern web development. Today, we have an official standard, a large group of members, and many exciting features in development! But it wasn&#x27;t always this way.
+It may s</div>
+<p>Source Maps: Shipping Features Through Standards</p>
+<p>Source maps are a vital part of modern web development. Today, we have an official standard, a large group of members, and many exciting features in development! But it wasn&#x27;t always this way.</p>
+<p>It may surprise you to learn that, for years, there was no official standard describing the source map format. On one hand, it is incredible that for 10 years, bundlers, browsers, and devtools worked together with only a shared Google Doc between them! On the other hand, it became impossible to add new features, deprecate old features, and build the necessary devtools to support dozens of deviations.</p>
+<p>Why do we need Source Maps? #</p>
+<p>Web development used to be simple! You’d write a bit of JavaScript, stick it in a &lt;script&gt;</p>
+<p>tag, and send it to your users. This also made debugging very simple: the code that ran on the website was the exact code you authored.</p>
+<p>As web development became more complex, tools began to emerge to optimize large JavaScript applications. In 2009, Google released Closure Tools, a suite of tools meant to address the growing complexity with applications like Google Maps, Google Docs, and Gmail.</p>
+<p>Closure Tools consisted of four discrete tools: an optimizing compiler, a template language, a JavaScript framework, and a developer tool. The compiler would eventually become Google’s Closure Compiler and the developer tool would heavily influence the future of Chrome DevTools.</p>
+<p>The compiler and devtools have always gone hand-in-hand, and they form an important relationship that exists to this day. If developers are going to use a compiler to optimize, minify, and alter their source code, they will need devtools that will allow them to map the generated compiler output back to their source code! That is exactly the gap that source maps address.</p>
+<p>What’s inside a source map? #</p>
+<p>Now that we know what purpose source maps serve, let’s dive into what information is inside a source map file.</p>
+<p>A source map is just a JSON file. Although some of the fields include encoded data, it should be mostly readable if you open a .map</p>
+<p>file in your favorite IDE. As an example, in out.js.map</p>
+<p>, you&#x27;ll probably see something like this:</p>
+<p>{</p>
+<p>&quot;version&quot;: 3, // Always the integer 3</p>
+<p>&quot;file&quot;: &quot;out.js&quot;, // Optional: name of the generated file</p>
+<p>&quot;sourceRoot&quot;: &quot;&quot;, // Optional: prefix prepended to each entry in &quot;sources&quot;</p>
+<p>&quot;sources&quot;: [&quot;foo.js&quot;, &quot;bar.js&quot;], // Required: list of original source URLs/paths (or null)</p>
+<p>&quot;sourcesContent&quot;: [null, null], // Optional: inlined source text, aligned with &quot;sources&quot;</p>
+<p>&quot;names&quot;: [&quot;src&quot;, &quot;maps&quot;], // Optional: symbol names referenced by &quot;mappings&quot;</p>
+<p>&quot;mappings&quot;: &quot;A,AAAB;;ABCDE&quot;, // Required: encoded mapping data (base64-VLQ deltas)</p>
+<p>&quot;ignoreList&quot;: [0] // Optional: indexes into &quot;sources&quot; considered &quot;third-party&quot;</p>
+<p>}</p>
+<p>We can interpret most of the file simply by reading it! It has the name of the generated JavaScript file, the one or more source files that went into it, what code was in each of those files, and a list of any files to mark as third-party or library code! The only part we can’t read plainly is the mappings</p>
+<p>field.</p>
+<p>How mappings work #</p>
+<p>Let’s think about mappings for a minute. What information would we need to accurately trace the location where a developer might set a breakpoint in a generated file like bundle.js</p>
+<p>all the way back to the exact file and position it came from in a source file like App.ts</p>
+<p>?</p>
+<p>What information do we need in mappings? #</p>
+<p>All we really need is:</p>
+<p>- For the generated file</p>
+<p>- Filename</p>
+<p>- Line</p>
+<p>- Column</p>
+<p>- For the source file</p>
+<p>- Filename</p>
+<p>- Line</p>
+<p>- Column</p>
+<p>Conceptually, we could imagine representing these with arrays of numbers, assuming we also had an array of file names. We could design something like:</p>
+<p>{</p>
+<p>&quot;sources&quot;: [&quot;foo.js&quot;], // One original source file</p>
+<p>&quot;mappings&quot;: [</p>
+<p>[0, 1, 2] // &quot;sources&quot; index 0, line 1, column 2</p>
+<p>]</p>
+<p>}</p>
+<p>But now we need a way to map a position in the generated code to one of these mappings</p>
+<p>. So maybe we add a new field that contains mappings for each line in the generated file, pointing to an entry in our mappings</p>
+<p>array! Something like:</p>
+<p>{</p>
+<p>&quot;sources&quot;: [&quot;foo.js&quot;], // One original source file</p>
+<p>&quot;mappings&quot;: [</p>
+<p>[0, 1, 2], // &quot;sources&quot; index 0, line 1, column 2</p>
+<p>[0, 1, 20]</p>
+<p>],</p>
+<p>&quot;lineMaps&quot;: [</p>
+<p>[1, 1, 1, 1, 1, 2, 2, 2, 2, 2] // The first 5 columns all map to the first entry in the `mappings` array and the rest map to the second entry</p>
+<p>]</p>
+<p>}</p>
+<p>You could reduce the source map size by omitting duplicates in the lineMaps</p>
+<p>array. So, the same information could be represented like:</p>
+<p>{</p>
+<p>&quot;sources&quot;: [&quot;foo.js&quot;], // One original source file</p>
+<p>&quot;mappings&quot;: [</p>
+<p>[0, 1, 2], // &quot;sources&quot; index 0, line 1, column 2</p>
+<p>[0, 1, 20]</p>
+<p>],</p>
+<p>&quot;lineMaps&quot;: [</p>
+<p>[1, , , , 2, , , , 2] // The first 5 columns all map to the first entry in the `mappings` array and the rest map to the second entry</p>
+<p>]</p>
+<p>}</p>
+<p>This would work nicely! The only real problem is, lineMaps</p>
+<p>is going to be enormous for large files. Even using sparse arrays, you will have an array entry per character! Even a modest web app, when minified, will contain between 200,000 and 2,000,000 characters.</p>
+<p>This per-character mapping model was actually used in early source map revisions (1 and 2), before being replaced in Revision 3.</p>
+<p>Revision 3: The modern source map #</p>
+<p>Reducing the size of source maps became a top priority as JavaScript bundles grew into hundreds of thousands, and eventually millions, of characters.</p>
+<p>Revision 3 (written in 2011, still the format we use today) made four key architectural changes to dramatically shrink map size:</p>
+<p>- Moved from per-character mapping IDs to segment-based source location entries</p>
+<p>- Instead of mapping each character in a generated file, it only keeps track of where the mapping changes.</p>
+<p>mappings</p>
+<p>is now a string, containing segments encoded using Base64 VLQ- Removed the</p>
+<p>lineMaps</p>
+<p>array- Instead of two arrays that reference each other, we now have one</p>
+<p>mappings</p>
+<p>string, which encodes, for each segment, the:- Generated column</p>
+<p>- Source index</p>
+<p>- Original line</p>
+<p>- Original column</p>
+<p>- Optional name index</p>
+<p>- Note: Generated lines are separated by</p>
+<p>;</p>
+<p>in the mappings string.</p>
+<p>- Instead of two arrays that reference each other, we now have one</p>
+<p>- Switched from absolute to relative encoding</p>
+<p>- Instead of storing</p>
+<p>generatedColumn: 120</p>
+<p>, we now storegeneratedColumn: +3</p>
+<p>.</p>
+<p>- Instead of storing</p>
+<p>With Revision 3, the source map above can be represented like:</p>
+<p>{</p>
+<p>&quot;version&quot;: 3,</p>
+<p>&quot;file&quot;: &quot;bundle.js&quot;,</p>
+<p>&quot;sources&quot;: [&quot;foo.js&quot;],</p>
+<p>&quot;names&quot;: [],</p>
+<p>&quot;mappings&quot;: &quot;AAAE,KAAI&quot;</p>
+<p>}</p>
+<p>These changes mean source maps are much smaller (thanks to VLQ) and much easier to encode and decode.</p>
+<p>A decade without a standard #</p>
+<p>Revision 3 landed in 2011 and it worked well! It worked so well that the entire web ecosystem decided to stop touching it for years. New bundlers spun up, emitting Revision 3 source maps, while browsers continued to build devtools that would consume Revision 3 source maps.</p>
+<p>Things were going great in the sense that breakpoints always landed in &quot;roughly&quot; the right spot. But the state it was in made it impossible to add new features, deprecate old behaviors, or correct ambiguity.</p>
+<p>Adding a new feature without a standard #</p>
+<p>Despite the complications, one new feature did manage to make its way through the ambiguity and into bundlers and devtools alike!</p>
+<p>As JavaScript frameworks began to grow in popularity, a common problem that faced developers was the need to step through callstacks consisting of dozens of framework files and only a few files they authored. In 2014, Google’s Chrome DevTools allowed developers to create ignore lists, specifying files or patterns they wished to exclude from stack traces and step-through debugging.</p>
+<p>This was great, but it would be far better if bundlers could let devtools know which files to ignore without forcing the developer to manually go through and list files. To solve this problem, in 2022, Google began looking for an x_google_ignoreList</p>
+<p>array inside source maps. If found, they would automatically add any files in the array to their DevTools ignoreList</p>
+<p>.</p>
+<p>This feature was so popular that Firefox began to support x_google_ignoreList</p>
+<p>in 2023! This is an amazing success story about open source tooling, web frameworks, and browsers collaborating without a formal group or standard. However, it also made it abundantly clear that we needed an easier way to communicate.</p>
+<p>While adding the ignoreList was successful, most large companies wanted a way to decode function names in stack traces, and this became incredibly difficult to coordinate without a standard.</p>
+<p>Imagine the following code:</p>
+<p>// sample.js</p>
+<p>const penne = () =&gt; {</p>
+<p>throw Error();</p>
+<p>};</p>
+<p>const spaghetti = () =&gt; penne();</p>
+<p>const orzo = () =&gt; spaghetti();</p>
+<p>orzo();</p>
+<p>If you don’t transpile, optimize, or bundle your code, you will get perfectly readable stack traces! But if you do, you will likely end up reading through callstacks with single letter function names that are impossible to trace back to your source code.</p>
+<p>// **original** output // **compiled** output</p>
+<p>Error Error</p>
+<p>at penne (sample.js:2:33) at r (out.js:1:82)</p>
+<p>at spaghetti (sample.js:3:25) vs at o (out.js:1:97)</p>
+<p>at orzo (sample.js:4:25) at n (out.js:1:107)</p>
+<p>![pasta-sourcemaps logo](/js-blog/images/image1.png)</p>
+<p>To solve this problem, Bloomberg created pasta-sourcemaps. Pasta takes advantage of the same x_</p>
+<p>prefix by adding a x_com_bloomberg_sourcesFunctionMappings</p>
+<p>to our source maps. We can then parse this list back out in our devtools and apply the original function names back to the stack traces.</p>
+<p>Though this feature was wanted by all browsers and most devtools, it was too large and too complex to simply ship. Although Chrome did ship support for pasta-sourcemaps behind a flag, it became abundantly clear we needed an official group to discuss this feature’s intricacies.</p>
+<p>TG4 #</p>
+<p>In 2023, Bloomberg set out to begin the process of standardizing source maps. We began, as many inspirational tech stories do, meeting in a humble Google office in Munich. We gathered a group of engineers from Bloomberg, Google, Mozilla, Vercel, Igalia, and JetBrains and began organizing years worth</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://bloomberg.github.io/js-blog/post/standardizing-source-maps/" target="_blank">Read original →</a></div>
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WolfIP: Lightweight TCP/IP stack with no dynamic memory allocations</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/wolfssl/wolfip" target="_blank">Original article ↗</a></div>
+
+<h1>WolfIP: Lightweight TCP/IP stack with no dynamic memory allocations</h1>
+<div class="meta">Hacker News · 2026-03-12</div>
+<div class="summary">wolfIP is a TCP/IP stack with no dynamic memory allocations, designed to be used in resource-constrained embedded systems.
+Endpoint only mode is supported, which means that wolfip can be used to establish network connections but it does not route tra</div>
+<p>wolfIP is a TCP/IP stack with no dynamic memory allocations, designed to be used in resource-constrained embedded systems.</p>
+<p>Endpoint only mode is supported, which means that wolfip can be used to establish network connections but it does not route traffic between different network interfaces.</p>
+<p>A single network interface can be associated with the device.</p>
+<p>- BSD-like, non blocking socket API, with custom callbacks</p>
+<p>- No dynamic memory allocation</p>
+<p>- Fixed number of concurrent sockets</p>
+<p>- Pre-allocated buffers for packet processing in static memory</p>
+<p>| Layer | Protocol | Features | RFC(s) |</p>
+<p>|---|---|---|---|</p>
+<p>| Data Link | Ethernet II | Frame encapsulation | IEEE 802.3 |</p>
+<p>| Data Link | ARP | Address resolution, request/reply | RFC 826 |</p>
+<p>| Network | IPv4 | Datagram delivery, TTL handling | RFC 791 |</p>
+<p>| Network | IPv4 Forwarding | Multi-interface routing (optional) | RFC 1812 |</p>
+<p>| Network | ICMP | Echo request/reply, TTL exceeded | RFC 792 |</p>
+<p>| Network | IPsec | ESP Transport mode | RFC 4303 |</p>
+<p>| Transport | UDP | Unicast datagrams, checksum | RFC 768 |</p>
+<p>| Transport | TCP | Connection management, reliable delivery | RFC 793, RFC 9293 |</p>
+<p>| Transport | TCP | Maximum Segment Size negotiation | RFC 793 |</p>
+<p>| Transport | TCP | TCP Timestamps, RTT measurement, PAWS, Window Scaling | RFC 7323 |</p>
+<p>| Transport | TCP | Retransmission timeout (RTO) computation | RFC 6298, RFC 5681 |</p>
+<p>| Transport | TCP | TCP SACK | RFC 2018, RFC 2883, RFC 6675 |</p>
+<p>| Transport | TCP | Congestion Control: Slow start, congestion avoidance | RFC 5681 |</p>
+<p>| Transport | TCP | Fast Retransmit, triple duplicate ACK detection | RFC 5681 |</p>
+<p>| Application | DHCP | Client only (DORA) | RFC 2131 |</p>
+<p>| Application | DNS | A and PTR record queries (client) | RFC 1035 |</p>
+<p>| Application | HTTP/HTTPS | Server with wolfSSL TLS support | RFC 9110 |</p>
+<p>The POSIX shim builds libwolfip.so</p>
+<p>, which can be injected in front of</p>
+<p>host tools so that calls to socket(2)</p>
+<p>and friends are redirected to the</p>
+<p>wolfIP stack and the TAP device (wtcp0</p>
+<p>). After running make</p>
+<p>:</p>
+<p>sudo LD_PRELOAD=$PWD/libwolfip.so nc 10.10.10.2 80</p>
+<p>The example above mirrors the existing nc</p>
+<p>-driven demos: any TCP sockets</p>
+<p>opened by the intercepted process are serviced by wolfIP instead of the host</p>
+<p>kernel.</p>
+<p>ICMP datagram sockets can be validated the same way. With the TAP interface</p>
+<p>created automatically by the shim and the host endpoint configured in</p>
+<p>config.h</p>
+<p>(HOST_STACK_IP</p>
+<p>defaults to 10.10.10.1</p>
+<p>), run:</p>
+<p>sudo LD_PRELOAD=$PWD/libwolfip.so ping -I wtcp0 -c5 10.10.10.1</p>
+<p>The -I wtcp0</p>
+<p>flag pins the test to the injected interface and -c5</p>
+<p>generates five echo requests. Successful replies confirm the ICMP</p>
+<p>datagram socket support end-to-end through the tap device.</p>
+<p>wolfIP now includes a dedicated FreeRTOS wrapper port at:</p>
+<p>src/port/freeRTOS/bsd_socket.c</p>
+<p>src/port/freeRTOS/bsd_socket.h</p>
+<p>This port follows the same model as the POSIX wrapper:</p>
+<p>- One background task loops on</p>
+<p>wolfIP_poll()</p>
+<p>- Socket wrappers serialize stack access with a mutex</p>
+<p>- Blocking operations wait on callback-driven wakeups (instead of busy polling)</p>
+<p>wolfIP is licensed under the GPLv3 license. See the LICENSE file for details. Copyright (c) 2025 wolfSSL Inc.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/wolfssl/wolfip" target="_blank">Read original →</a></div>
+</body></html>

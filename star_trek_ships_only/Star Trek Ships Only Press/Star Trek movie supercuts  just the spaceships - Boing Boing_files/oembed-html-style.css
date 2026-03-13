@@ -1,0 +1,48 @@
+.video-container-yt {
+  position: relative;
+  padding-bottom: 56.25%;
+  /*padding-top: 30px;*/
+  height: 0;
+  margin-bottom: .5em;
+  overflow:hidden;
+}
+
+.video-container-yt iframe,  
+.video-container-yt object,  
+.video-container-yt embed,
+.video-container-yt .preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%!important;
+  height: 100%!important;
+}
+
+.video-container-yt .playbutton {
+  width:100%;
+  margin:0;
+  padding:0;
+	position:relative; 
+	top:0;
+}
+
+.video-container-yt .ytplay .inactive { display:block; }
+.video-container-yt .ytplay .active { display:none; }
+
+
+.video-container-yt {
+	background-size:cover;
+	background-position:center center;
+}
+
+.video-snow {
+	width:100%;
+	opacity:.03;
+	position:absolute;
+	padding-bottom: 56.25%;
+  background-image:url(http://boingboing.net/wp-content/uploads/2013/05/snowcrash.gif)
+}
+
+.video-frame-source {
+  display:none;
+}

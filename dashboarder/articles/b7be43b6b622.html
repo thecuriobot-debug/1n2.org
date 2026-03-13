@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Core Issue: Outrunning Entropy, Why Bitcoin Can’t Stand Still</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://bitcoinmagazine.com/print/the-core-issue-outrunning-entropy-why-bitcoin-cant-stand-still" target="_blank">Original article ↗</a></div>
+
+<h1>The Core Issue: Outrunning Entropy, Why Bitcoin Can’t Stand Still</h1>
+<div class="meta">Bitcoin Magazine · 2026-03-11</div>
+<div class="summary">The IBD Process
+Synchronizing a new node to the network tip involves several distinct stages:
+- Peer discovery and chain selection where the node connects to random peers and determines the most-work chain.
+- Header download when block headers are fe</div>
+<p>The IBD Process</p>
+<p>Synchronizing a new node to the network tip involves several distinct stages:</p>
+<p>- Peer discovery and chain selection where the node connects to random peers and determines the most-work chain.</p>
+<p>- Header download when block headers are fetched and connected to form the full header chain.</p>
+<p>- Block download when the node requests blocks belonging to that chain from multiple peers simultaneously.</p>
+<p>- Block and transaction validation where each block’s transactions are verified before the next one is processed.</p>
+<p>While block validation itself is inherently sequential, each block depends on the state produced by the previous one, much of the surrounding work runs in parallel. Header synchronization, block downloads and script verification can all occur concurrently on different threads. An ideal IBD saturates all subsystems maximally: network threads fetching data, validation threads verifying signatures, and database threads writing the resulting state.</p>
+<p>Without continuous performance improvement, cheap nodes might not be able to join the network in the future.</p>
+<p>Intro</p>
+<p>Bitcoin’s “don’t trust, verify” culture requires that the ledger can be rebuilt by anyone from scratch. After processing all historical transactions every user should arrive at the exact same local state of everyone’s funds as the rest of the network.</p>
+<p>This reproducibility is at the heart of Bitcoin’s trust-minimized design, but it comes at a significant cost: after almost 17 years, this ever-growing database forces newcomers to do more work than ever before they can join the Bitcoin network.</p>
+<p>When bootstrapping a new node it has to download, verify, and persist every block from genesis to the current chain tip – a resource-intensive synchronization process called Initial Block Download (IBD).</p>
+<p>While consumer hardware continues to improve, keeping IBD requirements low remains critical for maintaining decentralization by keeping validation accessible to everyone – from lower-powered devices like Raspberry Pis to high-powered servers.</p>
+<p>Benchmarking process</p>
+<p>Performance optimization begins with understanding how software components, data patterns, hardware, and network conditions interact to create bottlenecks in performance. This requires extensive experimentation, most of which gets discarded. Beyond the usual balancing act between speed, memory usage, and maintainability, Bitcoin Core developers must choose the lowest-risk/highest-return changes. Valid-but-minor optimizations are often rejected as too risky relative to their benefit.</p>
+<p>We have a significant suite of micro-benchmarks to ensure existing functionality doesn’t degrade in performance. These are useful for catching regressions, i.e. performance backslides in individual pieces of code, but aren’t necessarily representative of overall IBD performance.</p>
+<p>Contributors proposing optimizations provide reproducers and measurements across different environments: operating systems, compilers, storage types (SSD vs HDD), network speeds, dbcache sizes, node configurations (pruned vs archival), and index combinations. We write single-use benchmarks and use compiler explorers for validating which setup would perform better in that specific scenario (e.g. intra-block duplicate transaction checking with Hash Set vs Sorted Set vs Sorted vector).</p>
+<p>We’re also regularly benchmarking the IBD process. This can be done by reindexing the chainstate and optionally the block index from local block files, or doing a full IBD either from local peers (to avoid slow peers affecting timings) or from the wider p2p network itself.</p>
+<p>IBD benchmarks often show smaller improvements than micro-benchmarks since network bandwidth or other I/O is often the bottleneck; downloading the blockchain alone takes ~16 hours with average global internet speeds.</p>
+<p>For maximum reproducibility -reindex-chainstate is often favored, creating memory and CPU profiles before and after the optimization and validating how the change affects other functionality.</p>
+<p>Historical and ongoing improvements</p>
+<p>Early Bitcoin Core versions were designed for a much smaller blockchain. The original Satoshi prototype laid the foundations, but without constant innovation from Bitcoin Core developers it would not have been able to handle the network’s unprecedented growth.</p>
+<p>Originally the block index stored every historic transaction and whether they were spent, but in 2012, “Ultraprune” (PR #1677) created a dedicated database for tracking unspent transaction outputs, forming the UTXO set, which pre-caches the latest state of all spendable coins, providing a unified view for validation. Combined with a database migration from Berkeley DB to LevelDB validation speeds were significantly improved.</p>
+<p>However, this database migration caused the BIP50[1] chain fork when a block with many transaction inputs was accepted by upgraded nodes but rejected by older versions as being too complicated. This highlights how Bitcoin Core development differs from typical software engineering: even pure performance optimizations have the potential to result in unintended chain splits.</p>
+<p>The following year (PR #2060) enabled multithreaded signature validation. Around the same time, the specialized cryptographic library libsecp256k1 was created, and was integrated into Bitcoin Core in 2014. Over the following decade, through continuous optimizations, it became more than 8x faster than the same functionality in the general-purpose OpenSSL library.</p>
+<p>Headers-first sync (PR #4468, 2014) restructured the IBD process to first download the block header chain with the most accumulated work, then fetch blocks from multiple peers simultaneously. Besides accelerating IBD it also eliminated wasted bandwidth on blocks that would be orphaned as they were not in the main chain.</p>
+<p>In 2016 PR #9049 removed what appeared to be a redundant duplicate-input check, introducing a consensus bug that could have allowed supply inflation. Fortunately, it was discovered and patched before exploitation. This incident drove major testing resource investments. Today, with differential fuzzing, broad coverage, and stricter review discipline, Bitcoin Core surfaces and resolves issues far more quickly, with no comparable consensus hazards reported since.[2].</p>
+<p>In 2017 -assumevalid (PR #9484) separated general block validity checks from the expensive signature verification, making the latter optional for most of IBD, cutting its time roughly in half. Block structure, proof-of-work, and spending rules remain fully verified: -assumevalid skips signature checks entirely for all blocks up to a certain block height.</p>
+<p>In 2022 PR #25325 replaced Bitcoin Core’s ordinary memory allocator with a custom pool-based allocator optimized for the coins cache. By designing specifically for Bitcoin’s allocation patterns, it reduced memory waste and improved cache efficiency, delivering ~21% faster IBD while fitting more coins in the same memory footprint.</p>
+<p>While code itself doesn’t rot, the system it operates within constantly evolves. Every 10 minutes Bitcoin’s state changes – usage patterns shift, bottlenecks migrate. Maintenance and optimization aren’t optional; without constant adaptation, Bitcoin would accumulate vulnerabilities faster than a static codebase could defend against, and IBD performance would steadily regress despite advances in hardware.</p>
+<p>The increasing size of the UTXO set and growth in average block weight exemplify this evolution. Tasks that were once CPU-bound (like signature verification) are now often Input/Output (IO)-bound due to heavier chainstate access (having to check the UTXO set on disk). This shift has driven new priorities: improving memory caching, reducing LevelDB flush frequency, and parallelizing disk reads to keep modern multi-core CPUs busy.</p>
+<p>Recent optimizations</p>
+<p>The software designs are based on predicted usage patterns, which inevitably diverge from reality as the network evolves. Bitcoin’s deterministic workload allows us to measure actual behavior and course correct later, ensuring performance keeps pace with the network’s growth.</p>
+<p>We’re constantly adjusting defaults to better fit real-world usage patterns. A few examples:</p>
+<p>- PR #30039 increased LevelDB’s max file size – a single parameter change that delivered ~30% IBD speedup by better matching how the chainstate database (UTXO set) is actually accessed.</p>
+<p>- PR #31645 doubled the flush batch size, reducing fragmented disk writes during IBD’s most write-intensive phase and speeding up progress saves when IBD is interrupted.</p>
+<p>- PR #32279 adjusted the internal prevector storage size (used mainly for in-memory script storage). The old pre-segwit threshold prioritized older script templates at the expense of newer ones. By adjusting the capacity to cover modern script sizes, heap allocations are avoided, memory fragmentation is reduced, and script execution benefits from better cache locality.</p>
+<p>All small, surgical changes with measurable validation impacts.</p>
+<p>Beyond parameter tuning, some changes required rethinking existing designs:</p>
+<p>- PR #28280 improved how pruned nodes (which discard old blocks to save disk space) handle frequent memory cache flushes. The original design either dumped the entire cache or scanned it to find modified entries. Selectively tracking modified entries enabled over 30% speedup for pruned nodes with maximum dbcache and ~9% improvement with default settings.</p>
+<p>- PR #31551 introduced read/write batching for block files, reducing the overhead of many small filesystem operations. The 4x-8x speedup in block file access improved not just IBD but other RPCs as well.</p>
+<p>- PR #31144 optimized the existing optional block file obfuscation (used to make sure data isn’t stored in cleartext on disk) by processing 64-bit chunks instead of byte-by-byte operations, delivering another IBD speedup. With obfuscation being essentially free users no longer need to choose between safe storage and performance.</p>
+<p>Other minor caching optimizations (such as PR #32487) enabled adding add</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://bitcoinmagazine.com/print/the-core-issue-outrunning-entropy-why-bitcoin-cant-stand-still" target="_blank">Read original →</a></div>
+</body></html>

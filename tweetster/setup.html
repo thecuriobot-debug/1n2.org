@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweetster Setup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #15202b; color: #e7e9ea; min-height: 100vh; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #1DA1F2; font-size: 1.8em; margin-bottom: 8px; }
+        h1 span { color: #71767b; font-size: 0.5em; display: block; }
+        .card { background: #192734; border-radius: 16px; padding: 24px; margin: 20px 0; border: 1px solid #38444d; }
+        .card h2 { color: #e7e9ea; font-size: 1.2em; margin-bottom: 12px; }
+        .card p { color: #71767b; font-size: 0.9em; line-height: 1.6; margin-bottom: 12px; }
+        label { display: block; color: #71767b; font-size: 0.85em; margin-bottom: 4px; margin-top: 12px; }
+        input[type="text"], input[type="password"], input[type="email"], textarea {
+            width: 100%; padding: 12px; background: #253341; border: 1px solid #38444d; border-radius: 8px;
+            color: #e7e9ea; font-size: 0.95em; font-family: inherit;
+        }
+        input:focus, textarea:focus { outline: none; border-color: #1DA1F2; }
+        textarea { min-height: 100px; resize: vertical; }
+        .btn { display: inline-block; padding: 12px 24px; background: #1DA1F2; color: #fff; border: none; border-radius: 25px; font-size: 0.95em; font-weight: 700; cursor: pointer; margin-top: 16px; font-family: inherit; }
+        .btn:hover { background: #1a91da; }
+        .btn:disabled { background: #38444d; cursor: not-allowed; }
+        .btn-outline { background: transparent; border: 1px solid #1DA1F2; color: #1DA1F2; }
+        .btn-green { background: #17bf63; }
+        .btn-green:hover { background: #14a857; }
+        .status { padding: 12px; border-radius: 8px; margin: 12px 0; font-size: 0.9em; }
+        .status-ok { background: #132a1a; border: 1px solid #17bf63; color: #17bf63; }
+        .status-warn { background: #2a2010; border: 1px solid #f7931a; color: #f7931a; }
+        .status-err { background: #2a1015; border: 1px solid #e0245e; color: #e0245e; }
+        .log { background: #0d1117; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.8em; white-space: pre-wrap; max-height: 300px; overflow-y: auto; margin-top: 12px; color: #8b949e; }
+        .steps { counter-reset: step; }
+        .steps li { list-style: none; padding: 8px 0 8px 36px; position: relative; color: #8899a6; }
+        .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; width: 24px; height: 24px; background: #253341; border-radius: 50%; text-align: center; line-height: 24px; font-size: 0.8em; color: #1DA1F2; font-weight: 700; }
+        #statusArea { min-height: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐦 Tweetster Setup <span>Connect your Twitter account to get real tweets</span></h1>
+        
+        <div id="statusArea"></div>
+
+        <div class="card">
+            <h2>Step 1: Enter Twitter Credentials</h2>
+            <p>Your login info is stored securely on your server only. It's used by Twikit (open-source Python library) to fetch tweets via Twitter's internal API — no paid API key needed.</p>
+            
+            <label>Twitter Username (without @)</label>
+            <input type="text" id="username" placeholder="MadBitcoins">
+            
+            <label>Email (associated with your Twitter account)</label>
+            <input type="email" id="email" placeholder="you@email.com">
+            
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Your Twitter password">
+            
+            <label>Admin Token (for securing this setup)</label>
+            <input type="text" id="adminToken" value="tweetster2026">
+            
+            <button class="btn" onclick="saveCreds()">Save Credentials</button>
+            <button class="btn btn-outline" onclick="doLogin()" style="margin-left:8px">Login to Twitter</button>
+        </div>
+
+        <div class="card">
+            <h2>Step 2: Fetch Tweets</h2>
+            <p>Once logged in, choose how to fill your feed:</p>
+            
+            <button class="btn btn-green" onclick="fetchHome()">🏠 Fetch Home Timeline</button>
+            <button class="btn btn-green" onclick="fetchAccounts()" style="margin-left:8px">👥 Fetch Top 30 Accounts</button>
+            <button class="btn btn-outline" onclick="searchTweets()" style="margin-left:8px">🔍 Search Bitcoin</button>
+        </div>
+
+        <div class="card">
+            <h2>Output Log</h2>
+            <div class="log" id="outputLog">Ready. Enter credentials and click Save, then Login, then Fetch.</div>
+        </div>
+
+        <div class="card">
+            <h2>How It Works</h2>
+            <ol class="steps">
+                <li>Your credentials are saved securely on your DigitalOcean droplet</li>
+                <li>Twikit (Python) logs into Twitter using your account (saves cookies)</li>
+                <li>Fetches tweets from your home timeline or specific accounts</li>
+                <li>Tweets are classified by topic (Bitcoin, Sports, Tech, Politics)</li>
+                <li>Results saved to data/tweets.json for the Tweetster UI</li>
+            </ol>
+            <p style="margin-top:12px; color: #71767b; font-size: 0.85em;">
+                ⚠️ Note: Twitter may occasionally require re-authentication. If fetches fail, re-run the Login step.
+            </p>
+        </div>
+    </div>
+
+    <script>
+    const API_BASE = '/tweetster/api/setup.php';
+    const log = document.getElementById('outputLog');
+    
+    function getToken() { return document.getElementById('adminToken').value; }
+    
+    async function checkStatus() {
+        try {
+            const r = await fetch(`${API_BASE}?action=status`);
+            const d = await r.json();
+            const area = document.getElementById('statusArea');
+            
+            let html = '';
+            if (d.has_cookies) {
+                html += `<div class="status status-ok">✅ Logged in (cookies saved) · ${d.tweets_cached} tweets cached</div>`;
+            } else if (d.has_credentials) {
+                html += `<div class="status status-warn">🔑 Credentials saved but not logged in yet. Click "Login to Twitter".</div>`;
+            } else {
+                html += `<div class="status status-warn">⚠️ No credentials configured. Enter your Twitter login below.</div>`;
+            }
+            if (d.last_update) {
+                html += `<div class="status status-ok">📊 ${d.tweets_cached} tweets · Last updated: ${d.last_update}</div>`;
+            }
+            area.innerHTML = html;
+        } catch(e) {
+            document.getElementById('statusArea').innerHTML = 
+                `<div class="status status-err">❌ Cannot reach API: ${e.message}</div>`;
+        }
+    }
+    
+    async function apiCall(action, body) {
+        log.textContent = `⏳ Running ${action}...\n`;
+        const opts = { method: body ? 'POST' : 'GET' };
+        if (body) {
+            opts.headers = { 'Content-Type': 'application/json' };
+            opts.body = JSON.stringify(body);
+        }
+        let url = `${API_BASE}?action=${action}&token=${getToken()}`;
+        try {
+            const r = await fetch(url, opts);
+            const d = await r.json();
+            log.textContent = JSON.stringify(d, null, 2);
+            checkStatus();
+            return d;
+        } catch(e) {
+            log.textContent = `❌ Error: ${e.message}`;
+        }
+    }
+    
+    function saveCreds() {
+        const u = document.getElementById('username').value;
+        const e = document.getElementById('email').value;
+        const p = document.getElementById('password').value;
+        if (!u || !p) { alert('Username and password required'); return; }
+        apiCall('save-creds', { username: u, email: e, password: p });
+    }
+    
+    function doLogin() { apiCall('login'); }
+    function fetchHome() { apiCall('fetch-home'); }
+    function fetchAccounts() { apiCall('fetch-accounts&count=30'); }
+    function searchTweets() { apiCall('search&q=bitcoin'); }
+    
+    checkStatus();
+    </script>
+</body>
+</html>

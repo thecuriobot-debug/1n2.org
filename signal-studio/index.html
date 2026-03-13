@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curio Signal Studio</title>
+  <meta name="description" content="Curio Signal Studio turns daily data into transcripts, voice briefings, video clips, and report packs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-orb orb-a" aria-hidden="true"></div>
+  <div class="bg-orb orb-b" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="topbar reveal">
+    <div class="brand-block">
+      <p class="kicker">ONE HUMAN + ONE AI</p>
+      <h1>Curio Signal Studio</h1>
+      <p class="subtitle">Daily media factory for transcripts, narration, video clips, and report packs.</p>
+    </div>
+    <div class="live-badge" id="live-badge">DATA STREAM LIVE</div>
+  </header>
+
+  <main class="shell">
+    <section class="card hero reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">AUTONOMOUS CONTENT PIPELINE</p>
+        <h2>From raw signal to publish-ready media in one pass.</h2>
+        <p>
+          This studio ingests market + social data, generates transcripts, composes narrated scripts,
+          builds short video storyboards, and outputs a full daily briefing pack.
+        </p>
+        <div class="hero-actions">
+          <button id="generate-btn" class="btn btn-primary" type="button">Generate Today Pack</button>
+          <button id="refresh-btn" class="btn btn-ghost" type="button">Reload Data</button>
+        </div>
+      </div>
+      <div class="hero-rails" id="hero-rails" aria-label="Realtime pipeline rails"></div>
+    </section>
+
+    <section class="kpi-grid reveal">
+      <article class="card kpi">
+        <p class="kpi-label">Packs</p>
+        <p class="kpi-value" id="kpi-packs">0</p>
+        <p class="kpi-meta">Published in range</p>
+      </article>
+      <article class="card kpi">
+        <p class="kpi-label">Records Ingested</p>
+        <p class="kpi-value" id="kpi-records">0</p>
+        <p class="kpi-meta">Across all channels</p>
+      </article>
+      <article class="card kpi">
+        <p class="kpi-label">Narration Time</p>
+        <p class="kpi-value" id="kpi-audio">0m</p>
+        <p class="kpi-meta">Voice runtime generated</p>
+      </article>
+      <article class="card kpi">
+        <p class="kpi-label">Engagement Score</p>
+        <p class="kpi-value" id="kpi-engagement">0</p>
+        <p class="kpi-meta">Weighted average</p>
+      </article>
+    </section>
+
+    <section class="control-grid reveal">
+      <article class="card controls">
+        <div class="card-head">
+          <h3>Filter Studio Feed</h3>
+          <p>Focus by channel and date window.</p>
+        </div>
+
+        <div class="control-row">
+          <label for="channel-filter">Channel</label>
+          <select id="channel-filter">
+            <option value="all">All Channels</option>
+            <option value="Crypto">Crypto</option>
+            <option value="Curio">Curio</option>
+            <option value="News">News</option>
+            <option value="YouTube">YouTube</option>
+          </select>
+        </div>
+
+        <div class="control-row split">
+          <div>
+            <label for="from-date">From</label>
+            <input id="from-date" type="date">
+          </div>
+          <div>
+            <label for="to-date">To</label>
+            <input id="to-date" type="date">
+          </div>
+        </div>
+
+        <p class="status-line" id="filter-status">Ready.</p>
+      </article>
+
+      <article class="card pipeline">
+        <div class="card-head">
+          <h3>Pipeline Status</h3>
+          <p>Stage health for selected pack.</p>
+        </div>
+        <div id="pipeline-stages" class="stage-grid"></div>
+      </article>
+    </section>
+
+    <section class="work-grid">
+      <article class="card pack-list reveal">
+        <div class="card-head sticky-head">
+          <h3>Daily Packs</h3>
+          <p id="result-count">0 results</p>
+        </div>
+        <div id="pack-list" class="pack-items"></div>
+      </article>
+
+      <article class="card detail reveal">
+        <div class="card-head">
+          <h3 id="detail-title">Select a pack</h3>
+          <p id="detail-meta">No pack selected</p>
+        </div>
+
+        <div class="detail-block">
+          <h4>Headline</h4>
+          <p id="detail-headline" class="lead">Choose a pack from the left to inspect generated assets.</p>
+        </div>
+
+        <div class="detail-block">
+          <h4>Transcript Excerpt</h4>
+          <p id="detail-transcript">-</p>
+        </div>
+
+        <div class="detail-block">
+          <h4>Voice Script</h4>
+          <p id="detail-voice">-</p>
+        </div>
+
+        <div class="detail-block">
+          <h4>Storyboard</h4>
+          <ul id="detail-storyboard" class="storyboard-list"></ul>
+        </div>
+
+        <div class="detail-block">
+          <h4>Artifacts</h4>
+          <div id="detail-artifacts" class="artifact-grid"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="analytics-grid reveal">
+      <article class="card trend-card">
+        <div class="card-head">
+          <h3>7-Pack Signal Trend</h3>
+          <p>Records vs engagement score.</p>
+        </div>
+        <canvas id="trend-canvas" width="1200" height="320" aria-label="Signal trend chart"></canvas>
+      </article>
+
+      <article class="card log-card">
+        <div class="card-head">
+          <h3>Automation Log</h3>
+          <p>Latest orchestrator events.</p>
+        </div>
+        <div id="automation-log" class="log-stream"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="foot reveal">
+    <p><a href="/">Back to 1n2.org workspace</a> · Curio Signal Studio · built in Codex</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

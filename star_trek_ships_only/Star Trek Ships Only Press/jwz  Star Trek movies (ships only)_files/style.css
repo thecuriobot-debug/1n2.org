@@ -1,0 +1,438 @@
+/*
+Theme Name: jwz
+Theme URI: http://www.jwz.org/
+Description: It's green.
+Author: jwz
+Version: 1.0
+Text Domain: jwz
+*/
+
+body {
+  max-width: 72em !important;  /* override /jwz.css */
+  padding: 0.5em;
+ }
+
+#container {
+  float: left;
+  width: 100%;
+  margin-right: -16em;
+}
+
+#content {
+  margin-right: 16em;
+}
+
+#sidebar {
+  float: right;
+  width: 16em;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;		/* eliminate whitespace between LI elements */
+}
+
+.menu li {
+  display: inline-block;
+  width: 16.6666%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li > a, .menu li > b {
+  font-size: 9pt;
+  font-weight: bold;
+  display: block;
+  vertical-align: top;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0F0;
+  background: #040;
+  border:  1px solid #080;
+  padding: 0.2em 0;
+  margin:  0 0.2em;
+}
+
+.menu li > b       { background: #000; border-color: #040; }
+.menu li > a:hover { color: #000 !important; background: #080; }
+
+.screen-reader-text { display: none; }
+
+
+/* Facebook and Google+ */
+.likers { width: 90px; float: right; margin: 0.5em 0 0 1em; }
+.likers .plusonebox { width: 90px; height: 20px; margin-top: 2px; padding-left: 15px; }
+.likers .fblike     { width: 90px; height: 20px; }
+
+#top-widget { display: none; }  /* only for thin windows, see below */
+#top-widget > ul > li { list-style-type: none; }
+
+#sidebar           { padding-top: 0.8em; }
+#sidebar > ul      { margin: 0; padding: 0 0 0 2em; font-size: 9pt; }
+#sidebar > ul > li { list-style-type: none; }
+#sidebar        li { list-style-type: square; }
+
+.widget ul { padding-left: 0; }
+
+.widget_recent_entries  li,
+.widget_recent_comments li,
+.widget_archive li {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  list-style-position: inside;
+}
+.widget_recent_entries ul, .widget_recent_comments ul {
+  margin-left: 4px;
+}
+.widget_archive li { margin-left: 3em; }
+
+/* Omit the OpenID logo in the Recent Comments column. */
+.widget_recent_comments .openid_link { background-image: none; }
+
+
+/* see jwz_get_comment_author_link */
+.widget_recent_comments .commentauthor {
+  overflow:hidden;
+  max-width: 8em;
+  display: inline-block;
+}
+
+
+#sidebar h2,
+#sidebar caption {
+  text-align: center;
+  background: #040;
+  border: 1px solid #080;
+  padding: 0.2em;
+  margin: 1.5em 0 0.5em 0;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+#wp-calendar { width: 100%; border-collapse: collapse; }
+#wp-calendar tbody { color: #080; }
+#wp-calendar tbody td, #wp-calendar tfoot td { font-size: 9pt; padding: 2px; }
+#wp-calendar th { font-size: 7pt; padding-bottom: 4px; }
+#wp-calendar tbody td { border: 1px solid #040; text-align: center; }
+#wp-calendar td a { font-weight: bold; }
+#wp-calendar tbody .pad:first-child { border-width: 0; }
+#wp-calendar tbody .pad:last-child  { border-color: #000; }
+#wp-calendar #next { text-align: right; }
+
+
+#sidebar textarea, #sidebar input[type=text], #sidebar input[type=submit] {
+  color: #0F0; background: #333; border-color: #080;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px solid #080;
+}
+#sidebar input[type=submit] { background: #040; }
+
+#s { width: 9.5em; line-height: 1.45em; }
+#s, #searchsubmit { font-size: 10pt; }
+
+.entry-title { font-size: 15pt; line-height: 1em; }
+
+.entry-title {
+  background: #040;
+  margin: 0;
+  padding: 0.25em 0.5em;
+  margin-top: 1em;
+}
+
+.post {
+  border-left:  1px solid #040;
+  border-right: 1px solid #040;
+}
+.entry-title, .entry-meta, .entry-content, .entry-utility {
+  border-top: 1px solid #040;
+}
+.entry-content { padding: 1em; }
+
+.entry-meta, .entry-utility, .navigation {
+  background: #020;
+  font-size: 10pt;
+  padding: 0.3em 0.9em;
+}
+
+.entry-utility { border-bottom: 1px solid #040; margin-bottom: 3em;
+  clear: both; }
+.entry-utility b { padding-right: 0.25em; }
+.entry-utility .comments,
+.entry-utility .edit-link { float: right; padding-right: 0.4em; }
+.entry-utility .edit-link { clear: right; }
+
+.entry-utility .music, .entry-utility .location {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.scene_missing {
+  clear: both;
+  padding: 1em;
+  color: #FFF;
+  border-top: 1px solid #040;
+}
+
+.navigation {
+  margin: 1em 0 0 0;
+  background: #040;
+  border: 1px solid #060;
+  height: 1.1em;
+}
+
+.navigation .nav-previous { float: left;  }
+.navigation .nav-next     { float: right; text-align: right; }
+.navigation .nav-previous, .navigation .nav-next {
+  max-width: 45%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* My custom /blog/tag/ page */
+.alltags { display: inline-block; text-align: left; margin: 1em; }
+
+
+/* my one custom class used in posts, specially handled in theme's RSS */
+blockquote.cite, .commentlist blockquote {
+  margin: 1em 0 1em 1.5em; padding: 0 0 0 1em; border-left: 2px solid;
+}
+
+
+/* I'm just cooler than you. */
+.comment-author-jwz       > .comment-body,
+.comment-author-jwz > div > .comment-body   { color: #AFA; }
+.comment-author-jwz       > .comment-author,
+.comment-author-jwz > div > .comment-author { color: #CFC;
+  border-color: #080; background: #040; }
+.comment-author-jwz       > .comment-body blockquote,
+.comment-author-jwz > div > .comment-body blockquote { color: #0F0; }
+
+
+.commentlist, .commentlist ul { list-style: none; margin: 0; padding: 0; }
+.commentlist li.comment { position: relative; }
+.commentlist { word-wrap: break-word; }
+
+#comments, .nocomments { font-size: 10pt; font-weight: bold; }
+#comments { margin-top: 2em; }
+.nocomments { border-top: 1px solid; padding: 0.5em 0; margin-top: 2em; }
+
+.commentlist li.comment { border: 0; margin: 0; 
+  font-size: 10pt; line-height: 13pt; }
+#comments-title { display: none; }
+/*h3#comments { display: none; }*/
+/*#reply-title { display: none; }*/
+.comment-author {
+ padding: 0.25em 1em; border: 1px solid #040; background: #020; }
+
+/* Interferes with ".photo" from dnalounge.css */
+.commentlist .avatar {
+  position: absolute; left: 0; top: -2px;
+  border: 1px solid #040;
+  width: 40px; height: auto; margin: auto;
+  display: inline;
+}
+
+.commentlist li.comment { padding-left: 0; margin-top: 1em; }
+.comment-author { margin-left: 40px; }
+.comment-meta   { margin-left: 40px; padding: 0.25em 0 0 1em; }
+
+.commentlist .comment-body,
+.commentlist .reply { margin-left: 1em; padding-bottom: 0; }
+.commentlist .reply { padding-bottom: 0.5em; }
+
+#content .commentlist ul.children {
+  margin:       0 0 1em 1em;
+  padding-left: 1em;
+  border-left:  1px dashed #040; 
+  border-bottom-left-radius: 6em;
+}
+
+cite.fn { font-style: normal; font-weight: bold; }
+
+
+
+/* do not let people post wide images or embeds in comments */
+.commentlist img { max-width: 400px; max-height: auto; }
+.commentlist object, .commentlist embed { max-width: 400px; max-height: 300px; }
+.commentlist object, .commentlist embed { border: 1px solid; }
+/* center and border images in comments */
+.commentlist img { display: block; border: 1px solid; margin: 1em auto; }
+/* do not let people be dumb with PRE in comments */
+.commentlist pre { font-size: 8pt; max-width: 450px; overflow: auto; }
+
+/* Live Comment Preview plugin */
+
+#commentPreview .commentlist { margin-top: 0 !important; }
+#commentPreview {
+  background: #020; padding: 0.5em;
+  min-height: 2em;
+  border: 1px solid #0D0;
+  border-bottom-left-radius: 1.2em 2.6em;
+}
+#commentPreview cite:before {
+  content: "Comment Preview -- "; font-weight: bold; }
+#commentPreview .reply { display: none; }
+#commentPreview .comment-meta { display: none; }
+#commentPreview .comment-author { margin-bottom: 2em;
+ background: #040; border-color: #060; }
+
+
+/* posting responses */
+
+#content textarea,
+#content input[type=text],
+#content input[type=submit],
+.widget-area input[type=text],
+.widget-area input[type=submit] {
+  color: #0F0; background: #333; border-color: #080;
+  -webkit-appearance: none;
+  border-radius: 0;
+  line-height: 15pt; /* redundant, needed for iPad */
+}
+#content textarea, #content input[type=text] { font-size: 12pt; }
+#commentform textarea { width: 99%; }
+#content input[type=submit],
+.widget-area input[type=submit] {
+  background: #040;
+}
+
+
+#comment-user-details { position: relative; }
+#alt-login-methods {
+ position: absolute; left: 27em; z-index: 1;
+ white-space: nowrap; overflow: hidden;
+}
+#alt-login-methods > p { margin: 0 2px 6px 0; text-align: right; }
+.comment-form-author, .comment-form-email, .comment-form-url {
+  position: relative; line-height: 1.5em;
+}
+.comment-form-author input[type=text],
+.comment-form-email input[type=text],
+.comment-form-url input[type=text] {
+  max-width: 50%; position: absolute; left: 4em; }
+#openid_comment {
+  position: absolute; top: -1em; right: -1em;
+  background: #000;
+}
+.comment-form-url > label:after {
+  position: absolute; left: 27em; content:"Or use your OpenID URL";
+  padding-left: 2em;
+  background-color: #000;
+  background-image: url('/images/openid16.png');
+  background-position: 3px 50%;
+  background-repeat: no-repeat; 
+  z-index: 1;
+}
+
+
+#cancel-comment-reply { display: none; }
+
+#respond { border-top: 1px solid #0F0; }
+#respond .required { color: #F00; }
+#respond .form-allowed-tags { color: #080; }
+#respond label { margin-left: 0.5em; }
+#respond abbr { border: none; }
+
+#respond .form-allowed-tags,
+#respond .form-allowed-tags code { font-size:  9pt; line-height: 11pt;
+  -webkit-text-size-adjust: none !important; }
+
+
+/* Better to overflow the page than have buttons overlap fields? */
+/*#respond { min-width: 36em; }*/
+
+
+#respond > h3 { display: none; }
+
+/* Distinguish top-level comments from nested replies */
+/*#content > #respond:before {
+  content: "Top-level reply"; font-weight: bold; } */
+.comment > #respond {
+  margin-left: 2em;
+  padding-left: 2em;
+  border-left:  1px dashed #040;
+  border-bottom-left-radius: 6em;
+ }
+
+
+/* Shrink margins and nav-menu fonts in smaller windows.
+ */
+@media screen and (max-width: 980px) {    /* iPad-ish */
+  .widget_search #s { width: 55%; }
+  #searchsubmit { padding: 0.25em; }
+  .widget_search { -webkit-text-size-adjust: none !important; } /* WTF */
+  #respond .form-allowed-tags code { color: #0A0; }
+}
+
+@media screen and (max-width: 780px) {
+  #container { margin-right: -13em; }
+  #content   { margin-right:  13em; }
+  #sidebar   { width:         13em; }
+  #sidebar > ul { font-size: 8pt; line-height: 10pt; padding-left: 1.5em; }
+  #sidebar h2, #sidebar caption { font-size: 9pt; }
+  #wp-calendar th { font-size: 7pt; }
+  #wp-calendar tbody td, #wp-calendar tfoot td { font-size: 9pt; }
+}
+
+@media screen and (max-width: 720px) {
+  #container { margin-right: -10.5em; }
+  #content   { margin-right:  10.5em; }
+  #sidebar   { width:         10.5em; }
+  #sidebar > ul { font-size: 7pt; line-height: 8pt; }
+  #sidebar h2, #sidebar caption { font-size: 8pt; }
+  #wp-calendar th { font-size: 6pt; }
+  #wp-calendar tbody td, #wp-calendar tfoot td { font-size: 7pt; }
+  input, textarea, #s, #searchsubmit { font-size: 7pt; }
+}
+
+@media screen and (max-width: 660px) {	/* iPhone-ish. Omit right column. */
+  body { padding: 0; }
+  #top-widget { display: block; }
+  #top-widget ul { padding-left: 0; text-align: center; }
+  #container { margin-right: 0; }
+  #content   { margin-right: 0; }
+  #sidebar   { display: none; }
+  .entry-content { padding: 1em 1px; }
+  .entry-utility { font-size: 8pt; }
+  .widget_search #s { width: 75%; }
+
+  .entry-title { font-size: 14pt; }
+  .likers { overflow: hidden; }  /* without this, page is > 100% wide */
+  .likers { margin-top: 4px; }
+
+  .menu { white-space: normal; text-align: center; }
+  .menu li, .menu li > a, .menu li > b { font-size: 7pt; }
+  .menu li > a, .menu li > b { padding: 0 0.5em; }
+  .menu li { width: auto; min-width: 7em; }
+
+  #content .commentlist ul.children { border-left-color: #0F0; }
+
+  #comment-user-details, #alt-login-methods { position: static; }
+  #alt-login-methods > p { margin: 0 0 0 4.3em; text-align: left; }
+
+  .comment-form-url > label:after {    /* "Or use your OpenID URL" */
+    position: relative;
+    right: auto;
+    left:  2em;
+    top:   2.7em;
+    font-size: 9pt;
+    z-index: -1;
+  }
+  #openid_comment {
+    display: block;
+    position: static;
+    right: auto;
+    left:  auto;
+    top:   auto;
+    font-size: 9pt;
+    z-index: 2;
+  }
+
+}

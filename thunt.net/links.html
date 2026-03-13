@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Net Interest - Thunt.net</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, serif; font-size: 14px; background: #f5deb3; color: #000; }
+.container { max-width: 1000px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.3); }
+header { background: linear-gradient(180deg, #800020 0%, #600010 100%); color: #f5deb3; padding: 40px 20px; text-align: center; border-bottom: 5px solid #f5deb3; }
+header h1 { font-size: 56px; font-weight: bold; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); margin-bottom: 10px; letter-spacing: 3px; }
+header .tagline { font-size: 22px; font-style: italic; color: #f5deb3; }
+.tabs { background: #800020; padding: 0; display: flex; border-bottom: 3px solid #600010; }
+.tab { flex: 1; padding: 18px 20px; background: #600010; color: #f5deb3; text-align: center; cursor: pointer; border-right: 2px solid #800020; font-size: 16px; font-weight: bold; transition: all 0.3s; text-decoration: none; display: block; }
+.tab:hover { background: #800020; }
+.tab.active { background: #f5deb3; color: #800020; }
+.content { padding: 40px; }
+.post-list { list-style: none; }
+.post-item { padding: 12px 0; border-bottom: 1px solid #d2b48c; display: flex; justify-content: space-between; align-items: baseline; }
+.post-item:hover { background: #fff8dc; padding-left: 10px; }
+.post-title { font-size: 16px; color: #800020; font-weight: bold; flex: 1; }
+.post-date { font-size: 13px; color: #666; min-width: 120px; text-align: right; font-family: Verdana, sans-serif; }
+.year-sep { background: #800020; color: #f5deb3; padding: 15px 20px; margin: 30px 0 20px 0; font-size: 24px; font-weight: bold; text-align: center; }
+.dvd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; margin-top: 30px; }
+.dvd-card { background: #fff; border: 3px solid #800020; padding: 0; text-align: center; transition: transform 0.3s; cursor: pointer; }
+.dvd-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(128,0,32,0.3); }
+.dvd-poster { width: 100%; height: 250px; background: linear-gradient(135deg, #800020 0%, #600010 100%); display: flex; align-items: center; justify-content: center; color: #f5deb3; font-size: 14px; padding: 20px; text-align: center; font-weight: bold; }
+.dvd-info { padding: 15px; background: #f5deb3; }
+.dvd-title { font-size: 14px; font-weight: bold; color: #800020; margin-bottom: 8px; min-height: 40px; }
+.dvd-meta { font-size: 11px; color: #666; margin: 4px 0; }
+.genre-badge { display: inline-block; background: #800020; color: #f5deb3; padding: 3px 8px; font-size: 10px; border-radius: 3px; margin-top: 5px; }
+.review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+.review-card { background: #f5deb3; border-left: 8px solid #800020; padding: 20px; }
+.review-card.highlight { border: 4px solid #800020; background: #fff8dc; }
+.review-title { font-size: 20px; font-weight: bold; color: #800020; margin-bottom: 5px; }
+.review-meta { font-size: 13px; color: #666; margin-bottom: 10px; }
+.stars { color: #ffd700; font-size: 20px; margin: 10px 0; }
+.review-text { font-size: 14px; line-height: 1.6; margin-top: 10px; }
+.random-box { background: #fff8dc; border: 5px solid #800020; padding: 40px; margin: 40px 0; text-align: center; }
+.random-content { font-size: 18px; line-height: 1.8; margin: 20px 0; min-height: 150px; }
+.random-btn { background: #800020; color: #f5deb3; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 5px; font-family: Georgia, serif; }
+.random-btn:hover { background: #600010; }
+.link-item { padding: 15px; margin: 10px 0; background: #fff8dc; border-left: 5px solid #800020; }
+.link-title { font-size: 16px; font-weight: bold; color: #800020; margin-bottom: 5px; }
+.link-url { color: #600010; text-decoration: none; font-size: 14px; }
+.link-url:hover { text-decoration: underline; }
+.section-title { font-size: 32px; color: #800020; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 4px solid #800020; }
+footer { background: #800020; color: #f5deb3; text-align: center; padding: 25px; font-size: 14px; }
+.highlight-section { background: #fff8dc; padding: 30px; margin: 30px 0; border: 3px solid #800020; }
+
+.subtabs { background: #600010; padding: 0; display: flex; border-bottom: 2px solid #800020; }
+.subtab { flex: 1; padding: 12px 15px; background: #600010; color: #f5deb3; text-align: center; cursor: pointer; border-right: 1px solid #800020; font-size: 14px; transition: all 0.3s; }
+.subtab:hover { background: #800020; }
+.subtab.active { background: #f5deb3; color: #800020; font-weight: bold; }
+.subtab-content { display: none; }
+.subtab-content.active { display: block; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 30px 0; }
+.stat-box { background: #fff8dc; border-left: 5px solid #800020; padding: 20px; text-align: center; }
+.stat-number { font-size: 32px; font-weight: bold; color: #800020; margin-bottom: 5px; }
+.stat-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+.archived-badge { display: inline-block; background: #28a745; color: white; padding: 4px 10px; font-size: 11px; border-radius: 3px; margin-left: 10px; font-weight: bold; }
+.wayback-badge { display: inline-block; background: #007bff; color: white; padding: 4px 10px; font-size: 11px; border-radius: 3px; margin-left: 10px; font-weight: bold; }
+.missing-badge { display: inline-block; background: #dc3545; color: white; padding: 4px 10px; font-size: 11px; border-radius: 3px; margin-left: 10px; font-weight: bold; }
+</style></head><body><div class="container">
+<header><h1>Thunt.net</h1><div class="tagline">Inform the masses</div></header>
+<div class="tabs">
+<a href="index.html" class="tab">Blog Posts</a>
+<a href="links.html" class="tab active">Net Interest</a>
+<a href="messages.html" class="tab">Messages</a>
+<a href="dvds.html" class="tab">DVD Collection</a>
+<a href="reviews.html" class="tab">Reviews</a>
+<a href="random.html" class="tab">Random</a>
+</div>
+
+<div class="content">
+<h2 class="section-title">Net Interest (93 links)</h2>
+
+<div class="stats-grid">
+<div class="stat-box">
+<div class="stat-number">53</div>
+<div class="stat-label">Total Archived</div>
+<div style="font-size: 11px; color: #28a745; margin-top: 5px;">57.0%</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">34</div>
+<div class="stat-label">Direct</div>
+<div style="font-size: 11px; color: #666; margin-top: 5px;">Live sites</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">19</div>
+<div class="stat-label">Wayback</div>
+<div style="font-size: 11px; color: #007bff; margin-top: 5px;">Archive.org</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">40</div>
+<div class="stat-label">Missing</div>
+<div style="font-size: 11px; color: #dc3545; margin-top: 5px;">43.0%</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">181</div>
+<div class="stat-label">Images</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">11.6MB</div>
+<div class="stat-label">Total Size</div>
+</div>
+</div>
+
+<div class="subtabs">
+<div class="subtab active" onclick="showSubtab('archived')">
+📄 Direct (34)
+</div>
+<div class="subtab" onclick="showSubtab('wayback')">
+🕰️ Wayback (19)
+</div>
+<div class="subtab" onclick="showSubtab('missing')">
+❌ Missing (40)
+</div>
+</div>
+
+<!-- Direct Archived -->
+<div id="archived" class="subtab-content active">
+<p style="margin: 20px 0; font-size: 15px; color: #666;">Successfully archived from live websites</p>
+<div class="year-sep">2000</div><div class="link-item">
+<div class="link-title">
+Snazzy Wallpapers
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jul 18, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Awesome site for snazzy techno wallpapers.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_6/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://chapter3.net" target="_blank" style="color: #666;">chapter3.net</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 1,364 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+DVD Price Search
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jul 20, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">DVD Price Search is excellent.  Check out it's search engine to find the lowest DVD price.  It's also a great source for coupons that can be used on DVDs and on other items (books, electronics, etc)</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_10/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.dvdpricesearch.net" target="_blank" style="color: #666;">www.dvdpricesearch.net</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 74,443 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+More Snazzy Wallpapers
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jul 20, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">deeper linked into Chapter3.....
+automatic for the people.
+</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_11/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://chapter3.net/imperium/index.html" target="_blank" style="color: #666;">chapter3.net/imperium/index.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 1,364 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Ightetto.com - Ebonics, Movies, and More!
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 31, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_28/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.ighetto.com" target="_blank" style="color: #666;">www.ighetto.com</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 9,592 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Sinfest the Comic Strip
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 03, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Sinfest is an awesome comic strip that is like a mix of Calvin & Hobbes with the Sassyness of Penny Arcade.  you must read it now. (refered to me by Rex, yeah rex!)</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_29/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.sinfest.net" target="_blank" style="color: #666;">www.sinfest.net</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+5 images • 13,316 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Olympic athletes get ambitious condom allowance
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 09, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">That's a lot of condoms.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_39/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://dailynews.yahoo.com/h/nm/20000908/hl/condoms.html" target="_blank" style="color: #666;">dailynews.yahoo.com/h/nm/20000908/hl/condoms.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,190 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Shroom's Cool Site
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 09, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_81/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://shroom.dv8.org" target="_blank" style="color: #666;">shroom.dv8.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 11,391 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Hunter S. Thompson Article on ESPN.com
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Nov 06, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Baseball has become unruly
+By Hunter S. Thompson
+Special to Page 2
+
+Hi, folks. My name is Thompson, and I don't have much space for this high-speed presentation, so let's get started and see how tight we can make it. My job is to devise a whole new se</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_110/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://espn.go.com/page2/s/thompson/001106.html" target="_blank" style="color: #666;">espn.go.com/page2/s/thompson/001106.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 345 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Driveways of the Rich and Famous
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Nov 08, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_113/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.driveways.com/" target="_blank" style="color: #666;">www.driveways.com/</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 8,373 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Am I hot or Not
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Nov 13, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">fun game to play.
+interesting combo of insulting people and voyeristic porn.
+</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_115/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.amihotornot.com/" target="_blank" style="color: #666;">www.amihotornot.com/</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 203,877 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Inside Tech Support Hell
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Dec 06, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_123/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.eastbayexpress.com/archive/120100/cover_120100.html" target="_blank" style="color: #666;">www.eastbayexpress.com/archive/120100/cover_120100.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+7 images • 497,016 bytes
+</span>
+</div>
+</div><div class="year-sep">2001</div><div class="link-item">
+<div class="link-title">
+Hunter gets pissed about the handleing of his new film!
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Feb 24, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_171/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://www.aintitcoolnews.com/display.cgi?id=8218" target="_blank" style="color: #666;">www.aintitcoolnews.com/display.cgi?id=8218</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+4 images • 16,736 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Berkely Breathed Interview
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Feb 24, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_172/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://slashdot.org/article.pl?sid=01/02/19/1456220" target="_blank" style="color: #666;">slashdot.org/article.pl?sid=01/02/19/1456220</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+5 images • 296,356 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+The Drug Tunnel
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Feb 28, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_176/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/h/ap/20010227/us/drug_tunnel.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/h/ap/20010227/us/drug_tunnel.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,198 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+All your base are belong to us
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 03, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_181/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.theregister.co.uk/content/28/17122.html" target="_blank" style="color: #666;">http://www.theregister.co.uk/content/28/17122.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 54,084 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Singer - Songwriter - Hooker
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 09, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_187/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.michaelarenee.com" target="_blank" style="color: #666;">http://www.michaelarenee.com</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 415,568 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+From now on this is THE place to find out if a movie is good.
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 12, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_190/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.capalert.com/capreports/#Media" target="_blank" style="color: #666;">http://www.capalert.com/capreports/#Media</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+6 images • 289,721 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Green Plastic - A Site about Radiohead
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_196/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.greenplastic.com" target="_blank" style="color: #666;">http://www.greenplastic.com</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+1 images • 33,661 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Odyssey probe blasts off for Mars
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 08, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_212/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.cnn.com/2001/TECH/space/04/07/mars.odyssey/index.html" target="_blank" style="color: #666;">http://www.cnn.com/2001/TECH/space/04/07/mars.odyssey/index.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 23,022 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Shakespeare Insult Generator
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 08, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_214/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.pangloss.com/seidel/Shaker/index.html?" target="_blank" style="color: #666;">http://www.pangloss.com/seidel/Shaker/index.html?</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+1 images • 1,050 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Steven Bushemi stabbed in the face
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 16, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_217/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/h/nm/20010414/en/people-buscemi_1.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/h/nm/20010414/en/people-buscemi_1.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,800 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Lore: I  think
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_228/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://brunching.com/features/loreithink.html" target="_blank" style="color: #666;">http://brunching.com/features/loreithink.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 0 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+A new secret Quentin Tarantino film?
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 04, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_236/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.aintitcool.com/display.cgi?id=8893" target="_blank" style="color: #666;">http://www.aintitcool.com/display.cgi?id=8893</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 24,893 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+SMC: Summer Movie Prediction
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 05, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_239/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://brunching.com/selfmade/summermovies2001.html" target="_blank" style="color: #666;">http://brunching.com/selfmade/summermovies2001.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 0 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+BoobScan
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 13, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_245/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.boobscan.com" target="_blank" style="color: #666;">http://www.boobscan.com</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 44,170 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+R.E.M. Stay Dry in Toronto
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 20, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_250/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.rollingstone.com/news/newsarticle.asp?nid=13918" target="_blank" style="color: #666;">http://www.rollingstone.com/news/newsarticle.asp?nid=13918</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 521,175 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+No Sneeze Cloned Cats
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jun 27, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_258/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/h/nm/20010627/sc/health_cats_dc_2.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/h/nm/20010627/sc/health_cats_dc_2.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,800 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Citizen Kane on DVD!!!
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jun 29, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_260/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/h/nm/20010629/en/film-kane_1.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/h/nm/20010629/en/film-kane_1.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,800 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Funny Comic about Episode II
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 08, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_268/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.whenigrowup.net/d/20010807.html" target="_blank" style="color: #666;">http://www.whenigrowup.net/d/20010807.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 0 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+./ - Burning a NeXT Cube
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 11, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_270/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://simson.net/photos/hacks/cubefire.html" target="_blank" style="color: #666;">http://simson.net/photos/hacks/cubefire.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+1 images • 120,671 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Mobile Phones May Do Harm by Speeding Up Brain
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 22, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_286/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/htx/nm/20010921/tc/health_mobile_dc_2.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/htx/nm/20010921/tc/health_mobile_dc_2.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,800 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+StratFor: U.S. Must Create Theaters of Operations
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 24, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_289/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://www.stratfor.com/home/0109242145.htm" target="_blank" style="color: #666;">http://www.stratfor.com/home/0109242145.htm</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 706,016 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+Thinking the unthinkable: A takeover of Disney
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 26, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_290/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://biz.yahoo.com/rf/010926/n26178657_1.html" target="_blank" style="color: #666;">http://biz.yahoo.com/rf/010926/n26178657_1.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 2,612,571 bytes
+</span>
+</div>
+</div><div class="link-item">
+<div class="link-title">
+S.Africa to Launch Massive Elephant Relocation
+<span class="archived-badge">✓ DIRECT</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 02, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/link_293/index.html" class="link-url" style="background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+📄 View Local Copy
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Original: <a href="http://http://dailynews.yahoo.com/h/nm/20011002/sc/environment_africa_elephants_dc_2.html" target="_blank" style="color: #666;">http://dailynews.yahoo.com/h/nm/20011002/sc/environment_africa_elephants_dc_2.html</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+10 images • 778,800 bytes
+</span>
+</div>
+</div></div>
+<div id="wayback" class="subtab-content">
+<p style="margin: 20px 0; font-size: 15px; color: #007bff;">Recovered from Internet Archive Wayback Machine</p>
+<div class="year-sep">2000 - Wayback Machine</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Web standards blasts Netscape
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jul 23, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Are you using netscape? Do you ever wonder why all the webpages you visit look crappy? Maybe it's because netscape doesn't follow standards.  Microsoft Sucks, but at least they follow most standards...</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_13/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2002-06-09 via <a href="http://web.archive.org/web/20020609085515/http://www.webstandards.org:80/wfw/ns0700.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 24,268 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Humor: An interview with Jeeves (of AskJeeves.com)
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jul 23, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Funny.  Yes I know it's probably really old, but I just read it now and it's funny so I'm posting it.  Get a fucking life!</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_14/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2021-03-16 via <a href="http://web.archive.org/web/20210316210332/http://www.satirewire.com/features/satire-jeevesinterview.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 2,091 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Business-Card Drawing For Free Sandwich Mired In Scandal
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 14, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">The onion.  It just keeps getting funnier and funnier.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_48/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2004-04-04 via <a href="http://web.archive.org/web/20040404083458/http://www.theonion.com:80/onion3632/drawing_for_free_sandwich.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 36,936 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Get youself an email like mine, thomas @home getting a blow job.com
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 16, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Jesse's cool site all about blowjobs and email.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_51/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2021-05-05 via <a href="http://web.archive.org/web/20210505142854/http://www.homegettingablowjob.com/" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 15,633 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Microsoft Presents: Linux Myths
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 07, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">A bunch of lies from the people who brought you the Blue Screen of Death and many other fine products.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_77/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2001-06-24 via <a href="http://web.archive.org/web/20010624102605/http://www.microsoft.com:80/ntserver/nts/news/msnw/LinuxMyths.asp" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 42,588 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Microsoft's New Office Assistant (funny)
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 10, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">paper clip finally says something cool.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_83/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2007-06-25 via <a href="http://web.archive.org/web/20070625171201/http://www.vaxer.net/~jeeves/assistant.gif" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 10,596 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+World Death Rate Holding Steady at 100 Percent
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 22, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">GENEVA, SWITZERLAND--World Health Organization officials expressed disappointment Monday at the groups finding that, despite the enormous efforts of doctors, rescue workers and other medical professionals worldwide, the global death rate remains constant</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_98/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2004-03-20 via <a href="http://web.archive.org/web/20040320163327/http://www.theonion.com:80/onion3102/deathrate.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 34,428 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Arafat's response to Barak's timeout: 'Go to hell'
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 22, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Fuckin'A man.  Foreign Policy becomes interesting again.  This guy straight up told his advisary to go to hell.  Now that's rad.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_102/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2001-10-26 via <a href="http://web.archive.org/web/20011026064255/http://dailynews.netscape.com:80/dailynews/cnnnews.tmpl?story=mideast.reaction.021022.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 48,130 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Smells like crushed teen spirit
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 31, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">The 10 scariest things that could happen to the digital world.
+
+- - - - - - - - - - - -
+By the Salon Technology Staff
+
+</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_106/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2009-07-22 via <a href="http://web.archive.org/web/20090722235836/http://www.salon.com:80/tech/log/2000/10/31/halloween/index.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 59,756 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Geek accused of crime for being a Geek
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 31, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;">Another geek whose computers were taken by the FBI because he was a geek.  Terrifying.</div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_107/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2002-08-02 via <a href="http://web.archive.org/web/20020802000738/http://devrandom.net:80/~dilinger/" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 23,505 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+14 Remaining Netscape Users Rejoice Over
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Dec 02, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_121/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2021-02-23 via <a href="http://web.archive.org/web/20210223153118/http://www.satirewire.com/briefs/netscape6.shtml" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 48,521 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+LSD Trafficking Suspect Has Intriguing Backers
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Dec 19, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_129/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2011-05-11 via <a href="http://web.archive.org/web/20110511185302/http://www.sfgate.com/cgi-bin/article.cgi?file=/chronicle/archive/2000/12/19/MN150948.DTL" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 135,355 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Why Iraq's buying up Playstation 2s
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Dec 20, 2000</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_130/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2001-08-03 via <a href="http://web.archive.org/web/20010803162307/http://www.worldnetdaily.com:80/bluesky_exnews/20001219_xex_why_iraqs_bu.shtml" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 11,625 bytes
+</span>
+</div>
+</div><div class="year-sep">2001 - Wayback Machine</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Crack by John
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jan 03, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_134/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2001-09-28 via <a href="http://web.archive.org/web/20010928225804/http://www.crackbyjohn.com:80/" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 10,411 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Pillsbury Doughboy vs. The Internet
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Jan 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_139/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2008-10-15 via <a href="http://web.archive.org/web/20081015191300/http://www.salon.com/tech/log/2001/01/19/pillsbury/index.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 62,056 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+None Dare Call It Treason
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Feb 28, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_175/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2005-08-22 via <a href="http://web.archive.org/web/20050822201132/http://www.thenation.com:80/doc.mhtml?i=20010205&c=1&s=bugliosi" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 38,000 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Liberation Musicology
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 02, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_179/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2005-07-06 via <a href="http://web.archive.org/web/20050706083908/http://www.thenation.com:80/doc.mhtml?i=20010312&s=moglen" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 40,167 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+Starbucks To Begin Sinister 'Phase Two' Of Operation
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 17, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_192/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2004-04-09 via <a href="http://web.archive.org/web/20040409040214/http://www.theonion.com:80/onion3709/starbucks_phase_two.html" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+3 images • 35,804 bytes
+</span>
+</div>
+</div><div class="link-item" style="background: #e7f3ff;">
+<div class="link-title">
+The Day Reagan Was Shot
+<span class="wayback-badge">🕰️ WAYBACK</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0;"></div>
+<div style="margin-top: 10px;">
+<a href="net_interest/saved_webpages/wayback_197/index.html" class="link-url" style="background: #007bff; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">
+🕰️ View Archived Snapshot
+</a>
+<span style="font-size: 12px; color: #999; margin-left: 15px;">
+Snapshot from: 2004-06-06 via <a href="http://web.archive.org/web/20040606122850/http://www.theatlantic.com:80/cgi-bin/o/issues/2001/04/allen.htm" target="_blank" style="color: #007bff;">Archive.org</a>
+</span>
+<span style="font-size: 11px; color: #999; margin-left: 15px;">
+0 images • 41,460 bytes
+</span>
+</div>
+</div></div>
+<div id="missing" class="subtab-content">
+<p style="margin: 20px 0; font-size: 15px; color: #dc3545;">Not available from live sites or Internet Archive</p>
+<div class="year-sep" style="background: #dc3545;">2000 - Missing</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Save Bhaskar, Vote for Ted!
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 04, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">Ted Nugent from Kiss attacked Bhaskar.... Netscape has a poll, vote for TED!</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">netscape.digitalcity.com/sanfrancisco/issues/main.dci?page=nugent</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Box Acid Test (shows weakness of netscape)
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 21, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">Netscape blows.  IE is also lame (but much less lame than Netscape).  Only Mozilla can save us.  Use your browser on the box acid test to see how it stacks up.</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">style.verso.com/boxacidtest/</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+It could be that the purpose of your life is to serve as an example for others
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 21, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">Demotivators from Despair.inc.  Posters, Calendars and more.  Designed to depress.</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">store.yahoo.com/demotivators/</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+20 ways the world could end.
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 16, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">guarrented to quell any rouge optimism you might have.</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">www.discover.com/oct_00/featworld.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+An Open Letter from Moore to Gore
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Nov 06, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">Dear Vice-President Gore:
+
+Hi! How are you! It's been awhile since we've talked. Everything OK?
+
+Sorry. Enough teasing. I've been getting a lot of calls from your friends and supporters. Man, are they freaked out! They actually think you are going to</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">www.michaelmoore.com/2000_10_31.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Experience the power, the glory of the Quesosphere
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Nov 25, 2000</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;">Doug's Amazing creation. You must see it.  You must experience the Quesosphere!</div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">k9.dv8.org/~dcoker/quesosphere/</span>
+</span>
+</div>
+</div><div class="year-sep" style="background: #dc3545;">2001 - Missing</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Libraries are Crooks!  They must be stopped!
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Feb 07, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">washingtonpost.com/wp-dyn/articles/A36584-2001Feb7.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+A One-Day Career at a Dot-Com
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 12, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://washingtonpost.com/wp-dyn/articles/A52193-2001Mar10.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Hilarious Love Letter Found In Street
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 24, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3710/hilarious_love_letter.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Oh, I'm No Good With Soap
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 28, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3711/no_good_with_soap.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+A national disgrace
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Mar 31, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/news/feature/2001/03/29/kyoto/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Sex Tips For Geeks
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 01, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://tuxedo.org/~esr/writings/sextips/</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Henry David Thoreau Quotes
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 02, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.cp-tel.net/miller/BilLee/quotes/Thoreau.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Bereaved? Come Bathe In The Healing Light Of My Cock
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 04, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3712/healing_light.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+The French call him "an idiot"
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 06, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/news/feature/2001/04/06/europe/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+William Gibson on Japan
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 07, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.observer.co.uk/life/story/0,6903,466391,00.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+I hate TV
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 07, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/ent/tv/feature/2001/04/07/i_hate_tv/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Death to the Minotaur
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 08, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.salon.com/tech/feature/2001/03/23/wizards/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Punk rock icon Joey Ramone dies
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 16, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.nando.net/24hour/sacbee/entertainment/story/0,2208,500473737-500726720-504102585-0,00.htm</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Ted Turner suicidal after marital, business problems, magazine reports
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 16, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.nando.net/24hour/sacbee/entertainment/story/0,2208,500473834-500726881-504106403-0,00.htm</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Choosing a College
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3714/choosing_a_college_tips.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Song About Heroin Used To Advertise Bank
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3714/song_about_heroin.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+The company of men
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/books/feature/2001/04/20/palahniuk/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Quickies from Salon.com
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 21, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/tech/inbox/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+U-Turn Review
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 23, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.film.com/film-review/1997/9610/109/default-review.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Brief Thunt.net outage
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Apr 29, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://dv8.org</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Local Man Exhausted After Long Day Of Video Games
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 05, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3716/local_man_exhausted.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+I Have Returned, Baby
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 05, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3716/i_have_returned_baby.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Lowest Common Denominator Continues To Plummet
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 07, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.theonion.com/onion3716/denominator_plummets.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Jenna Bush pleads no contest on alcohol charge
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 16, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/politics/wire/2001/05/16/jenna/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Tom Robbins article at Salon.com
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">May 20, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.salon.com/people/feature/2000/03/09/robbins/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Cool Chairs & Dot-Com Crash
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 08, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://salon.com/tech/feature/2001/08/07/aeron/index.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+War Driving: inside wireless hacking
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Aug 23, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.sacbee.com/ib/news/ib_news01_20010823.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+./ - Damn Logical Thoughts on the Disaster
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 18, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://slashdot.org/comments.pl?sid=21703&threshold=3&commentsort=3&mode=nested&cid=2312279</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Clear Channel (radio) list of Banned Songs
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 20, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.fuckedcompany.com/extras/clearchannel_email.cfm</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Jargon Dictionary
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 22, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://info.astrian.net/jargon/</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+NPR: Branding the News
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 22, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://search1.npr.org/search97cgi/s97_cgi?action=View&VdkVgwKey=%2Fopt%2Fcollections%2Ftorched%2Fat</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Universal plans protection for all CDs
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 26, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://news.cnet.com/news/0-1005-200-7299321.html</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+Weezer's Green Album MST3K Silhouette
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Sep 28, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.bertrandom.com/weezermst3k/</span>
+</span>
+</div>
+</div><div class="link-item" style="background: #ffe6e6; opacity: 0.7;">
+<div class="link-title" style="color: #666;">
+His name is Sam.  He draws pictures.
+<span class="missing-badge">✗ LOST</span>
+</div>
+<div style="font-size: 13px; color: #666; margin: 5px 0;">Oct 05, 2001</div>
+<div style="font-size: 14px; margin: 8px 0; color: #666;"></div>
+<div style="margin-top: 10px;">
+<span style="font-size: 12px; color: #999;">
+URL (lost): <span style="text-decoration: line-through;">http://www.explodingdog.com</span>
+</span>
+</div>
+</div></div>
+
+</div>
+
+<footer><p>Thunt.net - Thomas Hunt (2000-2001)</p>
+<p style="margin-top: 10px;">Links archived: February 16, 2026</p>
+</footer>
+</div>
+
+<script>
+function showSubtab(tabName) {
+    document.querySelectorAll('.subtab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    document.querySelectorAll('.subtab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    document.getElementById(tabName).classList.add('active');
+    event.target.classList.add('active');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body></html>

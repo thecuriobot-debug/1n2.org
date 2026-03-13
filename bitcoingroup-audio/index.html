@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bitcoin Group Offline Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#f7931a;--green:#34d399;--red:#ef4444;--blue:#3b82f6}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:14px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--accent)}header .sub{color:var(--muted);font-size:.68rem}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.6rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+<h1>📦 Bitcoin Group — Offline Archive</h1>
+<div class="sub">Complete episode library with local audio & video playback</div>
+</header>
+<main>
+<div class="grid" id="stats"></div>
+<style>
+.player{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin:10px 0;display:none}
+.player h2{color:var(--accent);font-size:1rem;margin-bottom:8px}
+.player audio,.player video{width:100%;border-radius:4px;margin:4px 0}
+.search{width:100%;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;margin:8px 0}.search:focus{outline:none;border-color:var(--accent)}
+h2.sec{color:var(--accent);font-size:.9rem;margin:14px 0 6px;border-bottom:1px solid var(--border);padding-bottom:3px}
+.ep{display:flex;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.2);font-size:.76rem;cursor:pointer;transition:.08s}
+.ep:hover{background:rgba(247,147,26,.04)}
+.ep.active{background:rgba(247,147,26,.08);border-left:3px solid var(--accent)}
+.ep .num{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);width:32px;text-align:right;flex-shrink:0;font-size:.68rem}
+.ep .title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ep .date{color:var(--muted);font-size:.62rem;width:65px;flex-shrink:0}
+.ep .badges{display:flex;gap:2px;flex-shrink:0}
+.badge{padding:1px 5px;border-radius:2px;font-size:.55rem;font-weight:700}
+.badge.audio{background:rgba(52,211,153,.2);color:var(--green)}
+.badge.video{background:rgba(59,130,246,.2);color:var(--blue)}
+.badge.yt{background:rgba(255,0,0,.15);color:#f44}
+.badge.none{background:rgba(100,116,139,.1);color:var(--muted)}
+.progress{height:4px;background:var(--border);border-radius:2px;margin:6px 0}
+.progress .bar{height:100%;border-radius:2px;background:var(--green);transition:width .3s}
+.ft{text-align:center;color:var(--muted);font-size:.58rem;padding:14px;border-top:1px solid var(--border);margin-top:14px}
+</style>
+
+<div class="player" id="player">
+<h2 id="now-playing">Select an episode</h2>
+<div id="player-badges"></div>
+<audio id="audio-player" controls style="display:none"></audio>
+<video id="video-player" controls style="display:none"></video>
+<div style="margin-top:6px;font-size:.7rem;color:var(--muted)">
+<a id="yt-link" href="#" target="_blank">Watch on YouTube ↗</a> · 
+<a id="dl-audio" href="#" download>Download Audio</a> · 
+<a id="dl-video" href="#" download style="display:none">Download Video</a>
+</div>
+</div>
+<div style="display:flex;gap:6px;align-items:center;margin:6px 0">
+<span style="font-size:.7rem;color:var(--muted)">Download progress:</span>
+<div class="progress" style="flex:1"><div class="bar" id="prog-bar"></div></div>
+<span id="prog-text" style="font-size:.65rem;color:var(--muted)"></span>
+</div>
+<input class="search" id="search" placeholder="Search 482 episodes...">
+<h2 class="sec" id="count">Loading...</h2>
+<div id="list"></div>
+</main>
+<div class="ft">
+<a href="/tbg-mirrors/">TBG Mirrors</a> · <a href="/wcn-podcast/">WCN Podcast</a> · <a href="/my-youtube/">My YouTube</a> · <a href="/">1n2.org</a><br>
+<span style="font-size:.55rem">Run <code>bash download-all.sh</code> for audio · <code>bash download-video.sh</code> for video</span>
+</div>
+<script>
+let DATA;
+function fmt(b){return b>=1e9?(b/1e9).toFixed(1)+' GB':b>=1e6?(b/1e6).toFixed(0)+' MB':b>=1e3?(b/1e3).toFixed(0)+' KB':'0';}
+async function init(){
+  DATA=await(await fetch('archive-data.json')).json();
+  const s=DATA.stats;
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="n">${s.total}</div><div class="l">Episodes</div></div>
+    <div class="stat"><div class="n">${s.with_audio}</div><div class="l">Audio ✅</div></div>
+    <div class="stat"><div class="n">${s.with_video}</div><div class="l">Video ✅</div></div>
+    <div class="stat"><div class="n">${s.audio_size_gb} GB</div><div class="l">Audio Size</div></div>
+    <div class="stat"><div class="n">${s.video_size_gb} GB</div><div class="l">Video Size</div></div>
+    <div class="stat"><div class="n">${(s.audio_size_gb+s.video_size_gb).toFixed(1)} GB</div><div class="l">Total</div></div>`;
+  const pct=Math.round(s.with_audio/s.total*100);
+  document.getElementById('prog-bar').style.width=pct+'%';
+  document.getElementById('prog-text').textContent=`${s.with_audio}/${s.total} audio (${pct}%)`;
+  document.getElementById('player').style.display='block';
+  document.getElementById('search').addEventListener('input',()=>render());
+  render();
+}
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  let eps=DATA.episodes;
+  if(q)eps=eps.filter(e=>{
+    const nm=q.match(/#?(\d+)/);
+    if(nm&&e.num===parseInt(nm[1]))return true;
+    return e.title.toLowerCase().includes(q);
+  });
+  const rev=[...eps].reverse();
+  document.getElementById('count').textContent=`${eps.length} Episodes (newest first)`;
+  let h='';
+  rev.forEach(ep=>{
+    const title=ep.title.replace(/^The Bitcoin Group #\d+\s*-?\s*/i,'').substring(0,70);
+    h+=`<div class="ep" onclick="play(${ep.num})">`;
+    h+=`<div class="num">#${ep.num}</div>`;
+    h+=`<div class="title">${esc(title||ep.title)}</div>`;
+    h+=`<div class="date">${ep.date}</div>`;
+    h+=`<div class="badges">`;
+    h+=ep.has_audio?'<span class="badge audio">🔊</span>':'<span class="badge none">—</span>';
+    h+=ep.has_video?'<span class="badge video">🎬</span>':'';
+    h+=`<a href="https://youtube.com/watch?v=${ep.vid}" target="_blank" onclick="event.stopPropagation()"><span class="badge yt">YT</span></a>`;
+    h+=`</div></div>`;
+  });
+  document.getElementById('list').innerHTML=h;
+}
+function play(num){
+  const ep=DATA.episodes.find(e=>e.num===num);if(!ep)return;
+  document.querySelectorAll('.ep').forEach(e=>e.classList.remove('active'));
+  // Highlight
+  document.querySelectorAll('.ep').forEach(e=>{if(e.querySelector('.num')?.textContent==='#'+num)e.classList.add('active');});
+  const np=document.getElementById('now-playing');
+  np.textContent='#'+ep.num+' — '+(ep.title.replace(/^The Bitcoin Group #\d+\s*-?\s*/i,'').substring(0,60)||ep.title);
+  const ap=document.getElementById('audio-player'),vp=document.getElementById('video-player');
+  if(ep.has_video){vp.src=ep.video_path;vp.style.display='block';ap.style.display='none';vp.play();}
+  else if(ep.has_audio){ap.src=ep.audio_path;ap.style.display='block';vp.style.display='none';ap.play();}
+  else{ap.style.display='none';vp.style.display='none';}
+  document.getElementById('yt-link').href='https://youtube.com/watch?v='+ep.vid;
+  const dla=document.getElementById('dl-audio'),dlv=document.getElementById('dl-video');
+  if(ep.has_audio){dla.href=ep.audio_path;dla.style.display='inline';}else{dla.style.display='none';}
+  if(ep.has_video){dlv.href=ep.video_path;dlv.style.display='inline';}else{dlv.style.display='none';}
+}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+init();
+</script>
+</body></html>

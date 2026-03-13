@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Laser Eyes Lancer cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#140b33"/>
+      <stop offset="60%" stop-color="#32156c"/>
+      <stop offset="100%" stop-color="#0f1020"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="566" cy="116" r="64" fill="#ffc86d" opacity="0.55"/>
+  <g fill="#dff0ff" opacity="0.65">
+    <circle cx="58" cy="72" r="2"/><circle cx="136" cy="92" r="2"/><circle cx="220" cy="58" r="2"/><circle cx="418" cy="84" r="2"/><circle cx="640" cy="74" r="2"/>
+  </g>
+  <path d="M170 324L282 248L330 268L316 338L206 364Z" fill="#efb763"/>
+  <path d="M282 248Q302 226 330 236Q352 244 348 272Q344 294 318 296Q296 296 282 280Q270 266 282 248Z" fill="#f8d4a2"/>
+  <rect x="326" y="288" width="88" height="20" rx="10" fill="#84f0ff"/>
+  <rect x="418" y="290" width="212" height="8" fill="#ff5577"/>
+  <rect x="418" y="304" width="198" height="7" fill="#ff5577"/>
+  <rect x="500" y="204" width="72" height="40" rx="7" fill="#8f7aff"/>
+  <rect x="586" y="244" width="86" height="42" rx="8" fill="#a891ff"/>
+  <rect x="510" y="326" width="76" height="36" rx="8" fill="#9a86ff"/>
+</svg>

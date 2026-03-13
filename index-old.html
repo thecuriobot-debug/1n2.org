@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1n2.org - Human + AI Collaboration</title>
+    <meta name="description" content="Building tools and experiences through human-AI collaboration. MediaLog, AI workflows, and real-world case studies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .mission {
+            font-size: 1.15em;
+            color: #777;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+        
+        /* Hero Stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        
+        .stat-hero {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .stat-hero:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            border-color: #667eea;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-sublabel {
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+        
+        /* Products Grid */
+        .products {
+            margin-bottom: 60px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 3px solid transparent;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: #667eea;
+        }
+        
+        .product-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .product-screenshot {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+        
+        .product-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+        
+        .product-card:hover .product-screenshot img {
+            transform: scale(1.05);
+        }
+        
+        .product-icon-fallback {
+            font-size: 3.5em;
+            text-align: center;
+            padding: 60px 0;
+            line-height: 1;
+            display: none;
+        }
+        
+        .product-card h3 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .product-card p {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .product-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .product-status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-status.beta {
+            background: #17a2b8;
+        }
+        
+        .product-status.coming-soon {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .product-tag {
+            padding: 8px 16px;
+            background: #f0f0f0;
+            color: #666;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            margin-bottom: 60px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 30px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .timeline-date {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .timeline-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .stat-badge {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .stat-badge strong {
+            color: #667eea;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .about p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        footer p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 2px;
+        }
+        
+        footer a:hover {
+            opacity: 0.8;
+            border-bottom-color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-number {
+                font-size: 2.5em;
+            }
+            
+            .stat-label {
+                font-size: 0.9em;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: -37px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="1n2_org_logo.png" alt="1n2.org Logo" style="max-width: 200px; height: auto; margin-bottom: 20px;">
+            <p class="mission">
+                <strong>One human. One AI. Infinite possibilities.</strong>
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-hero">
+                    <div class="stat-number">31</div>
+                    <div class="stat-label">Apps Shipped</div>
+                    <div class="stat-sublabel">Live on 1n2.org</div>
+                </div>
+                
+                <div class="stat-hero">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label">Lines of Code</div>
+                    <div class="stat-sublabel">HTML, JS, CSS, Python</div>
+                </div>
+                
+                <div class="stat-hero">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Daily Scrapers</div>
+                    <div class="stat-sublabel">Automated via Cron</div>
+                </div>
+                
+                <div class="stat-hero">
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">Wiki Articles</div>
+                    <div class="stat-sublabel">Crypto History</div>
+                </div>
+                
+                <div class="stat-hero">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Articles / Day</div>
+                    <div class="stat-sublabel">News, City, Entertainment</div>
+                </div>
+                
+                <div class="stat-hero">
+                    <div class="stat-number">1 AM</div>
+                    <div class="stat-label">Daily Cron</div>
+                    <div class="stat-sublabel">14 Jobs + Telegram</div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="products">
+            <h2 class="section-header">🚀 Our Products</h2>
+            <div class="product-grid">
+                <a href="/medialog/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="medialog/screenshot.png" alt="MediaLog Dashboard" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📚🎬</div>
+                    </div>
+                    <h3>MediaLog</h3>
+                    <p>
+                        Your personal media tracking dashboard. Beautifully combines Letterboxd and Goodreads 
+                        data to track movies and books in one place. Features: "On This Day" memories, reading/viewing 
+                        streaks, year-end projections, director and author analytics.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag"><span class="book-count">782</span> books</span>
+                        <span class="product-tag"><span class="movie-count">50</span> movies</span>
+                    </div>
+                </a>
+                
+                <a href="/workflows/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="/workflows/screenshot.png" alt="AI Workflows" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🤖</div>
+                    </div>
+                    <h3>AI Workflows</h3>
+                    <p>
+                        Documentation and tutorials on effective human-AI collaboration patterns. Learn prompt 
+                        engineering, agentic coding workflows, debugging strategies, and how to build production 
+                        applications with Claude, GPT-4, and specialized AI tools.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status beta">Beta</span>
+                        <span class="product-tag">Real examples</span>
+                    </div>
+                </a>
+                
+                <a href="tweetster/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="tweetster/screenshot.png" alt="Tweetster Feed" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🐦</div>
+                    </div>
+                    <h3>Tweetster</h3>
+                    <p>
+                        Your Twitter feed, without the noise. Tweetster reads Twitter so you don't have to — 
+                        pulling tweets from your 996 followed accounts and organizing them by topic: Bitcoin, 
+                        Sports, Technology, and Politics. No ads, no algorithmic manipulation, just the tweets 
+                        you actually want to see. Classic Twitter vibes included.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">996 accounts</span>
+                        <span class="product-tag">Ad-free</span>
+                    </div>
+                </a>
+
+                <a href="curiohub/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curiohub/screenshot.png" alt="CurioHub Portal" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🎨</div>
+                    </div>
+                    <h3>CurioHub</h3>
+                    <p>
+                        The central portal to the complete Curio Cards ecosystem. Access all 7 Curio projects: 
+                        Oracle (AI briefings), Terminal (analytics), Review (magazine), CurioCharts (live data), 
+                        CurioArchive (encyclopedia), and Curio Data (public API). One unified hub powered by 
+                        centralized data architecture with 100% automated updates. Free, open source.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🎯 Central Hub</span>
+                        <span class="product-tag">7 projects</span>
+                        <span class="product-tag">100% automated</span>
+                    </div>
+                </a>
+
+                <a href="curioreview/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curioreview/screenshot.png" alt="Curio Review Magazine" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📰</div>
+                    </div>
+                    <h3>Curio Review</h3>
+                    <p>
+                        AI-powered editorial magazine exploring the cultural significance of Curio Cards. Weekly 
+                        longform essays (2,000-4,000 words) generated by OpenClaw AI and curated by humans. 
+                        Topics rotate through history, art criticism, market philosophy, and collector stories. 
+                        Think The New Yorker meets Artforum for NFTs. Fully automated publication every Monday.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 Weekly Essays</span>
+                        <span class="product-tag">OpenClaw AI</span>
+                        <span class="product-tag">Automated</span>
+                    </div>
+                </a>
+
+                <a href="curio-terminal/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curio-terminal/screenshot.png" alt="Curio Terminal Analytics" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🖥️</div>
+                    </div>
+                    <h3>Curio Terminal</h3>
+                    <p>
+                        Professional analytics dashboard with Bloomberg Terminal aesthetic. AI-powered market 
+                        commentary, supply shock detection, rarity-adjusted valuations, and wallet analysis. 
+                        Automated backend intelligence with OpenClaw generates daily insights, alerts, and 
+                        trading signals. Dark terminal UI for power users and serious collectors.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 AI Analytics</span>
+                        <span class="product-tag">OpenClaw</span>
+                        <span class="product-tag">Real-time</span>
+                    </div>
+                </a>
+
+                <a href="curiocharts/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curiocharts/screenshot.png" alt="CurioCharts Dashboard" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🦝</div>
+                    </div>
+                    <h3>CurioCharts</h3>
+                    <p>
+                        Real-time NFT market tracker for Curio Cards — the first art on Ethereum (May 2017). 
+                        Live floor prices scraped from OpenSea for all 31 cards, with individual token floors, 
+                        market cap, and historical data. Beautiful React interface showing the complete Curio 
+                        Cards collection with accurate pricing and rarity rankings.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">31 cards</span>
+                        <span class="product-tag">OpenSea data</span>
+                    </div>
+                </a>
+
+                <a href="curio-oracle/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curio-oracle/screenshot.png" alt="Curio Oracle AI Briefings" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🔮</div>
+                    </div>
+                    <h3>Curio Oracle</h3>
+                    <p>
+                        AI-powered daily market intelligence for Curio Cards. Automated briefings generated every 
+                        morning at 6 AM analyzing floor prices, volume, sales activity, and holder trends. 
+                        Professional Bloomberg-style analysis using OpenClaw AI agent with zero human intervention. 
+                        100% automated market insights powered by local AI.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 AI Automated</span>
+                        <span class="product-tag">Daily 6 AM</span>
+                        <span class="product-tag">Market Analysis</span>
+                    </div>
+                </a>
+
+                <a href="curio-atlas/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curio-atlas/screenshot.png" alt="Curio Atlas Network Maps" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🗺️</div>
+                    </div>
+                    <h3>Curio Atlas</h3>
+                    <p>
+                        Network & ecosystem mapping for Curio Cards with live blockchain data. Visualizes 4,954 
+                        real holders from Ethereum using D3.js force-directed graphs. Features AI-powered archetype 
+                        classification (whales, completionists, curators, holders, speculators), network topology 
+                        analysis, and interactive exploration. Powered by Alchemy API with SQLite database storing 
+                        all holder data, token balances, and network connections. Updates automatically every 6 hours.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🌐 Live Blockchain</span>
+                        <span class="product-tag">4,954 holders</span>
+                        <span class="product-tag">Alchemy API</span>
+                        <span class="product-tag">Auto-updates</span>
+                    </div>
+                </a>
+
+                <a href="checklister/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="checklister/checklister-starting-image.png" alt="Checklister">
+                    </div>
+                    <h3>Checklister</h3>
+                    <p>
+                        A clean, focused checklist app for getting things done. Create and manage checklists 
+                        with a beautiful, distraction-free interface. Built for speed and simplicity — just 
+                        you and your tasks, nothing else.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">Task management</span>
+                    </div>
+                </a>
+
+                <a href="madpatrol/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="madpatrol/MadPatrol.png" alt="Mad Patrol">
+                    </div>
+                    <h3>Mad Patrol</h3>
+                    <p>
+                        A retro arcade game inspired by the classic Moon Patrol — reimagined with a Bitcoin twist. 
+                        Battle through 8 wild levels including side-scrolling, underwater, flying, and top-down stages, 
+                        each with unique rulesets and a final boss fight against Satoshi himself. Arrow keys to move, 
+                        Space to shoot in three directions. No install, no ads — just pure arcade chaos in your browser.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">8 levels</span>
+                        <span class="product-tag">Built with ChatGPT Codex</span>
+                    </div>
+                </a>
+
+                <a href="curioarchive/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curioarchive/screenshot.png" alt="Curio Archive" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🃏📜</div>
+                    </div>
+                    <h3>Curio Archive</h3>
+                    <p>
+                        A Wikipedia-style encyclopedia documenting the history and lore of Curio Cards — the first 
+                        art NFT collection on Ethereum, launched May 9, 2017. Browse all 31 cards with full details, 
+                        7 artist profiles, founder bios, a chronological timeline, in-depth articles, and a filterable 
+                        gallery. Features search, Card of the Day, and beautifully designed infoboxes.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">31 cards</span>
+                        <span class="product-tag">7 artists</span>
+                        <span class="product-tag">NFT history</span>
+                    </div>
+                </a>
+
+                <a href="daily-logs/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="daily-logs/screenshot.png" alt="Daily Logs" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📅</div>
+                    </div>
+                    <h3>Daily Logs</h3>
+                    <p>
+                        Automated daily work summaries generated by OpenClaw AI. Track development progress, 
+                        system automation, and project updates across the entire ecosystem. Each log speculates 
+                        on activities, documents metrics, and forecasts tomorrow's work. Complete transparency 
+                        into AI + human collaboration with professional daily documentation.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 Daily Updates</span>
+                        <span class="product-tag">OpenClaw AI</span>
+                        <span class="product-tag">Automated</span>
+                    </div>
+                </a>
+
+                <a href="daily-thunt/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="daily-thunt/screenshot.png" alt="The Daily THunt Newspaper" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🗞️</div>
+                    </div>
+                    <h3>The Daily THunt</h3>
+                    <p>
+                        Your personalized AI-powered daily newspaper! Daily Bugle meets crypto meets superheroes. 
+                        OpenClaw generates punny, informative editions covering Bitcoin, Ethereum, Curio Cards, 
+                        tech, space, culture, with superhero quotes from Carlin, Bowie, Einstein. Executive 
+                        summaries, data analysis, predictions. Fun, serious, and automatically delivered every morning!
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 Daily Edition</span>
+                        <span class="product-tag">OpenClaw AI</span>
+                        <span class="product-tag">News</span>
+                    </div>
+                </a>
+
+                <a href="curio-quant/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curio-quant/screenshot.png" alt="CurioQuant Trading Platform" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🤖</div>
+                    </div>
+                    <h3>CurioQuant</h3>
+                    <p>
+                        AI-powered quantitative trading platform for Curio Cards. Three fantasy strategies 
+                        (Aggressive, Balanced, Conservative) with live signals, backtests, and projections. 
+                        OpenClaw analyzes rarity, detects opportunities, simulates trades. Paper trading, 
+                        portfolio tracking, risk management. See historical and predicted returns!
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">🤖 AI Trading</span>
+                        <span class="product-tag">OpenClaw</span>
+                        <span class="product-tag">Quant</span>
+                    </div>
+                </a>
+
+                <a href="thomashuntfilms/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="thomashuntfilms/screenshot.png" alt="Thomas Hunt Films" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🎬</div>
+                    </div>
+                    <h3>Thomas Hunt Films</h3>
+                    <p>
+                        Video portfolio site for filmmaker Thomas Hunt, creator of viral "Ships Only" edits 
+                        with 4.6M total views on YouTube. Browse 37 videos across 6 categories: Star Trek 
+                        (2.5M views), Star Wars (2.1M views), John Wick gun-fu, Movie Edits, Batman '66 
+                        remixes, and more. Complete with real YouTube stats, press archive, and individual 
+                        video pages. Professional showcase built with Python generators.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">37 videos</span>
+                        <span class="product-tag">4.6M views</span>
+                        <span class="product-tag">Press archive</span>
+                    </div>
+                </a>
+
+                <a href="thunt.net/index.html" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="thunt.net/screenshot.png" alt="thunt.net blog" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📝</div>
+                    </div>
+                    <h3>thunt.net</h3>
+                    <p>
+                        Personal blog archive with 526 curated posts spanning 20+ years (2003-2025). Features 
+                        Net Interest archiving system with local copies of linked content, TMDb movie poster 
+                        integration, and organized categories. Classic blog design with robust link preservation, 
+                        tag filtering, and search. A living archive of internet culture and personal commentary.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">526 posts</span>
+                        <span class="product-tag">Link preservation</span>
+                        <span class="product-tag">20+ years</span>
+                    </div>
+                </a>
+
+                <a href="reader/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="reader/screenshot.png" alt="THunt Reader" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📰</div>
+                    </div>
+                    <h3>THunt Reader</h3>
+                    <p>
+                        Personal internet dashboard replacing Google Reader and Yahoo. Scrapling-powered news
+                        aggregation, Twitter feeds via Nitter, crypto prices, Goodreads/Letterboxd integration,
+                        and article archiving. Manila envelope design. Updated daily at 3 AM.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">32+ articles/day</span>
+                        <span class="product-tag">179 tweets archived</span>
+                        <span class="product-tag">Scrapling</span>
+                    </div>
+                </a>
+
+                <a href="mb-games/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="mb-games/screenshot.png" alt="MB Games" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">🎮</div>
+                    </div>
+                    <h3>MB Games</h3>
+                    <p>
+                        Mad Bitcoins game studio. Retro-style browser games with crypto themes including
+                        Bear Market Breakout and Mempool Meltdown. Built with vanilla JavaScript,
+                        pixel art aesthetic, playable directly in browser.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">Browser games</span>
+                        <span class="product-tag">Retro pixel art</span>
+                    </div>
+                </a>
+
+                <a href="curio-did/" class="product-card">
+                    <div class="product-screenshot">
+                        <img src="curio-did/screenshot.png" alt="Curio-DID" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                        <div class="product-icon-fallback">📈</div>
+                    </div>
+                    <h3>Curio-DID</h3>
+                    <p>
+                        Difference-in-Differences causal analysis for Curio Cards NFTs. Estimates whether
+                        marketplace events, viral tweets, and whale purchases actually caused price changes —
+                        not just correlation. Published research paper, interactive charts, statsmodels OLS.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status">Live Now</span>
+                        <span class="product-tag">Causal inference</span>
+                        <span class="product-tag">Research paper</span>
+                        <span class="product-tag">statsmodels</span>
+                    </div>
+                </a>
+
+                <a href="case-studies/" class="product-card">
+                    <div class="product-icon">📊</div>
+                    <h3>Case Studies</h3>
+                    <p>
+                        Real-world examples of AI-assisted projects: from concept to deployment. Complete development 
+                        diaries showing what works, what fails, token costs, debugging sessions, and lessons learned 
+                        from building with AI.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status beta">Beta</span>
+                        <span class="product-tag">5+ studies</span>
+                    </div>
+                </a>
+
+                <a href="bitcoin-trains/" class="product-card">
+                    <div class="product-icon">🚂</div>
+                    <h3>Bitcoin Trains</h3>
+                    <p>
+                        A train-themed Bitcoin arcade game. Navigate railways, collect sats, and build your 
+                        crypto railroad empire in this retro-style JavaScript game.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status live">Live</span>
+                        <span class="product-tag">Game</span>
+                    </div>
+                </a>
+
+                <a href="thunt-data-labs/web/" class="product-card">
+                    <div class="product-icon">🔬</div>
+                    <h3>THunt Data Labs</h3>
+                    <p>
+                        Central data warehouse with 10,000+ records across YouTube comments, Curio Cards NFT data, 
+                        news articles, and tweets. Tabbed dashboard with stats, charts, and collection logs.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status live">Live</span>
+                        <span class="product-tag">10K+ records</span>
+                    </div>
+                </a>
+
+                <a href="bitcoinships/" class="product-card">
+                    <div class="product-icon">🚀</div>
+                    <h3>Bitcoin Ships</h3>
+                    <p>
+                        A space-themed Bitcoin battleship game. Navigate the crypto cosmos, dodge obstacles, 
+                        and collect sats in this retro arcade experience built with vanilla JavaScript and CSS.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status live">Live</span>
+                        <span class="product-tag">Game</span>
+                    </div>
+                </a>
+
+                <a href="thunt-wiki/" class="product-card">
+                    <div class="product-icon">📖</div>
+                    <h3>THunt Wiki</h3>
+                    <p>
+                        Wikipedia-style encyclopedia of Curio Cards, Mad Bitcoins, World Crypto Network, and the 
+                        people who shaped early crypto media and NFT history. 27 articles with references and images.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status live">Live</span>
+                        <span class="product-tag">27 articles</span>
+                    </div>
+                </a>
+
+                <a href="commentzor/" class="product-card">
+                    <div class="product-icon">💬</div>
+                    <h3>Commentzor</h3>
+                    <p>
+                        YouTube comment database and viewer. Scrapes ALL comments from Mad Bitcoins, Thomas Hunt Films, 
+                        and World Crypto Network into a searchable SQLite database with leaderboards and stats.
+                    </p>
+                    <div class="product-meta">
+                        <span class="product-status beta">Beta</span>
+                        <span class="product-tag">3 channels</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section class="about">
+            <h2>About 1n2</h2>
+            <p>
+                At 1n2, we believe the future isn't about AI replacing humans—it's about humans and AI working 
+                together to achieve what neither could alone. We're exploring the frontier of human-AI collaboration 
+                through practical tools, real-world applications, and hands-on experimentation.
+            </p>
+            <p>
+                Founded by Thomas Hunt, a history major turned AI power user, 1n2 represents a pragmatic approach 
+                to AI: learn by building, iterate quickly, and create tools that solve real problems. No buzzwords, 
+                no hype—just humans and AI getting things done.
+            </p>
+            <p>
+                Our philosophy is simple: AI agents are incredible assistants, but human judgment, creativity, and 
+                vision remain irreplaceable. The magic happens when both work together—1 human + 1 AI = 2x the potential.
+            </p>
+            <p>
+                <strong>Today's highlight:</strong> In a single session on March 5, 2026, we built THunt Reader 
+                (a personal internet dashboard replacing Google Reader), installed Scrapling for web scraping, 
+                created Tweetster v2 with tweet archiving, built Curio-DID (causal inference for NFTs with a 
+                published research paper), set up Voicebox voice cloning, and overhauled the entire cron pipeline. 
+                All through human-AI collaboration on a Mac Mini M4.
+            </p>
+        </section>
+        
+        <section class="case-studies">
+            <h2 class="section-header">📖 Recent Work</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 5, 2026</div>
+                    <h3>📈 Curio-DID — Causal Inference for NFTs</h3>
+                    <p>
+                        Built a Difference-in-Differences analysis system for Curio Cards. Runs OLS regression
+                        via statsmodels to estimate whether marketplace events <em>caused</em> price changes.
+                        Includes 4 event analyses, interactive Chart.js visualizations, and a published
+                        research paper (PDF). Connected directly to Curio Data Hub.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>4</strong> events analyzed</div>
+                        <div class="stat-badge"><strong>1</strong> research paper</div>
+                        <div class="stat-badge"><strong>420</strong> panel observations</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 5, 2026</div>
+                    <h3>📰 THunt Reader — Personal Internet Dashboard</h3>
+                    <p>
+                        Replaced Google Reader and Yahoo with a custom 3-column dashboard. Scrapling-powered
+                        news aggregation from Google News, Twitter feeds via Nitter, live crypto prices,
+                        sports scores, weather for 3 cities, Goodreads/Letterboxd integration. Manila envelope
+                        design. Runs automatically at 3 AM via cron.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>32+</strong> daily articles</div>
+                        <div class="stat-badge"><strong>3</strong> column layout</div>
+                        <div class="stat-badge"><strong>6</strong> data sources</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 5, 2026</div>
+                    <h3>🕷️ Scrapling Integration — Web Scraping Infrastructure</h3>
+                    <p>
+                        Installed Scrapling framework with MLX-accelerated fetchers. Built shared scraping
+                        library, Google News aggregator (RSS + 4 topic categories), Tweetster v2 with Nitter
+                        archiving (179 tweets from @madbitcoins), article archiver with clean text extraction.
+                        Upgraded original Tweetster app with new Scrapling-powered backend.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>3</strong> scraping apps</div>
+                        <div class="stat-badge"><strong>179</strong> tweets archived</div>
+                        <div class="stat-badge"><strong>996</strong> accounts tracked</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 5, 2026</div>
+                    <h3>🎤 Voicebox TTS — AI Voice Cloning for Daily THunt</h3>
+                    <p>
+                        Installed Voicebox (Qwen3-TTS + MLX) for local voice cloning. Cloned Mad Bitcoins
+                        voice from 15-second sample. Built full video pipeline: newspaper text extraction,
+                        TTS generation, Hedra talking-head video, auto-publish to Telegram and 1n2.org.
+                        All running locally on M4 Mac Mini.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>1.7B</strong> TTS model</div>
+                        <div class="stat-badge"><strong>15s</strong> voice sample</div>
+                        <div class="stat-badge"><strong>MLX</strong> accelerated</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 5, 2026</div>
+                    <h3>⚙️ System Rebuild — OpenClaw + Ollama + Cron Overhaul</h3>
+                    <p>
+                        Diagnosed and fixed hung Ollama/OpenClaw system. Switched all LLM-dependent scripts
+                        from openclaw agent (broken with thinking models) to direct Ollama API calls.
+                        Rebuilt cron pipeline: all jobs run before 5 AM via master-run.sh with progressive
+                        status tracking and single Telegram summary. Fixed SSH deploy (correct droplet IP).
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>8</strong> cron jobs</div>
+                        <div class="stat-badge"><strong>5</strong> scripts fixed</div>
+                        <div class="stat-badge"><strong>3 AM</strong> daily run</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 19, 2026</div>
+                    <h3>🗺️ Curio Atlas — Blockchain Network Visualization</h3>
+                    <p>
+                        Built complete network visualization system for Curio Cards ecosystem. Fetches 
+                        live holder data from Ethereum via Alchemy API (4,954 holders tracked). Created 
+                        SQLite database with 5 tables storing holders, holdings, transfers, connections, 
+                        and AI analysis. Implemented D3.js force-directed graph with archetype classification 
+                        (whales, completionists, curators, holders, speculators). Built Python blockchain 
+                        fetcher using only standard library (no dependencies). Set up cron automation for 
+                        6-hour updates. Integrated OpenClaw AI for network insights. Complete with deployment 
+                        scripts, documentation, and one-command setup.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>4,954</strong> holders</div>
+                        <div class="stat-badge"><strong>5</strong> DB tables</div>
+                        <div class="stat-badge"><strong>D3.js</strong> graph</div>
+                        <div class="stat-badge"><strong>Alchemy</strong> API</div>
+                        <div class="stat-badge"><strong>Auto-updates</strong></div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 17, 2026</div>
+                    <h3>🎬 Thomas Hunt Films — Complete Portfolio Site</h3>
+                    <p>
+                        Built comprehensive video portfolio for filmmaker Thomas Hunt (ThomasHuntFilms on YouTube, 
+                        9.29K subscribers). Created professional showcase for 37 videos across 6 categories with 
+                        real YouTube metadata: Star Trek Ships Only (2.5M views, 2.2K comments), Star Wars (2.1M 
+                        views), John Wick Gun-Fu, Movie Edits, Batman '66, and Other. Features include tabbed 
+                        navigation, 10 individual Star Trek pages with embedded videos and stats, press archive 
+                        with local copies of 5 articles, movie posters for John Wick trilogy, and complete 
+                        engagement metrics (4.6M total views, 4.7K comments). Built with Python generators.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>37</strong> videos</div>
+                        <div class="stat-badge"><strong>4.6M</strong> views</div>
+                        <div class="stat-badge"><strong>6</strong> categories</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 16, 2026</div>
+                    <h3>📝 thunt.net — Blog Archive Enhancement</h3>
+                    <p>
+                        Enhanced personal blog with Net Interest archiving system and TMDb poster integration. 
+                        Archived 526 posts with local copies of linked content using Internet Archive Wayback 
+                        Machine. Integrated TMDb API for automatic movie poster fetching (290 posters). Built 
+                        robust link preservation system, organized categories, tag filtering, and search. Classic 
+                        blog design preserving 20+ years of content (2003-2025) with improved link longevity 
+                        and visual richness.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>526</strong> posts</div>
+                        <div class="stat-badge"><strong>290</strong> posters</div>
+                        <div class="stat-badge"><strong>Link</strong> preservation</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 15, 2026</div>
+                    <h3>🎨 Homepage Redesign — Visual Refresh</h3>
+                    <p>
+                        Updated 1n2.org homepage with better visual hierarchy and improved product showcase. Added 
+                        CurioCharts to product grid and timeline. Refreshed all project icons for better visual 
+                        consistency. Enhanced Recent Work section with clearer project descriptions and updated stats. 
+                        Deployed updates to both local development and production environments.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>31</strong> products shipped</div>
+                        <div class="stat-badge"><strong>Better</strong> icons</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 15, 2026</div>
+                    <h3>🦝 CurioCharts — NFT Market Tracker</h3>
+                    <p>
+                        Real-time market data dashboard for Curio Cards. Automated Playwright scraper pulls live 
+                        floor prices from OpenSea for all 31 cards, with individual token floors, last sale prices, 
+                        and collection metrics. Built with React, featuring beautiful card displays with hover effects, 
+                        rarity rankings, and market cap calculations. Deployed to production with accurate OpenSea 
+                        data (not simulated). Complete with update scripts and documentation.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>31</strong> cards tracked</div>
+                        <div class="stat-badge"><strong>Live</strong> OpenSea data</div>
+                        <div class="stat-badge"><strong>React</strong> app</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 15, 2026</div>
+                    <h3>🐦 Tweetster Enhancements — UX Improvements</h3>
+                    <p>
+                        Major UX updates to the Twitter reader. Extended tweet fade timer from 1.5s to 8s for 
+                        comfortable reading. Added topic navigation flow: starts on Bitcoin, smooth scroll to top 
+                        on topic switch, "Next Topic" button at feed bottom for easy cycling through Bitcoin → Tech 
+                        → Politics → Sports → All. Researched Twikit API integration for automated tweet fetching.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>3</strong> UX improvements</div>
+                        <div class="stat-badge"><strong>406</strong> tweets</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 18, 2026</div>
+                    <h3>📰 Curio Review — AI-Powered Editorial Magazine</h3>
+                    <p>
+                        Launched fully automated editorial magazine using OpenClaw CLI. Weekly 2,000-4,000 word essays 
+                        exploring Curio Cards' cultural significance. Built essay generator, markdown-to-HTML converter, 
+                        and deployment pipeline. 10-topic rotation covering history, art criticism, market philosophy. 
+                        First essay "May 9, 2017: The Day Art Came to Ethereum" (4,333 words) generated and published 
+                        automatically. Cron job configured for Monday 9 AM publications.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>4,333</strong> words</div>
+                        <div class="stat-badge"><strong>Weekly</strong> essays</div>
+                        <div class="stat-badge"><strong>OpenClaw</strong> AI</div>
+                        <div class="stat-badge"><strong>Automated</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 18, 2026</div>
+                    <h3>🎨 CurioHub + Curio Data — Ecosystem Portal & API</h3>
+                    <p>
+                        Built central portal for all 6 Curio projects with beautiful gradient design. Created public 
+                        JSON API serving live market data. Designed API documentation site with code examples. 
+                        Updated CurioArchive with live market stats. Complete unified infrastructure with single 
+                        data source feeding all projects.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>6</strong> projects</div>
+                        <div class="stat-badge"><strong>Public</strong> API</div>
+                        <div class="stat-badge"><strong>Unified</strong></div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 17-18, 2026</div>
+                    <h3>🔮 Curio Oracle — Central Data Hub & Full Automation</h3>
+                    <p>
+                        Created centralized Data Hub fetching from Alchemy API. Built fully automated briefing 
+                        generation with OpenClaw CLI. Fixed Next.js routing issues (params Promise, basePath). 
+                        Configured complete automation chain: Hub → Oracle → Charts → Archive → Sites. 91% reduction 
+                        in API calls. Zero human intervention.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>100%</strong> automated</div>
+                        <div class="stat-badge"><strong>OpenClaw</strong> CLI</div>
+                        <div class="stat-badge"><strong>91%</strong> fewer calls</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 14, 2026</div>
+                    <h3>📚 Curio Archive — NFT Encyclopedia</h3>
+                    <p>
+                        Built a comprehensive Wikipedia-style encyclopedia for Curio Cards, the first art NFT
+                        collection on Ethereum (May 2017). Features 31 card detail pages with infoboxes, 7 artist
+                        profiles, 3 founder bios, a visual timeline, 5 in-depth articles, a filterable gallery,
+                        and full-text search. All 31 card images downloaded locally. Warm archival design with
+                        Crimson Pro typography and gold accent palette.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>31</strong> cards</div>
+                        <div class="stat-badge"><strong>10</strong> page types</div>
+                        <div class="stat-badge"><strong>Wikipedia</strong> style</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 11, 2026</div>
+                    <h3>🌐 1n2.org — Site Overhaul & New Pages</h3>
+                    <p>
+                        Major update to the hub itself. Built out the AI Workflows page with six workflow pattern cards,
+                        a 5-step development loop guide, and toolkit section. Rebuilt the Case Studies page with real
+                        project write-ups for all five shipped products. Added Mad Patrol pixel art character image
+                        to the homepage. Fixed broken links and deployed everything to production.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>2</strong> new pages</div>
+                        <div class="stat-badge"><strong>5</strong> case studies</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 10, 2026</div>
+                    <h3>🎮 Mad Patrol — Retro Arcade Game</h3>
+                    <p>
+                        Launched a Moon Patrol-inspired browser game with a Bitcoin theme. Eight levels spanning
+                        side-scrolling, underwater, flying, top-down shooter, bubble defense, and tower stages —
+                        culminating in a final boss fight against Satoshi. Built entirely with vanilla JavaScript
+                        and HTML5 Canvas, zero external dependencies. Custom pixel art character created for the listing.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>8</strong> levels</div>
+                        <div class="stat-badge"><strong>6</strong> game modes</div>
+                        <div class="stat-badge"><strong>Canvas</strong> game</div>
+                        <div class="stat-badge"><strong>ChatGPT</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 10, 2026</div>
+                    <h3>✅ Checklister — Minimalist Task App</h3>
+                    <p>
+                        Shipped a distraction-free checklist tool in under an hour. Three files total — HTML, CSS,
+                        JavaScript. No accounts, no sync, no feature creep. A deliberate exercise in restraint:
+                        build only what's needed, nothing more. Clean interface, instant interactions, localStorage 
+                        for persistence. Pure vanilla JS, no frameworks.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>3</strong> files</div>
+                        <div class="stat-badge"><strong>&lt;1</strong> hour</div>
+                        <div class="stat-badge"><strong>Vanilla</strong> JS</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 10, 2026</div>
+                    <h3>🐦 Tweetster — Ad-Free Twitter Reader</h3>
+                    <p>
+                        Built a custom Twitter reading experience that pulls from 996 followed accounts and
+                        organizes tweets into four topic feeds: Bitcoin, Sports, Technology, and Politics.
+                        No ads, no algorithmic manipulation, no infinite scroll. Includes tweet caching,
+                        topic classification, and a clean timeline that shows what you actually want to see.
+                        Classic Twitter aesthetic with modern UX improvements.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>996</strong> accounts</div>
+                        <div class="stat-badge"><strong>4</strong> topic feeds</div>
+                        <div class="stat-badge"><strong>Twitter</strong> clone</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 9, 2026</div>
+                    <h3>📚 MediaLog — Full-Stack Media Tracker</h3>
+                    <p class="stats-text">
+                        Built a complete media tracking dashboard across 5 focused sessions in a single day.
+                        Integrated Letterboxd and Goodreads data to track 782 books and 50 movies. Features include
+                        "On This Day" memories, reading/viewing streaks, year-end projections, director and author
+                        analytics, decade breakdowns, and a 3-column responsive homepage with poster grids.
+                        Evolved through 5 versions from database design to a polished 10-page production app.
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-badge"><strong>7.5</strong> hours</div>
+                        <div class="stat-badge"><strong>5</strong> sessions</div>
+                        <div class="stat-badge"><strong>10</strong> pages</div>
+                        <div class="stat-badge"><strong>PHP</strong> + MySQL</div>
+                        <div class="stat-badge"><strong>Claude</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 1.1em;">
+                <span style="font-weight: 600;">📚 1n2.org</span> <span style="font-weight: 400;">- Human + AI Collaboration</span>
+            </p>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px;">
+                <p style="font-size: 0.9em; opacity: 0.8; margin-bottom: 10px;">
+                    Built with ❤️ through Human 💡 + AI Collaboration 🤖
+                </p>
+                <p style="font-size: 0.85em; opacity: 0.7;">
+                    &copy; 2026 <a href="http://1n2.org">1n2.org</a> 
+                    • <a href="http://www.thomashunt.com">Thomas Hunt</a>
+                    • Powered by <a href="https://claude.ai">Claude</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Fetch dynamic MediaLog statistics
+        fetch('/medialog/api-stats.php')
+            .then(response => response.json())
+            .then(data => {
+                // Update all instances of book/movie counts
+                const bookCountElements = document.querySelectorAll('#book-count, .book-count');
+                const movieCountElements = document.querySelectorAll('#movie-count, .movie-count');
+                const pageCountElements = document.querySelectorAll('#page-count, .page-count');
+                
+                bookCountElements.forEach(el => el.textContent = data.books);
+                movieCountElements.forEach(el => el.textContent = data.movies);
+                pageCountElements.forEach(el => el.textContent = data.pages);
+                
+                // Update compound text nodes
+                document.querySelectorAll('.stats-text').forEach(el => {
+                    el.textContent = el.textContent
+                        .replace(/\d+\s+books/, `${data.books} books`)
+                        .replace(/\d+\s+movies/, `${data.movies} movies`);
+                });
+            })
+            .catch(error => console.log('Stats loading...', error));
+    </script>
+</body>
+</html>

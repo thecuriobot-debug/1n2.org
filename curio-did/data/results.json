@@ -1,0 +1,328 @@
+{
+  "opensea_verified": {
+    "name": "OpenSea Verified Badge",
+    "description": "Curio Cards received OpenSea verified collection status. Treatment group is the 'Original 10' \u2014 the first 10 cards minted (most traded, highest visibility). Control group is the 'Late Series' (cards 21-30) \u2014 less traded, lower floor visibility. If verification matters, the most visible cards should benefit most.",
+    "hypothesis": "Verification should disproportionately increase prices of high-visibility cards (1-10) vs less-visible late series (21-30)",
+    "date": "2026-02-20",
+    "treated_cards": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "control_cards": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "did": {
+      "coefficient": -0.001128,
+      "p_value": 0.7496,
+      "ci_lower": -0.008076,
+      "ci_upper": 0.005821,
+      "r_squared": 0.8722,
+      "n_obs": 280,
+      "summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  price   R-squared:                       0.872\nModel:                            OLS   Adj. R-squared:                  0.871\nMethod:                 Least Squares   F-statistic:                     627.6\nDate:                Thu, 05 Mar 2026   Prob (F-statistic):          6.59e-123\nTime:                        21:45:45   Log-Likelihood:                 970.81\nNo. Observations:                 280   AIC:                            -1934.\nDf Residuals:                     276   BIC:                            -1919.\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P>|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nIntercept      0.0617      0.002     25.663      0.000       0.057       0.066\ntreatment      0.0405      0.003     11.896      0.000       0.034       0.047\npost          -0.0024      0.002     -0.943      0.346      -0.007       0.003\ndid           -0.0011      0.004     -0.319      0.750      -0.008       0.006\n==============================================================================\nOmnibus:                       10.090   Durbin-Watson:                   1.428\nProb(Omnibus):                  0.006   Jarque-Bera (JB):                6.587\nSkew:                           0.230   Prob(JB):                       0.0371\nKurtosis:                       2.406   Cond. No.                         19.2\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    },
+    "chart": {
+      "dates": [
+        "2026-02-18",
+        "2026-02-20",
+        "2026-02-21",
+        "2026-02-22",
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01",
+        "2026-03-03",
+        "2026-03-04",
+        "2026-03-05"
+      ],
+      "treatment": [
+        0.1022,
+        0.0976,
+        0.0985,
+        0.0982,
+        0.0985,
+        0.0972,
+        0.096,
+        0.0979,
+        0.0983,
+        0.0993,
+        0.0998,
+        0.1,
+        0.1018,
+        0.1
+      ],
+      "control": [
+        0.0617,
+        0.0626,
+        0.0603,
+        0.0575,
+        0.059,
+        0.0591,
+        0.0572,
+        0.0596,
+        0.057,
+        0.0573,
+        0.0619,
+        0.0606,
+        0.0611,
+        0.0587
+      ],
+      "event_date": "2026-02-20"
+    }
+  },
+  "looksrare_listing": {
+    "name": "LooksRare Cross-Listing",
+    "description": "Select Curio Cards listed on LooksRare marketplace alongside OpenSea. Treatment group: cards with the most OpenSea sales history (1, 5, 10, 15, 20 \u2014 'flagship cards' selected for cross-listing). Control: adjacent cards not selected for initial cross-listing (2, 6, 11, 16, 21).",
+    "hypothesis": "Cross-listed cards should see price discovery from new buyer pool on LooksRare",
+    "date": "2026-02-25",
+    "treated_cards": [
+      1,
+      5,
+      10,
+      15,
+      20
+    ],
+    "control_cards": [
+      2,
+      6,
+      11,
+      16,
+      21
+    ],
+    "did": {
+      "coefficient": -0.000768,
+      "p_value": 0.8809,
+      "ci_lower": -0.010889,
+      "ci_upper": 0.009353,
+      "r_squared": 0.0027,
+      "n_obs": 140,
+      "summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  price   R-squared:                       0.003\nModel:                            OLS   Adj. R-squared:                 -0.019\nMethod:                 Least Squares   F-statistic:                    0.1206\nDate:                Thu, 05 Mar 2026   Prob (F-statistic):              0.948\nTime:                        21:45:45   Log-Likelihood:                 391.49\nNo. Observations:                 140   AIC:                            -775.0\nDf Residuals:                     136   BIC:                            -763.2\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P>|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nIntercept      0.0873      0.003     31.917      0.000       0.082       0.093\ntreatment      0.0019      0.004      0.495      0.622      -0.006       0.010\npost           0.0003      0.004      0.090      0.929      -0.007       0.007\ndid           -0.0008      0.005     -0.150      0.881      -0.011       0.009\n==============================================================================\nOmnibus:                       14.718   Durbin-Watson:                   1.109\nProb(Omnibus):                  0.001   Jarque-Bera (JB):                4.852\nSkew:                           0.010   Prob(JB):                       0.0884\nKurtosis:                       2.088   Cond. No.                         7.39\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    },
+    "chart": {
+      "dates": [
+        "2026-02-18",
+        "2026-02-20",
+        "2026-02-21",
+        "2026-02-22",
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01",
+        "2026-03-03",
+        "2026-03-04",
+        "2026-03-05"
+      ],
+      "treatment": [
+        0.0957,
+        0.0856,
+        0.088,
+        0.0907,
+        0.0895,
+        0.0858,
+        0.0898,
+        0.0874,
+        0.0846,
+        0.0897,
+        0.0908,
+        0.0901,
+        0.0901,
+        0.0879
+      ],
+      "control": [
+        0.0874,
+        0.0894,
+        0.087,
+        0.0836,
+        0.0924,
+        0.0842,
+        0.0832,
+        0.089,
+        0.0904,
+        0.083,
+        0.0888,
+        0.0894,
+        0.0897,
+        0.0876
+      ],
+      "event_date": "2026-02-25"
+    }
+  },
+  "whale_buy": {
+    "name": "Whale Accumulation",
+    "description": "A large collector ('whale') bought multiple copies of rare early cards. Treatment: the specific cards purchased (1, 2, 3 \u2014 the 'Genesis Cards'). Control: the final three cards (28, 29, 30) which are structurally similar (same contract, same era) but were not targeted.",
+    "hypothesis": "Whale buying should reduce available supply and push up prices for targeted cards",
+    "date": "2026-03-01",
+    "treated_cards": [
+      1,
+      2,
+      3
+    ],
+    "control_cards": [
+      28,
+      29,
+      30
+    ],
+    "did": {
+      "coefficient": 0.001738,
+      "p_value": 0.4368,
+      "ci_lower": -0.002688,
+      "ci_upper": 0.006165,
+      "r_squared": 0.9732,
+      "n_obs": 84,
+      "summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  price   R-squared:                       0.973\nModel:                            OLS   Adj. R-squared:                  0.972\nMethod:                 Least Squares   F-statistic:                     969.3\nDate:                Thu, 05 Mar 2026   Prob (F-statistic):           9.13e-63\nTime:                        21:45:45   Log-Likelihood:                 334.83\nNo. Observations:                  84   AIC:                            -661.7\nDf Residuals:                      80   BIC:                            -651.9\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P>|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nIntercept      0.0527      0.001     62.705      0.000       0.051       0.054\ntreatment      0.0536      0.001     45.110      0.000       0.051       0.056\npost           0.0017      0.002      1.089      0.279      -0.001       0.005\ndid            0.0017      0.002      0.781      0.437      -0.003       0.006\n==============================================================================\nOmnibus:                        6.641   Durbin-Watson:                   2.105\nProb(Omnibus):                  0.036   Jarque-Bera (JB):                6.065\nSkew:                           0.634   Prob(JB):                       0.0482\nKurtosis:                       3.357   Cond. No.                         6.38\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    },
+    "chart": {
+      "dates": [
+        "2026-02-18",
+        "2026-02-20",
+        "2026-02-21",
+        "2026-02-22",
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01",
+        "2026-03-03",
+        "2026-03-04",
+        "2026-03-05"
+      ],
+      "treatment": [
+        0.1062,
+        0.1043,
+        0.1074,
+        0.1042,
+        0.1118,
+        0.1096,
+        0.104,
+        0.1052,
+        0.1047,
+        0.1061,
+        0.1079,
+        0.1071,
+        0.114,
+        0.1103
+      ],
+      "control": [
+        0.0521,
+        0.0553,
+        0.055,
+        0.0528,
+        0.0565,
+        0.051,
+        0.0495,
+        0.0507,
+        0.052,
+        0.0523,
+        0.0544,
+        0.0546,
+        0.0566,
+        0.0521
+      ],
+      "event_date": "2026-03-01"
+    }
+  },
+  "twitter_viral": {
+    "name": "Mad Bitcoins Viral Tweet",
+    "description": "Mad Bitcoins tweeted about Curio Cards reaching 37K+ impressions. Treatment: cards specifically mentioned or shown in the tweet thread (1-5). Control: cards 26-30, which were not featured. Social media exposure should drive new collector interest in featured cards.",
+    "hypothesis": "Publicly featured cards should see more trading activity and price uplift vs non-featured",
+    "date": "2026-02-27",
+    "treated_cards": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "control_cards": [
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "did": {
+      "coefficient": 0.001269,
+      "p_value": 0.5238,
+      "ci_lower": -0.002658,
+      "ci_upper": 0.005196,
+      "r_squared": 0.9488,
+      "n_obs": 140,
+      "summary": "                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                  price   R-squared:                       0.949\nModel:                            OLS   Adj. R-squared:                  0.948\nMethod:                 Least Squares   F-statistic:                     840.1\nDate:                Thu, 05 Mar 2026   Prob (F-statistic):           1.55e-87\nTime:                        21:45:45   Log-Likelihood:                 524.02\nNo. Observations:                 140   AIC:                            -1040.\nDf Residuals:                     136   BIC:                            -1028.\nDf Model:                           3                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P>|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nIntercept      0.0544      0.001     59.138      0.000       0.053       0.056\ntreatment      0.0487      0.001     37.496      0.000       0.046       0.051\npost           0.0014      0.001      0.998      0.320      -0.001       0.004\ndid            0.0013      0.002      0.639      0.524      -0.003       0.005\n==============================================================================\nOmnibus:                        2.390   Durbin-Watson:                   1.977\nProb(Omnibus):                  0.303   Jarque-Bera (JB):                2.019\nSkew:                           0.287   Prob(JB):                        0.364\nKurtosis:                       3.128   Cond. No.                         6.50\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    },
+    "chart": {
+      "dates": [
+        "2026-02-18",
+        "2026-02-20",
+        "2026-02-21",
+        "2026-02-22",
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01",
+        "2026-03-03",
+        "2026-03-04",
+        "2026-03-05"
+      ],
+      "treatment": [
+        0.1061,
+        0.1009,
+        0.1021,
+        0.1024,
+        0.1061,
+        0.104,
+        0.1005,
+        0.1027,
+        0.1021,
+        0.1055,
+        0.1056,
+        0.1054,
+        0.1094,
+        0.1067
+      ],
+      "control": [
+        0.0564,
+        0.0571,
+        0.0554,
+        0.0514,
+        0.0567,
+        0.0537,
+        0.0513,
+        0.0529,
+        0.0526,
+        0.0562,
+        0.0572,
+        0.058,
+        0.0562,
+        0.0544
+      ],
+      "event_date": "2026-02-27"
+    }
+  }
+}

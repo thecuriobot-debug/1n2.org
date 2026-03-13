@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>DR-DOS rises again – rebuilt from scratch, not open source</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/drdos_9/" target="_blank">Original article ↗</a></div>
+
+<h1>DR-DOS rises again – rebuilt from scratch, not open source</h1>
+<div class="meta">The Register AI · 2026-03-11</div>
+<div class="summary">DR-DOS rises again – rebuilt from scratch, not open source
+Project claims legal clarity and zero legacy code, but offers binaries only
+DR-DOS is back, and there is already a test version you can download. But as of yet, it&#x27;s not finished, not FOSS – </div>
+<p>DR-DOS rises again – rebuilt from scratch, not open source</p>
+<p>Project claims legal clarity and zero legacy code, but offers binaries only</p>
+<p>DR-DOS is back, and there is already a test version you can download. But as of yet, it&#x27;s not finished, not FOSS – and not based on the original code.</p>
+<p>The long-dormant DR-DOS.com website is alive again, and DR-DOS 9.0 is in development. There have been six preliminary releases so far this year. The current work-in-progress version is version 9.0.291.</p>
+<p>This is not the same OS as the DOS-compatible OS that Digital Research developed back in the 1980s, working on the basis of its multitasking multiuser Concurrent DOS OS. The first version of that was dubbed DR DOS 3.31, but for very early vintage PC enthusiasts, we recommend DR DOS 3.41 from 1981. As the version number hints, this is just a little more advanced than the classic MS-DOS 3.3, which was the first release that supported more than two partitions on each hard disk. DR DOS 3.41 supports FAT-16 partitions bigger than 32 MB, but it&#x27;s as small as MS-DOS 3.3, so if you&#x27;re running on an 8088 or 8086, without fancy memory management, it will give you more free space.</p>
+<p>That version ended up with Caldera, and The Register first reported on it back in 1998. That&#x27;s a couple of years after Caldera released the kernel source code in one of the earliest uses of the phrase &quot;open source.&quot; In 2022, copyright owner Bryan Sparks clarified the rights around the code, saying:</p>
+<p>Let this paragraph represent a right to use, distribute, modify, enhance, and otherwise make available in a nonexclusive manner CP/M and its derivatives.</p>
+<p>This seems fair, reasonable, and non-discriminatory, which is a legal term – but even so, it is not an open source license, such as the ones on the OSI&#x27;s list.</p>
+<p>DR DOS ended up with a Caldera spin-off called Lineo. Later, it was sold to another company, DeviceLogics, which, as we mentioned in 2022, briefly sold a version branded DrDOS 8.1. That contained FreeDOS code. The company withdrew it, and offered the name and rights for a princely $25,000.</p>
+<p>Thanks to a Reddit thread, we now know who bought it. A company called Whitehorn Ltd. Co. acquired the DR DOS brand in January 2022. We can&#x27;t find out much about the company except for a holding page, which may be the eponymous company of Jason Whitehorn.</p>
+<p>On Reddit, someone calling themselves CheeseWeezel says that they own the trademark and are reviving the project:</p>
+<p>I&#x27;ve been working on a complete clean-room reimplementation of DR DOS from scratch. No EDR-DOS code, no FreeDOS code, no Caldera code – this is a totally new codebase built to honor Gary Kildall&#x27;s vision.</p>
+<p>Why? DR DOS deserves to exist without the legal baggage that&#x27;s plagued every version since Digital Research. This is real DR DOS, legally unencumbered.</p>
+<p>Does it work? I&#x27;ve tested DOOM, Warcraft, SimCity, Stronghold, Commander Keen, Oregon Trail, and plenty of other period-accurate titles. Lots works. There are still gaps.</p>
+<p>For the record, EDR-DOS is the modernized kernel based on the code Caldera released 30 years ago. Today, it&#x27;s the one at the core of the open source SvarDOS DOS-compatible OS.</p>
+<p>They say that they haven&#x27;t used any of the former codebase:</p>
+<p>A few key differences:</p>
+<p>-</p>
+<p>Legal clarity: DR DOS 9.0 is entirely clean-room – no FreeDOS code, no legacy DOS code, nothing with licensing ambiguity. Just new code written from specifications. This matters for anyone who cares about IP cleanliness.</p>
+<p>-</p>
+<p>Historical continuity: I own the DR DOS trademark and rights. This isn&#x27;t a spiritual successor or homage – it&#x27;s actually DR DOS, continuing the lineage that started with Digital Research in 1988.</p>
+<p>-</p>
+<p>Philosophy: I&#x27;m focused on rebuilding DR DOS specifically – Gary Kildall&#x27;s vision of technical excellence and doing things right. SvarDOS has different goals (a practical, working DOS from existing pieces), and that&#x27;s totally valid. Different projects, different approaches.</p>
+<p>Both have value. SvarDOS is more mature and practical right now. DR DOS 9.0 is early beta but offers long-term legal clarity and a direct link to DR DOS history.</p>
+<p>The new kernel is 386 code, so it won&#x27;t run on any 1980s PCs such as 8086 or 80286 machines. The developer says:</p>
+<p>It&#x27;s 100% assembly, using NASM with ld86.</p>
+<p>Better still, it seems that it isn&#x27;t vibe-coded. The developer notes:</p>
+<p>I do use AI for the documentation and unit testing, and have had no issues with that. In fact, I&#x27;m enjoying being able to &quot;outsource&quot; those tedious parts of the project while letting me focus on the more enjoyable parts.</p>
+<p>This vulture was very fond of DR-DOS back in the early 1990s. It genuinely was a &quot;better DOS than DOS,&quot; to borrow one of the marketing claims for OS/2 2. It was extremely compatible. Microsoft was caught faking incompatibility with Windows 3.1 by the late Geoff Chappell, who along with Andrew Schulman dubbed the obfuscated code to generate spurious errors the AARD Code. DR-DOS was so good, even Microsoft said so. DR even demonstrated a version at CeBIT that could run Windows 95.</p>
+<p>- How CP/M-86&#x27;s delay handed Microsoft the keys to the kingdom</p>
+<p>- Vintage computing boffin releases expansive Intel 286 test suite</p>
+<p>- FreeDOS 1.4: Still DOS, still FOSS, more modern than ever</p>
+<p>- SvarDOS: DR-DOS is reborn as an open source operating system</p>
+<p>The new DR-DOS 9, though, is not based on that product. It&#x27;s all-new, and at least so far, it&#x27;s proprietary. The company only offers binaries.</p>
+<p>While by 21st century standards any DOS is tiny, it&#x27;s still a complex product. The original went through many dozens of releases and bug-fixes. It is not clear if Whitehorn owns the source code, or just the trademark and the internet domain. If it bought the source code as well, then it&#x27;s in a position to relicense the existing code as it wishes. It&#x27;s true that by modern FOSS definitions, the available source code is neither Free Software nor Open Source. It&#x27;s controlled by a complex license, and it&#x27;s merely source available. But if Whitehorn owns the source code, it can make it Free Software by applying a suitable FOSS license to it.</p>
+<p>Equally, DR DOS Inc. is within its rights to keep it proprietary, and as the trademark holder, to write something new and call it &quot;DR-DOS&quot;. We do feel that it&#x27;s at the very least cheeky to give it a version number that makes it look like a successor to the withdrawn version 8. This is not really DR-DOS 9, it&#x27;s more like version 0.9 of a whole new product.</p>
+<p>We feel that there is still a little room to create a DOS-like OS that&#x27;s still relevant today. For instance, there is an effort called CSMWrap to get DOS booting on UEFI-only computers, inspired by an earlier project called Biefircate. CSMWrap is in active development and it&#x27;s now up to version 3.0.1. Adding support for GPT partition tables and the now open source exFAT file system would be very handy. We have some thoughts about a 386 memory manager for modern computers too – perhaps using Qualitas&#x27;s 386MAX, which is GPL FOSS now.</p>
+<p>For now, development of DR-DOS is happening in private, so there&#x27;s no way to say whether this may eventually happen or not. We have emailed the project to ask, with no reply as of yet. ®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/drdos_9/" target="_blank">Read original →</a></div>
+</body></html>

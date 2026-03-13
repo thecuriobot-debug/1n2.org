@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Daily THunt — Your AI Newspaper</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0e0a;--paper:#1a1814;--cream:#f4e8d1;--gold:#d4a554;--muted:#8a7e6a;--border:#2a261e;--red:#c44}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--cream);line-height:1.6}
+a{color:var(--gold);text-decoration:none}a:hover{color:#fff}
+.masthead{text-align:center;padding:40px 20px 30px;border-bottom:4px double var(--gold);background:linear-gradient(180deg,#1a1814,#0f0e0a)}
+.masthead h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;letter-spacing:3px;color:var(--cream);text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.masthead .tagline{font-style:italic;color:var(--gold);font-size:1.1rem;margin-top:4px}
+.masthead .date{color:var(--muted);font-size:.85rem;margin-top:8px}
+.masthead .nav{margin-top:12px;font-size:.8rem}
+.masthead .nav a{margin:0 10px;color:var(--muted)}
+.container{max-width:900px;margin:0 auto;padding:20px}
+.latest{background:var(--paper);border:2px solid var(--gold);border-radius:8px;padding:28px;margin:20px 0;position:relative;overflow:hidden}
+.latest::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent,var(--gold))}
+.badge{background:var(--red);color:#fff;font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:3px;letter-spacing:1px;display:inline-block;margin-bottom:12px;text-transform:uppercase}
+.latest h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:8px}
+.latest .summary{color:var(--muted);font-size:.9rem;margin-bottom:16px;line-height:1.5}
+.latest .bullets{list-style:none;padding:0;margin:12px 0}
+.latest .bullets li{padding:4px 0;font-size:.85rem;color:var(--cream)}
+.latest .bullets li::before{content:'📰 ';font-size:.8rem}
+.read-btn{display:inline-block;background:var(--gold);color:#1a1a1a;padding:10px 24px;font-weight:700;border-radius:4px;font-size:.85rem;transition:.2s}
+.read-btn:hover{background:#fff;color:#1a1a1a}
+.stats-bar{display:flex;gap:20px;justify-content:center;padding:16px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:20px 0;font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+.stats-bar span{display:flex;align-items:center;gap:4px}
+.stats-bar b{color:var(--gold);font-family:'JetBrains Mono',monospace}
+h3.archive-title{font-family:'Playfair Display',serif;font-size:1.5rem;margin:24px 0 16px;border-bottom:2px solid var(--border);padding-bottom:6px}
+.editions{display:grid;gap:14px}
+.ed{background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start;transition:.2s}
+.ed:hover{border-color:var(--gold);transform:translateY(-1px)}
+.ed .date-box{min-width:60px;text-align:center;flex-shrink:0}
+.ed .date-box .month{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.ed .date-box .day{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--cream);line-height:1}
+.ed .date-box .year{font-size:.65rem;color:var(--muted)}
+.ed .content h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:4px}
+.ed .content p{font-size:.78rem;color:var(--muted);line-height:1.4}
+.ed .arrow{margin-left:auto;color:var(--muted);align-self:center;font-size:1.2rem}
+.ft{text-align:center;color:var(--muted);font-size:.65rem;padding:24px;border-top:1px solid var(--border);margin-top:30px}
+</style>
+</head>
+<body>
+<div class="masthead">
+<h1>🗞️ THE DAILY THUNT</h1>
+<div class="tagline">"All the News That's Fit to Hunt"</div>
+<div class="date" id="today-date"></div>
+<div class="nav"><a href="/">1n2.org</a> <a href="/dashboarder/">Dashboarder</a> <a href="/bitcoin-trains/">Bitcoin Trains</a> <a href="/ai-usage/">AI Usage</a></div>
+</div>
+<div class="container">
+
+<div class="latest">
+<div class="badge">⚡ Latest Edition</div>
+<h2>Sunday, March 8, 2026</h2>
+<div class="summary">Bitcoin's bear market may be shrinking — history repeating? ETH slides 4.49%. Curio Cards hold at 0.049 ETH. City developments in Las Vegas, SF, and Sacramento. New March films and London theatre picks.</div>
+<ul class="bullets">
+<li>Bitcoin bear market shrinking — are we watching history repeat?</li>
+<li>Ethereum slides 4.49% daily — can $1,850 support hold?</li>
+<li>Coinbase shares on the move — what's behind the deal?</li>
+<li>Developers break ground on massive North Las Vegas complex</li>
+<li>Best horror of March 2026 — Ready or Not 2, A24's bold new film</li>
+</ul>
+<a href="editions/2026-03-08-daily-thunt.html" class="read-btn">READ TODAY'S EDITION →</a>
+</div>
+
+<div class="stats-bar">
+<span>📅 <b>7</b> editions published</span>
+<span>🤖 Generated by <b>OpenClaw</b> (qwen3.5 / gpt-oss:20b)</span>
+<span>📊 Sources: <b>Dashboarder</b>, Google News, CoinGecko</span>
+<span>📬 Delivered daily via <b>Telegram</b></span>
+</div>
+
+<h3 class="archive-title">📚 Archive</h3>
+<div class="editions">
+
+<a href="editions/2026-03-06-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Mar</div><div class="day">06</div><div class="year">2026</div></div>
+<div class="content"><h4>Crypto Crash Conundrum</h4><p>Bitcoin takes -3.6% hit, Ethereum tanks -4.1%. Thomas Hunt's Curio Cards at 0.049 ETH floor. Spider-Man web strength declining 10%. AI toaster takes world by storm.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+<a href="editions/2026-03-05-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Mar</div><div class="day">05</div><div class="year">2026</div></div>
+<div class="content"><h4>Pipeline Expansion Day</h4><p>Major cron pipeline overhaul — 14 daily jobs now running. New scrapers for city news, entertainment, and YouTube tracking. OpenClaw automation goes live.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+<a href="editions/2026-03-04-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Mar</div><div class="day">04</div><div class="year">2026</div></div>
+<div class="content"><h4>Return to Base</h4><p>OpenClaw reconfigured after returning home. Ollama models switched from Claude to qwen3.5 for local inference. Pipeline automation resumed.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+<a href="editions/2026-02-20-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Feb</div><div class="day">20</div><div class="year">2026</div></div>
+<div class="content"><h4>Heroic Genesis Collection</h4><p>Curio Cards "Heroic Genesis" collection launched — interactive NFT cards with dynamic animated overlays. Bitcoin at $67,720. Community buzzing with collector enthusiasm.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+<a href="editions/2026-02-19-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Feb</div><div class="day">19</div><div class="year">2026</div></div>
+<div class="content"><h4>Early Days</h4><p>Second edition of the Daily THunt. Crypto market coverage, Curio Cards project updates, and the beginning of the daily newspaper experiment.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+<a href="editions/2026-02-18-daily-thunt.html" style="text-decoration:none;color:inherit"><div class="ed">
+<div class="date-box"><div class="month">Feb</div><div class="day">18</div><div class="year">2026</div></div>
+<div class="content"><h4>First Edition 🎉</h4><p>The very first Daily THunt! Generated by OpenClaw's gpt-oss:20b model — a Spider-Man Daily Bugle-style crypto newspaper covering BTC, ETH, Curio Cards, and world news with superhero puns.</p></div>
+<div class="arrow">→</div>
+</div></a>
+
+</div>
+</div>
+
+<div class="ft">The Daily THunt · Generated by OpenClaw AI · Data from <a href="/dashboarder/">Dashboarder</a> · <a href="/">1n2.org</a> · March 2026</div>
+
+<script>document.getElementById('today-date').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});</script>
+</body>
+</html>

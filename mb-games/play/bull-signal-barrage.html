@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bull Signal Barrage | Play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>BULL SIGNAL BARRAGE</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Arcade Hub</a>
+        <a href="cartridge-select.html">Cartridge Select</a>
+        <a href="../index.html">Main Site</a>
+        <a href="../studio-design-meeting.html">Studio Meeting</a>
+      </nav>
+    </header>
+
+    <main class="game-shell">
+      <h2>Genesis-style vertical shooter with WCN signal heat-blast pressure.</h2>
+      <div class="game-meta">
+        <span><strong>Platform vibe:</strong> Sega Genesis arcade shooter</span>
+        <span><strong>Local high score key:</strong> <code>mb_bull_signal_high</code></span>
+      </div>
+
+      <div class="game-layout">
+        <div class="canvas-wrap">
+          <canvas id="game" width="640" height="480" aria-label="Bull Signal Barrage canvas"></canvas>
+        </div>
+
+        <aside class="panel">
+          <h3>Status</h3>
+          <div class="score-list">
+            <div><strong>Score:</strong> <span id="score">0</span></div>
+            <div><strong>High:</strong> <span id="high">0</span></div>
+            <div><strong>Lives:</strong> <span id="lives">3</span></div>
+            <div><strong>Wave:</strong> <span id="wave">1</span></div>
+            <div><strong>Heat:</strong> <span id="heat">0</span></div>
+          </div>
+
+          <h3>Controls</h3>
+          <ul class="key-list">
+            <li><strong>Arrow Keys / WASD</strong>: move</li>
+            <li><strong>Space / Z</strong>: fire</li>
+            <li><strong>X</strong>: HEAT blast (at 100)</li>
+            <li><strong>P</strong>: pause/resume</li>
+            <li><strong>R</strong>: restart run</li>
+          </ul>
+        </aside>
+      </div>
+
+      <p class="footer-note">Collect sat coins to charge HEAT. At 100, tap X to clear the screen.</p>
+    </main>
+  </div>
+
+  <script type="module" src="js/bull-signal-barrage.js"></script>
+</body>
+</html>

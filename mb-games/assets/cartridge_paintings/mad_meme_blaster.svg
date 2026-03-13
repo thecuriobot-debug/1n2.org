@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Mad Meme Blaster cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b123e"/>
+      <stop offset="56%" stop-color="#571b4e"/>
+      <stop offset="100%" stop-color="#1c0f1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <g>
+    <rect x="120" y="120" width="68" height="42" rx="7" fill="#8fe1ff"/>
+    <rect x="206" y="120" width="68" height="42" rx="7" fill="#ff7495"/>
+    <rect x="292" y="120" width="68" height="42" rx="7" fill="#bb94ff"/>
+    <rect x="378" y="120" width="68" height="42" rx="7" fill="#8fe1ff"/>
+    <rect x="464" y="120" width="68" height="42" rx="7" fill="#ff7495"/>
+    <rect x="550" y="120" width="68" height="42" rx="7" fill="#bb94ff"/>
+    <rect x="120" y="184" width="68" height="42" rx="7" fill="#ff7495"/>
+    <rect x="206" y="184" width="68" height="42" rx="7" fill="#bb94ff"/>
+    <rect x="292" y="184" width="68" height="42" rx="7" fill="#8fe1ff"/>
+    <rect x="378" y="184" width="68" height="42" rx="7" fill="#ff7495"/>
+    <rect x="464" y="184" width="68" height="42" rx="7" fill="#bb94ff"/>
+    <rect x="550" y="184" width="68" height="42" rx="7" fill="#8fe1ff"/>
+  </g>
+  <rect x="328" y="368" width="64" height="42" rx="8" fill="#ffcc66"/>
+  <rect x="356" y="306" width="8" height="50" fill="#8dfec8"/>
+  <circle cx="356" cy="296" r="16" fill="#ff8da7" opacity="0.82"/>
+</svg>

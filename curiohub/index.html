@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurioHub - The Curio Cards Ecosystem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+            color: #e0e0e8;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #2a2a3e;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid #2a2a3e;
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #ec4899);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #60a5fa;
+            box-shadow: 0 12px 24px rgba(96, 165, 250, 0.15);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .project-desc {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .status-live {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .status-auto {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .tech-badge {
+            background: rgba(167, 139, 250, 0.2);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            color: #a78bfa;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #2a2a3e;
+            color: #666;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 40px 0;
+            padding: 24px;
+            background: rgba(26, 26, 46, 0.5);
+            border-radius: 12px;
+            border: 1px solid #2a2a3e;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 CurioHub</h1>
+            <p class="tagline">The Curio Cards Ecosystem</p>
+            <p class="description">
+                A collection of tools, archives, and analytics for Curio Cards - 
+                the first art show NFTs on Ethereum, launched May 9, 2017
+            </p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-value">8</span>
+                <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">Automated</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">$0</span>
+                <span class="stat-label">Monthly Cost</span>
+            </div>
+        </div>
+
+        <div class="projects">
+            <!-- Curio Oracle -->
+            <a href="/curio-oracle/" class="project-card">
+                <span class="project-icon">🔮</span>
+                <h2 class="project-title">Curio Oracle</h2>
+                <p class="project-desc">
+                    AI-powered market intelligence platform. Daily Bloomberg-style briefings 
+                    analyzing Curio Cards market conditions with professional insights.
+                </p>
+                <span class="project-status status-auto">🤖 Fully Automated</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">OpenClaw</span>
+                    <span class="tech-badge">Alchemy API</span>
+                </div>
+            </a>
+
+            <!-- CurioCharts -->
+            <a href="/curiocharts/" class="project-card">
+                <span class="project-icon">📊</span>
+                <h2 class="project-title">CurioCharts</h2>
+                <p class="project-desc">
+                    Real-time market data and analytics. Live floor prices, trading volume, 
+                    and comprehensive statistics for all 30 Curio Cards.
+                </p>
+                <span class="project-status status-auto">🤖 Fully Automated</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Vite</span>
+                    <span class="tech-badge">Data Hub</span>
+                </div>
+            </a>
+
+            <!-- CurioArchive -->
+            <a href="/curioarchive/" class="project-card">
+                <span class="project-icon">📚</span>
+                <h2 class="project-title">CurioArchive</h2>
+                <p class="project-desc">
+                    The definitive encyclopedia of Curio Cards. Complete historical records, 
+                    artist information, IPFS data, and cultural significance for all 31 cards.
+                </p>
+                <span class="project-status status-live">✅ Live</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">Vanilla JS</span>
+                    <span class="tech-badge">Static</span>
+                    <span class="tech-badge">IPFS</span>
+                </div>
+            </a>
+
+            <!-- Curio Data (API) -->
+            <a href="/curio-data/" class="project-card">
+                <span class="project-icon">💾</span>
+                <h2 class="project-title">Curio Data</h2>
+                <p class="project-desc">
+                    Public API and data hub. Live market data, historical snapshots, 
+                    and structured endpoints for developers building Curio tools.
+                </p>
+                <span class="project-status status-auto">🤖 Fully Automated</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">JSON API</span>
+                    <span class="tech-badge">Alchemy</span>
+                    <span class="tech-badge">REST</span>
+                </div>
+            </a>
+
+            <!-- Curio Review -->
+            <a href="/curioreview/" class="project-card">
+                <span class="project-icon">📰</span>
+                <h2 class="project-title">Curio Review</h2>
+                <p class="project-desc">
+                    Editorial journal exploring the cultural significance and history of Curio Cards. 
+                    AI-written longform essays with human curation—think The New Yorker meets Artforum for NFTs.
+                </p>
+                <span class="project-status status-live">✅ Live</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">OpenClaw</span>
+                    <span class="tech-badge">Essays</span>
+                    <span class="tech-badge">Editorial</span>
+                </div>
+            </a>
+
+            <!-- Curio Terminal -->
+            <a href="/curio-terminal/" class="project-card">
+                <span class="project-icon">🖥️</span>
+                <h2 class="project-title">Curio Terminal</h2>
+                <p class="project-desc">
+                    Professional analytics dashboard with Bloomberg Terminal aesthetic. AI-powered market 
+                    commentary, supply shock detection, rarity-adjusted valuations, and wallet analysis.
+                </p>
+                <span class="project-status status-live">✅ Live</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">OpenClaw</span>
+                    <span class="tech-badge">Analytics</span>
+                    <span class="tech-badge">Real-time</span>
+                </div>
+            </a>
+
+            <!-- CurioQuant -->
+            <a href="/curio-quant/" class="project-card">
+                <span class="project-icon">🤖</span>
+                <h2 class="project-title">CurioQuant</h2>
+                <p class="project-desc">
+                    AI-powered quantitative trading platform with fantasy simulations. Three strategies 
+                    (Aggressive, Balanced, Conservative) show historical and projected returns. Live signals, 
+                    rarity analysis, and automated backtesting.
+                </p>
+                <span class="project-status status-auto">🤖 Hourly Updates</span>
+                <div class="tech-stack">
+                    <span class="tech-badge">OpenClaw</span>
+                    <span class="tech-badge">Quant</span>
+                    <span class="tech-badge">Trading</span>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://curio.cards" target="_blank">Official Site</a>
+                <a href="https://opensea.io/collection/curiocardswrapper" target="_blank">OpenSea</a>
+                <a href="https://etherscan.io/address/0x73da73ef3a6982109c4d5bdb0db9dd3e3783f313" target="_blank">Etherscan</a>
+                <a href="https://docs.curio.cards" target="_blank">Documentation</a>
+            </div>
+            <p>
+                Built with ❤️ for the Curio community • All projects open source<br>
+                Powered by <strong>Curio Data Hub</strong> - One data source, all projects synchronized
+            </p>
+            <p style="margin-top: 12px; font-size: 0.875rem;">
+                Last updated: <span id="update-time">Loading...</span>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Load update time from data hub
+        fetch('/curio-data/v1.json')
+            .then(r => r.json())
+            .then(data => {
+                const el = document.getElementById('update-time');
+                if (data.data && data.data.last_updated) {
+                    const date = new Date(data.data.last_updated);
+                    el.textContent = date.toLocaleString();
+                }
+            })
+            .catch(e => {
+                document.getElementById('update-time').textContent = 'Just now';
+            });
+    // Data Labs live overlay
+    fetch('data/hub-data.json').then(r=>r.json()).then(d=>{
+      const m=d.market;
+      const bar=document.createElement('div');
+      bar.style.cssText='background:linear-gradient(90deg,#1a1a2e,#16213e);padding:10px 20px;text-align:center;font-size:12px;color:#7f8c8d;border-bottom:1px solid #2a2a3e';
+      bar.innerHTML=`⚡ Floor: <b style="color:#e8c547">${m.floor} ETH</b> · Holders: <b style="color:#3498db">${m.holders.toLocaleString()}</b> · Sales: <b>${m.total_sales}</b> · Transfers: <b>${m.total_transfers.toLocaleString()}</b> · Videos: <b>${d.youtube.total_videos.toLocaleString()}</b> · Comments: <b>${d.youtube.total_comments.toLocaleString()}</b> · Articles: <b>${d.content.articles}</b> · <span style="color:#555">Updated ${d.updated}</span>`;
+      document.body.prepend(bar);
+    }).catch(()=>{});
+    </script>
+</body>
+</html>

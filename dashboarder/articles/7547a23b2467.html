@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lightmatter says latest photonics will slash datacenter fiber bills in half</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/lightmatter_passge_l20_fiber/" target="_blank">Original article ↗</a></div>
+
+<h1>Lightmatter says latest photonics will slash datacenter fiber bills in half</h1>
+<div class="meta">The Register AI · 2026-03-11</div>
+<div class="summary">Lightmatter says latest photonics will slash datacenter fiber bills in half
+Latest optical engine may not be CPO, but it&#x27;s still better than pluggables
+Photonics startup Lightmatter says that its latest optical engine can cut the amount of fiber used</div>
+<p>Lightmatter says latest photonics will slash datacenter fiber bills in half</p>
+<p>Latest optical engine may not be CPO, but it&#x27;s still better than pluggables</p>
+<p>Photonics startup Lightmatter says that its latest optical engine can cut the amount of fiber used by modern datacenters in half, and perhaps more importantly, it doesn&#x27;t rely on co-packaging to do it.</p>
+<p>Unveiled ahead of OFC on Wednesday, Lightmatter&#x27;s Passage L20 is designed for use in high-performance scale-up switches and accelerators like GPUs. But rather than integrating the optics directly into the switch ASIC, as Nvidia or Broadcom have done with some of their latest switches, the L20 is optimized for near-package integration.</p>
+<p>In this respect, the optical engine fits somewhere between a conventional pluggable module and the more sophisticated photonic interposers and co-packaged optics that Lightmatter is known for.</p>
+<p>&quot;A lot of the hyperscalers are very interested in near-package optic (NPO) type solutions for the 2027 timeframe,&quot; CEO Nick Harris tells El Reg. &quot;Some people — I don&#x27;t know that they&#x27;re right — are afraid of putting the optical engine in their GPU or in their switch, and they want to see it on its own, right nearby, before they put it inside.&quot;</p>
+<p>This concern stems from the fact that co-packaged optics require permanently attaching the photonics to the logic. Just one faulty chip could render a GPU a paperweight. NPO passes this by keeping the photonics off package, but still closer than a pluggable transceiver.</p>
+<p>Lightmatter tells us the chip can be integrated directly onto the switch board or attached as a modular mezzanine card located at most a couple of inches away from the switch or compute die.</p>
+<p>NPO is a detour on the road to CPO and optical interposers, and Harris believes it will be short-lived.</p>
+<p>&quot;I don&#x27;t think that it&#x27;s going to be a super-long roadmap for near package optics, because, of course, CPO is coming, and we think that&#x27;s like a 2028 high-volume ramp,&quot; he said. &quot;This will be the last time that the optical engine and the transceiver are not part of the GPU research.&quot;</p>
+<p>Lightmatter&#x27;s previously announced interposer and CPO photonics tech is certainly more capable than the Passage L20, but regardless of whether Harris&#x27; prediction pans out, the company is positioning itself to capitalize on the demand for NPO products, and the tech certainly has its advantages over pluggables.</p>
+<p>A 6.4 Tbps L20 connects via copper to the ASIC, where the signal is broken out into up to 32 fibers, each of which is capable of bidirectional signaling at 200 Gbps. Normally, pluggable modules require one fiber per lane for each direction. With the L20, each fiber is bidirectional and carries both the up and downlink.</p>
+<p>&quot;We think that BiDi is incredibly important,&quot; Harris said. &quot;You look at deals like Meta just did a deal with Corning. They spent $6 billion. They could have spent $3 billion. BiDi cuts the fiber count in half.</p>
+<p>Just 16 L20s would be enough to replace 512, 200 Gbps pluggables in a 102.4 Tbps switch, while also reducing power consumption considerably.</p>
+<p>Pluggable modules, particularly higher bandwidth ones, aren&#x27;t the most power efficient, each capable of pulling in excess of 10 watts. For comparison, Lightmatter says that each L20 is rated for 30 watts of power consumption.</p>
+<p>Lightmatter expects to begin sampling its Passage L20 chips in late 2026.</p>
+<p>vClick</p>
+<p>Alongside its NPO silicon photonics products, Lightmatter also unveiled a surface-attach fiber array, called vClick, that&#x27;s compatible with advanced packaging technologies like TSMC&#x27;s CoWoS-S or CoWoS-L.</p>
+<p>According to Harris, one of the challenges with co-packaged optics is that the processes used in advanced packaging, like mold or grind, obscure the top layer of the chip.</p>
+<p>While it&#x27;s still possible to use edge connectors, like Lightmatter&#x27;s eClick, which transmit light through the edge of the chips with advanced packaging, they&#x27;re more challenging to test and validate prior to packaging, he explained.</p>
+<p>&quot;The really nice thing about vClick is it enables light to emit from the surface of the wafer, so that you can test the assembly at the wafer level before you singulate and package everything onto the substrate,&quot; he explained.</p>
+<p>This is why so many CPO designs use standard packaging where the optical engine communicates over copper traces on the substrate. While simpler, this limits the bandwidth potential.</p>
+<p>&quot;Advanced packaging allows for a much higher bandwidth density because the traces don&#x27;t go into a PCB or organic, they stay within the silicon,&quot; Harris said.</p>
+<p>At least for Lightmatter, vClick clears the way for improved test and validation processes aimed at preventing faulty photonics from turning XPUs into paper weights. ®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/lightmatter_passge_l20_fiber/" target="_blank">Read original →</a></div>
+</body></html>

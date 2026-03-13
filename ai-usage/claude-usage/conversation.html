@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Conversation — 1n2.org × Claude</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--user:#2563eb;--claude:#7c3aed;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow:hidden;height:100vh}
+.header{padding:12px 20px;background:rgba(17,24,39,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;position:fixed;top:0;left:0;right:0;z-index:10}
+.header .av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.header .av.u{background:var(--user)}.header .av.c{background:var(--claude)}
+.header h1{font-size:1rem;font-weight:600}
+.header .sub{font-size:.7rem;color:var(--muted)}
+#chat{padding:70px 20px 20px;max-width:700px;margin:0 auto;height:100vh;overflow-y:auto;scroll-behavior:smooth}
+.msg{display:flex;gap:8px;margin-bottom:14px;opacity:0;transform:translateY(20px);animation:slideIn .4s ease forwards}
+.msg.user{flex-direction:row-reverse}
+@keyframes slideIn{to{opacity:1;transform:translateY(0)}}
+.bubble{max-width:75%;padding:10px 14px;border-radius:16px;font-size:.88rem;line-height:1.4;position:relative}
+.msg.user .bubble{background:var(--user);color:#fff;border-bottom-right-radius:4px}
+.msg.claude .bubble{background:#1e1b4b;color:#e2e8f0;border:1px solid rgba(124,58,237,.3);border-bottom-left-radius:4px}
+.avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;margin-top:2px}
+.msg.user .avatar{background:var(--user)}.msg.claude .avatar{background:var(--claude)}
+.date-sep{text-align:center;padding:16px 0 8px;font-size:.7rem;color:var(--muted);font-weight:600;letter-spacing:1px}
+.result-card{background:var(--card);border:1px solid rgba(124,58,237,.2);border-radius:10px;padding:10px 14px;margin-top:8px;font-size:.78rem}
+.result-card .rt{font-family:'JetBrains Mono',monospace;color:#a78bfa;font-weight:700;font-size:.75rem;margin-bottom:4px}
+.result-card .rd{color:var(--muted)}
+.typing{display:inline-flex;gap:3px;padding:4px 0}
+.typing span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);animation:typingDot 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes typingDot{0%,80%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1.1)}}
+#progress{position:fixed;bottom:0;left:0;right:0;height:3px;background:var(--border)}
+#bar{height:100%;background:linear-gradient(90deg,var(--user),var(--claude));width:0;transition:width .3s}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="av u">🎩</div>
+<div class="av c">🤖</div>
+<div><h1>Thomas Hunt × Claude</h1><div class="sub">Feb 7 – Mar 8, 2026 · 36 sessions · ~8.5M tokens</div></div>
+</div>
+<div id="chat"></div>
+<div id="progress"><div id="bar"></div></div>
+<script>
+const chat=document.getElementById('chat');
+const bar=document.getElementById('bar');
+let lastDate='';
+
+async function loadConversation(){
+  const r=await fetch('prompts.json');
+  const msgs=await r.json();
+  const total=msgs.length;
+  
+  for(let i=0;i<msgs.length;i++){
+    const m=msgs[i];
+    // Date separator
+    if(m.date!==lastDate){
+      lastDate=m.date;
+      const sep=document.createElement('div');
+      sep.className='date-sep';sep.textContent=m.date+', 2026';
+      chat.appendChild(sep);
+      await sleep(300);
+    }
+    // Message bubble
+    const div=document.createElement('div');
+    div.className='msg '+m.from;
+    const av=document.createElement('div');
+    av.className='avatar';av.textContent=m.from==='user'?'🎩':'🤖';
+    const bubble=document.createElement('div');
+    bubble.className='bubble';
+    
+    if(m.from==='claude'){
+      // Show typing indicator first
+      bubble.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+      div.appendChild(av);div.appendChild(bubble);
+      chat.appendChild(div);
+      chat.scrollTop=chat.scrollHeight;
+      await sleep(800);
+      // Replace with actual text
+      bubble.textContent=m.text;
+      // Add result card if exists
+      if(m.result){
+        const card=document.createElement('div');
+        card.className='result-card';
+        card.innerHTML='<div class="rt">✅ '+m.result+'</div>';
+        bubble.appendChild(card);
+      }
+    }else{
+      bubble.textContent=m.text;
+      div.appendChild(av);div.appendChild(bubble);
+      chat.appendChild(div);
+    }
+    chat.scrollTop=chat.scrollHeight;
+    bar.style.width=((i+1)/total*100)+'%';
+    
+    // Pacing: user messages appear faster, claude takes longer
+    const delay=m.from==='user'?1200:600;
+    await sleep(delay);
+  }
+  
+  // End card
+  await sleep(1000);
+  const end=document.createElement('div');
+  end.className='date-sep';
+  end.innerHTML='<div style="font-size:1.2rem;margin-bottom:4px">🎉</div>40 projects · 105K lines · 8,475 files<br>One human, one AI, infinite possibilities.';
+  chat.appendChild(end);
+  chat.scrollTop=chat.scrollHeight;
+}
+
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+loadConversation();
+</script></body></html>

@@ -1,0 +1,10 @@
+{
+  "name": "curio-archive-static",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "php -S localhost:8000 -t ."
+  }
+}

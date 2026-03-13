@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Your datacenter&#x27;s power architecture called. It&#x27;s not happy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/your_datacenters_power_architecture_called/" target="_blank">Original article ↗</a></div>
+
+<h1>Your datacenter&#x27;s power architecture called. It&#x27;s not happy</h1>
+<div class="meta">The Register AI · 2026-03-11</div>
+<div class="summary">Your datacenter&#x27;s power architecture called. It&#x27;s not happy
+AI factories demand 800 volts because physics doesn&#x27;t care about your upgrade budget
+Feature Hyperscale computing was built on a foundation of certainty. For years, 12V and 48V rack architec</div>
+<p>Your datacenter&#x27;s power architecture called. It&#x27;s not happy</p>
+<p>AI factories demand 800 volts because physics doesn&#x27;t care about your upgrade budget</p>
+<p>Feature Hyperscale computing was built on a foundation of certainty. For years, 12V and 48V rack architectures – implemented at a steady 50–54 VDC (Volts of Direct Current) - ruled the datacenter floor, engineered to perfection for power densities of 10–15 kW per rack. These systems were finely tuned machines, optimized around the predictable, steady-state demands of general-purpose CPUs and storage servers. The infrastructure was stable. The math was settled.</p>
+<p>Then accelerated computing arrived, and blew the entire playbook apart.</p>
+<p>GPU clusters and AI accelerators don&#x27;t operate on the old rules. They don&#x27;t ask for 15 kW. They demand hundreds of kilowatts per rack, an order-of-magnitude leap that legacy electrical and thermal architectures were never designed to survive. The comfortable assumptions baked into decades of datacenter design are now liabilities, and the industry is facing a reckoning it can no longer defer.</p>
+<p>The Nvidia GB200 NVL72 rack-scale system, for example, requires 120 kW per rack. At these power levels, the physics of low-voltage distribution face challenges. The requirement to deliver 120 kW at 48V requires currents exceeding 2.5 kA. To handle thousands of amperes within a rack means thick busbars, heavy copper mass, overheating connectors, significant resistive losses, and serviceability issues.</p>
+<p>AI has pushed the industry beyond the 48V comfort zone, where the limiting factor is safely and efficiently carrying the current. One emerging solution to this problem is to increase the distribution voltage (400V or 800V), which reduces the current at the same power level. This is why the industry is now moving to high-voltage DC (HVDC) power architecture for next-generation AI factories.</p>
+<p>Challenges with 48V power distribution</p>
+<p>Let&#x27;s talk about the current-squared problem and resistive losses. Because power loss scales with the square of the current, even small reductions in current lead to significant increases in efficiency. The power distribution efficiency is governed by Joule resistive loss (Ploss = I2R).</p>
+<p>In this equation, power loss scales linearly with resistance but quadratically with current. This creates a non-linear disadvantage for maintaining low distribution voltages as power requirements scale. When the rack power demands increases, the current required to deliver that power at a fixed low voltage rises, which results in higher losses.</p>
+<p>For the NVL72 rack system, the busbar must be capable of handling a peak electrical power of approximately 192 kW, corresponding to more than 3.8 kA. Even with an optimized busbar resistance of 0.1 mΩ (0.0001 Ω), which is difficult to achieve across a full rack height with multiple joint interfaces, the resistive loss is significant. Using Joule resistive loss, the resistive loss comes to 625 W.</p>
+<p>However, in real-world deployments, resistance includes contact interfaces, cable terminations, and internal shelf impedances. All of these drive the total path resistance toward 0.5 mΩ or higher in complex distributions. At 0.5 mΩ, losses increase to 3125 W.</p>
+<p>In contrast, for an equivalent power-distribution path resistance, the 800V scenario handling 150 A yields 2.25 W of Ploss. Even if we assume the higher-voltage infrastructure uses thinner connectors with 10x the resistance (1 mΩ), the loss is still only 22.5 W. The shift to 800V reduces distribution losses by orders of magnitude. Therefore, without losing the kilowatts, they can be used for computing rather than for heating the busbar.</p>
+<p>Copper overload and contact resistance</p>
+<p>Ampacity, which is the maximum current a conductor can carry before exceeding its temperature rating, is a function of cross-sectional area. As current density increases, the cross-sectional area of the conductor must grow to maintain acceptable thermal limits.</p>
+<p>To carry 2.5 kA at 48V, OCP Open Rack v3 (ORv3) specifications depend on a massive, heavy, solid copper busbar. The busbar required to carry such a high current would weigh significantly. This imposes severe structural loads on data enter infrastructure and occupies the volume needed for airflow and liquid cooling.</p>
+<p>Nvidia claims that an 800VDC power distribution architecture enables a copper reduction of up to 45 percent compared with traditional configurations. In the dense environment of an AI rack, where airflow or liquid cooling competes for space, the volume occupied by power delivery is a crucial constraint.</p>
+<p>Connector physics comes as a third barrier to contact resistance. When the current rises, the voltage drop across the mechanical interfaces increases. This leads to localized heat generation. At 2.5 kA, a contact resistance degradation of just 0.1 mΩ results in a localized heat generation of 625 W.</p>
+<p>The new power hierarchy</p>
+<p>The power hierarchy is divided into four layers. At the top (utility distribution), power enters as medium-voltage AC (typically ~13.8 kV). This power level remains similar to traditional facilities, where high-voltage AC is efficient for transmitting power over distances. The key change is what happens next in the data center. Instead of multiple conversions and step-downs scattered throughout, new designs aim to convert AC to DC once and then distribute it.</p>
+<p>At the facility level, the emerging approach is to perform centralized AC-to-DC conversion where the output is a high-voltage DC. By rectifying to DC near the source, datacenters can eliminate many intermediate AC/DC conversions, which improves efficiency and reliability.</p>
+<p>This concept is highlighted in the Nvidia 800VDC solution. They propose converting the 13.8 kV AC feed to 800VDC at the perimeter using industrial rectifiers, and then busing 800VDC throughout the datacenter. Fewer conversion stages simplify backup. For example, battery systems can be connected directly to the DC bus.</p>
+<p>In today’s state-of-the-art racks, they use 48-54 VDC busbars. In ORv3, each rack has one or more power shelves that receive facility AC (or DC) and output 50V DC to a busbar serving all servers. A typical ORv3 power shelf is a 1U unit that provides up to 15 kW or 18 kW gross, and multiple shelves can be paralleled to support higher rack loads.</p>
+<p>For instance, Eaton’s ORv3 shelf delivers 18 kW in 1U and connects to the 48V busbar. This architecture is a significant improvement over 12V racks. However, with AI racks now targeting 100+ kW, even 48V ORv3 is nearing its practical limits. Future HVDC racks will likely accept an 800V feed and use high-efficiency DC/DC converters to step down to the 48V or 12V domain at the shelf level.</p>
+<p>Ultimately, each server or accelerator board must convert to the low voltages used by chips. High-current voltage regulator modules take 12V or 48V input and generate sub-1V for processors. As rack distribution voltages rise, the burden on on-board power electronics grows. This is where GaN (gallium nitride, and SiC (silicon carbide),) devices are increasingly used in both front-end DC/DC and intermediate bus converters.</p>
+<p>Navitas Semiconductor, for example, announced new GaN and SiC components for Nvidia 800VDC AI architecture to deliver higher efficiency and power density from the grid to the GPU.</p>
+<p>However, today’s AI GPU workloads can draw significant power in milliseconds as different layers of a neural network interact with the hardware. An inference might have all 72 GPUs in a rack idling at one moment, and then suddenly each drawing its maximum as they synchronize for an all-reduce operation. These step-load transients pose challenges beyond supplying large power.</p>
+<p>At rack scale, many GPUs operating simultaneously can cause compound transients, in which currents and voltages fluctuate across the power distribution network. Therefore, engineers worry about things like voltage droop on a board’s 48V or 12V rail when a GPU goes from 0 to 100 percent load in microseconds, or dI/dt induction effects along busbars and cables that cause momentary voltage dips.</p>
+<p>To mitigate these bursts, engineers are increasingly treating energy storage as a first-class component of the architecture. Nvidia says that energy storage solutions to handle load spikes and sub-second-scale GPU power fluctuations are part of its 800VDC rack strategy.</p>
+<p>From ORv3 to 800V</p>
+<p>The current generation of datacenter power architecture was a significant step up from the previous 12V motherboard-centric distribution to 48V rack-level distribution in a modular and efficient way. The widespread adoption of ORv3 by hyperscalers and OCP members shows a large ecosystem of 48V power shelves, busbars, and compatible servers.</p>
+<p>- Only one in five Euro datacenters AI-ready as builders battle land and labor blues</p>
+<p>- Qualcomm announces AI accelerators and mysterious racks they&#x27;ll run in</p>
+<p>- AI giants call for energy grid kumbaya</p>
+<p>- Enterprises in for a shock when they realize power and cooling demands of AI</p>
+<p>ORv3 racks have become the backbone for AI deployments for up to 80 to 100+ kW with extensions and heavy parallelization at 48V power distribution. For instance, Meta and Microsoft have converged around 48V rack designs as seen in OCP contributions.</p>
+<p>The latest contribution from Nvidia to OCP shows an enhanced 48V busbar design rated for currents on the order of 1400 A per segment, highlighting how the community is extracting additional headroom from low-voltage architectures. These efforts also indicate that we are approaching the limits of low-voltage distribution in terms of current and heat.</p>
+<p>The next logical step is the development of higher-voltage DC distribution standards. We are in a transition period with many racks that will continue to use 48V for a while, but new builds aimed at massive AI computing are already planning for HVDC. Companies like Eaton, Vertiv, and Delta are developing 800V-compatible rectifiers, converters, and power electronics in anticipation of these changes. ®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/11/your_datacenters_power_architecture_called/" target="_blank">Read original →</a></div>
+</body></html>

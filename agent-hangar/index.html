@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Hangar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #0e1d33;
+      --line: rgba(171, 197, 247, 0.2);
+      --ink: #eaf1ff;
+      --muted: #94a6c9;
+      --teal: #1ce3c8;
+      --lime: #a5ff6f;
+      --amber: #ffbd58;
+      --pink: #ff6c9f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Chakra Petch", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(28, 227, 200, 0.16), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(255, 108, 159, 0.2), transparent 30%),
+        linear-gradient(160deg, #040914, #08111f 40%, #050d1a 100%);
+      padding: 18px;
+    }
+    .shell { max-width: 1260px; margin: 0 auto; }
+    .top {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      line-height: 0.95;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      letter-spacing: 0.01em;
+    }
+    .kicker {
+      margin: 0;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+    }
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    button.primary {
+      background: linear-gradient(130deg, rgba(28, 227, 200, 0.25), rgba(165, 255, 111, 0.18));
+      border-color: rgba(165, 255, 111, 0.6);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 12px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(14, 29, 51, 0.92), rgba(6, 18, 33, 0.95));
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+    }
+    .head {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .head h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+    }
+    .head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .agent-grid {
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .agent {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .agent-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+    .agent h3 {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 7px;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .meta {
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .meter {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(171, 197, 247, 0.2);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .meter > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--teal), var(--lime));
+      transition: width .25s ease;
+    }
+    .stats {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+    .stats b { color: var(--ink); display: block; font-size: 0.8rem; }
+    .right-col {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .log {
+      max-height: 370px;
+      overflow: auto;
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .log-row {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px;
+      font-size: 0.78rem;
+    }
+    .log-row .t {
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.66rem;
+      margin-bottom: 3px;
+    }
+    .mini {
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .mini-row {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+    .mini-row span { color: var(--muted); }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      background: var(--amber);
+      box-shadow: 0 0 0 3px rgba(255, 189, 88, 0.16);
+    }
+    .dot.ok {
+      background: var(--lime);
+      box-shadow: 0 0 0 3px rgba(165, 255, 111, 0.18);
+    }
+    .foot {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    a { color: #9dc4ff; }
+    @media (max-width: 1000px) {
+      .grid { grid-template-columns: 1fr; }
+      .agent-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div>
+        <p class="kicker">CODEx AGENT TEAM</p>
+        <h1>Agent Hangar</h1>
+      </div>
+      <div class="actions">
+        <button id="pulse-btn">Pulse 1h</button>
+        <button id="reset-btn">Reset</button>
+        <button id="sim-btn" class="primary">Run 6h Simulation</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="head">
+          <h2>Active Agents</h2>
+          <p>Specialized lanes generating product work in parallel.</p>
+        </div>
+        <div id="agent-grid" class="agent-grid"></div>
+      </article>
+
+      <div class="right-col">
+        <article class="panel">
+          <div class="head">
+            <h2>Mission Feed</h2>
+            <p>Latest handoffs between specialist agents.</p>
+          </div>
+          <div id="log" class="log"></div>
+        </article>
+
+        <article class="panel">
+          <div class="head">
+            <h2>System Summary</h2>
+            <p>Throughput and queue pressure snapshot.</p>
+          </div>
+          <div class="mini" id="mini"></div>
+        </article>
+      </div>
+    </section>
+
+    <p class="foot"><a href="/codex-nightshift/">Back to Night Shift Hub</a></p>
+  </main>
+
+  <script>
+    const baseAgents = [
+      { name: "Scout", role: "Signal intake", queue: 6, throughput: 52, health: 93, lane: "ingest" },
+      { name: "Scribe", role: "Transcript synthesis", queue: 4, throughput: 44, health: 90, lane: "transcribe" },
+      { name: "Vocal", role: "Voice generation", queue: 3, throughput: 36, health: 95, lane: "narrate" },
+      { name: "Frame", role: "Storyboard + clips", queue: 5, throughput: 40, health: 88, lane: "storyboard" },
+      { name: "Pilot", role: "Publishing + QA", queue: 2, throughput: 31, health: 97, lane: "deploy" },
+      { name: "Warden", role: "Regression guard", queue: 3, throughput: 28, health: 92, lane: "tests" }
+    ];
+
+    const state = {
+      agents: structuredClone(baseAgents),
+      logs: []
+    };
+
+    const els = {
+      grid: document.getElementById("agent-grid"),
+      log: document.getElementById("log"),
+      mini: document.getElementById("mini"),
+      pulse: document.getElementById("pulse-btn"),
+      sim: document.getElementById("sim-btn"),
+      reset: document.getElementById("reset-btn")
+    };
+
+    function t() {
+      return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    }
+
+    function log(message) {
+      state.logs.unshift({ time: t(), message });
+      state.logs = state.logs.slice(0, 24);
+      renderLogs();
+    }
+
+    function mutateAgent(agent, intensity = 1) {
+      const qShift = Math.round((Math.random() * 4 - 2) * intensity);
+      const thShift = Math.round((Math.random() * 8 - 3) * intensity);
+      const hShift = Math.round((Math.random() * 5 - 2) * intensity);
+
+      agent.queue = Math.max(0, agent.queue + qShift);
+      agent.throughput = Math.max(12, Math.min(99, agent.throughput + thShift));
+      agent.health = Math.max(72, Math.min(100, agent.health + hShift));
+    }
+
+    function runPulse(intensity = 1) {
+      state.agents.forEach((agent) => mutateAgent(agent, intensity));
+      const shout = state.agents[Math.floor(Math.random() * state.agents.length)];
+      log(`${shout.name} completed batch in ${shout.lane} lane.`);
+      render();
+    }
+
+    async function runSimulation() {
+      log("6h simulation started.");
+      for (let step = 1; step <= 6; step += 1) {
+        await new Promise((r) => setTimeout(r, 280));
+        runPulse(1.2);
+        log(`Hour ${step}: queues rebalanced automatically.`);
+      }
+      log("Simulation complete. Team stability confirmed.");
+    }
+
+    function renderAgents() {
+      els.grid.innerHTML = state.agents.map((a) => {
+        const status = a.health >= 90 ? "stable" : a.health >= 82 ? "warming" : "strained";
+        return `
+          <article class="agent">
+            <div class="agent-top">
+              <h3>${a.name}</h3>
+              <span class="pill">${status}</span>
+            </div>
+            <p class="meta">${a.role}</p>
+            <div class="meter"><span style="width:${a.health}%"></span></div>
+            <div class="stats">
+              <div><b>${a.queue}</b>queue</div>
+              <div><b>${a.throughput}</b>throughput</div>
+              <div><b>${a.health}%</b>health</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderLogs() {
+      els.log.innerHTML = state.logs.map((row) => `
+        <div class="log-row">
+          <div class="t">${row.time}</div>
+          <div>${row.message}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderMini() {
+      const totalQueue = state.agents.reduce((a, x) => a + x.queue, 0);
+      const avgHealth = Math.round(state.agents.reduce((a, x) => a + x.health, 0) / state.agents.length);
+      const totalThroughput = state.agents.reduce((a, x) => a + x.throughput, 0);
+
+      els.mini.innerHTML = [
+        ["Queue load", totalQueue, totalQueue < 25],
+        ["Avg health", `${avgHealth}%`, avgHealth >= 88],
+        ["Throughput", `${totalThroughput}/h`, totalThroughput >= 210]
+      ].map((row) => `
+        <div class="mini-row"><div><span class="dot ${row[2] ? "ok" : ""}"></span>${row[0]}</div><strong>${row[1]}</strong></div>
+      `).join("");
+    }
+
+    function render() {
+      renderAgents();
+      renderMini();
+    }
+
+    els.pulse.addEventListener("click", () => runPulse(1));
+    els.sim.addEventListener("click", () => runSimulation());
+    els.reset.addEventListener("click", () => {
+      state.agents = structuredClone(baseAgents);
+      state.logs = [];
+      log("Agent matrix reset to baseline.");
+      render();
+    });
+
+    log("Hangar online.");
+    log("Agent lanes synchronized.");
+    render();
+
+    setInterval(() => runPulse(0.45), 6500);
+  </script>
+</body>
+</html>

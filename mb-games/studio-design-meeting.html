@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Meeting | MAD BITCOINS RETRO GAME LAB</title>
+  <meta name="description" content="Internal studio design meeting: 5-agent pitch session, top concept selection, full GDDs, and NES/Genesis starter code.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#050812">
+
+  <link rel="canonical" href="/mb-games/studio-design-meeting.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MAD BITCOINS RETRO GAME LAB - Design Meeting">
+  <meta property="og:description" content="Five internal agents, two selected games, and development-ready NES/Genesis code starters.">
+  <meta property="og:url" content="https://1n2.org/mb-games/studio-design-meeting.html">
+  <meta property="og:image" content="https://1n2.org/mb-games/marketing/social_card_main.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="logo-wrap">
+      <span class="logo-icon" aria-hidden="true">B</span>
+      <div>
+        <p class="kicker">STUDIO PROCESS</p>
+        <h1>DESIGN MEETING</h1>
+      </div>
+    </div>
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="play/index.html">Play Arcade</a>
+      <a href="play/cartridge-select.html">Cartridge Select</a>
+      <a href="play/challenge-ladder.html">Challenge Ladder</a>
+      <a href="ops-marathon.html">Ops Marathon</a>
+      <a href="marketing-package.html">Marketing Package</a>
+      <a href="package/mad-bitcoins-full-marketing-package.zip" class="btn btn-sm">Download ZIP</a>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero reveal">
+      <p class="eyebrow">MAD BITCOINS RETRO GAME LAB</p>
+      <h2>5-Agent Pitch Session<br>+ 2 Full Production Picks</h2>
+      <p>
+        This meeting run includes original concepts, studio selection logic, two complete GDDs,
+        starter code for Genesis and NES-style pipelines, and asset/build plans.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="docs/studio/design_meeting_2026-03-05.md">Open Full Meeting Notes</a>
+        <a class="btn" href="docs/studio/night_shift_meeting_2026-03-06.md">Open Night Shift Notes</a>
+        <a class="btn" href="docs/studio/marathon_cycle_2026-03-06.md">Open Marathon Notes</a>
+        <a class="btn btn-ghost" href="ops-marathon.html">Open Ops Marathon</a>
+        <a class="btn btn-ghost" href="#selected">Jump To Selected Games</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <p class="kicker">NIGHT SHIFT</p>
+        <h3>Boss Orders + New Browser Game Picks</h3>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card">
+          <p class="stat-value">#1</p>
+          <p class="stat-label"><strong>WCN Signal Jam</strong> selected for direct World Crypto Network theme integration and fast replay loop.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">#2</p>
+          <p class="stat-label"><strong>Mad Meme Blaster</strong> selected for meme density, humor, and immediate arcade readability.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">CYCLE</p>
+          <p class="stat-label">Save after each sprint: mechanics, UI, links, then package rebuild.</p>
+        </article>
+      </div>
+      <div class="inline-actions">
+        <a class="btn btn-ghost" href="play/wcn-signal-jam.html">Play WCN Signal Jam</a>
+        <a class="btn btn-ghost" href="play/mad-meme-blaster.html">Play Mad Meme Blaster</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <p class="kicker">MARATHON CYCLE</p>
+        <h3>Extended Run - 3 More Playable Games</h3>
+      </div>
+      <div class="services">
+        <article class="service-card">
+          <h4>Halving Havoc</h4>
+          <p>Arena survival with charge-based board wipe mechanics.</p>
+          <p><a href="play/halving-havoc.html">Play Halving Havoc</a></p>
+        </article>
+        <article class="service-card">
+          <h4>Citadel Climb</h4>
+          <p>Vertical platform climber with seed-pickup routes.</p>
+          <p><a href="play/citadel-climb.html">Play Citadel Climb</a></p>
+        </article>
+        <article class="service-card">
+          <h4>Node Hopper Drift</h4>
+          <p>River survival with fuel economy and combo pressure.</p>
+          <p><a href="play/node-hopper-drift.html">Play Node Hopper Drift</a></p>
+        </article>
+      </div>
+      <div class="inline-actions">
+        <a class="btn btn-ghost" href="docs/studio/marathon_cycle_2026-03-06.md">Read Marathon Notes</a>
+        <a class="btn btn-ghost" href="play/challenge-ladder.html">Track Results In Challenge Ladder</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <p class="kicker">STEP 1-2</p>
+        <h3>Internal Teams And Pitches</h3>
+      </div>
+      <div class="services">
+        <article class="service-card">
+          <h4>Agent A - Arcade Shooter</h4>
+          <p><strong>Bull Signal Barrage</strong> (Genesis): laser-eye shooter with whale bosses and chain scoring.</p>
+        </article>
+        <article class="service-card">
+          <h4>Agent B - Platformer</h4>
+          <p><strong>Seed Phrase Subway Escape</strong> (NES): sprint platformer through exchange collapse zones.</p>
+        </article>
+        <article class="service-card">
+          <h4>Agent C - Puzzle Strategy</h4>
+          <p><strong>Forkline Commander</strong> (NES): mempool routing puzzle with fork crisis events.</p>
+        </article>
+        <article class="service-card">
+          <h4>Agent D - Meme Comedy</h4>
+          <p><strong>Not Your Keys, Not Your Kart</strong> (Atari): lane dodge chaos with paper-hands penalties.</p>
+        </article>
+        <article class="service-card">
+          <h4>Agent E - Experimental</h4>
+          <p><strong>Proof-of-Beat 1993</strong> (Genesis): rhythm runner shooter with crypto remix tracks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="selected" class="section reveal">
+      <div class="section-head">
+        <p class="kicker">STEP 3-4</p>
+        <h3>Selected Concepts And Full GDD Focus</h3>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card">
+          <p class="stat-value">#1</p>
+          <p class="stat-label"><strong>Bull Signal Barrage (Genesis)</strong> selected for strongest arcade intensity and SGDK-ready production path.</p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-value">#2</p>
+          <p class="stat-label"><strong>Seed Phrase Subway Escape (NES)</strong> selected for tight controls, readability, and meme-driven progression.</p>
+        </article>
+      </div>
+      <div class="inline-actions">
+        <a class="btn btn-ghost" href="docs/studio/design_meeting_2026-03-05.md">Read Full GDD Sections</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <p class="kicker">STEP 5</p>
+        <h3>Real Starter Code</h3>
+      </div>
+      <div class="services">
+        <article class="service-card">
+          <h4>Genesis SGDK Starter</h4>
+          <p>
+            <a href="retro-dev/genesis/bull-signal-barrage/src/main.c">`main.c`</a><br>
+            <a href="retro-dev/genesis/bull-signal-barrage/res/resources.res">`resources.res`</a><br>
+            <a href="retro-dev/genesis/bull-signal-barrage/README.md">build notes</a>
+          </p>
+        </article>
+        <article class="service-card">
+          <h4>NES-style Starter</h4>
+          <p>
+            <a href="retro-dev/nes/seed-phrase-subway/src/main.c">`main.c`</a><br>
+            <a href="retro-dev/nes/seed-phrase-subway/README.md">build notes</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section highlight reveal">
+      <div class="section-head">
+        <p class="kicker">STEP 6-7</p>
+        <h3>Assets And Build Plan</h3>
+      </div>
+      <p>
+        Sprite sheets, tile maps, background layers, chiptune direction, SFX plans,
+        and emulator test commands are documented in the full meeting notes.
+      </p>
+      <div class="package-links">
+        <a class="btn" href="docs/studio/design_meeting_2026-03-05.md">View Full Plan</a>
+        <a class="btn btn-ghost" href="package/mad-bitcoins-full-marketing-package.zip">Download Updated Package</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> MAD BITCOINS RETRO GAME LAB</p>
+    <p><a href="index.html">Back to Main Site</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

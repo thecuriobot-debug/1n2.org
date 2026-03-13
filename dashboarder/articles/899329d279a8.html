@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zig – Type Resolution Redesign and Language Changes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://ziglang.org/devlog/2026/#2026-03-10" target="_blank">Original article ↗</a></div>
+
+<h1>Zig – Type Resolution Redesign and Language Changes</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">Devlog
+This page contains a curated list of recent changes to main branch Zig.
+Also available as an RSS feed.
+This page contains entries for the year 2026. Other years are available in the Devlog archive page.
+Author: Matthew Lugg
+Today, I merged a 3</div>
+<p>Devlog</p>
+<p>This page contains a curated list of recent changes to main branch Zig.</p>
+<p>Also available as an RSS feed.</p>
+<p>This page contains entries for the year 2026. Other years are available in the Devlog archive page.</p>
+<p>Author: Matthew Lugg</p>
+<p>Today, I merged a 30,000 line PR after two (arguably three) months of work. The goal of this branch was to rework the Zig compilerâs internal type resolution logic to a more logical and straightforward design. Itâs a quite exciting change for me personally, because it allowed me to clean up a bunch of the compiler guts, but it also has some nice user-facing changes which you might be interested in!</p>
+<p>For one thing, the Zig compiler is now lazier about analyzing the fields of types: if the type is never initialized, then thereâs no need for Zig to care what that type âlooks likeâ. This is important when you have a type which doubles as a namespace, a common pattern in modern Zig. For instance, when using std.Io.Writer</p>
+<p>, you donât want the compiler to also pull in a bunch of code in std.Io</p>
+<p>! Hereâs a straightforward example:</p>
+<p>const Foo = struct {</p>
+<p>bad_field: @compileError(&quot;i am an evil field, muahaha&quot;),</p>
+<p>const something = 123;</p>
+<p>};</p>
+<p>comptime {</p>
+<p>_ = Foo.something; // `Foo` only used as a namespace</p>
+<p>}</p>
+<p>Previously, this code emitted a compile error. Now, it compiles just fine, because Zig never actually looks at the @compileError</p>
+<p>call.</p>
+<p>Another improvement weâve made is in the âdependency loopâ experience. Anyone who has encountered a dependency loop compile error in Zig before knows that the error messages for them are entirely unhelpfulâbut thatâs now changed! If you encounter one (which is also a bit less likely now than it used to be), youâll get a detailed error message telling you exactly where the dependency loop comes from. Check it out:</p>
+<p>const Foo = struct { inner: Bar };</p>
+<p>const Bar = struct { x: u32 align(@alignOf(Foo)) };</p>
+<p>comptime {</p>
+<p>_ = @as(Foo, undefined);</p>
+<p>}</p>
+<p>$ zig build-obj repro.zig</p>
+<p>error: dependency loop with length 2</p>
+<p>repro.zig:1:29: note: type &#x27;repro.Foo&#x27; depends on type &#x27;repro.Bar&#x27; for field declared here</p>
+<p>const Foo = struct { inner: Bar };</p>
+<p>^~~</p>
+<p>repro.zig:2:44: note: type &#x27;repro.Bar&#x27; depends on type &#x27;repro.Foo&#x27; for alignment query here</p>
+<p>const Bar = struct { x: u32 align(@alignOf(Foo)) };</p>
+<p>^~~</p>
+<p>note: eliminate any one of these dependencies to break the loop</p>
+<p>Of course, dependency loops can get much more complicated than this, but in every case Iâve tested, the error message has had enough information to easily see whatâs going on.</p>
+<p>Additionally, this PR made big improvements to the Zig compilerâs âincremental compilationâ feature. The short version is that it fixed a huge amount of known bugs, but in particular, âover-analysisâ problems (where an incremental update did more work than should be necessary, sometimes by a big margin) should finally be all but eliminatedâmaking incremental compilation significantly faster in many cases! If youâve not already, consider trying out incremental compilation: it really is a lovely development experience. This is for sure the improvement which excites me the most, and a large part of what motivated this change to begin with.</p>
+<p>There are a bunch more changes that come with this PRâdozens of bugfixes, some small language changes (mostly fairly niche), and compiler performance improvements. Itâs far too much to list here, but if youâre interested in reading more about it, you can take a look at the PR on Codebergâand of course, if you encounter any bugs, please do open an issue. Happy hacking!</p>
+<p>Author: Andrew Kelley</p>
+<p>As we approach the end of the 0.16.0 release cycle, Jacob has been hard at work, bringing std.Io.Evented</p>
+<p>up to speed with all the latest API changes:</p>
+<p>Both of these are based on userspace stack switching, sometimes called âfibersâ, âstackful coroutinesâ, or âgreen threadsâ.</p>
+<p>They are now available to tinker with, by constructing oneâs application using std.Io.Evented</p>
+<p>. They should be considered experimental because there is important followup work to be done before they can be used reliably and robustly:</p>
+<p>- better error handling</p>
+<p>- remove the logging</p>
+<p>- diagnose the unexpected performance degradation when using</p>
+<p>IoMode.evented</p>
+<p>for the compiler - a couple functions still unimplemented</p>
+<p>- more test coverage is needed</p>
+<p>- builtin function to tell you the maximum stack size of a given function to make these implementations practical to use when overcommit is off.</p>
+<p>With those caveats in mind, it seems we are indeed reaching the Promised Land, where Zig code can have Io implementations effortlessly swapped out:</p>
+<p>const std = @import(&quot;std&quot;);</p>
+<p>pub fn main(init: std.process.Init.Minimal) !void {</p>
+<p>var debug_allocator: std.heap.DebugAllocator(.{}) = .init;</p>
+<p>const gpa = debug_allocator.allocator();</p>
+<p>var threaded: std.Io.Threaded = .init(gpa, .{</p>
+<p>.argv0 = .init(init.args),</p>
+<p>.environ = init.environ,</p>
+<p>});</p>
+<p>defer threaded.deinit();</p>
+<p>const io = threaded.io();</p>
+<p>return app(io);</p>
+<p>}</p>
+<p>fn app(io: std.Io) !void {</p>
+<p>try std.Io.File.stdout().writeStreamingAll(io, &quot;Hello, World!\n&quot;);</p>
+<p>}</p>
+<p>$ strace ./hello_threaded</p>
+<p>execve(&quot;./hello_threaded&quot;, [&quot;./hello_threaded&quot;], 0x7ffc1da88b20 /* 98 vars */) = 0</p>
+<p>mmap(NULL, 262207, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f583f338000</p>
+<p>arch_prctl(ARCH_SET_FS, 0x7f583f378018) = 0</p>
+<p>prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0</p>
+<p>prlimit64(0, RLIMIT_STACK, {rlim_cur=16384*1024, rlim_max=RLIM64_INFINITY}, NULL) = 0</p>
+<p>sigaltstack({ss_sp=0x7f583f338000, ss_flags=0, ss_size=262144}, NULL) = 0</p>
+<p>sched_getaffinity(0, 128, [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]) = 8</p>
+<p>rt_sigaction(SIGIO, {sa_handler=0x1019d90, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x10328c0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0</p>
+<p>rt_sigaction(SIGPIPE, {sa_handler=0x1019d90, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x10328c0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0</p>
+<p>writev(1, [{iov_base=&quot;Hello, World!\n&quot;, iov_len=14}], 1Hello, World!</p>
+<p>) = 14</p>
+<p>rt_sigaction(SIGIO, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x10328c0}, NULL, 8) = 0</p>
+<p>rt_sigaction(SIGPIPE, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x10328c0}, NULL, 8) = 0</p>
+<p>exit_group(0) = ?</p>
+<p>+++ exited with 0 +++</p>
+<p>Swapping out only the I/O implementation:</p>
+<p>const std = @import(&quot;std&quot;);</p>
+<p>pub fn main(init: std.process.Init.Minimal) !void {</p>
+<p>var debug_allocator: std.heap.DebugAllocator(.{}) = .init;</p>
+<p>const gpa = debug_allocator.allocator();</p>
+<p>var evented: std.Io.Evented = undefined;</p>
+<p>try evented.init(gpa, .{</p>
+<p>.argv0 = .init(init.args),</p>
+<p>.environ = init.environ,</p>
+<p>.backing_allocator_needs_mutex = false,</p>
+<p>});</p>
+<p>defer evented.deinit();</p>
+<p>const io = evented.io();</p>
+<p>return app(io);</p>
+<p>}</p>
+<p>fn app(io: std.Io) !void {</p>
+<p>try std.Io.File.stdout().writeStreamingAll(io, &quot;Hello, World!\n&quot;);</p>
+<p>}</p>
+<p>execve(&quot;./hello_evented&quot;, [&quot;./hello_evented&quot;], 0x7fff368894f0 /* 98 vars */) = 0</p>
+<p>mmap(NULL, 262215, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f70a4c28000</p>
+<p>arch_prctl(ARCH_SET_FS, 0x7f70a4c68020) = 0</p>
+<p>prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0</p>
+<p>prlimit64(0, RLIMIT_STACK, {rlim_cur=16384*1024, rlim_max=RLIM64_INFINITY}, NULL) = 0</p>
+<p>sigaltstack({ss_sp=0x7f70a4c28008, ss_flags=0, ss_size=262144}, NULL) = 0</p>
+<p>sched_getaffinity(0, 128, [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]) = 8</p>
+<p>mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f70a4c27000</p>
+<p>mmap(0x7f70a4c28000, 548864, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f70a4ba1000</p>
+<p>io_uring_setup(64, {flags=IORING_SETUP_COOP_TASKRUN|IORING_SETUP_SINGLE_ISSUER, sq_thread_cpu=0, sq_thread_idle=1000, sq_entries=64, cq_entries=128, features=IORING_FEAT_SINGLE_MMAP|IORING_FEAT_NODROP|IORING_FEAT_SUBMIT_STABLE|IORING_FEAT_RW_CUR_POS|IORING_FEAT_CUR_PERSONALITY|IORING_FEAT_FAST_POLL|IORING_FEAT_POLL_32BITS|IORING_FEAT_SQPOLL_NONFIXED|IORING_FEAT_EXT_ARG|IORING_FEAT_NATIVE_WORKERS|IORING_FEAT_RSRC_TAGS|IORING_FEAT_CQE_SKIP|IORING_FEAT_LINKED_FILE|IORING_FEAT_REG_REG_RING|IORING_FEAT_RECVSEND_BUNDLE|IORING_FEAT_MIN_TIMEOUT|IORING_FEAT_RW_ATTR|IORING_FEAT_NO_IOWAIT, sq_off={head=0, tail=4, ring_mask=16, ring_entries=24, flags=36, dropped=32, array=2112, user_addr=0}, cq_off={head=8, tail=12, ring_mask=20, ring_entries=28, overflow=44, cqes=64, flags=40, user_addr=0}}) = 3</p>
+<p>mmap(NULL, 2368, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_POPULATE, 3, 0) = 0x7f70a4ba0000</p>
+<p>mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_POPULATE, 3, 0x10000000) = 0x7f70a4b9f000</p>
+<p>io_uring_enter(3, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8Hello, World!</p>
+<p>) = 1</p>
+<p>io_uring_enter(3, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1</p>
+<p>munmap(0x7f70a4b9f000, 4096) = 0</p>
+<p>munmap(0x7f70a4ba0000, 2368) = 0</p>
+<p>close(3) = 0</p>
+<p>munmap(0x7f70a4ba1000, 548864) = 0</p>
+<p>exit_group(0) = ?</p>
+<p>+++ exited with 0 +++</p>
+<p>Key point here being that the app</p>
+<p>function is identical between those two snippets.</p>
+<p>Moving beyond Hello World, the Zig compiler itself works fine using std.Io.Evented</p>
+<p>, both with io_uring and with GCD, but as mentioned above, there is a not-yet-diagnosed performance degradation when doing so.</p>
+<p>Happy hacking,</p>
+<p>Andrew</p>
+<p>Author: Andrew Kelley</p>
+<p>If you have a Zig project with dependencies, two big changes just landed which I think you will be interested to learn about.</p>
+<p>Fetched packages are now stored locally in the zig-pkg</p>
+<p>directory of the project root (next to your build.zig</p>
+<p>file).</p>
+<p>For example here are a few results from awebo after running zig build</p>
+<p>:</p>
+<p>$ du -sh zig-pkg/*</p>
+<p>13M freetype-2.14.1-alzUkTyBqgBwke4Jsot997WYSpl207Ij9oO-2QOvGrOi</p>
+<p>20K opus-0.0.2-vuF-cMAkAADVsm707MYCtPmqmRs0gzg84Sz0qGbb5E3w</p>
+<p>4.3M pulseaudio-16.1.1-9-mk_62MZkNwBaFwiZ7ZVrYRIf_3dTqqJR5PbMRCJzSuLw</p>
+<p>5.2M uucode-0.1.0-ZZjBPvtWUACf5dqD_f9I37VGFsN24436CuceC5pTJ25n</p>
+<p>728K vaxis-0.5.1-BWNV_AxECQCj3p4Hcv4U3Yo1WMUJ7Z2FUj0UkpuJGxQQ</p>
+<p>It is highly recommended to add this directory to the project-local source control ignore file (e.g. .gitignore</p>
+<p>). However, by being outside of .zig-cache</p>
+<p>, it provides th</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://ziglang.org/devlog/2026/#2026-03-10" target="_blank">Read original →</a></div>
+</body></html>

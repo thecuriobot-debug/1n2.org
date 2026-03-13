@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Citadel Climb cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#102b48"/>
+      <stop offset="56%" stop-color="#245975"/>
+      <stop offset="100%" stop-color="#151928"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <rect x="306" y="78" width="108" height="342" rx="14" fill="#708fa9"/>
+  <rect x="324" y="102" width="72" height="294" rx="12" fill="#2b5068"/>
+  <rect x="178" y="362" width="160" height="20" rx="8" fill="#ffd477"/>
+  <rect x="420" y="314" width="138" height="20" rx="8" fill="#90c8ff"/>
+  <rect x="186" y="254" width="120" height="20" rx="8" fill="#ffd477"/>
+  <rect x="438" y="212" width="100" height="20" rx="8" fill="#90c8ff"/>
+  <rect x="238" y="216" width="36" height="46" rx="8" fill="#f6c95f"/>
+  <circle cx="486" cy="288" r="12" fill="#ffd867"/>
+</svg>

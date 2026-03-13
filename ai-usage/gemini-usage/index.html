@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Gemini Usage — AI Analytics</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet"> <style> :root { --bg-color: #0a0e17; --card-bg: #111827; --border-color: #1e293b; --text-main: #e2e8f0; --text-muted: #64748b; --accent-gemini: #4285f4; --accent-claude: #8b5cf6; --accent-chatgpt: #10b981; --accent-openclaw: #f59e0b; }
+    body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Space Grotesk', sans-serif; margin: 0; padding: 2rem 1rem; line-height: 1.6; display: flex; justify-content: center; }
+    .container { max-width: 900px; width: 100%; }
+    a { color: var(--accent-gemini); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.8; text-decoration: underline; }
+    .back-link { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; display: inline-block; margin-bottom: 2rem; }
+    header { margin-bottom: 3rem; }
+    h1 { font-size: 2.5rem; font-weight: 700; margin: 0 0 0.5rem 0; color: var(--text-main); }
+    .subtitle { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+    h2 { font-size: 1.25rem; margin: 0 0 1.5rem 0; font-weight: 600; color: var(--text-main); }
+    .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat-box { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem 1rem; text-align: center; }
+    .stat-value { font-family: 'JetBrains Mono', monospace; color: var(--accent-gemini); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .stat-label { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+    th { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-muted); }
+    .badge { background-color: rgba(66, 133, 244, 0.1); color: var(--accent-gemini); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
+    .chart-row { display: flex; align-items: center; margin-bottom: 1rem; }
+    .chart-label { width: 90px; font-weight: 600; font-size: 0.95rem; }
+    .chart-track { flex-grow: 1; height: 20px; background-color: transparent; margin: 0 1rem; display: flex; align-items: center; }
+    .chart-bar { height: 100%; border-radius: 4px; }
+    .chart-value { width: 70px; text-align: right; }
+    .chart-total { text-align: right; margin-top: 1.5rem; }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; }
+    footer a { color: var(--text-muted); margin: 0 0.5rem; }
+    footer a:hover { color: var(--text-main); }
+    @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } .chart-row { flex-direction: column; align-items: flex-start; } .chart-track { width: 100%; margin: 0.5rem 0; } .chart-value { width: 100%; text-align: left; } th, td { padding: 0.75rem 0.5rem; } }
+</style>
+</head> <body>
+<div class="container"> <a href="../" class="back-link">← AI Usage Dashboard</a>
+<header>
+    <h1>Gemini Usage — AI Analytics</h1>
+    <p class="subtitle">Google Gemini · Research + brainstorming · Feb–Mar 2026</p>
+</header>
+<div class="stats-grid">
+    <div class="stat-box"><div class="stat-value">~5</div><div class="stat-label">Sessions</div></div>
+    <div class="stat-box"><div class="stat-value">~0.3M</div><div class="stat-label">Est. Tokens</div></div>
+    <div class="stat-box"><div class="stat-value" style="font-size: 1.1rem;">Research</div><div class="stat-label">Role</div></div>
+    <div class="stat-box"><div class="stat-value" style="font-size: 0.9rem;">Pro / Flash</div><div class="stat-label">Models</div></div>
+    <div class="stat-box"><div class="stat-value" style="font-size: 0.9rem;">AI Premium</div><div class="stat-label">Cost</div></div>
+    <div class="stat-box"><div class="stat-value" style="font-size: 0.9rem;">Feb–Mar</div><div class="stat-label">Period</div></div>
+</div>
+<div class="card">
+    <h2>Role Analysis</h2>
+    <p style="margin: 0; color: var(--text-muted);">Gemini served as the research and planning layer — consulted before major architectural decisions, used for quick fact-checking during builds, and helped brainstorm creative solutions. Claude handled the actual building, OpenClaw ran the automation pipeline, and ChatGPT provided additional research depth.</p>
+</div>
+<div class="card">
+    <h2>Comparison With Other AIs</h2>
+    <div class="chart-row"><div class="chart-label">Claude</div><div class="chart-track"><div class="chart-bar" style="width: 280px; background-color: var(--accent-claude);"></div></div><div class="chart-value mono">8.5M</div></div>
+    <div class="chart-row"><div class="chart-label">ChatGPT</div><div class="chart-track"><div class="chart-bar" style="width: 40px; background-color: var(--accent-chatgpt);"></div></div><div class="chart-value mono">1.2M</div></div>
+    <div class="chart-row"><div class="chart-label">OpenClaw</div><div class="chart-track"><div class="chart-bar" style="width: 16px; background-color: var(--accent-openclaw);"></div></div><div class="chart-value mono">0.5M</div></div>
+    <div class="chart-row"><div class="chart-label" style="color: var(--accent-gemini);">Gemini</div><div class="chart-track"><div class="chart-bar" style="width: 10px; background-color: var(--accent-gemini);"></div></div><div class="chart-value mono" style="color: var(--accent-gemini);">0.3M</div></div>
+    <div class="chart-total mono">Token share: 3% of total ~10.2M</div>
+</div>
+<div class="card">
+    <h2>How Gemini Was Used</h2>
+    <div style="overflow-x: auto;"><table><thead><tr><th>Use Case</th><th>Description</th></tr></thead><tbody>
+    <tr><td><span class="badge">Research</span></td><td style="color: var(--text-muted);">Second opinions on architecture decisions, comparing frameworks</td></tr>
+    <tr><td><span class="badge">Brainstorming</span></td><td style="color: var(--text-muted);">Project naming, feature ideas, content strategy</td></tr>
+    <tr><td><span class="badge">Fact-checking</span></td><td style="color: var(--text-muted);">Verifying technical claims, API documentation</td></tr>
+    <tr><td><span class="badge">Planning</span></td><td style="color: var(--text-muted);">High-level roadmap discussions before building with Claude</td></tr>
+    <tr><td><span class="badge">Quick questions</span></td><td style="color: var(--text-muted);">Syntax lookups, library comparisons, one-off queries</td></tr>
+    </tbody></table></div>
+</div>
+<div class="card" style="margin-bottom: 0;">
+    <h2>Sessions</h2>
+    <div style="overflow-x: auto;"><table><thead><tr><th>#</th><th>Session Topic</th><th>Est. Tokens</th><th>Date</th></tr></thead><tbody>
+    <tr><td class="mono">1</td><td>Project architecture planning for Curio ecosystem</td><td class="mono">~80K</td><td class="mono">Feb 18</td></tr>
+    <tr><td class="mono">2</td><td>NFT market analysis approach for CurioCharts</td><td class="mono">~60K</td><td class="mono">Feb 13</td></tr>
+    <tr><td class="mono">3</td><td>Domain name brainstorming (found 1n2.org)</td><td class="mono">~40K</td><td class="mono">Feb 11</td></tr>
+    <tr><td class="mono">4</td><td>Bitcoin history data research for Bitcoin Trains</td><td class="mono">~70K</td><td class="mono">Mar 6</td></tr>
+    <tr><td class="mono">5</td><td>Theater/museum data gathering for Dashboarder</td><td class="mono">~50K</td><td class="mono">Mar 7</td></tr>
+    </tbody></table></div>
+</div>
+<footer>
+    <a href="../">AI Usage Dashboard</a> · <a href="../claude-usage/">Claude</a> · <a href="../chatgpt-usage/">ChatGPT</a> · <a href="../codex-usage/">Codex</a> · <a href="../openclaw-usage/">OpenClaw</a> · <a href="/">1n2.org</a>
+</footer>
+</div>
+</body></html>

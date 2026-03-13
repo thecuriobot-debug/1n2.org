@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Commentzor — YouTube Comment Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--gold:#fbbf24;--green:#34d399;--purple:#a78bfa;--red:#f87171}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:14px 24px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--accent)}
+header .sub{color:var(--muted);font-size:.75rem}
+nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);padding:0 12px;overflow-x:auto;position:sticky;top:56px;z-index:19}
+nav a{padding:9px 14px;font-size:.8rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:.2s;cursor:pointer}
+nav a:hover{color:var(--text)}nav a.on{color:var(--accent);border-color:var(--accent)}
+.page{display:none;padding:20px;max-width:1100px;margin:0 auto}.page.on{display:block}
+h2{color:var(--accent);font-size:.95rem;margin:16px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.65rem;color:var(--muted);margin-top:2px}
+.ch-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px;margin:8px 0;display:flex;gap:12px;align-items:center;cursor:pointer;transition:.2s}
+.ch-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.ch-card img{width:44px;height:44px;border-radius:50%}
+.ch-card .info h3{font-size:.9rem;margin-bottom:2px}.ch-card .info p{font-size:.7rem;color:var(--muted)}.ch-card .arrow{margin-left:auto;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.78rem;margin:6px 0}
+th{background:var(--card);color:var(--accent);font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;padding:6px 8px;text-align:left;border-bottom:2px solid var(--border)}
+td{padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.3)}
+.bar-row{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:.78rem}
+.bar-row .lbl{width:130px;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bar{height:10px;border-radius:3px;background:var(--accent)}.bar-row .val{font-family:'JetBrains Mono',monospace;font-size:.7rem;width:40px}
+.comment{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;margin:6px 0;font-size:.8rem}
+.comment .author{color:var(--gold);font-weight:600;font-size:.75rem}.comment .text{color:var(--text);margin-top:2px;line-height:1.4}
+.comment .meta{color:var(--muted);font-size:.65rem;margin-top:4px}
+.ft{text-align:center;color:var(--muted);font-size:.6rem;padding:16px;border-top:1px solid var(--border);margin-top:16px}
+</style>
+</head>
+<body>
+<header>
+<h1>💬 Commentzor — YouTube Comment Analytics</h1>
+<div class="sub">38,601 comments · 4 channels · Data Labs powered</div>
+</header>
+<nav id="tabs"></nav>
+<div id="pages"></div>
+<div class="ft"><a href="/">1n2.org</a> · <a href="/dashboarder/">Dashboarder</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/ai-usage/">AI Usage</a></div>
+<script>
+let D;
+async function init(){
+  D=await(await fetch('data.json')).json();
+  buildTabs();buildOverview();
+  D.channels.forEach(ch=>buildChannelPage(ch));
+  route();
+  window.addEventListener('hashchange',route);
+}
+function buildTabs(){
+  const nav=document.getElementById('tabs');
+  let h='<a href="#overview" data-p="overview">📊 Overview</a>';
+  D.channels.filter(c=>c.comment_count>0).forEach(c=>{
+    const icon=c.name.includes('Mad')?'🎩':c.name.includes('Film')?'🎬':c.name.includes('old')?'📺':'🌐';
+    h+=`<a href="#ch-${c.channel_id}" data-p="ch-${c.channel_id}">${icon} ${c.name}</a>`;
+  });
+  h+='<a href="#top" data-p="top">🏆 Top Commenters</a><a href="#liked" data-p="liked">❤️ Most Liked</a>';
+  nav.innerHTML=h;
+}
+function buildOverview(){
+  const pg=document.getElementById('pages');
+  const totalLikes=D.top_liked.reduce((s,c)=>s+c.like_count,0);
+  const uniqueAuthors=D.top_commenters.length+'+ unique';
+  let html=`<div class="page" id="overview"><div class="grid">
+    <div class="stat"><div class="n">${D.total.toLocaleString()}</div><div class="l">Total Comments</div></div>
+    <div class="stat"><div class="n">${D.channels.length}</div><div class="l">Channels</div></div>
+    <div class="stat"><div class="n">${D.channels.reduce((s,c)=>s+c.video_count,0).toLocaleString()}</div><div class="l">Videos Tracked</div></div>
+    <div class="stat"><div class="n">${D.channels.reduce((s,c)=>s+c.subscribers,0).toLocaleString()}</div><div class="l">Total Subscribers</div></div></div>
+    <h2>Channels</h2>`;
+  D.channels.filter(c=>c.comment_count>0).forEach(c=>{
+    html+=`<div class="ch-card" onclick="location.hash='ch-${c.channel_id}'">
+      <img src="${c.thumbnail}"><div class="info"><h3>${c.name}</h3>
+      <p>${c.comment_count.toLocaleString()} comments · ${c.subscribers.toLocaleString()} subs · ${c.video_count} videos</p></div><div class="arrow">→</div></div>`;
+  });
+  // Comment distribution chart
+  html+=`<h2>Comment Distribution</h2>`;
+  const maxC=Math.max(...D.channels.map(c=>c.comment_count));
+  D.channels.filter(c=>c.comment_count>0).forEach(c=>{
+    const w=Math.max(3,Math.round(c.comment_count/maxC*250));
+    html+=`<div class="bar-row"><div class="lbl">${c.name}</div><div class="bar" style="width:${w}px"></div><div class="val">${c.comment_count.toLocaleString()}</div></div>`;
+  });
+  // Top commenters preview
+  html+=`<h2>Top 10 Commenters (All Channels)</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th></tr>`;
+  D.top_commenters.slice(0,10).forEach((c,i)=>{
+    html+=`<tr><td>${i+1}</td><td style="color:var(--gold)">${c.author_name}</td><td>${c.c}</td><td>${c.likes||0}</td></tr>`;
+  });
+  html+=`</table>`;
+  // Recent comments
+  html+=`<h2>Recent Comments</h2>`;
+  D.recent.slice(0,8).forEach(c=>{
+    const chName=D.channels.find(ch=>ch.channel_id===c.channel_id)?.name||'';
+    html+=`<div class="comment"><div class="author">${c.author_name}</div><div class="text">${esc(c.text_content?.substring(0,200)||'')}</div><div class="meta">${chName} · ${c.like_count||0} likes</div></div>`;
+  });
+  html+=`</div>`;
+  pg.innerHTML+=html;
+}
+function buildChannelPage(ch){
+  if(!ch.comment_count)return;
+  const cd=D.by_channel[ch.channel_id];if(!cd)return;
+  const pg=document.getElementById('pages');
+  let html=`<div class="page" id="ch-${ch.channel_id}">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
+      <img src="${ch.thumbnail}" style="width:48px;height:48px;border-radius:50%">
+      <div><h2 style="margin:0;border:none;padding:0">${ch.name}</h2>
+      <div style="color:var(--muted);font-size:.75rem">${ch.subscribers.toLocaleString()} subscribers · ${ch.video_count} videos</div></div></div>
+    <div class="grid">
+      <div class="stat"><div class="n">${cd.comment_count.toLocaleString()}</div><div class="l">Comments</div></div>
+      <div class="stat"><div class="n">${ch.video_count_with_comments}</div><div class="l">Videos w/ Comments</div></div>
+      <div class="stat"><div class="n">${cd.top_commenters.length}</div><div class="l">Unique Commenters</div></div>
+    </div>`;
+  // Top commenters bar chart
+  html+=`<h2>Top Commenters</h2>`;
+  const maxTC=cd.top_commenters[0]?.c||1;
+  cd.top_commenters.slice(0,12).forEach((c,i)=>{
+    const w=Math.max(3,Math.round(c.c/maxTC*200));
+    const color=i<3?'var(--gold)':i<6?'var(--accent)':'var(--muted)';
+    html+=`<div class="bar-row"><div class="lbl">${c.author_name}</div><div class="bar" style="width:${w}px;background:${color}"></div><div class="val">${c.c}</div></div>`;
+  });
+  // Recent
+  html+=`<h2>Recent Comments</h2>`;
+  cd.recent.forEach(c=>{
+    html+=`<div class="comment"><div class="author">${c.author_name}</div><div class="text">${esc(c.text_content?.substring(0,250)||'')}</div><div class="meta">${c.like_count||0} likes</div></div>`;
+  });
+  html+=`</div>`;
+  pg.innerHTML+=html;
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function route(){
+  const h=(location.hash||'#overview').slice(1);
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('on'));
+  const page=document.getElementById(h);
+  if(page)page.classList.add('on');
+  const tab=document.querySelector(`nav a[href="#${h}"]`);
+  if(tab)tab.classList.add('on');
+  window.scrollTo(0,0);
+}
+// Top commenters + Most liked pages built on load
+function buildExtraPages(){
+  const pg=document.getElementById('pages');
+  // Top commenters
+  let html=`<div class="page" id="top"><h2>🏆 Top 25 Commenters (All Channels)</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Total Likes</th></tr>`;
+  D.top_commenters.forEach((c,i)=>{
+    const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
+    html+=`<tr><td>${medal}${i+1}</td><td style="color:var(--gold)">${c.author_name}</td><td>${c.c}</td><td>${c.likes||0}</td></tr>`;
+  });
+  html+=`</table></div>`;
+  // Most liked
+  html+=`<div class="page" id="liked"><h2>❤️ Most Liked Comments</h2>`;
+  D.top_liked.forEach(c=>{
+    const chName=D.channels.find(ch=>ch.channel_id===c.channel_id)?.name||'';
+    html+=`<div class="comment" style="border-left:3px solid var(--red)"><div class="author">${c.author_name} <span style="color:var(--red);font-size:.7rem">❤️ ${c.like_count} likes</span></div><div class="text">${esc(c.text_content?.substring(0,300)||'')}</div><div class="meta">${chName}</div></div>`;
+  });
+  html+=`</div>`;
+  pg.innerHTML+=html;
+}
+init().then(()=>{buildExtraPages();route();});
+</script>
+</body></html>

@@ -1,0 +1,65 @@
+{
+  "id": "stage10",
+  "label": "SKY FORTRESS",
+  "name": "Sky Fortress",
+  "width": 1408,
+  "height": 240,
+  "spawn": { "x": 24, "y": 184 },
+  "background": {
+    "top": "#11283f",
+    "bottom": "#071522",
+    "stars": "#94d2ff",
+    "starCount": 58
+  },
+  "tiles": {
+    "ground": "#3b607e",
+    "climb": "#73a5cc"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1408, "h": 16, "color": "#2f5169", "oneWay": false },
+
+    { "x": 82, "y": 194, "w": 80, "h": 30, "oneWay": false },
+    { "x": 198, "y": 176, "w": 94, "h": 10, "oneWay": true },
+    { "x": 324, "y": 158, "w": 98, "h": 10, "oneWay": true },
+    { "x": 456, "y": 140, "w": 104, "h": 10, "oneWay": true },
+
+    { "x": 594, "y": 122, "w": 96, "h": 10, "oneWay": true },
+    { "x": 724, "y": 144, "w": 106, "h": 10, "oneWay": true },
+    { "x": 860, "y": 166, "w": 108, "h": 10, "oneWay": true },
+
+    { "x": 1002, "y": 188, "w": 78, "h": 36, "oneWay": false },
+    { "x": 1102, "y": 160, "w": 100, "h": 10, "oneWay": true },
+    { "x": 1232, "y": 138, "w": 98, "h": 10, "oneWay": true },
+    { "x": 1342, "y": 120, "w": 66, "h": 10, "oneWay": true },
+
+    { "x": 388, "y": 104, "w": 58, "h": 8, "oneWay": true },
+    { "x": 930, "y": 104, "w": 58, "h": 8, "oneWay": true },
+    { "x": 1264, "y": 90, "w": 52, "h": 8, "oneWay": true }
+  ],
+  "climbZones": [
+    { "x": 296, "y": 126, "w": 8, "h": 98 },
+    { "x": 566, "y": 112, "w": 8, "h": 112 },
+    { "x": 834, "y": 120, "w": 8, "h": 104 },
+    { "x": 1206, "y": 112, "w": 8, "h": 112 }
+  ],
+  "enemySpawns": [
+    { "type": "regulator_drone", "x": 132, "y": 146 },
+    { "type": "hacker_ninja", "x": 236, "y": 168 },
+    { "type": "exchange_bot", "x": 372, "y": 150 },
+    { "type": "fud_ghost", "x": 516, "y": 108 },
+    { "type": "hacker_ninja", "x": 770, "y": 136 },
+    { "type": "exchange_bot", "x": 914, "y": 158 },
+    { "type": "banker_goon", "x": 1128, "y": 152 },
+    { "type": "regulator_drone", "x": 1258, "y": 110 },
+    { "type": "hacker_ninja", "x": 1368, "y": 112 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 216, "y": 168, "amount": 180, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 480, "y": 132, "amount": 180, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 742, "y": 136, "w": 7, "h": 6 },
+    { "type": "lightning_mode", "x": 932, "y": 98, "w": 6, "h": 6 },
+    { "type": "satoshi_spirit", "x": 1248, "y": 130, "w": 6, "h": 6 },
+    { "type": "hodl_mode", "x": 1362, "y": 112, "w": 7, "h": 6 }
+  ],
+  "bossSpawn": { "type": "the_sky_syndicate", "x": 1370, "y": 104 }
+}

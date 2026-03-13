@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Node Hopper Drift gameplay mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#08193a"/>
+      <stop offset="100%" stop-color="#071126"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect x="0" y="0" width="640" height="30" fill="#102448"/>
+  <text x="12" y="20" fill="#8fd9ff" font-family="monospace" font-size="14">NODE HOPPER DRIFT</text>
+  <rect x="477" y="8" width="150" height="14" fill="#1b2b46"/>
+  <rect x="479" y="10" width="112" height="10" fill="#7effb2"/>
+  <rect x="280" y="380" width="32" height="44" fill="#ffcb63"/>
+  <rect x="288" y="390" width="16" height="14" fill="#21416b"/>
+  <rect x="130" y="200" width="36" height="26" fill="#7db8ff"/>
+  <rect x="360" y="250" width="140" height="16" fill="#ff6d83"/>
+  <rect x="226" y="310" width="16" height="16" fill="#ffd464"/>
+  <rect x="410" y="150" width="16" height="16" fill="#85ffb9"/>
+</svg>

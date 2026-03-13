@@ -1,0 +1,49 @@
+{
+  "id": "stage3",
+  "label": "ALTCOIN JUNGLE",
+  "name": "Altcoin Jungle",
+  "width": 1024,
+  "height": 240,
+  "spawn": { "x": 24, "y": 180 },
+  "background": {
+    "top": "#223620",
+    "bottom": "#0f1f12",
+    "stars": "#85bb70",
+    "starCount": 32
+  },
+  "tiles": {
+    "ground": "#43673f",
+    "climb": "#6e8f57"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1024, "h": 16, "color": "#365a34" },
+    { "x": 94, "y": 186, "w": 82, "h": 10 },
+    { "x": 220, "y": 164, "w": 88, "h": 10 },
+    { "x": 346, "y": 144, "w": 90, "h": 10 },
+    { "x": 478, "y": 170, "w": 92, "h": 10 },
+    { "x": 614, "y": 150, "w": 84, "h": 10 },
+    { "x": 746, "y": 126, "w": 88, "h": 10 },
+    { "x": 890, "y": 166, "w": 90, "h": 10 },
+    { "x": 312, "y": 104, "w": 58, "h": 8 },
+    { "x": 668, "y": 98, "w": 58, "h": 8 }
+  ],
+  "climbZones": [
+    { "x": 180, "y": 126, "w": 8, "h": 98 },
+    { "x": 570, "y": 122, "w": 8, "h": 102 }
+  ],
+  "enemySpawns": [
+    { "type": "altcoin_slime", "x": 130, "y": 206 },
+    { "type": "fud_ghost", "x": 280, "y": 138 },
+    { "type": "altcoin_slime", "x": 504, "y": 152 },
+    { "type": "fud_ghost", "x": 780, "y": 94 },
+    { "type": "hacker_ninja", "x": 924, "y": 206 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 106, "y": 178, "amount": 120, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 362, "y": 136, "amount": 120, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 636, "y": 142, "w": 7, "h": 6 },
+    { "type": "hodl_mode", "x": 772, "y": 118, "w": 7, "h": 6 },
+    { "type": "satoshi_spirit", "x": 918, "y": 158, "w": 6, "h": 6 }
+  ],
+  "bossSpawn": { "type": "shitcoin_hydra", "x": 992, "y": 134 }
+}

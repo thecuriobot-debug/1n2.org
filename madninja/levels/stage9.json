@@ -1,0 +1,62 @@
+{
+  "id": "stage9",
+  "label": "CITADEL ASCENT",
+  "name": "Citadel Ascent",
+  "width": 1280,
+  "height": 240,
+  "spawn": { "x": 24, "y": 182 },
+  "background": {
+    "top": "#261b2c",
+    "bottom": "#120d16",
+    "stars": "#b89bc8",
+    "starCount": 44
+  },
+  "tiles": {
+    "ground": "#61446f",
+    "climb": "#9871ad"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1280, "h": 16, "color": "#4d3357", "oneWay": false },
+
+    { "x": 66, "y": 192, "w": 76, "h": 32, "oneWay": false },
+    { "x": 172, "y": 174, "w": 88, "h": 10, "oneWay": true },
+    { "x": 294, "y": 156, "w": 96, "h": 10, "oneWay": true },
+    { "x": 420, "y": 138, "w": 102, "h": 10, "oneWay": true },
+
+    { "x": 552, "y": 120, "w": 88, "h": 10, "oneWay": true },
+    { "x": 676, "y": 146, "w": 96, "h": 10, "oneWay": true },
+    { "x": 804, "y": 168, "w": 104, "h": 10, "oneWay": true },
+
+    { "x": 932, "y": 190, "w": 74, "h": 34, "oneWay": false },
+    { "x": 1028, "y": 158, "w": 94, "h": 10, "oneWay": true },
+    { "x": 1150, "y": 138, "w": 90, "h": 10, "oneWay": true },
+    { "x": 1230, "y": 118, "w": 50, "h": 10, "oneWay": true },
+
+    { "x": 614, "y": 92, "w": 52, "h": 8, "oneWay": true },
+    { "x": 1108, "y": 96, "w": 54, "h": 8, "oneWay": true }
+  ],
+  "climbZones": [
+    { "x": 262, "y": 128, "w": 8, "h": 96 },
+    { "x": 524, "y": 110, "w": 8, "h": 114 },
+    { "x": 900, "y": 118, "w": 8, "h": 106 },
+    { "x": 1128, "y": 112, "w": 8, "h": 112 }
+  ],
+  "enemySpawns": [
+    { "type": "banker_goon", "x": 100, "y": 174 },
+    { "type": "hacker_ninja", "x": 324, "y": 148 },
+    { "type": "fud_ghost", "x": 478, "y": 102 },
+    { "type": "exchange_bot", "x": 716, "y": 138 },
+    { "type": "regulator_drone", "x": 878, "y": 114 },
+    { "type": "banker_goon", "x": 1048, "y": 150 },
+    { "type": "hacker_ninja", "x": 1242, "y": 102 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 198, "y": 166, "amount": 160, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 438, "y": 130, "amount": 160, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 694, "y": 138, "amount": 160, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 946, "y": 182, "w": 7, "h": 6 },
+    { "type": "satoshi_spirit", "x": 1168, "y": 130, "w": 6, "h": 6 },
+    { "type": "lightning_mode", "x": 1238, "y": 110, "w": 6, "h": 6 }
+  ],
+  "bossSpawn": { "type": "the_credit_emperor", "x": 1248, "y": 108 }
+}

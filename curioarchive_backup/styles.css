@@ -1,0 +1,115 @@
+:root {
+  --bg: #f3f1ea;
+  --paper: #fffdf8;
+  --ink: #1f1f1c;
+  --muted: #5a584f;
+  --line: #d7d2c5;
+  --accent: #2f4f4f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, #e9e4d7 0%, transparent 45%),
+    radial-gradient(circle at bottom left, #e0e8e3 0%, transparent 45%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+.site {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0.28rem 0.55rem;
+  border-radius: 3px;
+}
+
+main {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1rem;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  vertical-align: top;
+  padding: 0.45rem;
+  text-align: left;
+}
+
+th {
+  background: #efebe0;
+}
+
+small,
+.meta {
+  color: var(--muted);
+}
+
+footer {
+  color: var(--muted);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+code {
+  font-size: 0.95em;
+  background: #f3efe4;
+  padding: 0.1rem 0.25rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .site {
+    padding: 0.75rem;
+  }
+
+  main {
+    padding: 0.75rem;
+  }
+}

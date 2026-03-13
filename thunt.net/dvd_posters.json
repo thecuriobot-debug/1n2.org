@@ -1,0 +1,786 @@
+[
+  {
+    "name": "2001: A Space Odyssey",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "5",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_5.jpg"
+  },
+  {
+    "name": "2010",
+    "dir": "Peter Hyams",
+    "writer": "Peter Hyams",
+    "id": "6",
+    "genre": "Drama",
+    "poster": "posters/dvd_6.jpg"
+  },
+  {
+    "name": "American Beauty",
+    "dir": "Sam Mendes",
+    "writer": "Alan Ball",
+    "id": "124",
+    "genre": "Drama",
+    "poster": "posters/dvd_124.jpg"
+  },
+  {
+    "name": "Animal House",
+    "dir": "John Landis",
+    "writer": "Douglas Kenney",
+    "id": "117",
+    "genre": "Comedy",
+    "poster": "posters/dvd_117.jpg"
+  },
+  {
+    "name": "Annie Hall",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "7",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_7.jpg"
+  },
+  {
+    "name": "Apocalypse Now",
+    "dir": "Francis Ford Coppola",
+    "writer": "Francis Ford Coppola",
+    "id": "8",
+    "genre": "Drama",
+    "poster": "posters/dvd_8.jpg"
+  },
+  {
+    "name": "As good as it gets",
+    "dir": "James L. Brooks",
+    "writer": "Mark Andrus",
+    "id": "9",
+    "genre": "Drama",
+    "poster": "posters/dvd_9.jpg"
+  },
+  {
+    "name": "Austin Powers",
+    "dir": "Jay Roach",
+    "writer": "Mike Myers",
+    "id": "10",
+    "genre": "Comedy",
+    "poster": "posters/dvd_10.jpg"
+  },
+  {
+    "name": "Austin Powers: The spy who shagged me",
+    "dir": "Jay Roach",
+    "writer": "Mike Myers",
+    "id": "11",
+    "genre": "Comedy",
+    "poster": "posters/dvd_11.jpg"
+  },
+  {
+    "name": "Aweful Truth, Disc 1",
+    "dir": "Michael Moore",
+    "writer": "Michael Moore",
+    "id": "128",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "Aweful Truth, Disc 2",
+    "dir": "Michael Moore",
+    "writer": "Michael Moore",
+    "id": "129",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "BASEketball",
+    "dir": "David Zucker",
+    "writer": "David Zucker",
+    "id": "12",
+    "genre": "Drama",
+    "poster": "posters/dvd_12.jpg"
+  },
+  {
+    "name": "Bananas",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "94",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_94.jpg"
+  },
+  {
+    "name": "Barry Lyndon",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "89",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_89.jpg"
+  },
+  {
+    "name": "Basic Instinct",
+    "dir": "Paul Verhoeven",
+    "writer": "Joe Eszterhas",
+    "id": "112",
+    "genre": "Drama",
+    "poster": "posters/dvd_112.jpg"
+  },
+  {
+    "name": "Batman",
+    "dir": "Tim Burton",
+    "writer": "Sam Hamm",
+    "id": "14",
+    "genre": "Drama",
+    "poster": "posters/dvd_14.jpg"
+  },
+  {
+    "name": "Big Lebowski",
+    "dir": "Ethan Cohen",
+    "writer": "Ethan Cohen",
+    "id": "15",
+    "genre": "Comedy",
+    "poster": "posters/dvd_15.jpg"
+  },
+  {
+    "name": "Boogie Nights",
+    "dir": "Paul Thomas Anderson",
+    "writer": "Paul Thomas Anderson",
+    "id": "1",
+    "genre": "Drama",
+    "poster": "posters/dvd_1.jpg"
+  },
+  {
+    "name": "Cable Guy, The",
+    "dir": "Ben Stiller",
+    "writer": "Lou Holtz Jr.",
+    "id": "114",
+    "genre": "Drama",
+    "poster": "posters/dvd_114.jpg"
+  },
+  {
+    "name": "Casablanca",
+    "dir": "Michael Curtiz",
+    "writer": "Joan Alison",
+    "id": "17",
+    "genre": "Drama",
+    "poster": "posters/dvd_17.jpg"
+  },
+  {
+    "name": "Casino",
+    "dir": "Martin Scorsese",
+    "writer": "Nicholas Pileggi",
+    "id": "18",
+    "genre": "Crime",
+    "poster": "posters/dvd_18.jpg"
+  },
+  {
+    "name": "Clear and Present Danger",
+    "dir": "Phillip Noyce",
+    "writer": "John Milius",
+    "id": "19",
+    "genre": "Drama",
+    "poster": "posters/dvd_19.jpg"
+  },
+  {
+    "name": "Clerks",
+    "dir": "Kevin Smith",
+    "writer": "Kevin Smith",
+    "id": "20",
+    "genre": "Comedy",
+    "poster": "posters/dvd_20.jpg"
+  },
+  {
+    "name": "Clockwork Orange, A",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "88",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_88.jpg"
+  },
+  {
+    "name": "Contact",
+    "dir": "Robert Zemeckis",
+    "writer": "Ann Druyan",
+    "id": "22",
+    "genre": "Drama",
+    "poster": "posters/dvd_22.jpg"
+  },
+  {
+    "name": "Dark City",
+    "dir": "Alex Proyas",
+    "writer": "Alex Proyas",
+    "id": "23",
+    "genre": "Drama",
+    "poster": "posters/dvd_23.jpg"
+  },
+  {
+    "name": "Dr. Strangelove",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "90",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_90.jpg"
+  },
+  {
+    "name": "Everything you always wanted to know about sex",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "98",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_98.jpg"
+  },
+  {
+    "name": "Eyes Wide Shut",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "106",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_106.jpg"
+  },
+  {
+    "name": "Falling Down",
+    "dir": "Joel Schumacher",
+    "writer": "Ebbe Roe Smith",
+    "id": "30",
+    "genre": "Drama",
+    "poster": "posters/dvd_30.jpg"
+  },
+  {
+    "name": "Fear and Loathing in Los Vegas",
+    "dir": "Terry Gilliam",
+    "writer": "Terry Gilliam",
+    "id": "32",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "Fifth Element",
+    "dir": "Luc Besson",
+    "writer": "Luc Besson",
+    "id": "33",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_33.jpg"
+  },
+  {
+    "name": "Fight Club",
+    "dir": "David Finchner",
+    "writer": "Jim Uhls",
+    "id": "34",
+    "genre": "Drama",
+    "poster": "posters/dvd_34.jpg"
+  },
+  {
+    "name": "Full Metal Jacket",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "92",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_92.jpg"
+  },
+  {
+    "name": "Game, The",
+    "dir": "David Finchner",
+    "writer": "John Brancato",
+    "id": "38",
+    "genre": "Drama",
+    "poster": "posters/dvd_38.jpg"
+  },
+  {
+    "name": "Ghostbusters",
+    "dir": "Ivan  Reitman",
+    "writer": "Dan Akroyd",
+    "id": "40",
+    "genre": "Comedy",
+    "poster": "posters/dvd_40.jpg"
+  },
+  {
+    "name": "Good Will Hunting",
+    "dir": "Gus Van Sant",
+    "writer": "Matt Damon",
+    "id": "41",
+    "genre": "Action",
+    "poster": "posters/dvd_41.jpg"
+  },
+  {
+    "name": "Goodfellas",
+    "dir": "Martin Scorsese",
+    "writer": "Nicholas Pileggi",
+    "id": "42",
+    "genre": "Crime",
+    "poster": "posters/dvd_42.jpg"
+  },
+  {
+    "name": "Hard Boiled",
+    "dir": "John Woo",
+    "writer": "Barry Wong",
+    "id": "48",
+    "genre": "Drama",
+    "poster": "posters/dvd_48.jpg"
+  },
+  {
+    "name": "Hard Eight (sydney)",
+    "dir": "Paul Thomas Anderson",
+    "writer": "Paul Thomas Anderson",
+    "id": "125",
+    "genre": "Drama",
+    "poster": "posters/dvd_125.jpg"
+  },
+  {
+    "name": "Heat",
+    "dir": "Michael Mann",
+    "writer": "Michael Mann",
+    "id": "43",
+    "genre": "Crime",
+    "poster": "posters/dvd_43.jpg"
+  },
+  {
+    "name": "Highlander: 10th anniversary director's cut",
+    "dir": "Russell Mulcahy",
+    "writer": "Gregory Widen",
+    "id": "113",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "Hudsucker Proxy, The",
+    "dir": "Ethan Cohen",
+    "writer": "Joel Cohen, Ethan Cohen",
+    "id": "44",
+    "genre": "Drama",
+    "poster": "posters/dvd_44.jpg"
+  },
+  {
+    "name": "Hunt for Red October, The",
+    "dir": "John McTiernan",
+    "writer": "Larry Ferguson",
+    "id": "45",
+    "genre": "Action",
+    "poster": "posters/dvd_45.jpg"
+  },
+  {
+    "name": "Interiors",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "97",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_97.jpg"
+  },
+  {
+    "name": "J.F.K.",
+    "dir": "Oliver Stone",
+    "writer": "Jim Marrs",
+    "id": "115",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "Jerry Maguire",
+    "dir": "Cameron Crowe",
+    "writer": "Cameron Crowe",
+    "id": "46",
+    "genre": "Drama",
+    "poster": "posters/dvd_46.jpg"
+  },
+  {
+    "name": "L.A. Confidential",
+    "dir": "Curtis Hanson",
+    "writer": "Brian Helgeland",
+    "id": "47",
+    "genre": "Drama",
+    "poster": "posters/dvd_47.jpg"
+  },
+  {
+    "name": "Lolita",
+    "dir": "Stanley Kubrick",
+    "writer": "Vladimir Nabokov",
+    "id": "91",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_91.jpg"
+  },
+  {
+    "name": "Love and Death",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "96",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_96.jpg"
+  },
+  {
+    "name": "Magnolia",
+    "dir": "Paul Thomas Anderson",
+    "writer": "Paul Thomas Anderson",
+    "id": "3",
+    "genre": "Drama",
+    "poster": "posters/dvd_3.jpg"
+  },
+  {
+    "name": "Mallrats",
+    "dir": "Kevin Smith",
+    "writer": "Kevin Smith",
+    "id": "51",
+    "genre": "Drama",
+    "poster": "posters/dvd_51.jpg"
+  },
+  {
+    "name": "Man who knew too much, the",
+    "dir": "Alfred Hitchcock",
+    "writer": "A.R. Rawlinson",
+    "id": "103",
+    "genre": "Drama",
+    "poster": "posters/dvd_103.jpg"
+  },
+  {
+    "name": "Manhatten",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "99",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_99.jpg"
+  },
+  {
+    "name": "Matrix, The",
+    "dir": "The Wachowski Brothers",
+    "writer": "The Wachowski Brothers",
+    "id": "52",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_52.jpg"
+  },
+  {
+    "name": "Mission: Impossible",
+    "dir": "Brian DePalma",
+    "writer": "Steven Zaillian",
+    "id": "53",
+    "genre": "Action",
+    "poster": "posters/dvd_53.jpg"
+  },
+  {
+    "name": "Mr. Smith goes to Washington",
+    "dir": "Frank Capra",
+    "writer": "Sidney Buchman",
+    "id": "108",
+    "genre": "Drama",
+    "poster": "posters/dvd_108.jpg"
+  },
+  {
+    "name": "Murder!",
+    "dir": "Alfred Hitchcock",
+    "writer": "Alma Reville",
+    "id": "102",
+    "genre": "Drama",
+    "poster": "posters/dvd_102.jpg"
+  },
+  {
+    "name": "Music Man, The",
+    "dir": "Morton DaCosta",
+    "writer": "Marion Hargrove",
+    "id": "54",
+    "genre": "Drama",
+    "poster": "posters/dvd_54.jpg"
+  },
+  {
+    "name": "Network",
+    "dir": "Sidney Lumet",
+    "writer": "Paddy Chayefsky",
+    "id": "55",
+    "genre": "Drama",
+    "poster": "posters/dvd_55.jpg"
+  },
+  {
+    "name": "Notting Hill",
+    "dir": "Roger Michell",
+    "writer": "Richard Curtis",
+    "id": "116",
+    "genre": "Drama",
+    "poster": "posters/dvd_116.jpg"
+  },
+  {
+    "name": "Number 17",
+    "dir": "Alfred Hitchcock",
+    "writer": "Alfred Hitchcock",
+    "id": "105",
+    "genre": "Drama",
+    "poster": "posters/dvd_105.jpg"
+  },
+  {
+    "name": "One Flew Over the Cuckoo's Nest",
+    "dir": "Milos Forman",
+    "writer": "Bo Goldman",
+    "id": "56",
+    "genre": "Drama",
+    "poster": "posters/dvd_56.jpg"
+  },
+  {
+    "name": "Payback",
+    "dir": "Brian Helgeland",
+    "writer": "Brian Helgeland",
+    "id": "2",
+    "genre": "Drama",
+    "poster": "posters/dvd_2.jpg"
+  },
+  {
+    "name": "Plan 9 from Outer Space",
+    "dir": "Ed Wood",
+    "writer": "Ed Wood",
+    "id": "57",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_57.jpg"
+  },
+  {
+    "name": "Platoon",
+    "dir": "Oliver Stone",
+    "writer": "Oliver Stone",
+    "id": "121",
+    "genre": "Drama",
+    "poster": "posters/dvd_121.jpg"
+  },
+  {
+    "name": "Player, The",
+    "dir": "Robert Altman",
+    "writer": "Michael Tolkin",
+    "id": "58",
+    "genre": "Drama",
+    "poster": "posters/dvd_58.jpg"
+  },
+  {
+    "name": "Pleasantville",
+    "dir": "Gary Ross",
+    "writer": "Gary Ross",
+    "id": "59",
+    "genre": "Drama",
+    "poster": "posters/dvd_59.jpg"
+  },
+  {
+    "name": "Psycho",
+    "dir": "Alfred Hitchcock",
+    "writer": "Joseph Stefano",
+    "id": "127",
+    "genre": "Drama",
+    "poster": "posters/dvd_127.jpg"
+  },
+  {
+    "name": "Pulp Fiction",
+    "dir": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "id": "60",
+    "genre": "Crime",
+    "poster": "posters/dvd_60.jpg"
+  },
+  {
+    "name": "Rain Man",
+    "dir": "Barry Levinson",
+    "writer": "Ronald Bass",
+    "id": "61",
+    "genre": "Drama",
+    "poster": "posters/dvd_61.jpg"
+  },
+  {
+    "name": "Replacement Killers, The",
+    "dir": "Antoine Fuqua",
+    "writer": "Ken Sanzel",
+    "id": "63",
+    "genre": "Drama",
+    "poster": null
+  },
+  {
+    "name": "Reservoir Dogs",
+    "dir": "Quentin Tarantino",
+    "writer": "Quentin Tarantino",
+    "id": "119",
+    "genre": "Crime",
+    "poster": "posters/dvd_119.jpg"
+  },
+  {
+    "name": "Robin Hood",
+    "dir": "Wolfgang Reitherman",
+    "writer": "Larry Clemmons",
+    "id": "107",
+    "genre": "Drama",
+    "poster": "posters/dvd_107.jpg"
+  },
+  {
+    "name": "Rock, The",
+    "dir": "Michael Bay",
+    "writer": "Douglas Cook",
+    "id": "64",
+    "genre": "Action",
+    "poster": "posters/dvd_64.jpg"
+  },
+  {
+    "name": "Rushmore",
+    "dir": "Wes Anderson",
+    "writer": "Wes Anderson",
+    "id": "66",
+    "genre": "Drama",
+    "poster": "posters/dvd_66.jpg"
+  },
+  {
+    "name": "Sabotage",
+    "dir": "Alfred Hitchcock",
+    "writer": "Charles Bennett",
+    "id": "101",
+    "genre": "Drama",
+    "poster": "posters/dvd_101.jpg"
+  },
+  {
+    "name": "Saving Private Ryan",
+    "dir": "Steven Spielberg",
+    "writer": "Robert Rodat",
+    "id": "67",
+    "genre": "Drama",
+    "poster": "posters/dvd_67.jpg"
+  },
+  {
+    "name": "Secret Agent",
+    "dir": "Alfred Hitchcock",
+    "writer": "Campbell Dixon",
+    "id": "104",
+    "genre": "Drama",
+    "poster": "posters/dvd_104.jpg"
+  },
+  {
+    "name": "Seven",
+    "dir": "David Finchner",
+    "writer": "Andrew Kevin Walker",
+    "id": "68",
+    "genre": "Drama",
+    "poster": "posters/dvd_68.jpg"
+  },
+  {
+    "name": "Shakespeare in Love",
+    "dir": "John Madden",
+    "writer": "Tom Stoppard",
+    "id": "118",
+    "genre": "Drama",
+    "poster": "posters/dvd_118.jpg"
+  },
+  {
+    "name": "Shawshank Redemption, The",
+    "dir": "Frank Darabont",
+    "writer": "Frank Darabont",
+    "id": "110",
+    "genre": "Drama",
+    "poster": "posters/dvd_110.jpg"
+  },
+  {
+    "name": "Shining, The",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "120",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_120.jpg"
+  },
+  {
+    "name": "Silence of the Lambs, The",
+    "dir": "Jonathan Demme",
+    "writer": "Ted Tally",
+    "id": "70",
+    "genre": "Drama",
+    "poster": "posters/dvd_70.jpg"
+  },
+  {
+    "name": "Sleeper",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "93",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_93.jpg"
+  },
+  {
+    "name": "Star Trek VI: The Undiscovered Country",
+    "dir": "Nicholas Meyer",
+    "writer": "Lawrence Konner",
+    "id": "72",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_72.jpg"
+  },
+  {
+    "name": "Star Trek VIII: First Contact",
+    "dir": "Jonathan Frakes",
+    "writer": "Brannon Braga",
+    "id": "73",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_73.jpg"
+  },
+  {
+    "name": "Stardust Memories",
+    "dir": "Woody Allen",
+    "writer": "Woody Allen",
+    "id": "95",
+    "genre": "Woody Allen",
+    "poster": "posters/dvd_95.jpg"
+  },
+  {
+    "name": "Stargate",
+    "dir": "Roland Emmerich",
+    "writer": "Dean Devlin",
+    "id": "74",
+    "genre": "Sci-Fi",
+    "poster": "posters/dvd_74.jpg"
+  },
+  {
+    "name": "Swingers",
+    "dir": "Doug Liman",
+    "writer": "Jon Favreau",
+    "id": "77",
+    "genre": "Drama",
+    "poster": "posters/dvd_77.jpg"
+  },
+  {
+    "name": "Talented Mr. Ripley, The",
+    "dir": "Anthony Minghella",
+    "writer": "Anthony Minghella",
+    "id": "126",
+    "genre": "Drama",
+    "poster": "posters/dvd_126.jpg"
+  },
+  {
+    "name": "Taxi Driver",
+    "dir": "Martin Scorsese",
+    "writer": "Paul Schrader",
+    "id": "78",
+    "genre": "Crime",
+    "poster": "posters/dvd_78.jpg"
+  },
+  {
+    "name": "The Shining",
+    "dir": "Stanley Kubrick",
+    "writer": "Stanley Kubrick",
+    "id": "87",
+    "genre": "Kubrick",
+    "poster": "posters/dvd_87.jpg"
+  },
+  {
+    "name": "Top Gun",
+    "dir": "Tony Scott",
+    "writer": "Jim Cash",
+    "id": "81",
+    "genre": "Action",
+    "poster": "posters/dvd_81.jpg"
+  },
+  {
+    "name": "True Romance",
+    "dir": "Tony Scott",
+    "writer": "Quentin Tarantino",
+    "id": "82",
+    "genre": "Drama",
+    "poster": "posters/dvd_82.jpg"
+  },
+  {
+    "name": "Usual Suspects, The",
+    "dir": "Bryan Singer",
+    "writer": "Christopher McQuarrie",
+    "id": "84",
+    "genre": "Drama",
+    "poster": "posters/dvd_84.jpg"
+  },
+  {
+    "name": "Vertigo",
+    "dir": "Alfred Hitchcock",
+    "writer": "Thomas Narcejac",
+    "id": "85",
+    "genre": "Drama",
+    "poster": "posters/dvd_85.jpg"
+  },
+  {
+    "name": "Wizard of Oz",
+    "dir": "Victor Fleming",
+    "writer": "Victor Fleming",
+    "id": "86",
+    "genre": "Drama",
+    "poster": "posters/dvd_86.jpg"
+  }
+]

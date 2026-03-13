@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curio Archive | Curio Card #{NUMBER}</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1>Curio Card #{NUMBER}</h1>
+      <p class="meta">Structured historical encyclopedia entry.</p>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="timeline.html">Chronology</a>
+        <a href="records.html">Data Records</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Input Record</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Metadata</td><td>{JSON}</td></tr>
+            <tr><td>Artist</td><td>{NAME}</td></tr>
+            <tr><td>Mint date</td><td>{DATE}</td></tr>
+            <tr><td>Supply</td><td>{NUMBER}</td></tr>
+            <tr><td>All-time sales stats</td><td>{JSON}</td></tr>
+            <tr><td>Notable sales</td><td>{JSON}</td></tr>
+            <tr><td>Holder distribution</td><td>{JSON}</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>1. Overview</h2>
+        <p><strong>Short factual description:</strong> Data not available at time of publication.</p>
+        <p><strong>Artist attribution:</strong> {NAME}</p>
+        <p><strong>Mint context:</strong> Mint date recorded as {DATE}; collection context from Curio contract records.</p>
+      </section>
+
+      <section>
+        <h2>2. Artistic Characteristics</h2>
+        <p><strong>Visual style description:</strong> Data not available at time of publication.</p>
+        <p><strong>Thematic elements:</strong> Data not available at time of publication.</p>
+      </section>
+
+      <section>
+        <h2>3. On-Chain Data Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Recorded Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Supply</td><td>{NUMBER}</td></tr>
+            <tr><td>Total volume</td><td>From all-time sales stats: {JSON}</td></tr>
+            <tr><td>Average sale price</td><td>From all-time sales stats: {JSON}</td></tr>
+            <tr><td>Holder distribution</td><td>{JSON}</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>4. Market History</h2>
+        <p><strong>Major sale milestones:</strong> From notable sales record: {JSON}</p>
+        <p><strong>Periods of activity or dormancy:</strong> Data not available at time of publication.</p>
+      </section>
+
+      <section>
+        <h2>5. Provenance Notes</h2>
+        <p><strong>Notable wallets:</strong> Data not available at time of publication.</p>
+        <p><strong>Transfers of significance:</strong> Derived from notable sales and transfer logs: {JSON}</p>
+      </section>
+
+      <section>
+        <h2>6. Historical Context Within Curio</h2>
+        <p><strong>How this card compares to others:</strong> Data not available at time of publication.</p>
+        <p><strong>Rarity positioning:</strong> Based on supply ({NUMBER}) and holder distribution ({JSON}).</p>
+      </section>
+
+      <section>
+        <h2>7. Data Sources</h2>
+        <ul>
+          <li>Metadata</li>
+          <li>Artist</li>
+          <li>Mint date</li>
+          <li>Supply</li>
+          <li>All-time sales stats</li>
+          <li>Notable sales</li>
+          <li>Holder distribution</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Source and Data Context</h2>
+        <p>
+          This page is a structured historical record using supplied input categories. Where supporting records are absent,
+          fields are explicitly marked as unavailable rather than inferred.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last Updated: {{AUTO_TIMESTAMP}}
+    </footer>
+  </div>
+</body>
+</html>

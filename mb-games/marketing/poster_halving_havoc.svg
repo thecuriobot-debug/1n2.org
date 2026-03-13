@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Halving Havoc poster">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1b0f3a"/><stop offset="100%" stop-color="#120a16"/></linearGradient></defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect x="70" y="90" width="940" height="1170" rx="22" fill="rgba(18,9,26,0.74)" stroke="#ffbd63" stroke-width="6"/>
+  <text x="540" y="250" text-anchor="middle" fill="#ffcf72" font-family="monospace" font-size="74">HALVING HAVOC</text>
+  <text x="540" y="320" text-anchor="middle" fill="#a4ddff" font-family="monospace" font-size="34">SURVIVE THE SURGE</text>
+  <rect x="235" y="470" width="610" height="400" fill="#0b1229" stroke="#b78dff" stroke-width="4"/>
+  <rect x="508" y="792" width="68" height="34" fill="#ffcc62"/>
+  <rect x="284" y="540" width="52" height="52" fill="#ff6e86"/>
+  <rect x="604" y="564" width="62" height="62" fill="#b593ff"/>
+  <rect x="260" y="970" width="560" height="74" fill="#20153c" stroke="#ffb167" stroke-width="3"/>
+  <text x="540" y="1016" text-anchor="middle" fill="#cbffe2" font-family="monospace" font-size="30">MAD BITCOINS RETRO GAME LAB</text>
+  <text x="540" y="1140" text-anchor="middle" fill="#ffd895" font-family="monospace" font-size="32">FILL CHARGE. DROP THE BLAST.</text>
+</svg>

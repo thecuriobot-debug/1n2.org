@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curio Archive — The Encyclopedic History of Curio Cards</title>
+  <meta name="description" content="The definitive, community-built encyclopedia of Curio Cards — the first art NFT collection on Ethereum (May 9, 2017). Cards, artists, history, and lore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <span class="top-bar-tagline">A community-built encyclopedia of the first art NFTs on Ethereum</span>
+      <div class="top-bar-links">
+        <a href="https://curio.cards" target="_blank">curio.cards</a>
+        <a href="https://opensea.io/collection/curiocardswrapper" target="_blank">OpenSea</a>
+        <a href="https://discord.curio.cards" target="_blank">Discord</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="site-logo" data-page="home">
+        <div class="logo-mark"><span class="logo-c">C</span><span class="logo-a">A</span></div>
+        <div class="logo-text">
+          <span class="logo-title">Curio Archive</span>
+          <span class="logo-sub">est. 2017</span>
+        </div>
+      </a>
+      <nav class="header-nav" id="main-nav">
+        <a href="#home" data-page="home" class="active">Main Page</a>
+        <a href="#cards" data-page="cards">Cards</a>
+        <a href="#artists" data-page="artists">Artists</a>
+        <a href="#founders" data-page="founders">Founders</a>
+        <a href="#timeline" data-page="timeline">Timeline</a>
+        <a href="#articles" data-page="articles">Articles</a>
+        <a href="#gallery" data-page="gallery">Gallery</a>
+      </nav>
+      <div class="header-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" id="site-search" placeholder="Search archive…" autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb-inner" id="breadcrumb">
+      <a href="#home">Main Page</a>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="page-wrapper">
+    <main id="main-content" class="main-content"></main>
+    <aside id="sidebar" class="sidebar"></aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Curio <span>Archive</span></div>
+          <p class="footer-desc">A community-built encyclopedia dedicated to preserving the history and lore of Curio Cards — the first art NFT collection on Ethereum.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Archive</h4>
+          <a href="#cards">All Cards</a>
+          <a href="#artists">Artists</a>
+          <a href="#founders">Founders</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#articles">Articles</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="https://curio.cards" target="_blank">Official Site</a>
+          <a href="https://docs.curio.cards" target="_blank">Docs</a>
+          <a href="https://discord.curio.cards" target="_blank">Discord</a>
+          <a href="https://twitter.com/MyCurioCards" target="_blank">Twitter</a>
+        </div>
+        <div class="footer-col">
+          <h4>Key Dates</h4>
+          <span>Launch: May 9, 2017</span>
+          <span>Complete: Aug 21, 2017</span>
+          <span>Rediscovered: Mar 2021</span>
+          <span>Christie's: Oct 1, 2021</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Curio Cards launched May 9, 2017 · First Art Show NFTs on Ethereum · 31 cards by 7 artists · 29,700 total supply</p>
+        <p>This is a fan-built resource, not an official Curio Cards project. Built with care by the community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  // Live data from Data Labs
+  fetch('data/live-data.json').then(r=>r.json()).then(d=>{
+    const banner=document.querySelector('.top-bar-tagline');
+    if(banner) banner.textContent=`Floor: ${d.floor_eth} ETH · ${d.total_holders.toLocaleString()} holders · ${d.total_sales} sales · ${d.total_transfers.toLocaleString()} transfers · Updated ${d.updated}`;
+    // Inject holder counts into card pages
+    if(d.cards && window.CURIO_CARDS){
+      d.cards.forEach(c=>{
+        const el=document.querySelector(`[data-card-id="${c.id}"] .card-holders`);
+        if(el) el.textContent=`${c.holders} holders`;
+      });
+    }
+  }).catch(()=>{});
+  </script>
+</body>
+</html>

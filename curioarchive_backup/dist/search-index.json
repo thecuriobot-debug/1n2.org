@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Home",
+    "url": "/curioarchive/dist/",
+    "description": "Mission statement and recent updates for Curio Archive.",
+    "text": "Mission Statement Curio Archive is an independent historical encyclopedia documenting the on-chain history of Curio Cards (2017). Its purpose is preservation, not promotion. All entries are generated from structured blockchain data and updated regularly. The archive seeks to provide a permanent, neutral record of one of the earliest Ethereum-based NFT collections. Editorial Baseline Neutral language and factual framing. No speculative attribution of intent. Explicit unavailable-data notation when records are incomplete. Client-side search index added Added searchable index and lightweight in-browser filtering. Initial static generator scaffold Added markdown-driven generation for cards, artists, timeline, provenance, and archive pages."
+  },
+  {
+    "title": "Cards",
+    "url": "/curioarchive/dist/cards/",
+    "description": "Auto-generated index of Curio Card records.",
+    "text": "Cards Index This page is generated from structured card records in data/cards.json. Individual card pages are generated automatically from those records. Curio Card #1 Artist record pending Curio Card #17 Artist record pending"
+  },
+  {
+    "title": "Individual Card Template",
+    "url": "/curioarchive/dist/cards/template/",
+    "description": "Reusable structure for Curio Card encyclopedia entries.",
+    "text": "Template Scope This template defines the standard section structure for card-level historical records. Required Sections Overview Artistic Characteristics On-Chain Data Summary Market History Provenance Notes Historical Context Within Curio Data Sources"
+  },
+  {
+    "title": "Curio Card #1",
+    "url": "/curioarchive/dist/cards/curio-card-1/",
+    "description": "Curio Card #1 historical record in Curio Archive.",
+    "text": "Curio Card #1 Artist record pending 2017-05-09"
+  },
+  {
+    "title": "Curio Card #17",
+    "url": "/curioarchive/dist/cards/curio-card-17/",
+    "description": "Curio Card #17 historical record in Curio Archive.",
+    "text": "Curio Card #17 Artist record pending 2017-06-20"
+  },
+  {
+    "title": "Artists",
+    "url": "/curioarchive/dist/artists/",
+    "description": "Auto-generated index of Curio artist records.",
+    "text": "Artists Index This page is generated from structured artist records in data/artists.json. Profile pages are generated automatically. Artist Placeholder A Artist Placeholder B"
+  },
+  {
+    "title": "Artist Profile Template",
+    "url": "/curioarchive/dist/artists/template/",
+    "description": "Reusable structure for artist profiles in Curio Archive.",
+    "text": "Template Scope This template defines the standard structure used for artist profile records. Required Sections Background Contribution to Curio Cards Artistic Style Analysis Market Performance Overview Historical Significance Relationship to Early NFT Culture"
+  },
+  {
+    "title": "Artist: Artist Placeholder A",
+    "url": "/curioarchive/dist/artists/artist-placeholder-a/",
+    "description": "Artist profile record for Artist Placeholder A in Curio Archive.",
+    "text": "Artist Placeholder A 2017"
+  },
+  {
+    "title": "Artist: Artist Placeholder B",
+    "url": "/curioarchive/dist/artists/artist-placeholder-b/",
+    "description": "Artist profile record for Artist Placeholder B in Curio Archive.",
+    "text": "Artist Placeholder B 2017"
+  },
+  {
+    "title": "Timeline",
+    "url": "/curioarchive/dist/timeline/",
+    "description": "Chronological event record generated from the event dataset.",
+    "text": "Timeline Method Events are sorted oldest to newest by available date fields from data/events.json. Collection launch documented Project documentation records the Curio Cards launch in May 2017. This date is used as the starting point in archive chronology. Card 17b misprint publication Project documentation lists the publication timestamp for the 17b duplicate deployment. The event is retained as a distinct entry in collection records. Institutional auction record published Christie's published lot records include a Curio Cards full-set sale context. Archive timelines use the published auction date as a dated institutional reference."
+  },
+  {
+    "title": "Provenance Index",
+    "url": "/curioarchive/dist/provenance/",
+    "description": "Index of card-level provenance summaries.",
+    "text": "Provenance Method This index is generated from structured provenance summaries in data/provenance.json. card 1 card 17"
+  },
+  {
+    "title": "On This Day Archive",
+    "url": "/curioarchive/dist/on-this-day/",
+    "description": "Calendar-organized archive of dated Curio events.",
+    "text": "Calendar Method This archive groups dated events by month and day where day-level records are available. Collection launch documented Card 17b misprint publication Institutional auction record published"
+  },
+  {
+    "title": "About / Methodology",
+    "url": "/curioarchive/dist/about/",
+    "description": "Methodology and publication standards for Curio Archive.",
+    "text": "About Curio Archive Curio Archive is an independent historical encyclopedia documenting the on-chain history of Curio Cards (2017). Its purpose is preservation, not promotion. Methodology Primary records are prioritized over secondary summaries. Claims are attributed to source category. Missing records are not inferred. Data Handling All entries are generated from structured blockchain data and updated regularly. Markdown content provides editorial narrative. JSON datasets provide structured record inputs. Generated pages preserve schema order and timestamped publication output. Record Intent The archive seeks to provide a permanent, neutral record of one of the earliest Ethereum-based NFT collections."
+  },
+  {
+    "title": "Search",
+    "url": "/curioarchive/dist/search/",
+    "description": "Search across Curio Archive pages.",
+    "text": "Search page"
+  }
+]

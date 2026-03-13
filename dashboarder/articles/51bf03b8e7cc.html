@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nvidia&#x27;s new open weights Nemotron 3 super combines three different architectures to beat gpt-oss and Qwen in throughput</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://venturebeat.com/technology/nvidias-new-open-weights-nemotron-3-super-combines-three-different" target="_blank">Original article ↗</a></div>
+
+<h1>Nvidia&#x27;s new open weights Nemotron 3 super combines three different architectures to beat gpt-oss and Qwen in throughput</h1>
+<div class="meta">VentureBeat · 2026-03-11</div>
+<div class="summary">Multi-agent systems, designed to handle long-horizon tasks like software engineering or cybersecurity triaging, can generate up to 15 times the token volume of standard chats — threatening their cost-effectiveness in handling enterprise tasks.
+But to</div>
+<p>Multi-agent systems, designed to handle long-horizon tasks like software engineering or cybersecurity triaging, can generate up to 15 times the token volume of standard chats — threatening their cost-effectiveness in handling enterprise tasks.</p>
+<p>But today, Nvidia sought to help solve this problem with the release of Nemotron 3 Super, a 120-billion-parameter hybrid model, with weights posted on Hugging Face.</p>
+<p>By merging disparate architectural philosophies—state-space models, transformers, and a novel &quot;Latent&quot; mixture-of-experts design—Nvidia is attempting to provide the specialized depth required for agentic workflows without the bloat typical of dense reasoning models, and all available for commercial usage under mostly open weights.</p>
+<p>Triple hybrid architecture</p>
+<p>At the core of Nemotron 3 Super is a sophisticated architectural triad that balances memory efficiency with precision reasoning. The model utilizes a Hybrid Mamba-Transformer backbone, which interleaves Mamba-2 layers with strategic Transformer attention layers.</p>
+<p>To understand the implications for enterprise production, consider the &quot;needle in a haystack&quot; problem. Mamba-2 layers act like a &quot;fast-travel&quot; highway system, handling the vast majority of sequence processing with linear-time complexity. This allows the model to maintain a massive 1-million-token context window without the memory footprint of the KV cache exploding. However, pure state-space models often struggle with associative recall.</p>
+<p>To fix this, Nvidia strategically inserts Transformer attention layers as &quot;global anchors,&quot; ensuring the model can precisely retrieve specific facts buried deep within a codebase or a stack of financial reports.</p>
+<p>Beyond the backbone, the model introduces Latent Mixture-of-Experts (LatentMoE). Traditional Mixture-of-Experts (MoE) designs route tokens to experts in their full hidden dimension, which creates a computational bottleneck as models scale. LatentMoE solves this by projecting tokens into a compressed space before routing them to specialists.</p>
+<p>This &quot;expert compression&quot; allows the model to consult four times as many specialists for the exact same computational cost. This granularity is vital for agents that must switch between Python syntax, SQL logic, and conversational reasoning within a single turn.</p>
+<p>Further accelerating the model is Multi-Token Prediction (MTP). While standard models predict a single next token, MTP predicts several future tokens simultaneously. This serves as a &quot;built-in draft model,&quot; enabling native speculative decoding that can deliver up to 3x wall-clock speedups for structured generation tasks like code or tool calls.</p>
+<p>The Blackwell advantage</p>
+<p>For enterprises, the most significant technical leap in Nemotron 3 Super is its optimization for the Nvidia Blackwell GPU platform. By pre-training natively in NVFP4 (4-bit floating point), Nvidia has achieved a breakthrough in production efficiency.</p>
+<p>On Blackwell, the model delivers 4x faster inference than 8-bit models running on the previous Hopper architecture, with no loss in accuracy.</p>
+<p>In practical performance, Nemotron 3 Super is a specialized tool for agentic reasoning.</p>
+<p>It currently holds the No. 1 position on the DeepResearch Bench, a benchmark measuring an AI&#x27;s ability to conduct thorough, multi-step research across large document sets.</p>
+<p>Benchmark | Nemotron 3 Super | Qwen3.5-122B-A10B | GPT-OSS-120B |</p>
+<p>General Knowledge | |||</p>
+<p>MMLU-Pro | 83.73 | 86.70 | 81.00 |</p>
+<p>Reasoning | |||</p>
+<p>AIME25 (no tools) | 90.21 | 90.36 | 92.50 |</p>
+<p>HMMT Feb25 (no tools) | 93.67 | 91.40 | 90.00 |</p>
+<p>HMMT Feb25 (with tools) | 94.73 | 89.55 | — |</p>
+<p>GPQA (no tools) | 79.23 | 86.60 | 80.10 |</p>
+<p>GPQA (with tools) | 82.70 | — | 80.09 |</p>
+<p>LiveCodeBench (v5 2024-07↔2024-12) | 81.19 | 78.93 | 88.00 |</p>
+<p>SciCode (subtask) | 42.05 | 42.00 | 39.00 |</p>
+<p>HLE (no tools) | 18.26 | 25.30 | 14.90 |</p>
+<p>HLE (with tools) | 22.82 | — | 19.0 |</p>
+<p>Agentic | |||</p>
+<p>Terminal Bench (hard subset) | 25.78 | 26.80 | 24.00 |</p>
+<p>Terminal Bench Core 2.0 | 31.00 | 37.50 | 18.70 |</p>
+<p>SWE-Bench (OpenHands) | 60.47 | 66.40 | 41.9 |</p>
+<p>SWE-Bench (OpenCode) | 59.20 | 67.40 | — |</p>
+<p>SWE-Bench (Codex) | 53.73 | 61.20 | — |</p>
+<p>SWE-Bench Multilingual (OpenHands) | 45.78 | — | 30.80 |</p>
+<p>TauBench V2 | |||</p>
+<p>Airline | 56.25 | 66.0 | 49.2 |</p>
+<p>Retail | 62.83 | 62.6 | 67.80 |</p>
+<p>Telecom | 64.36 | 95.00 | 66.00 |</p>
+<p>Average | 61.15 | 74.53 | 61.0 |</p>
+<p>BrowseComp with Search | 31.28 | — | 33.89 |</p>
+<p>BIRD Bench | 41.80 | — | 38.25 |</p>
+<p>Chat &amp; Instruction Following | |||</p>
+<p>IFBench (prompt) | 72.56 | 73.77 | 68.32 |</p>
+<p>Scale AI Multi-Challenge | 55.23 | 61.50 | 58.29 |</p>
+<p>Arena-Hard-V2 | 73.88 | 75.15 | 90.26 |</p>
+<p>Long Context | |||</p>
+<p>AA-LCR | 58.31 | 66.90 | 51.00 |</p>
+<p>RULER @ 256k | 96.30 | 96.74 | 52.30 |</p>
+<p>RULER @ 512k | 95.67 | 95.95 | 46.70 |</p>
+<p>RULER @ 1M | 91.75 | 91.33 | 22.30 |</p>
+<p>Multilingual | |||</p>
+<p>MMLU-ProX (avg over langs) | 79.36 | 85.06 | 76.59 |</p>
+<p>WMT24++ (en→xx) | 86.67 | 87.84 | 88.89 |</p>
+<p>It also demonstrates significant throughput advantages, achieving up to 2.2x higher throughput than gpt-oss-120B and 7.5x higher than Qwen3.5-122B in high-volume settings.</p>
+<p>![Nvidia Nemotron 3 Super key benchmarks chart](/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F656bw3DbDvO70EgyxhC2FT%2F760d120a6f077de337328b0302bea8af%2Faccuracy_chart.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=75)</p>
+<p>Custom ‘open’ license — commercial usage but with important caveats</p>
+<p>The release of Nemotron 3 Super under the Nvidia Open Model License Agreement (updated October 2025) provides a permissive framework for enterprise adoption, though it carries distinct &quot;safeguard&quot; clauses that differentiate it from pure open-source licenses like MIT or Apache 2.0.</p>
+<p>Key Provisions for Enterprise Users:</p>
+<p>Commercial Usability: The license explicitly states that models are &quot;commercially usable&quot; and grants a perpetual, worldwide, royalty-free license to sell and distribute products built on the model.</p>
+<p>Ownership of Output: Nvidia makes no claim to the outputs generated by the model; the responsibility for those outputs—and the ownership of them—rests entirely with the user.</p>
+<p>Derivative Works: Enterprises are free to create and own &quot;Derivative Models&quot; (fine-tuned versions), provided they include the required attribution notice: &quot;Licensed by Nvidia Corporation under the Nvidia Open Model License.&quot;</p>
+<p>The &quot;Red Lines&quot;:</p>
+<p>The license includes two critical termination triggers that production teams must monitor:</p>
+<p>Safety Guardrails: The license automatically terminates if a user bypasses or circumvents the model&#x27;s &quot;Guardrails&quot; (technical limitations or safety hyperparameters) without implementing a &quot;substantially similar&quot; replacement appropriate for the use case.</p>
+<p>Litigation Trigger: If a user institutes copyright or patent litigation against Nvidia alleging that the model infringes on their IP, their license to use the model terminates immediately.</p>
+<p>This structure allows Nvidia to foster a commercial ecosystem while protecting itself from &quot;IP trolling&quot; and ensuring that the model isn&#x27;t stripped of its safety features for malicious use.</p>
+<p>‘The team really cooked’</p>
+<p>The release has generated significant buzz within the developer community. Chris Alexiuk, a Senior Product Research Enginner at Nvidia, heralded the launch on X under his handle @llm_wizard as a &quot;SUPER DAY,&quot; emphasizing the model&#x27;s speed and transparency. &quot;Model is: FAST. Model is: SMART. Model is: THE MOST OPEN MODEL WE&#x27;VE DONE YET,&quot; Chris posted, highlighting the release of not just weights, but 10 trillion tokens of training data and recipes.</p>
+<p>The industry adoption reflects this enthusiasm:</p>
+<p>Cloud and Hardware: The model is being deployed as an Nvidia NIM microservice, allowing it to run on-premises via the Dell AI Factory or HPE, as well as across Google Cloud, Oracle, and shortly, AWS and Azure.</p>
+<p>Production Agents: Companies like CodeRabbit (software development) and Greptile are integrating the model to handle large-scale codebase analysis, while industrial leaders like Siemens and Palantir are deploying it to automate complex workflows in manufacturing and cybersecurity.</p>
+<p>As Kari Briski, Nvidia VP of AI Software, noted: &quot;As companies move beyond chatbots and into multi-agent applications, they encounter... context explosion.&quot;</p>
+<p>Nemotron 3 Super is Nvidia&#x27;s answer to that explosion—a model that provides the &quot;brainpower&quot; of a 120B parameter system with the operational efficiency of a much smaller specialist. For the enterprise, the message is clear: the &quot;thinking tax&quot; is finally coming down.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://venturebeat.com/technology/nvidias-new-open-weights-nemotron-3-super-combines-three-different" target="_blank">Read original →</a></div>
+</body></html>

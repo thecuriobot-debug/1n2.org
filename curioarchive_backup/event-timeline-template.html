@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curio Archive | Event Timeline</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .timeline-note {
+      margin-top: 0.5rem;
+      color: var(--muted);
+    }
+
+    .timeline-table td p {
+      margin: 0;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f3efe4;
+      border: 1px solid var(--line);
+      padding: 0.6rem;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1>Chronological Event Timeline</h1>
+      <p class="meta">Structured timeline generated from a provided event dataset.</p>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="timeline.html">Chronology</a>
+        <a href="records.html">Data Records</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Dataset Input</h2>
+        <p class="timeline-note">
+          Replace the JSON block in the script tag with your dataset. Accepted formats: an array of events or an object with an <code>events</code> array.
+        </p>
+        <div id="raw-data" class="mono">Data not available at time of publication.</div>
+      </section>
+
+      <section>
+        <h2>Timeline (Oldest to Newest)</h2>
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Month (if available)</th>
+              <th>Event title</th>
+              <th>Brief description</th>
+              <th>Impact assessment</th>
+            </tr>
+          </thead>
+          <tbody id="timeline-body">
+            <tr>
+              <td colspan="5">Data not available at time of publication.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Source and Data Context</h2>
+        <p>
+          This page renders only fields present in the supplied event dataset. Missing fields are marked unavailable rather than inferred.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last Updated: {{AUTO_TIMESTAMP}}
+    </footer>
+  </div>
+
+  <script id="event-json" type="application/json">{EVENT_JSON}</script>
+  <script>
+    (function renderTimeline() {
+      const rawEl = document.getElementById('event-json');
+      const tableBody = document.getElementById('timeline-body');
+      const rawDataContainer = document.getElementById('raw-data');
+
+      function asInt(value) {
+        const n = Number.parseInt(value, 10);
+        return Number.isFinite(n) ? n : null;
+      }
+
+      function toMonthLabel(value) {
+        if (value == null || value === '') return 'Data not available at time of publication.';
+
+        const monthMap = {
+          1: 'January',
+          2: 'February',
+          3: 'March',
+          4: 'April',
+          5: 'May',
+          6: 'June',
+          7: 'July',
+          8: 'August',
+          9: 'September',
+          10: 'October',
+          11: 'November',
+          12: 'December'
+        };
+
+        const maybeNum = asInt(value);
+        if (maybeNum && monthMap[maybeNum]) return monthMap[maybeNum];
+        return String(value);
+      }
+
+      function getValue(event, keys) {
+        for (const key of keys) {
+          if (Object.prototype.hasOwnProperty.call(event, key) && event[key] !== null && event[key] !== '') {
+            return event[key];
+          }
+        }
+        return null;
+      }
+
+      function normalizeEvent(event) {
+        const year = getValue(event, ['year', 'Year']);
+        const month = getValue(event, ['month', 'Month']);
+        const title = getValue(event, ['event_title', 'title', 'event', 'name']);
+        const description = getValue(event, ['description', 'brief_description', 'summary']);
+        const impact = getValue(event, ['impact_assessment', 'impact', 'impactAssessment']);
+
+        return {
+          year: year == null ? 'Data not available at time of publication.' : String(year),
+          monthLabel: toMonthLabel(month),
+          monthSort: (function () {
+            const n = asInt(month);
+            return n && n >= 1 && n <= 12 ? n : 13;
+          })(),
+          title: title == null ? 'Data not available at time of publication.' : String(title),
+          description: description == null ? 'Data not available at time of publication.' : String(description),
+          impact: impact == null ? 'Data not available at time of publication.' : String(impact),
+          yearSort: (function () {
+            const n = asInt(year);
+            return n == null ? Number.MAX_SAFE_INTEGER : n;
+          })()
+        };
+      }
+
+      let parsed;
+      try {
+        const raw = (rawEl.textContent || '').trim();
+        if (rawDataContainer) {
+          rawDataContainer.textContent = raw || 'Data not available at time of publication.';
+        }
+
+        if (!raw || raw === '{EVENT_JSON}') {
+          throw new Error('Placeholder or empty input');
+        }
+        parsed = JSON.parse(raw);
+      } catch (err) {
+        tableBody.innerHTML = '<tr><td colspan="5">Data not available at time of publication.</td></tr>';
+        return;
+      }
+
+      const sourceEvents = Array.isArray(parsed) ? parsed : Array.isArray(parsed.events) ? parsed.events : [];
+      if (!sourceEvents.length) {
+        tableBody.innerHTML = '<tr><td colspan="5">Data not available at time of publication.</td></tr>';
+        return;
+      }
+
+      const events = sourceEvents
+        .map(normalizeEvent)
+        .sort(function (a, b) {
+          if (a.yearSort !== b.yearSort) return a.yearSort - b.yearSort;
+          return a.monthSort - b.monthSort;
+        });
+
+      tableBody.innerHTML = events
+        .map(function (event) {
+          return '<tr>' +
+            '<td>' + event.year + '</td>' +
+            '<td>' + event.monthLabel + '</td>' +
+            '<td>' + event.title + '</td>' +
+            '<td><p>' + event.description + '</p></td>' +
+            '<td><p>' + event.impact + '</p></td>' +
+          '</tr>';
+        })
+        .join('');
+    })();
+  </script>
+</body>
+</html>

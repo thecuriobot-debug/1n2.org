@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin Trains — Full History</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:'JetBrains Mono',monospace;background:#081627;color:#f8f7ef}
+canvas{display:block;width:100%;height:100%}
+.hud{position:absolute;top:0;left:0;right:0;z-index:10;padding:10px 20px;
+  background:rgba(8,22,39,.85);backdrop-filter:blur(10px);display:flex;align-items:center;gap:16px;
+  border-bottom:2px solid #aa8833;transition:border-color 1s}
+.hud .mode{font-family:'Bungee',sans-serif;font-size:.7rem;letter-spacing:2px;padding:4px 12px;border-radius:3px;background:#aa8833;color:#000}
+.hud .price{font-size:2.2rem;font-weight:700;color:#ddb844;transition:color 1s}
+.hud .delta{font-size:1rem;transition:color 1s}
+.up{color:#44aa66}.down{color:#cc5555}.flat{color:#64748b}
+.hud .info{margin-left:auto;text-align:right;font-size:.8rem;color:#64748b}
+.notif{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:15;
+  padding:12px 28px;border-radius:8px;background:rgba(8,22,39,.7);backdrop-filter:blur(6px);
+  border:1px solid rgba(221,184,68,.3);text-align:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.notif.show{opacity:1}
+.notif .nt{font-family:'Bungee',sans-serif;font-size:1.8rem;color:#ddb844}
+.notif .ns{font-size:.9rem;color:#8899aa;margin-top:3px}
+.overlay{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .6s}
+.overlay.show{opacity:1}
+.ot{font-family:'Bungee',sans-serif;font-size:2rem;color:#ddb844;text-align:center;text-shadow:0 0 30px rgba(221,184,68,.3)}
+.os{font-size:.8rem;color:#64748b;margin-top:6px;text-align:center}
+</style>
+</head>
+<body>
+<div class="hud" id="hud">
+  <div class="mode" id="mode">LOADING</div>
+  <div class="price" id="price">$--</div>
+  <div class="delta" id="delta"></div>
+  <div class="info"><span id="dateEl"></span><br><span id="daycount"></span></div>
+</div>
+<canvas id="c"></canvas>
+<div class="notif" id="notif"><div class="nt" id="nText"></div><div class="ns" id="nSub"></div></div>
+<div class="overlay" id="overlay"><div><div class="ot" id="oText"></div><div class="os" id="oSub"></div></div></div>
+<script>
+const C=document.getElementById('c'),X=C.getContext('2d');
+const priceEl=document.getElementById('price'),deltaEl=document.getElementById('delta'),
+  dateEl=document.getElementById('dateEl'),dayEl=document.getElementById('daycount'),
+  modeEl=document.getElementById('mode'),hud=document.getElementById('hud'),
+  overlay=document.getElementById('overlay'),oText=document.getElementById('oText'),oSub=document.getElementById('oSub'),
+  notif=document.getElementById('notif'),nText=document.getElementById('nText'),nSub=document.getElementById('nSub');
+const fmt=v=>v>=1000?'$'+Math.round(v).toLocaleString():v>=1?'$'+v.toFixed(2):'$'+v.toFixed(4);
+const pct=(a,b)=>((a-b)/b*100).toFixed(1);
+let W,H;
+function resize(){const d=devicePixelRatio||1;W=innerWidth;H=innerHeight;C.width=W*d;C.height=H*d;X.setTransform(d,0,0,d,0,0);}
+addEventListener('resize',resize);resize();
+function showOvl(t,s,ms=2500){oText.textContent=t;oSub.textContent=s||'';overlay.classList.add('show');
+  return new Promise(r=>setTimeout(()=>{overlay.classList.remove('show');setTimeout(r,400)},ms));}
+let notifTimer;
+function showNotif(t,s,ms=2000){nText.textContent=t;nSub.textContent=s||'';notif.classList.add('show');
+  clearTimeout(notifTimer);notifTimer=setTimeout(()=>notif.classList.remove('show'),ms);}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+// ═══ CAMERA ZOOM ═══
+// Camera tracks the train with smooth zoom in/out cycles
+let camTarget=0, camZoom=1, camManual=false;
+function getCamera(upTo,N){
+  if(!camManual){
+    const prog=upTo/N;
+    const headFrac=Math.max(0,(upTo-1)/(N-1));
+    // Cinematic camera: zoom in close, periodically zoom out to show context
+    // Every ~40 data points, do a "hero zoom out" then zoom back in
+    const cycle=upTo%40;
+    const inHeroShot=cycle>30; // last 10 of every 40 = zoom out
+    let targetZoom;
+    if(prog<0.05){
+      targetZoom=8; // very close at start — see the train big
+    }else if(inHeroShot){
+      // Hero shot — zoom way out to show how small this section is in the big picture
+      const heroProgress=(cycle-30)/10; // 0→1 during hero
+      targetZoom=Math.max(0.6, 0.7+Math.max(0,(1-prog)*0.3));
+    }else{
+      // Normal: zoomed in close on the train, slowly zooming out over time
+      targetZoom=2.5+Math.max(0,(1-prog)*5);
+    }
+    camZoom+=(targetZoom-camZoom)*0.06; // smooth lerp
+    camZoom=Math.max(0.5,Math.min(8,camZoom));
+    // Camera follow — keep train centered and on screen
+    let targetCenter;
+    if(inHeroShot){
+      targetCenter=headFrac*0.5+0.25; // pull back toward center
+    }else{
+      // Center slightly behind the train head so track ahead is visible
+      targetCenter=headFrac-0.05/camZoom;
+    }
+    camTarget+=(targetCenter-camTarget)*0.06;
+    // Auto zoom out if train would be off-screen (safety clamp)
+    const viewW2=1/camZoom;
+    const trainScreenFrac=(headFrac-camTarget)/viewW2+0.5;
+    if(trainScreenFrac>0.85||trainScreenFrac<0.15){
+      camZoom+=(camZoom*0.85-camZoom)*0.05; // zoom out a bit
+    }
+  }
+  return{center:camTarget,zoom:camZoom};
+}
+
+const M={top:55,bot:50,left:50,right:90};
+function draw(prices,upTo){
+  X.clearRect(0,0,W,H);if(upTo<2)return;
+  const N=prices.length,slice=prices.slice(0,upTo);
+  // Use log scale for price (BTC goes from $0.05 to $126K)
+  const allP=prices.map(p=>Math.log10(Math.max(0.01,p.price)));
+  const mn=Math.min(...allP)-0.5,mx=Math.max(...allP)+0.5,rng=mx-mn;
+  const cW=W-M.left-M.right,cH=H-M.top-M.bot;
+  // Camera
+  const cam=getCamera(upTo,N);
+  const viewW=1/cam.zoom; // fraction of chart visible
+  const viewL=Math.max(0,Math.min(1-viewW,cam.center-viewW/2));
+  const viewR=viewL+viewW;
+  const px=i=>{const frac=i/(N-1);return M.left+((frac-viewL)/(viewR-viewL))*cW;};
+  const py=p=>M.top+cH-((Math.log10(Math.max(0.01,p))-mn)/rng)*cH;
+  // Visible range
+  const iL=Math.max(0,Math.floor(viewL*(N-1))-1);
+  const iR=Math.min(N-1,Math.ceil(viewR*(N-1))+1);
+  const last=slice[slice.length-1].price;
+  const prev2=slice.length>1?slice[slice.length-2].price:last;
+  const goingUp=last>=prev2;
+  // Smooth mood: lerps slowly between 0 (bearish) and 1 (bullish)
+  if(typeof window._mood==='undefined')window._mood=0.5;
+  window._mood+=(((goingUp?1:0))-window._mood)*0.015; // very slow transition
+  const mood=window._mood;
+  // ═══ SUBTLE BACKGROUND — calm, steady ═══
+  const warmth=(Math.log10(Math.max(0.01,last))-mn)/rng;
+  const t=Date.now()/1000;
+  const sky=X.createLinearGradient(0,0,0,H);
+  const hue=210+mood*8;const sat=14+mood*6;const lit=18+mood*6;
+  sky.addColorStop(0,`hsl(${hue-5},${sat}%,${lit+12}%)`);
+  sky.addColorStop(1,`hsl(${hue+5},${sat+3}%,${lit}%)`);
+  X.fillStyle=sky;X.fillRect(0,0,W,H);
+  // Subtle hills — very faint, no color change
+  for(const[op,f,h0] of[[.035,.003,.52],[.05,.005,.6]]){
+    X.fillStyle=`rgba(40,65,55,${op})`;X.beginPath();X.moveTo(0,H);
+    for(let x=0;x<W;x+=20)X.lineTo(x,(h0+Math.sin(x*f+viewL*10)*.04)*H);
+    X.lineTo(W,H);X.fill();}
+  // Track bed fill
+  if(upTo>1){X.beginPath();X.moveTo(px(iL),py(0.01)+8);
+    for(let i=iL;i<Math.min(upTo,iR+1);i++)X.lineTo(px(i),py(slice[i]?.price||prices[i].price));
+    X.lineTo(px(Math.min(upTo-1,iR)),py(0.01)+8);X.closePath();
+    const tf=X.createLinearGradient(0,py(Math.pow(10,mx)),0,py(0.01)+8);
+    tf.addColorStop(0,'rgba(160,140,80,.06)');tf.addColorStop(1,'rgba(160,140,80,.01)');
+    X.fillStyle=tf;X.fill();}
+  // ═══ RAILROAD TRACKS — the chart IS the rails ═══
+  // Draw the price chart twice, offset up and down, as the two rails
+  // Ties connect them perpendicular, drawn ON the chart
+  const GAUGE=8; // half-distance between the two rail lines
+  // Build visible track points
+  if(upTo>2){const tP=[];for(let i=iL;i<Math.min(upTo,iR+1);i++){
+    const p=i<upTo?slice[i].price:prices[i].price;tP.push({x:px(i),y:py(p)});}
+    if(tP.length>1){
+    // Arc-length for tie spacing
+    const tA=[0];for(let i=1;i<tP.length;i++){const dx=tP[i].x-tP[i-1].x,dy=tP[i].y-tP[i-1].y;tA.push(tA[i-1]+Math.sqrt(dx*dx+dy*dy));}
+    const tT=tA[tA.length-1]||1;const SP=9;
+    // Helper: sample point at arc distance
+    function tAt(d){d=Math.max(0,Math.min(tT,d));let j=1;while(j<tA.length-1&&tA[j]<d)j++;
+      const seg=tA[j]-tA[j-1]||1,t=(d-tA[j-1])/seg;
+      const x=tP[j-1].x+(tP[j].x-tP[j-1].x)*t,y=tP[j-1].y+(tP[j].y-tP[j-1].y)*t;
+      const ang=Math.atan2(tP[j].y-tP[j-1].y,tP[j].x-tP[j-1].x);return{x,y,ang};}
+    // Draw ties first (under the rails)
+    for(let d=0;d<tT;d+=SP){
+      const pt=tAt(d);
+      const nx=Math.cos(pt.ang+Math.PI/2),ny=Math.sin(pt.ang+Math.PI/2);
+      // Tie plank from rail to rail
+      X.strokeStyle='#6a4a2a';X.lineWidth=2.5;
+      X.beginPath();
+      X.moveTo(pt.x+nx*(-GAUGE-2),pt.y+ny*(-GAUGE-2));
+      X.lineTo(pt.x+nx*(GAUGE+2),pt.y+ny*(GAUGE+2));
+      X.stroke();
+    }
+    // Draw 2 rail lines = the price chart drawn twice, offset up and down
+    for(const side of[-1,1]){
+      // Outer rail (steel)
+      X.beginPath();
+      for(let i=0;i<tP.length;i++){
+        let nx=0,ny=1;
+        if(i<tP.length-1){const a=Math.atan2(tP[i+1].y-tP[i].y,tP[i+1].x-tP[i].x);nx=Math.cos(a+Math.PI/2);ny=Math.sin(a+Math.PI/2);}
+        else if(i>0){const a=Math.atan2(tP[i].y-tP[i-1].y,tP[i].x-tP[i-1].x);nx=Math.cos(a+Math.PI/2);ny=Math.sin(a+Math.PI/2);}
+        const x=tP[i].x+nx*side*GAUGE,y=tP[i].y+ny*side*GAUGE;
+        i===0?X.moveTo(x,y):X.lineTo(x,y);}
+      X.strokeStyle='#999';X.lineWidth=2;X.stroke();
+      // Inner rail highlight
+      X.beginPath();
+      for(let i=0;i<tP.length;i++){
+        let nx=0,ny=1;
+        if(i<tP.length-1){const a=Math.atan2(tP[i+1].y-tP[i].y,tP[i+1].x-tP[i].x);nx=Math.cos(a+Math.PI/2);ny=Math.sin(a+Math.PI/2);}
+        else if(i>0){const a=Math.atan2(tP[i].y-tP[i-1].y,tP[i].x-tP[i-1].x);nx=Math.cos(a+Math.PI/2);ny=Math.sin(a+Math.PI/2);}
+        const x=tP[i].x+nx*side*(GAUGE-2.5),y=tP[i].y+ny*side*(GAUGE-2.5);
+        i===0?X.moveTo(x,y):X.lineTo(x,y);}
+      X.strokeStyle='#777';X.lineWidth=1;X.stroke();
+    }
+    // Gold price line — thin, along center between the two rails
+    X.beginPath();for(let i=0;i<tP.length;i++){i===0?X.moveTo(tP[i].x,tP[i].y):X.lineTo(tP[i].x,tP[i].y);}
+    X.strokeStyle='rgba(221,184,68,0.35)';X.lineWidth=1;X.stroke();
+  }}
+  // ═══ TIMELINE — dynamic time machine style ═══
+  const timeH=M.bot-4;
+  // Timeline bar background
+  X.fillStyle='rgba(8,22,39,0.6)';X.fillRect(0,H-timeH,W,timeH);
+  X.fillStyle='rgba(221,184,68,0.15)';X.fillRect(M.left,H-timeH,cW,1);
+  // Year markers — big, bold, animated
+  X.textAlign='center';
+  for(let i=iL;i<=Math.min(N-1,iR);i++){const d=new Date(prices[i].ts*1000);
+    if(d.getMonth()===0&&d.getDate()<15){const x=px(i);
+      if(x>M.left+20&&x<W-M.right-20){
+        // Vertical tick
+        X.fillStyle='rgba(221,184,68,0.3)';X.fillRect(x-0.5,H-timeH,1,timeH);
+        // Year text — big and bold
+        const yr=d.getFullYear();
+        X.font='bold 14px Bungee,sans-serif';X.fillStyle='rgba(221,184,68,0.7)';
+        X.fillText(yr,x,H-8);
+      }}}
+  // Current date highlight — pulsing
+  if(upTo>1){const cx=px(Math.min(upTo-1,iR));
+    const pulse=0.5+Math.sin(Date.now()/300)*0.3;
+    X.fillStyle=`rgba(221,184,68,${pulse*0.4})`;X.fillRect(cx-1,H-timeH,3,timeH);
+    const curDate=new Date(slice[slice.length-1].ts*1000);
+    X.font='bold 11px JetBrains Mono';X.fillStyle=`rgba(221,184,68,${pulse})`;
+    X.fillText(curDate.toLocaleDateString('en-US',{month:'short',year:'numeric'}),cx,H-timeH-4);
+  }
+
+  // ═══ PRICE AXIS — Price Is Right wheel style ═══
+  const axW=M.right-8;
+  // Panel background
+  X.fillStyle='rgba(8,22,39,0.7)';X.fillRect(W-axW-4,M.top,axW+4,cH);
+  X.fillStyle='rgba(221,184,68,0.2)';X.fillRect(W-axW-4,M.top,1,cH);
+  // Price boxes — big animated numbers
+  const priceLevels=[];
+  for(let e=-1;e<=6;e++){const p=Math.pow(10,e);const y=py(p);
+    if(y>M.top+15&&y<H-M.bot-15)priceLevels.push({price:p,y});}
+  priceLevels.forEach(lv=>{
+    const boxH=22,boxW=axW-4,bx=W-axW,by=lv.y-boxH/2;
+    // Is current price near this level?
+    const dist=Math.abs(Math.log10(last)-Math.log10(lv.price));
+    const active=dist<0.3;
+    // Box
+    X.fillStyle=active?'rgba(221,184,68,0.2)':'rgba(30,41,59,0.5)';
+    X.strokeStyle=active?'rgba(221,184,68,0.6)':'rgba(100,116,139,0.3)';
+    X.lineWidth=active?2:1;
+    rr(X,bx,by,boxW,boxH,4);X.fill();rr(X,bx,by,boxW,boxH,4);X.stroke();
+    // Grid line
+    X.fillStyle='rgba(255,255,255,.04)';X.fillRect(M.left,lv.y,cW,.5);
+    // Price text
+    X.textAlign='center';
+    X.font=active?'bold 12px Bungee':'bold 10px JetBrains Mono';
+    X.fillStyle=active?'#ddb844':'rgba(255,255,255,0.4)';
+    X.fillText(fmt(lv.price),bx+boxW/2,lv.y+4);
+  });
+  // Current price indicator — spinning wheel highlight
+  {const cy=py(last);const pulse=0.6+Math.sin(Date.now()/200)*0.3;
+   const arR=Math.round(204-mood*111),arG=Math.round(112+mood*74),arB=Math.round(112+mood*13);
+   X.fillStyle=`rgba(${arR},${arG},${arB},${pulse})`;
+   X.beginPath();X.moveTo(W-axW-4,cy);X.lineTo(W-axW-12,cy-6);X.lineTo(W-axW-12,cy+6);X.closePath();X.fill();
+   X.font='bold 14px Bungee';X.fillStyle=`rgb(${arR},${arG},${arB})`;X.textAlign='center';
+   X.fillText(fmt(last),W-axW/2,cy-14);
+  }
+
+  // ═══ BIG ANIMATED LOCOMOTIVE — with Mad Bitcoins conductor ═══
+  const trkPts=[];for(let i=iL;i<Math.min(upTo,iR+1);i++)trkPts.push({x:px(i),y:py(slice[i]?.price||prices[i].price)});
+  if(trkPts.length<2){hud.style.borderColor=goingUp?'#5a9a5a':'#9a5a5a';return;}
+  const arcLen=[0];
+  for(let i=1;i<trkPts.length;i++){const dx=trkPts[i].x-trkPts[i-1].x,dy=trkPts[i].y-trkPts[i-1].y;arcLen.push(arcLen[i-1]+Math.sqrt(dx*dx+dy*dy));}
+  const totalArc=arcLen[arcLen.length-1];
+  function atDist(d){d=Math.max(0,Math.min(totalArc,d));let i=1;while(i<arcLen.length-1&&arcLen[i]<d)i++;
+    const seg=arcLen[i]-arcLen[i-1]||1,t=(d-arcLen[i-1])/seg;
+    return{x:trkPts[i-1].x+(trkPts[i].x-trkPts[i-1].x)*t,y:trkPts[i-1].y+(trkPts[i].y-trkPts[i-1].y)*t};}
+  const LAG=0.03;const headDist=totalArc*(1-LAG);const headPt=atDist(headDist);
+  const headIdx=Math.max(0,Math.min(upTo-1,Math.round((upTo-1)*(1-LAG))));
+  const trainUp=headIdx>0&&slice[Math.min(headIdx,upTo-1)].price>=slice[Math.max(0,headIdx-1)].price;
+  // Train color: steady dark steel, no red/green flashing
+  const col='#3a6a5a';
+  // Price velocity for expressions
+  const pNow=slice[Math.min(headIdx,upTo-1)]?.price||0;
+  const pPrev=headIdx>1?slice[headIdx-2]?.price||pNow:pNow;
+  const pChg=pPrev?((pNow-pPrev)/pPrev):0; // fractional change
+  const fastUp=pChg>0.08,fastDown=pChg<-0.08,scared=pChg<-0.15;
+  const tt=Date.now()/1000; // animation time
+  // BIGGER train — 2x scale
+  const S=4; // scale factor — BIG train
+  const WR=2.5*S,COUPLER=1*S;
+  const cars=[
+    {len:16*S,h:10*S,eng:true},        // locomotive
+    {len:10*S,h:8*S,col:'#444'},       // coal tender
+    {len:11*S,h:9*S,type:'box'},       // boxcar 1
+    {len:11*S,h:9*S,type:'box'},       // boxcar 2
+    {len:12*S,h:7*S,type:'tank'},      // tanker
+    {len:12*S,h:7*S,type:'tank'},      // tanker
+    {len:11*S,h:9*S,type:'box'},       // boxcar 3
+    {len:10*S,h:4*S,type:'flat'},      // flatbed
+    {len:10*S,h:4*S,type:'flat'},      // flatbed
+    {len:10*S,h:8*S,col:'#aa3333',type:'caboose'} // caboose
+  ];
+  let fA=headDist;
+  for(let c=0;c<cars.length;c++){const car=cars[c],rA=fA-car.len;if(rA<0)break;
+    const fp=atDist(fA),rp=atDist(rA),cx=(fp.x+rp.x)/2,cy=(fp.y+rp.y)/2;
+    const ang=Math.atan2(fp.y-rp.y,fp.x-rp.x);
+    X.save();X.translate(cx,cy);X.rotate(ang);
+    const cCol=car.col||col;
+    // Car body
+    X.fillStyle=cCol;X.globalAlpha=car.eng?1:.9;
+    const rad=car.eng?3*S:(car.type==='tank'?car.h/2:2*S);
+    rr(X,-car.len/2,-car.h-2*S,car.len,car.h,rad);X.fill();
+    // Windows on boxcars
+    if(car.type==='box'){X.fillStyle='rgba(150,200,255,0.3)';
+      for(let w=0;w<3;w++)X.fillRect(-car.len/3+w*car.len/4,-car.h-1*S,car.len/6,car.h*0.4);}
+    // Wheels — bigger, animated rotation
+    X.fillStyle='#222';X.globalAlpha=1;const wheelR=WR;
+    const wheelSpin=tt*5;
+    for(const wx of[-car.len/2+wheelR+1*S,car.len/2-wheelR-1*S]){
+      X.beginPath();X.arc(wx,0,wheelR,0,Math.PI*2);X.fill();
+      X.strokeStyle='#555';X.lineWidth=0.5*S;
+      for(let sp=0;sp<4;sp++){const sa=wheelSpin+sp*Math.PI/2;
+        X.beginPath();X.moveTo(wx,0);X.lineTo(wx+Math.cos(sa)*wheelR*0.8,Math.sin(sa)*wheelR*0.8);X.stroke();}}
+    // ═══ ENGINE DETAILS + MAD BITCOINS CONDUCTOR ═══
+    if(car.eng){
+      X.fillStyle='#fffbe0';X.shadowColor='#ffd700';X.shadowBlur=6*S;
+      X.fillRect(car.len/2-2*S,-car.h-S,3*S,5*S);X.shadowBlur=0;
+      X.fillStyle='#333';X.fillRect(-car.len/2+3*S,-car.h-6*S,4*S,6*S);
+      X.fillStyle='#555';X.fillRect(-car.len/2+2*S,-car.h-7*S,6*S,2*S);
+      for(let s=0;s<4;s++){const age=(tt*1.2+s*.25)%1;
+        X.globalAlpha=(1-age)*.3;X.fillStyle='rgba(180,180,180,0.8)';
+        X.beginPath();X.arc(-car.len/2+5*S-age*12*S,-car.h-7*S-age*16*S,2*S+age*5*S,0,Math.PI*2);X.fill();}
+      X.globalAlpha=1;
+      X.fillStyle='#666';X.beginPath();X.moveTo(car.len/2,-1*S);X.lineTo(car.len/2+4*S,1*S);X.lineTo(car.len/2+4*S,-1*S);X.closePath();X.fill();
+      // MAD BITCOINS conductor — only appears after Apr 21, 2013
+      if(madBitcoinsActive){
+      const mbx=car.len/4,mby=-car.h-2*S,wave=Math.sin(tt*3)*0.4,bounce=Math.sin(tt*4)*S;
+      X.fillStyle='rgba(100,160,220,0.25)';X.fillRect(mbx-5*S,mby-10*S,10*S,10*S);
+      X.strokeStyle='#888';X.lineWidth=S;X.strokeRect(mbx-5*S,mby-10*S,10*S,10*S);
+      X.fillStyle='#1a1a2e';X.fillRect(mbx-3.5*S,mby-4*S+bounce,7*S,5*S);
+      X.fillStyle='#e8e8e8';X.fillRect(mbx-1*S,mby-4*S+bounce,2*S,4*S);
+      X.fillStyle='#cc2233';X.fillRect(mbx-0.5*S,mby-3*S+bounce,1*S,3*S);
+      X.fillStyle='#e8b87a';X.beginPath();X.arc(mbx,mby-7*S+bounce,3.5*S,0,Math.PI*2);X.fill();
+      if(fastUp){X.font='bold '+Math.round(3*S)+'px sans-serif';X.fillStyle='#ddb844';X.textAlign='center';
+        X.fillText('\u20bf',mbx-1.5*S,mby-6.5*S+bounce);X.fillText('\u20bf',mbx+1.5*S,mby-6.5*S+bounce);
+        X.strokeStyle='#333';X.lineWidth=0.7*S;X.beginPath();X.arc(mbx,mby-5.5*S+bounce,2*S,0.1,Math.PI-0.1);X.stroke();
+      }else if(scared){X.fillStyle='#fff';
+        X.beginPath();X.ellipse(mbx-1.5*S,mby-7*S+bounce,1.8*S,2.2*S,0,0,Math.PI*2);X.fill();
+        X.beginPath();X.ellipse(mbx+1.5*S,mby-7*S+bounce,1.8*S,2.2*S,0,0,Math.PI*2);X.fill();
+        X.fillStyle='#111';X.beginPath();X.arc(mbx-1.5*S,mby-6.5*S+bounce,0.8*S,0,Math.PI*2);X.fill();
+        X.beginPath();X.arc(mbx+1.5*S,mby-6.5*S+bounce,0.8*S,0,Math.PI*2);X.fill();
+        X.fillStyle='#222';X.beginPath();X.ellipse(mbx,mby-4.5*S+bounce,1.5*S,2*S,0,0,Math.PI*2);X.fill();
+      }else if(fastDown){X.fillStyle='#333';
+        X.beginPath();X.arc(mbx-1.5*S,mby-7*S+bounce,0.8*S,0,Math.PI*2);X.fill();
+        X.beginPath();X.arc(mbx+1.5*S,mby-7*S+bounce,0.8*S,0,Math.PI*2);X.fill();
+        X.strokeStyle='#333';X.lineWidth=0.7*S;X.beginPath();X.arc(mbx,mby-3.5*S+bounce,2*S,Math.PI+0.3,Math.PI*2-0.3);X.stroke();
+      }else if(goingUp){X.fillStyle='#333';
+        X.beginPath();X.arc(mbx-1.5*S,mby-7*S+bounce,0.7*S,0,Math.PI*2);X.fill();
+        X.beginPath();X.arc(mbx+1.5*S,mby-7*S+bounce,0.7*S,0,Math.PI*2);X.fill();
+        X.strokeStyle='#333';X.lineWidth=0.7*S;X.beginPath();X.arc(mbx,mby-5.5*S+bounce,2*S,0.2,Math.PI-0.2);X.stroke();
+      }else{X.fillStyle='#333';
+        X.beginPath();X.arc(mbx-1.5*S,mby-7*S+bounce,0.7*S,0,Math.PI*2);X.fill();
+        X.beginPath();X.arc(mbx+1.5*S,mby-7*S+bounce,0.7*S,0,Math.PI*2);X.fill();
+        X.strokeStyle='#333';X.lineWidth=0.7*S;X.beginPath();X.moveTo(mbx-1.5*S,mby-5*S+bounce);X.lineTo(mbx+1.5*S,mby-5*S+bounce);X.stroke();}
+      // Goggles
+      X.fillStyle='#cc2233';X.globalAlpha=0.7;
+      X.beginPath();X.ellipse(mbx-1.8*S,mby-8.5*S+bounce,1.5*S,1*S,0,0,Math.PI*2);X.fill();
+      X.beginPath();X.ellipse(mbx+1.8*S,mby-8.5*S+bounce,1.5*S,1*S,0,0,Math.PI*2);X.fill();
+      X.globalAlpha=1;X.strokeStyle='#111';X.lineWidth=0.5*S;
+      X.beginPath();X.ellipse(mbx-1.8*S,mby-8.5*S+bounce,1.5*S,1*S,0,0,Math.PI*2);X.stroke();
+      X.beginPath();X.ellipse(mbx+1.8*S,mby-8.5*S+bounce,1.5*S,1*S,0,0,Math.PI*2);X.stroke();
+      // Top Hat with red band + Bitcoin logo
+      X.fillStyle='#111';X.fillRect(mbx-4*S,mby-11.5*S+bounce,8*S,1.5*S);
+      X.fillRect(mbx-2.8*S,mby-17*S+bounce,5.6*S,6*S);
+      X.fillStyle='#cc2233';X.fillRect(mbx-2.8*S,mby-13*S+bounce,5.6*S,1.5*S);
+      X.font='bold '+Math.round(3*S)+'px sans-serif';X.fillStyle='#ddb844';X.textAlign='center';
+      X.fillText('\u20bf',mbx,mby-14*S+bounce);
+      // Waving arm
+      X.strokeStyle='#e8b87a';X.lineWidth=1.5*S;X.beginPath();X.moveTo(mbx+4*S,mby-3*S+bounce);
+      X.lineTo(mbx+7*S,mby-6*S+bounce+wave*4*S);X.lineTo(mbx+9*S,mby-9*S+bounce+wave*6*S);X.stroke();
+      X.fillStyle='#e8b87a';X.beginPath();X.arc(mbx+9*S,mby-9*S+bounce+wave*6*S,1.2*S,0,Math.PI*2);X.fill();
+      } // end madBitcoinsActive
+    }
+    // Dogs in boxcar windows
+    if(car.type==='box'){const dph=tt*2+c,dx=0,dy=-car.h+1*S;
+      X.fillStyle='#b8860b';X.beginPath();X.arc(dx,dy+Math.sin(dph)*S,2*S,0,Math.PI*2);X.fill();
+      X.beginPath();X.ellipse(dx-2*S,dy-S+Math.sin(dph)*S,S,1.5*S,-0.3,0,Math.PI*2);X.fill();
+      X.beginPath();X.ellipse(dx+2*S,dy-S+Math.sin(dph)*S,S,1.5*S,0.3,0,Math.PI*2);X.fill();
+      X.fillStyle='#111';X.beginPath();X.arc(dx-0.7*S,dy-0.5*S+Math.sin(dph)*S,0.4*S,0,Math.PI*2);X.fill();
+      X.beginPath();X.arc(dx+0.7*S,dy-0.5*S+Math.sin(dph)*S,0.4*S,0,Math.PI*2);X.fill();
+      if(goingUp){X.fillStyle='#ff6b6b';X.beginPath();X.ellipse(dx+0.5*S,dy+1.5*S+Math.sin(dph)*S,0.5*S,S,0.2,0,Math.PI*2);X.fill();}}
+    if(car.type==='box'&&c===2){const rph=tt*1.5,lean=Math.sin(rph)*2*S;
+      X.fillStyle='#333';X.beginPath();X.arc(lean,-car.h-7*S,1.5*S,0,Math.PI*2);X.fill();
+      X.fillStyle='#444';X.fillRect(-1.5*S+lean,-car.h-5.5*S,3*S,3*S);
+      X.strokeStyle='#333';X.lineWidth=S;
+      X.beginPath();X.moveTo(lean,-car.h-2.5*S);X.lineTo(lean+Math.sin(rph)*3*S,-car.h);X.stroke();
+      X.beginPath();X.moveTo(lean,-car.h-2.5*S);X.lineTo(lean-Math.sin(rph)*3*S,-car.h);X.stroke();
+      X.fillStyle='#cc2233';X.beginPath();X.moveTo(lean-2*S,-car.h-7.5*S);X.lineTo(lean+2*S,-car.h-7.5*S);X.lineTo(lean+3*S,-car.h-6.5*S);X.closePath();X.fill();}
+    if(car.type==='flat'){X.globalAlpha=0.7;X.fillStyle='#8B6914';X.fillRect(-car.len/4,-car.h-4*S,car.len/3,4*S);
+      X.fillStyle='#ddb844';X.font='bold '+Math.round(3*S)+'px sans-serif';X.textAlign='center';X.fillText('\u20bf',0,-car.h-2*S);X.globalAlpha=1;}
+    if(car.type==='caboose'){X.fillStyle='#ff4444';X.shadowColor='#ff0000';X.shadowBlur=4*S;
+      X.beginPath();X.arc(-car.len/2-S,-car.h/2-S,1.5*S,0,Math.PI*2);X.fill();X.shadowBlur=0;
+      X.fillStyle='#992222';X.fillRect(-2*S,-car.h-4*S,4*S,3*S);
+      X.fillStyle='rgba(150,200,255,0.3)';X.fillRect(-1.5*S,-car.h-3.5*S,3*S,2*S);}
+    X.globalAlpha=1;X.restore();fA=rA-COUPLER;}
+  // Price tag
+  X.save();X.font='bold 8px JetBrains Mono';X.fillStyle=trainUp?'#5dba7d':'#cc7070';
+  X.textAlign='left';X.fillText(fmt(slice[Math.min(headIdx,upTo-1)].price),headPt.x+14,headPt.y-12);X.restore();
+  hud.style.borderColor=`rgb(${Math.round(154-mood*64)},${Math.round(90+mood*64)},${Math.round(90)})`; // smooth border
+}
+function rr(c,x,y,w,h,r){r=Math.min(r,w/2,h/2);c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);
+  c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);c.closePath();}
+
+// ═══ MILESTONES + THOMAS HUNT EVENTS ═══
+// Price milestones
+const milestones=[
+  {price:1,text:'$1',sub:'Bitcoin hits a dollar'},
+  {price:100,text:'$100',sub:'Triple digits!'},
+  {price:1000,text:'$1,000',sub:'Four figures'},
+  {price:10000,text:'$10,000',sub:'Five figures!'},
+  {price:20000,text:'$20K ATH!',sub:'Moon achieved'},
+  {price:3200,text:'Bear Bottom',sub:'$3,200 — crypto winter'},
+  {price:50000,text:'$50,000',sub:'Institutional era'},
+  {price:69000,text:'$69K ATH!',sub:'To the moon!'},
+  {price:73000,text:'New ATH!',sub:'ETF era begins'},
+  {price:100000,text:'$100,000!!',sub:'Six figures!'},
+  {price:126000,text:'$126K ATH!!!',sub:'All-time high'}
+];
+// Thomas Hunt / Bitcoin history events — trigger title cards with pause
+const huntEvents=[
+  {ts:1366502400,text:'🎬 MAD BITCOINS',sub:'First Episode · Apr 21, 2013',pause:true,big:true},
+  {ts:1382054400,text:'📺 The Bitcoin Group',sub:'First Episode · Oct 18, 2013',pause:true,big:true},
+  {ts:1391212800,text:'🌐 World Crypto Network',sub:'Founded · Feb 1, 2014',pause:true,big:true},
+  {ts:1494288000,text:'🃏 Curio Cards',sub:'NFT Art Project Launches · May 9, 2017',pause:true,big:true},
+  {ts:1199145600,text:'📄 Bitcoin Whitepaper',sub:'Satoshi Nakamoto · Oct 31, 2008',pause:false,big:false},
+  {ts:1231006505,text:'⛏ Genesis Block',sub:'Jan 3, 2009',pause:false,big:false},
+  {ts:1274400000,text:'🍕 Bitcoin Pizza Day',sub:'10,000 BTC for 2 pizzas · May 22, 2010',pause:false,big:false},
+  {ts:1329350400,text:'💀 Mt. Gox Hack',sub:'Largest exchange hacked · Feb 2014',pause:false,big:false},
+  {ts:1354320000,text:'⛏ First Halving',sub:'Block reward: 50 → 25 BTC · Nov 2012',pause:false,big:false},
+  {ts:1468022400,text:'⛏ Second Halving',sub:'Block reward: 25 → 12.5 BTC · Jul 2016',pause:false,big:false},
+  {ts:1589155200,text:'⛏ Third Halving',sub:'Block reward: 12.5 → 6.25 BTC · May 2020',pause:false,big:false},
+  {ts:1713571200,text:'⛏ Fourth Halving',sub:'Block reward: 6.25 → 3.125 BTC · Apr 2024',pause:false,big:false},
+  {ts:1610409600,text:'🏛 MicroStrategy',sub:'Corporate BTC treasury begins · 2021',pause:false,big:false},
+  {ts:1704844800,text:'📊 Bitcoin ETF',sub:'Spot ETF approved by SEC · Jan 2024',pause:false,big:false},
+];
+const shownM=new Set();const shownE=new Set();
+const MAD_BITCOINS_START=1366502400; // Apr 21, 2013
+let madBitcoinsActive=false;
+
+// ═══ REPLAY ═══
+async function replay(prices){
+  modeEl.textContent='REPLAY';camTarget=0;camZoom=3;
+  const start=prices[0].price;let prev=start;
+  await showOvl('BITCOIN TRAINS','Full History · $0.05 → $126,000 · 2010–2026',3500);
+  // Adaptive speed: faster for early years, slower for recent
+  for(let i=1;i<=prices.length;i++){
+    const p=prices[i-1],price=p.price,date=new Date(p.ts*1000);
+    const change=prev?parseFloat(pct(price,prev)):0;
+    const totalChange=pct(price,start);
+    // Speed: slower so we can enjoy the animation
+    const prog=i/prices.length;
+    const spd=Math.max(120,Math.min(500,180+prog*320));
+    draw(prices,i);
+    priceEl.textContent=fmt(price);
+    priceEl.style.color=change>=0?'#5dba7d':'#cc7070';
+    deltaEl.className='delta '+(change>0.3?'up':change<-0.3?'down':'flat');
+    deltaEl.textContent=(change>0?'+':'')+change.toFixed(1)+'%';
+    dateEl.textContent=date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'2-digit'});
+    dayEl.textContent='Day '+i+'/'+prices.length+' · '+(totalChange>0?'+':'')+totalChange+'%';
+    prev=price;
+    // Milestones
+    for(const m of milestones){
+      if(!shownM.has(m.price)){
+        if((m.price>1000&&Math.abs(price-m.price)/m.price<0.05)||(m.price<=1000&&price>=m.price*0.95&&price<=m.price*1.1)){
+          shownM.add(m.price);showNotif(m.text,m.sub,2500);}}}
+    // Thomas Hunt / Bitcoin history events
+    const curTs=p.ts;
+    if(!madBitcoinsActive&&curTs>=MAD_BITCOINS_START){madBitcoinsActive=true;}
+    for(const ev of huntEvents){
+      if(!shownE.has(ev.ts)&&curTs>=ev.ts){
+        shownE.add(ev.ts);
+        if(ev.big){
+          // BIG title card with pause!
+          await showOvl(ev.text,ev.sub,3500);
+        }else{showNotif(ev.text,ev.sub,3000);}
+      }}
+    // Big moves
+    if(Math.abs(change)>15)showNotif(change>0?'🚀 +'+change.toFixed(0)+'%':'💥 '+change.toFixed(0)+'%',fmt(price)+' · '+date.toLocaleDateString('en-US',{month:'short',year:'2-digit'}),2000);
+    await sleep(spd);
+  }
+  const final=prices[prices.length-1].price;const tp=pct(final,start);
+  showNotif('Journey Complete',fmt(start)+' → '+fmt(final)+' ('+(tp>0?'+':'')+tp+'%)',5000);
+  // Smooth zoom out until entire chart is visible
+  camManual=true;
+  while(Math.abs(camZoom-0.5)>0.01||Math.abs(camTarget-0.5)>0.01){
+    camZoom+=(0.5-camZoom)*0.03;camTarget+=(0.5-camTarget)*0.03;
+    draw(prices,prices.length);await sleep(40);}
+  camZoom=0.5;camTarget=0.5;draw(prices,prices.length);
+  await sleep(1500);
+  // ═══ VICTORY SCREEN — end of video game style ═══
+  victoryScreen(prices,start,final,tp);
+}
+function victoryScreen(prices,start,final,tp){
+  modeEl.textContent='COMPLETE';modeEl.style.background='#ddb844';
+  const N=prices.length;
+  // Particles: bitcoin logos raining, confetti, dancing characters
+  const particles=[];const dancers=[];const logos=[];
+  // Create raining bitcoin logos
+  for(let i=0;i<25;i++)logos.push({x:Math.random()*W,y:-Math.random()*H,vy:0.5+Math.random()*1.5,vx:(Math.random()-0.5)*0.5,r:8+Math.random()*14,rot:Math.random()*6.28,rv:0.01+Math.random()*0.03,a:0.4+Math.random()*0.5});
+  // Dancing stick figures along bottom
+  for(let i=0;i<12;i++)dancers.push({x:W*0.08+i*(W*0.84/11),phase:Math.random()*6.28,speed:0.04+Math.random()*0.03,h:14+Math.random()*6});
+  // Confetti
+  for(let i=0;i<60;i++)particles.push({x:Math.random()*W,y:-Math.random()*H*0.5,vy:1+Math.random()*2,vx:(Math.random()-0.5)*2,size:3+Math.random()*5,color:['#ddb844','#5dba7d','#cc7070','#22d3ee','#f472b6','#a78bfa','#fb923c'][Math.floor(Math.random()*7)],rot:Math.random()*6.28,rv:0.05+Math.random()*0.1});
+  // Stats
+  const years=((prices[N-1].ts-prices[0].ts)/31557600).toFixed(1);
+  const ath=Math.max(...prices.map(p=>p.price));
+  const atl=Math.min(...prices.map(p=>p.price));
+  const halvings=['2012-11-28','2016-07-09','2020-05-11','2024-04-20'];
+  let frame=0;
+  function animVictory(){
+    frame++;
+    // Draw the chart underneath
+    draw(prices,N);
+    // Rainbow arc over the chart
+    const rainbowColors=['#ff0000','#ff7700','#ffff00','#00ff00','#0077ff','#8800ff'];
+    for(let r=0;r<rainbowColors.length;r++){
+      X.beginPath();
+      X.strokeStyle=rainbowColors[r];X.lineWidth=3;X.globalAlpha=0.15+Math.sin(frame*0.02+r)*0.05;
+      for(let x=M.left;x<W-M.right;x+=4){
+        const prog=(x-M.left)/(W-M.left-M.right);
+        const y=M.top+30+r*5-Math.sin(prog*Math.PI)*80-Math.sin(frame*0.015+r)*8;
+        x===M.left?X.moveTo(x,y):X.lineTo(x,y);}
+      X.stroke();}
+    X.globalAlpha=1;
+    // Support triangle (bull flag)
+    X.beginPath();X.moveTo(M.left+20,H-M.bot-10);X.lineTo(W-M.right-20,H-M.bot-10);X.lineTo(W-M.right-20,M.top+60);X.closePath();
+    X.strokeStyle='rgba(93,186,125,0.12)';X.lineWidth=2;X.setLineDash([6,4]);X.stroke();X.setLineDash([]);
+    // Bitcoin logos raining
+    logos.forEach(l=>{
+      l.y+=l.vy;l.x+=l.vx;l.rot+=l.rv;
+      if(l.y>H+20){l.y=-20;l.x=Math.random()*W;}
+      X.save();X.translate(l.x,l.y);X.rotate(l.rot);X.globalAlpha=l.a;
+      X.fillStyle='#ddb844';X.font='bold '+Math.round(l.r)+'px sans-serif';X.textAlign='center';X.textBaseline='middle';
+      X.fillText('₿',0,0);X.globalAlpha=1;X.restore();});
+    // Confetti
+    particles.forEach(p=>{
+      p.y+=p.vy;p.x+=p.vx;p.rot+=p.rv;p.vx*=0.999;
+      if(p.y>H+10){p.y=-10;p.x=Math.random()*W;}
+      X.save();X.translate(p.x,p.y);X.rotate(p.rot);X.globalAlpha=0.7;
+      X.fillStyle=p.color;X.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);
+      X.globalAlpha=1;X.restore();});
+    // Dancing stick figures
+    dancers.forEach(d=>{
+      d.phase+=d.speed;
+      const bx=d.x,by=H-M.bot+8;
+      const armAng=Math.sin(d.phase)*0.6;const legAng=Math.sin(d.phase+1)*0.5;
+      const headBob=Math.sin(d.phase*2)*2;
+      X.strokeStyle='#ddb844';X.lineWidth=1.5;X.fillStyle='#ddb844';
+      // Head
+      X.beginPath();X.arc(bx,by-d.h-4+headBob,3,0,Math.PI*2);X.fill();
+      // Body
+      X.beginPath();X.moveTo(bx,by-d.h+headBob);X.lineTo(bx,by-d.h/2);X.stroke();
+      // Arms
+      X.beginPath();X.moveTo(bx,by-d.h*0.7+headBob);X.lineTo(bx-7*Math.cos(armAng),by-d.h*0.7-7*Math.sin(armAng)+headBob);X.stroke();
+      X.beginPath();X.moveTo(bx,by-d.h*0.7+headBob);X.lineTo(bx+7*Math.cos(-armAng+0.5),by-d.h*0.7-7*Math.sin(-armAng+0.5)+headBob);X.stroke();
+      // Legs
+      X.beginPath();X.moveTo(bx,by-d.h/2);X.lineTo(bx-5*Math.sin(legAng),by);X.stroke();
+      X.beginPath();X.moveTo(bx,by-d.h/2);X.lineTo(bx+5*Math.sin(-legAng),by);X.stroke();
+    });
+    // Stats box — centered, semi-transparent
+    const bw=320,bh=200,bx=(W-bw)/2,by2=(H-bh)/2-10;
+    X.fillStyle='rgba(8,22,39,0.88)';X.strokeStyle='#ddb844';X.lineWidth=2;
+    rr(X,bx,by2,bw,bh,10);X.fill();rr(X,bx,by2,bw,bh,10);X.stroke();
+    X.textAlign='center';X.textBaseline='middle';
+    X.font='bold 18px Bungee,sans-serif';X.fillStyle='#ddb844';
+    X.fillText('JOURNEY COMPLETE',W/2,by2+24);
+    X.font='11px JetBrains Mono,monospace';X.fillStyle='#e2e8f0';
+    const stats=[
+      ['Start Price',fmt(start)],['Final Price',fmt(final)],
+      ['Total Return',(tp>0?'+':'')+tp+'%'],['All-Time High',fmt(ath)],
+      ['All-Time Low',fmt(atl)],['Data Points',N.toString()],
+      ['Years',years],['Halvings',halvings.length.toString()]
+    ];
+    stats.forEach(([label,val],i)=>{
+      const row=Math.floor(i/2),col=i%2;
+      const sx=bx+40+col*150,sy=by2+52+row*34;
+      X.fillStyle='#64748b';X.font='9px JetBrains Mono';X.textAlign='left';
+      X.fillText(label,sx,sy);
+      X.fillStyle=val.startsWith('+')?'#5dba7d':val.startsWith('-')?'#cc7070':'#ddb844';
+      X.font='bold 13px JetBrains Mono';X.fillText(val,sx,sy+14);
+    });
+    // Pulsing "Press to continue" text
+    X.textAlign='center';X.globalAlpha=0.4+Math.sin(frame*0.05)*0.3;
+    X.font='10px JetBrains Mono';X.fillStyle='#64748b';
+    X.fillText('Switching to LIVE mode...',W/2,by2+bh-12);
+    X.globalAlpha=1;
+    if(frame<600)requestAnimationFrame(animVictory);
+    else startWeatherChannel(prices);
+  }
+  animVictory();
+}
+
+// ═══ BITCOIN WEATHER CHANNEL — continuous live mode ═══
+const btcEvents=[
+  {i:15,emoji:'🍕',text:'Pizza Day — 10K BTC for 2 pizzas',sub:'May 2010'},
+  {i:25,emoji:'💀',text:'Mt. Gox hacked — $460M lost',sub:'Feb 2014'},
+  {i:40,emoji:'⛏',text:'2nd Halving — 25→12.5 BTC',sub:'Jul 2016'},
+  {i:58,emoji:'📈',text:'CME Futures launch',sub:'Dec 2017'},
+  {i:62,emoji:'❄️',text:'Crypto Winter begins',sub:'Jan 2018'},
+  {i:82,emoji:'⛏',text:'3rd Halving — 12.5→6.25 BTC',sub:'May 2020'},
+  {i:90,emoji:'🏦',text:'Tesla buys $1.5B BTC',sub:'Feb 2021'},
+  {i:92,emoji:'🇸🇻',text:'El Salvador adopts BTC',sub:'Sep 2021'},
+  {i:100,emoji:'💥',text:'FTX collapses',sub:'Nov 2022'},
+  {i:108,emoji:'📊',text:'Spot BTC ETFs approved',sub:'Jan 2024'},
+  {i:112,emoji:'⛏',text:'4th Halving — 6.25→3.125',sub:'Apr 2024'},
+  {i:120,emoji:'🎉',text:'$100,000 milestone!',sub:'Dec 2024'},
+];
+const memeTexts=['HODL','To the Moon! 🌙','Buy the Dip','Not your keys, not your coins',
+  'Stack sats','Number go up','Laser eyes','Have fun staying poor','Few understand',
+  'Tick tock next block','We are all Satoshi','In Bitcoin we trust','1 BTC = 1 BTC'];
+
+async function startWeatherChannel(prices){
+  modeEl.textContent='LIVE';modeEl.style.background='#5dba7d';
+  // Zoom into recent data
+  camManual=true;
+  for(let f=0;f<80;f++){
+    camZoom+=(2.5-camZoom)*0.03;camTarget+=(0.95-camTarget)*0.03;
+    draw(prices,prices.length);await sleep(40);}
+  // Start continuous cycle
+  let cycle=0;
+  async function weatherLoop(){
+    // Fetch live price
+    try{const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',{cache:'no-store'});
+      const d=await r.json();const p=d?.bitcoin?.usd;
+      if(p){prices.push({ts:Math.floor(Date.now()/1000),price:p});
+        priceEl.textContent=fmt(p);priceEl.style.color='#5dba7d';dateEl.textContent='LIVE';
+        dayEl.textContent=new Date().toLocaleTimeString();}
+    }catch(e){}
+    // Draw current view
+    draw(prices,prices.length);
+    // Every few cycles, do a mini-replay of recent data
+    cycle++;
+    if(cycle%4===1) await miniReplay(prices,30,'Last 30 Days');
+    else if(cycle%4===2) await miniReplay(prices,10,'Last 10 Days');
+    else if(cycle%4===3) await replayHistoricEvent(prices);
+    else await showMemeAndStats(prices);
+    // Then zoom back to live
+    for(let f=0;f<60;f++){
+      camZoom+=(2.5-camZoom)*0.04;camTarget+=(0.97-camTarget)*0.04;
+      draw(prices,prices.length);await sleep(40);}
+    setTimeout(weatherLoop,15000);
+  }
+  setTimeout(weatherLoop,8000);
+}
+
+// Mini replay of last N days
+async function miniReplay(prices,days,label){
+  const N=prices.length;const startI=Math.max(0,N-days);
+  modeEl.textContent=label.toUpperCase();modeEl.style.background='#aa8833';
+  showNotif('📺 '+label,'Replaying recent price action',2000);
+  for(let i=startI;i<=N;i++){
+    const frac=(i-startI)/(N-startI);
+    camZoom+=(1.8+frac-camZoom)*0.08;camTarget+=((startI/(N-1))+(frac*(1-startI/(N-1)))-camTarget)*0.08;
+    draw(prices,i);
+    const p=prices[i-1];if(p){priceEl.textContent=fmt(p.price);
+      const d=new Date(p.ts*1000);dateEl.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric'});}
+    await sleep(80);}
+  modeEl.textContent='LIVE';modeEl.style.background='#5dba7d';
+  await sleep(2000);
+}
+
+// Replay a historic event (zoom to that era, show overlay)
+async function replayHistoricEvent(prices){
+  const evt=btcEvents[Math.floor(Math.random()*btcEvents.length)];
+  const targetI=Math.min(prices.length-1,Math.floor(evt.i/130*prices.length));
+  const startI=Math.max(0,targetI-15);const endI=Math.min(prices.length,targetI+15);
+  modeEl.textContent='FLASHBACK';modeEl.style.background='#8B6914';
+  showNotif(evt.emoji+' '+evt.text,evt.sub,3000);
+  // Zoom to that era
+  for(let i=startI;i<=endI;i++){
+    const frac=targetI/(prices.length-1);
+    camZoom+=(2.5-camZoom)*0.06;camTarget+=(frac-camTarget)*0.06;
+    draw(prices,i);
+    // Draw event marker
+    const p=prices[Math.min(i,prices.length-1)];
+    if(p){priceEl.textContent=fmt(p.price);
+      const d=new Date(p.ts*1000);dateEl.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'2-digit'});}
+    await sleep(100);}
+  // Flash the event emoji on screen
+  for(let f=0;f<40;f++){
+    draw(prices,endI);
+    X.save();X.textAlign='center';X.textBaseline='middle';
+    X.font=(30+Math.sin(f*0.2)*5)+'px sans-serif';X.globalAlpha=0.6+Math.sin(f*0.15)*0.3;
+    X.fillText(evt.emoji,W*0.5,H*0.45);X.globalAlpha=1;
+    X.font='bold 11px JetBrains Mono';X.fillStyle='#ddb844';
+    X.fillText(evt.text,W*0.5,H*0.45+28);
+    X.font='9px JetBrains Mono';X.fillStyle='#64748b';
+    X.fillText(evt.sub,W*0.5,H*0.45+42);
+    X.restore();await sleep(60);}
+  modeEl.textContent='LIVE';modeEl.style.background='#5dba7d';
+  await sleep(1500);
+}
+
+// Show meme text + floating stats
+async function showMemeAndStats(prices){
+  const meme=memeTexts[Math.floor(Math.random()*memeTexts.length)];
+  const N=prices.length;const last=prices[N-1].price;
+  const ath=Math.max(...prices.map(p=>p.price));
+  const fromAth=((last-ath)/ath*100).toFixed(1);
+  modeEl.textContent='STATS';modeEl.style.background='#22d3ee';
+  for(let f=0;f<120;f++){
+    draw(prices,N);
+    // Floating meme text
+    X.save();X.textAlign='center';X.textBaseline='middle';
+    X.font='bold 22px Bungee,sans-serif';
+    X.fillStyle=`hsl(${(f*3)%360},70%,65%)`;X.globalAlpha=0.5+Math.sin(f*0.04)*0.3;
+    X.fillText(meme,W/2+Math.sin(f*0.03)*30,H*0.3+Math.cos(f*0.02)*15);
+    X.globalAlpha=1;
+    // Dancing ₿ characters
+    for(let b=0;b<5;b++){
+      const bx=W*0.15+b*(W*0.7/4),by=H-M.bot+15+Math.sin(f*0.08+b)*8;
+      X.font='16px sans-serif';X.fillStyle='#ddb844';X.globalAlpha=0.5;
+      X.fillText('₿',bx,by);}
+    X.globalAlpha=1;
+    // Mini stats ticker at bottom
+    X.font='9px JetBrains Mono';X.fillStyle='rgba(255,255,255,0.3)';X.textAlign='center';
+    const ticker='ATH: '+fmt(ath)+' · From ATH: '+fromAth+'% · Points: '+N+' · '+new Date().toLocaleTimeString();
+    X.fillText(ticker,W/2,H-8);
+    X.restore();await sleep(50);}
+  modeEl.textContent='LIVE';modeEl.style.background='#5dba7d';
+}
+
+async function liveTick(prices){
+  try{const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',{cache:'no-store'});
+    const d=await r.json();const p=d?.bitcoin?.usd;
+    if(p){prices.push({ts:Math.floor(Date.now()/1000),price:p});draw(prices,prices.length);
+      priceEl.textContent=fmt(p);dateEl.textContent='LIVE';dayEl.textContent=new Date().toLocaleTimeString();}
+  }catch(e){}setTimeout(()=>liveTick(prices),15000);
+}
+async function init(){let prices;
+  try{const r=await fetch('btc-history.json');prices=await r.json();if(!prices.length)throw 0;
+  }catch(e){try{const r=await fetch('btc-365d.json');prices=await r.json();if(!prices.length)throw 0;
+  }catch(e2){await showOvl('ERROR','Could not load price data');return;}}
+  replay(prices);}
+init();
+</script></body></html>

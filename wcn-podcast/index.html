@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WCN Total Audio Podcast — Complete Episode Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#f7931a;--red:#ef4444;--green:#34d399;--blue:#3b82f6;--purple:#a78bfa;--pink:#ec4899;--sc:#ff5500;--apple:#fc3c44;--spreaker:#f4c430}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:14px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--accent)}header .sub{color:var(--muted);font-size:.7rem}
+.platforms{display:flex;gap:8px;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:52px;z-index:19;flex-wrap:wrap;font-size:.72rem}
+.platforms a{padding:5px 10px;border-radius:4px;font-weight:700;color:#fff}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.6rem;color:var(--muted);margin-top:2px}
+h2{color:var(--accent);font-size:.9rem;margin:14px 0 6px;border-bottom:1px solid var(--border);padding-bottom:3px}
+.search{width:100%;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;margin:6px 0}.search:focus{outline:none;border-color:var(--accent)}
+.filters{display:flex;gap:6px;margin:6px 0;flex-wrap:wrap}
+.filt{padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border);color:var(--muted);transition:.15s}
+.filt.on{background:var(--accent);color:#000;border-color:var(--accent)}.filt:hover{border-color:var(--accent)}
+.ep{display:flex;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.25);font-size:.78rem;transition:.1s}
+.ep:hover{background:rgba(247,147,26,.03)}
+.ep .num{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);width:32px;text-align:right;flex-shrink:0;font-size:.7rem}
+.ep .title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ep .date{color:var(--muted);font-size:.65rem;width:68px;text-align:right;flex-shrink:0}
+.ep .icons{display:flex;gap:2px;flex-shrink:0}
+.ico{width:18px;height:18px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700;cursor:pointer;transition:.1s}
+.ico:hover{transform:scale(1.15)}
+.ico.yt-w{background:rgba(255,0,0,.2);color:#f00;border:1px solid rgba(255,0,0,.3)}
+.ico.yt-m{background:rgba(167,139,250,.15);color:var(--purple);border:1px solid rgba(167,139,250,.25)}
+.ico.yt-t{background:rgba(247,147,26,.15);color:var(--accent);border:1px solid rgba(247,147,26,.25)}
+.ico.sp{background:rgba(244,196,48,.15);color:var(--spreaker);border:1px solid rgba(244,196,48,.25)}
+.ico.ap{background:rgba(252,60,68,.15);color:var(--apple);border:1px solid rgba(252,60,68,.25)}
+.ico.sc{background:rgba(255,85,0,.15);color:var(--sc);border:1px solid rgba(255,85,0,.25)}
+.ico.off{opacity:.2;text-decoration:line-through;cursor:default}
+.ft{text-align:center;color:var(--muted);font-size:.6rem;padding:14px;border-top:1px solid var(--border);margin-top:14px}
+</style>
+</head>
+<body>
+<header>
+<h1>🎙 WCN Total Audio Podcast — Complete Archive</h1>
+<div class="sub">Every episode across every platform · YouTube · Spreaker · Apple Podcasts · SoundCloud</div>
+</header>
+<div class="platforms">
+<a href="https://www.spreaker.com/podcast/the-world-crypto-network-podcast--3478703" target="_blank" style="background:var(--spreaker);color:#000">🎙 Spreaker</a>
+<a href="https://podcasts.apple.com/us/podcast/the-world-crypto-network-podcast/id825708806" target="_blank" style="background:var(--apple)">🍎 Apple</a>
+<a href="https://soundcloud.com/worldcryptonet" target="_blank" style="background:var(--sc)">☁️ SoundCloud</a>
+<a href="https://youtube.com/@worldcryptonetwork" target="_blank" style="background:#f00">▶ YouTube WCN</a>
+<a href="https://youtube.com/@madbitcoins" target="_blank" style="background:var(--purple)">▶ YouTube MB</a>
+<a href="https://youtube.com/c/Thebitcoingroup" target="_blank" style="background:var(--accent);color:#000">▶ YouTube TBG</a>
+</div>
+<main>
+<div class="grid" id="stats"></div>
+<input class="search" id="search" placeholder="Search episodes... (#100, Silk Road, ETF, SBF)">
+<div class="filters" id="filters"></div>
+<h2 id="count">Loading...</h2>
+<div id="episodes"></div>
+</main>
+<div class="ft"><a href="/btg-mirrors/">BTG Mirrors</a> · <a href="/my-youtube/">My YouTube</a> · <a href="/commentzor/">Commentzor</a> · <a href="/dashboarder/">Dashboarder</a> · <a href="/">1n2.org</a></div>
+<script>
+let DATA,filter='all';
+async function init(){
+  DATA=await(await fetch('data.json')).json();
+  const eps=DATA.episodes;
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="n">${DATA.total}</div><div class="l">Total Episodes</div></div>
+    <div class="stat"><div class="n">${DATA.shows.btg||0}</div><div class="l">Bitcoin Group</div></div>
+    <div class="stat"><div class="n">${DATA.shows.mb||0}</div><div class="l">Mad Bitcoins</div></div>
+    <div class="stat"><div class="n">${DATA.shows.pnn||0}</div><div class="l">PNN</div></div>
+    <div class="stat"><div class="n">2013</div><div class="l">First Episode</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Platforms</div></div>`;
+  // Filters
+  const names={all:'All',btg:'Bitcoin Group',mb:'Mad Bitcoins',pnn:'PNN',boc:"Beer O'Clock",tdih:'TDIH'};
+  let fh='';
+  for(const[k,v] of Object.entries(names)){
+    const c=k==='all'?DATA.total:(DATA.shows[k]||0);
+    fh+=`<div class="filt ${k==='all'?'on':''}" data-f="${k}">${v} (${c})</div>`;
+  }
+  document.getElementById('filters').innerHTML=fh;
+  document.querySelectorAll('.filt').forEach(f=>f.addEventListener('click',()=>{
+    filter=f.dataset.f;
+    document.querySelectorAll('.filt').forEach(x=>x.classList.remove('on'));f.classList.add('on');
+    render(eps);
+  }));
+  document.getElementById('search').addEventListener('input',()=>render(eps));
+  render(eps);
+}
+function render(eps){
+  const q=document.getElementById('search').value.toLowerCase();
+  let filtered=eps;
+  if(filter!=='all')filtered=filtered.filter(e=>e.show===filter);
+  if(q)filtered=filtered.filter(e=>{
+    const nm=q.match(/#?(\d+)/);
+    if(nm&&e.ep_num===parseInt(nm[1]))return true;
+    return e.title.toLowerCase().includes(q);
+  });
+  document.getElementById('count').textContent=`${filtered.length} Episodes (newest first)`;
+  const rev=[...filtered].reverse();
+  let h='';
+  rev.forEach(ep=>{
+    const w=ep.yt?.wcn;const m=ep.yt?.mb;const t=ep.yt?.tbg;
+    const isSpreaker=ep.show==='btg'&&ep.ep_num&&ep.ep_num>=200;
+    const isApple=true;
+    const isSC=ep.date<'2020';
+    // Build episode-specific search URLs
+    const epSearch=encodeURIComponent(ep.title.substring(0,60));
+    const num=ep.ep_num?`#${ep.ep_num}`:'—';
+    let title=ep.title.replace(/^The Bitcoin Group #\d+\s*-?\s*/i,'').replace(/^Mad Bitcoins\s*-?\s*/i,'').substring(0,75);
+    const showTag=ep.show==='btg'?'':'<span style="color:var(--purple);font-size:.6rem">['+ep.show.toUpperCase()+']</span> ';
+    h+=`<div class="ep"><div class="num">${num}</div><div class="title">${showTag}${esc(title||ep.title)}</div><div class="date">${ep.date}</div><div class="icons">`;
+    h+=w?`<a href="https://youtube.com/watch?v=${w.vid}" target="_blank"><span class="ico yt-w" title="WCN ${w.views} views">W</span></a>`:'<span class="ico yt-w off" title="Not on WCN">W</span>';
+    h+=m?`<a href="https://youtube.com/watch?v=${m.vid}" target="_blank"><span class="ico yt-m" title="MB ${m.views} views">M</span></a>`:'<span class="ico yt-m off" title="Not on MB">M</span>';
+    h+=t?`<a href="https://youtube.com/watch?v=${t.vid}" target="_blank"><span class="ico yt-t" title="TBG ${t.views} views">T</span></a>`:'<span class="ico yt-t off" title="Not on TBG">T</span>';
+    h+=isSpreaker?`<a href="https://www.spreaker.com/podcast/the-world-crypto-network-podcast--3478703?query=${epSearch}" target="_blank"><span class="ico sp" title="Spreaker">S</span></a>`:'<span class="ico sp off">S</span>';
+    h+=isApple?`<a href="https://podcasts.apple.com/us/podcast/the-world-crypto-network-podcast/id825708806?i=${ep.ep_num?'ep'+ep.ep_num:''}" target="_blank" onclick="window.open('https://podcasts.apple.com/search?term='+encodeURIComponent('world crypto network '+(ep.title||'').substring(0,40)),'_blank');return false;"><span class="ico ap" title="Apple Podcasts">A</span></a>`:'<span class="ico ap off">A</span>';
+    h+=isSC?`<a href="https://soundcloud.com/search/sounds?q=worldcryptonet+${epSearch}" target="_blank"><span class="ico sc" title="SoundCloud">C</span></a>`:'<span class="ico sc off">C</span>';
+    h+=`</div></div>`;
+  });
+  document.getElementById('episodes').innerHTML=h;
+}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+init();
+</script>
+</body></html>

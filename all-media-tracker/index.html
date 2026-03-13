@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>All Media Tracker — Complete Production History</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#22d3ee;--red:#ff0000;--green:#34d399;--blue:#3b82f6;--purple:#a78bfa;--gold:#fbbf24;--orange:#f7931a}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
+header{padding:12px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--accent)}header .sub{color:var(--muted);font-size:.68rem}
+.toolbar{padding:8px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:48px;z-index:19;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{flex:1;min-width:200px;padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8rem}.search:focus{outline:none;border-color:var(--accent)}
+.filt{padding:3px 8px;border-radius:3px;font-size:.68rem;font-weight:700;cursor:pointer;border:1px solid var(--border);color:var(--muted);transition:.1s}
+.filt.on{color:#fff;border-color:transparent}.filt:hover{opacity:.8}
+main{max-width:1100px;margin:0 auto;padding:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px;margin:8px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.58rem;color:var(--muted);margin-top:1px}
+h2{color:var(--accent);font-size:.85rem;margin:12px 0 6px;border-bottom:1px solid var(--border);padding-bottom:3px}
+.ep{display:flex;align-items:center;gap:5px;padding:4px 6px;border-bottom:1px solid rgba(30,41,59,.2);font-size:.74rem;transition:.08s}
+.ep:hover{background:rgba(34,211,238,.02)}
+.ep .date{font-family:'JetBrains Mono',monospace;color:var(--muted);width:62px;flex-shrink:0;font-size:.65rem}
+.ep .title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ep .icons{display:flex;gap:2px;flex-shrink:0}
+.ico{width:16px;height:16px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:700}
+.ico.wcn{background:rgba(59,130,246,.2);color:var(--blue)}.ico.mb{background:rgba(167,139,250,.2);color:var(--purple)}
+.ico.thf{background:rgba(255,0,0,.2);color:var(--red)}
+.ico.sp{background:rgba(244,196,48,.2);color:#f4c430}.ico.ap{background:rgba(252,60,68,.2);color:#fc3c44}.ico.sc{background:rgba(255,85,0,.2);color:#ff5500}
+.ico.off{opacity:.15}
+.ep .views{font-family:'JetBrains Mono',monospace;color:var(--muted);width:42px;text-align:right;flex-shrink:0;font-size:.6rem}
+.year-sep{background:var(--card);padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;color:var(--accent);margin:6px 0 2px;border-radius:3px;border-left:3px solid var(--accent)}
+.ft{text-align:center;color:var(--muted);font-size:.58rem;padding:12px;border-top:1px solid var(--border);margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>📼 All Media Tracker — Complete Production History</h1>
+<div class="sub">Every video & podcast by Thomas Hunt across all channels · 2012–2026</div>
+</header>
+<div class="toolbar">
+<input class="search" id="search" placeholder="Search 5,442 items...">
+<div class="filt on" data-f="all" style="background:var(--accent);color:#000">All</div>
+<div class="filt" data-f="wcn" style="border-color:var(--blue)">WCN</div>
+<div class="filt" data-f="mb" style="border-color:var(--purple)">MB</div>
+<div class="filt" data-f="thf" style="border-color:var(--red)">THF</div>
+<div class="filt" data-f="btg" style="border-color:var(--orange)">BitGroup</div>
+<div class="filt" data-f="audio" style="border-color:#f4c430">🎙 Audio</div>
+</div>
+<main>
+<div class="grid" id="stats"></div>
+<div id="count"></div>
+<div id="list"></div>
+</main>
+<div class="ft"><a href="/my-youtube/">My YouTube</a> · <a href="/tbg-mirrors/">TBG Mirrors</a> · <a href="/wcn-podcast/">WCN Podcast</a> · <a href="/commentzor/">Commentzor</a> · <a href="/">1n2.org</a></div>
+<script>
+let DATA,filter='all',PAGE=200;
+function fmt(n){return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n.toString();}
+async function init(){
+  DATA=await(await fetch('data.json')).json();
+  const m=DATA.media;
+  document.getElementById('stats').innerHTML=`
+    <div class="stat"><div class="n">${DATA.total.toLocaleString()}</div><div class="l">Total Items</div></div>
+    <div class="stat"><div class="n">${DATA.channels.wcn||0}</div><div class="l">WCN</div></div>
+    <div class="stat"><div class="n">${DATA.channels.mb||0}</div><div class="l">MadBitcoins</div></div>
+    <div class="stat"><div class="n">${DATA.channels.thf||0}</div><div class="l">TH Films</div></div>
+    <div class="stat"><div class="n">${Object.keys(DATA.years).length}</div><div class="l">Years</div></div>
+    <div class="stat"><div class="n">${fmt(m.reduce((s,x)=>s+x.views,0))}</div><div class="l">Total Views</div></div>
+    <div class="stat"><div class="n">${DATA.audio_count}</div><div class="l">With Audio</div></div>`;
+  // Filters
+  document.querySelectorAll('.filt').forEach(f=>f.addEventListener('click',()=>{
+    filter=f.dataset.f;
+    document.querySelectorAll('.filt').forEach(x=>{x.classList.remove('on');x.style.background='';x.style.color='var(--muted)';});
+    f.classList.add('on');f.style.color='#fff';
+    render();
+  }));
+  document.getElementById('search').addEventListener('input',()=>render());
+  render();
+}
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  let items=DATA.media;
+  if(filter!=='all'){
+    if(filter==='btg')items=items.filter(m=>m.show==='btg');
+    else if(filter==='audio')items=items.filter(m=>m.sp||m.ap||m.sc);
+    else items=items.filter(m=>m.ch===filter);
+  }
+  if(q)items=items.filter(m=>m.t.toLowerCase().includes(q));
+  // Reverse for newest first
+  const rev=[...items].reverse();
+  document.getElementById('count').innerHTML=`<h2>${items.length.toLocaleString()} items ${items.length>PAGE?'(showing first '+PAGE+', scroll for more)':''}</h2>`;
+  let h='',lastYear='';
+  const show=rev.slice(0,PAGE);
+  show.forEach(m=>{
+    const yr=m.date?.substring(0,4)||'';
+    if(yr!==lastYear){lastYear=yr;h+=`<div class="year-sep">${yr||'Unknown'}</div>`;}
+    const isWCN=m.ch==='wcn',isMB=m.ch==='mb',isTHF=m.ch==='thf';
+    h+=`<div class="ep">`;
+    h+=`<div class="date">${m.date||''}</div>`;
+    h+=`<div class="title"><a href="https://youtube.com/watch?v=${m.v}" target="_blank">${esc(m.t)}</a></div>`;
+    h+=`<div class="views">${fmt(m.views)}</div>`;
+    h+=`<div class="icons">`;
+    h+=`<span class="ico wcn ${isWCN?'':'off'}" title="WCN">W</span>`;
+    h+=`<span class="ico mb ${isMB?'':'off'}" title="MadBitcoins">M</span>`;
+    h+=`<span class="ico thf ${isTHF?'':'off'}" title="TH Films">F</span>`;
+    const epSearch=encodeURIComponent((m.t||'').substring(0,50));
+    h+=m.sp?`<a href="https://www.spreaker.com/podcast/the-world-crypto-network-podcast--3478703?query=${epSearch}" target="_blank"><span class="ico sp" title="Spreaker">S</span></a>`:'';
+    h+=m.ap?`<a href="#" onclick="window.open('https://podcasts.apple.com/search?term='+encodeURIComponent('world crypto network '+'${m.t.substring(0,30).replace(/'/g,"\\'")}'),'_blank');return false;"><span class="ico ap" title="Apple">A</span></a>`:'';
+    h+=m.sc?`<a href="https://soundcloud.com/search/sounds?q=worldcryptonet+${epSearch}" target="_blank"><span class="ico sc" title="SoundCloud">C</span></a>`:'';
+    h+=`</div></div>`;
+  });
+  if(items.length>PAGE)h+=`<div style="text-align:center;padding:12px;color:var(--muted);font-size:.75rem;cursor:pointer" onclick="loadMore()">Load more (${items.length-PAGE} remaining)...</div>`;
+  document.getElementById('list').innerHTML=h;
+}
+function loadMore(){PAGE+=500;render();}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+init();
+</script>
+</body></html>

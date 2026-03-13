@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Bull Signal Barrage cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#101f4b"/>
+      <stop offset="58%" stop-color="#263f82"/>
+      <stop offset="100%" stop-color="#141822"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <circle cx="574" cy="96" r="74" fill="#ffd06a" opacity="0.58"/>
+  <path d="M0 382Q98 334 204 372T404 366T580 388T720 352V480H0Z" fill="#1f2e59"/>
+
+  <rect x="336" y="298" width="52" height="86" rx="8" fill="#6ecfff"/>
+  <rect x="322" y="332" width="80" height="22" rx="8" fill="#6ecfff"/>
+  <rect x="352" y="306" width="20" height="14" fill="#ffcb66"/>
+  <rect x="344" y="384" width="8" height="20" fill="#ff7b89"/>
+  <rect x="372" y="384" width="8" height="20" fill="#ff7b89"/>
+
+  <rect x="160" y="88" width="84" height="62" rx="10" fill="#8cf3d5"/>
+  <rect x="178" y="106" width="44" height="22" fill="#1f5747"/>
+  <rect x="470" y="130" width="118" height="86" rx="12" fill="#a788ff"/>
+  <rect x="494" y="160" width="72" height="28" fill="#422d77"/>
+  <rect x="502" y="142" width="22" height="12" fill="#ffde7d"/>
+
+  <path d="M356 288Q346 242 360 206" stroke="#ffe17d" stroke-width="8" stroke-linecap="round"/>
+  <path d="M372 288Q392 236 426 204" stroke="#ffe17d" stroke-width="8" stroke-linecap="round"/>
+  <path d="M340 288Q306 226 276 198" stroke="#ffe17d" stroke-width="8" stroke-linecap="round"/>
+
+  <circle cx="188" cy="238" r="24" fill="#ffcb66"/>
+  <rect x="180" y="226" width="16" height="24" fill="#8d6200"/>
+  <circle cx="248" cy="270" r="20" fill="#ffcb66"/>
+  <rect x="241" y="260" width="14" height="20" fill="#8d6200"/>
+  <circle cx="520" cy="264" r="22" fill="#ffcb66"/>
+  <rect x="512" y="253" width="16" height="22" fill="#8d6200"/>
+</svg>

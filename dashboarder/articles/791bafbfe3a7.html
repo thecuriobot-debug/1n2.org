@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Writing my own text editor, and daily-driving it</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://blog.jsbarretto.com/post/text-editor" target="_blank">Original article ↗</a></div>
+
+<h1>Writing my own text editor, and daily-driving it</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">Writing my own text editor, and daily-driving it
+A programmer&#x27;s text editor is their castle
+Toy software performing a task when the stars align and the bytes hold their breath is one thing. Ingesting whatever freakish data the real world has to offer</div>
+<p>Writing my own text editor, and daily-driving it</p>
+<p>A programmer&#x27;s text editor is their castle</p>
+<p>Toy software performing a task when the stars align and the bytes hold their breath is one thing. Ingesting whatever freakish data the real world has to offer and handling it gracefully is another.</p>
+<p>For a while I’ve been dissatisfied with my text editor. I settled on Howl about a decade ago; it’s lightweight and efficient to use, but it falls down in a number of areas:</p>
+<p>-</p>
+<p>Development has been dead for several years. I’ve been maintaining my own fork for a while, but the editor is written in MoonScript and I don’t really care to learn the language and the codebase deeply enough to perform anything more than minor tweaks to it.</p>
+<p>-</p>
+<p>Howl chokes when doing project-wide file searches. It’s not awful, but it’s bad enough that it can pull me out of a flow state and dissuades me from using it. I don’t like that: I am not in the habit of using an LSP, so grepping around for text is something I lean on quite heavily to understand large codebases.</p>
+<p>-</p>
+<p>Howl is a GUI editor. While it’s largely keyboard-oriented, I can’t easily run it over an SSH connection. Increasingly, a lot of my time is spent logged into machines that sit on the other end of a network cable, and SFTP only gets you so far.</p>
+<p>-</p>
+<p>It doesn’t have an integrated terminal. You can run external commands and see their output, but there’s no provision for live interaction and the vast majority of ANSI escape codes are unsupported, so colour isn’t on the table.</p>
+<p>For the past few years I’ve been shopping around for alternatives. Here follows an inexhaustive list of editors I’ve tried:</p>
+<p>- Helix</p>
+<p>- VS Code</p>
+<p>- Sublime Text</p>
+<p>- Vim</p>
+<p>- Zed</p>
+<p>- Neovim</p>
+<p>- Emacs</p>
+<p>- Geany (apparently it’s still alive!)</p>
+<p>- Micro</p>
+<p>- Lite XL</p>
+<p>- Lapce</p>
+<p>- GNOME Builder</p>
+<p>- Kakoune</p>
+<p>They’ve all got their own strengths, but none of them possess the fingerspitzengefühl I’m looking for. I stuck with Helix the longest, but after a month of use I fell out of love with it. I don’t have any specific criticism of it, it’s a very good editor: it just didn’t possess that ineffable quality that I care about.</p>
+<p>And so, for the past 2 years, I’ve been working on my own. Here are a few reflections on different aspects of its development: feel free to skip to whichever section personally interests you the most.</p>
+<p>Starting out</p>
+<p>To begin with, I kept my scope small. Here are some things I kept off my feature list:</p>
+<p>-</p>
+<p>Features for anybody that isn’t me: no toggle switches, all preferences are hard-coded into the editor.</p>
+<p>-</p>
+<p>Performance:</p>
+<p>String</p>
+<p>-backed buffers are fine for the time being. I’ll fix performance when it becomes a problem. -</p>
+<p>Proper support for unicode graphemes. I’m monolingual and I don’t use emoji much. Provided</p>
+<p>£</p>
+<p>occupies a single column, I don’t really care. -</p>
+<p>Syntax highlighting diversity: Most of what I do occurs in a fair small pool of languages. I’ll support those, and then fall back to generic delimiter-based highlighting for anything more exotic.</p>
+<p>Progress was slow at first. It’s really quite demotivating to stare at a blank screen while you’re hacking together basic terminal rendering and I’d often go for weeks without working on it at all.</p>
+<p>As it happens, this was my second shake at writing a text editor and I elected to build a simplistic if reasonably composable TUI framework that simplified event and state logic. In hindsight, much of this early effort was overkill and I ended up incrementally tearing it out as time went on in favour of a more literal, fine-grained approach.</p>
+<p>Eating the dogfood</p>
+<p>At some point in time I finally reached a critical threshold: my editor was just featureful enough to open a single text file,</p>
+<p>perform some simple work on it, then save the changes. I decided to start practicing three things that, in hindsight, have been</p>
+<p>critical to the project not becoming another dead entry in my ~/projects</p>
+<p>directory:</p>
+<p>-</p>
+<p>My editor replaced</p>
+<p>nano</p>
+<p>. Any time I needed to edit a system file or quickly make notes, I’d force myself to use it - no matter how painful. -</p>
+<p>Every time I hit a missing feature, bug, weird behaviour, or limitation I would document it in the project</p>
+<p>README.md</p>
+<p>, no matter how small. Knowing what to hack on in my free time to make progress was essential. -</p>
+<p>If any issue bothered to me to the point of annoyance, I had to fix it: right there and then.</p>
+<p>In combination, these practices pushed my work on the project from an hour a month to several hours a week. Almost all of the ~10k lines of code have appeared in the past 6 months alone.</p>
+<p>![A filled line graph from March 2024 to March 2026. Almost nothing occurs until June 2025, at which point the graph climbs rapidly](/static/img/zte-progress.webp)</p>
+<p>Cursor manipulation</p>
+<p>Cursor manipulation is difficult! When you’re using a text input widget, much of the behaviour you expect as table-stakes isn’t</p>
+<p>something you’re even conscious of. Exactly what happens when you hold a keybinding like ctrl + shift + left</p>
+<p>is probably muscle</p>
+<p>memory but the logic required to getting it all playing together nicely is</p>
+<p>not fun to write.</p>
+<p>The best advice I can give is to try implementing high-level inputs in terms of more primitive ones. Want to implement word-wise backspace? Implement it in terms of word-wise cursor movement, selection of the range between the start and end position, and then deletion. When you get round to implementing undo/redo, you’ll have to ensure that these 3 actions get grouped together as one to avoid an undo producing really unintuitive results. It’s not surprising that modal editors simply skip the middleman and just expose these primitive operations directly to the user, allowing them to chain them together.</p>
+<p>File browser</p>
+<p>There was one feature that kept me coming back to Howl, and it’s one that it does shockingly well: its file browser.</p>
+<p>Howl’s file browser isn’t much to look at, but using it is joyous. It has an instantly-updating fuzzy filter for files, and the</p>
+<p>filter is good; it’s very common for it to get a positive hit on the file I’m looking for on the first keystroke or two, and</p>
+<p>exceedingly rare that it doesn’t get it by the fourth or fifth. If a file doesn’t exist and you want to create it, you can do so</p>
+<p>inline without needing to switch to another menu. Typing ~/</p>
+<p>will automatically switch you to your home directory, no matter how</p>
+<p>deep you are in another path. The main editing window displays a preview of the file you’re about to open.</p>
+<p>Howl’s file browser does so many things right and it confuses me deeply that so many other editors elect to have such lackluster solutions to the problem of opening files. A great number of editors in the list either force me to reach for the mouse, pull me out of the editing experience by showing me GTK’s default opener dialogue, or ask me to guess the name of the file I want to open instead of showing me which options are available.</p>
+<p>Reimplementing it - with my own personalised quirks - wasn’t a particularly complex task. For the file filter, I briefly considered doing something complex like using the Levenshtein distance between the filter and candidate entries, but a valuable lesson was realising that all of this effort is pointless overkill because in practice only three things are required to provide excellent predictive search for a closed set of items:</p>
+<p>-</p>
+<p>Whether the entry starts with the filter phrase</p>
+<p>-</p>
+<p>Whether the entry contains the filter phrase</p>
+<p>-</p>
+<p>The time of the entry’s most recent modification/access</p>
+<p>Rank your items by these criteria. Allow case-insensitive matches, but rank the entry a little higher if the case matches.</p>
+<p>That’s it! Even when performing whole-project file searches in projects with tens of thousands of files, these criteria place the file I’m looking for within 2 places of the top of the list after only 2 keystrokes in approximately 95% of cases.</p>
+<p>Regex</p>
+<p>Regex support is used in a number of ways:</p>
+<p>- Project-wide search</p>
+<p>- Syntax highlighting</p>
+<p>- In-buffer finding</p>
+<p>All 3 require a reasonably performant implementation, but for the first two it is critical. I briefly considered integrating a</p>
+<p>pre-built solution like the regex-automata</p>
+<p>crate but one of my requirements is that</p>
+<p>context-sensitive edge cases like Rust-style raw string syntax is handled correctly by the highlighter, something that vanilla</p>
+<p>regex syntax can’t handle.</p>
+<p>On top of that, the whole project is an exercise in building and understanding my own stack, so I elected to implement my own regex engine, complete with extensions to support context sensitivity and arbitrary nesting of patterns for convenience.</p>
+<p>My first attempts were, uh, not quick. I wrote a parser</p>
+<p>for the regex syntax using my parsing crate, chumsky</p>
+<p>, and walked the resulting AST</p>
+<p>for every character in the input to discover matches.</p>
+<p>Over time I built several optimisations on top:</p>
+<p>-</p>
+<p>A single-pass optimiser that walks the AST, commuting common patterns that I’d keep see appearing again and again in flamegraphs. For example, a group of character matches will be optimised into a single</p>
+<p>String</p>
+<p>node which searches for an exact string, without any indirection. -</p>
+<p>Walk the AST in an attempt to discover a common prefix shared by all matches. For example,</p>
+<p>hel[(lo)p]</p>
+<p>matches bothhello</p>
+<p>andhelp</p>
+<p>, but both cases are always prefixed byhel</p>
+<p>- so only perform matching on locations that start accordingly. This ended up being a huge win for project-wide search. -</p>
+<p>Reimplement the AST walker into a simple threaded code VM implemented via Rust dynamic calls. You can find out more about this technique here.</p>
+<p>-</p>
+<p>Convert the threaded code VM to CPS form, where each VM instruction tail-calls its successor, allowing the compiler to optimise each one into a tail call.</p>
+<p>-</p>
+<p>Wrap Rust’s (slow) dynamic function calls in a manner that avoids needing to perform a vtable lookup on call. You can read more about this technique here. After doing this, codegen for many regex instructions was much improved, often no more than a few machine instructions each.</p>
+<p>-</p>
+<p>Implement as many of the regex instructions in terms of bytes rather than u</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://blog.jsbarretto.com/post/text-editor" target="_blank">Read original →</a></div>
+</body></html>

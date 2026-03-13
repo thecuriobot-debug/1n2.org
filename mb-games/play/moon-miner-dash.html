@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moon Miner Dash | Play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>MOON MINER DASH</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Arcade Hub</a>
+        <a href="../studio-design-meeting.html">Studio Meeting</a>
+        <a href="../index.html">Main Site</a>
+      </nav>
+    </header>
+
+    <main class="game-shell">
+      <h2>Jump over rug traps, collect sats, and sprint to the moon.</h2>
+      <div class="game-meta">
+        <span><strong>Platform vibe:</strong> NES/Genesis endless runner</span>
+        <span><strong>Local high score key:</strong> <code>mb_miner_high</code></span>
+      </div>
+
+      <div class="game-layout">
+        <div class="canvas-wrap">
+          <canvas id="game" width="640" height="480" aria-label="Moon Miner Dash canvas"></canvas>
+        </div>
+
+        <aside class="panel">
+          <h3>Status</h3>
+          <div class="score-list">
+            <div><strong>Score:</strong> <span id="score">0</span></div>
+            <div><strong>High:</strong> <span id="high">0</span></div>
+            <div><strong>Lives:</strong> <span id="lives">3</span></div>
+            <div><strong>Speed:</strong> <span id="speed">1.0x</span></div>
+            <div><strong>Sats:</strong> <span id="sats">0</span></div>
+          </div>
+
+          <h3>Controls</h3>
+          <ul class="key-list">
+            <li><strong>Space / Up / W</strong>: jump</li>
+            <li><strong>P</strong>: pause/resume</li>
+            <li><strong>R</strong>: restart run</li>
+          </ul>
+        </aside>
+      </div>
+
+      <p class="footer-note">HODL streak bonus triggers every 15 sat pickups.</p>
+    </main>
+  </div>
+
+  <script type="module" src="js/moon-miner-dash.js"></script>
+</body>
+</html>

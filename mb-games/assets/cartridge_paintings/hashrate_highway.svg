@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Hashrate Highway cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10233c"/>
+      <stop offset="58%" stop-color="#235f82"/>
+      <stop offset="100%" stop-color="#111d23"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <path d="M278 480L236 0H484L442 480Z" fill="#1a1d23"/>
+  <path d="M326 480L306 0H414L394 480Z" fill="#2d3340"/>
+  <g fill="#87dbff">
+    <rect x="354" y="38" width="10" height="46"/><rect x="354" y="126" width="10" height="46"/><rect x="354" y="214" width="10" height="46"/><rect x="354" y="302" width="10" height="46"/><rect x="354" y="390" width="10" height="46"/>
+  </g>
+  <rect x="298" y="340" width="50" height="74" rx="8" fill="#ffb65d"/>
+  <rect x="412" y="278" width="46" height="66" rx="8" fill="#ff6f79"/>
+  <rect x="338" y="198" width="30" height="30" rx="6" fill="#ffdd6d"/>
+  <path d="M118 322L172 286L196 328L156 360Z" fill="#7ec9ff" opacity="0.58"/>
+</svg>

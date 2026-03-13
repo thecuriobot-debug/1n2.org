@@ -1,0 +1,40 @@
+# Curio-DID Events Configuration
+# Each event compares treated cards vs control cards using DID.
+# Cards are chosen based on specific characteristics for valid comparison.
+
+events:
+  opensea_verified:
+    name: "OpenSea Verified Badge"
+    date: "2026-02-20"
+    description: "Curio Cards received OpenSea verified collection status. Treatment group is the 'Original 10' — the first 10 cards minted (most traded, highest visibility). Control group is the 'Late Series' (cards 21-30) — less traded, lower floor visibility. If verification matters, the most visible cards should benefit most."
+    hypothesis: "Verification should disproportionately increase prices of high-visibility cards (1-10) vs less-visible late series (21-30)"
+    treated_cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    control_cards: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+    outcome: price
+
+  looksrare_listing:
+    name: "LooksRare Cross-Listing"
+    date: "2026-02-25"
+    description: "Select Curio Cards listed on LooksRare marketplace alongside OpenSea. Treatment group: cards with the most OpenSea sales history (1, 5, 10, 15, 20 — 'flagship cards' selected for cross-listing). Control: adjacent cards not selected for initial cross-listing (2, 6, 11, 16, 21)."
+    hypothesis: "Cross-listed cards should see price discovery from new buyer pool on LooksRare"
+    treated_cards: [1, 5, 10, 15, 20]
+    control_cards: [2, 6, 11, 16, 21]
+    outcome: price
+
+  whale_buy:
+    name: "Whale Accumulation"
+    date: "2026-03-01"
+    description: "A large collector ('whale') bought multiple copies of rare early cards. Treatment: the specific cards purchased (1, 2, 3 — the 'Genesis Cards'). Control: the final three cards (28, 29, 30) which are structurally similar (same contract, same era) but were not targeted."
+    hypothesis: "Whale buying should reduce available supply and push up prices for targeted cards"
+    treated_cards: [1, 2, 3]
+    control_cards: [28, 29, 30]
+    outcome: price
+
+  twitter_viral:
+    name: "Mad Bitcoins Viral Tweet"
+    date: "2026-02-27"
+    description: "Mad Bitcoins tweeted about Curio Cards reaching 37K+ impressions. Treatment: cards specifically mentioned or shown in the tweet thread (1-5). Control: cards 26-30, which were not featured. Social media exposure should drive new collector interest in featured cards."
+    hypothesis: "Publicly featured cards should see more trading activity and price uplift vs non-featured"
+    treated_cards: [1, 2, 3, 4, 5]
+    control_cards: [26, 27, 28, 29, 30]
+    outcome: price

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Hopper Drift | Play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>NODE HOPPER DRIFT</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Arcade Hub</a>
+        <a href="../index.html">Main Site</a>
+        <a href="../marketing-package.html">Marketing Package</a>
+        <a href="challenge-ladder.html">Challenge Ladder</a>
+      </nav>
+    </header>
+
+    <main class="game-shell">
+      <h2>Ride the stream, dodge rogue bars, and keep your node boat fueled.</h2>
+      <div class="game-meta">
+        <span><strong>Platform vibe:</strong> River Raid-style drift survival</span>
+        <span><strong>Local high score key:</strong> <code>mb_node_drift_high</code></span>
+      </div>
+
+      <div class="game-layout">
+        <div class="canvas-wrap">
+          <canvas id="game" width="640" height="480" aria-label="Node Hopper Drift canvas"></canvas>
+        </div>
+
+        <aside class="panel">
+          <h3>Status</h3>
+          <div class="score-list">
+            <div><strong>Score:</strong> <span id="score">0</span></div>
+            <div><strong>High:</strong> <span id="high">0</span></div>
+            <div><strong>Lives:</strong> <span id="lives">3</span></div>
+            <div><strong>Wave:</strong> <span id="wave">1</span></div>
+            <div><strong>Fuel:</strong> <span id="fuel">100%</span></div>
+          </div>
+
+          <h3>Controls</h3>
+          <ul class="key-list">
+            <li><strong>Arrow Keys / WASD</strong>: move</li>
+            <li><strong>Space</strong>: turbo boost (burns fuel)</li>
+            <li><strong>P</strong>: pause/resume</li>
+            <li><strong>R</strong>: restart run</li>
+          </ul>
+        </aside>
+      </div>
+
+      <p class="footer-note">Node pickups build score multipliers. Fuel cells keep the run alive when waves spike.</p>
+    </main>
+  </div>
+
+  <script type="module" src="js/node-hopper-drift.js"></script>
+</body>
+</html>

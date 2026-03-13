@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="980" viewBox="0 0 600 980" role="img" aria-label="HASHRATE HIGHWAY MB GAMES classic cartridge">
+  <defs>
+    <linearGradient id="shellGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d2d2d"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <pattern id="paper" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.9" fill="rgba(0,0,0,0.055)"/>
+      <circle cx="8" cy="6" r="0.8" fill="rgba(255,255,255,0.08)"/>
+      <circle cx="5" cy="10" r="0.7" fill="rgba(0,0,0,0.05)"/>
+    </pattern>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d52b2f"/>
+      <stop offset="100%" stop-color="#f34863"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="66" y="38" width="468" height="914" rx="26" fill="url(#shellGrad)"/>
+  <rect x="66" y="38" width="468" height="914" rx="26" fill="none" stroke="#3e3e3e" stroke-width="4"/>
+
+  <path d="M172 38H428V88C428 102 416 114 402 114H198C184 114 172 102 172 88Z" fill="#0a0a0a"/>
+
+  <g opacity="0.42">
+    <rect x="96" y="140" width="408" height="14" rx="7" fill="#0a0a0a"/>
+    <rect x="104" y="170" width="392" height="8" fill="#333"/>
+    <rect x="104" y="188" width="392" height="8" fill="#2a2a2a"/>
+    <rect x="104" y="206" width="392" height="8" fill="#333"/>
+    <rect x="104" y="224" width="392" height="8" fill="#2a2a2a"/>
+  </g>
+
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="#d6d6d3"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="#f3f3f2"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="url(#paper)"/>
+  <rect x="116" y="266" width="368" height="628" rx="6" fill="none" stroke="#b7b7b2" stroke-width="2"/>
+
+  <rect x="189" y="292" width="54" height="20" rx="4" fill="#d2232a"/>
+  <rect x="245" y="292" width="54" height="20" rx="4" fill="#f3c218"/>
+  <rect x="301" y="292" width="54" height="20" rx="4" fill="#0b5ea8"/>
+  <rect x="357" y="292" width="54" height="20" rx="4" fill="#2f9c48"/>
+
+  <text x="300" y="366" text-anchor="middle" fill="#d2232a" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="0.7">MB GAMES</text>
+
+  <rect x="132" y="666" width="336" height="44" fill="url(#stripe)"/>
+  <text x="300" y="694" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="900" letter-spacing="0.8">HASHRATE HIGHWAY</text>
+
+  <rect x="136" y="388" width="328" height="270" fill="#f5f5f5"/>
+  <rect x="140" y="392" width="320" height="262" fill="#0d0d0d"/>
+  <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjAiIGhlaWdodD0iNDgwIiB2aWV3Qm94PSIwIDAgNzIwIDQ4MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYXNocmF0ZSBIaWdod2F5IGNhcnRvb24tcmVhbCBwYWludGluZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxMDIzM2MiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1OCUiIHN0b3AtY29sb3I9IiMyMzVmODIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTExZDIzIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNzIwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0idXJsKCNiZykiLz4KICA8cGF0aCBkPSJNMjc4IDQ4MEwyMzYgMEg0ODRMNDQyIDQ4MFoiIGZpbGw9IiMxYTFkMjMiLz4KICA8cGF0aCBkPSJNMzI2IDQ4MEwzMDYgMEg0MTRMMzk0IDQ4MFoiIGZpbGw9IiMyZDMzNDAiLz4KICA8ZyBmaWxsPSIjODdkYmZmIj4KICAgIDxyZWN0IHg9IjM1NCIgeT0iMzgiIHdpZHRoPSIxMCIgaGVpZ2h0PSI0NiIvPjxyZWN0IHg9IjM1NCIgeT0iMTI2IiB3aWR0aD0iMTAiIGhlaWdodD0iNDYiLz48cmVjdCB4PSIzNTQiIHk9IjIxNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjQ2Ii8+PHJlY3QgeD0iMzU0IiB5PSIzMDIiIHdpZHRoPSIxMCIgaGVpZ2h0PSI0NiIvPjxyZWN0IHg9IjM1NCIgeT0iMzkwIiB3aWR0aD0iMTAiIGhlaWdodD0iNDYiLz4KICA8L2c+CiAgPHJlY3QgeD0iMjk4IiB5PSIzNDAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI3NCIgcng9IjgiIGZpbGw9IiNmZmI2NWQiLz4KICA8cmVjdCB4PSI0MTIiIHk9IjI3OCIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjY2IiByeD0iOCIgZmlsbD0iI2ZmNmY3OSIvPgogIDxyZWN0IHg9IjMzOCIgeT0iMTk4IiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHJ4PSI2IiBmaWxsPSIjZmZkZDZkIi8+CiAgPHBhdGggZD0iTTExOCAzMjJMMTcyIDI4NkwxOTYgMzI4TDE1NiAzNjBaIiBmaWxsPSIjN2VjOWZmIiBvcGFjaXR5PSIwLjU4Ii8+Cjwvc3ZnPgo=" x="140" y="392" width="320" height="262" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="140" y="392" width="320" height="262" fill="none" stroke="#ededed" stroke-width="2"/>
+
+
+  <g opacity="0.28">
+    <rect x="126" y="776" width="348" height="10" rx="3" fill="#6c6c6c"/>
+    <rect x="126" y="792" width="348" height="10" rx="3" fill="#5c5c5c"/>
+    <rect x="126" y="808" width="348" height="10" rx="3" fill="#6c6c6c"/>
+    <rect x="126" y="824" width="348" height="10" rx="3" fill="#5c5c5c"/>
+    <rect x="126" y="840" width="348" height="10" rx="3" fill="#6c6c6c"/>
+  </g>
+</svg>

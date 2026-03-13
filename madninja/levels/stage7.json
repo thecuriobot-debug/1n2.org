@@ -1,0 +1,61 @@
+{
+  "id": "stage7",
+  "label": "HARBOR LOCKDOWN",
+  "name": "Harbor Lockdown",
+  "width": 1280,
+  "height": 240,
+  "spawn": { "x": 24, "y": 180 },
+  "background": {
+    "top": "#0f1d31",
+    "bottom": "#081322",
+    "stars": "#73a7d2",
+    "starCount": 48
+  },
+  "tiles": {
+    "ground": "#38516a",
+    "climb": "#7290ad"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1280, "h": 16, "color": "#2d4358", "oneWay": false },
+
+    { "x": 72, "y": 196, "w": 74, "h": 28, "oneWay": false },
+    { "x": 166, "y": 180, "w": 70, "h": 44, "oneWay": false },
+    { "x": 256, "y": 164, "w": 88, "h": 10, "oneWay": true },
+    { "x": 378, "y": 152, "w": 96, "h": 10, "oneWay": true },
+    { "x": 510, "y": 170, "w": 100, "h": 10, "oneWay": true },
+
+    { "x": 646, "y": 186, "w": 70, "h": 38, "oneWay": false },
+    { "x": 732, "y": 154, "w": 104, "h": 10, "oneWay": true },
+    { "x": 870, "y": 140, "w": 86, "h": 10, "oneWay": true },
+
+    { "x": 986, "y": 176, "w": 96, "h": 10, "oneWay": true },
+    { "x": 1116, "y": 162, "w": 104, "h": 10, "oneWay": true },
+    { "x": 1218, "y": 144, "w": 62, "h": 10, "oneWay": true },
+
+    { "x": 430, "y": 108, "w": 54, "h": 8, "oneWay": true },
+    { "x": 912, "y": 106, "w": 56, "h": 8, "oneWay": true }
+  ],
+  "climbZones": [
+    { "x": 344, "y": 118, "w": 8, "h": 106 },
+    { "x": 844, "y": 108, "w": 8, "h": 116 },
+    { "x": 1086, "y": 120, "w": 8, "h": 104 }
+  ],
+  "enemySpawns": [
+    { "type": "banker_goon", "x": 112, "y": 178 },
+    { "type": "exchange_bot", "x": 292, "y": 150 },
+    { "type": "regulator_drone", "x": 460, "y": 108 },
+    { "type": "hacker_ninja", "x": 690, "y": 168 },
+    { "type": "banker_goon", "x": 934, "y": 122 },
+    { "type": "exchange_bot", "x": 1148, "y": 144 },
+    { "type": "regulator_drone", "x": 1240, "y": 98 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 178, "y": 168, "amount": 140, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 408, "y": 144, "amount": 140, "w": 5, "h": 5 },
+    { "type": "hardware_wallet", "x": 546, "y": 162, "w": 7, "h": 6 },
+    { "type": "satoshi_spirit", "x": 742, "y": 146, "w": 6, "h": 6 },
+    { "type": "lightning_mode", "x": 994, "y": 168, "w": 6, "h": 6 },
+    { "type": "hodl_mode", "x": 1228, "y": 136, "w": 7, "h": 6 }
+  ],
+  "bossSpawn": { "type": "dock_baron", "x": 1248, "y": 132 }
+}

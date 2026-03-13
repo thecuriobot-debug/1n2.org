@@ -1,0 +1,222 @@
+[
+  {
+    "id": "star-trek-tmp",
+    "youtube_id": "0gywz1PgM_I",
+    "title": "Star Trek: The Motion Picture (Ships Only)",
+    "year": 1979,
+    "runtime": "11:30",
+    "description": "All the spaceship scenes from Star Trek: The Motion Picture, edited together.",
+    "series": "Star Trek",
+    "views": "500K+"
+  },
+  {
+    "id": "star-trek-wrath-khan",
+    "youtube_id": "rFG58m7xAig",
+    "title": "Star Trek II: The Wrath of Khan (Ships Only)",
+    "year": 1982,
+    "runtime": "9:45",
+    "description": "The space battle sequences from The Wrath of Khan.",
+    "series": "Star Trek",
+    "views": "400K+"
+  },
+  {
+    "id": "star-trek-search-spock",
+    "youtube_id": "3EQ9cFey-3U",
+    "title": "Star Trek III: The Search for Spock (Ships Only)",
+    "year": 1984,
+    "runtime": "8:20",
+    "description": "Ship sequences from The Search for Spock.",
+    "series": "Star Trek",
+    "views": "300K+"
+  },
+  {
+    "id": "star-trek-voyage-home",
+    "youtube_id": "6RGTyaJrbj0",
+    "title": "Star Trek IV: The Voyage Home (Ships Only)",
+    "year": 1986,
+    "runtime": "5:15",
+    "description": "Spaceship scenes from The Voyage Home.",
+    "series": "Star Trek",
+    "views": "250K+"
+  },
+  {
+    "id": "star-trek-final-frontier",
+    "youtube_id": "5LOtf5Yq39Y",
+    "title": "Star Trek V: The Final Frontier (Ships Only)",
+    "year": 1989,
+    "runtime": "6:30",
+    "description": "All ship sequences from The Final Frontier.",
+    "series": "Star Trek",
+    "views": "200K+"
+  },
+  {
+    "id": "star-trek-undiscovered-country",
+    "youtube_id": "qHWlccpsYIA",
+    "title": "Star Trek VI: The Undiscovered Country (Ships Only)",
+    "year": 1991,
+    "runtime": "10:45",
+    "description": "Epic space battles from The Undiscovered Country featuring the battle at Khitomer.",
+    "series": "Star Trek",
+    "views": "350K+"
+  },
+  {
+    "id": "star-trek-generations",
+    "youtube_id": "ILcCcldyB7M",
+    "title": "Star Trek Generations (Ships Only)",
+    "year": 1994,
+    "runtime": "7:20",
+    "description": "Ship sequences from Generations including the Enterprise-B and Enterprise-D.",
+    "series": "Star Trek",
+    "views": "280K+"
+  },
+  {
+    "id": "star-trek-first-contact",
+    "youtube_id": "iHMXrxXCfWs",
+    "title": "Star Trek: First Contact (Ships Only)",
+    "year": 1996,
+    "runtime": "12:15",
+    "description": "The Battle of Sector 001 and all ship sequences from First Contact.",
+    "series": "Star Trek",
+    "views": "450K+"
+  },
+  {
+    "id": "star-trek-insurrection",
+    "youtube_id": "n0WnsAwsG8s",
+    "title": "Star Trek: Insurrection (Ships Only)",
+    "year": 1998,
+    "runtime": "6:45",
+    "description": "Ship battles from Insurrection featuring the Enterprise-E.",
+    "series": "Star Trek",
+    "views": "180K+"
+  },
+  {
+    "id": "star-trek-nemesis",
+    "youtube_id": "yRhQ1ydXT6c",
+    "title": "Star Trek: Nemesis (Ships Only)",
+    "year": 2002,
+    "runtime": "13:30",
+    "description": "The epic final battle between Enterprise-E and the Scimitar.",
+    "series": "Star Trek",
+    "views": "320K+"
+  },
+  {
+    "id": "star-trek-2009",
+    "youtube_id": "IQ0rpNEupfA",
+    "title": "Star Trek (2009) (Ships Only)",
+    "year": 2009,
+    "runtime": "14:20",
+    "description": "Modern visual effects showcase from the 2009 reboot.",
+    "series": "Star Trek",
+    "views": "600K+"
+  },
+  {
+    "id": "star-trek-into-darkness",
+    "youtube_id": "-YuxMpTMGOu",
+    "title": "Star Trek Into Darkness (Ships Only)",
+    "year": 2013,
+    "runtime": "11:50",
+    "description": "Ship sequences from Into Darkness featuring the Vengeance.",
+    "series": "Star Trek",
+    "views": "480K+"
+  },
+  {
+    "id": "star-trek-beyond",
+    "youtube_id": "Zl2PowEXwGE",
+    "title": "Star Trek Beyond (Ships Only)",
+    "year": 2016,
+    "runtime": "13:45",
+    "description": "Swarm attack and ship battles from Beyond.",
+    "series": "Star Trek",
+    "views": "420K+"
+  },
+  {
+    "id": "star-wars-new-hope",
+    "youtube_id": "Bsd6d0xLlsw",
+    "title": "Star Wars: A New Hope (Ships Only)",
+    "year": 1977,
+    "runtime": "12:30",
+    "description": "The Death Star battle and all ship sequences from the original Star Wars.",
+    "series": "Star Wars",
+    "views": "800K+"
+  },
+  {
+    "id": "star-wars-empire",
+    "youtube_id": "h6sj89xgnl4",
+    "title": "Star Wars: The Empire Strikes Back (Ships Only)",
+    "year": 1980,
+    "runtime": "10:45",
+    "description": "The Battle of Hoth and asteroid field chase from Empire.",
+    "series": "Star Wars",
+    "views": "650K+"
+  },
+  {
+    "id": "star-wars-jedi",
+    "youtube_id": "xPZigWFyK2o",
+    "title": "Star Wars: Return of the Jedi (Ships Only)",
+    "year": 1983,
+    "runtime": "14:20",
+    "description": "The Battle of Endor - the greatest space battle ever filmed.",
+    "series": "Star Wars",
+    "views": "750K+"
+  },
+  {
+    "id": "star-wars-phantom-menace",
+    "youtube_id": "Bxm7y7TLjmI",
+    "title": "Star Wars: The Phantom Menace (Ships Only)",
+    "year": 1999,
+    "runtime": "8:30",
+    "description": "The Battle of Naboo and Podrace sequences.",
+    "series": "Star Wars",
+    "views": "380K+"
+  },
+  {
+    "id": "star-wars-attack-clones",
+    "youtube_id": "sOkiWPMAnzc",
+    "title": "Star Wars: Attack of the Clones (Ships Only)",
+    "year": 2002,
+    "runtime": "9:15",
+    "description": "The Battle of Geonosis and asteroid chase.",
+    "series": "Star Wars",
+    "views": "340K+"
+  },
+  {
+    "id": "star-wars-revenge-sith",
+    "youtube_id": "L7fASqID-0U",
+    "title": "Star Wars: Revenge of the Sith (Ships Only)",
+    "year": 2005,
+    "runtime": "13:50",
+    "description": "The Battle over Coruscant opening sequence.",
+    "series": "Star Wars",
+    "views": "520K+"
+  },
+  {
+    "id": "star-wars-force-awakens",
+    "youtube_id": "nCwjPr2aLwU",
+    "title": "Star Wars: The Force Awakens (Ships Only)",
+    "year": 2015,
+    "runtime": "11:25",
+    "description": "Modern ship battles from The Force Awakens.",
+    "series": "Star Wars",
+    "views": "580K+"
+  },
+  {
+    "id": "star-wars-last-jedi",
+    "youtube_id": "fDRIjRb5sp0",
+    "title": "Star Wars: The Last Jedi (Ships Only)",
+    "year": 2017,
+    "runtime": "12:40",
+    "description": "The throne room battle and Holdo maneuver.",
+    "series": "Star Wars",
+    "views": "490K+"
+  },
+  {
+    "id": "star-wars-rise-skywalker",
+    "youtube_id": "GBrWDhV4g9Y",
+    "title": "Star Wars: The Rise of Skywalker (Ships Only)",
+    "year": 2019,
+    "runtime": "13:10",
+    "description": "The final space battle of the Skywalker saga.",
+    "series": "Star Wars",
+    "views": "450K+"
+  }
+]

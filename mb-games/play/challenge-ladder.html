@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Ladder | MAD BITCOINS RETRO GAME LAB</title>
+  <meta name="description" content="Local leaderboard for MAD BITCOINS RETRO GAME LAB browser arcade games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>ARCADE CHALLENGE LADDER</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Arcade Hub</a>
+        <a href="cartridge-select.html">Cartridge Select</a>
+        <a href="../index.html">Main Site</a>
+        <a href="../ops-marathon.html">Ops Marathon</a>
+        <a href="../marketing-package.html">Marketing Package</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="status-pill">LOCAL SCORE TRACKER</span>
+        <h2>Run The Ladder. Beat Your Own Meta.</h2>
+        <p>
+          This leaderboard uses browser-local stats from every game run in this arcade.
+          It ranks by best score, then total score banked.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>Arcade Totals</h3>
+        <div id="totals" class="hub-stats"></div>
+        <div class="actions-row">
+          <button id="clear-stats" type="button" class="btn btn-secondary">Clear Local Stats</button>
+          <a class="btn" href="index.html">Back To Arcade Hub</a>
+          <a class="btn btn-secondary" href="cartridge-select.html">Pick Cartridge</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Leaderboard</h3>
+        <div id="ladder-list" class="game-grid"></div>
+      </section>
+
+      <p class="footer-note">Tip: Run one game for depth, then rotate titles to build full-arcade meta scores.</p>
+    </main>
+  </div>
+
+  <script type="module" src="js/challenge-ladder.js"></script>
+</body>
+</html>

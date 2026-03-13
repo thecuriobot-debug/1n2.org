@@ -1,0 +1,1 @@
+PARSELY.pInit({"apikey":"popularmechanics.com","settings":{"debug":false,"widget":false,"tracker":true},"customizations":null,"track_ip_addresses":true,"bundle":"/code/ptrack-v0.4.0.js","track_third_party_cookies":true,"uuid":"dd110f6d-24ee-41a0-9c8e-36fe95453ede"});

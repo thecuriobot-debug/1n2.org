@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Whale Watch Panic cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14385f"/>
+      <stop offset="52%" stop-color="#1f6fa2"/>
+      <stop offset="100%" stop-color="#0d2842"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <path d="M0 314Q88 274 180 312T362 304T548 318T720 292V480H0Z" fill="#3190c2"/>
+  <path d="M0 366Q96 336 200 374T392 362T576 380T720 350V480H0Z" fill="#1d6f9d"/>
+  <path d="M196 248Q292 172 392 212T548 224Q530 258 468 276Q410 292 334 292Q258 292 208 264Z" fill="#92b4ff"/>
+  <circle cx="430" cy="236" r="6" fill="#101936"/>
+  <path d="M548 222L602 196L584 248Z" fill="#6f8de0"/>
+  <path d="M122 318L168 294L190 328L150 352Z" fill="#ffd473"/>
+  <circle cx="198" cy="288" r="11" fill="#ffd867"/>
+  <circle cx="238" cy="270" r="11" fill="#ffd867"/>
+</svg>

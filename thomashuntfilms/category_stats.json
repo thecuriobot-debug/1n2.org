@@ -1,0 +1,60 @@
+{
+  "categories": {
+    "Star Trek Ships Only": {
+      "total_views": 2451000,
+      "total_comments": 2178,
+      "total_views_formatted": "2.5M",
+      "total_comments_formatted": "2.2K",
+      "video_count": 10
+    },
+    "Star Wars Ships Only": {
+      "total_views": 2110000,
+      "total_comments": 1745,
+      "total_views_formatted": "2.1M",
+      "total_comments_formatted": "1.7K",
+      "video_count": 3
+    },
+    "Movie Remixes": {
+      "total_views": 19305,
+      "total_comments": 182,
+      "total_views_formatted": "19.3K",
+      "total_comments_formatted": "182",
+      "video_count": 9
+    },
+    "Batman '66 Edits": {
+      "total_views": 46495,
+      "total_comments": 465,
+      "total_views_formatted": "46.5K",
+      "total_comments_formatted": "465",
+      "video_count": 5
+    },
+    "Other Edits": {
+      "total_views": 835,
+      "total_comments": 49,
+      "total_views_formatted": "835",
+      "total_comments_formatted": "49",
+      "video_count": 6
+    },
+    "John Wick Gun-Fu": {
+      "total_views": 378,
+      "total_comments": 38,
+      "total_views_formatted": "378",
+      "total_comments_formatted": "38",
+      "video_count": 4
+    },
+    "IG-88": {
+      "total_views": 893000,
+      "total_comments": 478,
+      "total_views_formatted": "893K",
+      "total_comments_formatted": "478",
+      "video_count": 1
+    }
+  },
+  "grand_totals": {
+    "videos": 37,
+    "views": 5521013,
+    "comments": 5135,
+    "views_formatted": "5.5M",
+    "comments_formatted": "5.1K"
+  }
+}

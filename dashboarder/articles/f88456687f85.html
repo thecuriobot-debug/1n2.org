@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Faster Asin() Was Hiding in Plain Sight</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://16bpp.net/blog/post/faster-asin-was-hiding-in-plain-sight/" target="_blank">Original article ↗</a></div>
+
+<h1>Faster Asin() Was Hiding in Plain Sight</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">This one is going to be a quick one as there wasn&#x27;t anything new discovered. In fact, I feel quite dumb. This is really a tale of &quot;Do your research before acting and know what your goal is,&quot; as you&#x27;ll end up saving yourself a lot of time. Nobody like</div>
+<p>This one is going to be a quick one as there wasn&#x27;t anything new discovered. In fact, I feel quite dumb. This is really a tale of &quot;Do your research before acting and know what your goal is,&quot; as you&#x27;ll end up saving yourself a lot of time. Nobody likes throwing away work they&#x27;ve done either, and there could be something here that is valuable for someone else.</p>
+<p>I still can&#x27;t escape PSRayTracing. No matter how hard I try to shelve that project, every once in a while I hear about something &quot;new&quot; and then wonder &quot;can I shove this into the ray tracer and wring a few more seconds of speed out of it?&quot; This time around it was Padé Approximants. The target is to provide me with faster (and better) trig approximations.</p>
+<p>Short answer: &quot;no&quot;. It did not help.</p>
+<p>But... I found something that ended up making the ray tracer significantly faster!!</p>
+<p>Quicker Trig</p>
+<p>In any graphics application trigonometric functions are frequently used. But that can be a little expensive in terms of computational time. While it&#x27;s nice to be accurate, we usually care more about fast if anything. So if we can find an approximation that&#x27;s &quot;good enough&quot; and is speedier than the real thing, it&#x27;s generally okay to use it instead.</p>
+<p>When it comes to texturing objects in PSRayTracing (which is based off of the Ray Tracing in One Weekend books, circa the 2020 edition), the std::asin()</p>
+<p>function is used. When profiling some of the scenes, I noticed that a significant amount of calls were made to that function, so I thought it was worth trying to find an approximation.</p>
+<p>In the end I ended up writing my own Taylor series based approximation. It is faster but also has a flaw, whenever the input x</p>
+<p>was less than -0.8</p>
+<p>or greater than 0.8</p>
+<p>it would deviate heavily. So to look correct, it had to fall back to std::asin()</p>
+<p>past these bounds.</p>
+<p>![Taylor series approximation with fallback The Taylor series arcsin approximation with a fallback for edges](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/asin_approx_with_ec.png)</p>
+<p>The C++ is as follows:</p>
+<p>double _asin_approx_private(const double x) { // This uses a Taylor series approximation. // See: http://mathforum.org/library/drmath/view/54137.html // // In the case where x=[-1, -0.8) or (0.8, 1.0] there is unfortunately a lot of // error compared to actual arcsin, so for this case we actually use the real function if ((x &lt; -0.8) || (x &gt; 0.8)) { return std::asin(x); } // The taylor series approximation constexpr double a = 0.5; constexpr double b = a * 0.75; constexpr double c = b * (5.0 / 6.0); constexpr double d = c * (7.0 / 8.0); const double aa = (x * x * x) / 3.0; const double bb = (x * x * x * x * x) / 5.0; const double cc = (x * x * x * x * x * x * x) / 7.0; const double dd = (x * x * x * x * x * x * x * x * x) / 9.0; return x + (a * aa) + (b * bb) + (c * cc) + (d * dd); }</p>
+<p>After a bit of trial and error, I found that a fourth-order Taylor series was the most performant on my hardware. It was measurably faster (by +5%), so I kept it and moved onto the next optimization.</p>
+<p>![Original Taylor series approximation error The raw Taylor series arcsin approximation showing significant error at the edges](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/orginal_asin_approx_with_error.png)</p>
+<p>Padé Approximants</p>
+<p>I can&#x27;t remember where I heard about this one.... I&#x27;m drawing a complete blank. If you want a more in depth read, check the Wikipedia article. But in a quick nutshell, they are a mathematical tool they can help provide an approximation of an existing function. To compute one, you do need to start out with a Taylor (or Maclaurin) series. While PSRayTracing is mainly a C++ project, Python is going to be used for simplicity&#x27;s sake; we&#x27;ll go back to our favorite compiled language when it matters though.</p>
+<p>For the arcsine approximation above, using the four-term Taylor, we have this in Python:</p>
+<p>def taylor_fourth_order(x: float) -&gt; float: return x + (x**3)/6 + (3*x**5)/40 + (5*x**7)/112</p>
+<p>Computing that into a Padé Approximant, we get what&#x27;s known as a [3/4] Padé Approximant:</p>
+<p>def asin_pade_3_4(x): a1 = -367.0 / 714.0 b1 = -81.0 / 119.0 b2 = 183.0 / 4760.0 n = 1.0 + (a1 * x**2) d = 1.0 + (b1 * x**2) + (b2 * x**4) return x * (n / d)</p>
+<p>I&#x27;m also going to provide the one from a 5th order Taylor Series as well, a [5/4] Padé Approximant:</p>
+<p>def asin_pade_5_4(x): a1 = -1709.0 / 2196.0 a2 = 69049.0 / 922320.0 b1 = -2075.0 / 2196.0 b2 = 1075.0 / 6832.0 n = 1.0 + (a1 * x**2) + (a2 * x**4) d = 1.0 + (b1 * x**2) + (b2 * x**4) return x * (n / d)</p>
+<p>Now when charting all three, we get this:</p>
+<p>![Pade approximants comparison Comparison of Taylor series and Pade approximants for arcsin](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/pade_asin_approxes_with_errors.png)</p>
+<p>Wow, that already looks much better. Less error! It&#x27;s a bit hard to see that, so let&#x27;s zoom in on right side of the functions:</p>
+<p>![Edge zoom of Pade errors Zoomed view of Pade approximant errors at the range edges](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/pade_asin_approxes_with_errors_edge_zoom.png)</p>
+<p>The error hasn&#x27;t fully gone away, but it&#x27;s much less than before. Instead of defaulting back to the built-in asin()</p>
+<p>method, there&#x27;s a better trick up our sleeves: leveraging Inverse Trig Functions/Half Angle Transforms. Look at this:</p>
+<p>![Half angle transform formula The arcsin half angle transformation formula](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/arcsin_half_angle_transform_formula.png)</p>
+<p>This does seem a tad confusing, yet it lets us do a pro gamer move. When |x|</p>
+<p>is past a value we can &quot;teleport&quot; from the edge of the function more towards the center of arcsin(), perform the computation, and then go back and use the result there. In Python, this is our new asin(x) approximation:</p>
+<p>def asin_pade_3_4_half_angle_correction(x: float) -&gt; float: abs_x = abs(x) # If past the range, then we can use the half angle transformation to account for error if abs_x &gt; 0.85: small_x = math.sqrt(0.5 * (1.0 - abs_x)) r = (math.pi / 2) - (2.0 * asin_pade_3_4(small_x)) return -r if x &lt; 0 else r # Within the border we can just use the 3/4 approximation like normal return asin_pade_3_4(x)</p>
+<p>Now with the correction in place, the edges look more like this:</p>
+<p>![Pade error with HAT correction Pade approximant errors with half angle transform correction applied](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/pade_asin_approxes_hat_with_errors_edge_zoom.png)</p>
+<p>It might be a little hard to see, but the dashed lines are the ones with this half angle transform correction method and they are hugging the y=0</p>
+<p>line. There is a tiny bit of error if you zoom in.</p>
+<p>There&#x27;s even a further optimization that could be had: use (and adapt) a [1/2] Padé on the inside of the if</p>
+<p>body. This is because small_x</p>
+<p>will always be less than the square root of 0.075</p>
+<p>(which is ~0.27</p>
+<p>). The [1/2] Padé approximant for asin()</p>
+<p>can compute much faster, but only for smaller values of x</p>
+<p>. It can even be inlined into our function for further optimization. See below:</p>
+<p>def asin_pade_1_2(x): b1 = -1.0 / 6.0 d = 1.0 + (b1 * x**2) return (x / d) # ... def asin_pade_3_4_half_angle_correction(x: float) -&gt; float: abs_x = abs(x) # If past the range, then we can use the half angle transformation to account for error along with a &quot;smaller&quot; Pade if abs_x &gt; 0.85: z = (1.0 - abs_x) / 2 b1 = -1.0 / 6.0 d = 1.0 + (b1 * z) small_pade = math.sqrt(z) / d r = (math.pi / 2) - (2.0 * small_pade) return -r if x &lt; 0 else r # Within the border we can just use the 3/4 approximation like normal return asin_pade_3_4(x)</p>
+<p>It still looks the same as the above chart, so I don&#x27;t think it&#x27;s necessary to include another one. Written as C++, we have this:</p>
+<p>constexpr double HalfPi = 1.5707963267948966; inline double asin_pade_3_4(const double x) { constexpr double a1 = -367.0 / 714.0; constexpr double b1 = -81.0 / 119.0; constexpr double b2 = 183.0 / 4760.0; const double x2 = x * x; const double n = 1.0 + (a1 * x2); const double d = 1.0 + (b1 * x2) + (b2 * x2 * x2); return x * (n / d); } double asin_pade_3_4_half_angle_correction(const double x) { const double abs_x = std::abs(x); if (abs_x &lt;= 0.85) { return asin_pade_3_4(x); } else { // Edges of Pade curve const double z = 0.5 * (1.0 - abs_x); constexpr double b1 = -1.0 / 6.0; const double d = 1.0 + (b1 * z); const double pade_result = std::sqrt(z) / d; const double r = HalfPi - (2.0 * pade_result); return std::copysign(r, x); } }</p>
+<p>Compared to the original approximation method, this is more complicated, but it has benefits:</p>
+<p>- For a larger range [-0.85, 0.85] it will default to a simpler computation</p>
+<p>- For the edge cases it will use a quicker computation than</p>
+<p>std::asin()</p>
+<p>- There is less error</p>
+<p>I&#x27;m very much a &quot;put up or shut up&quot; type of person. So let&#x27;s actually plug it back into PSRayTracing and see if there is a speed improvement. We&#x27;ll use the default scene (which is the final render from book 2):</p>
+<p>![Book 2 final scene render Final render of the Ray Tracing in One Weekend Book 2 scene](https://storage.googleapis.com/sixteenbpp/blog/images/faster-asin-was-hiding-in-plain-sight/book2_final_n10000.png)</p>
+<p>Measuring</p>
+<p>That globe is the user of asin()</p>
+<p>. All images generally look the same (minus a little fuzz). For the test case we will render a 1080p image, with 250 samples per pixel, and take up a few cores. The testing was done on an M4 Mac Mini (running a version of macOS Tahoe, using GCC15 compiled with -O3). Doing a few runs each, taking a median:</p>
+<p>With std::asin()</p>
+<p>it took about 111 seconds to render the scene:</p>
+<p>ben@Benjamins-Mac-mini build_gcc15 % ./PSRayTracing -j 4 -n 250 -s 1920x1080 -o render_std_asin.png Scene: book2::final_scene Render size: 1920x1080 Samples per pixel: 250 Max number of ray bounces: 50 Number of render threads: 4 Copy per thread: on Saving to: render_std_asin.png Seed: `ASDF` Rendering: [==</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://16bpp.net/blog/post/faster-asin-was-hiding-in-plain-sight/" target="_blank">Read original →</a></div>
+</body></html>

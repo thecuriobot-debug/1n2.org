@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curio Archive | Artist Profile: {NAME}</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1>Artist Profile: {NAME}</h1>
+      <p class="meta">Structured historical encyclopedia entry.</p>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="timeline.html">Chronology</a>
+        <a href="records.html">Data Records</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Input Record</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Artist</td><td>{NAME}</td></tr>
+            <tr><td>Known Curio Cards</td><td>{LIST}</td></tr>
+            <tr><td>Active period in Curio</td><td>{DATES}</td></tr>
+            <tr><td>Sales stats aggregate</td><td>{JSON}</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>1. Background</h2>
+        <p><strong>Artist:</strong> {NAME}</p>
+        <p><strong>Biographical record:</strong> Biographical information is limited to the provided data.</p>
+      </section>
+
+      <section>
+        <h2>2. Contribution to Curio Cards</h2>
+        <p><strong>Known Curio Cards:</strong> {LIST}</p>
+        <p><strong>Active period in Curio:</strong> {DATES}</p>
+      </section>
+
+      <section>
+        <h2>3. Artistic Style Analysis</h2>
+        <p>
+          Style analysis is constrained to supplied records. Data not available at time of publication.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Market Performance Overview</h2>
+        <p><strong>Sales stats aggregate:</strong> {JSON}</p>
+      </section>
+
+      <section>
+        <h2>5. Historical Significance</h2>
+        <p>
+          Historical significance is reported only from provided Curio-related records.
+          Data not available at time of publication.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Relationship to Early NFT Culture</h2>
+        <p>
+          This section is limited to verifiable information in the provided dataset.
+          Data not available at time of publication.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Sources</h2>
+        <ul>
+          <li>Artist</li>
+          <li>Known Curio Cards</li>
+          <li>Active period in Curio</li>
+          <li>Sales stats aggregate</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Source and Data Context</h2>
+        <p>
+          This profile is a structured historical record based only on provided categories.
+          Interpretive expansion is intentionally limited to avoid unsupported claims.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last Updated: {{AUTO_TIMESTAMP}}
+    </footer>
+  </div>
+</body>
+</html>

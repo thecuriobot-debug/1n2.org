@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blockstream’s Jade Hardware Wallet Adds Lightning Network Support, Enabling Instant Bitcoin Payments From Cold Storage</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://bitcoinmagazine.com/news/blockstream-jade-wallet-lightning-network" target="_blank">Original article ↗</a></div>
+
+<h1>Blockstream’s Jade Hardware Wallet Adds Lightning Network Support, Enabling Instant Bitcoin Payments From Cold Storage</h1>
+<div class="meta">Bitcoin Magazine · 2026-03-10</div>
+<div class="summary">Hardware wallets have long been the gold standard for securing bitcoin, but they have remained largely disconnected from the fast-moving world of Lightning payments. A new update from Blockstream is trying to close that gap.
+The company told Bitcoin </div>
+<p>Hardware wallets have long been the gold standard for securing bitcoin, but they have remained largely disconnected from the fast-moving world of Lightning payments. A new update from Blockstream is trying to close that gap.</p>
+<p>The company told Bitcoin Magazine that its Blockstream Jade hardware wallet is now the first hardware wallet able to interact with the Bitcoin Lightning Network, allowing users to send and receive Lightning payments while keeping funds secured in cold storage.</p>
+<p>The feature arrives through version 5.2.0 of the Blockstream app. The update connects Lightning payments with the Liquid Network, a Bitcoin sidechain developed by Blockstream, using atomic swaps that convert Lightning payments into Liquid bitcoin (LBTC) secured by the Jade device.</p>
+<p>The change addresses a long-standing limitation in the Lightning ecosystem. Lightning transactions have required either hot wallets connected to the internet or custodial services that hold funds on behalf of users.</p>
+<p>“This is a breakthrough for self-custody,” Jeff Boortz, CPO at Blockstream, told Bitcoin Magazine.</p>
+<p>While those tools allow instant payments and low fees, they introduce security risks that many long-term holders prefer to avoid.</p>
+<p>By linking Lightning payments to hardware wallet security, Blockstream is attempting to merge two parts of the Bitcoin stack that have rarely worked together.</p>
+<p>“Jade is the first hardware wallet in the world to send and receive Lightning payments while keeping your keys fully offline,” Boortz said. “Blockstream is uniquely positioned to deliver this. Our full-stack infrastructure connects all three Bitcoin layers to make this possible on a single hardware wallet.”</p>
+<p>How will the software work?</p>
+<p>When a user receives a Lightning payment through the Blockstream app, the software generates a Lightning invoice and automatically performs an atomic swap that converts the incoming payment into LBTC.</p>
+<p>The funds then settle into the user’s Jade-secured wallet. Because the hardware wallet holds the keys offline, it does not need to be connected to receive the payment.</p>
+<p>“This launch lets users receive bitcoin instantly over Lightning, hold it securely in a Jade-protected wallet, and move to the base Bitcoin layer whenever they choose,” Peter Bain, CMO at Blockstream, told Bitcoin Magazine. “The result is faster payments, stronger self custody, and fewer unnecessary transactions.”</p>
+<p>Sending payments follows a similar process in reverse. Users paste a Lightning invoice into the app, which swaps LBTC for Lightning liquidity. The Jade device signs the transaction before funds leave the wallet, preserving the cold storage security model.</p>
+<p>The design creates a bridge between three layers of the Bitcoin ecosystem: Lightning for payments, Liquid for holding and transferring funds, and the base Bitcoin network for final settlement.</p>
+<p>For merchants, the structure could allow Lightning payments to accumulate in hardware wallet storage instead of hot wallets that remain exposed online. At the end of a day or week, those funds can be swapped from Liquid to mainchain bitcoin in a single transaction.</p>
+<p>For individual users, the system also introduces a different way to move bitcoin off exchanges. Instead of withdrawing directly to the mainchain, users could send funds over Lightning to their hardware-secured Liquid wallet, then consolidate to the base layer when network fees drop.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://bitcoinmagazine.com/news/blockstream-jade-wallet-lightning-network" target="_blank">Read original →</a></div>
+</body></html>

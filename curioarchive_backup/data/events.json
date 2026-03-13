@@ -1,0 +1,26 @@
+[
+  {
+    "year": 2017,
+    "month": 5,
+    "day": 9,
+    "event_title": "Collection launch documented",
+    "description": "Project documentation records the Curio Cards launch in May 2017. This date is used as the starting point in archive chronology.",
+    "impact_assessment": "Provides the baseline date for historical ordering of subsequent Curio events."
+  },
+  {
+    "year": 2017,
+    "month": 6,
+    "day": 20,
+    "event_title": "Card 17b misprint publication",
+    "description": "Project documentation lists the publication timestamp for the 17b duplicate deployment. The event is retained as a distinct entry in collection records.",
+    "impact_assessment": "Introduces a documented variant event reflected in card and contract references."
+  },
+  {
+    "year": 2021,
+    "month": 10,
+    "day": 1,
+    "event_title": "Institutional auction record published",
+    "description": "Christie's published lot records include a Curio Cards full-set sale context. Archive timelines use the published auction date as a dated institutional reference.",
+    "impact_assessment": "Adds externally published institutional documentation to the event record."
+  }
+]

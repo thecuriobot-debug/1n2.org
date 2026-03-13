@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-label="Mad Meme Blaster mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1432"/>
+      <stop offset="100%" stop-color="#170a19"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect x="0" y="0" width="640" height="30" fill="#102247"/>
+  <text x="14" y="20" fill="#8dd9ff" font-family="monospace" font-size="14">MAD MEME BLASTER</text>
+
+  <g>
+    <rect x="95" y="78" width="30" height="20" fill="#85ddff"/>
+    <rect x="147" y="78" width="30" height="20" fill="#ff6a82"/>
+    <rect x="199" y="78" width="30" height="20" fill="#b792ff"/>
+    <rect x="251" y="78" width="30" height="20" fill="#85ddff"/>
+    <rect x="303" y="78" width="30" height="20" fill="#ff6a82"/>
+    <rect x="355" y="78" width="30" height="20" fill="#b792ff"/>
+    <rect x="407" y="78" width="30" height="20" fill="#85ddff"/>
+    <rect x="459" y="78" width="30" height="20" fill="#ff6a82"/>
+    <rect x="511" y="78" width="30" height="20" fill="#b792ff"/>
+
+    <rect x="95" y="116" width="30" height="20" fill="#ff6a82"/>
+    <rect x="147" y="116" width="30" height="20" fill="#b792ff"/>
+    <rect x="199" y="116" width="30" height="20" fill="#85ddff"/>
+    <rect x="251" y="116" width="30" height="20" fill="#ff6a82"/>
+    <rect x="303" y="116" width="30" height="20" fill="#b792ff"/>
+    <rect x="355" y="116" width="30" height="20" fill="#85ddff"/>
+    <rect x="407" y="116" width="30" height="20" fill="#ff6a82"/>
+    <rect x="459" y="116" width="30" height="20" fill="#b792ff"/>
+    <rect x="511" y="116" width="30" height="20" fill="#85ddff"/>
+  </g>
+
+  <rect x="318" y="286" width="4" height="13" fill="#8cfdbc"/>
+  <rect x="260" y="222" width="6" height="13" fill="#ffb762"/>
+  <rect x="390" y="222" width="6" height="13" fill="#ffb762"/>
+
+  <rect x="298" y="404" width="44" height="22" fill="#ffcc62"/>
+  <rect x="308" y="412" width="24" height="6" fill="#2c3a5b"/>
+
+  <rect x="478" y="8" width="150" height="14" fill="#1a2844"/>
+  <rect x="480" y="10" width="90" height="10" fill="#ffbe5d"/>
+
+  <text x="148" y="458" fill="#ffe6b2" font-family="monospace" font-size="18">MAD BITCOINS MEME ARCADE BLAST</text>
+</svg>

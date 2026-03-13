@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curio Archive | Provenance Summary: Curio Card #{NUMBER}</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f3efe4;
+      border: 1px solid var(--line);
+      padding: 0.6rem;
+      border-radius: 3px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: #faf7f0;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+    }
+
+    ul.tight {
+      margin-top: 0.3rem;
+      padding-left: 1.1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1>Provenance Summary: Curio Card #{NUMBER}</h1>
+      <p class="meta">On-chain transfer history summary with no speculative interpretation.</p>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="timeline.html">Chronology</a>
+        <a href="records.html">Data Records</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Transfer History Dataset</h2>
+        <p class="muted">
+          Replace the JSON block in the script tag with transfer history data. Accepted forms: an array, or an object with
+          <code>transfers</code>, <code>events</code>, or <code>history</code> array.
+        </p>
+        <div id="raw-data" class="mono">Data not available at time of publication.</div>
+      </section>
+
+      <section>
+        <h2>1. Summary of Ownership History</h2>
+        <div id="ownership-summary" class="card">Data not available at time of publication.</div>
+      </section>
+
+      <section>
+        <h2>2. Number of Wallet Transfers</h2>
+        <div id="transfer-count" class="card">Data not available at time of publication.</div>
+      </section>
+
+      <section>
+        <h2>3. Longest Holding Period</h2>
+        <div id="longest-hold" class="card">Data not available at time of publication.</div>
+      </section>
+
+      <section>
+        <h2>4. Notable Wallet Clusters</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Cluster</th>
+              <th>Wallet count</th>
+              <th>Observed transfers</th>
+              <th>Observed period</th>
+              <th>Example wallets</th>
+            </tr>
+          </thead>
+          <tbody id="cluster-table">
+            <tr>
+              <td colspan="5">Data not available at time of publication.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>5. Observations on Concentration or Distribution Shifts</h2>
+        <ul id="shift-observations" class="tight">
+          <li>Data not available at time of publication.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Source and Data Context</h2>
+        <p>
+          This page summarizes observable transfer behavior only (addresses, sequencing, timestamps, and counts).
+          It does not infer intent, coordination motive, or off-chain identity.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Last Updated: {{AUTO_TIMESTAMP}}
+    </footer>
+  </div>
+
+  <script id="transfer-json" type="application/json">{JSON}</script>
+  <script>
+    (function renderProvenance() {
+      const PLACEHOLDER = 'Data not available at time of publication.';
+      const rawScript = document.getElementById('transfer-json');
+      const rawDataBox = document.getElementById('raw-data');
+      const ownershipSummary = document.getElementById('ownership-summary');
+      const transferCount = document.getElementById('transfer-count');
+      const longestHold = document.getElementById('longest-hold');
+      const clusterTable = document.getElementById('cluster-table');
+      const shiftObservations = document.getElementById('shift-observations');
+
+      const ZERO_ADDRESSES = new Set([
+        '0x0000000000000000000000000000000000000000',
+        '0x000000000000000000000000000000000000dead'
+      ]);
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function pickValue(obj, keys) {
+        for (const key of keys) {
+          if (Object.prototype.hasOwnProperty.call(obj, key) && obj[key] != null && obj[key] !== '') {
+            return obj[key];
+          }
+        }
+        return null;
+      }
+
+      function normalizeAddress(value) {
+        if (typeof value !== 'string') return null;
+        const v = value.trim().toLowerCase();
+        return v ? v : null;
+      }
+
+      function isNonZeroAddress(addr) {
+        return !!addr && !ZERO_ADDRESSES.has(addr);
+      }
+
+      function shortAddress(addr) {
+        if (!addr) return PLACEHOLDER;
+        if (addr.length < 14) return addr;
+        return addr.slice(0, 6) + '...' + addr.slice(-4);
+      }
+
+      function parseTimestamp(value) {
+        if (value == null || value === '') return null;
+
+        if (typeof value === 'number') {
+          if (!Number.isFinite(value)) return null;
+          const ms = value > 1e12 ? value : value * 1000;
+          return Number.isFinite(ms) ? ms : null;
+        }
+
+        if (typeof value === 'string') {
+          const trimmed = value.trim();
+          if (!trimmed) return null;
+
+          if (/^\d+$/.test(trimmed)) {
+            const n = Number.parseInt(trimmed, 10);
+            if (!Number.isFinite(n)) return null;
+            return n > 1e12 ? n : n * 1000;
+          }
+
+          const parsed = Date.parse(trimmed);
+          return Number.isFinite(parsed) ? parsed : null;
+        }
+
+        return null;
+      }
+
+      function formatDate(ms) {
+        if (!Number.isFinite(ms)) return PLACEHOLDER;
+        return new Date(ms).toISOString().slice(0, 10);
+      }
+
+      function formatDuration(ms) {
+        if (!Number.isFinite(ms) || ms < 0) return PLACEHOLDER;
+        const totalDays = ms / 86400000;
+        if (totalDays >= 365) return (totalDays / 365).toFixed(2) + ' years';
+        if (totalDays >= 30) return (totalDays / 30).toFixed(1) + ' months';
+        if (totalDays >= 1) return totalDays.toFixed(1) + ' days';
+        const hours = ms / 3600000;
+        if (hours >= 1) return hours.toFixed(1) + ' hours';
+        const mins = ms / 60000;
+        if (mins >= 1) return mins.toFixed(1) + ' minutes';
+        return Math.floor(ms / 1000) + ' seconds';
+      }
+
+      function earlyExit() {
+        ownershipSummary.textContent = PLACEHOLDER;
+        transferCount.textContent = PLACEHOLDER;
+        longestHold.textContent = PLACEHOLDER;
+        clusterTable.innerHTML = '<tr><td colspan="5">' + PLACEHOLDER + '</td></tr>';
+        shiftObservations.innerHTML = '<li>' + PLACEHOLDER + '</li>';
+      }
+
+      let parsed;
+      try {
+        const raw = (rawScript.textContent || '').trim();
+        rawDataBox.textContent = raw || PLACEHOLDER;
+        if (!raw || raw === '{JSON}') throw new Error('Missing input');
+        parsed = JSON.parse(raw);
+      } catch (err) {
+        earlyExit();
+        return;
+      }
+
+      const sourceTransfers = Array.isArray(parsed)
+        ? parsed
+        : Array.isArray(parsed.transfers)
+        ? parsed.transfers
+        : Array.isArray(parsed.events)
+        ? parsed.events
+        : Array.isArray(parsed.history)
+        ? parsed.history
+        : [];
+
+      if (!sourceTransfers.length) {
+        earlyExit();
+        return;
+      }
+
+      const normalized = sourceTransfers
+        .map(function (t, idx) {
+          const from = normalizeAddress(pickValue(t, ['from', 'from_address', 'fromAddress', 'seller']));
+          const to = normalizeAddress(pickValue(t, ['to', 'to_address', 'toAddress', 'buyer', 'owner']));
+          const tsRaw = pickValue(t, ['timestamp', 'block_timestamp', 'time', 'date', 'blockTime']);
+          const ts = parseTimestamp(tsRaw);
+          const tx = pickValue(t, ['tx_hash', 'txHash', 'transaction_hash', 'hash']);
+          return { idx: idx, from: from, to: to, ts: ts, tx: tx || null };
+        })
+        .filter(function (t) {
+          return t.from || t.to;
+        })
+        .sort(function (a, b) {
+          const aKey = Number.isFinite(a.ts) ? a.ts : Number.MAX_SAFE_INTEGER;
+          const bKey = Number.isFinite(b.ts) ? b.ts : Number.MAX_SAFE_INTEGER;
+          if (aKey !== bKey) return aKey - bKey;
+          return a.idx - b.idx;
+        });
+
+      if (!normalized.length) {
+        earlyExit();
+        return;
+      }
+
+      const knownTimes = normalized.map(function (t) { return t.ts; }).filter(Number.isFinite);
+      const firstSeen = knownTimes.length ? Math.min.apply(null, knownTimes) : null;
+      const lastSeen = knownTimes.length ? Math.max.apply(null, knownTimes) : null;
+
+      const recipients = normalized
+        .map(function (t) { return t.to; })
+        .filter(isNonZeroAddress);
+      const uniqueRecipients = Array.from(new Set(recipients));
+
+      const firstRecipient = recipients.length ? recipients[0] : null;
+      const latestRecipient = recipients.length ? recipients[recipients.length - 1] : null;
+
+      const ownershipLines = [];
+      ownershipLines.push(
+        'Observed transfer records: ' + normalized.length + '.' +
+        (firstSeen && lastSeen ? ' Time span: ' + formatDate(firstSeen) + ' to ' + formatDate(lastSeen) + '.' : ' Time span: ' + PLACEHOLDER)
+      );
+      ownershipLines.push(
+        'Observed recipient wallets: ' + uniqueRecipients.length +
+        (firstRecipient ? '; first recipient: ' + shortAddress(firstRecipient) : '') +
+        (latestRecipient ? '; latest recipient: ' + shortAddress(latestRecipient) : '') + '.'
+      );
+      ownershipLines.push('Summary reports ordering and custody transitions from transfer logs only.');
+      ownershipSummary.innerHTML = '<p>' + ownershipLines.map(escapeHtml).join('</p><p>') + '</p>';
+
+      const walletToWalletTransfers = normalized.filter(function (t) {
+        return isNonZeroAddress(t.from) && isNonZeroAddress(t.to);
+      }).length;
+      const mintOrBurnAdjacent = normalized.length - walletToWalletTransfers;
+      transferCount.innerHTML =
+        '<p>Wallet-to-wallet transfers observed: <strong>' + walletToWalletTransfers + '</strong>.</p>' +
+        '<p>Transfers involving mint/burn or unknown-side addresses: ' + mintOrBurnAdjacent + '.</p>';
+
+      const holdingSegments = [];
+      for (let i = 0; i < normalized.length - 1; i += 1) {
+        const current = normalized[i];
+        const next = normalized[i + 1];
+        if (!Number.isFinite(current.ts) || !Number.isFinite(next.ts)) continue;
+        if (!isNonZeroAddress(current.to)) continue;
+        const duration = next.ts - current.ts;
+        if (duration < 0) continue;
+        holdingSegments.push({
+          holder: current.to,
+          start: current.ts,
+          end: next.ts,
+          duration: duration
+        });
+      }
+
+      if (!holdingSegments.length) {
+        longestHold.textContent = PLACEHOLDER;
+      } else {
+        let longest = holdingSegments[0];
+        for (let i = 1; i < holdingSegments.length; i += 1) {
+          if (holdingSegments[i].duration > longest.duration) longest = holdingSegments[i];
+        }
+
+        longestHold.innerHTML =
+          '<p>Longest completed holding period: <strong>' + escapeHtml(formatDuration(longest.duration)) + '</strong>.</p>' +
+          '<p>Wallet: ' + escapeHtml(shortAddress(longest.holder)) + '; interval: ' +
+          escapeHtml(formatDate(longest.start)) + ' to ' + escapeHtml(formatDate(longest.end)) + '.</p>';
+      }
+
+      const graph = new Map();
+      function ensureNode(addr) {
+        if (!graph.has(addr)) graph.set(addr, new Set());
+      }
+
+      normalized.forEach(function (t) {
+        if (!isNonZeroAddress(t.from) || !isNonZeroAddress(t.to)) return;
+        ensureNode(t.from);
+        ensureNode(t.to);
+        graph.get(t.from).add(t.to);
+        graph.get(t.to).add(t.from);
+      });
+
+      const visited = new Set();
+      const components = [];
+      for (const node of graph.keys()) {
+        if (visited.has(node)) continue;
+        const queue = [node];
+        const comp = [];
+        visited.add(node);
+        while (queue.length) {
+          const cur = queue.shift();
+          comp.push(cur);
+          for (const nxt of graph.get(cur)) {
+            if (!visited.has(nxt)) {
+              visited.add(nxt);
+              queue.push(nxt);
+            }
+          }
+        }
+        components.push(comp);
+      }
+
+      const clusterRows = components
+        .filter(function (comp) { return comp.length >= 2; })
+        .map(function (comp, idx) {
+          const set = new Set(comp);
+          const related = normalized.filter(function (t) {
+            return isNonZeroAddress(t.from) && isNonZeroAddress(t.to) && set.has(t.from) && set.has(t.to);
+          });
+          const relatedTimes = related.map(function (t) { return t.ts; }).filter(Number.isFinite);
+          const period = relatedTimes.length
+            ? formatDate(Math.min.apply(null, relatedTimes)) + ' to ' + formatDate(Math.max.apply(null, relatedTimes))
+            : PLACEHOLDER;
+
+          return {
+            name: 'Cluster ' + (idx + 1),
+            walletCount: comp.length,
+            transfers: related.length,
+            period: period,
+            wallets: comp.slice(0, 3).map(shortAddress).join(', ')
+          };
+        })
+        .sort(function (a, b) {
+          if (b.walletCount !== a.walletCount) return b.walletCount - a.walletCount;
+          return b.transfers - a.transfers;
+        })
+        .slice(0, 5);
+
+      if (!clusterRows.length) {
+        clusterTable.innerHTML = '<tr><td colspan="5">' + PLACEHOLDER + '</td></tr>';
+      } else {
+        clusterTable.innerHTML = clusterRows.map(function (row) {
+          return '<tr>' +
+            '<td>' + escapeHtml(row.name) + '</td>' +
+            '<td>' + row.walletCount + '</td>' +
+            '<td>' + row.transfers + '</td>' +
+            '<td>' + escapeHtml(row.period) + '</td>' +
+            '<td>' + escapeHtml(row.wallets || PLACEHOLDER) + '</td>' +
+          '</tr>';
+        }).join('');
+      }
+
+      const observations = [];
+      const freq = new Map();
+      recipients.forEach(function (addr) {
+        freq.set(addr, (freq.get(addr) || 0) + 1);
+      });
+
+      if (recipients.length) {
+        let topAddr = recipients[0];
+        for (const [addr, count] of freq.entries()) {
+          if (count > (freq.get(topAddr) || 0)) topAddr = addr;
+        }
+        const topCount = freq.get(topAddr) || 0;
+        const topShare = (topCount / recipients.length) * 100;
+        observations.push(
+          'Recipient wallets observed: ' + uniqueRecipients.length + ' across ' + recipients.length + ' recipient-side transfers.'
+        );
+        observations.push(
+          'Highest recipient concentration: ' + shortAddress(topAddr) + ' received ' + topCount +
+          ' transfers (' + topShare.toFixed(1) + '% of recipient-side transfers).'
+        );
+      }
+
+      if (normalized.length >= 4) {
+        const mid = Math.floor(normalized.length / 2);
+        const firstHalf = normalized.slice(0, mid).map(function (t) { return t.to; }).filter(isNonZeroAddress);
+        const secondHalf = normalized.slice(mid).map(function (t) { return t.to; }).filter(isNonZeroAddress);
+
+        function concentration(arr) {
+          if (!arr.length) return null;
+          const local = new Map();
+          arr.forEach(function (a) { local.set(a, (local.get(a) || 0) + 1); });
+          let max = 0;
+          for (const c of local.values()) {
+            if (c > max) max = c;
+          }
+          return (max / arr.length) * 100;
+        }
+
+        const c1 = concentration(firstHalf);
+        const c2 = concentration(secondHalf);
+        if (c1 != null && c2 != null) {
+          observations.push(
+            'Recipient concentration (top-address share) moved from ' + c1.toFixed(1) + '% in the earlier segment to ' +
+            c2.toFixed(1) + '% in the later segment.'
+          );
+        }
+      }
+
+      if (knownTimes.length >= 2) {
+        const sortedTimes = knownTimes.slice().sort(function (a, b) { return a - b; });
+        let maxGap = 0;
+        let start = null;
+        let end = null;
+        for (let i = 0; i < sortedTimes.length - 1; i += 1) {
+          const gap = sortedTimes[i + 1] - sortedTimes[i];
+          if (gap > maxGap) {
+            maxGap = gap;
+            start = sortedTimes[i];
+            end = sortedTimes[i + 1];
+          }
+        }
+        if (maxGap > 0 && start != null && end != null) {
+          observations.push(
+            'Longest interval between observed transfers: ' + formatDuration(maxGap) +
+            ' (' + formatDate(start) + ' to ' + formatDate(end) + ').'
+          );
+        }
+      }
+
+      if (!observations.length) {
+        shiftObservations.innerHTML = '<li>' + PLACEHOLDER + '</li>';
+      } else {
+        shiftObservations.innerHTML = observations.map(function (line) {
+          return '<li>' + escapeHtml(line) + '</li>';
+        }).join('');
+      }
+    })();
+  </script>
+</body>
+</html>

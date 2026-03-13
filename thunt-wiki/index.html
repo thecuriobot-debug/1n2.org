@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MadWikipedia</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Linux+Libertine:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wiki-header">
+  <a href="#" class="wiki-logo" onclick="showArticle('main');return false">Mad<span>Wikipedia</span></a>
+  <div class="wiki-nav">
+    <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a>
+    <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>
+    <a href="#" onclick="showArticle('wcn');return false">WCN</a>
+    <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>
+    <a href="https://1n2.org/" target="_blank">1n2.org</a>
+  </div>
+</div>
+<div class="wiki-body">
+<nav class="wiki-sidebar">
+  <h3>People</h3>
+  <ul>
+    <li><a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a></li>
+    <li><a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a></li>
+    <li><a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a></li>
+  </ul>
+  <h3>Artists</h3>
+  <ul>
+    <li><a href="#" onclick="showArticle('phneep');return false">Phneep</a></li>
+    <li><a href="#" onclick="showArticle('robek-world');return false">Robek World</a></li>
+    <li><a href="#" onclick="showArticle('cryptograffiti');return false">Cryptograffiti</a></li>
+    <li><a href="#" onclick="showArticle('daniel-friedman');return false">Daniel Friedman</a></li>
+    <li><a href="#" onclick="showArticle('cryptopop');return false">Cryptopop</a></li>
+    <li><a href="#" onclick="showArticle('marisol-vengas');return false">Marisol Vengas</a></li>
+    <li><a href="#" onclick="showArticle('thoros-of-myr');return false">Thoros of Myr</a></li>
+  </ul>
+  <h3>Projects</h3>
+  <ul>
+    <li><a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a></li>
+    <li><a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a></li>
+    <li><a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a></li>
+    <li><a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a></li>
+    <li><a href="#" onclick="showArticle('protip');return false">Protip</a></li>
+  </ul>
+  <h3>Shows</h3>
+  <ul>
+    <li><a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a></li>
+    <li><a href="#" onclick="showArticle('adventures-nfts');return false">Adventures in NFTs</a></li>
+    <li><a href="#" onclick="showArticle('today-in-bitcoin');return false">Today in Bitcoin</a></li>
+  </ul>
+  <h3>WCN Notable Guests</h3>
+  <ul>
+    <li><a href="#" onclick="showArticle('adam-meister');return false">Adam Meister</a></li>
+    <li><a href="#" onclick="showArticle('ben-arc');return false">Ben Arc</a></li>
+    <li><a href="#" onclick="showArticle('jimmy-song');return false">Jimmy Song</a></li>
+    <li><a href="#" onclick="showArticle('tone-vays');return false">Tone Vays</a></li>
+    <li><a href="#" onclick="showArticle('vortex');return false">Vortex</a></li>
+    <li><a href="#" onclick="showArticle('chris-derose');return false">Chris DeRose</a></li>
+    <li><a href="#" onclick="showArticle('peter-todd');return false">Peter Todd</a></li>
+    <li><a href="#" onclick="showArticle('jameson-lopp');return false">Jameson Lopp</a></li>
+    <li><a href="#" onclick="showArticle('samson-mow');return false">Samson Mow</a></li>
+    <li><a href="#" onclick="showArticle('jack-mallers');return false">Jack Mallers</a></li>
+  </ul>
+  <h3>External</h3>
+  <ul>
+    <li><a href="https://curio.cards" target="_blank">curio.cards</a></li>
+    <li><a href="https://1n2.org/curioarchive/" target="_blank">Curio Archive</a></li>
+    <li><a href="https://www.worldcryptonetwork.com/" target="_blank">worldcryptonetwork.com</a></li>
+    <li><a href="https://www.madbitcoins.com/" target="_blank">madbitcoins.com</a></li>
+    <li><a href="https://opensea.io/collection/curiocardswrapper" target="_blank">OpenSea</a></li>
+  </ul>
+</nav>
+<main class="wiki-content">
+<!-- MAIN PAGE -->
+<div class="article-page active" id="page-main">
+<h1 class="article-title">Welcome to MadWikipedia</h1>
+<div class="article">
+<p><b>MadWikipedia</b> is a community-built encyclopedia documenting the history of <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a>, <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>, the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, and the people who shaped early cryptocurrency media and NFT history.</p>
+<h2>Featured Articles</h2>
+<ul>
+<li><a href="#" onclick="showArticle('curio-cards');return false"><b>Curio Cards</b></a> — The first art NFT collection on Ethereum, launched May 9, 2017. Sold at Christie's for $1.2 million.</li>
+<li><a href="#" onclick="showArticle('thomas-hunt');return false"><b>Thomas Hunt</b></a> — Filmmaker, historian, and crypto media pioneer known as "Mad Bitcoins." Co-founder of Curio Cards and the World Crypto Network.</li>
+<li><a href="#" onclick="showArticle('wcn');return false"><b>World Crypto Network</b></a> — Independent media collective broadcasting Bitcoin education since 2014. Over 1,300 videos archived.</li>
+<li><a href="#" onclick="showArticle('rhett-creighton');return false"><b>Rhett Creighton</b></a> — Former child actor (Crocodile Dundee II), MIT-educated nuclear engineer, and the programmer who coded the Curio Cards smart contracts.</li>
+</ul>
+<h2>Statistics</h2>
+<p>This wiki contains articles on <b>20+</b> people, <b>7</b> artists, <b>19</b> shows, and <b>130+</b> WCN guests.</p>
+</div>
+</div>
+<!-- CURIO CARDS -->
+<div class="article-page" id="page-curio-cards">
+<h1 class="article-title">Curio Cards</h1>
+<div class="article">
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">Curio Cards</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/card-01-apples.jpg" alt="Curio Card #1 Apples" style="width:200px;border:1px solid #a2a9b1"><br><small>Card #1 "Apples" by Phneep — the first art NFT minted on Ethereum</small></td></tr>
+<tr><th>Type</th><td>NFT art collection</td></tr>
+<tr><th>Blockchain</th><td>Ethereum</td></tr>
+<tr><th>Launched</th><td>May 9, 2017</td></tr>
+<tr><th>Founders</th><td><a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>, <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a>, <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a></td></tr>
+<tr><th>Artists</th><td>7</td></tr>
+<tr><th>Cards</th><td>30 (+1 misprint)</td></tr>
+<tr><th>Total supply</th><td>29,700</td></tr>
+<tr><th>Contract</th><td>Modified ERC-20</td></tr>
+<tr><th>Website</th><td><a href="https://curio.cards" target="_blank">curio.cards</a></td></tr>
+</table>
+
+<p><b>Curio Cards</b> are <a href="https://en.wikipedia.org/wiki/Non-fungible_token" target="_blank">non-fungible tokens</a> on the <a href="https://en.wikipedia.org/wiki/Ethereum" target="_blank">Ethereum</a> blockchain. Created in 2017 as an online art gallery, the project is recognized as the first collection of NFT artworks on Ethereum.<sup class="ref"><a href="#ref-wiki">[1]</a></sup> Curio Cards were developed by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>, <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a>, and <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a>, and launched on May 9, 2017.<sup class="ref"><a href="#ref-quartz">[2]</a></sup> The collection features 30 unique digital images by seven different artists, with a total supply of 29,700 cards.</p>
+
+<p>In October 2021, a complete set including the digital misprint "17b" was sold at <a href="https://www.christies.com" target="_blank">Christie's</a> Post-War to Present auction for $1,267,320 (393 ETH), purchased by Taylor Gerring, an early contributor to the Ethereum project.<sup class="ref"><a href="#ref-christies">[3]</a></sup></p>
+
+<div class="toc">
+<div class="toc-title">Contents</div>
+<ol>
+<li><a href="#cc-history">History</a></li>
+<li><a href="#cc-technical">Technical innovations</a></li>
+<li><a href="#cc-artists">Artists and cards</a></li>
+<li><a href="#cc-rediscovery">Rediscovery and boom</a></li>
+<li><a href="#cc-christies">Christie's auction</a></li>
+<li><a href="#cc-arctic">Arctic preservation</a></li>
+<li><a href="#cc-refs">References</a></li>
+</ol>
+</div>
+
+<h2 id="cc-history">History</h2>
+<p>The concept for Curio Cards emerged from the San Francisco Bitcoin meetup scene in early 2017. <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>, a Bitcoin content creator known as <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>, had long been a collector of baseball cards and Magic: The Gathering cards. In a 2017 interview with <a href="https://news.bitcoin.com" target="_blank">Bitcoin.com</a>, Hunt explained: "I've always been a collector... I thought, why not combine my love for cryptocurrency with my love for collecting and make something fun."<sup class="ref"><a href="#ref-bitcoincom">[4]</a></sup></p>
+
+<p>Hunt and software developer <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a> recognized that <a href="https://en.wikipedia.org/wiki/Rare_Pepes" target="_blank">Rare Pepes</a>, a meme-NFT project on Counterparty (built atop Bitcoin), had technical limitations and was associated with controversial imagery. They envisioned a platform for legitimate digital art on Ethereum. To build the smart contracts, they recruited <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a>, a former child actor and MIT-educated nuclear engineer whom they had met through the San Francisco Bitcoin meetup group.<sup class="ref"><a href="#ref-startwithnfts">[5]</a></sup></p>
+
+<p>Creighton initially proposed creating a dedicated Ethereum fork for the cards, but Uhrig argued this would leave the project "orphaned" on its own chain. They remained on the public Ethereum blockchain, a decision that would prove crucial to the project's long-term significance.<sup class="ref"><a href="#ref-castor">[6]</a></sup></p>
+
+<h2 id="cc-technical">Technical innovations</h2>
+<p>Curio Cards introduced several technical innovations that later became foundational to the NFT ecosystem. Because no NFT standards (such as <a href="https://en.wikipedia.org/wiki/ERC-721" target="_blank">ERC-721</a> or ERC-1155) existed in May 2017, Creighton hand-coded the smart contracts using a modified ERC-20 token structure. Each card series functioned as its own fungible token contract with a finite supply, creating what the founders called "digital prints."<sup class="ref"><a href="#ref-docs">[7]</a></sup></p>
+
+<p>Key innovations included: purchasing artwork directly from a smart contract (the "vending machine" model); embedding IPFS hashes into the contract for decentralized image storage; and using non-divisible tokens in finite supply. According to NFT historian Adam McBride, Curio Cards was the first project to use <a href="https://en.wikipedia.org/wiki/InterPlanetary_File_System" target="_blank">IPFS</a> for NFT storage, and the links remained active four years later when the cards were rediscovered.<sup class="ref"><a href="#ref-castor">[6]</a></sup></p>
+
+<p>Curio Cards is directly referenced in the <a href="https://eips.ethereum.org/EIPS/eip-721" target="_blank">ERC-721 EIP</a> specification, the standard that would later define how NFTs work on Ethereum. The two most popular NFT standards (ERC-721 and ERC-1155) share many design elements with Curio Cards.<sup class="ref"><a href="#ref-docs">[7]</a></sup></p>
+
+<h3>The 17b misprint</h3>
+<p>During deployment, something went wrong while Creighton was creating the contract for Card #17, requiring him to reissue the card. The original became known as "17b," a digital misprint that was briefly available before the contract was disabled. A small number of 17b cards were acquired by early users, making it one of the rarest items in the collection.<sup class="ref"><a href="#ref-castor">[6]</a></sup></p>
+
+<h3>The wrapper</h3>
+<p>Because Curio Cards pre-dated modern NFT standards, they could not be listed on platforms like <a href="https://opensea.io" target="_blank">OpenSea</a>. In March 2021, a "wrapper" was developed to make the old ERC-20 contracts compatible with the ERC-1155 standard. The first rushed third-party wrapper had a fatal bug: tokens sent to it became permanently stuck ("permawrapped"), making Card #26 the rarest tradeable card with only 105 remaining in circulation.<sup class="ref"><a href="#ref-castor">[6]</a></sup></p>
+
+<h2 id="cc-artists">Artists and cards</h2>
+<p>The original 30-card set featured work from seven artists, each bringing a distinct visual style:</p>
+<ul>
+<li><a href="#" onclick="showArticle('phneep');return false"><b>Phneep</b></a> — Created Cards 1–9 and 17, including the iconic "Apples" (Card #1) and the "Art Story Set" (Cards 7–9) depicting the evolution of art from prehistoric forms to masterworks. Phneep collaborated extensively with Hunt on the conceptual framework.</li>
+<li><a href="#" onclick="showArticle('cryptograffiti');return false"><b>Cryptograffiti</b></a> — A pioneer in Bitcoin-themed street art. Created Cards 10–13, bridging physical crypto art culture with digital collectibles.</li>
+<li><a href="#" onclick="showArticle('cryptopop');return false"><b>Cryptopop</b></a> — Contributed stylized pop-art crypto imagery for Cards 14–16.</li>
+<li><a href="#" onclick="showArticle('robek-world');return false"><b>Robek World</b></a> — Created Cards 20–23. Card #20 ("The Wizard") depicts Thomas Hunt, Card #21 ("MadBitcoins") is Hunt's namesake card, Card #22 ("The Bard") represents Travis Uhrig, and Card #23 ("The Barbarian") depicts Rhett Creighton. Robek also created an early promotional commercial for his cards.</li>
+<li><a href="#" onclick="showArticle('daniel-friedman');return false"><b>Daniel Friedman</b></a> — A researcher in entomology who contributed Cards 24–26, featuring hand-drawn physical artwork brought to the digital space. The supply was released as 333, 222, and 111 copies respectively, with Card #26 becoming the rarest in the set.</li>
+<li><a href="#" onclick="showArticle('marisol-vengas');return false"><b>Marisol Vengas</b></a> — Contributed Cards 27–29, featuring early digital sketches and abstract forms.</li>
+<li><a href="#" onclick="showArticle('thoros-of-myr');return false"><b>Thoros of Myr</b></a> — The pseudonymous artist of Card #30 ("Eclipse"), the final card in the set.</li>
+</ul>
+
+<h3>Card gallery</h3>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px">
+<div style="text-align:center;width:100px"><img src="images/card-01-apples.jpg" alt="#1 Apples" style="width:90px;border:1px solid #a2a9b1"><br><small>#1 Apples</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-10-future.jpg" alt="#10 Future" style="width:90px;border:1px solid #a2a9b1"><br><small>#10 Future</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-17-uasf.jpg" alt="#17 UASF" style="width:90px;border:1px solid #a2a9b1"><br><small>#17 UASF</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-20-madbitcoins.jpg" alt="#20 MadBitcoins" style="width:90px;border:1px solid #a2a9b1"><br><small>#20 MadBitcoins</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-21-the-wizard.jpg" alt="#21 The Wizard" style="width:90px;border:1px solid #a2a9b1"><br><small>#21 The Wizard</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-22-the-bard.jpg" alt="#22 The Bard" style="width:90px;border:1px solid #a2a9b1"><br><small>#22 The Bard</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-23-the-barbarian.jpg" alt="#23 The Barbarian" style="width:90px;border:1px solid #a2a9b1"><br><small>#23 Barbarian</small></div>
+<div style="text-align:center;width:100px"><img src="images/card-30-eclipse.jpg" alt="#30 Eclipse" style="width:90px;border:1px solid #a2a9b1"><br><small>#30 Eclipse</small></div>
+</div>
+
+<h2 id="cc-rediscovery">Rediscovery and NFT boom</h2>
+<p>After the 2017 cryptocurrency crash, Curio Cards was largely forgotten. The founders tried to run it as a startup business, but as Uhrig later recalled, he "could barely give the virtual cards away on a Discord channel."<sup class="ref"><a href="#ref-castor">[6]</a></sup> The smart contracts holding the cards sat dormant on the blockchain for nearly four years.</p>
+
+<p>In March 2021, as the NFT market exploded, a group of "NFT archaeologists" — collectors searching for the oldest tokens on Ethereum — rediscovered Curio Cards. Critical to the verification process were timestamped video archives from the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, where Hunt had interviewed the founders during the 2017 launch week. These videos served as definitive proof that Curio Cards predated <a href="https://en.wikipedia.org/wiki/CryptoPunks" target="_blank">CryptoPunks</a> (launched June 23, 2017) as an art NFT project.<sup class="ref"><a href="#ref-quartz">[2]</a></sup></p>
+
+<p>Adam McBride, one of the key archaeologists, described the experience: "The idea of having a failed business and then magically four years later it becomes successful is just impossible. And it actually happened to these guys."<sup class="ref"><a href="#ref-quartz">[2]</a></sup></p>
+
+<h2 id="cc-christies">Christie's auction</h2>
+<p>On October 1, 2021, a complete collection of 31 Curio Cards (including the 17b misprint) was sold at <a href="https://www.christies.com" target="_blank">Christie's</a> Post-War to Present auction in New York for $1,267,320 (393 ETH). The buyer was <b>Taylor Gerring</b>, an early contributor to the Ethereum project.<sup class="ref"><a href="#ref-christies">[3]</a></sup> The sale represented a milestone for both the project and the broader NFT art market, establishing Curio Cards as a "blue-chip" historical asset alongside CryptoPunks and Autoglyphs.</p>
+
+<h2 id="cc-arctic">Arctic preservation</h2>
+<p>As part of the <a href="https://archiveprogram.github.com/" target="_blank">GitHub Arctic Code Vault</a> program, the open-source code for the Curio Cards smart contracts was included in a snapshot taken on February 2, 2020. This data was written onto 186 reels of digital photosensitive silver halide film and deposited 250 meters deep into the permafrost of a decommissioned coal mine in <a href="https://en.wikipedia.org/wiki/Svalbard" target="_blank">Svalbard, Norway</a>, within the <a href="https://en.wikipedia.org/wiki/Arctic_World_Archive" target="_blank">Arctic World Archive</a>. The foundational code for all 30 Curio Cards, including Card #21 (Mad Bitcoins), is now preserved alongside works from the Vatican Library, intended to survive for at least 1,000 years.<sup class="ref"><a href="#ref-github">[8]</a></sup></p>
+
+<h2 id="cc-refs">References</h2>
+<ol class="reflist">
+<li id="ref-wiki"><a href="https://en.wikipedia.org/wiki/Curio_Cards" target="_blank">Curio Cards</a> — Wikipedia</li>
+<li id="ref-quartz">Howcroft, E. (2021). <a href="https://qz.com/2067917/early-nft-collection-curio-cards-makes-its-debut-at-christies" target="_blank">"A 'historic' NFT collection is on sale at Christie's."</a> Quartz.</li>
+<li id="ref-christies"><a href="https://www.christies.com" target="_blank">Christie's Post-War to Present Auction</a>, October 2021.</li>
+<li id="ref-bitcoincom"><a href="https://news.bitcoin.com" target="_blank">Thomas Hunt Interview</a> — Bitcoin.com, 2017.</li>
+<li id="ref-startwithnfts"><a href="https://www.startwithnfts.com/posts/the-story-behind-the-first-art-nft-released-on-ethereum-a-detailed-history/" target="_blank">"The Story Behind the First Art NFT"</a> — Start With NFTs.</li>
+<li id="ref-castor">Castor, A. (2022). <a href="https://amycastor.com/2022/06/04/the-early-history-of-nfts-curio-cards/" target="_blank">"The early history of NFTs, part 3: Curio Cards."</a> Amy Castor.</li>
+<li id="ref-docs"><a href="https://docs.curio.cards/" target="_blank">Curio Cards Documentation</a> — Official docs.</li>
+<li id="ref-github"><a href="https://archiveprogram.github.com/" target="_blank">GitHub Archive Program</a> — Arctic Code Vault.</li>
+<li id="ref-medium-curio"><a href="https://medium.com/@curiocards" target="_blank">Curio DAO on Medium</a> — Founder profiles and history.</li>
+<li id="ref-iqwiki"><a href="https://iq.wiki/wiki/curio-cards" target="_blank">Curio Cards</a> — IQ.wiki.</li>
+<li id="ref-nftnow"><a href="https://nftnow.com/collectibles/exploring-the-rarest-and-most-popular-curio-cards/" target="_blank">"Exploring the Rarest and Most Popular Curio Cards"</a> — nft now.</li>
+</ol>
+
+<div class="categories"><span>Categories:</span> NFTs &middot; Ethereum &middot; Digital art &middot; Christie's auction lots &middot; 2017 in art &middot; Blockchain art</div>
+</div>
+</div>
+
+<!-- THOMAS HUNT -->
+<div class="article-page" id="page-thomas-hunt">
+<h1 class="article-title">Thomas Hunt (media personality)</h1>
+<div class="article">
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">Thomas Hunt</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/card-21-the-wizard.jpg" alt="Curio Card #21 MadBitcoins" style="width:180px;border:1px solid #a2a9b1"><br><small>Card #21 "MadBitcoins" from the Curio Cards collection, by Robek World (2017)</small></td></tr>
+<tr><th>Known as</th><td>Mad Bitcoins</td></tr>
+<tr><th>Born</th><td>United States</td></tr>
+<tr><th>Education</th><td>History degree</td></tr>
+<tr><th>Occupation</th><td>Filmmaker, media personality, crypto commentator</td></tr>
+<tr><th>Known for</th><td><a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a></td></tr>
+<tr><th>Website</th><td><a href="https://www.madbitcoins.com" target="_blank">madbitcoins.com</a></td></tr>
+<tr><th>YouTube</th><td><a href="https://www.youtube.com/user/madbitcoins" target="_blank">Mad Bitcoins</a></td></tr>
+</table>
+
+<p><b>Thomas Hunt</b>, known professionally by his pseudonym <b>Mad Bitcoins</b>, is an American filmmaker, digital media pioneer, and cryptocurrency commentator. He is the founder of the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> (WCN), one of the oldest independent broadcasting collectives in the Bitcoin ecosystem, and a co-founder of <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a>, recognized as the first generative art NFT project on the Ethereum blockchain.<sup class="ref"><a href="#ref-wiki">[1]</a></sup> His work bridges experimental filmmaking, decentralized media infrastructure, and blockchain art history.</p>
+
+<h2>Early life and education</h2>
+<p>Hunt holds a degree in History, an academic background he has frequently cited as foundational to his interest in immutable records and digital archiving. Before entering the cryptocurrency space, he was active in digital film production and experimental media.<sup class="ref"><a href="#ref-imdb-hunt">[2]</a></sup></p>
+
+<h2>Filmmaking: Star Trek Ships Only</h2>
+<p>Hunt gained internet recognition for his experimental project <b>Star Trek Ships Only</b>, a transformative media work that meticulously edited episodes and films of the Star Trek franchise to remove all human characters, dialogue, and plot, leaving only external shots of spacecraft accompanied by ambient engine noise. The project was covered by <a href="https://boingboing.net" target="_blank">Boing Boing</a> and cited as a precursor to the "ambient cinema" and ASMR trends. Hunt documented his filmography through <a href="https://1n2.org/thomashuntfilms/" target="_blank">Thomas Hunt Films</a>.<sup class="ref"><a href="#ref-thf">[3]</a></sup></p>
+
+<h2>Cryptocurrency career</h2>
+<h3>Mad Bitcoins (2012–present)</h3>
+<p>In 2012, Hunt adopted the "Mad Bitcoins" persona and launched a YouTube channel characterized by high-energy, vlog-style delivery designed to demystify Bitcoin for a non-technical audience. At a time when the early Bitcoin community was dominated by technical whitepapers and forum debates, Hunt used humor and cultural references to make decentralized currency accessible to the masses.<sup class="ref"><a href="#ref-medium-mb">[4]</a></sup></p>
+
+<h3>World Crypto Network (2014–present)</h3>
+<p>To ensure the movement was not dependent on a single creator, Hunt founded the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> (WCN) as a decentralized media collective. The network hosts programs including <a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a>, a roundtable debate show, and <a href="#" onclick="showArticle('today-in-bitcoin');return false">Today in Bitcoin</a>, a daily news program. WCN is notable for its strict adherence to independent funding, relying on community support through <a href="#" onclick="showArticle('protip');return false">Protip</a> and later <b>Tallycoin</b> rather than corporate sponsorships.<sup class="ref"><a href="#ref-podnews">[5]</a></sup></p>
+
+<p>As of 2026, WCN has archived over 1,300 videos on YouTube documenting the history of Bitcoin from 2014 to the present, featuring interviews with notable figures including <a href="#" onclick="showArticle('jimmy-song');return false">Jimmy Song</a>, <a href="#" onclick="showArticle('peter-todd');return false">Peter Todd</a>, <a href="#" onclick="showArticle('jameson-lopp');return false">Jameson Lopp</a>, <a href="#" onclick="showArticle('samson-mow');return false">Samson Mow</a>, and <a href="#" onclick="showArticle('jack-mallers');return false">Jack Mallers</a>.<sup class="ref"><a href="#ref-wcn-yt">[6]</a></sup></p>
+
+<h3>Value-for-Value pioneer</h3>
+<p>Hunt's background in history made him wary of central authorities and corporate censors. To protect independent media, he pioneered decentralized funding models:</p>
+<ul>
+<li><a href="#" onclick="showArticle('protip');return false"><b>Protip</b></a> (2014): An early open-source browser extension that allowed users to tip content creators automatically in Bitcoin based on time spent on their page. It was one of the first "Value-for-Value" experiments on the web.</li>
+<li><b>Tallycoin</b>: As the Bitcoin ecosystem evolved, Hunt moved WCN's fundraising to Tallycoin, a crowdfunding platform utilizing the Lightning Network that accepts both on-chain and Lightning donations without third-party fees.</li>
+</ul>
+
+<h2>Role in NFT history</h2>
+<div style="float:right;margin:0 0 10px 14px;text-align:center;width:120px"><img src="images/card-20-madbitcoins.jpg" alt="Card #20 The Wizard" style="width:110px;border:1px solid #a2a9b1"><br><small>Card #20 "The Wizard"</small></div>
+<p>On May 9, 2017, Hunt co-founded <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> alongside <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a> and <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a>. Hunt's love of collecting — baseball cards, books, and Magic: The Gathering — directly inspired the project. He is immortalized in the collection on two consecutive cards by artist <a href="#" onclick="showArticle('robek-world');return false">Robek World</a>: Card #20 ("The Wizard") and Card #21 ("MadBitcoins"), both released May 29, 2017.<sup class="ref"><a href="#ref-startwithnfts">[7]</a></sup></p>
+
+<p>In 2021, when the NFT market exploded, Hunt's timestamped WCN video archives from the 2017 launch period became critical "archaeological evidence" used by collectors and historians to verify that Curio Cards predated CryptoPunks as an art NFT. This verification directly led to the $1.2 million Christie's sale.<sup class="ref"><a href="#ref-quartz">[8]</a></sup></p>
+
+<h2>Arctic preservation</h2>
+<p>In what Hunt has described as a "full-circle moment" for a man with a History degree, his contributions to digital art are now physically preserved in the <a href="https://en.wikipedia.org/wiki/Arctic_World_Archive" target="_blank">Arctic World Archive</a> in Svalbard, Norway. The Curio Cards smart contract code — including the logic governing Card #21 — was deposited 250 meters deep in permafrost as part of the GitHub Arctic Code Vault, designed to survive for at least 1,000 years.<sup class="ref"><a href="#ref-github">[9]</a></sup></p>
+
+<h2>References</h2>
+<ol class="reflist">
+<li><a href="https://en.wikipedia.org/wiki/Curio_Cards" target="_blank">Curio Cards</a> — Wikipedia</li>
+<li id="ref-imdb-hunt"><a href="https://www.imdb.com/title/tt31696068/" target="_blank">Bitcoin's Mad Progress with Thomas Hunt</a> — IMDb</li>
+<li id="ref-thf"><a href="https://1n2.org/thomashuntfilms/" target="_blank">Thomas Hunt Films</a> — Official portfolio</li>
+<li id="ref-medium-mb"><a href="https://medium.com/@madbitcoins" target="_blank">Mad Bitcoins</a> — Medium</li>
+<li id="ref-podnews"><a href="https://podnews.net/podcast/i06y9" target="_blank">The World Crypto Network Podcast</a> — Podnews</li>
+<li id="ref-wcn-yt"><a href="https://www.youtube.com/user/WorldCryptoNetwork" target="_blank">World Crypto Network</a> — YouTube</li>
+<li><a href="https://www.startwithnfts.com/posts/curio-cards-nfts/" target="_blank">Breaking Down Curio Cards</a> — Start With NFTs</li>
+<li><a href="https://qz.com/2067917/early-nft-collection-curio-cards-makes-its-debut-at-christies" target="_blank">Curio Cards at Christie's</a> — Quartz</li>
+<li><a href="https://archiveprogram.github.com/" target="_blank">GitHub Archive Program</a></li>
+</ol>
+<div class="categories"><span>Categories:</span> Bitcoin personalities &middot; Cryptocurrency commentators &middot; NFT creators &middot; American filmmakers &middot; World Crypto Network</div>
+</div>
+</div>
+
+<!-- RHETT CREIGHTON -->
+<div class="article-page" id="page-rhett-creighton">
+<h1 class="article-title">Rhett Creighton</h1>
+<div class="article">
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">Rhett Creighton</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/card-23-the-barbarian.jpg" alt="Curio Card #23 The Barbarian" style="width:180px;border:1px solid #a2a9b1"><br><small>Card #23 "The Barbarian" depicting Rhett Creighton, by Robek World (2017)</small></td></tr>
+<tr><th>Born</th><td>John Everett Creighton IV</td></tr>
+<tr><th>Education</th><td>MIT — B.S. Physics, M.S. Nuclear Engineering</td></tr>
+<tr><th>Occupation</th><td>Actor, engineer, blockchain developer</td></tr>
+<tr><th>Known for</th><td><i>Crocodile Dundee II</i>, <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a></td></tr>
+<tr><th>IMDb</th><td><a href="https://www.imdb.com/name/nm0187311/" target="_blank">nm0187311</a></td></tr>
+</table>
+
+<p><b>Rhett Creighton</b> (born <b>John Everett Creighton IV</b>) is an American actor, nuclear engineer, and blockchain developer. He is best known for his childhood acting roles in <i><a href="https://www.imdb.com/title/tt0092493/" target="_blank">Crocodile Dundee II</a></i> (1988), <i>War and Remembrance</i> (1988), and <i>True Blood</i> (1989), and for programming the smart contracts that powered <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a>, the first art NFT collection on Ethereum.<sup class="ref"><a href="#ref-imdb-rc">[1]</a></sup></p>
+
+<h2>Early life and acting career</h2>
+<p>Creighton began acting at age four, appearing in national television commercials, movies, and plays. His most prominent role was as "Park Boy" in <i>Crocodile Dundee II</i> alongside Paul Hogan. He also appeared in the miniseries <i>War and Remembrance</i> as Louis Henry.<sup class="ref"><a href="#ref-imdb-rc">[1]</a></sup></p>
+
+<h2>Education and engineering</h2>
+<p>After his acting career, Creighton left high school early to attend the <a href="https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology" target="_blank">Massachusetts Institute of Technology</a> (MIT), where he earned a Bachelor of Science in Physics and a Master's Degree in Nuclear Engineering. During college, he won MIT's annual autonomous robot competition (6.270) and starred in an episode of TLC's <i>Junkyard Wars</i>, which his team also won, building sand yachts from scrap parts.<sup class="ref"><a href="#ref-medium-rc">[2]</a></sup></p>
+
+<h2>Cryptocurrency and Curio Cards</h2>
+<p>Creighton became involved in Bitcoin through the San Francisco meetup scene, where he attended the first public presentation of the <a href="https://en.wikipedia.org/wiki/Lightning_Network" target="_blank">Lightning Network</a> proposal. He contributed to Bitcoin Core's RPC test suite before meeting <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> and <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a>.</p>
+
+<p>In 2017, Creighton hand-coded the Curio Cards smart contracts in Solidity, deploying the first "vending machine" on May 9, 2017. Because no NFT standards existed, every detail had to be coded from scratch, and each card was manually deployed to the Ethereum blockchain. He is depicted on Card #23 ("The Barbarian") by artist <a href="#" onclick="showArticle('robek-world');return false">Robek World</a>.<sup class="ref"><a href="#ref-castor-rc">[3]</a></sup></p>
+
+<h2>References</h2>
+<ol class="reflist">
+<li id="ref-imdb-rc"><a href="https://www.imdb.com/name/nm0187311/" target="_blank">Rhett Creighton</a> — IMDb</li>
+<li id="ref-medium-rc"><a href="https://medium.com/@curiocards/bringing-art-collecting-to-ethereum-the-curio-cards-founders-rhett-creighton-13f65bcf4654" target="_blank">Curio Cards Founders — Rhett Creighton</a> — Medium</li>
+<li id="ref-castor-rc"><a href="https://amycastor.com/2022/06/04/the-early-history-of-nfts-curio-cards/" target="_blank">The early history of NFTs: Curio Cards</a> — Amy Castor</li>
+</ol>
+<div class="categories"><span>Categories:</span> American actors &middot; MIT alumni &middot; Nuclear engineers &middot; Blockchain developers &middot; Curio Cards &middot; Child actors</div>
+</div>
+</div>
+
+<!-- TRAVIS UHRIG -->
+<div class="article-page" id="page-travis-uhrig">
+<h1 class="article-title">Travis Uhrig</h1>
+<div class="article">
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">Travis Uhrig</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/card-22-the-bard.jpg" alt="Curio Card #22 The Bard" style="width:180px;border:1px solid #a2a9b1"><br><small>Card #22 "The Bard" depicting Travis Uhrig, by Robek World (2017)</small></td></tr>
+<tr><th>Occupation</th><td>Software developer, entrepreneur</td></tr>
+<tr><th>Known for</th><td><a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a></td></tr>
+</table>
+<p><b>Travis Uhrig</b> is an American software developer and entrepreneur who co-founded <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> alongside <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> and <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a>. Uhrig served as the business development lead for the project, responsible for pitching the concept to venture capitalists and managing artist relationships.</p>
+<p>Uhrig met Hunt and Creighton through the San Francisco Bitcoin meetup group. He recognized the potential of using Ethereum's smart contract capability to create a "Patreon model" for digital art patrons. His key contribution was persuading Creighton not to fork Ethereum for the project, arguing it would leave the trading cards "orphaned" on a separate chain.<sup class="ref"><a href="#ref-quartz">[1]</a></sup></p>
+<p>Uhrig is depicted on Card #22 ("The Bard") by artist <a href="#" onclick="showArticle('robek-world');return false">Robek World</a>, described as a "song-singing leader" — the only card in the set with its number printed on the right side.<sup class="ref"><a href="#ref-swnfts">[2]</a></sup></p>
+<p>He appeared as a guest on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>. (<a href="https://www.worldcryptonetwork.com/search/Travis Uhrig/" target="_blank">WCN episodes featuring Travis Uhrig</a>)</p>
+<h2>References</h2>
+<ol class="reflist">
+<li><a href="https://qz.com/2067917/early-nft-collection-curio-cards-makes-its-debut-at-christies" target="_blank">Curio Cards at Christie's</a> — Quartz</li>
+<li id="ref-swnfts"><a href="https://www.startwithnfts.com/posts/curio-cards-nfts/" target="_blank">Breaking Down Curio Cards</a> — Start With NFTs</li>
+</ol>
+<div class="categories"><span>Categories:</span> Software developers &middot; Curio Cards &middot; Blockchain entrepreneurs</div>
+</div>
+</div>
+
+<!-- WORLD CRYPTO NETWORK -->
+<div class="article-page" id="page-wcn">
+<h1 class="article-title">World Crypto Network</h1>
+<div class="article">
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">World Crypto Network</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/wcn-logo.png" alt="World Crypto Network logo" style="width:120px;border:1px solid #a2a9b1"><br><small>World Crypto Network YouTube channel logo</small></td></tr>
+<tr><th>Type</th><td>Independent media collective</td></tr>
+<tr><th>Founded</th><td>2014</td></tr>
+<tr><th>Founder</th><td><a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a></td></tr>
+<tr><th>Focus</th><td>Bitcoin news, education</td></tr>
+<tr><th>Videos</th><td>1,300+</td></tr>
+<tr><th>Website</th><td><a href="https://www.worldcryptonetwork.com" target="_blank">worldcryptonetwork.com</a></td></tr>
+<tr><th>YouTube</th><td><a href="https://www.youtube.com/user/WorldCryptoNetwork" target="_blank">WorldCryptoNetwork</a></td></tr>
+<tr><th>Podcast</th><td><a href="https://itunes.apple.com/us/podcast/world-crypto-network/id825708806" target="_blank">Apple Podcasts</a></td></tr>
+</table>
+<p>The <b>World Crypto Network</b> (<b>WCN</b>) is a veteran independent media organization and podcast network dedicated to Bitcoin and cryptocurrency education. Founded by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> (Mad Bitcoins) in 2014, WCN has archived over 1,300 videos documenting the evolution of the cryptocurrency ecosystem. The <i>Financial Times</i> described it as "a YouTube channel that covers cryptocurrencies such as Bitcoin" (November 28, 2014).</p>
+
+<h2>Programming</h2>
+<p>WCN operates as a hub-and-spoke model with Thomas Hunt as the central node. Key programs include:</p>
+<ul>
+<li><a href="#" onclick="showArticle('bitcoin-group');return false"><b>The Bitcoin Group</b></a> — A roundtable debate show featuring Hunt and rotating panelists including <a href="#" onclick="showArticle('adam-meister');return false">Adam Meister</a>, <a href="#" onclick="showArticle('tone-vays');return false">Tone Vays</a>, and <a href="#" onclick="showArticle('jimmy-song');return false">Jimmy Song</a>. (<a href="https://www.worldcryptonetwork.com/search/The Bitcoin Group/" target="_blank">All episodes</a>)</li>
+<li><a href="#" onclick="showArticle('today-in-bitcoin');return false"><b>Today in Bitcoin</b></a> — A daily news show hosted by rotating members. (<a href="https://www.worldcryptonetwork.com/search/Today in Bitcoin/" target="_blank">All episodes</a>)</li>
+<li><a href="#" onclick="showArticle('adventures-nfts');return false"><b>Adventures in NFTs</b></a> — A show covering the NFT ecosystem. (<a href="https://www.worldcryptonetwork.com/search/Adventures in NFTs/" target="_blank">All episodes</a>)</li>
+<li><b>Bitcoin Headlines</b> — Quick news roundups. (<a href="https://www.worldcryptonetwork.com/search/Bitcoin Headlines/" target="_blank">All episodes</a>)</li>
+<li><b>BTCIOT</b> — Bitcoin and Internet of Things coverage. (<a href="https://www.worldcryptonetwork.com/search/BTCIOT/" target="_blank">All episodes</a>)</li>
+<li><b>Lightning Hacksprint</b> — Technical deep dives. (<a href="https://www.worldcryptonetwork.com/search/Lightning Hacksprint/" target="_blank">All episodes</a>)</li>
+</ul>
+
+<h2>Notable guests</h2>
+<p>WCN has hosted over 130 guests across its history. (<a href="https://www.worldcryptonetwork.com/tag/Person/" target="_blank">Complete guest list</a>) Notable guests include:</p>
+<ul>
+<li><a href="#" onclick="showArticle('jimmy-song');return false">Jimmy Song</a> — Bitcoin developer and educator (<a href="https://www.worldcryptonetwork.com/search/Jimmy Song/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('peter-todd');return false">Peter Todd</a> — Bitcoin Core developer (<a href="https://www.madbitcoins.com/search/Peter Todd/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('jameson-lopp');return false">Jameson Lopp</a> — Co-founder of Casa (<a href="https://www.madbitcoins.com/search/Jameson Lopp/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('samson-mow');return false">Samson Mow</a> — CEO of JAN3 (<a href="https://www.worldcryptonetwork.com/search/Samson Mow/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('jack-mallers');return false">Jack Mallers</a> — CEO of Strike (<a href="https://www.worldcryptonetwork.com/search/Jack Mallers/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('tone-vays');return false">Tone Vays</a> — Trader and analyst (<a href="https://www.worldcryptonetwork.com/search/Tone Vays/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('adam-meister');return false">Adam Meister</a> — "The Bitcoin Voice" (<a href="https://www.worldcryptonetwork.com/search/Adam Meister/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('ben-arc');return false">Ben Arc</a> — LNBits developer (<a href="https://www.worldcryptonetwork.com/search/Ben Arc/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('vortex');return false">Vortex</a> — The Bitcoin News host (<a href="https://www.worldcryptonetwork.com/search/Vortex/" target="_blank">episodes</a>)</li>
+<li><a href="#" onclick="showArticle('chris-derose');return false">Chris DeRose</a> — Bitcoin advocate (<a href="https://www.worldcryptonetwork.com/search/Chris DeRose/" target="_blank">episodes</a>)</li>
+<li><b>Nick Szabo</b> — Cryptographer, smart contract pioneer (<a href="https://www.madbitcoins.com/search/Nick Szabo/" target="_blank">episodes</a>)</li>
+<li><b>Roger Ver</b> — Early Bitcoin investor (<a href="https://www.madbitcoins.com/search/Roger Ver/" target="_blank">episodes</a>)</li>
+<li><b>Tatiana Moroz</b> — Bitcoin musician (<a href="https://www.madbitcoins.com/search/Tatiana Moroz/" target="_blank">episodes</a>)</li>
+<li><b>Stephanie Murphy</b> — Let's Talk Bitcoin host (<a href="https://www.madbitcoins.com/search/Stephanie Murphy/" target="_blank">episodes</a>)</li>
+<li><b>Eric Lombrozo</b> — Developer (<a href="https://www.madbitcoins.com/search/Eric Lombrozo/" target="_blank">episodes</a>)</li>
+</ul>
+
+<h2>Funding</h2>
+<p>WCN operates on a "Value-for-Value" model. It was initially funded through <a href="#" onclick="showArticle('protip');return false">Protip</a>, an automated Bitcoin tipping extension. The network later transitioned to Tallycoin for Lightning Network-native crowdfunding, and maintains a Patreon page as supplemental support.</p>
+
+<h2>References</h2>
+<ol class="reflist">
+<li><a href="https://www.youtube.com/user/WorldCryptoNetwork" target="_blank">World Crypto Network</a> — YouTube</li>
+<li><a href="https://podnews.net/podcast/i06y9" target="_blank">WCN Podcast</a> — Podnews</li>
+<li><a href="https://www.worldcryptonetwork.com/tag/Person/" target="_blank">WCN Hosts & Guests</a> — Complete list</li>
+<li><a href="https://www.worldcryptonetwork.com/tag/Show/" target="_blank">WCN Shows</a> — All programs</li>
+</ol>
+<div class="categories"><span>Categories:</span> Bitcoin media &middot; Cryptocurrency podcasts &middot; YouTube channels &middot; Independent media</div>
+</div>
+</div>
+
+<!-- MAD BITCOINS -->
+<div class="article-page" id="page-mad-bitcoins">
+<h1 class="article-title">Mad Bitcoins</h1>
+<div class="article">
+<div class="hatnote">This article is about the media brand. For the person, see <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>.</div>
+<table class="infobox">
+<tr><td colspan="2" class="ib-title" style="background:#cee0f2">Mad Bitcoins</td></tr>
+<tr><td colspan="2" style="text-align:center;padding:8px"><img src="images/mb-logo.png" alt="Mad Bitcoins logo" style="width:120px;border:1px solid #a2a9b1"><br><small>Mad Bitcoins YouTube channel avatar</small></td></tr>
+<tr><th>Type</th><td>YouTube channel, media brand</td></tr>
+<tr><th>Created by</th><td><a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a></td></tr>
+<tr><th>Launched</th><td>2012</td></tr>
+<tr><th>Network</th><td><a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a></td></tr>
+<tr><th>YouTube</th><td><a href="https://www.youtube.com/user/madbitcoins" target="_blank">madbitcoins</a></td></tr>
+<tr><th>Website</th><td><a href="https://www.madbitcoins.com" target="_blank">madbitcoins.com</a></td></tr>
+</table>
+<p><b>Mad Bitcoins</b> is a long-running cryptocurrency YouTube channel and media brand created by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> in 2012. It is one of the earliest Bitcoin-focused YouTube channels, predating the 2017 bull run that made crypto influencers a mainstream phenomenon. The brand operates under the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> umbrella.</p>
+<p>The channel is characterized by its high-energy, vlog-style format using humor and cultural references to explain Bitcoin concepts. Hunt adopted the "Mad Bitcoins" persona to make decentralized currency accessible to non-technical audiences at a time when Bitcoin discussion was dominated by academic whitepapers and developer forums.</p>
+<p>As of 2026, the Mad Bitcoins brand has produced content across YouTube, Medium, and podcast platforms, with Hunt hosting programs including <a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a> and the Thomas Hunt Show (THS). The madbitcoins.com website catalogs hosts, guests, shows, and topics. (<a href="https://www.madbitcoins.com/tag/Person/" target="_blank">Guests</a> · <a href="https://www.madbitcoins.com/tag/Show/" target="_blank">Shows</a> · <a href="https://www.madbitcoins.com/tag/Topic/" target="_blank">Topics</a> · <a href="https://www.madbitcoins.com/playlists/" target="_blank">Playlists</a>)</p>
+<p>Hunt is immortalized as Card #20 and Card #21 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> NFT collection.</p>
+<div class="categories"><span>Categories:</span> YouTube channels &middot; Bitcoin media &middot; Cryptocurrency education</div>
+</div>
+</div>
+
+<!-- THE BITCOIN GROUP -->
+<div class="article-page" id="page-bitcoin-group">
+<h1 class="article-title">The Bitcoin Group</h1>
+<div class="article">
+<p><b>The Bitcoin Group</b> is a roundtable discussion show produced by the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> and hosted by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>. The show features a rotating panel of Bitcoin commentators debating current market news, technical developments, and regulatory issues.</p>
+<p>Regular panelists have included <a href="#" onclick="showArticle('adam-meister');return false">Adam Meister</a>, <a href="#" onclick="showArticle('tone-vays');return false">Tone Vays</a>, <a href="#" onclick="showArticle('jimmy-song');return false">Jimmy Song</a>, and <a href="#" onclick="showArticle('ben-arc');return false">Ben Arc</a>. The show is one of WCN's longest-running programs.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/The Bitcoin Group/" target="_blank">Browse all Bitcoin Group episodes →</a></p>
+<div class="categories"><span>Categories:</span> WCN shows &middot; Bitcoin podcasts</div>
+</div>
+</div>
+
+<!-- ADVENTURES IN NFTS -->
+<div class="article-page" id="page-adventures-nfts">
+<h1 class="article-title">Adventures in NFTs</h1>
+<div class="article">
+<p><b>Adventures in NFTs</b> is a show on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> covering the NFT ecosystem, hosted by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>. Episodes have featured interviews with NFT artists, collectors, and project founders, including discussions about <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> history.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Adventures in NFTs/" target="_blank">Browse all Adventures in NFTs episodes →</a></p>
+<div class="categories"><span>Categories:</span> WCN shows &middot; NFT media</div>
+</div>
+</div>
+
+<!-- TODAY IN BITCOIN -->
+<div class="article-page" id="page-today-in-bitcoin">
+<h1 class="article-title">Today in Bitcoin</h1>
+<div class="article">
+<p><b>Today in Bitcoin</b> is a daily news show on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, featuring price updates, headline analysis, and technical development coverage. Hosted by rotating WCN members.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Today in Bitcoin/" target="_blank">Browse all Today in Bitcoin episodes →</a></p>
+<div class="categories"><span>Categories:</span> WCN shows &middot; Bitcoin news</div>
+</div>
+</div>
+
+<!-- PROTIP -->
+<div class="article-page" id="page-protip">
+<h1 class="article-title">Protip</h1>
+<div class="article">
+<p><b>Protip</b> was an open-source browser extension co-developed by <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> in 2014 that automatically tipped content creators in Bitcoin based on the time a user spent on their page. It was one of the first implementations of the "Value-for-Value" (V4V) content monetization model.</p>
+<p>Protip aimed to solve the "starving artist" problem by removing the friction of manual donations. While it faced challenges with browser store policies, it pioneered the concept of seamless micro-donations that would later be realized through the <a href="https://en.wikipedia.org/wiki/Lightning_Network" target="_blank">Lightning Network</a>.</p>
+<p>The <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> was initially funded through Protip before transitioning to Tallycoin.</p>
+<div class="categories"><span>Categories:</span> Bitcoin software &middot; Open-source projects &middot; Content monetization</div>
+</div>
+</div>
+
+<!-- ARTISTS -->
+<div class="article-page" id="page-phneep">
+<h1 class="article-title">Phneep</h1>
+<div class="article">
+<p><b>Phneep</b> is a digital artist and the most prolific contributor to the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection, creating Cards 1–9 and Card 17 (10 of the 30 cards). Phneep collaborated extensively with <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a> on the conceptual framework for the collection.</p>
+<p>Notable works include Card #1 ("Apples"), which Hunt has said represents the fall from grace in Adam and Eve, plus Apple Computer, and was fitting as the first card because it starts with "A." The "Art Story Set" (Cards 7–9) depicts the evolution of art from prehistoric crude forms to masterworks. Cards 2–3 ("Nuts" and "Berries") reference lyrics from a Talking Heads song.</p>
+<div class="categories"><span>Categories:</span> Digital artists &middot; Curio Cards artists &middot; NFT artists</div>
+</div></div>
+
+<div class="article-page" id="page-robek-world">
+<h1 class="article-title">Robek World</h1>
+<div class="article">
+<p><b>Robek World</b> (also known as <b>Robek Dirstein</b>) is a digital artist who created Cards 20–23 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection. He was an early supporter who was invited to produce art after creating a gallery for the founders.</p>
+<p>His four cards depict the three Curio Cards founders: Card #20 ("The Wizard") is <a href="#" onclick="showArticle('thomas-hunt');return false">Thomas Hunt</a>, Card #21 ("MadBitcoins") is Hunt's digital persona, Card #22 ("The Bard") is <a href="#" onclick="showArticle('travis-uhrig');return false">Travis Uhrig</a>, and Card #23 ("The Barbarian") is <a href="#" onclick="showArticle('rhett-creighton');return false">Rhett Creighton</a>. Robek also created a promotional commercial for his cards. He appeared as a guest on <a href="#" onclick="showArticle('wcn');return false">WCN</a>. (<a href="https://www.worldcryptonetwork.com/search/Robek Dirstein/" target="_blank">WCN episodes</a> · <a href="https://www.madbitcoins.com/search/Robek Dirstein/" target="_blank">MB episodes</a>)</p>
+<div class="categories"><span>Categories:</span> Digital artists &middot; Curio Cards artists &middot; WCN guests</div>
+</div></div>
+
+<div class="article-page" id="page-cryptograffiti">
+<h1 class="article-title">Cryptograffiti</h1>
+<div class="article">
+<p><b>Cryptograffiti</b> is a pioneer in Bitcoin-themed street art and digital art. He created Cards 10–13 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection, bridging physical crypto art culture with digital collectibles. He appeared as a guest on <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>. (<a href="https://www.madbitcoins.com/search/Cryptograffiti/" target="_blank">Episodes</a>)</p>
+<div class="categories"><span>Categories:</span> Street artists &middot; Curio Cards artists &middot; Bitcoin art</div>
+</div></div>
+
+<div class="article-page" id="page-daniel-friedman">
+<h1 class="article-title">Daniel Friedman</h1>
+<div class="article">
+<p><b>Daniel Friedman</b> is a researcher in entomology and artist who created Cards 24–26 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection. His hand-drawn physical artwork brought traditional art to the digital NFT space. The supply was released as 333, 222, and 111 copies plus 5 locked copies, making Card #26 the rarest in the entire set.</p>
+<p>He appeared on <a href="#" onclick="showArticle('wcn');return false">WCN</a>. (<a href="https://www.worldcryptonetwork.com/search/Daniel Friedman/" target="_blank">Episodes</a>)</p>
+<div class="categories"><span>Categories:</span> Curio Cards artists &middot; Entomologists</div>
+</div></div>
+
+<div class="article-page" id="page-cryptopop">
+<h1 class="article-title">Cryptopop</h1>
+<div class="article"><p><b>Cryptopop</b> contributed stylized pop-art crypto imagery for Cards 14–16 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection.</p>
+<div class="categories"><span>Categories:</span> Curio Cards artists</div>
+</div></div>
+
+<div class="article-page" id="page-marisol-vengas">
+<h1 class="article-title">Marisol Vengas</h1>
+<div class="article"><p><b>Marisol Vengas</b> contributed Cards 27–29 in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> collection, featuring early digital sketches and abstract forms.</p>
+<div class="categories"><span>Categories:</span> Curio Cards artists</div>
+</div></div>
+
+<div class="article-page" id="page-thoros-of-myr">
+<h1 class="article-title">Thoros of Myr</h1>
+<div class="article"><p><b>Thoros of Myr</b> is the pseudonymous artist of Card #30 ("Eclipse"), the final card in the <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a> set.</p>
+<div class="categories"><span>Categories:</span> Curio Cards artists &middot; Pseudonymous artists</div>
+</div></div>
+
+<!-- WCN GUEST ARTICLES -->
+<div class="article-page" id="page-jimmy-song">
+<h1 class="article-title">Jimmy Song</h1>
+<div class="article">
+<p><b>Jimmy Song</b> is a Bitcoin developer, educator, and author of <i>Programming Bitcoin</i> (O'Reilly Media). A frequent guest on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, Song is known for his advocacy of Bitcoin maximalism and his technical deep dives into protocol development. He has appeared on multiple episodes of <a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a>.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Jimmy Song/" target="_blank">WCN episodes</a> · <a href="https://www.madbitcoins.com/search/Jimmy Song/" target="_blank">MB episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin developers &middot; WCN guests &middot; Authors</div>
+</div></div>
+
+<div class="article-page" id="page-tone-vays">
+<h1 class="article-title">Tone Vays</h1>
+<div class="article">
+<p><b>Tone Vays</b> is a trader, financial analyst, and Bitcoin commentator. A regular panelist on <a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a>, Vays is known for his technical analysis and market commentary on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Tone Vays/" target="_blank">WCN episodes</a> · <a href="https://www.madbitcoins.com/search/Tone Vays/" target="_blank">MB episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin traders &middot; WCN guests &middot; Financial analysts</div>
+</div></div>
+
+<div class="article-page" id="page-peter-todd">
+<h1 class="article-title">Peter Todd</h1>
+<div class="article">
+<p><b>Peter Todd</b> is a Canadian Bitcoin Core developer and applied cryptography consultant. He has contributed significantly to Bitcoin protocol development including work on replace-by-fee (RBF) and timestamping. Todd appeared as a guest on <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>.</p>
+<p><a href="https://www.madbitcoins.com/search/Peter Todd/" target="_blank">MB episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin developers &middot; Cryptographers &middot; MB guests</div>
+</div></div>
+
+<div class="article-page" id="page-jameson-lopp">
+<h1 class="article-title">Jameson Lopp</h1>
+<div class="article">
+<p><b>Jameson Lopp</b> is a cypherpunk, Bitcoin security expert, and co-founder of Casa, a self-custody solutions company. He is known for his advocacy of personal privacy and Bitcoin sovereignty. Lopp appeared on <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a>.</p>
+<p><a href="https://www.madbitcoins.com/search/Jameson Lopp/" target="_blank">MB episodes</a></p>
+<div class="categories"><span>Categories:</span> Cypherpunks &middot; Bitcoin security &middot; MB guests</div>
+</div></div>
+
+<div class="article-page" id="page-samson-mow">
+<h1 class="article-title">Samson Mow</h1>
+<div class="article">
+<p><b>Samson Mow</b> is the CEO of JAN3, a Bitcoin technology company focused on nation-state Bitcoin adoption. He is a frequent guest on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, known for his work with El Salvador on Bitcoin adoption.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Samson Mow/" target="_blank">WCN episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin entrepreneurs &middot; WCN guests</div>
+</div></div>
+
+<div class="article-page" id="page-jack-mallers">
+<h1 class="article-title">Jack Mallers</h1>
+<div class="article">
+<p><b>Jack Mallers</b> is the CEO of Strike, a Bitcoin payments company built on the Lightning Network. He appeared on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a> to discuss Lightning Network development and Bitcoin payments infrastructure.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Jack Mallers/" target="_blank">WCN episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin entrepreneurs &middot; Lightning Network &middot; WCN guests</div>
+</div></div>
+
+<div class="article-page" id="page-adam-meister">
+<h1 class="article-title">Adam Meister</h1>
+<div class="article">
+<p><b>Adam Meister</b>, known as "The Bitcoin Voice" and "The One Bitcoin Show," is a long-time Bitcoin maximalist and content creator. He is a frequent collaborator and panelist on <a href="#" onclick="showArticle('bitcoin-group');return false">The Bitcoin Group</a> on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>. Meister is known for his catchphrase "strong hand" and advocacy of long-term Bitcoin holding.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Adam Meister/" target="_blank">WCN episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin personalities &middot; WCN hosts &middot; Content creators</div>
+</div></div>
+
+<div class="article-page" id="page-ben-arc">
+<h1 class="article-title">Ben Arc</h1>
+<div class="article">
+<p><b>Ben Arc</b> is a developer and creator of <a href="https://lnbits.com" target="_blank">LNBits</a>, an open-source Lightning Network wallet and extension platform. He is a regular contributor to the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>, focusing on Lightning Network technical development and FOSS (Free and Open Source Software) tools.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Ben Arc/" target="_blank">WCN episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin developers &middot; Lightning Network &middot; WCN contributors &middot; Open source</div>
+</div></div>
+
+<div class="article-page" id="page-vortex">
+<h1 class="article-title">Vortex</h1>
+<div class="article">
+<p><b>Vortex</b> is a Bitcoin commentator known for hosting "The Bitcoin News Show" on the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>. His show covers daily Bitcoin news, technical updates, and community developments.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Vortex/" target="_blank">WCN episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin personalities &middot; WCN hosts</div>
+</div></div>
+
+<div class="article-page" id="page-chris-derose">
+<h1 class="article-title">Chris DeRose</h1>
+<div class="article">
+<p><b>Chris DeRose</b> is a Bitcoin commentator and early community member who appeared frequently on both <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a> and the <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a>. He is known for his provocative questioning style and philosophical approach to cryptocurrency discourse.</p>
+<p><a href="https://www.worldcryptonetwork.com/search/Chris DeRose/" target="_blank">WCN episodes</a> · <a href="https://www.madbitcoins.com/search/Chris DeRose/" target="_blank">MB episodes</a></p>
+<div class="categories"><span>Categories:</span> Bitcoin commentators &middot; WCN guests &middot; MB guests</div>
+</div></div>
+
+</main>
+</div>
+
+<div class="wiki-footer">
+MadWikipedia — A community-built encyclopedia of <a href="#" onclick="showArticle('curio-cards');return false">Curio Cards</a>, <a href="#" onclick="showArticle('mad-bitcoins');return false">Mad Bitcoins</a> & <a href="#" onclick="showArticle('wcn');return false">World Crypto Network</a><br>
+<a href="https://1n2.org/">1n2.org</a> · <a href="https://1n2.org/curioarchive/">Curio Archive</a> · <a href="https://curio.cards" target="_blank">curio.cards</a>
+</div>
+
+<script>
+function showArticle(id) {
+  document.querySelectorAll('.article-page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) {
+    page.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  // Update URL hash
+  history.pushState(null, '', '#' + id);
+}
+
+// Handle browser back/forward
+window.addEventListener('popstate', () => {
+  const hash = location.hash.slice(1);
+  if (hash) showArticle(hash);
+  else showArticle('main');
+});
+
+// Load from URL hash on page load
+window.addEventListener('load', () => {
+  const hash = location.hash.slice(1);
+  if (hash) showArticle(hash);
+});
+// Data Labs live stats
+fetch('data/live-data.json').then(r=>r.json()).then(d=>{
+  const bar=document.createElement('div');
+  bar.style.cssText='background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:6px 16px;font-size:12px;color:#54595d;text-align:center';
+  let parts=[`Floor: <b>${d.curio.floor} ETH</b>`,`${d.curio.holders.toLocaleString()} holders`,`${d.curio.total_sales} sales`];
+  Object.entries(d.channels).forEach(([name,ch])=>{
+    parts.push(`${name}: ${ch.total_comments_db.toLocaleString()} comments`);
+  });
+  parts.push(`Updated ${d.updated}`);
+  bar.innerHTML=parts.join(' · ');
+  document.body.prepend(bar);
+}).catch(()=>{});
+</script>
+</body>
+</html>

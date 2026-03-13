@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Bear Market Breakout cartoon-real painting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1013"/>
+      <stop offset="58%" stop-color="#692623"/>
+      <stop offset="100%" stop-color="#171018"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.2" r="0.55">
+      <stop offset="0%" stop-color="#ffcc76" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffcc76" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <rect width="720" height="480" fill="url(#glow)"/>
+  <path d="M0 326L120 274L242 318L340 280L456 332L560 284L720 336V480H0Z" fill="#1f1c22"/>
+  <rect x="60" y="118" width="134" height="92" rx="8" fill="#99302b"/>
+  <rect x="212" y="94" width="158" height="96" rx="8" fill="#ba3f35"/>
+  <rect x="388" y="112" width="138" height="94" rx="8" fill="#a83831"/>
+  <rect x="540" y="96" width="126" height="96" rx="8" fill="#c64a3e"/>
+  <path d="M230 278Q298 214 378 248T484 332L332 372Z" fill="#efb86b"/>
+  <path d="M306 248Q326 228 350 240Q372 252 366 280Q360 306 332 302Q308 298 300 278Q294 262 306 248Z" fill="#f8d6a4"/>
+  <rect x="358" y="300" width="124" height="22" rx="10" fill="#f7b648"/>
+  <circle cx="510" cy="292" r="14" fill="#ffd35b"/>
+  <circle cx="546" cy="272" r="12" fill="#ffd35b"/>
+  <circle cx="582" cy="296" r="13" fill="#ffd35b"/>
+  <path d="M496 158L546 120L566 168L536 210Z" fill="#402327" opacity="0.72"/>
+</svg>

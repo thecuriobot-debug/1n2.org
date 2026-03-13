@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Show HN: Aurion OS – A 32-bit GUI operating system written from scratch in C</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/Luka12-dev/AurionOS" target="_blank">Original article ↗</a></div>
+
+<h1>Show HN: Aurion OS – A 32-bit GUI operating system written from scratch in C</h1>
+<div class="meta">Hacker News · 2026-03-12</div>
+<div class="summary">![AurionOS Desktop](/Luka12-dev/AurionOS/raw/main/assets/0.png)
+AurionOS A 32-bit x86 operating system built from scratch in C and x86 Assembly. Developed as a solo learning project by a 13-year-old over the course of 14 days
+AurionOS is built for th</div>
+<p>![AurionOS Desktop](/Luka12-dev/AurionOS/raw/main/assets/0.png)</p>
+<p>AurionOS A 32-bit x86 operating system built from scratch in C and x86 Assembly. Developed as a solo learning project by a 13-year-old over the course of 14 days</p>
+<p>AurionOS is built for the tinkerers who want to see every byte move. By stripping away modern abstractions, we reveal the elegant logic of the CPU and the hardware. Every line of code serves a purpose, offering a bloat-free environment for learning and development.</p>
+<p>- Ensure you have QEMU and NASM installed.</p>
+<p>- Run the following command:</p>
+<p>make run</p>
+<p>Why does this work?</p>
+<p>The Makefile compiles the assembly bootloader and the C kernel, links them at 0x10000</p>
+<p>, and packages them into a bootable image. QEMU then loads this image, starting the execution at the BIOS handoff point.</p>
+<p>Starts in 16-bit Real Mode, enables the A20 gate, sets up the GDT, and transitions the CPU to 32-bit Protected Mode before jumping to the kernel.</p>
+<p>Initializes the stack and the Interrupt Descriptor Table (IDT), then calls the C kmain</p>
+<p>function to begin high-level initialization.</p>
+<p>Uses a Memory Control Block (MCB) heap manager starting at the 1MB mark, providing kmalloc</p>
+<p>and kfree</p>
+<p>for dynamic memory allocation.</p>
+<p>Utilizes VBE (VESA BIOS Extensions) for high-resolution linear frame buffers. The window manager handles Z-order, clipping, and redrawing.</p>
+<p>Includes a custom implementation of Ethernet, ARP, IPv4, ICMP, and UDP, alongside a DHCP client for automatic IP configuration.</p>
+<p>Use WSL2 (Ubuntu) for the best experience:</p>
+<p>sudo apt update</p>
+<p>sudo apt install -y build-essential nasm gcc make binutils qemu-system-x86 genisoimage</p>
+<p>make run</p>
+<p>sudo apt update</p>
+<p>sudo apt install -y build-essential nasm gcc make binutils qemu-system-x86 genisoimage</p>
+<p>make run</p>
+<p>sudo pacman -S base-devel nasm gcc make qemu-desktop cdrtools</p>
+<p>make run</p>
+<p>brew install nasm qemu cdrtools make</p>
+<p>make run</p>
+<p>- Build via</p>
+<p>make all</p>
+<p>- Run with VMware or VirtualBox instead of QEMU.</p>
+<p>AurionOS provides kernel services via INT 0x80</p>
+<p>.</p>
+<p>| Syscall ID | Name | Description |</p>
+<p>|---|---|---|</p>
+<p>| 0x01 | SYS_PRINT_STRING | Print a null-terminated string to console. |</p>
+<p>| 0x02 | SYS_PRINT_CHAR | Print a single character. |</p>
+<p>| 0x04 | SYS_READ_CHAR | Read a character from keyboard (blocking). |</p>
+<p>| 0x05 | SYS_CLEAR_SCREEN | Clear the terminal. |</p>
+<p>| 0x08 | SYS_SET_COLOR | Set terminal text attributes. |</p>
+<p>| 0x50 | SYS_GET_TIME | Get current CMOS time. |</p>
+<p>| 0x51 | SYS_GET_DATE | Get current CMOS date. |</p>
+<p>| 0x52 | SYS_GET_TICKS | Get timer ticks since boot. |</p>
+<p>| 0x61 | SYS_READ_SECTOR | Read raw disk sector. |</p>
+<p>| 0x71 | SYS_SHUTDOWN | Power off the system. |</p>
+<p>AurionOS uses a custom sector-based filesystem (AurionFS) for persistent storage. It stores file metadata in reserved sectors (starting at LBA 500) and file contents in a dedicated data area (starting at LBA 700).</p>
+<p>- In-Memory Cache: The kernel maintains an</p>
+<p>fs_table</p>
+<p>for quick access to file metadata. - Persistence: Changes are flushed to disk using</p>
+<p>fs_save_to_disk()</p>
+<p>. - Legacy Support: A FAT12 driver (</p>
+<p>src/filesys.asm</p>
+<p>) is also available for reading external media.</p>
+<p>The shell is the primary CLI interface, supporting over 100 commands. Commands are dispatched via a central table in src/commands.c</p>
+<p>.</p>
+<p>DIR</p>
+<p>: List files in the current directory.CAT &lt;file&gt;</p>
+<p>: View file contents.NANO &lt;file&gt;</p>
+<p>: Edit text files.NETSTART</p>
+<p>: Initialize networking and DHCP.GUIMODE</p>
+<p>: Switch to the graphical desktop.PYTHON</p>
+<p>: Launch the minimal Python interpreter.</p>
+<p>To add a new command to the OS, you don&#x27;t need a separate binary - simply register it in the kernel:</p>
+<p>- Implement the command in</p>
+<p>src/commands.c</p>
+<p>:static int cmd_demo(const char *args) { puts(&quot;Hello, AurionOS World!\n&quot;); return 0; }</p>
+<p>- Register it in the</p>
+<p>commands[]</p>
+<p>table at the end ofsrc/commands.c</p>
+<p>:static const Command commands[] = { ... {&quot;DEMO&quot;, cmd_demo}, {NULL, NULL} };</p>
+<p>- Compile and Run: Run</p>
+<p>make run</p>
+<p>and typeDEMO</p>
+<p>in the shell.</p>
+<p>- NANO Text Editor: A built-in CLI text editor.</p>
+<p>- Python Interpreter: Minimal support for scripts and expressions.</p>
+<p>- Sound Driver: Support for PC Speaker and SB16.</p>
+<p>- USB Stack: Drivers for HID devices.</p>
+<p>- Real hardware boot is currently unstable (working on it!)</p>
+<p>- Best experience: QEMU, VirtualBox, or VMware</p>
+<p>- This is a beta release - bugs are expected and being fixed</p>
+<p>AurionOS is licensed under the MIT License.</p>
+<p>AurionOS - Where Every Byte Matters Built with passion by Luka. March 2026.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/Luka12-dev/AurionOS" target="_blank">Read original →</a></div>
+</body></html>

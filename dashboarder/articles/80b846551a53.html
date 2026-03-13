@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Google&#x27;s Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut" target="_blank">Original article ↗</a></div>
+
+<h1>Google&#x27;s Gemini Embedding 2 arrives with native multimodal support to cut costs and speed up your enterprise data stack</h1>
+<div class="meta">VentureBeat · 2026-03-11</div>
+<div class="summary">Yesterday amid a flurry of enterprise AI product updates, Google announced arguably its most significant one for enterprise customers: the public preview availability of Gemini Embedding 2, its new embeddings model — a significant evolution in how ma</div>
+<p>Yesterday amid a flurry of enterprise AI product updates, Google announced arguably its most significant one for enterprise customers: the public preview availability of Gemini Embedding 2, its new embeddings model — a significant evolution in how machines represent and retrieve information across different media types.</p>
+<p>While previous embedding models were largely restricted to text, this new model natively integrates text, images, video, audio, and documents into a single numerical space — reducing latency by as much as 70% for some customers and reducing total cost for enterprises who use AI models powered by their own data to complete business tasks.</p>
+<p>VentureBeat collaborator Sam Witteveen, co-founder of AI and ML training company Red Dragon AI, received early access to Gemini Embedding 2 and published a video of his impressions on YouTube. Watch it below:</p>
+<p>Who needs and uses an embedding model?</p>
+<p>For those who have encountered the term &quot;embeddings&quot; in AI discussions but find it abstract, a useful analogy is that of a universal library.</p>
+<p>In a traditional library, books are organized by metadata: author, title, or genre. In the &quot;embedding space&quot; of an AI, information is organized by ideas.</p>
+<p>Imagine a library where books aren&#x27;t organized by the Dewey Decimal System, but by their &quot;vibe&quot; or &quot;essence&quot;. In this library, a biography of Steve Jobs would physically fly across the room to sit next to a technical manual for a Macintosh. A poem about a sunset would drift toward a photography book of the Pacific Coast, with all thematically similar content organized in beautiful hovering &quot;clouds&quot; of books. This is basically what an embedding model does.</p>
+<p>An embedding model takes complex data—like a sentence, a photo of a sunset, or a snippet of a podcast—and converts it into a long list of numbers called a vector.</p>
+<p>These numbers represent coordinates in a high-dimensional map. If two items are &quot;semantically&quot; similar (e.g., a photo of a golden retriever and the text &quot;man&#x27;s best friend&quot;), the model places their coordinates very close to each other in this map. Today, these models are the invisible engine behind:</p>
+<p>Search Engines: Finding results based on what you mean, not just the specific words you typed.</p>
+<p>Recommendation Systems: Netflix or Spotify suggesting content because its &quot;coordinates&quot; are near things you already like.</p>
+<p>Enterprise AI: Large companies use them for Retrieval-Augmented Generation (RAG), where an AI assistant &quot;looks up&quot; a company&#x27;s internal PDFs to answer an employee&#x27;s question accurately.</p>
+<p>The concept of mapping words to vectors dates back to the 1950s with linguists like John Rupert Firth, but the modern &quot;vector revolution&quot; began in the early 2000s when Yoshua Bengio’s team first used the term &quot;word embeddings&quot;. The real breakthrough for the industry was Word2Vec, released by a team at Google led by Tomas Mikolov in 2013. Today, the market is led by a handful of major players:</p>
+<p>OpenAI: Known for its widely-used text-embedding-3 series.</p>
+<p>Google: With the new Gemini and previous Gecko models.</p>
+<p>Anthropic and Cohere: Providing specialized models for enterprise search and developer workflows.</p>
+<p>By moving beyond text to a natively multimodal architecture, Google is attempting to create a singular, unified map for the sum of human digital expression—text, images, video, audio, and documents—all residing in the same mathematical neighborhood.</p>
+<p>Why Gemini Embedding 2 is such a big deal</p>
+<p>Most leading models are still &quot;text-first.&quot; If you want to search a video library, the AI usually has to transcribe the video into text first, then embed that text.</p>
+<p>Google’s Gemini Embedding 2 is natively multimodal.</p>
+<p>As Logan Kilpatrick of Google DeepMind posted on X, the model allows developers to &quot;bring text, images, video, audio, and docs into the same embedding space&quot;.</p>
+<p>It understands audio as sound waves and video as motion directly, without needing to turn them into text first. This reduces &quot;translation&quot; errors and captures nuances that text alone might miss.</p>
+<p>For developers and enterprises, the &quot;natively multimodal&quot; nature of Gemini Embedding 2 represents a shift toward more efficient AI pipelines.</p>
+<p>By mapping all media into a single 3,072-dimensional space, developers no longer need separate systems for image search and text search; they can perform &quot;cross-modal&quot; retrieval—using a text query to find a specific moment in a video or an image that matches a specific sound.</p>
+<p>And unlike its predecessors, Gemini Embedding 2 can process requests that mix modalities. A developer can send a request containing both an image of a vintage car and the text &quot;What is the engine type?&quot;. The model doesn&#x27;t process them separately; it treats them as a single, nuanced concept. This allows for a much deeper understanding of real-world data where the &quot;meaning&quot; is often found in the intersection of what we see and what we say.</p>
+<p>One of the model&#x27;s more technical features is Matryoshka Representation Learning. Named after Russian nesting dolls, this technique allows the model to &quot;nest&quot; the most important information in the first few numbers of the vector.</p>
+<p>An enterprise can choose to use the full 3072 dimensions for maximum precision, or &quot;truncate&quot; them down to 768 or 1536 dimensions to save on database storage costs with minimal loss in accuracy.</p>
+<p>Benchmarking the performance gains of moving to multimodal</p>
+<p>Gemini Embedding 2 establishes a new performance ceiling for multimodal depth, specifically outperforming previous industry leaders across text, image, and video evaluation tasks.</p>
+<p>![Google Gemini Embedding 2 benchmarks](/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjdtwqhzvc2n1%2F1NVgv7MjT5ZDZC3CS3Pi3z%2F44590563791ee9a6ac9031e8f7d5a8e4%2FHDEGXx2XoAE9sH8-1.png%3Fw%3D1000%26q%3D100&amp;w=3840&amp;q=75)</p>
+<p>The model’s most significant lead is found in video and audio retrieval, where its native architecture allows it to bypass the performance degradation typically associated with text-based transcription pipelines.</p>
+<p>Specifically, in video-to-text and text-to-video retrieval tasks, the model demonstrates a measurable performance gap over existing industry leaders, accurately mapping motion and temporal data into a unified semantic space.</p>
+<p>The technical results show a distinct advantage in the following standardized categories:</p>
+<p>Multimodal Retrieval: Gemini Embedding 2 consistently outperforms leading text and vision models in complex retrieval tasks that require understanding the relationship between visual elements and textual queries.</p>
+<p>Speech and Audio Depth: The model introduces a new standard for native audio embeddings, achieving higher accuracy in capturing phonetic and tonal intent compared to models that rely on intermediate text-transcription.</p>
+<p>Contextual Scaling: In text-based benchmarks, the model maintains high precision while utilizing its expansive 8,192 token context window, ensuring that long-form documents are embedded with the same semantic density as shorter snippets.</p>
+<p>Dimension Flexibility: Testing across the Matryoshka Representation Learning (MRL) layers reveals that even when truncated to 768 dimensions, the model retains a significant majority of its 3,072-dimension performance, outperforming fixed-dimension models of similar size.</p>
+<p>What it means for enterprise databases</p>
+<p>For the modern enterprise, information is often a fragmented mess. A single customer issue might involve a recorded support call (audio), a screenshot of an error (image), a PDF of a contract (document), and a series of emails (text).</p>
+<p>In previous years, searching across these formats required four different pipelines. With Gemini Embedding 2, an enterprise can create a Unified Knowledge Base. This enables a more advanced form of RAG, wherein a company’s internal AI doesn&#x27;t just look up facts, but understands the relationship between them regardless of format.</p>
+<p>Early partners are already reporting drastic efficiency gains:</p>
+<p>Sparkonomy, a creator economy platform, reported that the model’s native multimodality slashed their latency by up to 70%. By removing the need for intermediate LLM &quot;inference&quot; (the step where one model explains a video to another), they nearly doubled their semantic similarity scores for matching creators with brands.</p>
+<p>Everlaw, a legal tech firm, is using the model to navigate the &quot;high-stakes setting&quot; of litigation discovery. In legal cases where millions of records must be parsed, Gemini’s ability to index images and videos alongside text allows legal professionals to find &quot;smoking gun&quot; evidence that traditional text-search would miss.</p>
+<p>Understanding the limits</p>
+<p>In its announcement, Google was upfront about some of the current limitations of Gemini Embedding 2. The new model can accommodate vectorization of individual files that comprise of as many as 8,192 text tokens, 6 images (in as single batch), 128 seconds of video (2 minutes, 8 seconds long), 80 seconds of native audio (1.34 minutes), and a 6-page PDF.</p>
+<p>It is vital to clarify that these are input limits per request, not a cap on what the system can remember or store.</p>
+<p>Think of it like a scanner. If a scanner has a limit of &quot;one page at a time,&quot; it doesn&#x27;t mean you can only ever scan one page. it means you have to feed the pages in one by one.</p>
+<p>Individual File Size: You cannot &quot;embed&quot; a 100-page PDF in a single call. You must &quot;chunk&quot; the document—splitting it into segments of 6 pages or fewer—and send each segment to the model individually.</p>
+<p>Cumulative Knowledge: Once those chunks are converted into vectors, they can all live together in your database. You can have a database containing ten million 6-page PDFs, and the model will be able to search across all of them simultaneously.</p>
+<p>Video and Audio: Similarly, if you have a 10-minute video, you would break it into 128-second segments to create a searchable &quot;timeline&quot; of embeddings.</p>
+<p>Licensing, pricing, and availability</p>
+<p>As of March 10, 2026, Gemini Embedding 2 is officially in Public Preview.</p>
+<p>For developers and enterprise leaders, this means the model is accessible for im</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://venturebeat.com/data/googles-gemini-embedding-2-arrives-with-native-multimodal-support-to-cut" target="_blank">Read original →</a></div>
+</body></html>

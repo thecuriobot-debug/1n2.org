@@ -26,3 +26,7 @@ bitcoingroup-audio/video/
 thunt-data-labs/db/
 dashboarder/data/comments.json
 old-projects/reader/data/comments.json
+
+# Old projects have their own separate repos
+old-projects/
+medialog/

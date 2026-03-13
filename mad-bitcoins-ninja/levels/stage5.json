@@ -1,0 +1,49 @@
+{
+  "id": "stage5",
+  "label": "DARK WEB",
+  "name": "Dark Web",
+  "width": 1024,
+  "height": 240,
+  "spawn": { "x": 24, "y": 180 },
+  "background": {
+    "top": "#2f1d2d",
+    "bottom": "#120d16",
+    "stars": "#cb8fb4",
+    "starCount": 46
+  },
+  "tiles": {
+    "ground": "#604164",
+    "climb": "#8f5f8a"
+  },
+  "solids": [
+    { "x": 0, "y": 224, "w": 1024, "h": 16, "color": "#4e3254" },
+    { "x": 92, "y": 186, "w": 80, "h": 10 },
+    { "x": 220, "y": 166, "w": 86, "h": 10 },
+    { "x": 350, "y": 146, "w": 84, "h": 10 },
+    { "x": 482, "y": 174, "w": 92, "h": 10 },
+    { "x": 620, "y": 152, "w": 84, "h": 10 },
+    { "x": 750, "y": 130, "w": 86, "h": 10 },
+    { "x": 886, "y": 158, "w": 92, "h": 10 },
+    { "x": 304, "y": 106, "w": 56, "h": 8 },
+    { "x": 660, "y": 96, "w": 58, "h": 8 }
+  ],
+  "climbZones": [
+    { "x": 174, "y": 126, "w": 8, "h": 98 },
+    { "x": 572, "y": 124, "w": 8, "h": 100 }
+  ],
+  "enemySpawns": [
+    { "type": "fud_ghost", "x": 140, "y": 134 },
+    { "type": "hacker_ninja", "x": 274, "y": 148 },
+    { "type": "fud_ghost", "x": 518, "y": 142 },
+    { "type": "exchange_bot", "x": 772, "y": 116 },
+    { "type": "regulator_drone", "x": 934, "y": 112 }
+  ],
+  "pickupSpawns": [
+    { "type": "satoshi", "x": 112, "y": 178, "amount": 120, "w": 5, "h": 5 },
+    { "type": "satoshi", "x": 368, "y": 138, "amount": 120, "w": 5, "h": 5 },
+    { "type": "hodl_mode", "x": 638, "y": 144, "w": 7, "h": 6 },
+    { "type": "lightning_mode", "x": 778, "y": 122, "w": 6, "h": 6 },
+    { "type": "hardware_wallet", "x": 930, "y": 150, "w": 7, "h": 6 }
+  ],
+  "bossSpawn": { "type": "hacker_collective", "x": 994, "y": 130 }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "artist-placeholder-a",
+    "name": "Artist Placeholder A",
+    "known_curio_cards": [1],
+    "active_period_in_curio": "2017",
+    "sales_stats_aggregate": {
+      "total_volume_eth": null,
+      "average_sale_eth": null,
+      "sales_count": null
+    },
+    "biography": null
+  },
+  {
+    "slug": "artist-placeholder-b",
+    "name": "Artist Placeholder B",
+    "known_curio_cards": [17],
+    "active_period_in_curio": "2017",
+    "sales_stats_aggregate": {
+      "total_volume_eth": null,
+      "average_sale_eth": null,
+      "sales_count": null
+    },
+    "biography": null
+  }
+]

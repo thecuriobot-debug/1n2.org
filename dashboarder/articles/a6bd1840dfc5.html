@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://www.theblock.co/post/393121/aave-oracle-glitch-wsteth?utm_source=rss&utm_medium=rss" target="_blank">Original article ↗</a></div>
+
+<h1>Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations</h1>
+<div class="meta">The Block · 2026-03-11</div>
+<div class="summary">Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations
+![Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations](https://www.tbstat.com/cdn-cgi/image/f=avif,q=50/wp/uploads/2024/08/20240819_Aave_New</div>
+<p>Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations</p>
+<p>![Aave suffers oracle glitch, triggering $26 million in unfair wstETH liquidations](https://www.tbstat.com/cdn-cgi/image/f=avif,q=50/wp/uploads/2024/08/20240819_Aave_News-1200x675.jpg)</p>
+<p>Quick Take</p>
+<p>- Aave experienced a glitch that caused 34 accounts to lose a combined $26 million in unfair liquidations.</p>
+<p>- The issue stemmed from an inconsistency between the snapshot ratio and the snapshot timestamp used for its risk oracle.</p>
+<p>- A post-mortem report said affected users will be compensated.</p>
+<p>We&#x27;d love your feedback.</p>
+<p>DeFi protocol Aave experienced a temporary oracle malfunction on its Ethereum Core and Prime instances on March 10, resulting in approximately $26 million worth of wstETH positions being unfairly liquidated.</p>
+<p>The issue stemmed from a misconfiguration in the Correlated Asset Price Oracle (CAPO), according to a post-mortem from Chaos Labs, Aave&#x27;s primary risk management provider. CAPO serves as a safety mechanism designed to prevent sudden price jumps.</p>
+<p>Chaos Labs said that the issue arose from an inconsistency between the snapshot ratio and the snapshot timestamp used for CAPO. This caused the oracle to report a capped exchange rate of roughly 1.1939 — well below the actual market rate of around 1.228 — leading to erroneous liquidations in E-Mode positions.</p>
+<p>The inconsistency resulted from an offchain process oversight that did not account for an existing onchain constraint, according to the post-mortem.</p>
+<p>&quot;Operationally, our offchain process determined that the snapshot ratio should be updated to approximately ~1.2282, the appropriate value corresponding to the exchange rate 7 days earlier,&quot; the post-mortem said. &quot;However, the snapshot ratio parameter is subject to an onchain constraint: it can only be increased by 3% every 3 days … It was not possible to set it to ~1.2282 in a single update.&quot;</p>
+<p>Chaos Labs said this created a mismatch that caused a 2.85% decrease in the effective exchange rate used by the protocol, triggering the liquidation of roughly 10,938 wstETH.</p>
+<p>The event impacted roughly 34 accounts, with the total value of unfair liquidations estimated at around $26 million. Meanwhile, third-party liquidators made approximately 499 ETH worth of gains from the glitch. Chaos Labs added that Aave did not accrue bad debt from the incident.</p>
+<p>Compensation underway</p>
+<p>Following the glitch, Chaos Labs said it intervened quickly by temporarily reducing wstETH borrow caps and manually aligning the snapshot parameters to restore the correct oracle value. The team noted that a compensation plan is underway, using 141.5 ETH recovered from the incident and up to 345 ETH from the DAO treasury to reimburse affected users.</p>
+<p>&quot;Ultimately, this incident did not reflect a flaw in the underlying CAPO or offchain risk oracle design, but rather an onchain configuration misalignment under differing onchain update constraints that led the snapshot ratio and snapshot timestamp to become misaligned,&quot; Chaos Labs said.</p>
+<p>Disclaimer: The Block is an independent media outlet that delivers news, research, and data. As of November 2023, Foresight Ventures is a majority investor of The Block. Foresight Ventures invests in other companies in the crypto space. Crypto exchange Bitget is an anchor LP for Foresight Ventures. The Block continues to operate independently to deliver objective, impactful, and timely information about the crypto industry. Here are our current financial disclosures.</p>
+<p>© 2026 The Block. All Rights Reserved. This article is provided for informational purposes only. It is not offered or intended to be used as legal, tax, investment, financial, or other advice.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://www.theblock.co/post/393121/aave-oracle-glitch-wsteth?utm_source=rss&utm_medium=rss" target="_blank">Read original →</a></div>
+</body></html>

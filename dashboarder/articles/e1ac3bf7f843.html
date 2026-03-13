@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Temporal: The 9-year journey to fix time in JavaScript</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://bloomberg.github.io/js-blog/post/temporal/" target="_blank">Original article ↗</a></div>
+
+<h1>Temporal: The 9-year journey to fix time in JavaScript</h1>
+<div class="meta">Hacker News · 2026-03-11</div>
+<div class="summary">Temporal: The 9-Year Journey to Fix Time in JavaScript
+Welcome to our blog! I&#x27;m Jason Williams, a senior software engineer on Bloomberg&#x27;s JavaScript Infrastructure and Terminal Experience team. Today the Bloomberg Terminal runs a lot of JavaScript. O</div>
+<p>Temporal: The 9-Year Journey to Fix Time in JavaScript</p>
+<p>Welcome to our blog! I&#x27;m Jason Williams, a senior software engineer on Bloomberg&#x27;s JavaScript Infrastructure and Terminal Experience team. Today the Bloomberg Terminal runs a lot of JavaScript. Our team provides a JavaScript environment to engineers across the company.</p>
+<p>Bloomberg may not be the first company you think of when discussing JavaScript. It certainly wasn&#x27;t for me in 2018 before I worked here. Back then, I attended my first TC39 meeting in London, only to meet some Bloomberg engineers who were there discussing Realms, WebAssembly, Class Fields, and other topics. The company has now been involved with JavaScript standardization for numerous years, including partnering with Igalia. Some of the proposals we have assisted include Arrow Functions, Async Await, BigInt, Class Fields, Promise.allSettled, Promise.withResolvers, WeakRefs, standardizing Source Maps, and more!</p>
+<p>The first proposal I worked on was Promise.allSettled, which was fulfilling. After that finished, I decided to help out on a proposal around dates and times, called Temporal.</p>
+<p>How Does JavaScript Change? #</p>
+<p>JavaScript is unique in that it runs in all browsers. There is no single &quot;owner,&quot; so you can&#x27;t just make a change in isolation and expect it to apply everywhere. You need buy-in from all parties. Evolution happens through TC39, the Technical Committee responsible for ECMAScript.</p>
+<p>![TC39 Plenary hosted at Bloomberg&#x27;s NY office in 2018](/js-blog/images/temporal-image4.jpg)</p>
+<p>Proposals move through a series of maturity stages:</p>
+<p>- Stage 0 - Idea</p>
+<p>- Stage 1 - Problem space accepted</p>
+<p>- Stage 2 - Draft design chosen, but work to continue</p>
+<p>- Stage 2.7 - Proposal approved in principle; awaiting testing and feedback</p>
+<p>- Stage 3 - Implementation and feedback</p>
+<p>- Stage 4 - Standardized</p>
+<p>In 2018, when I first looked at Temporal, it was at Stage 1. The TC39 Committee was convinced the problem was real. It was a radical proposal to bring a whole new library for Dates and Times into JavaScript. It was:</p>
+<p>- A replacement for Date</p>
+<p>- Providing different DateTime Types (instead of a single API)</p>
+<p>- Immutable</p>
+<p>- Adding first-class time zone and calendar support</p>
+<p>But how did we get here? Why was Date such a pain point? For that, we need to take a step back.</p>
+<p>A Product of Its Time #</p>
+<p>In 1995, Brendan Eich was tasked with a 10-day sprint to create Mocha (which would later become JavaScript). Under intense time pressure, many design decisions were pragmatic. One of them was to port Java&#x27;s Date implementation directly. As Brendan later explained:</p>
+<p>It was a straight port by Ken Smith (the only code in &quot;Mocha&quot; I didn&#x27;t write) of Java&#x27;s Date code from Java to C.</p>
+<p>At the time, this made sense. Java was ascendant and JavaScript was being framed as its lightweight companion. Internally, the philosophy was even referred to as MILLJ: Make It Look Like Java.</p>
+<p>![A Tweet by Brendan Eich that says: Ten-day-sprint Mocha, 25 years old today, finished in time to be demo&#x27;ed via the mocha: console that looked close to this image, did not have Date (Ken Smith helped and we agreed per MILLJ to port java.util.Date, bugs and all), had strict ==, and of course had NaNs.](/js-blog/images/temporal-image6.png)</p>
+<p>Brendan also noted that changing the API would have been politically difficult:</p>
+<p>Changing it when everyone expected Java to be the &quot;big brother&quot; language would make confusion and bugs; Sun would have objected too.</p>
+<p>In that moment, consistency with Java was more important than fundamentally rethinking the time model. It was a pragmatic trade-off. The Web was young, and most applications making use of JavaScript would be simple, at least, to begin with.</p>
+<p>The Web Grew Up, Date Didn&#x27;t #</p>
+<p>By the 2010s, JavaScript was powering banking systems, trading terminals, collaboration tools, and other complex systems running in every time zone on earth. Date was becoming more of a pain point for developers.</p>
+<p>Mutability #</p>
+<p>Developers would often write helper functions that accidently mutated the original Date object in place when they intended to return a new one:</p>
+<p>const date = new Date(&quot;2026-02-25T00:00:00Z&quot;);</p>
+<p>console.log(date.toISOString());</p>
+<p>// &quot;2026-02-25T00:00:00.000Z&quot;</p>
+<p>function addOneDay(d) {</p>
+<p>// oops! This is mutating the date</p>
+<p>d.setDate(d.getDate() + 1);</p>
+<p>return d;</p>
+<p>}</p>
+<p>addOneDay(date);</p>
+<p>console.log(date.toISOString());</p>
+<p>// &quot;2026-02-26T00:00:00.000Z&quot;</p>
+<p>Inconsistent Month Arithmetic #</p>
+<p>const billingDate = new Date(&quot;Sat Jan 31 2026&quot;);</p>
+<p>billingDate.setMonth(billingDate.getMonth() + 1);</p>
+<p>// Expected: Feb 28</p>
+<p>// Actual: Mar 02</p>
+<p>Sometimes people want to get the last day of the month and fall into traps like this one, where they bump the month by one, but the days remain the same. Date does not constrain invalid calendar results back into a valid date. Instead, it silently rolls overflow into the next month.</p>
+<p>Ambiguous Parsing #</p>
+<p>new Date(&quot;2026-06-25 15:15:00&quot;).toISOString();</p>
+<p>// Potential Return Values:</p>
+<p>// - local TimeZone</p>
+<p>// - Invalid Date RangeError</p>
+<p>// - UTC</p>
+<p>In this example, the string is similar, but not identical, to ISO 8601. Historically, browser behavior for &quot;almost ISO&quot; strings was undefined by the specification. Some would treat it as local time, others as UTC, and one would throw entirely as invalid input.</p>
+<p>There&#x27;s more, much more, but the point is that Date has been a pain point for JavaScript developers for the past three decades.</p>
+<p>![State of JS survey results for &quot;Language Pain Points&quot; showing Dates as the #2 pain point at 10% (372 responses), behind only Lack of static typing at 28% (1,102 responses), and ahead of TypeScript support at 7% (276 responses).](/js-blog/images/temporal-image3.png)</p>
+<p>The Library Era #</p>
+<p>The Web ecosystem had no choice but to patch Date&#x27;s shortcomings with libraries. You can see the sheer rise of datetime libraries below. Today, they add up to more than 100 million downloads a week.</p>
+<p>Leading the charge was Moment.js, which boasts an expressive API, powerful parsing capabilities, and much-needed immutability. Created in 2011, it quickly became the de facto standard for handling date and time manipulations in JavaScript. So surely the problem is solved? Everyone should just grab a copy of this and call it a day.</p>
+<p>The widespread adoption of moment.js (plus other similar libraries) came with its own set of problems. Adding the library meant increasing bundle size, due to the fact that it needed to be shipped with its own set of locale information plus time zone data from the time zone database.</p>
+<p>Despite the use of minifiers, compilers, and static analysis tools, all of this extra data couldn&#x27;t be tree-shaken away, because most developers don&#x27;t know ahead of time which locales or time zones they&#x27;ll need. In order to play it safe, the majority of users took all of the data wholesale and shipped it to their users.</p>
+<p>![npm download trends for date-fns, luxon, and moment from 2015 to January 2026, all showing steep growth. As of Jan 11, 2026: date-fns leads at 39.6M weekly downloads, moment at 25.8M, and luxon at 18.9M, totaling over 84 million downloads per week.](/js-blog/images/temporal-image1.png)</p>
+<p>![Bundlephobia stats for moment@2.30.1 showing a publish size and install size of 4.15 MB, with a bar chart of install sizes across versions from 2.24.0 to 2.30.1 showing steady growth.](/js-blog/images/temporal-image5.png)</p>
+<p>Maggie Johnson-Pint, who had been a maintainer of Moment.js for quite a few years (alongside others), was no stranger to requests to deal with the package size.</p>
+<p>We were at the point with moment that it was more maintenance to keep up with modules, webpack, people wanting everything immutable because React, etc than any net new functionality</p>
+<p>And people never stop talking about the size of course.</p>
+<p>In 2017, Maggie decided it was time to standardise dates and times with a &quot;Temporal Proposal&quot; for the TC39 plenary that year. It was met with great enthusiasm, leading it to be advanced to Stage 1.</p>
+<p>The Champions Assemble #</p>
+<p>Stage 1 was a big milestone, but it was still far from the finish line. After the initial burst of energy, progress naturally slowed. Maggie and Matt Johnson-Pint were leading the effort alongside Brian Terlson, while simultaneously balancing other responsibilities inside Microsoft. Temporal was still early enough that much of the immediate work was unglamorous: requirements gathering, clarifying semantics, and translating &quot;the ecosystem&#x27;s pain&quot; into a design that could actually ship.</p>
+<p>At Bloomberg, that pain wasn&#x27;t theoretical.</p>
+<p>We run JavaScript at scale across the Terminal, using underlying runtimes and engines such as Chromium, Node.js and SpiderMonkey. Our users, and the financial markets in which they invest, span every time zone on earth. We pass timestamps constantly: between services, into storage, into the UI, and across systems that all have to agree on what &quot;now&quot; means, even when governments change DST rules with very little notice.</p>
+<p>On top of that, we had requirements that the built-in Date model simply wasn&#x27;t designed for:</p>
+<p>- A user-configured time zone that is not the machine&#x27;s time zone (and can change per request).</p>
+<p>- Correct historical time zone behavior driven by IANA Time Zone Database (tzdata) updates.</p>
+<p>- Higher-precision timestamps (nanoseconds, at a minimum), without duct-taping extra fields onto ad-hoc wrappers forever.</p>
+<p>In parallel with Maggie bringing Temporal to TC39, Bloomberg engineer Andrew Paprocki was talking with Igalia about making time zones configurable in V8. Specifically, they discussed introducing a supported indirection layer so an embedder could control the &quot;perceived&quot; time zone instead of relying on the OS default. In that conversation, Daniel Ehrenberg (then working at Igalia) pointed Andrew at the early Temporal work because it looked strikingly similar to Bloomberg&#x27;s existing value-semantic datetime types.</p>
+<p>That exchange became an early bridge between Bloomberg&#x27;s production needs, Igalia&#x27;s browser-and-standards expertise, and the emerging direction of Temporal. Over the years that followed, Bloomberg partne</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://bloomberg.github.io/js-blog/post/temporal/" target="_blank">Read original →</a></div>
+</body></html>

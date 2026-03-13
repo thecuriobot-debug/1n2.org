@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartridge Select | MAD BITCOINS RETRO GAME LAB</title>
+  <meta name="description" content="Select an Atari-style cartridge to launch any MAD BITCOINS RETRO GAME LAB browser game.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <h1>ATARI CARTRIDGE SELECT</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Arcade Hub</a>
+        <a href="challenge-ladder.html">Challenge Ladder</a>
+        <a href="../ops-marathon.html">Ops Marathon</a>
+        <a href="../index.html">Main Site</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="status-pill">INSERT CARTRIDGE</span>
+        <h2>Pick A Cartridge. Launch A Game.</h2>
+        <p>
+          Every playable title now has an Atari-style cartridge face. Select a cart,
+          inspect its custom hand-painted scene and stats, then insert to play.
+        </p>
+      </section>
+
+      <section class="section cartridge-layout">
+        <article class="game-card cartridge-preview">
+          <h3 id="preview-title">Cartridge</h3>
+          <p id="preview-meta" class="note">Arcade mode</p>
+          <img id="preview-image" src="../assets/cartridges/bear_breakout.svg" alt="Selected cartridge preview" class="preview-art" width="360" height="588">
+          <img id="preview-scene" src="../assets/cartridge_paintings/bear_breakout.svg" alt="Selected label painting preview" class="preview-scene" width="360" height="240">
+          <div class="score-list">
+            <div><strong>Best:</strong> <span id="preview-best">0</span></div>
+            <div><strong>Plays:</strong> <span id="preview-plays">0</span></div>
+          </div>
+          <div class="actions-row">
+            <a id="play-selected" class="btn" href="bear-market-breakout.html">Insert Cartridge</a>
+            <button id="next-cart" type="button" class="btn btn-secondary">Next Cart</button>
+            <button id="insert-random" type="button" class="btn btn-secondary">Random Insert</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <h3>Cartridge Wall</h3>
+          <p class="note">Tap any cartridge to select it.</p>
+          <div id="cartridge-grid" class="cartridge-grid"></div>
+        </article>
+      </section>
+
+      <p class="footer-note">Atari-style cartridge art + custom hand-painted label scenes generated for the full 13-game browser lineup.</p>
+    </main>
+  </div>
+
+  <script type="module" src="js/cartridge-select.js"></script>
+</body>
+</html>
