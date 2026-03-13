@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-13T16:03:56.341125",
+  "last_updated": "2026-03-13T16:06:09.663817",
   "date": "2026-03-13",
   "providers": {
     "claude": {
@@ -28,7 +28,9 @@
       "color": "#19c37d",
       "icon": "\ud83d\udcac",
       "total_prompts": 0,
-      "last_polled": null
+      "last_polled": "2026-03-13",
+      "status": "needs_billing",
+      "notes": "Key set \u2014 add billing at platform.openai.com/account/billing"
     },
     "codex": {
       "name": "Codex / GPT-4.1",
@@ -42,16 +44,16 @@
     "gemini": {
       "name": "Gemini (Google)",
       "model": "gemini-2.5-flash",
-      "primary_use": "Responding to a user request to log AI usage for a personal project tracking system.",
+      "primary_use": "Responding to a user query for specific JSON output for AI usage tracking.",
       "color": "#4285f4",
       "icon": "\ud83c\udf10",
-      "total_prompts": 1,
+      "total_prompts": 3,
       "last_polled": "2026-03-13",
-      "notes": "Logged this interaction for the 1n2.org project on 2026-03-13."
+      "notes": "Generated JSON as requested by the user for logging AI usage."
     }
   },
   "totals": {
-    "all_prompts": 15001
+    "all_prompts": 15003
   },
   "history": [
     {
@@ -59,7 +61,7 @@
       "claude": 15000,
       "openclaw": 144,
       "chatgpt": 0,
-      "gemini": 1
+      "gemini": 3
     }
   ],
   "project_stats": {
