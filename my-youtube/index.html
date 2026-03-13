@@ -238,61 +238,143 @@ async function showWatch(videoId){
 // === MY COMMENTS (Commentzor) ===
 function buildMyComments(D){
   const totalLikes=D.top_liked?D.top_liked.reduce((s,c)=>s+(c.like_count||0),0):0;
+  const chSorted=(D.channels||[]).filter(c=>c.comment_count>0).sort((a,b)=>b.comment_count-a.comment_count);
+  const bc=D.by_channel||{};
+  // Sub-tabs for channels
+  let subTabs=`<div class="cmt-tabs" style="display:flex;gap:3px;flex-wrap:wrap;margin:8px 0;padding:6px 0;border-bottom:1px solid var(--border)">
+    <span class="cmt-tab on" onclick="showCmtTab('cmt-overview')" style="padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border)">📊 Overview</span>
+    <span class="cmt-tab" onclick="showCmtTab('cmt-top')" style="padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border)">🏆 Top</span>
+    <span class="cmt-tab" onclick="showCmtTab('cmt-liked')" style="padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border)">❤️ Liked</span>
+    <span class="cmt-tab" onclick="showCmtTab('cmt-recent')" style="padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border)">🕐 Recent</span>`;
+  chSorted.forEach(c=>{
+    const icon=c.name.includes('Mad')?'🎩':c.name.includes('Film')?'🎬':c.name.includes('WCN')||c.name.includes('Crypto Net')?'🌐':c.name.includes('Bitcoin Group')?'📺':c.name.includes('Concert')?'🎵':'📹';
+    const short=c.name.replace('World Crypto Network','WCN').replace('Thomas Hunt ','TH ').replace(' (Original)','').replace(' (STOLEN)','⚠').replace('2012ConcertsLive','2012 Concerts').replace('2013ConcertsLive','2013 Concerts');
+    subTabs+=`<span class="cmt-tab" onclick="showCmtTab('cmt-ch-${c.channel_id}')" style="padding:4px 10px;border-radius:4px;font-size:.72rem;font-weight:700;cursor:pointer;border:1px solid var(--border)">${icon} ${short}</span>`;
+  });
+  subTabs+=`</div>`;
+
   let h=`<div class="page" id="comments">
-    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px"><div style="font-size:2rem">💬</div><div><h2 style="margin:0;border:none;padding:0">My Comments</h2><div style="color:var(--muted);font-size:.68rem">YouTube comment analytics across all channels</div></div></div>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:4px"><div style="font-size:2rem">💬</div><div><h2 style="margin:0;border:none;padding:0">My Comments</h2><div style="color:var(--muted);font-size:.68rem">YouTube comment analytics across all channels</div></div></div>
+    ${subTabs}`;
+
+  // === OVERVIEW TAB ===
+  h+=`<div class="cmt-panel" id="cmt-overview">
     <div class="grid">
       <div class="stat"><div class="n">${(D.total||0).toLocaleString()}</div><div class="l">Total Comments</div></div>
-      <div class="stat"><div class="n">${D.channels?.length||0}</div><div class="l">Channels</div></div>
+      <div class="stat"><div class="n">${chSorted.length}</div><div class="l">Channels</div></div>
       <div class="stat"><div class="n">${(D.channels||[]).reduce((s,c)=>s+(c.video_count||0),0).toLocaleString()}</div><div class="l">Videos Tracked</div></div>
-      <div class="stat"><div class="n">${totalLikes.toLocaleString()}</div><div class="l">Total Likes</div></div></div>`;
-  // Channel breakdown bars
-  h+=`<h2>Comments by Channel</h2>`;
-  const chSorted=(D.channels||[]).filter(c=>c.comment_count>0).sort((a,b)=>b.comment_count-a.comment_count);
+      <div class="stat"><div class="n">${totalLikes.toLocaleString()}</div><div class="l">Total Likes</div></div>
+      <div class="stat"><div class="n">${D.top_commenters?D.top_commenters.length+'+ unique':'?'}</div><div class="l">Unique Commenters</div></div>
+      <div class="stat"><div class="n">${chSorted.length>0?Math.round(D.total/chSorted.length):0}</div><div class="l">Avg per Channel</div></div></div>
+    <h2>Comments by Channel</h2>`;
   const maxC=Math.max(...chSorted.map(c=>c.comment_count),1);
   chSorted.forEach(c=>{
-    const w=Math.max(2,Math.round(c.comment_count/maxC*250));
-    h+=`<div class="bar-row"><div class="lbl">${esc(c.name)}</div><div class="bar" style="width:${w}px;background:var(--blue)"></div><div class="val">${c.comment_count.toLocaleString()}</div></div>`;
+    const w=Math.max(2,Math.round(c.comment_count/maxC*280));
+    const pct=((c.comment_count/(D.total||1))*100).toFixed(1);
+    h+=`<div class="bar-row" style="cursor:pointer" onclick="showCmtTab('cmt-ch-${c.channel_id}')"><div class="lbl">${esc(c.name)}</div><div class="bar" style="width:${w}px;background:var(--blue)"></div><div class="val">${c.comment_count.toLocaleString()} <span style="color:var(--muted);font-size:.55rem">${pct}%</span></div></div>`;
   });
-  // Top commenters (fields: author_name, c, likes)
-  if(D.top_commenters?.length){
-    h+=`<h2>🏆 Top 25 Commenters</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th></tr>`;
-    D.top_commenters.slice(0,25).forEach((c,i)=>{
-      h+=`<tr><td>${i+1}</td><td>${esc(c.author_name||c.author||'')}</td><td style="font-family:'JetBrains Mono',monospace">${c.c||c.count||0}</td><td style="font-family:'JetBrains Mono',monospace">${c.likes||c.total_likes||0}</td></tr>`;
-    });
-    h+=`</table>`;
+  h+=`<h2>Channel Engagement</h2><table><tr><th>Channel</th><th>Comments</th><th>Videos</th><th>Comments/Video</th><th>% of Total</th></tr>`;
+  chSorted.forEach(c=>{
+    const cpv=c.video_count_with_comments?Math.round(c.comment_count/c.video_count_with_comments):0;
+    const pct=((c.comment_count/(D.total||1))*100).toFixed(1);
+    h+=`<tr><td>${esc(c.name)}</td><td style="font-family:'JetBrains Mono',monospace">${c.comment_count.toLocaleString()}</td><td>${c.video_count||0}</td><td style="font-family:'JetBrains Mono',monospace">${cpv}</td><td>${pct}%</td></tr>`;
+  });
+  h+=`</table></div>`;
+
+  // === TOP COMMENTERS TAB ===
+  h+=`<div class="cmt-panel" id="cmt-top" style="display:none">
+    <h2>🏆 Top 25 Commenters (All Channels)</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes Received</th><th>Avg Likes</th></tr>`;
+  (D.top_commenters||[]).slice(0,25).forEach((c,i)=>{
+    const avg=c.c>0?((c.likes||0)/c.c).toFixed(1):'0';
+    const likesBar=Math.max(1,Math.round((c.likes||0)/Math.max(...(D.top_commenters||[]).map(x=>x.likes||1))*80));
+    h+=`<tr><td><b>${i+1}</b></td><td>${c.author_avatar?`<img src="${c.author_avatar}" style="width:20px;height:20px;border-radius:50%;vertical-align:middle;margin-right:4px">`:''}${esc(c.author_name||'')}</td><td style="font-family:'JetBrains Mono',monospace"><b>${c.c||0}</b></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:${likesBar}px;height:6px;background:var(--red);border-radius:3px"></div><span style="font-family:'JetBrains Mono',monospace;font-size:.7rem">${c.likes||0}</span></div></td><td style="font-family:'JetBrains Mono',monospace;color:var(--muted)">${avg}</td></tr>`;
+  });
+  h+=`</table>
+    <h2>Commenter Distribution</h2><div style="font-size:.78rem;color:var(--muted);margin:6px 0">`;
+  const tc=D.top_commenters||[];
+  if(tc.length){
+    const top5=tc.slice(0,5).reduce((s,c)=>s+(c.c||0),0);
+    const top10=tc.slice(0,10).reduce((s,c)=>s+(c.c||0),0);
+    h+=`Top 5 commenters: <b style="color:var(--text)">${top5.toLocaleString()}</b> comments (${((top5/(D.total||1))*100).toFixed(1)}% of total)<br>`;
+    h+=`Top 10 commenters: <b style="color:var(--text)">${top10.toLocaleString()}</b> comments (${((top10/(D.total||1))*100).toFixed(1)}% of total)`;
   }
-  // Most liked comments (fields: author_name, text_content, like_count)
-  if(D.top_liked?.length){
-    h+=`<h2>❤️ Most Liked Comments</h2>`;
-    D.top_liked.slice(0,15).forEach(c=>{
-      const txt=c.text_content||c.text||c.comment||'';
-      h+=`<div class="cmt"><div class="cmt-avatar" style="width:28px;height:28px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;border:1px solid var(--border)">👤</div><div><div style="font-size:.7rem;font-weight:600">${esc(c.author_name||'')} <span style="color:var(--muted);font-weight:400">· ❤️ ${c.like_count||0} likes</span></div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">${esc(txt.substring(0,200))}${txt.length>200?'...':''}</div></div></div>`;
-    });
-  }
-  // Recent comments
-  if(D.recent?.length){
-    h+=`<h2>🕐 Recent Comments</h2>`;
-    D.recent.slice(0,15).forEach(c=>{
-      const txt=c.text_content||c.text||'';
-      h+=`<div class="cmt"><div class="cmt-avatar" style="width:24px;height:24px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem;border:1px solid var(--border)">👤</div><div><div style="font-size:.68rem;font-weight:600">${esc(c.author_name||'')} <span style="color:var(--muted);font-weight:400">· ${c.like_count||0} likes</span></div><div style="font-size:.7rem;color:var(--muted)">${esc(txt.substring(0,200))}${txt.length>200?'...':''}</div></div></div>`;
-    });
-  }
-  // Per-channel top commenters from by_channel
-  const bc=D.by_channel||{};
+  h+=`</div></div>`;
+
+  // === MOST LIKED TAB ===
+  h+=`<div class="cmt-panel" id="cmt-liked" style="display:none"><h2>❤️ Most Liked Comments (All Channels)</h2>`;
+  (D.top_liked||[]).slice(0,20).forEach((c,i)=>{
+    const txt=c.text_content||'';
+    const chName=(D.channels||[]).find(ch=>ch.channel_id===c.channel_id)?.name||'';
+    h+=`<div class="cmt" style="padding:8px 0;border-bottom:1px solid rgba(30,41,59,.2)"><div style="display:flex;gap:8px"><div style="width:28px;height:28px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;border:1px solid var(--border);color:var(--red);font-weight:700">${i+1}</div><div style="flex:1"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:.72rem;font-weight:600">${esc(c.author_name||'')}</div><div style="font-size:.65rem;color:var(--red);font-weight:700">❤️ ${c.like_count||0}</div></div><div style="font-size:.74rem;color:var(--muted);margin-top:2px;line-height:1.4">${esc(txt.substring(0,300))}${txt.length>300?'...':''}</div><div style="font-size:.6rem;color:var(--muted);margin-top:3px">${esc(chName)}${c.video_id?' · <a href="https://youtube.com/watch?v='+c.video_id+'" target="_blank" style="color:var(--blue)">Watch →</a>':''}</div></div></div></div>`;
+  });
+  h+=`</div>`;
+
+  // === RECENT TAB ===
+  h+=`<div class="cmt-panel" id="cmt-recent" style="display:none"><h2>🕐 Recent Comments (All Channels)</h2>`;
+  (D.recent||[]).forEach(c=>{
+    const txt=c.text_content||'';
+    const chName=(D.channels||[]).find(ch=>ch.channel_id===c.channel_id)?.name||'';
+    h+=`<div class="cmt" style="padding:6px 0;border-bottom:1px solid rgba(30,41,59,.2)"><div style="display:flex;gap:8px"><div style="width:24px;height:24px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem;border:1px solid var(--border)">💬</div><div style="flex:1"><div style="font-size:.7rem"><b>${esc(c.author_name||'')}</b> <span style="color:var(--muted)">· ${c.like_count||0} likes · ${c.published_at?.substring(0,10)||''}</span></div><div style="font-size:.72rem;color:var(--muted);margin-top:1px">${esc(txt.substring(0,250))}${txt.length>250?'...':''}</div><div style="font-size:.58rem;color:var(--muted);margin-top:2px">${esc(chName)}${c.video_id?' · <a href="https://youtube.com/watch?v='+c.video_id+'" target="_blank" style="color:var(--blue)">Watch</a>':''}</div></div></div></div>`;
+  });
+  h+=`</div>`;
+
+  // === PER-CHANNEL TABS ===
   chSorted.forEach(ch=>{
-    const chData=bc[ch.channel_id];
-    if(!chData) return;
-    h+=`<h2>${esc(ch.name)} — ${ch.comment_count.toLocaleString()} comments</h2>`;
-    if(chData.top_commenters?.length){
-      h+=`<table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th></tr>`;
-      chData.top_commenters.slice(0,10).forEach((c,i)=>{
-        h+=`<tr><td>${i+1}</td><td>${esc(c.author_name||'')}</td><td>${c.c||0}</td><td>${c.likes||0}</td></tr>`;
+    const chData=bc[ch.channel_id]||{};
+    const tc2=chData.top_commenters||[];
+    const rec2=chData.recent||[];
+    h+=`<div class="cmt-panel" id="cmt-ch-${ch.channel_id}" style="display:none">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">${ch.thumbnail?`<img src="${ch.thumbnail}" style="width:40px;height:40px;border-radius:50%">`:''}<div><h2 style="margin:0;border:none;padding:0">${esc(ch.name)}</h2><div style="color:var(--muted);font-size:.68rem">${fmt(ch.subscribers||0)} subscribers · ${ch.video_count||0} videos</div></div></div>
+      <div class="grid">
+        <div class="stat"><div class="n">${ch.comment_count.toLocaleString()}</div><div class="l">Comments</div></div>
+        <div class="stat"><div class="n">${ch.video_count_with_comments||ch.video_count||0}</div><div class="l">Videos w/ Comments</div></div>
+        <div class="stat"><div class="n">${tc2.length}+</div><div class="l">Unique Commenters</div></div>
+        <div class="stat"><div class="n">${ch.video_count_with_comments?Math.round(ch.comment_count/(ch.video_count_with_comments||1)):0}</div><div class="l">Avg Comments/Video</div></div>
+        <div class="stat"><div class="n">${((ch.comment_count/(D.total||1))*100).toFixed(1)}%</div><div class="l">Share of Total</div></div>
+      </div>`;
+    // Top commenters for this channel
+    if(tc2.length){
+      h+=`<h2>🏆 Top Commenters</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th><th>Avg</th></tr>`;
+      const maxL2=Math.max(...tc2.map(c=>c.likes||0),1);
+      tc2.forEach((c,i)=>{
+        const avg2=c.c>0?((c.likes||0)/c.c).toFixed(1):'0';
+        h+=`<tr><td>${i+1}</td><td>${esc(c.author_name||'')}</td><td style="font-family:'JetBrains Mono',monospace"><b>${c.c||0}</b></td><td><div style="display:flex;align-items:center;gap:3px"><div style="width:${Math.max(1,Math.round((c.likes||0)/maxL2*60))}px;height:5px;background:var(--red);border-radius:2px"></div><span style="font-family:'JetBrains Mono',monospace;font-size:.65rem">${c.likes||0}</span></div></td><td style="font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.7rem">${avg2}</td></tr>`;
       });
       h+=`</table>`;
+      // Commenter concentration
+      const topTC=tc2.slice(0,5).reduce((s,c)=>s+(c.c||0),0);
+      h+=`<div style="font-size:.72rem;color:var(--muted);margin:6px 0">Top 5 commenters account for <b style="color:var(--text)">${topTC.toLocaleString()}</b> comments (${((topTC/ch.comment_count)*100).toFixed(1)}% of channel total)</div>`;
+    }
+    // Recent comments for this channel
+    if(rec2.length){
+      h+=`<h2>🕐 Recent Comments</h2>`;
+      rec2.forEach(c=>{
+        const txt=c.text_content||'';
+        h+=`<div class="cmt" style="padding:5px 0;border-bottom:1px solid rgba(30,41,59,.15)"><div style="display:flex;gap:6px"><div style="width:22px;height:22px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.55rem;border:1px solid var(--border)">💬</div><div style="flex:1"><div style="font-size:.68rem"><b>${esc(c.author_name||'')}</b> <span style="color:var(--muted)">· ${c.like_count||0} likes · ${c.published_at?.substring(0,10)||''}</span></div><div style="font-size:.7rem;color:var(--muted);margin-top:1px">${esc(txt.substring(0,200))}${txt.length>200?'...':''}</div>${c.video_id?`<div style="font-size:.56rem;margin-top:2px"><a href="https://youtube.com/watch?v=${c.video_id}" target="_blank" style="color:var(--blue)">Watch video →</a></div>`:''}</div></div></div>`;
+      });
+    }
+    h+=`</div>`;
+  });
+  h+=`</div>`;
+  return h;
+}
+// Tab switching for comments
+function showCmtTab(id){
+  document.querySelectorAll('.cmt-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.cmt-tab').forEach(t=>{t.classList.remove('on');t.style.background='';t.style.color='';});
+  const panel=document.getElementById(id);
+  if(panel) panel.style.display='';
+  // Find matching tab by iterating
+  document.querySelectorAll('.cmt-tab').forEach(t=>{
+    if(t.getAttribute('onclick')&&t.getAttribute('onclick').includes("'"+id+"'")) {
+      t.classList.add('on');t.style.background='var(--red)';t.style.color='#fff';
     }
   });
-  return h+`</div>`;
 }
+// Style active cmt-tab on load
+document.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(()=>{const t=document.querySelector('.cmt-tab.on');if(t){t.style.background='var(--red)';t.style.color='#fff';}},500);
+});
 // === ROUTER ===
 function route(){
   const h=(location.hash||'#overview').slice(1);
