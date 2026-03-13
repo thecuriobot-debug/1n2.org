@@ -1,8 +1,8 @@
 {
   "updated": "2026-03-13",
   "floor_eth": 0.0486,
-  "total_holders": 4968,
-  "total_transfers": 1061,
+  "total_holders": 4961,
+  "total_transfers": 801,
   "total_sales": 75,
   "cards": [
     {
@@ -10,7 +10,7 @@
       "name": "Apples",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/dacc6324c1ee87f409ebbdfe19036b32",
       "holders": 635,
-      "total_supply": 22701,
+      "total_supply": 1081,
       "sales": 8,
       "last_sale_eth": 0.82025,
       "last_sale_date": "",
@@ -20,20 +20,20 @@
           "qty": 50
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 50
+          "addr": "0xc9FFE9...",
+          "qty": 39
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 50
+          "addr": "0x79a576...",
+          "qty": 24
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 50
+          "addr": "0x93dEF4...",
+          "qty": 24
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 50
+          "addr": "0xf22B98...",
+          "qty": 23
         }
       ]
     },
@@ -41,8 +41,8 @@
       "id": 2,
       "name": "Nuts",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/96852c4a2fb1bcb23e0e21497250382b",
-      "holders": 633,
-      "total_supply": 21693,
+      "holders": 629,
+      "total_supply": 1033,
       "sales": 3,
       "last_sale_eth": 0.11601525,
       "last_sale_date": "",
@@ -52,20 +52,20 @@
           "qty": 105
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 105
+          "addr": "0x60b395...",
+          "qty": 40
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 105
+          "addr": "0xf22B98...",
+          "qty": 35
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 105
+          "addr": "0x79a576...",
+          "qty": 30
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 105
+          "addr": "0xEF8724...",
+          "qty": 17
         }
       ]
     },
@@ -74,7 +74,7 @@
       "name": "Berries",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/d8cf7b937a20c81e9c7165e374f6a8d9",
       "holders": 637,
-      "total_supply": 27468,
+      "total_supply": 1308,
       "sales": 1,
       "last_sale_eth": 0.078,
       "last_sale_date": "",
@@ -84,20 +84,20 @@
           "qty": 144
         },
         {
-          "addr": "0xD996B5...",
-          "qty": 144
+          "addr": "0x10eE81...",
+          "qty": 105
         },
         {
-          "addr": "0xD996B5...",
-          "qty": 144
+          "addr": "0xBcd787...",
+          "qty": 73
         },
         {
-          "addr": "0xD996B5...",
-          "qty": 144
+          "addr": "0xf22B98...",
+          "qty": 35
         },
         {
-          "addr": "0xD996B5...",
-          "qty": 144
+          "addr": "0x429237...",
+          "qty": 20
         }
       ]
     },
@@ -105,8 +105,8 @@
       "id": 4,
       "name": "Clay",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/ec81e423b53eb8ffe81fd499c73c24fc",
-      "holders": 236,
-      "total_supply": 8568,
+      "holders": 235,
+      "total_supply": 408,
       "sales": 1,
       "last_sale_eth": 0.24366225,
       "last_sale_date": "",
@@ -116,20 +116,20 @@
           "qty": 40
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 40
+          "addr": "0x60b395...",
+          "qty": 18
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 40
+          "addr": "0xbCf5ae...",
+          "qty": 18
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 40
+          "addr": "0x5ea968...",
+          "qty": 14
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 40
+          "addr": "0xf22B98...",
+          "qty": 13
         }
       ]
     },
@@ -138,7 +138,7 @@
       "name": "Paint",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/eca961664255d9b2547a468925fc9fef",
       "holders": 206,
-      "total_supply": 7077,
+      "total_supply": 337,
       "sales": 1,
       "last_sale_eth": 0.3760575,
       "last_sale_date": "",
@@ -148,20 +148,20 @@
           "qty": 30
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0x60b395...",
+          "qty": 26
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0xbCf5ae...",
+          "qty": 16
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0xf22B98...",
+          "qty": 15
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0x1B06c2...",
+          "qty": 7
         }
       ]
     },
@@ -170,7 +170,7 @@
       "name": "Ink",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/b4732aabb94a2e0acacf8c634a3fae43",
       "holders": 207,
-      "total_supply": 7161,
+      "total_supply": 341,
       "sales": 1,
       "last_sale_eth": 0.25,
       "last_sale_date": "",
@@ -180,20 +180,20 @@
           "qty": 30
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0x60b395...",
+          "qty": 24
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0xbCf5ae...",
+          "qty": 18
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0xf22B98...",
+          "qty": 16
         },
         {
-          "addr": "0x10eE81...",
-          "qty": 30
+          "addr": "0x1B06c2...",
+          "qty": 7
         }
       ]
     },
@@ -201,8 +201,8 @@
       "id": 7,
       "name": "Sculpture",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/1641a8da19e9b444179204a737d1ac7f",
-      "holders": 1088,
-      "total_supply": 35763,
+      "holders": 1087,
+      "total_supply": 1703,
       "sales": 1,
       "last_sale_eth": 0.087815,
       "last_sale_date": "",
@@ -212,20 +212,20 @@
           "qty": 90
         },
         {
-          "addr": "0xeD4701...",
-          "qty": 90
+          "addr": "0xE97e49...",
+          "qty": 49
         },
         {
-          "addr": "0xeD4701...",
-          "qty": 90
+          "addr": "0x7C0830...",
+          "qty": 34
         },
         {
-          "addr": "0xeD4701...",
-          "qty": 90
+          "addr": "0x321022...",
+          "qty": 25
         },
         {
-          "addr": "0xeD4701...",
-          "qty": 90
+          "addr": "0xb5DF98...",
+          "qty": 23
         }
       ]
     },
@@ -233,8 +233,8 @@
       "id": 8,
       "name": "Painting",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/8a1bdac9615bc2bc170ac5d11a559ae6",
-      "holders": 1055,
-      "total_supply": 35280,
+      "holders": 1052,
+      "total_supply": 1680,
       "sales": 5,
       "last_sale_eth": 0.124485,
       "last_sale_date": "",
@@ -244,20 +244,20 @@
           "qty": 40
         },
         {
-          "addr": "0x6C7244...",
-          "qty": 40
+          "addr": "0xeD4701...",
+          "qty": 32
         },
         {
-          "addr": "0x6C7244...",
-          "qty": 40
+          "addr": "0x80b8D5...",
+          "qty": 21
         },
         {
-          "addr": "0x6C7244...",
-          "qty": 40
+          "addr": "0xbCf5ae...",
+          "qty": 21
         },
         {
-          "addr": "0x6C7244...",
-          "qty": 40
+          "addr": "0x321022...",
+          "qty": 19
         }
       ]
     },
@@ -265,8 +265,8 @@
       "id": 9,
       "name": "Book",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/3f44cf8ff1c426d92c7ee86b19f1d8c2",
-      "holders": 804,
-      "total_supply": 35238,
+      "holders": 801,
+      "total_supply": 1678,
       "sales": 4,
       "last_sale_eth": 0.085885,
       "last_sale_date": "",
@@ -276,20 +276,20 @@
           "qty": 159
         },
         {
-          "addr": "0x531fF7...",
-          "qty": 159
+          "addr": "0x7C0830...",
+          "qty": 85
         },
         {
-          "addr": "0x531fF7...",
-          "qty": 159
+          "addr": "0xD996B5...",
+          "qty": 77
         },
         {
-          "addr": "0x531fF7...",
-          "qty": 159
+          "addr": "0x787349...",
+          "qty": 70
         },
         {
-          "addr": "0x531fF7...",
-          "qty": 159
+          "addr": "0xE97e49...",
+          "qty": 49
         }
       ]
     },
@@ -297,8 +297,8 @@
       "id": 10,
       "name": "Future",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/6916e93b1fd0c1ff1835af600814aae2",
-      "holders": 1018,
-      "total_supply": 36435,
+      "holders": 1017,
+      "total_supply": 1735,
       "sales": 5,
       "last_sale_eth": 0.065,
       "last_sale_date": "",
@@ -308,20 +308,20 @@
           "qty": 215
         },
         {
-          "addr": "0x1B06c2...",
-          "qty": 215
+          "addr": "0xE97e49...",
+          "qty": 59
         },
         {
-          "addr": "0x1B06c2...",
-          "qty": 215
+          "addr": "0x71Ff0b...",
+          "qty": 25
         },
         {
-          "addr": "0x1B06c2...",
-          "qty": 215
+          "addr": "0xbCf5ae...",
+          "qty": 23
         },
         {
-          "addr": "0x1B06c2...",
-          "qty": 215
+          "addr": "0xB947A2...",
+          "qty": 20
         }
       ]
     },
@@ -329,8 +329,8 @@
       "id": 11,
       "name": "BTC Keys",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/66c59bb16e2195381da6de8f9b15c7dd",
-      "holders": 1030,
-      "total_supply": 35049,
+      "holders": 1029,
+      "total_supply": 1669,
       "sales": 8,
       "last_sale_eth": 0.08774025,
       "last_sale_date": "",
@@ -340,20 +340,20 @@
           "qty": 69
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 69
+          "addr": "0xE97e49...",
+          "qty": 51
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 69
+          "addr": "0x1488F5...",
+          "qty": 34
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 69
+          "addr": "0x1D3643...",
+          "qty": 27
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 69
+          "addr": "0xD9a657...",
+          "qty": 25
         }
       ]
     },
@@ -361,8 +361,8 @@
       "id": 12,
       "name": "Mine Bitcoin",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/27352c056c83324122962c5b6d67c88b",
-      "holders": 979,
-      "total_supply": 29904,
+      "holders": 978,
+      "total_supply": 1424,
       "sales": 4,
       "last_sale_eth": 0.085,
       "last_sale_date": "",
@@ -372,20 +372,20 @@
           "qty": 65
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 65
+          "addr": "0x1C0640...",
+          "qty": 32
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 65
+          "addr": "0xD9a657...",
+          "qty": 25
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 65
+          "addr": "0x91fEa2...",
+          "qty": 15
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 65
+          "addr": "0xd20BB4...",
+          "qty": 13
         }
       ]
     },
@@ -393,8 +393,8 @@
       "id": 13,
       "name": "BTC",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/a7708d915cae323ed17e81f8f529f7b8",
-      "holders": 964,
-      "total_supply": 33558,
+      "holders": 962,
+      "total_supply": 1598,
       "sales": 6,
       "last_sale_eth": 0.063375,
       "last_sale_date": "",
@@ -404,20 +404,20 @@
           "qty": 90
         },
         {
-          "addr": "0x1D3643...",
-          "qty": 90
+          "addr": "0x271c6f...",
+          "qty": 64
         },
         {
-          "addr": "0x1D3643...",
-          "qty": 90
+          "addr": "0xE97e49...",
+          "qty": 48
         },
         {
-          "addr": "0x1D3643...",
-          "qty": 90
+          "addr": "0xD9a657...",
+          "qty": 25
         },
         {
-          "addr": "0x1D3643...",
-          "qty": 90
+          "addr": "0x0a3730...",
+          "qty": 22
         }
       ]
     },
@@ -426,7 +426,7 @@
       "name": "CryptoCurrency",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/ef2b44965ff3686278c011af6de51f40",
       "holders": 288,
-      "total_supply": 9156,
+      "total_supply": 436,
       "sales": 3,
       "last_sale_eth": 0.22,
       "last_sale_date": "",
@@ -436,20 +436,20 @@
           "qty": 25
         },
         {
-          "addr": "0xA26910...",
-          "qty": 25
+          "addr": "0x0a3730...",
+          "qty": 22
         },
         {
-          "addr": "0xA26910...",
-          "qty": 25
+          "addr": "0x42f04C...",
+          "qty": 17
         },
         {
-          "addr": "0xA26910...",
-          "qty": 25
+          "addr": "0x80b8D5...",
+          "qty": 11
         },
         {
-          "addr": "0xA26910...",
-          "qty": 25
+          "addr": "0x3510Dd...",
+          "qty": 10
         }
       ]
     },
@@ -457,8 +457,8 @@
       "id": 15,
       "name": "DigitalCash",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/ee5a909e8c1b5ec992ea6e8e5bed5440",
-      "holders": 214,
-      "total_supply": 6342,
+      "holders": 213,
+      "total_supply": 302,
       "sales": 1,
       "last_sale_eth": 0.41,
       "last_sale_date": "",
@@ -468,20 +468,20 @@
           "qty": 13
         },
         {
-          "addr": "0xe4fcb9...",
-          "qty": 13
+          "addr": "0x3510Dd...",
+          "qty": 12
         },
         {
-          "addr": "0xe4fcb9...",
-          "qty": 13
+          "addr": "0x5ea968...",
+          "qty": 11
         },
         {
-          "addr": "0xe4fcb9...",
-          "qty": 13
+          "addr": "0xE6a9D0...",
+          "qty": 11
         },
         {
-          "addr": "0xe4fcb9...",
-          "qty": 13
+          "addr": "0x6Bf97f...",
+          "qty": 8
         }
       ]
     },
@@ -489,8 +489,8 @@
       "id": 16,
       "name": "OriginalCoin",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/ca86d2b0b4a4510d98e992107738dc4f",
-      "holders": 277,
-      "total_supply": 9366,
+      "holders": 276,
+      "total_supply": 446,
       "sales": 1,
       "last_sale_eth": 0.24125,
       "last_sale_date": "",
@@ -500,20 +500,20 @@
           "qty": 61
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 61
+          "addr": "0x3510Dd...",
+          "qty": 10
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 61
+          "addr": "0x6Bf97f...",
+          "qty": 8
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 61
+          "addr": "0x87885A...",
+          "qty": 8
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 61
+          "addr": "0xA9A741...",
+          "qty": 8
         }
       ]
     },
@@ -522,7 +522,7 @@
       "name": "UASF",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/883645e481f5bb73460d201ee4612f4e",
       "holders": 220,
-      "total_supply": 6510,
+      "total_supply": 310,
       "sales": 4,
       "last_sale_eth": 0.2925,
       "last_sale_date": "",
@@ -532,20 +532,20 @@
           "qty": 10
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 10
+          "addr": "0x44e278...",
+          "qty": 9
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 10
+          "addr": "0x1488F5...",
+          "qty": 7
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 10
+          "addr": "0x6Bf97f...",
+          "qty": 7
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 10
+          "addr": "0x87885A...",
+          "qty": 7
         }
       ]
     },
@@ -553,8 +553,8 @@
       "id": 18,
       "name": "To The Moon",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/f81046ffbb4ef73b8dac3918674e9cf7",
-      "holders": 192,
-      "total_supply": 5901,
+      "holders": 191,
+      "total_supply": 281,
       "sales": 1,
       "last_sale_eth": 0.76235,
       "last_sale_date": "",
@@ -564,20 +564,20 @@
           "qty": 24
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 24
+          "addr": "0xA8D4fc...",
+          "qty": 11
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 24
+          "addr": "0x1488F5...",
+          "qty": 10
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 24
+          "addr": "0x0243a2...",
+          "qty": 5
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 24
+          "addr": "0xE6a9D0...",
+          "qty": 5
         }
       ]
     },
@@ -586,7 +586,7 @@
       "name": "Dogs Trading",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/a2de4cd7d0ea693a947dea51e64c442d",
       "holders": 207,
-      "total_supply": 6111,
+      "total_supply": 291,
       "sales": 2,
       "last_sale_eth": 0.505,
       "last_sale_date": "",
@@ -596,20 +596,20 @@
           "qty": 16
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 16
+          "addr": "0xE6a9D0...",
+          "qty": 12
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 16
+          "addr": "0x0243a2...",
+          "qty": 9
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 16
+          "addr": "0xe4fcb9...",
+          "qty": 9
         },
         {
-          "addr": "0x5AE9a6...",
-          "qty": 16
+          "addr": "0x526CF7...",
+          "qty": 6
         }
       ]
     },
@@ -617,8 +617,8 @@
       "id": 20,
       "name": "MadBitcoins",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/cfffc1d85fb7d40302cda22c7b40bee9",
-      "holders": 794,
-      "total_supply": 30009,
+      "holders": 793,
+      "total_supply": 1429,
       "sales": 6,
       "last_sale_eth": 0.0781,
       "last_sale_date": "",
@@ -628,20 +628,20 @@
           "qty": 93
         },
         {
-          "addr": "0xE97e49...",
-          "qty": 93
+          "addr": "0x271c6f...",
+          "qty": 65
         },
         {
-          "addr": "0xE97e49...",
-          "qty": 93
+          "addr": "0x1D3643...",
+          "qty": 52
         },
         {
-          "addr": "0xE97e49...",
-          "qty": 93
+          "addr": "0x91fEa2...",
+          "qty": 37
         },
         {
-          "addr": "0xE97e49...",
-          "qty": 93
+          "addr": "0x6C7244...",
+          "qty": 25
         }
       ]
     },
@@ -650,7 +650,7 @@
       "name": "The Wizard",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/9624d3039cb73adce987838592e05aab",
       "holders": 44,
-      "total_supply": 1155,
+      "total_supply": 55,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -660,20 +660,20 @@
           "qty": 6
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0x1B06c2...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0x49468F...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0x972e43...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0xD7f53A...",
+          "qty": 2
         }
       ]
     },
@@ -682,7 +682,7 @@
       "name": "The Bard",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/3d8ae4dad0f35ed30a9975cce707aa1c",
       "holders": 30,
-      "total_supply": 819,
+      "total_supply": 39,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -692,20 +692,20 @@
           "qty": 5
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x49468F...",
+          "qty": 3
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x972e43...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x97870B...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0xEdae46...",
+          "qty": 2
         }
       ]
     },
@@ -714,7 +714,7 @@
       "name": "The Barbarian",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/11704a91b290824cf416dd81af0d5256",
       "holders": 36,
-      "total_supply": 924,
+      "total_supply": 44,
       "sales": 1,
       "last_sale_eth": 4.825,
       "last_sale_date": "",
@@ -724,20 +724,20 @@
           "qty": 6
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0xA26910...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0xD7f53A...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0xEdae46...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 6
+          "addr": "0x115201...",
+          "qty": 1
         }
       ]
     },
@@ -746,7 +746,7 @@
       "name": "Complexity",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/88670f9564074748f76d90b18826926a",
       "holders": 29,
-      "total_supply": 777,
+      "total_supply": 37,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -756,20 +756,20 @@
           "qty": 5
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x49468F...",
+          "qty": 3
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x97870B...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0xD7f53A...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 5
+          "addr": "0x06Ec55...",
+          "qty": 1
         }
       ]
     },
@@ -778,7 +778,7 @@
       "name": "Passion",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/bc6abb35f05c1c3040bc94b963ddde9c",
       "holders": 29,
-      "total_supply": 777,
+      "total_supply": 37,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -788,20 +788,20 @@
           "qty": 4
         },
         {
-          "addr": "0x60b395...",
-          "qty": 4
+          "addr": "0x49468F...",
+          "qty": 3
         },
         {
-          "addr": "0x60b395...",
-          "qty": 4
+          "addr": "0x1B06c2...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 4
+          "addr": "0x97870B...",
+          "qty": 2
         },
         {
-          "addr": "0x60b395...",
-          "qty": 4
+          "addr": "0xD7f53A...",
+          "qty": 2
         }
       ]
     },
@@ -810,7 +810,7 @@
       "name": "Education",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/f297422afa2df0df25c462d7039dc105",
       "holders": 85,
-      "total_supply": 3108,
+      "total_supply": 148,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -820,20 +820,20 @@
           "qty": 34
         },
         {
-          "addr": "0xB618aa...",
-          "qty": 34
+          "addr": "0xa9759E...",
+          "qty": 13
         },
         {
-          "addr": "0xB618aa...",
-          "qty": 34
+          "addr": "0x60b395...",
+          "qty": 5
         },
         {
-          "addr": "0xB618aa...",
-          "qty": 34
+          "addr": "0xeD4701...",
+          "qty": 3
         },
         {
-          "addr": "0xB618aa...",
-          "qty": 34
+          "addr": "0x115201...",
+          "qty": 2
         }
       ]
     },
@@ -841,8 +841,8 @@
       "id": 27,
       "name": "Blue",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/e559526d21231cd976f61f08a7be85e7",
-      "holders": 283,
-      "total_supply": 11256,
+      "holders": 277,
+      "total_supply": 536,
       "sales": 3,
       "last_sale_eth": 0.3,
       "last_sale_date": "",
@@ -852,20 +852,20 @@
           "qty": 66
         },
         {
-          "addr": "0xd6a984...",
-          "qty": 66
+          "addr": "0x5ea968...",
+          "qty": 25
         },
         {
-          "addr": "0xd6a984...",
-          "qty": 66
+          "addr": "0xb5DF98...",
+          "qty": 18
         },
         {
-          "addr": "0xd6a984...",
-          "qty": 66
+          "addr": "0x80b8D5...",
+          "qty": 16
         },
         {
-          "addr": "0xd6a984...",
-          "qty": 66
+          "addr": "0x46376A...",
+          "qty": 11
         }
       ]
     },
@@ -873,8 +873,8 @@
       "id": 28,
       "name": "Pink",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/aa809eea68a2d30c97940ff3e0249788",
-      "holders": 224,
-      "total_supply": 7728,
+      "holders": 223,
+      "total_supply": 368,
       "sales": 0,
       "last_sale_eth": null,
       "last_sale_date": null,
@@ -884,20 +884,20 @@
           "qty": 11
         },
         {
-          "addr": "0x87885A...",
-          "qty": 11
+          "addr": "0x0243a2...",
+          "qty": 8
         },
         {
-          "addr": "0x87885A...",
-          "qty": 11
+          "addr": "0xa641A7...",
+          "qty": 8
         },
         {
-          "addr": "0x87885A...",
-          "qty": 11
+          "addr": "0x0a3730...",
+          "qty": 7
         },
         {
-          "addr": "0x87885A...",
-          "qty": 11
+          "addr": "0x46376A...",
+          "qty": 7
         }
       ]
     },
@@ -905,8 +905,8 @@
       "id": 29,
       "name": "Yellow",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/75c8f2003e25955081c695f2a162518c",
-      "holders": 96,
-      "total_supply": 3612,
+      "holders": 94,
+      "total_supply": 172,
       "sales": 1,
       "last_sale_eth": 1.95,
       "last_sale_date": "",
@@ -916,20 +916,20 @@
           "qty": 43
         },
         {
-          "addr": "0x000000...",
-          "qty": 43
+          "addr": "0x0243a2...",
+          "qty": 9
         },
         {
-          "addr": "0x000000...",
-          "qty": 43
+          "addr": "0x6C7244...",
+          "qty": 6
         },
         {
-          "addr": "0x000000...",
-          "qty": 43
+          "addr": "0x1488F5...",
+          "qty": 3
         },
         {
-          "addr": "0x000000...",
-          "qty": 43
+          "addr": "0x5ea968...",
+          "qty": 3
         }
       ]
     },
@@ -937,8 +937,8 @@
       "id": 30,
       "name": "Eclipse",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/e0ffb2b30ae11fb936dc4ddb401c43b8",
-      "holders": 374,
-      "total_supply": 14217,
+      "holders": 369,
+      "total_supply": 677,
       "sales": 4,
       "last_sale_eth": 0.2,
       "last_sale_date": "",
@@ -952,16 +952,16 @@
           "qty": 28
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 28
+          "addr": "0x502792...",
+          "qty": 23
         },
         {
-          "addr": "0xF68e4d...",
-          "qty": 28
+          "addr": "0x35200a...",
+          "qty": 14
         },
         {
-          "addr": "0x0a3730...",
-          "qty": 28
+          "addr": "0x6D41F5...",
+          "qty": 13
         }
       ]
     }

@@ -2,45 +2,17 @@
   "updated": "2026-03-13",
   "market": {
     "floor": 0.0486,
-    "holders": 4968,
+    "holders": 4961,
     "total_sales": 75,
-    "total_transfers": 1061
+    "total_transfers": 801
   },
   "youtube": {
-    "total_videos": 5961,
-    "total_comments": 39527,
+    "total_videos": 146,
+    "total_comments": 749,
     "channels": [
       {
-        "name": "IG-88 / MC Fanb0y (STOLEN)",
-        "vids": 1
-      },
-      {
-        "name": "bbctruth",
-        "vids": 1
-      },
-      {
-        "name": "thezeronewz",
-        "vids": 34
-      },
-      {
-        "name": "Thomas Hunt (Personal)",
-        "vids": 56
-      },
-      {
-        "name": "The Bitcoin Group (Original)",
-        "vids": 60
-      },
-      {
-        "name": "2012ConcertsLive",
-        "vids": 276
-      },
-      {
-        "name": "2013ConcertsLive",
-        "vids": 91
-      },
-      {
         "name": "MadBitcoins",
-        "vids": 802
+        "vids": 50
       },
       {
         "name": "Thomas Hunt Films",
@@ -52,107 +24,19 @@
       },
       {
         "name": "World Crypto Network",
-        "vids": 4594
+        "vids": 50
       }
     ]
   },
   "content": {
-    "articles": 4364,
-    "tweets": 263,
+    "articles": 244,
+    "tweets": 0,
     "wiki_articles": 27
   },
   "price_history": [
     {
       "date": "2026-03-13",
       "floor": 0.0486
-    },
-    {
-      "date": "2026-03-13",
-      "floor": 0.0486
-    },
-    {
-      "date": "2026-03-12",
-      "floor": 0.0486
-    },
-    {
-      "date": "2026-03-11",
-      "floor": 0.0489
-    },
-    {
-      "date": "2026-03-11",
-      "floor": 0.0489
-    },
-    {
-      "date": "2026-03-10",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-10",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-09",
-      "floor": 0.04899999
-    },
-    {
-      "date": "2026-03-09",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-09",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-08",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-07",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.049
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.047
-    },
-    {
-      "date": "2026-03-06",
-      "floor": 0.047
     }
   ]
 }

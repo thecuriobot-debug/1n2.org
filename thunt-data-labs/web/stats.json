@@ -3,10 +3,10 @@
   "projects": 56,
   "daily_jobs": 14,
   "daily_logs": 24,
-  "total_records": 13786,
-  "videos": 0,
-  "comments": 0,
-  "articles": 0,
+  "total_records": 14935,
+  "videos": 146,
+  "comments": 749,
+  "articles": 244,
   "tweets": 0,
   "curio_sales": 75,
   "curio_floor": 0.0486,
@@ -15,8 +15,8 @@
   "datasets": {
     "youtube": {
       "tables": {
-        "videos": 0,
-        "comments": 0
+        "videos": 146,
+        "comments": 749
       }
     }
   }

@@ -9,62 +9,300 @@
 :root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--green:#34d399;--amber:#fbbf24;--red:#f87171;--accent:#22d3ee}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);font-size:13px;padding:20px}
-.wrap{max-width:1000px;margin:0 auto}
+.wrap{max-width:1100px;margin:0 auto}
 h1{font-size:1.3rem;margin-bottom:4px}h1 span{color:var(--accent)}
 .sub{color:var(--muted);font-size:.75rem;margin-bottom:16px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
 .card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:12px}
 .card h3{font-size:.8rem;margin-bottom:8px;color:var(--accent)}
 .row{display:flex;justify-content:space-between;padding:3px 0;font-size:.75rem;border-bottom:1px solid rgba(30,41,59,.4)}
 .row:last-child{border:none}
 .row .v{font-weight:700}
 .ok{color:var(--green)}.warn{color:var(--amber)}.err{color:var(--red)}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;flex-shrink:0}
 .dot.g{background:var(--green);box-shadow:0 0 6px var(--green)}.dot.r{background:var(--red)}.dot.y{background:var(--amber)}
 .log{font-size:.7rem;color:var(--muted);padding:2px 0;border-bottom:1px solid rgba(30,41,59,.3)}
 .ft{text-align:center;color:var(--muted);font-size:.7rem;margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}
 .ft a{color:var(--accent)}
-@media(max-width:768px){.grid{grid-template-columns:1fr}}
+.section-label{font-size:.7rem;color:var(--muted);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.05em}
+.score{font-size:1.8rem;font-weight:700;color:var(--green);margin:4px 0}
+.score.warn{color:var(--amber)}.score.bad{color:var(--red)}
+@media(max-width:768px){.grid,.grid3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>1n2 <span>Health Check</span></h1>
-<div class="sub" id="sub">Loading...</div>
+<h1>💚 <span>1n2.org</span> Health Check</h1>
+<p class="sub" id="ts">Checking all systems...</p>
+
 <div class="grid">
-<div class="card"><h3>📊 Database</h3><div id="db"></div></div>
-<div class="card"><h3>🔗 Sites</h3><div id="sites"></div></div>
-<div class="card"><h3>⏱ Cron Jobs</h3><div id="cron"></div></div>
-<div class="card"><h3>📋 Collection Log</h3><div id="log"></div></div>
+  <div class="card">
+    <h3>📊 Data Labs Stats</h3>
+    <div id="stats-block"><div class="row"><span>Loading...</span></div></div>
+  </div>
+  <div class="card">
+    <h3>⚡ System Score</h3>
+    <div id="score-block"><div class="score" id="score-num">—</div><div id="score-detail" style="color:var(--muted);font-size:.75rem">checking...</div></div>
+  </div>
 </div>
-<div class="card" style="margin-top:10px"><h3>📡 Data Pipeline</h3><div id="pipeline"></div></div>
-<div class="ft"><a href="/">1n2.org</a> · <a href="/thunt-data-labs/web/">Data Labs</a> · <a href="/reader/">Dashboarder</a></div>
+
+<p class="section-label">🌐 Live Sites</p>
+<div class="grid3">
+  <div class="card">
+    <h3>Core</h3>
+    <div id="sites-core"></div>
+  </div>
+  <div class="card">
+    <h3>Curio Ecosystem</h3>
+    <div id="sites-curio"></div>
+  </div>
+  <div class="card">
+    <h3>Media & Content</h3>
+    <div id="sites-media"></div>
+  </div>
 </div>
+
+<div class="grid">
+  <div class="card">
+    <h3>🎮 Games & Tools</h3>
+    <div id="sites-games"></div>
+  </div>
+  <div class="card">
+    <h3>📁 Data Exports</h3>
+    <div id="exports-block"></div>
+  </div>
+</div>
+
+<p class="section-label">🔧 Cron Jobs (last run)</p>
+<div class="grid">
+  <div class="card">
+    <h3>Daily Pipeline</h3>
+    <div id="jobs-block"></div>
+  </div>
+  <div class="card">
+    <h3>📝 Recent Logs</h3>
+    <div id="logs-block"></div>
+  </div>
+</div>
+
+<div class="ft"><a href="/">← 1n2.org</a> · auto-refresh every 60s · <span id="refresh-in">60</span>s</div>
+</div>
+
 <script>
-async function init(){
-  let d;
-  try{const r=await fetch('/thunt-data-labs/web/stats.json');d=await r.json();}
-  catch{document.getElementById('sub').textContent='Could not load stats.json';return;}
-  const age=Math.round((Date.now()-new Date(d.generated_at).getTime())/3600000);
-  const cls=age<2?'ok':age<24?'warn':'err';
-  document.getElementById('sub').innerHTML=`<span class="${cls}">${d.total_records?.toLocaleString()} records · ${d.db_size_mb}MB · Updated ${age}h ago</span>`;
-  const db=document.getElementById('db');let html='';
-  for(const[k,v] of Object.entries(d.datasets||{})){
-    const tot=v.total||0;const s=tot>0?'g':'r';
-    html+=`<div class="row"><span><span class="dot ${s}"></span>${v.icon} ${v.name}</span><span class="v ${tot>0?'ok':'err'}">${tot.toLocaleString()}</span></div>`;
-    for(const[t,c] of Object.entries(v.tables||{}))html+=`<div class="row" style="padding-left:20px"><span>${t}</span><span class="v" style="color:${c>0?'var(--green)':'var(--muted)'}">${c.toLocaleString()}</span></div>`;
-  }
-  db.innerHTML=html;
-  const sites=['reader/','thunt-data-labs/web/','commentzor/web/','google-news/','thunt-wiki/','curiocharts/','curio-quant/','curio-oracle/','curio-atlas/','curiohub/','tweetster/','mb-games/','bitcoinships/','bitcoin-trains/'];
-  const sitesEl=document.getElementById('sites');
-  sitesEl.innerHTML=sites.map(s=>`<div class="row" id="s-${s.replace(/[\/]/g,'')}"><span>${s}</span><span class="v warn">...</span></div>`).join('');
-  for(const s of sites){try{const r=await fetch('/'+s,{method:'HEAD',cache:'no-store'});const el=document.getElementById('s-'+s.replace(/[\/]/g,''));if(el)el.innerHTML=`<span><span class="dot ${r.ok?'g':'r'}"></span>${s}</span><span class="v ${r.ok?'ok':'err'}">${r.status}</span>`;}catch(e){const el=document.getElementById('s-'+s.replace(/[\/]/g,''));if(el)el.innerHTML=`<span><span class="dot r"></span>${s}</span><span class="v err">fail</span>`;}}
-  document.getElementById('log').innerHTML=(d.collection_log||[]).slice(0,10).map(l=>`<div class="log"><span class="${l.status==='ok'?'ok':'err'}">[${l.status}]</span> ${l.dataset} · +${l.records_added} · ${l.duration_seconds?.toFixed(1)||0}s · ${l.run_at?.substring(5,16)||''}</div>`).join('');
-  const jobs=['Data Labs Collect','Export All','Export Apps','City News','Entertainment','Ego Search','Tweetster','Curio Charts','CurioQuant','Dashboarder','Morning Summary','Daily Logs','Deploy to Droplet'];
-  document.getElementById('cron').innerHTML=jobs.map(j=>`<div class="row"><span><span class="dot g"></span>${j}</span><span class="v" style="color:var(--muted)">1 AM</span></div>`).join('');
-  const exports=[{n:'stats.json',a:'Data Labs'},{n:'comments.json',a:'Commentzor + Reader'},{n:'live-data.json',a:'Curio Archive'},{n:'network.json',a:'Curio Atlas'},{n:'hub-data.json',a:'Curio Hub'},{n:'live-data.json',a:'MadWikipedia'},{n:'oracle-data.json',a:'Curio Oracle'},{n:'latest.json',a:'Charts + Quant'}];
-  document.getElementById('pipeline').innerHTML=exports.map(e=>`<div class="row"><span>📄 ${e.n}</span><span>→ ${e.a}</span></div>`).join('');
+const BASE = '';
+let totalOk = 0, totalChecked = 0;
+
+// Site groups
+const SITES = {
+  core: [
+    ['/', '1n2.org homepage'],
+    ['dashboarder/', 'Dashboarder'],
+    ['thunt-data-labs/web/', 'Data Labs'],
+    ['daily-logs/', 'Daily Logs'],
+    ['ai-usage/', 'AI Usage'],
+    ['health/', 'Health (this page)'],
+  ],
+  curio: [
+    ['curiocharts/', 'CurioCharts'],
+    ['curio-quant/', 'CurioQuant'],
+    ['curio-map/', 'Curio Map'],
+    ['curio-wiki/', 'Curio Wiki'],
+    ['curioarchive/', 'Curio Archive'],
+    ['curio-atlas/', 'Curio Atlas'],
+    ['curiohub/', 'Curio Hub'],
+    ['curioreview/', 'Curio Review'],
+    ['curio-oracle/', 'Curio Oracle'],
+    ['curio-terminal/', 'Curio Terminal'],
+  ],
+  media: [
+    ['thomashuntfilms/', 'Thomas Hunt Films'],
+    ['tbg-mirrors/', 'TBG Mirrors'],
+    ['wcn-podcast/', 'WCN Podcast'],
+    ['my-youtube/', 'My YouTube'],
+    ['commentzor/', 'Commentzor'],
+    ['medialog/', 'MediaLog'],
+    ['tweetster/', 'Tweetster'],
+    ['all-media-tracker/', 'All Media'],
+    ['thunt-wiki/', 'THunt Wiki'],
+    ['briefsmith/', 'Briefsmith'],
+    ['google-news/', 'Google News'],
+    ['daily-thunt/', 'Daily THunt'],
+  ],
+  games: [
+    ['madpatrol/', 'Mad Patrol'],
+    ['madpatrol2/', 'Mad Patrol 2'],
+    ['madpatrol3/', 'Mad Patrol 3'],
+    ['bitcoin-vision/', 'Bitcoin Vision'],
+    ['bitcoin-trains/', 'Bitcoin Trains'],
+    ['bitcoinships/', 'Bitcoin Ships'],
+    ['mb-games/', 'MB Games'],
+    ['madninja/', 'Mad Ninja'],
+    ['agent-hangar/', 'Agent Hangar'],
+    ['workflows/', 'Workflows'],
+  ]
+};
+
+const EXPORTS = [
+  {path: 'thunt-data-labs/web/stats.json', label: 'stats.json'},
+  {path: 'curioarchive/data/live-data.json', label: 'curio live-data.json'},
+  {path: 'curio-atlas/data/network.json', label: 'curio network.json'},
+  {path: 'curiohub/data/hub-data.json', label: 'hub-data.json'},
+  {path: 'curio-oracle/data/oracle-data.json', label: 'oracle-data.json'},
+  {path: 'commentzor/data.json', label: 'commentzor data.json'},
+  {path: 'tbg-mirrors/data.json', label: 'tbg data.json'},
+  {path: 'wcn-podcast/data.json', label: 'wcn data.json'},
+];
+
+const JOBS = [
+  'Data Labs Collect','Comment Fetcher','MediaLog RSS',
+  'ThomasHuntFilms','WCN+TBG Podcasts','Curio Data Hub',
+  'CurioQuant','Curio Map','Curio Wiki','Curio Charts',
+  'Article Archive','Dashboarder','Morning Summary',
+  'Daily Logs','AI Usage','Homepage Stats',
+  'City News','Entertainment','Ego Search','Tweetster',
+  'Deploy to Droplet','GitHub Auto-Commit'
+];
+
+function statusHtml(path, label, ok, status) {
+  const cls = ok ? 'ok' : 'err';
+  const dot = ok ? 'g' : 'r';
+  const stat = ok ? (status || '200') : (status || 'fail');
+  return `<div class="row"><span><span class="dot ${dot}"></span>${label}</span><span class="v ${cls}">${stat}</span></div>`;
 }
-init();
+
+async function checkSite(path) {
+  try {
+    const r = await fetch('/' + path, {method:'HEAD', cache:'no-store'});
+    totalChecked++; if(r.ok) totalOk++;
+    return {ok: r.ok, status: r.status};
+  } catch(e) {
+    totalChecked++;
+    return {ok: false, status: 'err'};
+  }
+}
+
+async function checkExport(path) {
+  try {
+    const r = await fetch('/' + path, {cache:'no-store'});
+    if (!r.ok) return {ok: false, age: null};
+    const text = await r.text();
+    let age = null;
+    try {
+      const d = JSON.parse(text);
+      const ts = d.generated_at || d.last_updated || d.date || d.timestamp || null;
+      if (ts) {
+        const diff = (Date.now() - new Date(ts)) / 3600000;
+        age = diff < 25 ? `${diff.toFixed(0)}h ago` : `${(diff/24).toFixed(0)}d ago`;
+      }
+    } catch(e) {}
+    return {ok: true, age};
+  } catch(e) {
+    return {ok: false, age: null};
+  }
+}
+
+async function loadStats() {
+  try {
+    const r = await fetch('/thunt-data-labs/web/stats.json', {cache:'no-store'});
+    const d = await r.json();
+    const yt = d.datasets?.youtube?.tables || {};
+    const cu = d.datasets?.curio?.tables || {};
+    const ar = d.datasets?.articles?.tables || {};
+    const tw = d.datasets?.tweets?.tables || {};
+    const md = d.datasets?.media?.tables || {};
+    document.getElementById('stats-block').innerHTML = `
+      <div class="row"><span>Total Records</span><span class="v ok">${(d.total_records||0).toLocaleString()}</span></div>
+      <div class="row"><span>YouTube Videos</span><span class="v ok">${(yt.videos||0).toLocaleString()}</span></div>
+      <div class="row"><span>YouTube Comments</span><span class="v ok">${(yt.comments||0).toLocaleString()}</span></div>
+      <div class="row"><span>Curio Sales</span><span class="v ok">${(cu.sales||0).toLocaleString()}</span></div>
+      <div class="row"><span>Articles</span><span class="v ok">${(ar.articles||0).toLocaleString()}</span></div>
+      <div class="row"><span>Tweets</span><span class="v ok">${(tw.tweets||0).toLocaleString()}</span></div>
+      <div class="row"><span>Movies</span><span class="v ok">${(md.movies||0).toLocaleString()}</span></div>
+      <div class="row"><span>Books</span><span class="v ok">${(md.books||0).toLocaleString()}</span></div>
+      <div class="row"><span>DB Size</span><span class="v ok">${d.db_size_mb||'?'}MB</span></div>
+      <div class="row"><span>Generated</span><span class="v" style="color:var(--muted)">${(d.generated_at||'?').substring(0,16)}</span></div>
+    `;
+  } catch(e) {
+    document.getElementById('stats-block').innerHTML = '<div class="row"><span>stats.json</span><span class="v err">fail</span></div>';
+  }
+}
+
+async function checkAllSites() {
+  for (const [group, sites] of Object.entries(SITES)) {
+    const el = document.getElementById('sites-' + group);
+    let html = '';
+    for (const [path, label] of sites) {
+      const {ok, status} = await checkSite(path);
+      html += statusHtml(path, label, ok, status);
+    }
+    el.innerHTML = html;
+  }
+}
+
+async function checkExports() {
+  const el = document.getElementById('exports-block');
+  let html = '';
+  for (const exp of EXPORTS) {
+    const {ok, age} = await checkExport(exp.path);
+    const dot = ok ? 'g' : 'r';
+    const cls = ok ? 'ok' : 'err';
+    const val = ok ? (age || '✓') : 'fail';
+    html += `<div class="row"><span><span class="dot ${dot}"></span>${exp.label}</span><span class="v ${cls}">${val}</span></div>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderJobs() {
+  const el = document.getElementById('jobs-block');
+  const half = Math.ceil(JOBS.length / 2);
+  let html = '';
+  for (const job of JOBS.slice(0, half)) {
+    html += `<div class="row"><span><span class="dot y"></span>${job}</span><span class="v warn">1:00AM</span></div>`;
+  }
+  el.innerHTML = html;
+  // Put rest in logs block
+  const el2 = document.getElementById('logs-block');
+  let html2 = '';
+  for (const job of JOBS.slice(half)) {
+    html2 += `<div class="row"><span><span class="dot y"></span>${job}</span><span class="v warn">1:00AM</span></div>`;
+  }
+  html2 += `<div class="row" style="margin-top:8px"><span>Next cron</span><span class="v ok" id="next-cron">...</span></div>`;
+  el2.innerHTML = html2;
+  // Calculate next 1 AM
+  const now = new Date();
+  const next = new Date(now); next.setHours(1,0,0,0);
+  if (next <= now) next.setDate(next.getDate() + 1);
+  const diff = Math.round((next - now) / 60000);
+  const hrs = Math.floor(diff / 60), mins = diff % 60;
+  document.getElementById('next-cron').textContent = `${hrs}h ${mins}m`;
+}
+
+function updateScore() {
+  const pct = totalChecked > 0 ? Math.round(totalOk * 100 / totalChecked) : 0;
+  const el = document.getElementById('score-num');
+  el.textContent = pct + '%';
+  el.className = 'score' + (pct >= 90 ? '' : pct >= 70 ? ' warn' : ' bad');
+  document.getElementById('score-detail').textContent = `${totalOk}/${totalChecked} sites responding`;
+}
+
+async function runAll() {
+  document.getElementById('ts').textContent = 'Last checked: ' + new Date().toLocaleTimeString();
+  totalOk = 0; totalChecked = 0;
+  await Promise.all([loadStats(), checkAllSites(), checkExports()]);
+  renderJobs();
+  updateScore();
+}
+
+runAll();
+
+// Countdown + auto refresh
+let countdown = 60;
+setInterval(() => {
+  countdown--;
+  document.getElementById('refresh-in').textContent = countdown;
+  if (countdown <= 0) { countdown = 60; runAll(); }
+}, 1000);
 </script>
-</body></html>
+</body>
+</html>

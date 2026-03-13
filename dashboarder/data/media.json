@@ -1,142 +1,142 @@
 {
   "recent_movies": [
     {
-      "title": "Friendship",
-      "year": 2024,
-      "director": "Andrew DeYoung",
-      "rating": 3.0,
-      "date": "2025-11-12"
-    },
-    {
-      "title": "The Day the Earth Blew Up: A Looney Tunes Movie",
-      "year": 2024,
-      "director": "Peter Browngardt",
-      "rating": 3.0,
-      "date": "2025-11-12"
-    },
-    {
-      "title": "Everything's Going to Be Great",
+      "title": "The Bad Guys 2",
       "year": 2025,
-      "director": "Jon S. Baird",
+      "director": null,
       "rating": 3.0,
       "date": "2025-11-12"
     },
     {
       "title": "Elio",
       "year": 2025,
-      "director": "Domee Shi",
+      "director": null,
       "rating": 3.0,
       "date": "2025-11-12"
     },
     {
-      "title": "The Bad Guys 2",
+      "title": "Everything's Going to Be Great",
       "year": 2025,
-      "director": "Pierre Perifel",
+      "director": null,
       "rating": 3.0,
       "date": "2025-11-12"
     },
     {
-      "title": "30 Years of Garbage: The Garbage Pail Kids Story",
-      "year": 2017,
-      "director": "Jeff Zapata",
-      "rating": 4.0,
-      "date": "2025-11-05"
+      "title": "The Day the Earth Blew Up: A Looney Tunes Movie",
+      "year": 2024,
+      "director": null,
+      "rating": 3.0,
+      "date": "2025-11-12"
+    },
+    {
+      "title": "Friendship",
+      "year": 2024,
+      "director": null,
+      "rating": 3.0,
+      "date": "2025-11-12"
     },
     {
       "title": "The Tale of the Dog",
       "year": 2020,
-      "director": "Dan Obarski",
+      "director": null,
       "rating": 4.0,
       "date": "2025-11-05"
     },
     {
-      "title": "The Bad News Bears Go to Japan",
-      "year": 1978,
-      "director": "John Berry",
-      "rating": 3.0,
+      "title": "30 Years of Garbage: The Garbage Pail Kids Story",
+      "year": 2017,
+      "director": null,
+      "rating": 4.0,
+      "date": "2025-11-05"
+    },
+    {
+      "title": "Stiller & Meara: Nothing Is Lost",
+      "year": 2025,
+      "director": null,
+      "rating": 4.0,
       "date": "2025-10-27"
     },
     {
       "title": "The Bad News Bears in Breaking Training",
       "year": 1977,
-      "director": "Michael Pressman",
+      "director": null,
       "rating": 2.0,
       "date": "2025-10-27"
     },
     {
-      "title": "Stiller & Meara: Nothing Is Lost",
-      "year": 2025,
-      "director": "Ben Stiller",
-      "rating": 4.0,
+      "title": "The Bad News Bears Go to Japan",
+      "year": 1978,
+      "director": null,
+      "rating": 3.0,
       "date": "2025-10-27"
     },
     {
-      "title": "Guardians of the Galaxy Vol. 3",
-      "year": 2023,
-      "director": "James Gunn",
-      "rating": 3.5,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "The Greatest Showman",
-      "year": 2017,
-      "director": "Michael Gracey",
-      "rating": 4.0,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "Objectified",
-      "year": 2009,
-      "director": "Gary Hustwit",
-      "rating": 3.5,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "Super Mario Bros.",
-      "year": 1993,
-      "director": "Rocky Morton",
-      "rating": 1.5,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "The Super Mario Bros. Movie",
-      "year": 2023,
-      "director": "Michael Jelenic",
-      "rating": 4.0,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "Blade Runner 2049",
-      "year": 2017,
-      "director": "Denis Villeneuve",
-      "rating": 3.5,
-      "date": "2023-06-26"
-    },
-    {
-      "title": "Ex Machina",
-      "year": 2015,
-      "director": "Alex Garland",
+      "title": "Interstellar",
+      "year": 2014,
+      "director": null,
       "rating": 4.5,
       "date": "2023-06-26"
     },
     {
       "title": "Spider-Man: Across the Spider-Verse",
       "year": 2023,
-      "director": "Justin K. Thompson",
+      "director": null,
       "rating": 3.5,
       "date": "2023-06-26"
     },
     {
-      "title": "Interstellar",
-      "year": 2014,
-      "director": "Christopher Nolan",
+      "title": "Ex Machina",
+      "year": 2015,
+      "director": null,
       "rating": 4.5,
       "date": "2023-06-26"
     },
     {
-      "title": "Hot Rod",
-      "year": 2007,
-      "director": "Akiva Schaffer",
+      "title": "Blade Runner 2049",
+      "year": 2017,
+      "director": null,
+      "rating": 3.5,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "The Super Mario Bros. Movie",
+      "year": 2023,
+      "director": null,
+      "rating": 4.0,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "Super Mario Bros.",
+      "year": 1993,
+      "director": null,
+      "rating": 1.5,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "Objectified",
+      "year": 2009,
+      "director": null,
+      "rating": 3.5,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "The Greatest Showman",
+      "year": 2017,
+      "director": null,
+      "rating": 4.0,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "Guardians of the Galaxy Vol. 3",
+      "year": 2023,
+      "director": null,
+      "rating": 3.5,
+      "date": "2023-06-26"
+    },
+    {
+      "title": "Jexi",
+      "year": 2019,
+      "director": null,
       "rating": 3.5,
       "date": "2023-03-27"
     }
@@ -167,14 +167,14 @@
       "date": "2025-03-28"
     },
     {
-      "title": "The Storyteller: Tales of Life and Music",
-      "author": "Dave Grohl",
+      "title": "Teenage Mutant Ninja Turtles: The Last Ronin",
+      "author": "Kevin Eastman",
       "rating": 4.0,
       "date": "2025-03-21"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles: The Last Ronin",
-      "author": "Kevin Eastman",
+      "title": "The Storyteller: Tales of Life and Music",
+      "author": "Dave Grohl",
       "rating": 4.0,
       "date": "2025-03-21"
     },
@@ -191,15 +191,15 @@
       "date": "2025-03-07"
     },
     {
-      "title": "Starter Villain",
-      "author": "John Scalzi",
-      "rating": 4.0,
-      "date": "2025-03-03"
-    },
-    {
       "title": "How the South Won the Civil War: Oligarchy, Democracy, and the Continuing Fight for the Soul of America",
       "author": "Heather Cox Richardson",
       "rating": 5.0,
+      "date": "2025-03-03"
+    },
+    {
+      "title": "Starter Villain",
+      "author": "John Scalzi",
+      "rating": 4.0,
       "date": "2025-03-03"
     },
     {
@@ -209,15 +209,15 @@
       "date": "2025-02-18"
     },
     {
-      "title": "Accidental Czar: The Life and Lies of Vladimir Putin",
-      "author": "Andrew S. Weiss",
-      "rating": 4.0,
-      "date": "2025-02-15"
-    },
-    {
       "title": "How to Think More Effectively: A guide to greater productivity, insight and creativity (Work series)",
       "author": "The School of Life",
       "rating": 3.0,
+      "date": "2025-02-15"
+    },
+    {
+      "title": "Accidental Czar: The Life and Lies of Vladimir Putin",
+      "author": "Andrew S. Weiss",
+      "rating": 4.0,
       "date": "2025-02-15"
     },
     {
@@ -251,174 +251,133 @@
       "date": "2025-01-06"
     },
     {
-      "title": "Day One Dictator: More Doonesbury in the Time of Trumpism",
-      "author": "G.B. Trudeau",
-      "rating": 5.0,
-      "date": "2025-01-04"
-    },
-    {
       "title": "Number One Is Walking: My Life in the Movies and Other Diversions",
       "author": "Steve  Martin",
       "rating": 4.0,
+      "date": "2025-01-04"
+    },
+    {
+      "title": "Day One Dictator: More Doonesbury in the Time of Trumpism",
+      "author": "G.B. Trudeau",
+      "rating": 5.0,
       "date": "2025-01-04"
     }
   ],
   "top_movies": [
     {
-      "title": "El Camino: A Breaking Bad Movie",
-      "year": 2019,
-      "director": "Vince Gilligan",
-      "rating": 5.0
-    },
-    {
-      "title": "Jerry Before Seinfeld",
-      "year": 2017,
-      "director": "Michael Bonfiglio",
+      "title": "Battlestar Galactica",
+      "year": 2003,
+      "director": null,
       "rating": 5.0
     },
     {
       "title": "South ParQ Vaccination Special",
       "year": 2021,
-      "director": "Trey Parker",
+      "director": null,
       "rating": 5.0
     },
     {
-      "title": "Battlestar Galactica",
-      "year": 2003,
-      "director": "Michael Rymer",
+      "title": "Jerry Before Seinfeld",
+      "year": 2017,
+      "director": null,
+      "rating": 5.0
+    },
+    {
+      "title": "El Camino: A Breaking Bad Movie",
+      "year": 2019,
+      "director": null,
       "rating": 5.0
     },
     {
       "title": "Robin Williams: Come Inside My Mind",
       "year": 2018,
-      "director": "Marina Zenovich",
+      "director": null,
       "rating": 5.0
     },
     {
       "title": "The Invention of Lying",
       "year": 2009,
-      "director": "Ricky Gervais",
-      "rating": 5.0
-    },
-    {
-      "title": "Stop Making Sense",
-      "year": 1984,
-      "director": "Jonathan Demme",
+      "director": null,
       "rating": 5.0
     },
     {
       "title": "Idiocracy",
       "year": 2006,
-      "director": "Mike Judge",
+      "director": null,
+      "rating": 5.0
+    },
+    {
+      "title": "Stop Making Sense",
+      "year": 1984,
+      "director": null,
       "rating": 5.0
     },
     {
       "title": "The Simpsons Christmas Special",
       "year": 1989,
-      "director": "David Silverman",
+      "director": null,
       "rating": 5.0
     },
     {
-      "title": "There Will Be Blood",
-      "year": 2007,
-      "director": "Paul Thomas Anderson",
+      "title": "Chinatown",
+      "year": 1974,
+      "director": null,
       "rating": 5.0
     }
   ],
   "top_books": [
     {
-      "title": "Dune (Dune #1)",
-      "author": "Frank Herbert",
+      "title": "Neuromancer (Sprawl #1)",
+      "author": "William Gibson",
       "rating": 5.0
     },
     {
-      "title": "For the Win",
-      "author": "Cory Doctorow",
+      "title": "How the South Won the Civil War: Oligarchy, Democracy, and the Continuing Fight for the Soul of America",
+      "author": "Heather Cox Richardson",
       "rating": 5.0
     },
     {
-      "title": "The Giving Tree",
-      "author": "Shel Silverstein",
+      "title": "Day One Dictator: More Doonesbury in the Time of Trumpism",
+      "author": "G.B. Trudeau",
       "rating": 5.0
     },
     {
-      "title": "Fahrenheit 451",
-      "author": "Ray Bradbury",
+      "title": "Accidental Death of An Anarchist (2022 Adaptation)",
+      "author": "Tom Basden",
       "rating": 5.0
     },
     {
-      "title": "1984",
-      "author": "George Orwell",
+      "title": "Mostly Harmless (Hitchhiker's Guide to the Galaxy, #5)",
+      "author": "Douglas Adams",
       "rating": 5.0
     },
     {
-      "title": "Brave New World",
-      "author": "Aldous Huxley",
+      "title": "So Long, and Thanks for All the Fish (Hitchhiker's Guide to the Galaxy, #4)",
+      "author": "Douglas Adams",
       "rating": 5.0
     },
     {
-      "title": "Animal Farm",
-      "author": "George Orwell",
+      "title": "Life, the Universe and Everything (The Hitchhiker's Guide to the Galaxy, #3)",
+      "author": "Douglas Adams",
       "rating": 5.0
     },
     {
-      "title": "Of Mice and Men",
-      "author": "John Steinbeck",
+      "title": "The Restaurant at the End of the Universe (The Hitchhiker's Guide to the Galaxy, #2)",
+      "author": "Douglas Adams",
       "rating": 5.0
     },
     {
-      "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
+      "title": "Ringmaster: Vince McMahon and the Unmaking of America",
+      "author": "Abraham Riesman",
       "rating": 5.0
     },
     {
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
+      "title": "The Hitchhiker's Guide to the Galaxy, The Restaurant at the End of the Universe (The Original Albums)",
+      "author": "Douglas Adams",
       "rating": 5.0
     }
   ],
-  "top_directors": [
-    {
-      "name": "Woody Allen",
-      "count": 19
-    },
-    {
-      "name": "Steven Spielberg",
-      "count": 19
-    },
-    {
-      "name": "Martin Scorsese",
-      "count": 13
-    },
-    {
-      "name": "Tim Burton",
-      "count": 12
-    },
-    {
-      "name": "Stanley Kubrick",
-      "count": 10
-    },
-    {
-      "name": "Oliver Stone",
-      "count": 10
-    },
-    {
-      "name": "John Badham",
-      "count": 10
-    },
-    {
-      "name": "Joel Coen",
-      "count": 10
-    },
-    {
-      "name": "Alfred Hitchcock",
-      "count": 10
-    },
-    {
-      "name": "Tony Scott",
-      "count": 9
-    }
-  ],
+  "top_directors": [],
   "top_authors": [
     {
       "name": "Kurt Vonnegut Jr.",
@@ -462,7 +421,7 @@
     }
   ],
   "stats": {
-    "total_movies": 1588,
+    "total_movies": 1569,
     "total_books": 779,
     "avg_rating": 3.5
   }

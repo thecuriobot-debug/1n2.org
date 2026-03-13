@@ -1,0 +1,155 @@
+{
+  "updated": "2026-03-13",
+  "prices": [
+    {
+      "date": "2026-03-13",
+      "floor": 0.0486
+    }
+  ],
+  "recent_sales": [
+    {
+      "tx": "0x954677f164",
+      "card": 9,
+      "eth": 0.085885,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x3253a26d41",
+      "card": 19,
+      "eth": 0.505,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xb861e0735d",
+      "card": 11,
+      "eth": 0.08774025,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xc033db8a37",
+      "card": 13,
+      "eth": 0.063375,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x4f8d95fcac",
+      "card": 13,
+      "eth": 0.063375,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x54b574146f",
+      "card": 15,
+      "eth": 0.41,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xf53f90b1ef",
+      "card": 17,
+      "eth": 0.2925,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xb81cbd3f57",
+      "card": 2,
+      "eth": 0.11601525,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x2115ce6195",
+      "card": 30,
+      "eth": 0.2,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xbbf21ad291",
+      "card": 8,
+      "eth": 0.124485,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x40e60f0f6d",
+      "card": 20,
+      "eth": 0.0781,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x874add4159",
+      "card": 13,
+      "eth": 0.0865605,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xb0a564dc67",
+      "card": 1,
+      "eth": 0.82025,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x6f8955ee83",
+      "card": 11,
+      "eth": 0.0828935,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x45a3f614c8",
+      "card": 18,
+      "eth": 0.76235,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x1c92e3a145",
+      "card": 10,
+      "eth": 0.065,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x89eb770f32",
+      "card": 1,
+      "eth": 0.705,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0xdd79fa754d",
+      "card": 3,
+      "eth": 0.078,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x2c17e45738",
+      "card": 1,
+      "eth": 0.8237775,
+      "date": "",
+      "marketplace": "seaport"
+    },
+    {
+      "tx": "0x24d57ad18d",
+      "card": 5,
+      "eth": 0.3760575,
+      "date": "",
+      "marketplace": "seaport"
+    }
+  ],
+  "holder_count": 4961,
+  "weekly_transfers": 57,
+  "total_transfers": 801,
+  "total_sales": 75
+}

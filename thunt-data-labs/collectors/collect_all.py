@@ -196,29 +196,34 @@ NEWS_QUERIES = {
 }
 
 def collect_articles():
-    print("\n📰 ARTICLES")
-    import xml.etree.ElementTree as ET
-    conn = get_conn(); start = time.time(); added = 0
-    for topic, query in NEWS_QUERIES.items():
-        try:
-            url = f"https://news.google.com/rss/search?q={quote(query)}%20when:1d&hl=en-US&gl=US&ceid=US:en"
-            r = requests.get(url, timeout=10, headers={"User-Agent":"Mozilla/5.0"})
-            root = ET.fromstring(r.content)
-            for item in root.findall(".//item"):
-                title = item.findtext("title","")
-                link = item.findtext("link","")
-                source = item.findtext("source","")
-                pubdate = item.findtext("pubDate","")
-                if not link: continue
-                aid = hashlib.md5(link.encode()).hexdigest()[:12]
-                # Clean title
-                clean = title
-                if source and title.endswith(f" - {source}"): clean = title[:-(len(source)+3)]
-                conn.execute("""INSERT OR IGNORE INTO articles (id,title,clean_title,url,source,topic,date)
-                    VALUES (?,?,?,?,?,?,?)""", (aid,title,clean,link,source,f"news-{topic}",TODAY))
-                added += 1
-            print(f"  {topic}: fetched")
-        except Exception as e: print(f"  ❌ {topic}: {e}")
+    print("\n📰 ARTICLES (RSS Pipeline)")
+    # Delegate to rss_pipeline.py which has 35+ working feeds
+    import subprocess, sys
+    script = os.path.join(os.path.dirname(__file__), 'rss_pipeline.py')
+    start = time.time()
+    try:
+        result = subprocess.run(
+            [sys.executable, script, '--all'],
+            capture_output=True, text=True, timeout=180
+        )
+        for line in result.stdout.splitlines():
+            print(f"  {line}")
+        if result.returncode != 0 and result.stderr:
+            print(f"  ⚠️  {result.stderr[:200]}")
+        # Count what was added
+        conn = get_conn()
+        count = conn.execute("SELECT COUNT(*) FROM articles").fetchone()[0]
+        conn.close()
+        dur = time.time() - start
+        log_collection("articles", "rss_pipeline", count, 0, dur)
+        print(f"  ✅ {count} total articles in DB ({dur:.1f}s)")
+        return count
+    except subprocess.TimeoutExpired:
+        print("  ⚠️  RSS pipeline timed out after 180s")
+        return 0
+    except Exception as e:
+        print(f"  ❌ RSS pipeline: {e}")
+        return 0
     conn.commit(); dur = time.time()-start
     log_collection("articles","collect",added,0,dur); conn.close()
     print(f"  ✅ {added} articles ({dur:.1f}s)"); return added
@@ -310,44 +315,73 @@ def fetch_article_content():
 TWEET_ACCOUNTS = ["madbitcoins","Bitcoin","VitalikButerin","CurioNFT","aantonop","curaborern"]
 
 def collect_tweets():
+    """Collect tweets via twikit (authenticated) or tweetster data file fallback."""
     print("\n🐦 TWEETS")
     conn = get_conn(); start = time.time(); added = 0
-    try:
-        from curl_cffi import requests as cf_requests
-        from bs4 import BeautifulSoup
-    except ImportError:
-        print("  ❌ curl_cffi or bs4 not installed"); return 0
-    for username in TWEET_ACCOUNTS:
-        for nitter_url in NITTER:
-            try:
-                r = cf_requests.get(f"{nitter_url}/{username}", impersonate="chrome", timeout=10)
-                if r.status_code != 200: continue
-                soup = BeautifulSoup(r.text, "html.parser")
+
+    # Method 1: Try twikit (authenticated Twitter API)
+    CREDS = Path.home() / "Sites/1n2.org/tweetster/api/twitter-creds.json"
+    COOKIES = Path.home() / "Sites/1n2.org/tweetster/api/twitter-cookies.json"
+    if COOKIES.exists() and CREDS.exists():
+        try:
+            import asyncio
+            from twikit import Client
+            async def fetch_twikit():
+                client = Client("en-US")
+                client.load_cookies(str(COOKIES))
+                local_added = 0
+                for username in TWEET_ACCOUNTS:
+                    try:
+                        user = await client.get_user_by_screen_name(username)
+                        tweets = await client.get_user_tweets(user.id, "Tweets", count=20)
+                        conn.execute("INSERT OR REPLACE INTO tweet_accounts (username,last_scraped) VALUES (?,datetime('now'))", (username,))
+                        for t in tweets:
+                            conn.execute("""INSERT OR IGNORE INTO tweets (tweet_id,username,text_content,date,likes,retweets,replies)
+                                VALUES (?,?,?,?,?,?,?)""",
+                                (t.id, username, t.text, t.created_at or "", t.favorite_count or 0,
+                                 t.retweet_count or 0, t.reply_count or 0))
+                            local_added += 1
+                        print(f"  @{username}: {len(tweets)} tweets via twikit")
+                    except Exception as e:
+                        print(f"  ⚠️ @{username}: {e}")
+                return local_added
+            added = asyncio.run(fetch_twikit())
+            conn.commit()
+            dur = time.time() - start
+            log_collection("tweets", "twikit", added, 0, dur)
+            print(f"  ✅ {added} tweets ({dur:.1f}s)")
+            conn.close()
+            return added
+        except Exception as e:
+            print(f"  ⚠️ twikit failed: {e} — trying file fallback")
+
+    # Method 2: Read from tweetster data file (pre-scraped)
+    tweets_file = Path.home() / "Sites/1n2.org/tweetster/data/tweets.json"
+    if tweets_file.exists():
+        try:
+            data = json.loads(tweets_file.read_text())
+            accounts = data if isinstance(data, dict) else {}
+            for username, udata in accounts.items():
+                tweets = udata.get("tweets", {}) if isinstance(udata, dict) else {}
                 conn.execute("INSERT OR REPLACE INTO tweet_accounts (username,last_scraped) VALUES (?,datetime('now'))", (username,))
-                for tweet in soup.select(".timeline-item"):
-                    content_el = tweet.select_one(".tweet-content")
-                    if not content_el: continue
-                    text = content_el.get_text(strip=True)
-                    link_el = tweet.select_one(".tweet-link")
-                    tid = link_el["href"].split("/")[-1].replace("#m","") if link_el else hashlib.md5(text[:50].encode()).hexdigest()[:12]
-                    date_el = tweet.select_one(".tweet-date a")
-                    date = date_el.get("title","") if date_el else ""
-                    stats = tweet.select(".tweet-stat .tweet-stat-value")
-                    replies = int(stats[0].text.replace(",","")) if len(stats)>0 and stats[0].text.strip() else 0
-                    rts = int(stats[1].text.replace(",","")) if len(stats)>1 and stats[1].text.strip() else 0
-                    likes = int(stats[2].text.replace(",","")) if len(stats)>2 and stats[2].text.strip() else 0
-                    conn.execute("""INSERT OR IGNORE INTO tweets (tweet_id,username,text_content,date,likes,retweets,replies)
-                        VALUES (?,?,?,?,?,?,?)""", (tid,username,text,date,likes,rts,replies))
+                for tid, t in (tweets.items() if isinstance(tweets, dict) else []):
+                    conn.execute("""INSERT OR IGNORE INTO tweets (tweet_id,username,text_content,date,likes,retweets)
+                        VALUES (?,?,?,?,?,?)""",
+                        (tid, username, t.get("text",""), t.get("date",""), t.get("likes",0), t.get("retweets",0)))
                     added += 1
-                print(f"  @{username}: scraped from {nitter_url.split('//')[1]}")
-                break
-            except Exception as e:
-                continue
-        else:
-            print(f"  ⚠️ @{username}: all nitter instances failed")
-    conn.commit(); dur = time.time()-start
-    log_collection("tweets","collect",added,0,dur); conn.close()
-    print(f"  ✅ {added} tweets ({dur:.1f}s)"); return added
+            conn.commit()
+            print(f"  ✅ {added} tweets from tweetster file ({time.time()-start:.1f}s)")
+        except Exception as e:
+            print(f"  ⚠️ file fallback: {e}")
+    else:
+        print(f"  ℹ️  No twitter cookies and no tweetster data file — skipping tweets")
+        print(f"     Run: cd tweetster/api && python3.12 twikit-fetch.py --login")
+
+    dur = time.time() - start
+    log_collection("tweets", "collect", added, 0, dur)
+    conn.close()
+    print(f"  ✅ {added} tweets ({dur:.1f}s)")
+    return added
 
 # ═══════════════════════════════════════
 # EXPORT — Generate stats.json for dashboard

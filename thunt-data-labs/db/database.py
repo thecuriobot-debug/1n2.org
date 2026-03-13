@@ -113,16 +113,23 @@ def init_db():
         source      TEXT,
         topic       TEXT,
         date        TEXT,
+        text_content TEXT,
+        summary     TEXT,
+        author      TEXT,
+        image_url   TEXT,
+        word_count  INTEGER DEFAULT 0,
+        source_url  TEXT,
+        fetched_at  TEXT,
         scraped_at  TEXT DEFAULT (datetime('now')),
-        body_text   TEXT,
-        body_html   TEXT
+        ai_summary  TEXT
     )""")
     c.execute("""CREATE TABLE IF NOT EXISTS article_images (
-        id          INTEGER PRIMARY KEY AUTOINCREMENT,
+        id          TEXT PRIMARY KEY,
         article_id  TEXT,
-        url         TEXT,
-        local_path  TEXT,
-        UNIQUE(article_id, url)
+        src         TEXT,
+        alt         TEXT,
+        source      TEXT,
+        date        TEXT
     )""")
 
     # ── Tweets ───────────────────────────────────────────────────
@@ -139,6 +146,38 @@ def init_db():
         retweets    INTEGER DEFAULT 0,
         replies     INTEGER DEFAULT 0,
         scraped_at  TEXT DEFAULT (datetime('now'))
+    )""")
+
+    # ── Media (Letterboxd / Goodreads cache) ─────────────────────
+    c.execute("""CREATE TABLE IF NOT EXISTS movies (
+        id          INTEGER PRIMARY KEY AUTOINCREMENT,
+        title       TEXT NOT NULL,
+        year        INTEGER,
+        rating      REAL,
+        watched_date TEXT,
+        letterboxd_url TEXT,
+        rewatch     INTEGER DEFAULT 0,
+        director    TEXT,
+        poster_url  TEXT,
+        source      TEXT DEFAULT 'letterboxd',
+        imported_at TEXT DEFAULT (datetime('now')),
+        created_at  TEXT DEFAULT (datetime('now')),
+        UNIQUE(title, year)
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS books (
+        id          INTEGER PRIMARY KEY AUTOINCREMENT,
+        title       TEXT UNIQUE NOT NULL,
+        author      TEXT,
+        year        TEXT,
+        rating      REAL,
+        read_date   TEXT,
+        date_read   TEXT,
+        goodreads_url TEXT,
+        cover_url   TEXT,
+        image_url   TEXT,
+        source      TEXT DEFAULT 'goodreads',
+        imported_at TEXT DEFAULT (datetime('now')),
+        created_at  TEXT DEFAULT (datetime('now'))
     )""")
 
     # ── Collection log ───────────────────────────────────────────
@@ -214,7 +253,8 @@ def get_stats():
                 "tables": {
                     "articles": q("SELECT COUNT(*) FROM articles"),
                     "images":   q("SELECT COUNT(*) FROM article_images"),
-                }
+                },
+                "with_text": q("SELECT COUNT(*) FROM articles WHERE word_count>0"),
             },
             "tweets": {
                 "tables": {

@@ -1,0 +1,51 @@
+{
+  "last_updated": "2026-03-13T15:34:15.022762",
+  "date": "2026-03-13",
+  "providers": {
+    "claude": {
+      "name": "Claude (Anthropic)",
+      "total_prompts": 42,
+      "model": "claude-sonnet-4",
+      "primary_use": "All 1n2.org development",
+      "color": "#da7756",
+      "icon": "\ud83e\udd16"
+    },
+    "openclaw": {
+      "name": "OpenClaw (Daily Automation)",
+      "total_runs": 14,
+      "jobs_per_run": 14,
+      "total_jobs": 14,
+      "primary_use": "Cron automation orchestration",
+      "color": "#7eb8f7",
+      "icon": "\ud83d\udd2c"
+    },
+    "chatgpt": {
+      "name": "ChatGPT (OpenAI)",
+      "total_prompts": 0,
+      "model": "gpt-4o",
+      "primary_use": "Research + comparison",
+      "color": "#19c37d",
+      "icon": "\ud83d\udcac"
+    },
+    "codex": {
+      "name": "Codex / GPT-4o",
+      "total_prompts": 0,
+      "model": "gpt-4.1",
+      "primary_use": "Code generation",
+      "color": "#a78bfa",
+      "icon": "\u26a1"
+    },
+    "gemini": {
+      "name": "Gemini (Google)",
+      "total_prompts": 0,
+      "model": "gemini-2.0-flash",
+      "primary_use": "Search + research",
+      "color": "#4285f4",
+      "icon": "\ud83c\udf10"
+    }
+  },
+  "totals": {
+    "all_prompts": 42,
+    "all_sessions": 0
+  }
+}

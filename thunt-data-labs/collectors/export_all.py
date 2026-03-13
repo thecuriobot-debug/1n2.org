@@ -118,7 +118,7 @@ def export_gallery():
         items.append({
             "id":a["id"],"title":a["clean_title"] or a["title"],
             "url":a["url"],"source":a["source"],"date":a["date"],
-            "image":a["image_url"] or "","local_image":a["local_image"] or "",
+            "image":a["image_url"] or "","local_image":"",
             "word_count":a["word_count"]
         })
     conn.close()

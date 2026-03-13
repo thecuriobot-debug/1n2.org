@@ -305,7 +305,7 @@ html = f'''<!DOCTYPE html>
 '''
 
 for video in videos:
-    thumb_url = f"https://img.youtube.com/vi/{video['youtube_id']}/maxresdefault.jpg"
+    thumb_url = f"https://img.youtube.com/vi/{video.get('youtube_id', video.get('id',''))}/maxresdefault.jpg"
     html += f'''
                 <a href="videos/{video['id']}.html" style="text-decoration: none; color: inherit;">
                     <div class="video-card">
