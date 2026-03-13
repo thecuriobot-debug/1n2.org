@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>My YouTube — Channel Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--red:#ff0000;--white:#fff;--green:#34d399;--blue:#3b82f6;--purple:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+a{color:var(--text);text-decoration:none}a:hover{color:var(--red)}
+header{padding:10px 18px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--white);cursor:pointer}
+header .yt{color:var(--red);font-size:1.2rem}header .home{margin-left:auto;font-size:.7rem;color:var(--muted)}
+nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);padding:0 10px;overflow-x:auto;position:sticky;top:44px;z-index:19}
+nav a{padding:7px 12px;font-size:.75rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:.15s;cursor:pointer}
+nav a:hover{color:var(--text)}nav a.on{color:var(--red);border-color:var(--red)}
+.page{display:none;padding:14px;max-width:1100px;margin:0 auto}.page.on{display:block}
+h2{color:var(--red);font-size:.88rem;margin:12px 0 5px;border-bottom:1px solid var(--border);padding-bottom:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin:6px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center}
+.stat .n{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--red)}.stat .l{font-size:.6rem;color:var(--muted)}
+.ch-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:10px;margin:5px 0;cursor:pointer;transition:.15s;display:flex;gap:10px;align-items:center}
+.ch-card:hover{border-color:var(--red)}.ch-card img{width:40px;height:40px;border-radius:50%}
+.ch-card .info h3{font-size:.84rem}.ch-card .info p{font-size:.66rem;color:var(--muted)}.ch-card .arrow{margin-left:auto;color:var(--muted)}
+.vid{display:flex;gap:8px;align-items:center;padding:4px;border-bottom:1px solid rgba(30,41,59,.25);cursor:pointer;transition:.08s}
+.vid:hover{background:rgba(255,0,0,.03)}
+.vid .th{width:110px;height:62px;background:var(--card);border-radius:3px;flex-shrink:0;position:relative;overflow:hidden}
+.vid .th img{width:100%;height:100%;object-fit:cover}.vid .th .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;text-shadow:0 0 6px #000;background:rgba(0,0,0,.15)}
+.vid .title{font-size:.76rem;font-weight:600}.vid .meta{font-size:.62rem;color:var(--muted)}
+.bar-row{display:flex;align-items:center;gap:5px;padding:2px 0;font-size:.74rem}
+.bar-row .lbl{width:110px;text-align:right;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .bar{height:7px;border-radius:3px;background:var(--red)}.bar-row .val{font-family:'JetBrains Mono',monospace;font-size:.66rem;width:50px}
+.btn{display:inline-block;padding:3px 8px;border-radius:3px;font-size:.68rem;font-weight:700;margin:2px;cursor:pointer;transition:.1s}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#cc0000;color:#fff}
+.btn-sm{background:#1a1a2e;color:var(--muted);border:1px solid var(--border)}.btn-sm:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.back{font-size:.72rem;color:var(--muted);margin-bottom:6px;display:block}.back:hover{color:var(--red)}
+/* Watch page */
+.watch{max-width:800px}
+.watch .player{width:100%;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;margin-bottom:10px}
+.watch .player iframe{width:100%;height:100%;border:none}
+.watch .vtitle{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.watch .vmeta{font-size:.72rem;color:var(--muted);margin-bottom:8px;display:flex;gap:12px}
+.watch .vdesc{font-size:.76rem;color:var(--muted);background:var(--card);padding:8px;border-radius:4px;margin-bottom:10px;white-space:pre-wrap;max-height:100px;overflow:hidden;cursor:pointer}
+.watch .vdesc.open{max-height:none}
+.watch .ch-bar{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);margin-bottom:10px}
+.watch .ch-bar img{width:36px;height:36px;border-radius:50%}
+.watch .ch-bar .name{font-weight:700;font-size:.82rem}
+.watch .ch-bar .subs{font-size:.64rem;color:var(--muted)}
+/* Comments */
+.cmt{padding:8px 0;border-bottom:1px solid rgba(30,41,59,.2);display:flex;gap:8px}
+.cmt .avatar{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:var(--card)}
+.cmt .author{font-size:.72rem;font-weight:700;color:var(--blue)}.cmt .date{font-size:.6rem;color:var(--muted)}
+.cmt .txt{font-size:.74rem;line-height:1.4;margin-top:2px}.cmt .likes{font-size:.6rem;color:var(--muted);margin-top:2px}
+.ft{text-align:center;color:var(--muted);font-size:.55rem;padding:12px;border-top:1px solid var(--border);margin-top:12px}
+</style>
+</head>
+<body>
+<header><div class="yt">▶</div><h1 onclick="location.hash='overview'">My YouTube</h1><a href="/" class="home">← 1n2.org</a></header>
+<nav id="tabs"></nav>
+<div id="pages"></div>
+<div class="ft"><a href="/">1n2.org</a> · <a href="/all-media-tracker/">All Media</a> · <a href="/tbg-mirrors/">TBG Mirrors</a></div>
+<script>
+let CH,FAV,VIDS=null;
+async function init(){
+  CH=await(await fetch('data.json')).json();
+  CH=CH.filter(c=>c.videos>0).sort((a,b)=>(b.subscribers||0)-(a.subscribers||0));
+  try{FAV=await(await fetch('favorites.json')).json();}catch(e){FAV=[];}
+  document.getElementById('tabs').innerHTML='<a href="#overview">📊 Overview</a><a href="#comments">💬 My Comments</a><a href="#concerts">🎵 Concerts</a><a href="#burningman">🔥 Burning Man</a><a href="#favorites">⭐ Favorites</a>';
+  let html=buildOverview();
+  // Load concerts
+  let CONCERTS_RAW={artists:[],burningman:null,errata:null};
+  try{CONCERTS_RAW=await(await fetch('concerts.json')).json();if(Array.isArray(CONCERTS_RAW))CONCERTS_RAW={artists:CONCERTS_RAW};}catch(e){}
+  html+=buildConcerts(CONCERTS_RAW);
+  CH.forEach(c=>{html+=buildChannel(c)+buildSub(c,'videos')+buildSub(c,'shorts')+buildSub(c,'live')+buildSub(c,'comments');});
+  html+=buildFav();
+  // Load Commentzor data
+  try{const CMT=await(await fetch('/commentzor/data.json')).json();html+=buildMyComments(CMT);}catch(e){html+=`<div class="page" id="comments"><h2>💬 My Comments</h2><p style="color:var(--muted)">Comment data not available.</p></div>`;}
+  document.getElementById('pages').innerHTML=html;
+  // Pre-load videos.json in background, then re-route if on watch page
+  loadVideos().then(()=>{if(location.hash.startsWith('#watch-'))route();});
+  route();window.addEventListener('hashchange',route);
+}
+function fmt(n){if(n==null)return'0';return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n.toLocaleString();}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// Internal video link — goes to watch page
+function vlink(vid){return `#watch-${vid}`;}
+function vidCard(v,idx){
+  const th=v.th||v.thumb||'';const id=v.id||v.video_id||'';
+  return `<div class="vid" onclick="location.hash='watch-${id}'"><div class="th">${th?`<img src="${th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${idx!==undefined?idx+'. ':''}${esc(v.t||v.title||'')}</div><div class="meta">${fmt(v.v||v.view_count||0)} views · ${fmt(v.l||v.like_count||0)} likes · ${v.d||v.published_at?.substring(0,10)||''}</div></div></div>`;
+}
+function chBtns(c,active){
+  const id=c.channel_id;const cl=t=>t===active?'btn btn-red':'btn btn-sm';
+  return `<a href="#ch-${id}" class="${cl('main')}">Channel</a><a href="#vids-${id}" class="${cl('videos')}">📹 Videos</a><a href="#shorts-${id}" class="${cl('shorts')}">⚡ Shorts</a><a href="#live-${id}" class="${cl('live')}">🔴 Live</a><a href="#cmts-${id}" class="${cl('comments')}">💬 Comments</a>`;
+}
+function buildOverview(){
+  const tV=CH.reduce((s,c)=>s+c.total_views,0),tS=CH.reduce((s,c)=>s+c.subscribers,0),tVi=CH.reduce((s,c)=>s+c.videos,0),tC=CH.reduce((s,c)=>s+(c.comments||0),0);
+  let h=`<div class="page" id="overview"><div class="grid">
+    <div class="stat"><div class="n">${CH.length}</div><div class="l">Channels</div></div>
+    <div class="stat"><div class="n">${fmt(tV)}</div><div class="l">Views</div></div>
+    <div class="stat"><div class="n">${fmt(tS)}</div><div class="l">Subs</div></div>
+    <div class="stat"><div class="n">${fmt(tVi)}</div><div class="l">Videos</div></div>
+    <div class="stat"><div class="n">${fmt(tC)}</div><div class="l">Comments</div></div></div>
+    <h2>Channels (by subscribers)</h2>`;
+  CH.forEach(c=>{
+    const badge=c.stolen?'<span style="background:var(--red);color:#fff;font-size:.55rem;padding:1px 4px;border-radius:2px;margin-left:3px">⚠</span>':'';
+    h+=`<div class="ch-card" onclick="location.hash='ch-${c.channel_id}'"><img src="${c.thumbnail||''}"><div class="info"><h3>${c.name}${badge}</h3><p>${fmt(c.subscribers)} subs · ${c.videos} vids · ${fmt(c.total_views)} views · ${fmt(c.comments||0)} cmts</p><div style="margin-top:3px">${chBtns(c,'')}</div></div><div class="arrow">→</div></div>`;
+  });
+  h+=`<h2>Views</h2>`;[...CH].sort((a,b)=>b.total_views-a.total_views).forEach(c=>{const w=Math.max(2,Math.round(c.total_views/Math.max(...CH.map(x=>x.total_views))*200));h+=`<div class="bar-row"><div class="lbl">${c.name}</div><div class="bar" style="width:${w}px"></div><div class="val">${fmt(c.total_views)}</div></div>`;});
+  h+=`<h2>Top Videos</h2>`;
+  CH.flatMap(c=>(c.top_videos||[]).map(v=>({...v,channel:c.name}))).sort((a,b)=>(b.view_count||0)-(a.view_count||0)).slice(0,8).forEach((v,i)=>{
+    const th=v.thumb||'';const id=v.video_id||'';
+    h+=`<div class="vid" onclick="location.hash='watch-${id}'"><div class="th">${th?`<img src="${th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${i+1}. ${esc(v.title)}</div><div class="meta">${v.channel} · ${fmt(v.view_count)} views</div></div></div>`;
+  });
+  return h+`</div>`;
+}
+function buildChannel(c){
+  const cid=c.channel_id;
+  let h=`<div class="page" id="ch-${cid}">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><img src="${c.thumbnail||''}" style="width:44px;height:44px;border-radius:50%"><div><h2 style="margin:0;border:none;padding:0">${c.name}</h2><div style="color:var(--muted);font-size:.68rem">${fmt(c.subscribers)} subs</div>
+    ${c.notes?'<div style="color:var(--muted);font-size:.62rem;font-style:italic">'+c.notes+'</div>':''}
+    <div style="margin-top:3px">${chBtns(c,'main')}</div></div></div>
+    <div class="grid"><div class="stat"><div class="n">${fmt(c.total_views)}</div><div class="l">Views</div></div><div class="stat"><div class="n">${c.videos}</div><div class="l">Videos</div></div><div class="stat"><div class="n">${fmt(c.comments||0)}</div><div class="l">Comments</div></div></div><h2>Top Videos</h2>`;
+  (c.top_videos||[]).slice(0,8).forEach((v,i)=>{const th=v.thumb||'';h+=`<div class="vid" onclick="location.hash='watch-${v.video_id}'"><div class="th">${th?`<img src="${th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${i+1}. ${esc(v.title)}</div><div class="meta">${fmt(v.view_count)} views · ${v.published_at?.substring(0,10)||''}</div></div></div>`;});
+  return h+`</div>`;
+}
+function buildSub(c,type){
+  const cid=c.channel_id;const allV=c.all_videos||[];
+  let filtered,title,id;
+  if(type==='videos'){id=`vids-${cid}`;title=`📹 Videos`;filtered=allV.filter(v=>!isSh(v)&&!isLv(v));}
+  else if(type==='shorts'){id=`shorts-${cid}`;title=`⚡ Shorts`;filtered=allV.filter(v=>isSh(v));}
+  else if(type==='live'){id=`live-${cid}`;title=`🔴 Live`;filtered=allV.filter(v=>isLv(v));}
+  else{id=`cmts-${cid}`;title=`💬 Comments`;filtered=allV.filter(v=>(v.c||0)>0).sort((a,b)=>(b.c||0)-(a.c||0));}
+  let h=`<div class="page" id="${id}"><a href="#ch-${cid}" class="back">← ${c.name}</a>
+    <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px"><img src="${c.thumbnail||''}" style="width:28px;height:28px;border-radius:50%"><h2 style="margin:0;border:none">${title} — ${c.name}</h2></div>
+    <div style="margin-bottom:6px">${chBtns(c,type)}</div><div style="color:var(--muted);font-size:.72rem;margin-bottom:6px">${filtered.length} items</div>`;
+  filtered.slice(0,50).forEach(v=>{
+    h+=`<div class="vid" onclick="location.hash='watch-${v.id}'"><div class="th">${v.th?`<img src="${v.th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${esc(v.t)}</div><div class="meta">${type==='comments'?fmt(v.c)+' comments · ':''}${fmt(v.v)} views · ${v.d}</div></div></div>`;
+  });
+  if(filtered.length>50)h+=`<div style="text-align:center;color:var(--muted);font-size:.7rem;padding:6px">+ ${filtered.length-50} more</div>`;
+  return h+`</div>`;
+}
+function isSh(v){return(v.t||'').toLowerCase().includes('#short');}
+function isLv(v){return(v.t||'').toLowerCase().match(/\(live\)|live stream|livestream|streamed/);}
+function buildConcerts(data){
+  const artists=data.artists||[];const bm=data.burningman;const errata=data.errata;
+  const totalVids=artists.reduce((s,a)=>s+a.count,0);
+  const totalViews=artists.reduce((s,a)=>s+a.views,0);
+  let h=`<div class="page" id="concerts">
+    <h2 style="margin-top:0">🎵 Concert Archive</h2>
+    <div style="color:var(--muted);font-size:.72rem;margin-bottom:10px">${artists.length} artists · ${totalVids} videos · ${fmt(totalViews)} views · 2012–2013</div>
+    <div class="grid"><div class="stat"><div class="n">${artists.length}</div><div class="l">Artists</div></div><div class="stat"><div class="n">${totalVids}</div><div class="l">Videos</div></div><div class="stat"><div class="n">${fmt(totalViews)}</div><div class="l">Views</div></div></div>
+    <h2>Artists</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:8px 0">`;
+  function artistTile(a,hashPrefix){
+    const img=a.img||'';const icon=a.name.startsWith('🔥')?'🔥':a.name.startsWith('📦')?'📦':'🎵';
+    return `<div onclick="location.hash='${hashPrefix}'" style="cursor:pointer;border-radius:6px;overflow:hidden;background:var(--card);border:1px solid var(--border);transition:.15s" onmouseenter="this.style.borderColor='var(--red)'" onmouseleave="this.style.borderColor='var(--border)'">
+      <div style="width:100%;aspect-ratio:1;background:#111;overflow:hidden;position:relative">${img?`<img src="${img}" style="width:100%;height:100%;object-fit:cover" loading="lazy">`:`<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem">${icon}</div>`}
+      <div style="position:absolute;bottom:0;right:0;background:rgba(0,0,0,.7);color:#fff;font-size:.58rem;padding:1px 5px;font-family:JetBrains Mono,monospace">${a.count}</div></div>
+      <div style="padding:6px"><div style="font-size:.72rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(a.name)}</div><div style="font-size:.58rem;color:var(--muted)">${fmt(a.views)} views</div></div></div>`;
+  }
+  artists.forEach(a=>{h+=artistTile(a,'artist-'+encodeURIComponent(a.name));});
+  if(errata?.count)h+=artistTile(errata,'errata');
+  h+=`</div></div>`;
+  // Artist detail pages
+  artists.forEach(a=>{
+    const id='artist-'+encodeURIComponent(a.name);
+    h+=`<div class="page" id="${id}"><a href="#concerts" class="back">← All Artists</a>
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">${a.img?`<img src="${a.img}" style="width:48px;height:48px;border-radius:6px;object-fit:cover">`:'<div style="width:48px;height:48px;background:var(--card);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.5rem">🎵</div>'}
+      <div><h2 style="margin:0;border:none;padding:0">${esc(a.name)}</h2>
+      <div style="color:var(--muted);font-size:.72rem">${a.count} videos · ${fmt(a.views)} views · Chronological</div></div></div>`;
+    a.videos.forEach(v=>{h+=`<div class="vid" onclick="location.hash='watch-${v.id}'"><div class="th">${v.th?`<img src="${v.th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${esc(v.t)}</div><div class="meta">${fmt(v.v)} views · ${v.d}</div></div></div>`;});
+    h+=`</div>`;
+  });
+  // Burning Man page
+  if(bm?.count){
+    h+=`<div class="page" id="burningman"><a href="#overview" class="back">← Overview</a>
+      <h2 style="margin-top:0">🔥 Burning Man</h2>
+      <div style="color:var(--muted);font-size:.72rem;margin-bottom:8px">${bm.count} videos · ${fmt(bm.views)} views</div>`;
+    bm.videos.forEach(v=>{h+=`<div class="vid" onclick="location.hash='watch-${v.id}'"><div class="th">${v.th?`<img src="${v.th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${esc(v.t)}</div><div class="meta">${fmt(v.v)} views · ${v.d}</div></div></div>`;});
+    h+=`</div>`;
+  }
+  // Errata page
+  if(errata?.count){
+    h+=`<div class="page" id="errata"><a href="#concerts" class="back">← All Artists</a>
+      <h2 style="margin-top:0">📦 Concert Errata</h2>
+      <div style="color:var(--muted);font-size:.72rem;margin-bottom:8px">${errata.count} videos · ${fmt(errata.views)} views · Misc concert footage</div>`;
+    errata.videos.forEach(v=>{h+=`<div class="vid" onclick="location.hash='watch-${v.id}'"><div class="th">${v.th?`<img src="${v.th}" loading="lazy">`:''}<div class="play">▶</div></div><div><div class="title">${esc(v.t)}</div><div class="meta">${fmt(v.v)} views · ${v.d}</div></div></div>`;});
+    h+=`</div>`;
+  }
+  return h;
+}
+function buildFav(){
+  if(!FAV?.length)return'';
+  const ids=FAV.map(v=>v.v).filter(Boolean).join(',');
+  let h=`<div class="page" id="favorites"><div style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><div style="font-size:2rem">⭐</div><div><h2 style="margin:0;border:none">Favorites</h2><div style="color:var(--muted);font-size:.68rem">${FAV.length} videos</div><div style="margin-top:3px"><a href="https://www.youtube.com/watch_videos?video_ids=${ids}" target="_blank" class="btn btn-red">▶ Play All</a></div></div></div>`;
+  FAV.forEach((v,i)=>{h+=`<div class="vid" onclick="location.hash='watch-${v.v}'"><div class="th"><div class="play">▶</div></div><div><div class="title">${i+1}. ${esc(v.t)}</div><div class="meta">${esc(v.c)} · ${v.m}</div></div></div>`;});
+  return h+`</div>`;
+}
+// === WATCH PAGE (YouTube Clone) ===
+async function loadVideos(){
+  if(VIDS)return;
+  const r=await fetch('videos.json');VIDS=await r.json();
+  // Index by ID
+  VIDS._idx={};VIDS.forEach(v=>{VIDS._idx[v.id]=v;});
+}
+async function showWatch(videoId){
+  await loadVideos();
+  const v=VIDS._idx[videoId];
+  if(!v){document.getElementById('watch-page')?.remove();return;}
+  // Find channel
+  const ch=CH.find(c=>c.channel_id===v.ch);
+  const existing=document.getElementById('watch-page');
+  if(existing)existing.remove();
+  let cmtHtml='';
+  if(v.comments?.length){
+    cmtHtml=`<h2>💬 ${v.comments.length} Comments</h2>`;
+    v.comments.forEach((c,i)=>{
+      cmtHtml+=`<div class="cmt" id="cmt-${c.id}"><img class="avatar" src="${c.av||''}" loading="lazy"><div><div><span class="author">${esc(c.a)}</span> <span class="date">${c.date}</span></div><div class="txt">${esc(c.txt)}</div>${c.likes?`<div class="likes">👍 ${c.likes}</div>`:''}</div></div>`;
+    });
+  } else {
+    cmtHtml=`<h2>💬 Comments</h2><div style="color:var(--muted);font-size:.78rem;padding:8px">No comments loaded for this video. <a href="https://youtube.com/watch?v=${videoId}" target="_blank">View on YouTube ↗</a></div>`;
+  }
+  const pg=document.createElement('div');pg.className='page on watch';pg.id='watch-page';
+  pg.innerHTML=`<a href="#ch-${v.ch}" class="back">← ${v.chn||'Back'}</a>
+    <div class="player"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}?rel=0" allowfullscreen loading="lazy"></iframe></div>
+    <div class="vtitle">${esc(v.t)}</div>
+    <div class="vmeta"><span>👁 ${fmt(v.v)} views</span><span>👍 ${fmt(v.l)} likes</span><span>💬 ${v.cc} comments</span><span>📅 ${v.d}</span></div>
+    <div class="ch-bar" onclick="location.hash='ch-${v.ch}'" style="cursor:pointer"><img src="${v.cht||ch?.thumbnail||''}"><div><div class="name">${v.chn||''}</div><div class="subs">${ch?fmt(ch.subscribers)+' subscribers':''}</div></div></div>
+    <div class="vdesc" onclick="this.classList.toggle('open')">${esc(v.desc)}${v.desc?.length>=295?'\n\n▼ Click to expand':''}</div>
+    ${cmtHtml}
+    <div style="text-align:center;margin-top:10px"><a href="https://youtube.com/watch?v=${videoId}" target="_blank" class="btn btn-sm">View on YouTube ↗</a></div>`;
+  document.getElementById('pages').appendChild(pg);
+  // Scroll to specific comment if hash has it
+  const cmtId=location.hash.match(/cmt=(.+)/)?.[1];
+  if(cmtId){setTimeout(()=>{const el=document.getElementById('cmt-'+cmtId);if(el){el.scrollIntoView({behavior:'smooth'});el.style.background='rgba(255,0,0,.08)';el.style.borderLeft='3px solid var(--red)';}},300);}
+  window.scrollTo(0,0);
+}
+// === MY COMMENTS (Commentzor) ===
+function buildMyComments(D){
+  const totalLikes=D.top_liked?D.top_liked.reduce((s,c)=>s+(c.like_count||0),0):0;
+  let h=`<div class="page" id="comments">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px"><div style="font-size:2rem">💬</div><div><h2 style="margin:0;border:none;padding:0">My Comments</h2><div style="color:var(--muted);font-size:.68rem">YouTube comment analytics across all channels</div></div></div>
+    <div class="grid">
+      <div class="stat"><div class="n">${(D.total||0).toLocaleString()}</div><div class="l">Total Comments</div></div>
+      <div class="stat"><div class="n">${D.channels?.length||0}</div><div class="l">Channels</div></div>
+      <div class="stat"><div class="n">${(D.channels||[]).reduce((s,c)=>s+(c.video_count||0),0).toLocaleString()}</div><div class="l">Videos Tracked</div></div>
+      <div class="stat"><div class="n">${totalLikes.toLocaleString()}</div><div class="l">Total Likes</div></div></div>`;
+  // Channel breakdown bars
+  h+=`<h2>Comments by Channel</h2>`;
+  const chSorted=(D.channels||[]).filter(c=>c.comment_count>0).sort((a,b)=>b.comment_count-a.comment_count);
+  const maxC=Math.max(...chSorted.map(c=>c.comment_count),1);
+  chSorted.forEach(c=>{
+    const w=Math.max(2,Math.round(c.comment_count/maxC*250));
+    h+=`<div class="bar-row"><div class="lbl">${esc(c.name)}</div><div class="bar" style="width:${w}px;background:var(--blue)"></div><div class="val">${c.comment_count.toLocaleString()}</div></div>`;
+  });
+  // Top commenters (fields: author_name, c, likes)
+  if(D.top_commenters?.length){
+    h+=`<h2>🏆 Top 25 Commenters</h2><table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th></tr>`;
+    D.top_commenters.slice(0,25).forEach((c,i)=>{
+      h+=`<tr><td>${i+1}</td><td>${esc(c.author_name||c.author||'')}</td><td style="font-family:'JetBrains Mono',monospace">${c.c||c.count||0}</td><td style="font-family:'JetBrains Mono',monospace">${c.likes||c.total_likes||0}</td></tr>`;
+    });
+    h+=`</table>`;
+  }
+  // Most liked comments (fields: author_name, text_content, like_count)
+  if(D.top_liked?.length){
+    h+=`<h2>❤️ Most Liked Comments</h2>`;
+    D.top_liked.slice(0,15).forEach(c=>{
+      const txt=c.text_content||c.text||c.comment||'';
+      h+=`<div class="cmt"><div class="cmt-avatar" style="width:28px;height:28px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;border:1px solid var(--border)">👤</div><div><div style="font-size:.7rem;font-weight:600">${esc(c.author_name||'')} <span style="color:var(--muted);font-weight:400">· ❤️ ${c.like_count||0} likes</span></div><div style="font-size:.72rem;color:var(--muted);margin-top:2px">${esc(txt.substring(0,200))}${txt.length>200?'...':''}</div></div></div>`;
+    });
+  }
+  // Recent comments
+  if(D.recent?.length){
+    h+=`<h2>🕐 Recent Comments</h2>`;
+    D.recent.slice(0,15).forEach(c=>{
+      const txt=c.text_content||c.text||'';
+      h+=`<div class="cmt"><div class="cmt-avatar" style="width:24px;height:24px;border-radius:50%;background:var(--card);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.6rem;border:1px solid var(--border)">👤</div><div><div style="font-size:.68rem;font-weight:600">${esc(c.author_name||'')} <span style="color:var(--muted);font-weight:400">· ${c.like_count||0} likes</span></div><div style="font-size:.7rem;color:var(--muted)">${esc(txt.substring(0,200))}${txt.length>200?'...':''}</div></div></div>`;
+    });
+  }
+  // Per-channel top commenters from by_channel
+  const bc=D.by_channel||{};
+  chSorted.forEach(ch=>{
+    const chData=bc[ch.channel_id];
+    if(!chData) return;
+    h+=`<h2>${esc(ch.name)} — ${ch.comment_count.toLocaleString()} comments</h2>`;
+    if(chData.top_commenters?.length){
+      h+=`<table><tr><th>#</th><th>Commenter</th><th>Comments</th><th>Likes</th></tr>`;
+      chData.top_commenters.slice(0,10).forEach((c,i)=>{
+        h+=`<tr><td>${i+1}</td><td>${esc(c.author_name||'')}</td><td>${c.c||0}</td><td>${c.likes||0}</td></tr>`;
+      });
+      h+=`</table>`;
+    }
+  });
+  return h+`</div>`;
+}
+// === ROUTER ===
+function route(){
+  const h=(location.hash||'#overview').slice(1);
+  // Handle watch pages dynamically
+  if(h.startsWith('watch-')){
+    const vid=h.replace('watch-','').split('?')[0];
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+    document.querySelectorAll('nav a').forEach(a=>a.classList.remove('on'));
+    showWatch(vid);
+    return;
+  }
+  // Remove old watch page
+  document.getElementById('watch-page')?.remove();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('on'));
+  (document.getElementById(h)||document.getElementById('overview')).classList.add('on');
+  const tab=document.querySelector(`nav a[href="#${h}"]`);
+  if(tab)tab.classList.add('on');else document.querySelector('nav a')?.classList.add('on');
+  window.scrollTo(0,0);
+}
+init();
+</script>
+</body></html>
