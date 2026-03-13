@@ -104,32 +104,56 @@ def poll_gemini(state):
         print("  ℹ️  Gemini: no GEMINI_API_KEY — skipping API poll")
         return state.get("providers", {}).get("gemini", {})
 
-    try:
-        r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}",
-            headers={"Content-Type": "application/json"},
-            json={"contents": [{"parts": [{"text": f"Today is {TODAY}. I'm building a personal AI usage tracker at 1n2.org. Respond ONLY with a JSON object (no markdown) with: model, primary_use (one sentence), session_count (integer estimate), notes. Be concise."}]}]},
-            timeout=20
-        )
-        data = r.json()
-        text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-        if text.startswith("```"):
-            text = text.split("```")[1].strip()
-            if text.startswith("json"): text = text[4:].strip()
-        report = json.loads(text)
-        print(f"  ✅ Gemini: {report.get('model','gemini-2.0-flash')} — {report.get('primary_use','')[:60]}")
-        return {
-            "name": "Gemini (Google)",
-            "model": report.get("model", "gemini-2.0-flash"),
-            "primary_use": report.get("primary_use", "Search + research"),
-            "color": "#4285f4", "icon": "🌐",
-            "total_prompts": state.get("providers",{}).get("gemini",{}).get("total_prompts", 0) + report.get("session_count", 1),
-            "last_polled": TODAY,
-            "notes": report.get("notes", ""),
-        }
-    except Exception as e:
-        print(f"  ⚠️  Gemini poll: {e}")
-        return state.get("providers", {}).get("gemini", {})
+    # Try models in order — lite has separate quota from flash
+    models_to_try = ["gemini-2.0-flash-lite", "gemini-2.0-flash", "gemini-2.5-flash"]
+    for model in models_to_try:
+        try:
+            r = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
+                headers={"Content-Type": "application/json"},
+                json={"contents": [{"parts": [{"text":
+                    f"Today is {TODAY}. I am tracking AI usage for a personal project at 1n2.org. "
+                    f"Reply with ONLY a JSON object, no markdown fences, no explanation. "
+                    f"Format: {{\"model\":\"{model}\",\"primary_use\":\"one sentence\",\"session_count\":1,\"notes\":\"brief note\"}}"
+                }]}]},
+                timeout=20
+            )
+            if r.status_code == 429:
+                print(f"  ⚠️  Gemini {model}: quota exceeded, trying next model")
+                continue
+            r.raise_for_status()
+            data   = r.json()
+            text   = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            # Strip markdown fences if present
+            if "```" in text:
+                text = text.split("```")[1].strip()
+                if text.startswith("json"): text = text[4:].strip()
+            report = json.loads(text)
+            print(f"  ✅ Gemini ({model}): {report.get('primary_use','')[:60]}")
+            return {
+                "name": "Gemini (Google)",
+                "model": model,
+                "primary_use": report.get("primary_use", "Research + search"),
+                "color": "#4285f4", "icon": "🌐",
+                "total_prompts": state.get("providers",{}).get("gemini",{}).get("total_prompts", 0) + report.get("session_count", 1),
+                "last_polled": TODAY,
+                "notes": report.get("notes", ""),
+            }
+        except json.JSONDecodeError:
+            # Model responded but not pure JSON — still counts as working
+            print(f"  ✅ Gemini ({model}): responded (non-JSON, using defaults)")
+            return {
+                "name": "Gemini (Google)", "model": model,
+                "primary_use": "Research + search assistance", "color": "#4285f4", "icon": "🌐",
+                "total_prompts": state.get("providers",{}).get("gemini",{}).get("total_prompts", 0) + 1,
+                "last_polled": TODAY, "notes": "API active",
+            }
+        except Exception as e:
+            print(f"  ⚠️  Gemini {model}: {e}")
+            continue
+
+    print("  ❌ Gemini: all models failed")
+    return state.get("providers", {}).get("gemini", {})
 
 # ── Codex: check for usage via OpenAI API ────────────────────────────────
 def poll_codex(state):
