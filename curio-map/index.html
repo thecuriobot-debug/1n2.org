@@ -95,7 +95,7 @@ function buildNav(){
   const ids = Object.keys(ALL).sort((a,b)=>{
     const na=a==='17b'?17.5:+a, nb=b==='17b'?17.5:+b; return na-nb;
   });
-  const split=ids.findIndex(id=>{const n=id==='17b'?17.5:+id;return n>15;});
+  const split=ids.findIndex(id=>{const n=id==='17b'?17.5:+id;return n>17;});
   const row1=ids.slice(0,split), row2=ids.slice(split);
   document.getElementById('nav-row1').innerHTML = row1.map(id=>
     `<div class="cn" onclick="stopAutoplay();switchCard('${id}')">#${id}</div>`
