@@ -1333,5 +1333,132 @@
     "floor": 0.0486,
     "holders": 4968,
     "total_sales": 75
-  }
+  },
+  "floor_eth": 0.0486,
+  "weekly_sales": 0,
+  "total_cards": 30,
+  "unique_owners": 4961,
+  "cards": [
+    {
+      "id": 1,
+      "name": "Apples"
+    },
+    {
+      "id": 2,
+      "name": "Nuts"
+    },
+    {
+      "id": 3,
+      "name": "Berries"
+    },
+    {
+      "id": 4,
+      "name": "Clay"
+    },
+    {
+      "id": 5,
+      "name": "Paint"
+    },
+    {
+      "id": 6,
+      "name": "Ink"
+    },
+    {
+      "id": 7,
+      "name": "Sculpture"
+    },
+    {
+      "id": 8,
+      "name": "Painting"
+    },
+    {
+      "id": 9,
+      "name": "Book"
+    },
+    {
+      "id": 10,
+      "name": "Future"
+    },
+    {
+      "id": 11,
+      "name": "BTC Keys"
+    },
+    {
+      "id": 12,
+      "name": "Mine Bitcoin"
+    },
+    {
+      "id": 13,
+      "name": "BTC"
+    },
+    {
+      "id": 14,
+      "name": "CryptoCurrency"
+    },
+    {
+      "id": 15,
+      "name": "DigitalCash"
+    },
+    {
+      "id": 16,
+      "name": "OriginalCoin"
+    },
+    {
+      "id": 17,
+      "name": "UASF"
+    },
+    {
+      "id": 18,
+      "name": "To The Moon"
+    },
+    {
+      "id": 19,
+      "name": "Dogs Trading"
+    },
+    {
+      "id": 20,
+      "name": "MadBitcoins"
+    },
+    {
+      "id": 21,
+      "name": "The Wizard"
+    },
+    {
+      "id": 22,
+      "name": "The Bard"
+    },
+    {
+      "id": 23,
+      "name": "The Barbarian"
+    },
+    {
+      "id": 24,
+      "name": "Complexity"
+    },
+    {
+      "id": 25,
+      "name": "Passion"
+    },
+    {
+      "id": 26,
+      "name": "Education"
+    },
+    {
+      "id": 27,
+      "name": "Blue"
+    },
+    {
+      "id": 28,
+      "name": "Pink"
+    },
+    {
+      "id": 29,
+      "name": "Yellow"
+    },
+    {
+      "id": 30,
+      "name": "Eclipse"
+    }
+  ],
+  "last_updated": "2026-03-13"
 }

@@ -9,7 +9,7 @@ from pathlib import Path
 
 MAP_DIR  = Path("/Users/curiobot/Sites/1n2.org/curio-map")
 DB_PATH  = Path("/Users/curiobot/Sites/1n2.org/thunt-data-labs/db/thunt-data-labs.db")
-ALCHEMY  = os.environ.get("ALCHEMY_API_KEY","_rPKuMfB0FeN5MwCpSEHjb4wTm5WYjwB")
+ALCHEMY  = os.environ.get("ALCHEMY_API_KEY","vfF4rHBY1zsGgI3kqEg9v")
 CONTRACT = "0x73DA73EF3a6982109c4d5BDb0dB9dd3E3783f313"
 TODAY    = date.today().isoformat()
 

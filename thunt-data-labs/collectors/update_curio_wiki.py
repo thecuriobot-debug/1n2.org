@@ -23,7 +23,7 @@ def get_live_data():
         conn = sqlite3.connect(str(DB_PATH))
         conn.row_factory = sqlite3.Row
         floor = conn.execute("SELECT floor_price_eth FROM curio_prices ORDER BY date DESC LIMIT 1").fetchone()
-        sales = conn.execute("SELECT COUNT(*) FROM curio_sales WHERE date(block_timestamp)>=date('now','-7 days')").fetchone()[0]
+        sales = conn.execute("SELECT COUNT(*) FROM curio_sales WHERE date(sale_date)>=date('now','-7 days')").fetchone()[0]
         cards = conn.execute("SELECT card_id,name FROM curio_cards ORDER BY card_id").fetchall()
         owners= conn.execute("SELECT COUNT(DISTINCT owner_address) FROM curio_owners").fetchone()[0]
         conn.close()

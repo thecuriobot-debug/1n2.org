@@ -21,23 +21,18 @@ TODAY   = date.today().isoformat()
 NOW     = datetime.now().isoformat()
 
 def count_claude():
-    """Count from claude-usage/prompts.json"""
+    """Count from claude-usage/prompts.json + known historical baseline."""
+    # Known baseline: ~15,000 prompts from the 1n2.org build history (125+ hours)
+    HISTORICAL_BASELINE = 15000
     try:
         p = BASE / "claude-usage/prompts.json"
         if p.exists():
             data = json.loads(p.read_text())
-            if isinstance(data, list):
-                return len(data)
-            if isinstance(data, dict):
-                return data.get("total", len(data))
+            recent = len(data) if isinstance(data, list) else data.get("total", 0)
+            # If recent > baseline it means prompts.json is the full count
+            return max(recent, HISTORICAL_BASELINE)
     except: pass
-    # Count from log files
-    logs = list((HOME / ".openclaw/logs").glob("*.log")) if (HOME / ".openclaw/logs").exists() else []
-    count = 0
-    for log in logs:
-        try: count += log.read_text().count('"role":"user"')
-        except: pass
-    return max(count, 15000)  # baseline from known history
+    return HISTORICAL_BASELINE
 
 def count_openclaw():
     """Count from master-run.sh execution logs"""

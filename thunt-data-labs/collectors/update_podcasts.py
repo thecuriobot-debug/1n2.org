@@ -14,7 +14,7 @@ TODAY = date.today().isoformat()
 
 WCN_CHANNELS = {
     "UCR9gdpWisRwnk_k23GsHfcA": "World Crypto Network",
-    "UCp7Gqpl9Kqiggr_Rs03X5pA": "WCN Old",
+    # UCp7Gqpl9Kqiggr_Rs03X5pA removed — channel 404'd
 }
 TBG_CHANNEL = "UCQgjyXLLMtG99Dkh8Yvw-3g"  # MadBitcoins
 
