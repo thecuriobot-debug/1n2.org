@@ -173,7 +173,7 @@ function statusHtml(path, label, ok, status) {
 
 async function checkSite(path) {
   try {
-    const r = await fetch('/' + path, {method:'HEAD', cache:'no-store'});
+    const r = await fetch(path === '/' ? '/' : '/' + path, {method:'HEAD', cache:'no-store'});
     totalChecked++; if(r.ok) totalOk++;
     return {ok: r.ok, status: r.status};
   } catch(e) {
@@ -184,7 +184,7 @@ async function checkSite(path) {
 
 async function checkExport(path) {
   try {
-    const r = await fetch('/' + path, {cache:'no-store'});
+    const r = await fetch('/' + exp.path, {cache:'no-store'});
     if (!r.ok) return {ok: false, age: null};
     const text = await r.text();
     let age = null;
