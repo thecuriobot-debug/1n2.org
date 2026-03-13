@@ -315,7 +315,7 @@ for video in videos:
                         </div>
                         <div class="video-info">
                             <div class="video-title">{video['title']}</div>
-                            <div class="video-meta">{video['year']} • {video['runtime']}</div>
+                            <div class="video-meta">{str(video.get('published', video.get('year','')))[:4]} • {video.get('duration', video.get('runtime',''))}</div>
                             <div class="video-stats">
                                 <span>{video['views']} views</span>
                                 <span>Ships Only</span>

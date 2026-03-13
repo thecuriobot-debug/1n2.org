@@ -1,23 +1,655 @@
 {
-  "date": "2026-03-13",
-  "projects": 56,
-  "daily_jobs": 14,
-  "daily_logs": 24,
-  "total_records": 14935,
-  "videos": 146,
-  "comments": 749,
-  "articles": 244,
-  "tweets": 0,
-  "curio_sales": 75,
-  "curio_floor": 0.0486,
-  "movies": 0,
-  "books": 0,
+  "generated_at": "2026-03-13T15:39:42.158845",
+  "total_records": 16482,
   "datasets": {
-    "youtube": {
+    "curio": {
+      "name": "Curio Cards",
+      "icon": "\ud83c\udccf",
       "tables": {
+        "prices": 1,
+        "cards": 30,
+        "owners": 12879,
+        "sales": 75
+      },
+      "total": 12985,
+      "latest": {
+        "floor": 0.0486,
+        "holders": 0,
+        "date": "2026-03-13"
+      },
+      "cards": [
+        {
+          "card_id": 1,
+          "name": "Apples",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/dacc6324c1ee87f409ebbdfe19036b32"
+        },
+        {
+          "card_id": 2,
+          "name": "Nuts",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/96852c4a2fb1bcb23e0e21497250382b"
+        },
+        {
+          "card_id": 3,
+          "name": "Berries",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/d8cf7b937a20c81e9c7165e374f6a8d9"
+        },
+        {
+          "card_id": 4,
+          "name": "Clay",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/ec81e423b53eb8ffe81fd499c73c24fc"
+        },
+        {
+          "card_id": 5,
+          "name": "Paint",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/eca961664255d9b2547a468925fc9fef"
+        },
+        {
+          "card_id": 6,
+          "name": "Ink",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/b4732aabb94a2e0acacf8c634a3fae43"
+        },
+        {
+          "card_id": 7,
+          "name": "Sculpture",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/1641a8da19e9b444179204a737d1ac7f"
+        },
+        {
+          "card_id": 8,
+          "name": "Painting",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/8a1bdac9615bc2bc170ac5d11a559ae6"
+        },
+        {
+          "card_id": 9,
+          "name": "Book",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/3f44cf8ff1c426d92c7ee86b19f1d8c2"
+        },
+        {
+          "card_id": 10,
+          "name": "Future",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/6916e93b1fd0c1ff1835af600814aae2"
+        },
+        {
+          "card_id": 11,
+          "name": "BTC Keys",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/66c59bb16e2195381da6de8f9b15c7dd"
+        },
+        {
+          "card_id": 12,
+          "name": "Mine Bitcoin",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/27352c056c83324122962c5b6d67c88b"
+        },
+        {
+          "card_id": 13,
+          "name": "BTC",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/a7708d915cae323ed17e81f8f529f7b8"
+        },
+        {
+          "card_id": 14,
+          "name": "CryptoCurrency",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/ef2b44965ff3686278c011af6de51f40"
+        },
+        {
+          "card_id": 15,
+          "name": "DigitalCash",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/ee5a909e8c1b5ec992ea6e8e5bed5440"
+        },
+        {
+          "card_id": 16,
+          "name": "OriginalCoin",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/ca86d2b0b4a4510d98e992107738dc4f"
+        },
+        {
+          "card_id": 17,
+          "name": "UASF",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/883645e481f5bb73460d201ee4612f4e"
+        },
+        {
+          "card_id": 18,
+          "name": "To The Moon",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/f81046ffbb4ef73b8dac3918674e9cf7"
+        },
+        {
+          "card_id": 19,
+          "name": "Dogs Trading",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/a2de4cd7d0ea693a947dea51e64c442d"
+        },
+        {
+          "card_id": 20,
+          "name": "MadBitcoins",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/cfffc1d85fb7d40302cda22c7b40bee9"
+        },
+        {
+          "card_id": 21,
+          "name": "The Wizard",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/9624d3039cb73adce987838592e05aab"
+        },
+        {
+          "card_id": 22,
+          "name": "The Bard",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/3d8ae4dad0f35ed30a9975cce707aa1c"
+        },
+        {
+          "card_id": 23,
+          "name": "The Barbarian",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/11704a91b290824cf416dd81af0d5256"
+        },
+        {
+          "card_id": 24,
+          "name": "Complexity",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/88670f9564074748f76d90b18826926a"
+        },
+        {
+          "card_id": 25,
+          "name": "Passion",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/bc6abb35f05c1c3040bc94b963ddde9c"
+        },
+        {
+          "card_id": 26,
+          "name": "Education",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/f297422afa2df0df25c462d7039dc105"
+        },
+        {
+          "card_id": 27,
+          "name": "Blue",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/e559526d21231cd976f61f08a7be85e7"
+        },
+        {
+          "card_id": 28,
+          "name": "Pink",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/aa809eea68a2d30c97940ff3e0249788"
+        },
+        {
+          "card_id": 29,
+          "name": "Yellow",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/75c8f2003e25955081c695f2a162518c"
+        },
+        {
+          "card_id": 30,
+          "name": "Eclipse",
+          "image_url": "https://nft-cdn.alchemy.com/eth-mainnet/e0ffb2b30ae11fb936dc4ddb401c43b8"
+        }
+      ]
+    },
+    "youtube": {
+      "name": "YouTube",
+      "icon": "\ud83d\udcfa",
+      "tables": {
+        "channels": 4,
         "videos": 146,
         "comments": 749
-      }
+      },
+      "total": 899,
+      "channels": [
+        {
+          "name": "MadBitcoins",
+          "id": "UCQgjyXLLMtG99Dkh8Yvw-3g",
+          "videos": 50,
+          "comments": 44,
+          "subs": 7300
+        },
+        {
+          "name": "Thomas Hunt Films",
+          "id": "UCyWXUSxzJ5vVcH2-WjQdeOA",
+          "videos": 46,
+          "comments": 678,
+          "subs": 9310
+        },
+        {
+          "name": "World Crypto Network (old)",
+          "id": "UCp7Gqpl9Kqiggr_Rs03X5pA",
+          "videos": 0,
+          "comments": 0,
+          "subs": 1950
+        },
+        {
+          "name": "World Crypto Network",
+          "id": "UCR9gdpWisRwnk_k23GsHfcA",
+          "videos": 50,
+          "comments": 27,
+          "subs": 52500
+        }
+      ],
+      "top_commenters": [
+        {
+          "name": "@dusty-gray",
+          "count": 10
+        },
+        {
+          "name": "@MartijnWismeijer",
+          "count": 8
+        },
+        {
+          "name": "@jamieolberding7731",
+          "count": 6
+        },
+        {
+          "name": "@gochem3013",
+          "count": 6
+        },
+        {
+          "name": "@ForceMaximus84",
+          "count": 6
+        },
+        {
+          "name": "@CaptainSpadaro",
+          "count": 6
+        },
+        {
+          "name": "@rwess",
+          "count": 5
+        },
+        {
+          "name": "@kascnef",
+          "count": 5
+        },
+        {
+          "name": "@danielserrano591",
+          "count": 5
+        },
+        {
+          "name": "@blakebosschaart601",
+          "count": 5
+        }
+      ],
+      "top_videos": [
+        {
+          "title": "Empire Strikes Back (ships only)",
+          "id": "TYrq1mLsPlo",
+          "comments": 100,
+          "views": 1678555
+        },
+        {
+          "title": "Star Trek: The Motion Picture (ships only)",
+          "id": "qHWlccpsYIA",
+          "comments": 0,
+          "views": 158827
+        },
+        {
+          "title": "Star Trek III: The Search for Spock (ships only)",
+          "id": "iHMXrxXCfWs",
+          "comments": 0,
+          "views": 194100
+        },
+        {
+          "title": "Return of the Jedi (ships only)",
+          "id": "jTMK8McUdE0",
+          "comments": 75,
+          "views": 347996
+        },
+        {
+          "title": "Star Trek: Insurrection (ships only)",
+          "id": "5LOtf5Yq39Y",
+          "comments": 58,
+          "views": 322219
+        },
+        {
+          "title": "Star Trek: Nemesis (ships only)",
+          "id": "IQ0rpNEupfA",
+          "comments": 68,
+          "views": 87539
+        },
+        {
+          "title": "Star Trek: Generations (ships only)",
+          "id": "0gywz1PgM_I",
+          "comments": 84,
+          "views": 496522
+        },
+        {
+          "title": "Star Wars (ships only)",
+          "id": "jgGr15RvpiI",
+          "comments": 76,
+          "views": 165674
+        },
+        {
+          "title": "Star Trek: First Contact (ships only)",
+          "id": "yRhQ1ydXT6c",
+          "comments": 32,
+          "views": 80135
+        },
+        {
+          "title": "Star Trek VI: The Undiscovered Country (ships only",
+          "id": "ILcCcldyB7M",
+          "comments": 54,
+          "views": 77374
+        }
+      ]
+    },
+    "articles": {
+      "name": "Articles",
+      "icon": "\ud83d\udcf0",
+      "tables": {
+        "articles": 244,
+        "images": 0
+      },
+      "total": 244,
+      "with_text": 244,
+      "total_words": 189412,
+      "by_topic": [
+        {
+          "topic": "news-crypto",
+          "count": 41
+        },
+        {
+          "topic": "news-world",
+          "count": 40
+        },
+        {
+          "topic": "news-tech",
+          "count": 40
+        },
+        {
+          "topic": "news-culture",
+          "count": 30
+        },
+        {
+          "topic": "news-science",
+          "count": 20
+        },
+        {
+          "topic": "news-business",
+          "count": 20
+        },
+        {
+          "topic": "news-bitcoin",
+          "count": 20
+        },
+        {
+          "topic": "news-us",
+          "count": 11
+        },
+        {
+          "topic": "news-politics",
+          "count": 10
+        },
+        {
+          "topic": "news-ai",
+          "count": 10
+        }
+      ],
+      "by_source": [
+        {
+          "source": "CoinDesk",
+          "count": 12
+        },
+        {
+          "source": "NPR",
+          "count": 11
+        },
+        {
+          "source": "CryptoSlate",
+          "count": 11
+        },
+        {
+          "source": "Al Jazeera",
+          "count": 11
+        },
+        {
+          "source": "Wired",
+          "count": 10
+        },
+        {
+          "source": "Variety",
+          "count": 10
+        },
+        {
+          "source": "The Verge",
+          "count": 10
+        },
+        {
+          "source": "The Guardian US",
+          "count": 10
+        },
+        {
+          "source": "The Guardian",
+          "count": 10
+        },
+        {
+          "source": "The Block",
+          "count": 10
+        }
+      ]
+    },
+    "tweets": {
+      "name": "Tweets",
+      "icon": "\ud83d\udc26",
+      "tables": {
+        "accounts": 6,
+        "tweets": 0
+      },
+      "total": 6,
+      "accounts": [
+        {
+          "username": "Bitcoin",
+          "tweets": 0
+        },
+        {
+          "username": "CurioNFT",
+          "tweets": 0
+        },
+        {
+          "username": "VitalikButerin",
+          "tweets": 0
+        },
+        {
+          "username": "aantonop",
+          "tweets": 0
+        },
+        {
+          "username": "curaborern",
+          "tweets": 0
+        },
+        {
+          "username": "madbitcoins",
+          "tweets": 0
+        }
+      ]
+    },
+    "facebook": {
+      "name": "Facebook",
+      "icon": "\ud83d\udcd8",
+      "tables": {
+        "posts": 0
+      },
+      "total": 0,
+      "status": "Coming soon"
+    },
+    "media": {
+      "name": "Media",
+      "icon": "\ud83c\udfac",
+      "tables": {
+        "movies": 1569,
+        "books": 779
+      },
+      "total": 2348,
+      "avg_movie_rating": 3.5,
+      "top_directors": []
     }
-  }
+  },
+  "collection_log": [
+    {
+      "id": 17,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 244,
+      "errors": 0,
+      "duration_s": 31.06,
+      "run_at": "2026-03-13 22:30:04"
+    },
+    {
+      "id": 18,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-13 22:30:04"
+    },
+    {
+      "id": 19,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-13 22:30:04"
+    },
+    {
+      "id": 20,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-13 22:30:04"
+    },
+    {
+      "id": 21,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-13 22:30:04"
+    },
+    {
+      "id": 16,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 831,
+      "errors": 0,
+      "duration_s": 5.07,
+      "run_at": "2026-03-13 22:29:33"
+    },
+    {
+      "id": 15,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14022,
+      "errors": 0,
+      "duration_s": 7.01,
+      "run_at": "2026-03-13 22:29:28"
+    },
+    {
+      "id": 11,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 2.81,
+      "run_at": "2026-03-13 22:26:46"
+    },
+    {
+      "id": 12,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.01,
+      "run_at": "2026-03-13 22:26:46"
+    },
+    {
+      "id": 13,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.04,
+      "run_at": "2026-03-13 22:26:46"
+    },
+    {
+      "id": 14,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-13 22:26:46"
+    },
+    {
+      "id": 10,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 243,
+      "errors": 0,
+      "duration_s": 33.39,
+      "run_at": "2026-03-13 22:26:43"
+    },
+    {
+      "id": 9,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 831,
+      "errors": 0,
+      "duration_s": 4.76,
+      "run_at": "2026-03-13 22:26:10"
+    },
+    {
+      "id": 8,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14022,
+      "errors": 0,
+      "duration_s": 6.98,
+      "run_at": "2026-03-13 22:26:05"
+    },
+    {
+      "id": 4,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 3.09,
+      "run_at": "2026-03-13 22:25:38"
+    },
+    {
+      "id": 5,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.01,
+      "run_at": "2026-03-13 22:25:38"
+    },
+    {
+      "id": 6,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.04,
+      "run_at": "2026-03-13 22:25:38"
+    },
+    {
+      "id": 7,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-13 22:25:38"
+    },
+    {
+      "id": 3,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 241,
+      "errors": 0,
+      "duration_s": 28.63,
+      "run_at": "2026-03-13 22:25:33"
+    },
+    {
+      "id": 2,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 899,
+      "errors": 0,
+      "duration_s": 11.53,
+      "run_at": "2026-03-13 22:25:05"
+    }
+  ],
+  "db_size_mb": 4.28,
+  "date": "2026-03-13",
+  "projects": 56,
+  "daily_logs": 24,
+  "daily_jobs": 22
 }
