@@ -51,11 +51,11 @@ h1 .org{color:var(--accent);letter-spacing:-3px}
 fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
   const rec=d.total_records||0;
   const yt=d.datasets?.youtube?.tables||{};
-  const art=d.datasets?.articles?.tables||{};
-  const med=d.datasets?.media?.tables||{};
+  const proj=d.projects||0;
+  const recFmt=rec>=1000?`${Math.round(rec/1000)}K+`:rec.toLocaleString();
   document.getElementById('stats').innerHTML=
-    `<span><b>15</b> projects</span>`+
-    `<span><b>${(rec/1000).toFixed(0)}K+</b> records</span>`+
+    `<span><b>${proj}</b> projects</span>`+
+    `<span><b>${recFmt}</b> records</span>`+
     `<span><b>${(yt.videos||0).toLocaleString()}</b> videos</span>`+
     `<span><b>${(yt.comments||0).toLocaleString()}</b> comments</span>`+
     `<span><b>28</b> daily jobs</span>`;
@@ -106,7 +106,7 @@ fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
 </div>
 
 <div class="about">
-1n2 is one person working with AI to build a data ecosystem around Bitcoin media, Curio Cards NFTs, and daily news. At its core is Data Labs — a central SQLite database with 110,000+ records collected from the Ethereum blockchain, YouTube APIs, Google News, and social media. Data flows in through automated collectors running at 1 AM every night, gets stored in one place, and feeds out to 30 display apps — from price charts and trading tools to a Wikipedia-style encyclopedia and a daily auto-generated newspaper. Everything here was built in conversation with Claude, one prompt at a time.
+1n2 is one person and one AI building a personal data ecosystem. A central SQLite database collects from the Ethereum blockchain, YouTube, Google News, RSS feeds, and social media — automatically, every night at 1 AM. That data feeds 56 live projects: price charts, trading tools, a podcast archive, a film portfolio, a media tracker, and a daily AI-generated news briefing. Every line of code was written in conversation with Claude.
 </div>
 
 <div class="ft">
