@@ -32,14 +32,19 @@ h1{font-size:2.2rem;font-weight:800;margin-bottom:4px}h1 span{color:var(--accent
 .status.active{background:rgba(61,214,140,.12);color:var(--green)}
 .status.inactive{background:rgba(107,109,122,.12);color:var(--muted)}
 .status.diamond{background:rgba(77,168,218,.12);color:var(--blue)}
+.curio-nav{background:rgba(6,8,16,.97);backdrop-filter:blur(10px);border-bottom:1px solid #1e2030;padding:8px 16px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100;font-family:'JetBrains Mono','Outfit',system-ui,sans-serif}
+.curio-nav-brand{font-size:1.15rem;font-weight:800;letter-spacing:1px;color:#d0d2dc;white-space:nowrap;text-decoration:none}
+.curio-nav-brand span{color:#f0a030}
+.curio-nav-links{display:flex;gap:12px;font-size:.75rem;margin-left:auto;white-space:nowrap;align-items:center}
+.curio-nav-links a{color:#f0a030;text-decoration:none}.curio-nav-links a:hover{color:#fff}
+.curio-nav-current{color:#444860;font-size:.75rem;cursor:default}
+.curio-nav-pulse{display:inline-block;width:7px;height:7px;background:#3dd68c;border-radius:50%;margin-right:5px;animation:blink 2s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 </style>
 </head>
 <body>
 <script src="cards-data.js"></script>
-<div class="hdr">
-  <h1>🤝 Curio<span>Community</span></h1>
-  <div class="hdr-links"><a href="/curio-quant/">CurioQuant</a><a href="/curiocharts/">CurioCharts</a><a href="/curio-map/">CurioMap</a><a href="/curio-wiki/">CurioWiki</a></div>
-</div>
+<div class="curio-nav"><a href="/" class="curio-nav-brand">🤝 Curio<span>Community</span></a><div class="curio-nav-links"><a href="/curio-quant/">CurioQuant</a><span class="curio-nav-current">CurioCommunity</span><a href="/curiocharts/">CurioCharts</a><a href="/curio-map/">CurioMap</a><a href="/curio-wiki/">CurioWiki</a></div></div>
 <div class="wrap">
 <h1>🌐 Curio Cards <span>Community</span></h1>
 <div class="sub">55 profiled collectors. 31 cards. 13 subset clubs. 7 activity groups. Every trade tracked.</div>

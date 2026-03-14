@@ -37,14 +37,19 @@ a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
 .legend-i{display:flex;align-items:center;gap:5px;margin:2px 0}
 .legend-d{width:8px;height:8px;border-radius:50%}
 .card-img{width:100%;max-width:140px;border-radius:6px;border:1px solid var(--border);margin-bottom:8px}
+.curio-nav{background:rgba(6,8,16,.97);backdrop-filter:blur(10px);border-bottom:1px solid #1e2030;padding:8px 16px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100;font-family:'JetBrains Mono','Outfit',system-ui,sans-serif}
+.curio-nav-brand{font-size:1.15rem;font-weight:800;letter-spacing:1px;color:#d0d2dc;white-space:nowrap;text-decoration:none}
+.curio-nav-brand span{color:#f0a030}
+.curio-nav-links{display:flex;gap:12px;font-size:.75rem;margin-left:auto;white-space:nowrap;align-items:center}
+.curio-nav-links a{color:#f0a030;text-decoration:none}.curio-nav-links a:hover{color:#fff}
+.curio-nav-current{color:#444860;font-size:.75rem;cursor:default}
+.curio-nav-pulse{display:inline-block;width:7px;height:7px;background:#3dd68c;border-radius:50%;margin-right:5px;animation:blink 2s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 </style>
 </head>
 <body>
 <div class="top-bar">
-  <div class="hdr">
-    <h1>🗺 Curio<span>Map</span></h1>
-    <div class="hdr-links"><span id="auto-btn" onclick="toggleAutoplay()" style="cursor:pointer;padding:2px 8px;border-radius:4px;border:1px solid var(--accent);font-size:.68rem;font-weight:600">▶ Auto</span><a href="/curio-quant/">CurioQuant</a><a href="/curiocharts/">CurioCharts</a><a href="/curio-quant/community.html">CurioCommunity</a><a href="/curio-wiki/">CurioWiki</a></div>
-  </div>
+  <div class="curio-nav"><a href="/" class="curio-nav-brand">🗺 Curio<span>Map</span></a><div class="curio-nav-links"><a href="/curio-quant/">CurioQuant</a><a href="/curio-quant/community.html">CurioCommunity</a><a href="/curiocharts/">CurioCharts</a><span class="curio-nav-current">CurioMap</span><a href="/curio-wiki/">CurioWiki</a><span id="auto-btn" onclick="toggleAutoplay()" style="cursor:pointer;padding:2px 8px;border-radius:4px;border:1px solid #f0a030;font-size:.68rem;font-weight:600;color:#f0a030;margin-left:4px">▶ Auto</span></div></div>
   <div class="card-rows"><div class="card-row" id="nav-row1"></div><div class="card-row" id="nav-row2"></div></div>
 </div>
 <svg id="graph"></svg>

@@ -48,12 +48,19 @@
 .feed-row{display:grid;grid-template-columns:55px 1fr 100px 95px 75px 85px;gap:8px;padding:11px 16px;border-bottom:1px solid rgba(42,43,51,.4);font-size:.9rem;align-items:center}
 .feed-row:last-child{border-bottom:none}.mono{font-family:'JetBrains Mono',monospace}
 .foot{margin-top:36px;padding:14px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.68rem}
+.curio-nav{background:rgba(6,8,16,.97);backdrop-filter:blur(10px);border-bottom:1px solid #1e2030;padding:8px 16px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:100;font-family:'JetBrains Mono','Outfit',system-ui,sans-serif}
+.curio-nav-brand{font-size:1.15rem;font-weight:800;letter-spacing:1px;color:#d0d2dc;white-space:nowrap;text-decoration:none}
+.curio-nav-brand span{color:#f0a030}
+.curio-nav-links{display:flex;gap:12px;font-size:.75rem;margin-left:auto;white-space:nowrap;align-items:center}
+.curio-nav-links a{color:#f0a030;text-decoration:none}.curio-nav-links a:hover{color:#fff}
+.curio-nav-current{color:#444860;font-size:.75rem;cursor:default}
+.curio-nav-pulse{display:inline-block;width:7px;height:7px;background:#3dd68c;border-radius:50%;margin-right:5px;animation:blink 2s infinite;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 </style>
 </head>
 <body>
 <script src="cards-data.js"></script>
-<div class="hdr"><div class="hdr-inner">
-  <div class="logo"><div class="logo-icon">Q</div><div><h1>Curio<span>Quant</span></h1><div class="logo-sub">AI Card Market Intelligence</div></div></div>
+<div class="curio-nav"><a href="/" class="curio-nav-brand">📈 Curio<span>Quant</span></a><div class="curio-nav-links"><span class="curio-nav-current">CurioQuant</span><a href="/curio-quant/community.html">CurioCommunity</a><a href="/curiocharts/">CurioCharts</a><a href="/curio-map/">CurioMap</a><a href="/curio-wiki/">CurioWiki</a><span style="margin-left:4px;padding:2px 8px;border-radius:4px;border:1px solid #f0a030;font-size:.68rem;font-weight:600;color:#f0a030"><span class="curio-nav-pulse"></span>QuantBot</span></div></div></div>
   <div class="hdr-links"><span><span class="pulse"></span>QuantBot Online</span><a href="community.html">CurioCommunity</a><a href="/curiocharts/">CurioCharts</a><a href="/curio-map/">CurioMap</a><a href="/curio-wiki/">CurioWiki</a></div>
 </div></div>
 <div class="wrap">
