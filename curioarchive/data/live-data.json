@@ -2,7 +2,7 @@
   "updated": "2026-03-14",
   "floor_eth": 0.0486,
   "total_holders": 4962,
-  "total_transfers": 804,
+  "total_transfers": 805,
   "total_sales": 75,
   "cards": [
     {
@@ -938,7 +938,7 @@
       "name": "Eclipse",
       "image": "https://nft-cdn.alchemy.com/eth-mainnet/e0ffb2b30ae11fb936dc4ddb401c43b8",
       "holders": 370,
-      "total_supply": 677,
+      "total_supply": 678,
       "sales": 4,
       "last_sale_eth": 0.2,
       "last_sale_date": "",
@@ -961,7 +961,7 @@
         },
         {
           "addr": "0x6D41F5...",
-          "qty": 13
+          "qty": 14
         }
       ]
     }

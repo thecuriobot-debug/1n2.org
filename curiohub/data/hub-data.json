@@ -4,12 +4,32 @@
     "floor": 0.0486,
     "holders": 4962,
     "total_sales": 75,
-    "total_transfers": 804
+    "total_transfers": 805
   },
   "youtube": {
-    "total_videos": 146,
+    "total_videos": 298,
     "total_comments": 749,
     "channels": [
+      {
+        "name": "bbctruth",
+        "vids": 1
+      },
+      {
+        "name": "thezeronewz",
+        "vids": 34
+      },
+      {
+        "name": "Thomas Hunt (Personal)",
+        "vids": 56
+      },
+      {
+        "name": "The Bitcoin Group (Original)",
+        "vids": 60
+      },
+      {
+        "name": "IG-88 / MC Fanb0y (STOLEN)",
+        "vids": 1
+      },
       {
         "name": "MadBitcoins",
         "vids": 50
@@ -29,7 +49,7 @@
     ]
   },
   "content": {
-    "articles": 704,
+    "articles": 984,
     "tweets": 0,
     "wiki_articles": 27
   },

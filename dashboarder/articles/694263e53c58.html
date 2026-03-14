@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>XML Is a Cheap DSL</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://unplannedobsolescence.com/blog/xml-cheap-dsl/" target="_blank">Original article ↗</a></div>
+
+<h1>XML Is a Cheap DSL</h1>
+<div class="meta">Hacker News · 2026-03-14</div>
+<div class="summary">March 13, 2026
+Yesterday, the IRS announced the release of the project Iâve been engineering leading since this summer, its new Tax Withholding Estimator (TWE). Taxpayers enter in their income, expected deductions, and other relevant info to estimate</div>
+<p>March 13, 2026</p>
+<p>Yesterday, the IRS announced the release of the project Iâve been engineering leading since this summer, its new Tax Withholding Estimator (TWE). Taxpayers enter in their income, expected deductions, and other relevant info to estimate what theyâll owe in taxes at the end of the year, and adjust the withholdings on their paycheck. Itâs free, open source, and, in a major first for the IRS, open for public contributions.</p>
+<p>TWE is full of exciting learnings about the field of public sector software. Being me, Iâm going to start by writing about by far the driest one: XML.</p>
+<p>(I am writing this in my personal capacity, based on the open source release, not in my position as a federal employee.)</p>
+<p>XML is widely considered clunky at best, obsolete at worst. It evokes memories of SOAP configs and J2EE (itâs fine, even good, if those acronyms donât mean anything to you). My experience with the Tax Withholding Estimator, however, has taught me that XML absolutely has a place in modern software development, and it should be considered a leading option for any cross-platform declarative specification.</p>
+<p>TWE is a static site generated from two XML configurations. The first of these configs is the Fact Dictionary, our representation of the US Tax Code; the second will be the subject of a later blog post.</p>
+<p>We use the Fact Graph, a logic engine, to calculate the taxpayerâs tax obligations (and their withholdings) based on the facts defined in the Fact Dictionary.</p>
+<p>The Fact Graph was originally built for IRS Direct File and now we use it for TWE.</p>
+<p>Iâm going to introduce you to the Fact Graph the way that I was introduced to it: by fire example.</p>
+<p>Put aside any preconceptions you might have about XML for a moment and ask yourself what this fact describes, and how well it describes it.</p>
+<p>&lt;Fact path=&quot;/totalOwed&quot;&gt;</p>
+<p>&lt;Derived&gt;</p>
+<p>&lt;Subtract&gt;</p>
+<p>&lt;Minuend&gt;</p>
+<p>&lt;Dependency path=&quot;/totalTax&quot;/&gt;</p>
+<p>&lt;/Minuend&gt;</p>
+<p>&lt;Subtrahends&gt;</p>
+<p>&lt;Dependency path=&quot;/totalPayments&quot;/&gt;</p>
+<p>&lt;/Subtrahends&gt;</p>
+<p>&lt;/Subtract&gt;</p>
+<p>&lt;/Derived&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>This fact describes a /totalOwed</p>
+<p>fact thatâs derived by subtracting /totalPayments</p>
+<p>from /totalTax</p>
+<p>.</p>
+<p>In tax terms, this fact describes the amount you will need to pay the IRS at the end of the year.</p>
+<p>That amount, âtotal owed,â is the difference between the total taxes due for your income (âtotal taxâ) and the amount youâve already paid (âtotal paymentsâ).</p>
+<p>My initial reaction to this was that itâs quite verbose, but also reasonably clear. Thatâs more or less how I still feel.</p>
+<p>You only need to look at a few of these to intuit the structure. Take the refundable credits calculation, for example. A refundable credit is a tax credit that can lead to a negative tax balanceâif you qualify for more refundable credits than you owe in taxes, the government just gives you some money. TWE calculates the total value of refundable credits by adding up the values of the Earned Income Credit, the Child Tax Credit (CTC), American Opportunity Credit, the refundable portion of the Adoption Credit, and some other stuff from the Schedule 3.</p>
+<p>&lt;Fact path=&quot;/totalRefundableCredits&quot;&gt;</p>
+<p>&lt;Description&gt;</p>
+<p>Form 1040 Line 32. Schedule 3 Line 15 + EITC,ACTC, AOTC,</p>
+<p>refundable portion of Adoption</p>
+<p>&lt;/Description&gt;</p>
+<p>&lt;Derived&gt;</p>
+<p>&lt;Add&gt;</p>
+<p>&lt;Dependency path=&quot;/earnedIncomeCredit&quot;/&gt;</p>
+<p>&lt;Dependency path=&quot;/additionalCtc&quot;/&gt;</p>
+<p>&lt;Dependency path=&quot;/americanOpportunityCredit&quot;/&gt;</p>
+<p>&lt;Dependency path=&quot;/adoptionCreditRefundable&quot;/&gt;</p>
+<p>&lt;Dependency path=&quot;/schedule3OtherPaymentsAndRefundableCreditsTotal&quot;/&gt;</p>
+<p>&lt;/Add&gt;</p>
+<p>&lt;/Derived&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>By contrast, non-refundable tax credits can bring your tax burden down to zero, but wonât ever make it negative.</p>
+<p>TWE models that by subtracting non-refundable credits from the tentative tax burden while making sure it canât go below zero,</p>
+<p>using the &lt;GreaterOf&gt;</p>
+<p>operator.</p>
+<p>&lt;Fact path=&quot;/tentativeTaxNetNonRefundableCredits&quot;&gt;</p>
+<p>&lt;Description&gt;</p>
+<p>Total tentative tax after applying non-refundable credits, but before</p>
+<p>applying refundable credits.</p>
+<p>&lt;/Description&gt;</p>
+<p>&lt;Derived&gt;</p>
+<p>&lt;GreaterOf&gt;</p>
+<p>&lt;Dollar&gt;0&lt;/Dollar&gt;</p>
+<p>&lt;Subtract&gt;</p>
+<p>&lt;Minuend&gt;</p>
+<p>&lt;Dependency path=&quot;/totalTentativeTax&quot;/&gt;</p>
+<p>&lt;/Minuend&gt;</p>
+<p>&lt;Subtrahends&gt;</p>
+<p>&lt;Dependency path=&quot;/totalNonRefundableCredits&quot;/&gt;</p>
+<p>&lt;/Subtrahends&gt;</p>
+<p>&lt;/Subtract&gt;</p>
+<p>&lt;/GreaterOf&gt;</p>
+<p>&lt;/Derived&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>While admittedly very verbose, the nesting is straightforward to follow. The tax after non-refundable credits is derived by saying âgive me the greater of these two numbers: zero, or the difference between tentative tax and the non-refundable credits.â</p>
+<p>Finally, what about inputs? Obviously we need places for the taxpayer to provide information, so that we can calculate all the other values.</p>
+<p>&lt;Fact path=&quot;/totalEstimatedTaxesPaid&quot;&gt;</p>
+<p>&lt;Writable&gt;</p>
+<p>&lt;Dollar/&gt;</p>
+<p>&lt;/Writable&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>Okay, so instead of &lt;Derived&gt;</p>
+<p>we use &lt;Writable&gt;</p>
+<p>.</p>
+<p>Because the value isâ¦ writable.</p>
+<p>Fair enough.</p>
+<p>The &lt;Dollar/&gt;</p>
+<p>denotes what type of value this fact takes.</p>
+<p>True-or-false questions use &lt;Boolean/&gt;</p>
+<p>, like this one that records whether the taxpayer is 65 or older.</p>
+<p>&lt;Fact path=&quot;/primaryFilerAge65OrOlder&quot;&gt;</p>
+<p>&lt;Writable&gt;</p>
+<p>&lt;Boolean/&gt;</p>
+<p>&lt;/Writable&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>There are some (much) longer facts, but these are a fair representation of what the median fact looks like. Facts depend on other facts, sometimes derived and sometimes writable, and they all add up to some final tax numbers at the end. But why encode math this way when it seems far clunkier than traditional notation?</p>
+<p>Countless mainstream programming languages would instead let you write this calculation in a notation that looks more like normal math. Take this JavaScript example, which looks like elementary algebra:</p>
+<p>const totalOwed = totalTax - totalPayments</p>
+<p>That seems better! Itâs far more concise, easier to read, and doesnât make you explicitly label the âminuendâ and âsubtrahend.â</p>
+<p>Letâs add in the definitions for totalTax</p>
+<p>and totalPayments</p>
+<p>.</p>
+<p>const totalTax = tentativeTaxNetNonRefundableCredits + totalOtherTaxes</p>
+<p>const totalPayments = totalEstimatedTaxesPaid +</p>
+<p>totalTaxesPaidOnSocialSecurityIncome +</p>
+<p>totalRefundableCredits</p>
+<p>const totalOwed = totalTax - totalPayments</p>
+<p>Still not too bad. Total tax is calculated by adding the tax after non-refundable credits (discussed earlier) to whateverâs in âother taxes.â Total payments is the sum of estimated taxes youâve already paid, taxes youâve paid on social security, and any refundable credits.</p>
+<p>The problem with the JavaScript representation is that itâs imperative.</p>
+<p>It describes actions you take in a sequence, and once the sequence is done, the intermediate steps are lost.</p>
+<p>The issues with this get more obvious when you go another level deeper, adding the definitions of all the values that totalTax</p>
+<p>and totalPayments</p>
+<p>depend on.</p>
+<p>// Total tax calculation</p>
+<p>const totalOtherTaxes = selfEmploymentTax + additionalMedicareTax + netInvestmentIncomeTax</p>
+<p>const tentativeTaxNetNonRefundableCredits = Math.max(totalTentativeTax - totalNonRefundableCredits, 0)</p>
+<p>const totalTax = tentativeTaxNetNonRefundableCredits + totalOtherTaxes</p>
+<p>// Total payments calculation</p>
+<p>const totalEstimatedTaxesPaid = getInput()</p>
+<p>const totalTaxesPaidOnSocialSecurityIncome = socialSecuritySources</p>
+<p>.map(source =&gt; source.totalTaxesPaid)</p>
+<p>.reduce((acc, val) =&gt; { return acc+val }, 0)</p>
+<p>const totalRefundableCredits = earnedIncomeCredit +</p>
+<p>additionalCtc +</p>
+<p>americanOpportunityCredit +</p>
+<p>adoptionCreditRefundable +</p>
+<p>schedule3OtherPaymentsAndRefundableCreditsTotal</p>
+<p>const totalPayments = totalEstimatedTaxesPaid +</p>
+<p>totalTaxesPaidOnSocialSecurityIncome +</p>
+<p>totalRefundableCredits</p>
+<p>// Total owed</p>
+<p>const totalOwed = totalTax - totalPayments</p>
+<p>We are quickly arriving at a situation that has a lot of subtle problems.</p>
+<p>One problem is the execution order.</p>
+<p>The hypothetical getInput()</p>
+<p>function solicits an answer from the taxpayer, which has to happen before the program can continue.</p>
+<p>Calculations that donât depend on knowing âtotal estimated taxesâ are still held up waiting for the user;</p>
+<p>calculations that do depend on knowing that value had better be specified after it.</p>
+<p>Or, take a close look at how we add up all the social security income:</p>
+<p>const totalTaxesPaidOnSocialSecurityIncome = socialSecuritySources</p>
+<p>.map(source =&gt; source.totalTaxesPaid)</p>
+<p>.reduce((acc, val) =&gt; { return acc+val }, 0)</p>
+<p>All of a sudden we are really in the weeds with JavaScript. These are not complicated code conceptsâmap and reduce are both in the standard library and basic functional paradigms are widespread these daysâbut they are not tax math concepts. Instead, they are implementation details.</p>
+<p>Compare it to the Fact representation of that same value.</p>
+<p>&lt;Fact path=&quot;/totalTaxesPaidOnSocialSecurityIncome&quot;&gt;</p>
+<p>&lt;Derived&gt;</p>
+<p>&lt;CollectionSum&gt;</p>
+<p>&lt;Dependency path=&quot;/socialSecuritySources/*/totalFederalTaxesPaid&quot;/&gt;</p>
+<p>&lt;/CollectionSum&gt;</p>
+<p>&lt;/Derived&gt;</p>
+<p>&lt;/Fact&gt;</p>
+<p>This isnât perfectâthe *</p>
+<p>that represents each social security source is a little hackyâbut the meaning is much clearer.</p>
+<p>What are the total taxes paid on social security income?</p>
+<p>The sum of the taxes paid on each social security income.</p>
+<p>How do you add all the items in a collection?</p>
+<p>With &lt;CollectionSum&gt;</p>
+<p>.</p>
+<p>Plus, it reads like all the other facts; needing to add up all items in a collection didnât suddenly kick us into a new conceptual realm.</p>
+<p>The philosophical difference between these two is that, unlike JavaScript, which is imperative, the Fact Dictionary is declarative. It doesnât describe exactly what steps the computer will take or in what order; it describes a bunch of named calculations and how they depend on each other. The engine decides automatically how to execute that calculation.</p>
+<p>Besides being (relatively) friendlier to read, the most important benefit of a declarative tax model is that you can ask the program how it calculated something. Per the Fact Graphâs original author, Chris Given:</p>
+<p>The Fact Graph provides us with a means of proving that none of the unasked questions would have changed the bottom line of your tax return and that youâre getting every tax benefit to which youâre entitled.</p>
+<p>Suppose you get a value for totalOwed</p>
+<p>that doesnât seem right.</p>
+<p>You canât ask the JavaScript version âhow did you arrive at that number?â because those intermediate values have already been discarded.</p>
+<p>Im</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://unplannedobsolescence.com/blog/xml-cheap-dsl/" target="_blank">Read original →</a></div>
+</body></html>

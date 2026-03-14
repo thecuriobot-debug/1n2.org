@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-14T01:00:52.343783",
-  "total_records": 16952,
+  "generated_at": "2026-03-14T11:38:18.669832",
+  "total_records": 17391,
   "datasets": {
     "curio": {
       "name": "Curio Cards",
@@ -174,12 +174,47 @@
       "name": "YouTube",
       "icon": "\ud83d\udcfa",
       "tables": {
-        "channels": 4,
-        "videos": 146,
+        "channels": 9,
+        "videos": 298,
         "comments": 749
       },
-      "total": 899,
+      "total": 1056,
       "channels": [
+        {
+          "name": "bbctruth",
+          "id": "UCo6p8YD65JejkRSKBMRnr8A",
+          "videos": 1,
+          "comments": 0,
+          "subs": 4
+        },
+        {
+          "name": "thezeronewz",
+          "id": "UC87XIolsog_ySkpvKhuPnXQ",
+          "videos": 34,
+          "comments": 0,
+          "subs": 423
+        },
+        {
+          "name": "Thomas Hunt (Personal)",
+          "id": "UCPpcUOJeThhpPWLrcGuOo-A",
+          "videos": 56,
+          "comments": 0,
+          "subs": 45
+        },
+        {
+          "name": "The Bitcoin Group (Original)",
+          "id": "UCKt8s7Mg60Q41rs-xNWwf3A",
+          "videos": 60,
+          "comments": 0,
+          "subs": 1720
+        },
+        {
+          "name": "IG-88 / MC Fanb0y (STOLEN)",
+          "id": "UC4vqoYkvid3wm9Equ7ClwPw",
+          "videos": 1,
+          "comments": 0,
+          "subs": 485
+        },
         {
           "name": "MadBitcoins",
           "id": "UCQgjyXLLMtG99Dkh8Yvw-3g",
@@ -253,34 +288,46 @@
       ],
       "top_videos": [
         {
+          "title": "Interview with James Murphy of LCD Soundsystem abo",
+          "id": "yYCz06bS380",
+          "comments": 0,
+          "views": 681465
+        },
+        {
+          "title": "MC Chris - IG-88 (music video)",
+          "id": "Ut-KyLQujQA",
+          "comments": 0,
+          "views": 893746
+        },
+        {
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 100,
-          "views": 1678589
+          "views": 1678616
         },
         {
           "title": "Star Trek: The Motion Picture (ships only)",
           "id": "qHWlccpsYIA",
           "comments": 0,
-          "views": 158841
+          "views": 158849
         },
         {
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 0,
-          "views": 194104
+          "views": 194106
         },
         {
           "title": "Return of the Jedi (ships only)",
           "id": "jTMK8McUdE0",
           "comments": 75,
-          "views": 348024
+          "views": 348038
         },
         {
           "title": "Star Trek: Insurrection (ships only)",
           "id": "5LOtf5Yq39Y",
           "comments": 58,
-          "views": 322222
+          "views": 322225
         },
         {
           "title": "Star Trek: Nemesis (ships only)",
@@ -298,19 +345,7 @@
           "title": "Star Wars (ships only)",
           "id": "jgGr15RvpiI",
           "comments": 76,
-          "views": 165707
-        },
-        {
-          "title": "Star Trek: First Contact (ships only)",
-          "id": "yRhQ1ydXT6c",
-          "comments": 32,
-          "views": 80138
-        },
-        {
-          "title": "Star Trek VI: The Undiscovered Country (ships only",
-          "id": "ILcCcldyB7M",
-          "comments": 54,
-          "views": 77378
+          "views": 165728
         }
       ]
     },
@@ -318,94 +353,94 @@
       "name": "Articles",
       "icon": "\ud83d\udcf0",
       "tables": {
-        "articles": 704,
+        "articles": 984,
         "images": 0
       },
-      "total": 704,
-      "with_text": 704,
-      "total_words": 541581,
+      "total": 984,
+      "with_text": 984,
+      "total_words": 772605,
       "by_topic": [
         {
           "topic": "news-world",
-          "count": 164
-        },
-        {
-          "topic": "news-science",
-          "count": 85
-        },
-        {
-          "topic": "news-tech",
-          "count": 79
-        },
-        {
-          "topic": "news-crypto",
-          "count": 76
+          "count": 254
         },
         {
           "topic": "news-business",
-          "count": 64
+          "count": 118
         },
         {
-          "topic": "news-culture",
-          "count": 55
+          "topic": "news-tech",
+          "count": 102
+        },
+        {
+          "topic": "news-science",
+          "count": 96
+        },
+        {
+          "topic": "news-crypto",
+          "count": 91
         },
         {
           "topic": "news-us",
-          "count": 44
+          "count": 77
+        },
+        {
+          "topic": "news-culture",
+          "count": 72
         },
         {
           "topic": "news-ai",
-          "count": 43
-        },
-        {
-          "topic": "news-bitcoin",
-          "count": 29
+          "count": 57
         },
         {
           "topic": "news-politics",
-          "count": 26
+          "count": 37
+        },
+        {
+          "topic": "news-bitcoin",
+          "count": 37
         }
       ],
       "by_source": [
         {
-          "source": "Science Daily",
-          "count": 39
-        },
-        {
           "source": "Al Jazeera",
-          "count": 37
+          "count": 73
         },
         {
           "source": "BBC News",
-          "count": 36
-        },
-        {
-          "source": "CoinTelegraph",
-          "count": 29
-        },
-        {
-          "source": "BBC World",
-          "count": 28
-        },
-        {
-          "source": "Variety",
-          "count": 25
+          "count": 51
         },
         {
           "source": "The Economic Times",
-          "count": 25
+          "count": 47
         },
         {
-          "source": "Decrypt",
-          "count": 25
+          "source": "Science Daily",
+          "count": 45
+        },
+        {
+          "source": "Fortune",
+          "count": 39
         },
         {
           "source": "Dawn",
-          "count": 23
+          "count": 39
         },
         {
-          "source": "TechCrunch",
-          "count": 22
+          "source": "Variety",
+          "count": 37
+        },
+        {
+          "source": "CoinTelegraph",
+          "count": 37
+        },
+        {
+          "source": "Wired",
+          "count": 34
+        },
+        {
+          "source": "BBC World",
+          "count": 33
         }
       ]
     },
@@ -457,15 +492,78 @@
       "name": "Media",
       "icon": "\ud83c\udfac",
       "tables": {
-        "movies": 1577,
+        "movies": 1579,
         "books": 779
       },
-      "total": 2356,
+      "total": 2358,
       "avg_movie_rating": 3.5,
       "top_directors": []
     }
   },
   "collection_log": [
+    {
+      "id": 52,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 984,
+      "errors": 0,
+      "duration_s": 27.23,
+      "run_at": "2026-03-14 18:38:18"
+    },
+    {
+      "id": 53,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-14 18:38:18"
+    },
+    {
+      "id": 54,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.01,
+      "run_at": "2026-03-14 18:38:18"
+    },
+    {
+      "id": 55,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.03,
+      "run_at": "2026-03-14 18:38:18"
+    },
+    {
+      "id": 56,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-14 18:38:18"
+    },
+    {
+      "id": 51,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 835,
+      "errors": 0,
+      "duration_s": 5.77,
+      "run_at": "2026-03-14 18:37:51"
+    },
+    {
+      "id": 50,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14022,
+      "errors": 0,
+      "duration_s": 7.28,
+      "run_at": "2026-03-14 18:37:45"
+    },
     {
       "id": 40,
       "dataset": "articles",
@@ -582,74 +680,11 @@
       "errors": 0,
       "duration_s": 13.71,
       "run_at": "2026-03-14 08:00:15"
-    },
-    {
-      "id": 36,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14024,
-      "errors": 0,
-      "duration_s": 8.42,
-      "run_at": "2026-03-14 08:00:08"
-    },
-    {
-      "id": 31,
-      "dataset": "articles",
-      "action": "rss_pipeline",
-      "records_added": 606,
-      "errors": 0,
-      "duration_s": 17.0,
-      "run_at": "2026-03-14 00:30:07"
-    },
-    {
-      "id": 32,
-      "dataset": "tweets",
-      "action": "collect",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 0.0,
-      "run_at": "2026-03-14 00:30:07"
-    },
-    {
-      "id": 33,
-      "dataset": "movies_letterboxd",
-      "action": "import_csv",
-      "records_added": 1658,
-      "errors": 0,
-      "duration_s": 0.01,
-      "run_at": "2026-03-14 00:30:07"
-    },
-    {
-      "id": 34,
-      "dataset": "movies_mysql",
-      "action": "import_cli",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 0.03,
-      "run_at": "2026-03-14 00:30:07"
-    },
-    {
-      "id": 35,
-      "dataset": "books_mysql",
-      "action": "import_cli",
-      "records_added": 782,
-      "errors": 0,
-      "duration_s": 0.02,
-      "run_at": "2026-03-14 00:30:07"
-    },
-    {
-      "id": 30,
-      "dataset": "youtube",
-      "action": "collect",
-      "records_added": 835,
-      "errors": 0,
-      "duration_s": 5.01,
-      "run_at": "2026-03-14 00:29:50"
     }
   ],
-  "db_size_mb": 6.89,
+  "db_size_mb": 8.69,
   "date": "2026-03-14",
   "projects": 56,
   "daily_logs": 33,
-  "daily_jobs": 22
+  "daily_jobs": 28
 }

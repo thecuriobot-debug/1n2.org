@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>You Can Approximate Pi by Dropping Needles on the Floor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://www.wired.com/story/you-can-approximate-pi-by-dropping-needles-on-the-floor/" target="_blank">Original article ↗</a></div>
+
+<h1>You Can Approximate Pi by Dropping Needles on the Floor</h1>
+<div class="meta">Wired · 2026-03-14</div>
+<div class="summary">Happy Pi Day! March 14 is the date that otherwise rational people celebrate this irrational number, because 3/14 contains the first three digits of pi. And hey, pi deserves a day. By definition, it’s the ratio of the circumference and diameter of a c</div>
+<p>Happy Pi Day! March 14 is the date that otherwise rational people celebrate this irrational number, because 3/14 contains the first three digits of pi. And hey, pi deserves a day. By definition, it’s the ratio of the circumference and diameter of a circle, but it shows up in all kinds of places that seem to have nothing to do with circles, from music to quantum mechanics.</p>
+<p>Pi is an infinitely long decimal number that never repeats. How do we know? Well, humans have calculated it to 314 trillion decimal places and didn’t reach the end. At that point, I’m inclined to accept it. I mean, NASA uses only the first 15 decimal places for navigating spacecraft, and that’s more than enough for earthly applications.</p>
+<p>The coolest thing, for me, is that there are many ways to approximate that value, which I’ve written about in the past. For instance, you can do it by oscillating a mass on a spring. But maybe the craziest method of all was proven in 1777 by George Louis Leclerc, Comte de Buffon.</p>
+<p>Decades earlier, Buffon had posed this as a probability question in geometry: Imagine you have a floor with parallel lines separated by a distance d. Onto this floor, you drop a bunch of needles with length L. What is the probability that a needle will cross one of the parallel lines?</p>
+<p>A picture will help you understand what&#x27;s happening. Let&#x27;s say I drop just two needles on the floor (feel free to replace the needles with something safer, like toothpicks). Also, just to make things easier later, we can say that the needle length and line spacing are equal (d = L).</p>
+<p>You can see that one of the needles crosses a line and the other doesn&#x27;t. OK, but what are the chances? This is not the most trivial problem, but let&#x27;s think about just one dropped needle. We only care about two values—the distance (x) from the farther end of the needle to a line, and the angle of the needle (θ) with respect to a perpendicular (see the diagram below). If x is less than half the spacing between lines, we get a needle-crossing. As you can see, you’d get a higher probability with a smaller x or a smaller θ.</p>
+<p>In fact, here is a plot showing a bunch of random x and θ values. The red dots are values that result in a needle crossing and the blue ones are for no crossings. The green line is the function (d/2) x cos(θ)—the transition between crossing and no crossing.</p>
+<p>The ratio of the area under the curve to the total area would be the probability of a needle crossing. We can find the area under the curve by integrating. If you do the math, you get a probability of 2/π for the case where the needle length is equal to the line spacing. There’s our pi! The reason it got in there is that the needle angle goes from negative π/2 to positive π/2 (two quarter circles). Maybe you’re not surprised after seeing that cosine function.</p>
+<p>But you don’t have to do any calculus. Instead, just drop a bunch of needles, count the number of crossings, and divide by the total number of needles. This ratio should be close to the probability of crossing (2/π). We can use this to find the value of pi. Some fools have actually dropped needles on their floor, but I&#x27;m just going to do a random-number simulation with Python. Here&#x27;s what it looks like with 100 needles:</p>
+<p>In this simulation, 66 of the 100 needles crossed a line (you can count ’em). Using this number, we get a value of pi at 3.0303—which is not 3.14—but it&#x27;s not terrible for just 100 needles. With 30,000 needles, you might be accurate to six decimal places.</p>
+<p>Monte Carlo Calculations</p>
+<p>The idea of using random numbers to simulate things is quite useful, especially when the math is very complex or even impossible. This method was invented during the Manhattan Project in 1946 to model nuclear reactions, and it’s called a Monte Carlo calculation, after the famous casino there. (If it were created today, it might be called a Vegas calculation.)</p>
+<p>Of course, this technique doesn’t really become useful until you start using computers, so you can run many, many trials. For example, suppose you want to model a gas as a bunch of balls colliding with the walls of a container. It&#x27;s possible to use a large number of random balls in motion to calculate the average pressure on the walls.</p>
+<p>Why am I telling you this? Yes, that was a Monte Carlo simulation I did on my computer to estimate pi, even though I ran only 100 trials. But even if I dropped physical needles all over my floor, it would still in effect be a Monte Carlo estimation—or maybe a reverse Monte Carlo— because the position of a dropped needle is pretty much random. That’s right. Buffon’s needles are just an 18th-century method of generating random numbers in real life.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://www.wired.com/story/you-can-approximate-pi-by-dropping-needles-on-the-floor/" target="_blank">Read original →</a></div>
+</body></html>

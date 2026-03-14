@@ -1,18 +1,399 @@
 {
   "updated": "2026-03-14",
   "channels": {
+    "bbctruth": {
+      "id": "UCo6p8YD65JejkRSKBMRnr8A",
+      "subscribers": 4,
+      "video_count": 1,
+      "total_comments_db": 0,
+      "recent_videos": [
+        {
+          "title": "World's Best Demolitions - 9/11 Edition",
+          "id": "jQd43SMBhfM",
+          "views": 395,
+          "comments": 3,
+          "date": "2009-05-06"
+        }
+      ],
+      "top_commented": [
+        {
+          "title": "World's Best Demolitions - 9/11 Edition",
+          "id": "jQd43SMBhfM",
+          "comments": 3,
+          "views": 395
+        }
+      ],
+      "top_commenters": []
+    },
+    "thezeronewz": {
+      "id": "UC87XIolsog_ySkpvKhuPnXQ",
+      "subscribers": 423,
+      "video_count": 34,
+      "total_comments_db": 0,
+      "recent_videos": [
+        {
+          "title": "LSD Commercials - Sweet and Low",
+          "id": "GL20v5LmzCQ",
+          "views": 959,
+          "comments": 2,
+          "date": "2012-02-06"
+        },
+        {
+          "title": "LSD Commercials - Poptarts",
+          "id": "kR802MDUOBM",
+          "views": 2124,
+          "comments": 2,
+          "date": "2012-02-06"
+        },
+        {
+          "title": "Congress Cuts Off C-Span (2011-12-22)",
+          "id": "GuK7wCetcZI",
+          "views": 114,
+          "comments": 0,
+          "date": "2012-02-04"
+        },
+        {
+          "title": "Letterman Celebrates 30th Anniversary with a hilarious Jay Leno impression",
+          "id": "LJ1DzreHMGM",
+          "views": 3462,
+          "comments": 0,
+          "date": "2012-02-03"
+        },
+        {
+          "title": "Mitt Romney talks to Jesus about the very poor",
+          "id": "Z2z0c0BMjyQ",
+          "views": 121,
+          "comments": 0,
+          "date": "2012-02-02"
+        },
+        {
+          "title": "Mitt Romney talks to Jesus about the very rich",
+          "id": "3dvhaQZyG48",
+          "views": 91,
+          "comments": 0,
+          "date": "2012-02-02"
+        },
+        {
+          "title": "Mitt Romney talks to Jesus about his excessive wealth",
+          "id": "NZjTniFtVE8",
+          "views": 97,
+          "comments": 0,
+          "date": "2012-02-02"
+        },
+        {
+          "title": "Mitt Romney talks to Jesus",
+          "id": "XUz2vNoVaKI",
+          "views": 54,
+          "comments": 0,
+          "date": "2012-02-02"
+        },
+        {
+          "title": "Mitt Romney is focused on the very rich (remix remix)",
+          "id": "4iLbVWXb4ac",
+          "views": 402,
+          "comments": 1,
+          "date": "2012-02-01"
+        },
+        {
+          "title": "Mitt Romney is focused on the very rich (remix)",
+          "id": "0hteZc2qEoM",
+          "views": 248,
+          "comments": 0,
+          "date": "2012-02-01"
+        }
+      ],
+      "top_commented": [
+        {
+          "title": "Interview with James Murphy of LCD Soundsystem about how to deal with Failure",
+          "id": "yYCz06bS380",
+          "comments": 719,
+          "views": 681465
+        },
+        {
+          "title": "George W. Bush - First Inaugural Address",
+          "id": "pZuH9lWxS_k",
+          "comments": 44,
+          "views": 25104
+        },
+        {
+          "title": "Mitt Romney is focused on the very rich, not the very poor (CNN 2012-02-01)",
+          "id": "MZHKh10IYZs",
+          "comments": 6,
+          "views": 1454
+        },
+        {
+          "title": "O'Reilly speaks the truth - 9/11 was an inside job",
+          "id": "pSZ5BHlSVpA",
+          "comments": 3,
+          "views": 600
+        },
+        {
+          "title": "CARLY:  Qualified in Name Only",
+          "id": "ySNyvK1mvOc",
+          "comments": 3,
+          "views": 1312
+        }
+      ],
+      "top_commenters": []
+    },
+    "Thomas Hunt (Personal)": {
+      "id": "UCPpcUOJeThhpPWLrcGuOo-A",
+      "subscribers": 45,
+      "video_count": 56,
+      "total_comments_db": 0,
+      "recent_videos": [
+        {
+          "title": "Support Your Local Burning Man Projects 2014 (PedalBump, Jah People, BRC Observatory)",
+          "id": "KJ3GMMsvC-A",
+          "views": 138,
+          "comments": 1,
+          "date": "2014-07-16"
+        },
+        {
+          "title": "Building The Life Cube - Burning Man 2013 (alt. music)",
+          "id": "qUH_b-sOEbA",
+          "views": 123,
+          "comments": 1,
+          "date": "2013-09-25"
+        },
+        {
+          "title": "Building The Life Cube - Burning Man 2013",
+          "id": "qN64YteAb3o",
+          "views": 139,
+          "comments": 2,
+          "date": "2013-09-23"
+        },
+        {
+          "title": "Phil Collins - Billy don't lose my number (vinyl)",
+          "id": "FG8gwyO1i_M",
+          "views": 718,
+          "comments": 0,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "Phil Collins - Can't Hurry Love (vinyl)",
+          "id": "sxANkkmr_P0",
+          "views": 1184,
+          "comments": 0,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "R.E.M. - pale blue eyes (vinyl live 1984)",
+          "id": "aDnI9wmtjbE",
+          "views": 1669,
+          "comments": 0,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "Daft Punk - Get Lucky (vinyl)",
+          "id": "A9-FYoz3cX0",
+          "views": 635,
+          "comments": 7,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "Queen - Breakthru (vinyl)",
+          "id": "K0FTPQasqc4",
+          "views": 301,
+          "comments": 0,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "Queen - Party (vinyl)",
+          "id": "ay9RVF8jBJI",
+          "views": 94,
+          "comments": 0,
+          "date": "2013-07-20"
+        },
+        {
+          "title": "Camp Faderade - infinite tunnel bar - donate today at indiegogo!",
+          "id": "o_2qqfC5H8w",
+          "views": 293,
+          "comments": 0,
+          "date": "2013-07-20"
+        }
+      ],
+      "top_commented": [
+        {
+          "title": "Daft Punk - Get Lucky (vinyl)",
+          "id": "A9-FYoz3cX0",
+          "comments": 7,
+          "views": 635
+        },
+        {
+          "title": "Top Gun: Bar Scene",
+          "id": "jXrKtzGxNxw",
+          "comments": 6,
+          "views": 63359
+        },
+        {
+          "title": "Yes, I know the finger.",
+          "id": "IJvefSTyiho",
+          "comments": 5,
+          "views": 11592
+        },
+        {
+          "title": "R.E.M. - Radio Song (tower of luv bug remix)",
+          "id": "dz4f-mzQQIc",
+          "comments": 4,
+          "views": 3330
+        },
+        {
+          "title": "Eddie Vedder - Last Kiss (Bridge School 2012)",
+          "id": "cyhGCtBRxJc",
+          "comments": 4,
+          "views": 5522
+        }
+      ],
+      "top_commenters": []
+    },
+    "The Bitcoin Group (Original)": {
+      "id": "UCKt8s7Mg60Q41rs-xNWwf3A",
+      "subscribers": 1720,
+      "video_count": 60,
+      "total_comments_db": 0,
+      "recent_videos": [
+        {
+          "title": "The Bitcoin Group #60 -- Pirate Bay Still Down - The CIA Tortures - Hong Kong - Reddit Bitcoin Tip?",
+          "id": "v1SYXp7git8",
+          "views": 559,
+          "comments": 4,
+          "date": "2014-12-15"
+        },
+        {
+          "title": "The Bitcoin Group #58 - Kraken rescues Mt. Gox - Western Union Parody - NSA - Black Friday",
+          "id": "b_sLeVzcGZA",
+          "views": 178,
+          "comments": 0,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #59 - Bitcoin Bill -- Bitcoin Giving Tuesday -- Silk Road 2.0 -- BitLicense",
+          "id": "YybOJOVNmIU",
+          "views": 111,
+          "comments": 0,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #57 - BTC Foundation Core Development - Silk Road Auction II - New Reddit CEO",
+          "id": "C12Rxwno34Y",
+          "views": 81,
+          "comments": 1,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #54 -- FinCen, Bitcoin 2.0 in the clear? SEC, CVS, RiteAid and Happy Halloween",
+          "id": "sD19m6sZD0c",
+          "views": 112,
+          "comments": 1,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #56 - Bitcoin Price is Back, ChangeTip Viral?, Bitcoin Under Skin, CounterParty",
+          "id": "x1k8_zZfJhw",
+          "views": 79,
+          "comments": 2,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #55 - Silk Road 2.0 Shutdown - Crypto Equity Crackdown - Lawsky Keynote",
+          "id": "RgAMeK2w3mU",
+          "views": 136,
+          "comments": 0,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #50 - 76 Million Hacked - FBI Silk Road Evidence? - Butterfly Labs - US Military",
+          "id": "ovSCPU38cRg",
+          "views": 163,
+          "comments": 0,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #52 - Ulbricht Trial Delayed, BitLicense, Moolah, Cryptsy, Bitstamp and Hong Kong",
+          "id": "2r6M1VoTXyw",
+          "views": 37,
+          "comments": 0,
+          "date": "2014-12-14"
+        },
+        {
+          "title": "The Bitcoin Group #53 -- Bitcoin Sidechains -- KNC Lone Miner -- MIT Predicts -- ApplePay",
+          "id": "N5d8f8Z_yeo",
+          "views": 88,
+          "comments": 0,
+          "date": "2014-12-14"
+        }
+      ],
+      "top_commented": [
+        {
+          "title": "The Bitcoin Group #19 (Live) - Mt. Gox (part IV) - Senator to Ban Bitcoins - Bitcoin Community - and",
+          "id": "bHJxC-KbV8w",
+          "comments": 75,
+          "views": 0
+        },
+        {
+          "title": "The Bitcoin Group #17 (Live) - Mt. Gox (cont.) - NY Regulations - Colbert Bitcoin - JP Morgan",
+          "id": "udmuhFaxT2s",
+          "comments": 56,
+          "views": 0
+        },
+        {
+          "title": "The Bitcoin Group #20 (Live) - Satoshi Unmasked -- War on Bitcoin Foundation -- Hull Counsel -- Mt.",
+          "id": "jkfSVv7kMvI",
+          "comments": 51,
+          "views": 0
+        },
+        {
+          "title": "The Bitcoin Group #16 (Live) - Apple Bans Bitcoin - Bitcoin 7/11 Mexico - Mt. Gox - Russia Bitcoin",
+          "id": "k9-dExbrMuc",
+          "comments": 42,
+          "views": 0
+        },
+        {
+          "title": "The Bitcoin Group #18 (Live) - Mt. Gox (part III) - Bitcoin ATMs - Paypal - Lawsky Winkdex Pandacoin",
+          "id": "EXqFrHOsbic",
+          "comments": 31,
+          "views": 0
+        }
+      ],
+      "top_commenters": []
+    },
+    "IG-88 / MC Fanb0y (STOLEN)": {
+      "id": "UC4vqoYkvid3wm9Equ7ClwPw",
+      "subscribers": 485,
+      "video_count": 1,
+      "total_comments_db": 0,
+      "recent_videos": [
+        {
+          "title": "MC Chris - IG-88 (music video)",
+          "id": "Ut-KyLQujQA",
+          "views": 893746,
+          "comments": 477,
+          "date": "2009-05-01"
+        }
+      ],
+      "top_commented": [
+        {
+          "title": "MC Chris - IG-88 (music video)",
+          "id": "Ut-KyLQujQA",
+          "comments": 477,
+          "views": 893746
+        }
+      ],
+      "top_commenters": []
+    },
     "MadBitcoins": {
       "id": "UCQgjyXLLMtG99Dkh8Yvw-3g",
       "subscribers": 7300,
-      "video_count": 801,
+      "video_count": 802,
       "total_comments_db": 44,
       "recent_videos": [
         {
           "title": "The Bitcoin Group #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "adDpYA9rj0s",
-          "views": 43,
+          "views": 54,
           "comments": 0,
-          "date": "2026-03-13"
+          "date": "2026-03-14"
         },
         {
           "title": "The Bitcoin Group #485 - Surge then Fall - Iran War - CA Buys - NY Allows",
@@ -169,7 +550,7 @@
         {
           "title": "Fitzcarraldo (ships only)",
           "id": "CetoupozjO8",
-          "views": 295,
+          "views": 296,
           "comments": 1,
           "date": "2024-12-02"
         },
@@ -235,31 +616,31 @@
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 245,
-          "views": 1678589
+          "views": 1678616
         },
         {
           "title": "Star Trek: The Motion Picture (ships only)",
           "id": "qHWlccpsYIA",
           "comments": 211,
-          "views": 158841
+          "views": 158849
         },
         {
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 188,
-          "views": 194104
+          "views": 194106
         },
         {
           "title": "Return of the Jedi (ships only)",
           "id": "jTMK8McUdE0",
           "comments": 131,
-          "views": 348024
+          "views": 348038
         },
         {
           "title": "Star Trek: Insurrection (ships only)",
           "id": "5LOtf5Yq39Y",
           "comments": 129,
-          "views": 322222
+          "views": 322225
         }
       ],
       "top_commenters": [
@@ -317,15 +698,15 @@
     "World Crypto Network": {
       "id": "UCR9gdpWisRwnk_k23GsHfcA",
       "subscribers": 52400,
-      "video_count": 4595,
+      "video_count": 4596,
       "total_comments_db": 27,
       "recent_videos": [
         {
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
-          "views": 80,
+          "views": 113,
           "comments": 5,
-          "date": "2026-03-13"
+          "date": "2026-03-14"
         },
         {
           "title": "Vice President JD Vance Speaks at Bitcoin Las Vegas | Full Speech",
@@ -365,7 +746,7 @@
         {
           "title": "The Bitcoin Group  #485 - Surge then Fall - Iran War - CA Buys - NY Allows",
           "id": "px-umd_-rnw",
-          "views": 117,
+          "views": 118,
           "comments": 1,
           "date": "2026-03-07"
         },
@@ -379,7 +760,7 @@
         {
           "title": "Binance Accused of Funding Iran  Billions Moved",
           "id": "QHL3iSEe6k0",
-          "views": 1225,
+          "views": 1226,
           "comments": 0,
           "date": "2026-03-06"
         },
@@ -396,7 +777,7 @@
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
           "comments": 5,
-          "views": 80
+          "views": 113
         },
         {
           "title": "Trump Family's $1 3B Crypto Exit & Eric Trump's Tweet Deletions",
