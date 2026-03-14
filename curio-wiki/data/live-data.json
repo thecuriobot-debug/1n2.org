@@ -1337,7 +1337,7 @@
   "floor_eth": 0.0486,
   "weekly_sales": 0,
   "total_cards": 30,
-  "unique_owners": 4961,
+  "unique_owners": 4962,
   "cards": [
     {
       "id": 1,
@@ -1460,5 +1460,5 @@
       "name": "Eclipse"
     }
   ],
-  "last_updated": "2026-03-13"
+  "last_updated": "2026-03-14"
 }

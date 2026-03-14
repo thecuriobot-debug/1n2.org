@@ -1,10 +1,10 @@
 {
-  "updated": "2026-03-13",
+  "updated": "2026-03-14",
   "market": {
     "floor": 0.0486,
-    "holders": 4961,
+    "holders": 4962,
     "total_sales": 75,
-    "total_transfers": 801
+    "total_transfers": 804
   },
   "youtube": {
     "total_videos": 146,
@@ -29,11 +29,15 @@
     ]
   },
   "content": {
-    "articles": 606,
+    "articles": 704,
     "tweets": 0,
     "wiki_articles": 27
   },
   "price_history": [
+    {
+      "date": "2026-03-14",
+      "floor": 0.0486
+    },
     {
       "date": "2026-03-13",
       "floor": 0.0486

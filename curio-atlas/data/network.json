@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-13",
+  "updated": "2026-03-14",
   "whales": [
     {
       "addr": "0xeD47015Bb8080B9399f9D0ddFc427B9Cee2CaAB1",
@@ -401,10 +401,31 @@
     {
       "id": 30,
       "name": "Eclipse",
-      "holders": 369
+      "holders": 370
     }
   ],
   "transfers": [
+    {
+      "tx": "0x1b82b58b99",
+      "from": "0xe97e496e",
+      "to": "0x6d41f5af",
+      "card": 30,
+      "date": "2026-03-14"
+    },
+    {
+      "tx": "0x52853824c4",
+      "from": "0xb5df9833",
+      "to": "0x7e76be39",
+      "card": 27,
+      "date": "2026-03-14"
+    },
+    {
+      "tx": "0xc7faef079d",
+      "from": "0x6d41f5af",
+      "to": "0x4984ca57",
+      "card": 30,
+      "date": "2026-03-14"
+    },
     {
       "tx": "0xa3b429d51f",
       "from": "0x460ec573",
@@ -1083,28 +1104,7 @@
       "to": "0x125f248b",
       "card": 12,
       "date": "2026-03-04"
-    },
-    {
-      "tx": "0x31f43d6031",
-      "from": "0x86b2cda5",
-      "to": "0x7be49ee6",
-      "card": 12,
-      "date": "2026-03-04"
-    },
-    {
-      "tx": "0x7c30a47c0b",
-      "from": "0x6d41f5af",
-      "to": "0x7be49ee6",
-      "card": 13,
-      "date": "2026-03-04"
-    },
-    {
-      "tx": "0xdf89918bc0",
-      "from": "0x6d41f5af",
-      "to": "0x7be49ee6",
-      "card": 11,
-      "date": "2026-03-04"
     }
   ],
-  "total_wallets": 4961
+  "total_wallets": 4962
 }

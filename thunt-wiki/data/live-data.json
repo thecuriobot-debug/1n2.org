@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-13",
+  "updated": "2026-03-14",
   "channels": {
     "MadBitcoins": {
       "id": "UCQgjyXLLMtG99Dkh8Yvw-3g",
@@ -10,14 +10,14 @@
         {
           "title": "The Bitcoin Group #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "adDpYA9rj0s",
-          "views": 28,
+          "views": 43,
           "comments": 0,
           "date": "2026-03-13"
         },
         {
           "title": "The Bitcoin Group #485 - Surge then Fall - Iran War - CA Buys - NY Allows",
           "id": "cUBaMcIejlY",
-          "views": 33,
+          "views": 34,
           "comments": 2,
           "date": "2026-03-07"
         },
@@ -235,31 +235,31 @@
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 245,
-          "views": 1678554
+          "views": 1678589
         },
         {
           "title": "Star Trek: The Motion Picture (ships only)",
           "id": "qHWlccpsYIA",
           "comments": 211,
-          "views": 158827
+          "views": 158841
         },
         {
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 188,
-          "views": 194102
+          "views": 194104
         },
         {
           "title": "Return of the Jedi (ships only)",
           "id": "jTMK8McUdE0",
           "comments": 131,
-          "views": 347998
+          "views": 348024
         },
         {
           "title": "Star Trek: Insurrection (ships only)",
           "id": "5LOtf5Yq39Y",
           "comments": 129,
-          "views": 322221
+          "views": 322222
         }
       ],
       "top_commenters": [
@@ -316,21 +316,21 @@
     },
     "World Crypto Network": {
       "id": "UCR9gdpWisRwnk_k23GsHfcA",
-      "subscribers": 52500,
+      "subscribers": 52400,
       "video_count": 4595,
       "total_comments_db": 27,
       "recent_videos": [
         {
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
-          "views": 57,
+          "views": 80,
           "comments": 5,
           "date": "2026-03-13"
         },
         {
           "title": "Vice President JD Vance Speaks at Bitcoin Las Vegas | Full Speech",
           "id": "zcSiy27HrDA",
-          "views": 72,
+          "views": 74,
           "comments": 1,
           "date": "2026-03-11"
         },
@@ -396,7 +396,7 @@
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
           "comments": 5,
-          "views": 57
+          "views": 80
         },
         {
           "title": "Trump Family's $1 3B Crypto Exit & Eric Trump's Tweet Deletions",
@@ -408,19 +408,19 @@
           "title": "The Bitcoin Group  #484 - Jane Street Insiders? - Block Layoffs - Trump Profits - Binance Iran",
           "id": "-RiJmDO3Hl8",
           "comments": 3,
-          "views": 194
+          "views": 195
         },
         {
           "title": "The Bitcoin Group #483 - NAKA Drama - SBF Reborn - BitBoy Verdict - Satoshi Movie",
           "id": "HDvPIGw53Vw",
           "comments": 3,
-          "views": 237
+          "views": 238
         },
         {
           "title": "Meet Bitcoin Artist Kenneth Burris: Art, Freedom & the Bitcoin Movement (Bitcoin Las Vegas)",
           "id": "8fQEfjRuf0w",
           "comments": 3,
-          "views": 90
+          "views": 91
         }
       ],
       "top_commenters": [
@@ -469,7 +469,7 @@
   },
   "curio": {
     "floor": 0.0486,
-    "holders": 4961,
+    "holders": 4962,
     "total_sales": 75
   }
 }
