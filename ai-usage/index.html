@@ -55,7 +55,7 @@ td{padding:5px 8px;border-bottom:1px solid rgba(30,41,59,.4)}
 <body>
 <nav class="n2-nav">
   <div class="n2-nav-inner">
-    <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
+    <a href="/" class="n2-logo"><img src="/logo.png?v=3" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
     <div class="n2-links">
       <a href="/thunt-data-labs/web/" class="n2-link">🔬 labs</a>
       <a href="/daily-logs/" class="n2-link">📋 logs</a>
@@ -301,14 +301,14 @@ function sw(id){location.hash=id;}
 function route(){
   const h=(location.hash||'#overview').slice(1);
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('on'));
+  document.querySelectorAll('nav#tabs a').forEach(a=>a.classList.remove('on'));
   const page=document.getElementById(h);
   if(page)page.classList.add('on');
-  const tab=document.querySelector(`nav a[href="#${h}"]`);
+  const tab=document.querySelector(`nav#tabs a[href="#${h}"]`);
   if(tab)tab.classList.add('on');
   window.scrollTo(0,0);
 }
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();location.hash=a.getAttribute('href').slice(1);route();}));
+document.querySelectorAll('nav#tabs a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();location.hash=a.getAttribute('href').slice(1);route();}));
 window.addEventListener('hashchange',route);
 route();
 </script>
