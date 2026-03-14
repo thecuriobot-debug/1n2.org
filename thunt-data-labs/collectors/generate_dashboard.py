@@ -78,21 +78,34 @@ def clean_text(text):
     text = re.sub(r'(?:Potsdam Institute|Jet Propulsion|University of|Institute for)[^.]*(?:PIK|JPL|MIT)\s*', '', text)
     return text.strip()
 
-def call_claude(prompt, max_tokens=200):
-    if not API_KEY:
+def call_gemini(prompt, max_tokens=200):
+    """Call Gemini Flash — free tier, 1M tokens/day."""
+    gemini_key = os.environ.get('GEMINI_API_KEY', '')
+    if not gemini_key:
+        try:
+            with open(os.path.expanduser('~/.zshrc')) as f:
+                for line in f:
+                    if line.startswith('export GEMINI_API_KEY='):
+                        gemini_key = line.split('=', 1)[1].strip().strip('"').strip("'")
+        except: pass
+    if not gemini_key:
         return None
     import requests
     try:
-        r = requests.post('https://api.anthropic.com/v1/messages',
-            headers={'x-api-key': API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json'},
-            json={'model': 'claude-sonnet-4-20250514', 'max_tokens': max_tokens,
-                  'messages': [{'role': 'user', 'content': prompt}]},
+        r = requests.post(
+            f'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}',
+            json={'contents': [{'parts': [{'text': prompt}]}],
+                  'generationConfig': {'maxOutputTokens': max_tokens, 'temperature': 0.1}},
             timeout=20)
         if r.status_code == 200:
-            return r.json()['content'][0]['text'].strip()
+            return r.json()['candidates'][0]['content']['parts'][0]['text'].strip()
     except Exception as e:
-        print(f"    API error: {e}")
+        print(f"    Gemini error: {e}")
     return None
+
+def call_claude(prompt, max_tokens=200):
+    """Wrapper — uses Gemini Flash (free) instead of Claude API."""
+    return call_gemini(prompt, max_tokens)
 
 def summarize_single(title, text, source):
     """One factual sentence. Who did what, when, where."""
