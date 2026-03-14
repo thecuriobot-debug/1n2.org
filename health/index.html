@@ -206,7 +206,7 @@ async function checkSite(path) {
 
 async function checkExport(path) {
   try {
-    const r = await fetch(exp.path, {cache:'no-store'});
+    const r = await fetch(path, {cache:'no-store'});
     if (!r.ok) return {ok: false, age: null};
     const text = await r.text();
     let age = null;
