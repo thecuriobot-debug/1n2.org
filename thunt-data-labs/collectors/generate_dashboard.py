@@ -79,7 +79,7 @@ def clean_text(text):
     return text.strip()
 
 def call_gemini(prompt, max_tokens=200):
-    """Call Gemini Flash — free tier, 1M tokens/day."""
+    """Call Gemini Flash — free tier, 1M tokens/day. Falls back through model chain."""
     gemini_key = os.environ.get('GEMINI_API_KEY', '')
     if not gemini_key:
         try:
@@ -91,16 +91,20 @@ def call_gemini(prompt, max_tokens=200):
     if not gemini_key:
         return None
     import requests
-    try:
-        r = requests.post(
-            f'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_key}',
-            json={'contents': [{'parts': [{'text': prompt}]}],
-                  'generationConfig': {'maxOutputTokens': max_tokens, 'temperature': 0.1}},
-            timeout=20)
-        if r.status_code == 200:
-            return r.json()['candidates'][0]['content']['parts'][0]['text'].strip()
-    except Exception as e:
-        print(f"    Gemini error: {e}")
+    models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite']
+    for model in models:
+        try:
+            r = requests.post(
+                f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gemini_key}',
+                json={'contents': [{'parts': [{'text': prompt}]}],
+                      'generationConfig': {'maxOutputTokens': max_tokens, 'temperature': 0.1}},
+                timeout=20)
+            if r.status_code == 200:
+                return r.json()['candidates'][0]['content']['parts'][0]['text'].strip()
+            elif r.status_code == 429:
+                continue  # try next model
+        except Exception as e:
+            print(f"    Gemini {model} error: {e}")
     return None
 
 def call_claude(prompt, max_tokens=200):
