@@ -160,13 +160,44 @@ const EXPORTS = [
 ];
 
 const JOBS = [
-  'Data Labs Collect','Comment Fetcher','MediaLog RSS',
-  'ThomasHuntFilms','WCN+TBG Podcasts','Curio Data Hub',
-  'CurioQuant','Curio Map','Curio Wiki','Curio Charts',
-  'Article Archive','Dashboarder','Morning Summary',
-  'Daily Logs','AI Usage','Homepage Stats',
-  'City News','Entertainment','Ego Search','Tweetster',
-  'Deploy to Droplet','GitHub Auto-Commit'
+  // Phase 1: Core Data
+  'Data Labs (Curio+YouTube+RSS+Tweets)',
+  'Comment Fetcher (YouTube)',
+  // Phase 2: Media
+  'MediaLog: Letterboxd + Goodreads',
+  // Phase 3: Thomas Hunt Films
+  'ThomasHuntFilms: New videos + stats',
+  // Phase 4: Podcasts
+  'WCN + TBG: New episodes',
+  // Phase 5: Curio Ecosystem
+  'Curio Data Hub: Blockchain data',
+  'CurioQuant: Market analysis',
+  'Curio Map: Holder distribution',
+  'Curio Wiki: Update + news',
+  'Curio Charts + Archive: Deploy',
+  // Phase 6: Content
+  'Article Archiver: RSS feeds',
+  'Dashboarder: Regenerate',
+  'Morning Summary: AI briefing',
+  // Phase 7: Personal Tools
+  'Daily Logs: Rebuild + today',
+  'AI Usage: Poll all AIs',
+  'Homepage Stats: Refresh numbers',
+  // Phase 8: Scrapers
+  'City News',
+  'Entertainment',
+  'Ego Search',
+  'Tweetster Fetch',
+  // Phase 9: Deploy (6 steps)
+  'Deploy: Core + homepage stats',
+  'Deploy: Dashboarder + articles',
+  'Deploy: Curio suite',
+  'Deploy: Media + personal tools',
+  'Deploy: All other projects',
+  'Deploy: Fix permissions',
+  // Phase 10-11
+  'GitHub: Auto-commit data files',
+  'Telegram: Daily report'
 ];
 
 function statusHtml(path, label, ok, status) {

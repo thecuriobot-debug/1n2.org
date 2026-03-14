@@ -36,7 +36,7 @@ def run():
     existing["date"]        = TODAY
     existing["projects"]    = count_project_dirs()
     existing["daily_logs"]  = count_daily_logs()
-    existing["daily_jobs"]  = 22  # unified cron job count
+    existing["daily_jobs"]  = 28  # unified cron job count
 
     # Ensure total_records is present (in case stats.json is empty/new)
     if not existing.get("total_records"):

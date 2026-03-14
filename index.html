@@ -35,7 +35,7 @@ h1 .org{color:var(--accent);letter-spacing:-3px}
 <header>
 <h1><img src="logo.png" alt="1n2.org" class="logo"><span class="title">1n2<span class="org">.org</span></span></h1>
 <div class="tagline">One human. One AI. Building tools, collecting data, making things.</div>
-<div class="stats" id="stats"><span><b>15</b> projects</span><span><b>16K+</b> records</span><span><b>146</b> videos</span><span><b>749</b> comments</span><span><b>22</b> daily jobs</span></div>
+<div class="stats" id="stats"><span><b>15</b> projects</span><span><b>16K+</b> records</span><span><b>146</b> videos</span><span><b>749</b> comments</span><span><b>28</b> daily jobs</span></div>
 <div style="display:flex;gap:8px;margin-top:10px;justify-content:flex-end;flex-wrap:wrap">
 <a href="thunt-data-labs/web/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--accent);font-family:'JetBrains Mono',monospace">🔬 labs</a>
 <a href="daily-logs/" style="padding:3px 10px;border-radius:4px;border:1px solid var(--border);font-size:.78rem;color:var(--accent);font-family:'JetBrains Mono',monospace">📋 logs</a>
@@ -55,7 +55,7 @@ fetch('thunt-data-labs/web/stats.json').then(r=>r.json()).then(d=>{
     `<span><b>${(rec/1000).toFixed(0)}K+</b> records</span>`+
     `<span><b>${(yt.videos||0).toLocaleString()}</b> videos</span>`+
     `<span><b>${(yt.comments||0).toLocaleString()}</b> comments</span>`+
-    `<span><b>22</b> daily jobs</span>`;
+    `<span><b>28</b> daily jobs</span>`;
 }).catch(()=>{});
 </script>
 
