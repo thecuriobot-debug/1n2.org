@@ -49,7 +49,7 @@ a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
 </head>
 <body>
 <div class="top-bar">
-  <div class="curio-nav"><a href="/" class="curio-nav-brand">🗺 Curio<span>Map</span></a><div class="curio-nav-links"><a href="/curio-quant/">CurioQuant</a><a href="/curio-quant/community.html">CurioCommunity</a><a href="/curiocharts/">CurioCharts</a><span class="curio-nav-current">CurioMap</span><a href="/curio-wiki/">CurioWiki</a><span id="auto-btn" onclick="toggleAutoplay()" style="cursor:pointer;padding:2px 8px;border-radius:4px;border:1px solid #f0a030;font-size:.68rem;font-weight:600;color:#f0a030;margin-left:4px">▶ Auto</span></div></div>
+  <div class="curio-nav"><a href="/" class="curio-nav-brand">🗺 Curio<span>Map</span></a><div class="curio-nav-links"><a href="/curio-quant/">CurioQuant</a><a href="/curio-quant/community.html">CurioCommunity</a><a href="/curiocharts/">CurioCharts</a><span class="curio-nav-current">CurioMap</span><a href="/curio-wiki/">CurioWiki</a></div></div>
   <div class="card-rows"><div class="card-row" id="nav-row1"></div><div class="card-row" id="nav-row2"></div></div>
 </div>
 <svg id="graph"></svg>
@@ -98,7 +98,8 @@ function toggleAutoplay(){
 }
 
 function buildNav(){
-  const ids = Object.keys(ALL).sort((a,b)=>{
+  // Only keep valid card IDs (numeric or 17b), exclude metadata keys
+  const ids = Object.keys(ALL).filter(id=>id==='17b'||(/^\d+$/.test(id)&&+id>=1&&+id<=30)).sort((a,b)=>{
     const na=a==='17b'?17.5:+a, nb=b==='17b'?17.5:+b; return na-nb;
   });
   const split=ids.findIndex(id=>{const n=id==='17b'?17.5:+id;return n>17;});
@@ -106,9 +107,10 @@ function buildNav(){
   document.getElementById('nav-row1').innerHTML = row1.map(id=>
     `<div class="cn" onclick="stopAutoplay();switchCard('${id}')">#${id}</div>`
   ).join('');
+  // Row2: card buttons + Auto button at end
   document.getElementById('nav-row2').innerHTML = row2.map(id=>
     `<div class="cn" onclick="stopAutoplay();switchCard('${id}')">#${id}</div>`
-  ).join('');
+  ).join('') + `<div id="auto-btn" onclick="toggleAutoplay()" style="cursor:pointer;padding:2px 7px;border-radius:4px;border:1px solid var(--accent);font-size:.65rem;font-weight:600;margin-left:4px;white-space:nowrap">▶ Auto</div>`;
 }
 
 function switchCard(id){
