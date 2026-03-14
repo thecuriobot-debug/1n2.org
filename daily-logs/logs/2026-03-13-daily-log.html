@@ -4,27 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Log — 2026-03-13</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--text:#e0e0e0;--muted:#888;--accent:#e8c547}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,system-ui,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:40px 20px}
-.container{max-width:800px;margin:0 auto;background:white;border-radius:20px;padding:50px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.back-link{display:inline-block;margin-bottom:24px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
-.date-label{font-size:.8rem;color:#888;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
-h1{font-size:1.9rem;color:#333;margin-bottom:12px;line-height:1.3}
-.summary{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:28px;padding:16px;background:#f8f9ff;border-radius:8px;border-left:4px solid #667eea}
-h2{font-size:1.1rem;color:#764ba2;margin:24px 0 10px;}
-ul{margin-left:20px}
-li{margin:.4rem 0;color:#444;line-height:1.5}
-.tags{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
-.tag{padding:3px 10px;border-radius:12px;background:#f0ecff;color:#764ba2;font-size:.75rem;font-weight:600}
-.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid #eee}
-.links a{color:#667eea;text-decoration:none;font-size:.85rem}
-.meta{font-size:.75rem;color:#aaa;margin-top:20px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+.n2-nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.n2-nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:48px}
+.n2-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:20px;flex-shrink:0}
+.n2-logo img{width:30px;height:30px;border-radius:5px}
+.n2-logo-text{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-1px}
+.n2-logo-text span{color:var(--accent)}
+.n2-links{display:flex;align-items:center;gap:2px;overflow-x:auto;flex:1}
+.n2-links::-webkit-scrollbar{height:0}
+.n2-link{padding:6px 12px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border:1px solid transparent;transition:all .15s}
+.n2-link:hover{color:var(--accent);border-color:var(--border)}
+.n2-link.active{color:#0f0f0f;background:var(--accent);border-color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:32px 24px}
+.date-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+h1{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.3}
+.summary{font-size:1rem;color:#bbb;line-height:1.7;margin-bottom:24px;padding:14px 16px;background:var(--card);border-radius:6px;border-left:3px solid var(--accent)}
+h2{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+ul{margin-left:18px}li{margin:.35rem 0;color:#bbb;line-height:1.5}
+.tags{margin:14px 0;display:flex;gap:6px;flex-wrap:wrap}
+.tag{padding:2px 10px;border-radius:12px;background:rgba(232,197,71,.1);color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:600;border:1px solid rgba(232,197,71,.2)}
+.foot{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid var(--border)}
+.foot a{color:var(--muted);font-size:.8rem;font-family:'JetBrains Mono',monospace}
+.foot a:hover{color:var(--accent)}
+.meta{font-size:.7rem;color:#444;margin-top:12px;font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
-<div class="container">
-<a href="../index.html" class="back-link">← All Daily Logs</a>
+<nav class="n2-nav">
+  <div class="n2-nav-inner">
+    <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
+    <div class="n2-links">
+      <a href="/" class="n2-link">🏠 home</a>
+      <a href="/thunt-data-labs/web/" class="n2-link">🔬 labs</a>
+      <a href="/daily-logs/" class="n2-link active">📋 logs</a>
+      <a href="/ai-usage/" class="n2-link">🤖 usage</a>
+      <a href="/health/" class="n2-link">💚 check</a>
+      <a href="https://github.com/thecuriobot-debug" target="_blank" class="n2-link">⚙️ github</a>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
 <div class="date-label">Friday, March 13, 2026</div>
 <h1>Ecosystem automation + GitHub overhaul + Health check</h1>
 <div class="summary">Full ecosystem automation: 22-job cron pipeline covering MediaLog RSS, ThomasHuntFilms, WCN/TBG podcasts, Curio suite, articles, daily logs, AI usage. GitHub: README for all 14 repos, profile page, deploy workflow. Health check rebuilt with 40 sites. All Curio sites cross-linked.</div>
@@ -37,44 +62,46 @@ li{margin:.4rem 0;color:#444;line-height:1.5}
 <li>🔨 All Curio sites cross-linked</li>
 <li>🔨 Database.py rebuilt</li></ul>
 
-<h2>📝 Git Commits (18)</h2>
-<ul><li>fix: health check // double-slash bug on homepage, stats.json no longer overwritten</li>
+<h2>📝 Git Commits (33)</h2>
+<ul><li>fix: daily-logs duplicate body tag removed, h1 restored</li>
+<li>layout: all 5 pages unified at max-width:960px centered — homepage + labs/logs/usage/check</li>
+<li>layout: standardize all 4 pages to max-width:960px centered</li>
+<li>nav: unified 1n2-style nav on all 4 pages — labs/logs/usage/check — yellow accent, dark bg, logo</li>
+<li>nav: unified 1n2-style nav on health + daily-logs</li>
+<li>logo: include full lightbulb stem (was cut at y=350, now includes complete base to y=406)</li>
+<li>logo: remove text, scale lightbulb to fill canvas, transparent bg</li>
+<li>logo: white bg transparent, blue→yellow #e8c547, resize to 82px</li>
+<li>homepage: logo 72→110px</li>
+<li>homepage: nav buttons yellow to match accent color</li>
+<li>homepage: bigger logo (72px), tighter 1n2.org spacing, yellow links, accurate stats (15 projects, 16K records, 22 jobs)</li>
+<li>homepage: add logo, GitHub link in nav + footer</li>
+<li>api keys: OpenAI + Claude + Gemini configured, ChatGPT pending billing, all keys in crontab/.env/.zshrc</li>
+<li>ai-usage: Gemini API key added, polls gemini-2.5-flash with quota fallback chain</li>
+<li>logs: full rebuild with real session history Feb 7–Mar 13, AI usage with API polling, nano as default editor, crontab updated</li>
+<li>fix: health check // double-slash bug on homepage, stats.json no longer overwritten</li>
 <li>fix: stats.json no longer overwritten by homepage_stats, thomashuntfilms generate_site schema fixed</li>
 <li>fix: all collectors working — curio wiki/map/ai-usage/podcasts fixed, health check rebuilt</li>
 <li>fix: podcast updater handles real data structures, generate_site youtube_id key fixed, health check rebuilt with all 40 sites</li>
-<li>auto: add database.py, all new collectors, unified master-run, fix gitignore</li>
-<li>GitHub: add README, DEPLOY.md, master deploy.sh with full workflow docs</li>
-<li>add: all untracked projects, content, and deploy scripts</li>
-<li>gitignore: exclude large media, db, node_modules, large JSON - move audio to LargeData</li>
-<li>Full project sync March 13 2026: all Curio sites cross-linked, BitcoinVision, My YouTube+Commentzor merged, CurioCharts with Data Labs</li>
-<li>Restore CurioQuant index.html from git (was overwritten by rsync). Redeploy with correct nav: CurioCommunity CurioCharts CurioMap CurioWiki</li>
-<li>CurioMap: match header size to other Curio sites (top bar + card rows below). Deploy all CurioQuant updates to server.</li>
-<li>CurioWiki: add dark nav bar matching other Curio sites (CurioQuant/CurioCharts/CurioMap/CurioCommunity). Remove scrolling Floor/comments data ticker. Replace remaining MadWikipedia reference with Curio Wiki.</li>
-<li>CurioMap: break card nav after #17 (row 1: #1-#17, row 2: #17b-#30)</li>
-<li>CurioMap header: 3-line layout — Curio nav + Auto button on line 1, cards #1-#15 on line 2, cards #16-#30 on line 3. All card links visible without scrolling.</li>
-<li>CurioMap: expand header to two lines — card nav on line 1, Curio project links on line 2 (right-aligned with separator)</li>
-<li>CurioMap nav: match other Curio sites — CurioQuant CurioCharts CurioCommunity CurioWiki</li>
-<li>CurioCharts nav: match other Curio sites — CurioQuant CurioCommunity CurioMap CurioWiki</li>
-<li>CurioCommunity: add sticky header nav bar matching CurioQuant style — links to CurioQuant, CurioCharts, CurioMap, CurioWiki</li></ul>
+<li>auto: add database.py, all new collectors, unified master-run, fix gitignore</li></ul>
 
 <h2>📊 Live Data Snapshot</h2>
 <ul>
-<li>Total DB records: <b>3,563</b></li>
+<li>Total DB records: <b>3,919</b></li>
 <li>Curio Cards floor: <b>0.0486 ETH</b></li>
 <li>YouTube videos: <b>146</b></li>
 <li>YouTube comments: <b>749</b></li>
-<li>Articles: <b>244</b></li>
+<li>Articles: <b>600</b></li>
 <li>Movies tracked: <b>1,569</b></li>
 <li>Books tracked: <b>779</b></li>
 </ul>
-<div class="links">
-<a href="https://1n2.org">🏠 1n2.org</a>
-<a href="https://1n2.org/thunt-data-labs/web/">🔬 Data Labs</a>
-<a href="https://1n2.org/dashboarder/">📰 Dashboarder</a>
-<a href="https://1n2.org/curiocharts/">🃏 CurioCharts</a>
-<a href="https://1n2.org/health/">💚 Health</a>
+<div class="foot">
+<a href="/daily-logs/">← All Logs</a>
+<a href="/">🏠 1n2.org</a>
+<a href="/thunt-data-labs/web/">🔬 Data Labs</a>
+<a href="/dashboarder/">📰 Dashboarder</a>
+<a href="/health/">💚 Health</a>
+<a href="https://github.com/thecuriobot-debug" target="_blank">⚙️ GitHub</a>
 </div>
-<div class="meta">Generated 2026-03-13 16:00 · 1n2.org Daily Log</div>
+<div class="meta">Generated 2026-03-13 17:20 · 1n2.org Daily Log</div>
 </div>
-</body>
-</html>
+</body></html>

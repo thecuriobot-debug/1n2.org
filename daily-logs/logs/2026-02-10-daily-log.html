@@ -4,27 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Log — 2026-02-10</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--text:#e0e0e0;--muted:#888;--accent:#e8c547}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,system-ui,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:40px 20px}
-.container{max-width:800px;margin:0 auto;background:white;border-radius:20px;padding:50px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.back-link{display:inline-block;margin-bottom:24px;color:#667eea;text-decoration:none;font-weight:500;font-size:.9rem}
-.date-label{font-size:.8rem;color:#888;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
-h1{font-size:1.9rem;color:#333;margin-bottom:12px;line-height:1.3}
-.summary{font-size:1.05rem;color:#555;line-height:1.7;margin-bottom:28px;padding:16px;background:#f8f9ff;border-radius:8px;border-left:4px solid #667eea}
-h2{font-size:1.1rem;color:#764ba2;margin:24px 0 10px;}
-ul{margin-left:20px}
-li{margin:.4rem 0;color:#444;line-height:1.5}
-.tags{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
-.tag{padding:3px 10px;border-radius:12px;background:#f0ecff;color:#764ba2;font-size:.75rem;font-weight:600}
-.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid #eee}
-.links a{color:#667eea;text-decoration:none;font-size:.85rem}
-.meta{font-size:.75rem;color:#aaa;margin-top:20px}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+.n2-nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.n2-nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:48px}
+.n2-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:20px;flex-shrink:0}
+.n2-logo img{width:30px;height:30px;border-radius:5px}
+.n2-logo-text{font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-1px}
+.n2-logo-text span{color:var(--accent)}
+.n2-links{display:flex;align-items:center;gap:2px;overflow-x:auto;flex:1}
+.n2-links::-webkit-scrollbar{height:0}
+.n2-link{padding:6px 12px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border:1px solid transparent;transition:all .15s}
+.n2-link:hover{color:var(--accent);border-color:var(--border)}
+.n2-link.active{color:#0f0f0f;background:var(--accent);border-color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:32px 24px}
+.date-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+h1{font-family:'JetBrains Mono',monospace;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.3}
+.summary{font-size:1rem;color:#bbb;line-height:1.7;margin-bottom:24px;padding:14px 16px;background:var(--card);border-radius:6px;border-left:3px solid var(--accent)}
+h2{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent);margin:20px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+ul{margin-left:18px}li{margin:.35rem 0;color:#bbb;line-height:1.5}
+.tags{margin:14px 0;display:flex;gap:6px;flex-wrap:wrap}
+.tag{padding:2px 10px;border-radius:12px;background:rgba(232,197,71,.1);color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:600;border:1px solid rgba(232,197,71,.2)}
+.foot{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid var(--border)}
+.foot a{color:var(--muted);font-size:.8rem;font-family:'JetBrains Mono',monospace}
+.foot a:hover{color:var(--accent)}
+.meta{font-size:.7rem;color:#444;margin-top:12px;font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
-<div class="container">
-<a href="../index.html" class="back-link">← All Daily Logs</a>
+<nav class="n2-nav">
+  <div class="n2-nav-inner">
+    <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
+    <div class="n2-links">
+      <a href="/" class="n2-link">🏠 home</a>
+      <a href="/thunt-data-labs/web/" class="n2-link">🔬 labs</a>
+      <a href="/daily-logs/" class="n2-link active">📋 logs</a>
+      <a href="/ai-usage/" class="n2-link">🤖 usage</a>
+      <a href="/health/" class="n2-link">💚 check</a>
+      <a href="https://github.com/thecuriobot-debug" target="_blank" class="n2-link">⚙️ github</a>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
 <div class="date-label">Tuesday, February 10, 2026</div>
 <h1>Tweetster + Mad Patrol — Twitter reader and Bitcoin arcade game</h1>
 <div class="summary">Built Tweetster — ad-free Twitter reader scraping Nitter across Bitcoin accounts. Then built Mad Patrol: Moon Patrol tribute, Bitcoin rover, 8 levels, pure Canvas JS.</div>
@@ -37,14 +62,14 @@ li{margin:.4rem 0;color:#444;line-height:1.5}
 <h2>📝 Git Commits (1)</h2>
 <ul><li>Add Tweetster and Checklister apps to 1n2.org</li></ul>
 
-<div class="links">
-<a href="https://1n2.org">🏠 1n2.org</a>
-<a href="https://1n2.org/thunt-data-labs/web/">🔬 Data Labs</a>
-<a href="https://1n2.org/dashboarder/">📰 Dashboarder</a>
-<a href="https://1n2.org/curiocharts/">🃏 CurioCharts</a>
-<a href="https://1n2.org/health/">💚 Health</a>
+<div class="foot">
+<a href="/daily-logs/">← All Logs</a>
+<a href="/">🏠 1n2.org</a>
+<a href="/thunt-data-labs/web/">🔬 Data Labs</a>
+<a href="/dashboarder/">📰 Dashboarder</a>
+<a href="/health/">💚 Health</a>
+<a href="https://github.com/thecuriobot-debug" target="_blank">⚙️ GitHub</a>
 </div>
-<div class="meta">Generated 2026-03-13 16:00 · 1n2.org Daily Log</div>
+<div class="meta">Generated 2026-03-13 17:20 · 1n2.org Daily Log</div>
 </div>
-</body>
-</html>
+</body></html>
