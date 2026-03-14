@@ -20,6 +20,13 @@ if [ "$CHANGED" -gt "0" ]; then
     git restore --staged medialog/config.php 2>/dev/null || true
     git restore --staged "*.env" 2>/dev/null || true
     git restore --staged "thunt-data-labs/.env" 2>/dev/null || true
+    # Protect hand-built HTML pages from auto-commit overwrites
+    git restore --staged curio-quant/index.html 2>/dev/null || true
+    git restore --staged curio-quant/card.html 2>/dev/null || true
+    git restore --staged curio-quant/community.html 2>/dev/null || true
+    git restore --staged curio-quant/collector.html 2>/dev/null || true
+    git restore --staged curio-quant/collectors.html 2>/dev/null || true
+    git restore --staged curio-quant/groups.html 2>/dev/null || true
 
     STAGED=$(git diff --cached --name-only | wc -l | tr -d ' ')
     if [ "$STAGED" -gt "0" ]; then
