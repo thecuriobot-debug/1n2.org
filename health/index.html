@@ -166,14 +166,14 @@ const SITES = {
 };
 
 const EXPORTS = [
-  {path: 'thunt-data-labs/web/stats.json', label: 'stats.json'},
-  {path: 'curioarchive/data/live-data.json', label: 'curio live-data.json'},
-  {path: 'curio-atlas/data/network.json', label: 'curio network.json'},
-  {path: 'curiohub/data/hub-data.json', label: 'hub-data.json'},
-  {path: 'curio-oracle/data/oracle-data.json', label: 'oracle-data.json'},
-  {path: 'commentzor/data.json', label: 'commentzor data.json'},
-  {path: 'tbg-mirrors/data.json', label: 'tbg data.json'},
-  {path: 'wcn-podcast/data.json', label: 'wcn data.json'},
+  {path: '/thunt-data-labs/web/stats.json', label: 'stats.json'},
+  {path: '/curioarchive/data/live-data.json', label: 'curio live-data.json'},
+  {path: '/curio-atlas/data/network.json', label: 'curio network.json'},
+  {path: '/curiohub/data/hub-data.json', label: 'hub-data.json'},
+  {path: '/curio-oracle/data/oracle-data.json', label: 'oracle-data.json'},
+  {path: '/commentzor/data.json', label: 'commentzor data.json'},
+  {path: '/tbg-mirrors/data.json', label: 'tbg data.json'},
+  {path: '/wcn-podcast/data.json', label: 'wcn data.json'},
 ];
 
 const JOBS = [
@@ -206,7 +206,7 @@ async function checkSite(path) {
 
 async function checkExport(path) {
   try {
-    const r = await fetch('/' + exp.path, {cache:'no-store'});
+    const r = await fetch(exp.path, {cache:'no-store'});
     if (!r.ok) return {ok: false, age: null};
     const text = await r.text();
     let age = null;
