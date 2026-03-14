@@ -647,5 +647,9 @@
       "run_at": "2026-03-13 22:29:33"
     }
   ],
-  "db_size_mb": 6.31
+  "db_size_mb": 6.31,
+  "date": "2026-03-13",
+  "projects": 56,
+  "daily_logs": 32,
+  "daily_jobs": 22
 }

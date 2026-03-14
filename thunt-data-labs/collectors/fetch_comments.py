@@ -40,12 +40,12 @@ def ensure_channel(conn, ch_id, name):
     print(f"\n  Adding new channel: {name} ({ch_id})")
     data = yt_api("channels", {"id": ch_id, "part": "snippet,statistics"})
     if not data or not data.get("items"):
-        conn.execute("INSERT OR IGNORE INTO yt_channels (channel_id,name,url,subscribers,video_count,thumbnail,added_at,last_scraped) VALUES (?,?,?,0,0,'',datetime('now'),datetime('now'))",
+        conn.execute("INSERT OR IGNORE INTO yt_channels (channel_id,name,url,subscribers,video_count,thumbnail,last_scraped) VALUES (?,?,?,0,0,'',datetime('now'))",
             (ch_id, name, f"https://youtube.com/channel/{ch_id}"))
         return
     ch = data["items"][0]
     sn, st = ch.get("snippet",{}), ch.get("statistics",{})
-    conn.execute("INSERT OR REPLACE INTO yt_channels (channel_id,name,url,subscribers,video_count,thumbnail,added_at,last_scraped) VALUES (?,?,?,?,?,?,datetime('now'),datetime('now'))",
+    conn.execute("INSERT OR REPLACE INTO yt_channels (channel_id,name,url,subscribers,video_count,thumbnail,last_scraped) VALUES (?,?,?,?,?,?,datetime('now'))",
         (ch_id, name, f"https://youtube.com/channel/{ch_id}",
          int(st.get("subscriberCount",0)), int(st.get("videoCount",0)),
          sn.get("thumbnails",{}).get("default",{}).get("url","")))
