@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Supply-chain attack using invisible code hits GitHub and other repositories</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://arstechnica.com/security/2026/03/supply-chain-attack-using-invisible-code-hits-github-and-other-repositories/" target="_blank">Original article ↗</a></div>
+
+<h1>Supply-chain attack using invisible code hits GitHub and other repositories</h1>
+<div class="meta">Ars Technica · 2026-03-13</div>
+<div class="summary">Researchers say they’ve discovered a supply-chain attack flooding repositories with malicious packages that contain invisible code, a technique that’s flummoxing traditional defenses designed to detect such threats.
+The researchers, from firm Aikido </div>
+<p>Researchers say they’ve discovered a supply-chain attack flooding repositories with malicious packages that contain invisible code, a technique that’s flummoxing traditional defenses designed to detect such threats.</p>
+<p>The researchers, from firm Aikido Security, said Friday that they found 151 malicious packages that were uploaded to GitHub from March 3 to March 9. Such supply-chain attacks have been common for nearly a decade. They usually work by uploading malicious packages with code and names that closely resemble those of widely used code libraries, with the objective of tricking developers into mistakenly incorporating the former into their software. In some cases, these malicious packages are downloaded thousands of times.</p>
+<p>Defenses see nothing. Decoders see executable code</p>
+<p>The packages Aikido found this month have adopted a newer technique: selective use of code that isn’t visible when loaded into virtually all editors, terminals, and code review interfaces. While most of the code appears in normal, readable form, malicious functions and payloads—the usual telltale signs of malice—are rendered in unicode characters that are invisible to the human eye. The tactic, which Aikido said it first spotted last year, makes manual code reviews and other traditional defenses nearly useless. Other repositories hit in these attacks include NPM and Open VSX.</p>
+<p>The malicious packages are even harder to detect because of the high quality of their visible portions.</p>
+<p>“The malicious injections don’t arrive in obviously suspicious commits,” Aikido researchers wrote. “The surrounding changes are realistic: documentation tweaks, version bumps, small refactors, and bug fixes that are stylistically consistent with each target project.”</p>
+<p>The researchers suspect that Glassworm—the name they assigned to the attack group—is using LLMs to generate these convincingly legitimate-appearing packages. “At the scale we’re now seeing, manual crafting of 151+ bespoke code changes across different codebases simply isn’t feasible,” they explained. Fellow security firm Koi, which has also been tracking the same group, said it, too, suspects the group is using AI.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://arstechnica.com/security/2026/03/supply-chain-attack-using-invisible-code-hits-github-and-other-repositories/" target="_blank">Read original →</a></div>
+</body></html>

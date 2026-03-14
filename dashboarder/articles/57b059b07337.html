@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Microsoft is working to eliminate PC gaming&#x27;s &quot;compiling shaders&quot; wait times</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://arstechnica.com/gaming/2026/03/microsoft-is-working-to-eliminate-pc-gamings-compiling-shaders-wait-times/" target="_blank">Original article ↗</a></div>
+
+<h1>Microsoft is working to eliminate PC gaming&#x27;s &quot;compiling shaders&quot; wait times</h1>
+<div class="meta">Ars Technica · 2026-03-13</div>
+<div class="summary">Modern gamers are used to loading up a new game for the first time and being forced to wait multiple minutes while a “compiling shaders” step whirs away, optimizing advanced 3D effects for their specific hardware. This week at the Game Developers Con</div>
+<p>Modern gamers are used to loading up a new game for the first time and being forced to wait multiple minutes while a “compiling shaders” step whirs away, optimizing advanced 3D effects for their specific hardware. This week at the Game Developers Conference, Microsoft provided some updates about its Advanced Shader Delivery for Windows efforts, which are designed to fix the problem by generating collections of precompiled shaders that can be downloaded ahead of time.</p>
+<p>In a console environment, developers can optimize and precompile their graphics shaders to work well with a set driver and GPU environment. On PC, though, developers tend to leave their shaders as uncompiled code that can then be compiled and cached at runtime based on the specific hardware and drivers on the player’s machine.</p>
+<p>Microsoft’s Advanced Shader Delivery infrastructure aims to fix this problem by automating the process of precompiling shaders that work across “a large matrix of drivers and GPUs in the Windows ecosystem,” as the company puts it. To enable that, developers use Microsoft’s Direct3D API to create a State Object Database (SODB) that represents in-game assets at the game engine level. That asset database is then fed into multiple shader compilers to create a Precompiled Shader Database (PSDB) that supports multiple display adapters from different hardware vendors.</p>
+<p>That PSDB can then be downloaded alongside the game, providing what Microsoft calls “console-like load times across the hardware ecosystem” on PC. That PSDB can also be automatically updated when hardware vendors register a driver update, letting players download a new precompiled shader as a patch rather than recompiling locally every time their hardware drivers change.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://arstechnica.com/gaming/2026/03/microsoft-is-working-to-eliminate-pc-gamings-compiling-shaders-wait-times/" target="_blank">Read original →</a></div>
+</body></html>

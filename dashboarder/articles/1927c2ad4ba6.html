@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RAM is getting expensive, so squeeze the most from it</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/13/zram_vs_zswap/" target="_blank">Original article ↗</a></div>
+
+<h1>RAM is getting expensive, so squeeze the most from it</h1>
+<div class="meta">The Register AI · 2026-03-13</div>
+<div class="summary">RAM is getting expensive, so squeeze the most from it
+Zram versus zswap – two ways to get a quart into a pint pot
+Linux has two ways to do memory compression – zram and zswap – but you rarely hear about the second. The Register compares and contrasts</div>
+<p>RAM is getting expensive, so squeeze the most from it</p>
+<p>Zram versus zswap – two ways to get a quart into a pint pot</p>
+<p>Linux has two ways to do memory compression – zram and zswap – but you rarely hear about the second. The Register compares and contrasts them.</p>
+<p>The Linux kernel&#x27;s zram tool has been in the news this week. Phoronix reports that the new patch could make some zram operations 50 percent faster.</p>
+<p>Thanks to the increasingly desperate flailing by the hucksters selling automatic plagiarism machines, RAM has got much more expensive and the price rises are expected to continue. Apple has even quietly dropped the 512 GB RAM model of its Mac Studio. This is not a good time to buy computers with lots of RAM, or to add more RAM to existing machines.</p>
+<p>Better to try to make the most of what you&#x27;ve already got. So we thought this might be a good time to look at what zram is and does, and explore its less well-known companion zswap.</p>
+<p>Both work with Linux&#x27;s existing swapping mechanism. Swapping (called paging in Windows) is a way for the kernel to handle running low on available RAM. It chooses pages of memory that aren&#x27;t in use right now and copies them to disk, then those blocks can be marked as free and reused for something else. This could be a whole process and its data, which gets paused and swapped out from RAM onto disk. The hope is that some other program will finish, which frees up its RAM, and the process can be swapped in again. Unfortunately, in real life, it&#x27;s more likely that the poor stressed user switches to the inactive program, which means something else has to get swapped out to make room for it.</p>
+<p>This matters because it means that to use either zram or zswap, you need some form of swap.</p>
+<p>Swapping is a basic mechanism that comes along as part of the deal with any OS that has virtual memory. That broadly means any OS that can use a hardware memory-management unit. For the PC industry, this means anything since Linux (1991) and Windows NT (1993). From reading far too many posts in far too many techie message boards, we get the impression that a lot of people these days think &quot;My computer has enough RAM. I don&#x27;t need swap, so I turned it off.&quot;</p>
+<p>This is wrong. Don&#x27;t do it. Always configure some swap, just in case.</p>
+<p>It is like concluding that you are happy with your body weight, and so put a wire waistband in all your trousers (underpants, skirts, whatever you prefer). Sure, on a normal day they will fit, but you might go to a really good dinner and eat too much, or you might get sick and not eat and lose a bit of weight, and suddenly they will all painfully cut into you, or they&#x27;ll fall down. A little bit of elastic, even if only in your underwear, makes life much more comfortable.</p>
+<p>Having some swap is an elastic waistband for your computer. In normal use, the machine might never need it, but if something goes a bit wrong one day, it&#x27;s much better to have it than, metaphorically speaking, have your clothes split and fall off. One day you will be glad there was a little slack or a little give.</p>
+<p>So, first, let&#x27;s talk briefly about swap space.</p>
+<p>What kind of swap?</p>
+<p>By default, there are basically two options here: a swap file, or a swap partition. Ever since version 17.04, Ubuntu has used a swap file by default. When the Linux kernel was young, this was slower, but there&#x27;s been next to no difference in a decade or more. The only real snag is that you need more room in the root partition.</p>
+<p>From old habit, The Reg FOSS desk always sets up a dedicated swap partition. One advantage is that if you have more than one physical drive, you can put the swap partition on a different drive, which spreads the load on the disks a little. Back when SSDs were expensive and wore out, we kitted out machines with a small SSD and a big HDD, and put the OS on the SSD and the swap on spinning rust, but that isn&#x27;t really necessary any more. Just bung an extra partition on the end of one of your SSDs, and during installation tell the installer that&#x27;s for swap.</p>
+<p>How much? That&#x27;s contentious. Perlod&#x27;s guidelines seem reasonable:</p>
+<p>Under 2 GB RAM: Set swap to 2× your RAM.</p>
+<p>2 GB to 8 GB RAM: Set swap equal to your RAM.</p>
+<p>Over 8 GB RAM: 4 GB is usually enough.</p>
+<p>Exception: If you use Hibernation, your swap must be bigger than your total RAM.</p>
+<p>Zram</p>
+<p>Thinking about where swap is, and how much, is where zram comes in. As is often the case, the Arch wiki explains it well. Zram creates compressed dynamic RAM disks. &quot;Dynamic&quot; meaning they grow only as they fill up, and &quot;compressed&quot; means with LZ4, which is fast. One use for those RAM disks is for swapping.</p>
+<p>This sounds insane: swapping from memory to memory? What&#x27;s the point? But it is not mad, it works. The gist is that your computer swaps stuff out when it&#x27;s short of space. Normally, that means to disk. For instance, a 500 MB program gets turfed out of RAM and stuck in half a gigabyte of disk space, freeing up half a gig of RAM for other stuff.</p>
+<p>The problem is, swap is very slow, because disks are very slow compared to RAM. To understand how many thousands of times slower, there&#x27;s a handy table of Latency Numbers Every Programmer Should Know on GitHub, and a humanized version that expresses the time differentials in terms more meaningful to us meatsacks.</p>
+<p>The idea of zram is: rather than take the time to write it out to disk, why not compress it and keep it in memory? With a fast CPU, it won&#x27;t take long, and it will take about half as much space. When you need it back, swapping it in just means decompressing it from RAM to RAM, which is relatively quick.</p>
+<p>It works surprisingly well and some distros enable it by default these days, such as Fedora and derivatives.</p>
+<p>Memory compression is mainstream tech now: macOS has used memory compression since 10.9, and Windows 10 gained the feature in 2015 in Build 10525.</p>
+<p>There are two main use cases for swapping to zram. One is if your machine has enough RAM that you rarely run low. In this scenario, it takes a little of the free memory that the kernel would use for your disk cache anyway, and hey presto, you can have more programs in memory at once.</p>
+<p>- DR-DOS rises again – rebuilt from scratch, not open source</p>
+<p>- Linux PC vendor System76 tries to talk Colorado down over OS age checks</p>
+<p>- RSS dulls the pain of the modern web</p>
+<p>- Gram: Zed, but with AI and chat features removed</p>
+<p>The other situation is that you might not have much spare memory, but your system drive is slow, or small, or limited in how many writes it can handle. This applies to computers which boot from microSD cards, or similar onboard storage such as an eMMC drive. This particularly applies to the Raspberry Pi, and to many low-end single-board computers and cheap tablets.</p>
+<p>Here, zram lets you avoid wearing out the card, and helps prevent you from running out of memory. It lets you over-commit your RAM: load more stuff into memory than you have available memory, because the stuff that isn&#x27;t running right now has effectively been zipped so it takes less space.</p>
+<p>This only works so far – it can&#x27;t compress everything in your memory: the kernel needs some workspace, and room for whatever task is currently running. The good news is that the kernel natively understands the idea of multiple separate areas of swap space, and can prioritize them. So you can have some zram as well as a swap file, and it will move the least recently used stuff from zram into disk swap as needed.</p>
+<p>In our testing of Pop!_OS 24.04 so far, we found it configures two-level swap like this: first zram, then an encrypted swap file in the root partition.</p>
+<p>To summarize, zram can take the place of swap on disk. Or, if you have the room to spare, you can use it as well as plain old swapping to disk, in which case it acts as a sort of compressed cache for your swap, speeding swap performance slightly. That&#x27;s why, earlier in its development, it was called compcache</p>
+<p>.</p>
+<p>Zswap</p>
+<p>The main alternative to zram is zswap, which works rather differently.</p>
+<p>Zswap isn&#x27;t an alternative to, or complement for, having swap on disk. It requires swap on disk, but does its best to reduce how much your OS uses that swap by compressing stuff before it gets to the swap space. For the technical nitty-gritty, its developer described how it works for LWN in 2013: the zswap compressed swap cache.</p>
+<p>There&#x27;s a short sharp description in the Debian wiki. The good thing about zswap is that using it is basically as simple as turning it on or off. You can even do it on the fly, although we usually enable it on all our machines, right from the bootloader. If your distro boots using GRUB, it&#x27;s as simple editing one line in one config file. For distros that use systemd-boot</p>
+<p>, it&#x27;s a bit more complicated – that is systemd all over – but it&#x27;s only a couple more steps.</p>
+<p>Pop!_OS is one example – but for that distro, compressed swap needs more work. Two things need to be turned off for this to provide any performance benefit. Firstly, Pop!_OS enables zram by default, so you need to disable zram. Then reboot and check it&#x27;s gone. (Hint: sudo swapon -s</p>
+<p>lists all active swap volumes.)</p>
+<p>Secondly, Pop defaults to encrypting its swap file. The encryption and decryption reduces performance, and zswap is a performance optimization. So you should disable cryptswap too. Afterwards, for (much) faster boots, remove the /etc/crypttab</p>
+<p>file too. (We just renamed it to crypttab.old</p>
+<p>from old paranoid habit.)</p>
+<p>Do both, and don&#x27;t forget to reboot each time. When you&#x27;re sure both zram and cryptsetup are gone, then try enabling zswap.</p>
+<p>One or the other, not both</p>
+<p>Zram can work alongside a normal swap file, but not alongside zswap. Both are trying to do the same thing, and any performance improvement either could give will be eliminated by them duplicating one another&#x27;s work and wasting the very resource you&#x27;re trying to use more efficiently. Use zram, or zswap, but don&#x27;t even try both at once.</p>
+<p>We&#x27;ve tried both, and we do use zram on things like our Raspberry Pis and on custom bootable Linux keys. However, for general desktop and laptop</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/13/zram_vs_zswap/" target="_blank">Read original →</a></div>
+</body></html>

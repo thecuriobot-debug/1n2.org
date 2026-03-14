@@ -1,6 +1,6 @@
 // CurioArchive - Live Market Statistics
 // Updated from Curio Data Hub
-// Last update: 2026-03-13T08:12:04Z
+// Last update: 2026-03-14T00:30:10Z
 
 const MARKET_STATS = {
   floor_price: 0.0486,
@@ -8,7 +8,7 @@ const MARKET_STATS = {
   sales_24h: 1,
   holders: 387,
   total_supply: 30,
-  updated_at: "2026-03-13T08:12:04Z"
+  updated_at: "2026-03-14T00:30:10Z"
 };
 
 // Display stats in header

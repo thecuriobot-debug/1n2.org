@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NanoClaw latches onto Docker Sandboxes for safer AI agents</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://go.theregister.com/feed/www.theregister.com/2026/03/13/nanoclaw_latches_onto_docker_sandboxes/" target="_blank">Original article ↗</a></div>
+
+<h1>NanoClaw latches onto Docker Sandboxes for safer AI agents</h1>
+<div class="meta">The Register AI · 2026-03-13</div>
+<div class="summary">exclusive NanoClaw, an open source agent platform, can now run inside Docker Sandboxes, furthering the project&#x27;s commitment to security.
+NanoClaw, as we noted recently, followed from an effort to address the security holes opened by OpenClaw, which a</div>
+<p>exclusive NanoClaw, an open source agent platform, can now run inside Docker Sandboxes, furthering the project&#x27;s commitment to security.</p>
+<p>NanoClaw, as we noted recently, followed from an effort to address the security holes opened by OpenClaw, which attracted widespread attention earlier this year as a way to empower AI models to roam about the web and operate applications on users’ behalf and without many constraints.</p>
+<p>NanoClaw already runs inside of containers, which makes it safer than running agent software on a local machine. Through a partnership with Docker, users can now install NanoClaw into a Docker Sandbox, a kind of micro VM that is more secure than a container because it&#x27;s isolated from the host system. A container is an isolated process on a shared kernel; micro VMs have their own kernel.</p>
+<p>&quot;With Docker Sandboxes, that boundary is now two layers deep,&quot; explained Gavriel Cohen, co-founder of NanoClaw, in a blog post provided to The Register ahead of publication. &quot;Each agent runs in its own container (can&#x27;t see other agents&#x27; data), and all containers run inside a micro VM (can&#x27;t touch your host machine). If a hallucination or a misbehaving agent can cause a security issue, the security model is broken. Security has to be enforced outside the agentic surface, not depend on the agent behaving correctly.&quot;</p>
+<p>Docker Sandboxes are supported on macOS (Apple Silicon) and Windows (x86), with Linux support due in a few weeks.</p>
+<p>Mark Cavage, COO of Docker, told The Register in an interview, &quot;Docker Sandboxes are a new primitive that has the ergonomics of Docker and what I describe as the ethos of Docker. But it&#x27;s fundamentally a different primitive. It&#x27;s actually a micro VM and it actually has true isolation with its own dedicated kernel and its own dedicated hardware space.&quot;</p>
+<p>As a tagline to describe Sandboxes, he suggested &quot;You can put YOLO in a box&quot; – a reference to the risky &quot;You only live once&quot; setting (since renamed &quot;auto-run&quot;) available in the Cursor AI IDE to allow agents to perform a series of automated actions without seeking permission.</p>
+<p>Cavage said the problem most people have with coding agents is they can generate all sorts of code, but developers must still click &quot;Okay&quot; over and over to use it. Developers, he said, frequently want to disable that protection and just go for it.</p>
+<p>&quot;But the problem is it can wipe out your file system and do very, very bad things,&quot; he said.</p>
+<p>Docker introduced Sandboxes last November to prevent possible problems. Cavage said after the launch of NanoClaw, Cohen got in touch and after some discussion integrated Sandboxes into the code base.</p>
+<p>Cavage said that the essence of Docker is portability, isolation, and simplicity. But containers, he said, assume some degree of immutability.</p>
+<p>&quot;You start something and Kubernetes will restart anything that looks like it&#x27;s drifted, and security teams have scanners to flag writable root file systems and so on,&quot; he said. &quot;But agents fundamentally are different and they violate that primitive from day one. You launch the agent and the very first thing it wants to do is look at the environment, install new packages, write some files, spin up databases that are mocked. It just wants to do stuff.&quot;</p>
+<p>Docker Sandboxes, he said, are more of a true process jail that enforces isolation.</p>
+<p>What Docker and NanoClaw are doing is trying to reconcile fundamentally opposed ideas – the deterministic nature of computers with the non-deterministic nature of AI models. Mixing systems predicated on predictability with unpredictable AI models, Cavage admits, is not a solved problem and is something that will occupy the industry for a while.</p>
+<p>Docker is an AI-native company at this point. We use it in every facet of the business</p>
+<p>&quot;The reality is at least we have a reasonable bounding box as the foundational part of the stack and the very first thing that you need,&quot; he said. &quot;There&#x27;s clearly going to have to be a governance primitive and things that map in the middle of how the natural language system that has intelligence and wants to go off and do something can be bounded down to something that is ultimately deterministic from a capabilities perspective.&quot;</p>
+<p>Docker, said Cavage, is already sold on AI. &quot;We use it. It&#x27;s an AI-native company at this point. We use it in every facet of the business.&quot;</p>
+<p>Docker, he said, is using its Sandbox primitive to cage AI agents but everyone still has to build layers on top of that to orchestrate workflows. The key to making this happen, he argues, is &quot;put YOLO in a box.&quot;</p>
+<p>&quot;Once you get there, then the developers all of a sudden go from effectively babysitting the agent to just letting it run for minutes or hours or longer at a time,&quot; he said. &quot;That&#x27;s the huge productivity unlock.&quot; ®</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://go.theregister.com/feed/www.theregister.com/2026/03/13/nanoclaw_latches_onto_docker_sandboxes/" target="_blank">Read original →</a></div>
+</body></html>

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-13T15:39:42.158845",
-  "total_records": 16482,
+  "generated_at": "2026-03-13T17:30:07.919891",
+  "total_records": 16848,
   "datasets": {
     "curio": {
       "name": "Curio Cards",
@@ -256,7 +256,7 @@
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 100,
-          "views": 1678555
+          "views": 1678554
         },
         {
           "title": "Star Trek: The Motion Picture (ships only)",
@@ -268,25 +268,25 @@
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 0,
-          "views": 194100
+          "views": 194102
         },
         {
           "title": "Return of the Jedi (ships only)",
           "id": "jTMK8McUdE0",
           "comments": 75,
-          "views": 347996
+          "views": 347998
         },
         {
           "title": "Star Trek: Insurrection (ships only)",
           "id": "5LOtf5Yq39Y",
           "comments": 58,
-          "views": 322219
+          "views": 322221
         },
         {
           "title": "Star Trek: Nemesis (ships only)",
           "id": "IQ0rpNEupfA",
           "comments": 68,
-          "views": 87539
+          "views": 87541
         },
         {
           "title": "Star Trek: Generations (ships only)",
@@ -304,13 +304,13 @@
           "title": "Star Trek: First Contact (ships only)",
           "id": "yRhQ1ydXT6c",
           "comments": 32,
-          "views": 80135
+          "views": 80136
         },
         {
           "title": "Star Trek VI: The Undiscovered Country (ships only",
           "id": "ILcCcldyB7M",
           "comments": 54,
-          "views": 77374
+          "views": 77376
         }
       ]
     },
@@ -318,94 +318,94 @@
       "name": "Articles",
       "icon": "\ud83d\udcf0",
       "tables": {
-        "articles": 244,
+        "articles": 606,
         "images": 0
       },
-      "total": 244,
-      "with_text": 244,
-      "total_words": 189412,
+      "total": 606,
+      "with_text": 606,
+      "total_words": 477217,
       "by_topic": [
         {
-          "topic": "news-crypto",
-          "count": 41
-        },
-        {
           "topic": "news-world",
-          "count": 40
+          "count": 132
         },
         {
           "topic": "news-tech",
-          "count": 40
+          "count": 73
         },
         {
-          "topic": "news-culture",
-          "count": 30
+          "topic": "news-crypto",
+          "count": 72
         },
         {
           "topic": "news-science",
-          "count": 20
+          "count": 70
         },
         {
           "topic": "news-business",
-          "count": 20
+          "count": 52
         },
         {
-          "topic": "news-bitcoin",
-          "count": 20
-        },
-        {
-          "topic": "news-us",
-          "count": 11
-        },
-        {
-          "topic": "news-politics",
-          "count": 10
+          "topic": "news-culture",
+          "count": 44
         },
         {
           "topic": "news-ai",
-          "count": 10
+          "count": 43
+        },
+        {
+          "topic": "news-us",
+          "count": 34
+        },
+        {
+          "topic": "news-bitcoin",
+          "count": 28
+        },
+        {
+          "topic": "news-politics",
+          "count": 26
         }
       ],
       "by_source": [
         {
-          "source": "CoinDesk",
-          "count": 12
-        },
-        {
-          "source": "NPR",
-          "count": 11
-        },
-        {
-          "source": "CryptoSlate",
-          "count": 11
-        },
-        {
           "source": "Al Jazeera",
-          "count": 11
+          "count": 27
+        },
+        {
+          "source": "Science Daily",
+          "count": 25
+        },
+        {
+          "source": "Decrypt",
+          "count": 25
+        },
+        {
+          "source": "CoinTelegraph",
+          "count": 25
+        },
+        {
+          "source": "BBC World",
+          "count": 24
+        },
+        {
+          "source": "BBC News",
+          "count": 23
+        },
+        {
+          "source": "CNBC",
+          "count": 22
         },
         {
           "source": "Wired",
-          "count": 10
+          "count": 21
         },
         {
-          "source": "Variety",
-          "count": 10
+          "source": "TechCrunch",
+          "count": 21
         },
         {
-          "source": "The Verge",
-          "count": 10
-        },
-        {
-          "source": "The Guardian US",
-          "count": 10
-        },
-        {
-          "source": "The Guardian",
-          "count": 10
-        },
-        {
-          "source": "The Block",
-          "count": 10
+          "source": "CoinDesk",
+          "count": 20
         }
       ]
     },
@@ -457,15 +457,141 @@
       "name": "Media",
       "icon": "\ud83c\udfac",
       "tables": {
-        "movies": 1569,
+        "movies": 1573,
         "books": 779
       },
-      "total": 2348,
+      "total": 2352,
       "avg_movie_rating": 3.5,
       "top_directors": []
     }
   },
   "collection_log": [
+    {
+      "id": 31,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 606,
+      "errors": 0,
+      "duration_s": 17.0,
+      "run_at": "2026-03-14 00:30:07"
+    },
+    {
+      "id": 32,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-14 00:30:07"
+    },
+    {
+      "id": 33,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.01,
+      "run_at": "2026-03-14 00:30:07"
+    },
+    {
+      "id": 34,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.03,
+      "run_at": "2026-03-14 00:30:07"
+    },
+    {
+      "id": 35,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-14 00:30:07"
+    },
+    {
+      "id": 30,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 835,
+      "errors": 0,
+      "duration_s": 5.01,
+      "run_at": "2026-03-14 00:29:50"
+    },
+    {
+      "id": 29,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14022,
+      "errors": 0,
+      "duration_s": 7.34,
+      "run_at": "2026-03-14 00:29:45"
+    },
+    {
+      "id": 25,
+      "dataset": "tweets",
+      "action": "collect",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-14 00:26:11"
+    },
+    {
+      "id": 26,
+      "dataset": "movies_letterboxd",
+      "action": "import_csv",
+      "records_added": 1658,
+      "errors": 0,
+      "duration_s": 0.0,
+      "run_at": "2026-03-14 00:26:11"
+    },
+    {
+      "id": 27,
+      "dataset": "movies_mysql",
+      "action": "import_cli",
+      "records_added": 0,
+      "errors": 0,
+      "duration_s": 0.03,
+      "run_at": "2026-03-14 00:26:11"
+    },
+    {
+      "id": 28,
+      "dataset": "books_mysql",
+      "action": "import_cli",
+      "records_added": 782,
+      "errors": 0,
+      "duration_s": 0.02,
+      "run_at": "2026-03-14 00:26:11"
+    },
+    {
+      "id": 24,
+      "dataset": "articles",
+      "action": "rss_pipeline",
+      "records_added": 605,
+      "errors": 0,
+      "duration_s": 21.94,
+      "run_at": "2026-03-14 00:26:10"
+    },
+    {
+      "id": 23,
+      "dataset": "youtube",
+      "action": "collect",
+      "records_added": 835,
+      "errors": 0,
+      "duration_s": 6.19,
+      "run_at": "2026-03-14 00:25:49"
+    },
+    {
+      "id": 22,
+      "dataset": "curio",
+      "action": "collect",
+      "records_added": 14022,
+      "errors": 0,
+      "duration_s": 7.37,
+      "run_at": "2026-03-14 00:25:42"
+    },
     {
       "id": 17,
       "dataset": "articles",
@@ -519,137 +645,7 @@
       "errors": 0,
       "duration_s": 5.07,
       "run_at": "2026-03-13 22:29:33"
-    },
-    {
-      "id": 15,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14022,
-      "errors": 0,
-      "duration_s": 7.01,
-      "run_at": "2026-03-13 22:29:28"
-    },
-    {
-      "id": 11,
-      "dataset": "tweets",
-      "action": "collect",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 2.81,
-      "run_at": "2026-03-13 22:26:46"
-    },
-    {
-      "id": 12,
-      "dataset": "movies_letterboxd",
-      "action": "import_csv",
-      "records_added": 1658,
-      "errors": 0,
-      "duration_s": 0.01,
-      "run_at": "2026-03-13 22:26:46"
-    },
-    {
-      "id": 13,
-      "dataset": "movies_mysql",
-      "action": "import_cli",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 0.04,
-      "run_at": "2026-03-13 22:26:46"
-    },
-    {
-      "id": 14,
-      "dataset": "books_mysql",
-      "action": "import_cli",
-      "records_added": 782,
-      "errors": 0,
-      "duration_s": 0.02,
-      "run_at": "2026-03-13 22:26:46"
-    },
-    {
-      "id": 10,
-      "dataset": "articles",
-      "action": "rss_pipeline",
-      "records_added": 243,
-      "errors": 0,
-      "duration_s": 33.39,
-      "run_at": "2026-03-13 22:26:43"
-    },
-    {
-      "id": 9,
-      "dataset": "youtube",
-      "action": "collect",
-      "records_added": 831,
-      "errors": 0,
-      "duration_s": 4.76,
-      "run_at": "2026-03-13 22:26:10"
-    },
-    {
-      "id": 8,
-      "dataset": "curio",
-      "action": "collect",
-      "records_added": 14022,
-      "errors": 0,
-      "duration_s": 6.98,
-      "run_at": "2026-03-13 22:26:05"
-    },
-    {
-      "id": 4,
-      "dataset": "tweets",
-      "action": "collect",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 3.09,
-      "run_at": "2026-03-13 22:25:38"
-    },
-    {
-      "id": 5,
-      "dataset": "movies_letterboxd",
-      "action": "import_csv",
-      "records_added": 1658,
-      "errors": 0,
-      "duration_s": 0.01,
-      "run_at": "2026-03-13 22:25:38"
-    },
-    {
-      "id": 6,
-      "dataset": "movies_mysql",
-      "action": "import_cli",
-      "records_added": 0,
-      "errors": 0,
-      "duration_s": 0.04,
-      "run_at": "2026-03-13 22:25:38"
-    },
-    {
-      "id": 7,
-      "dataset": "books_mysql",
-      "action": "import_cli",
-      "records_added": 782,
-      "errors": 0,
-      "duration_s": 0.02,
-      "run_at": "2026-03-13 22:25:38"
-    },
-    {
-      "id": 3,
-      "dataset": "articles",
-      "action": "rss_pipeline",
-      "records_added": 241,
-      "errors": 0,
-      "duration_s": 28.63,
-      "run_at": "2026-03-13 22:25:33"
-    },
-    {
-      "id": 2,
-      "dataset": "youtube",
-      "action": "collect",
-      "records_added": 899,
-      "errors": 0,
-      "duration_s": 11.53,
-      "run_at": "2026-03-13 22:25:05"
     }
   ],
-  "db_size_mb": 4.28,
-  "date": "2026-03-13",
-  "projects": 56,
-  "daily_logs": 24,
-  "daily_jobs": 22
+  "db_size_mb": 6.31
 }

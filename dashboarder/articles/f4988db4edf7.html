@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://benzimmermann.dev/blog/algolia-docsearch-admin-keys" target="_blank">Original article ↗</a></div>
+
+<h1>I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites</h1>
+<div class="meta">Hacker News · 2026-03-13</div>
+<div class="summary">Last October I reported an exposed Algolia admin API key on vuejs.org. The key had full permissions: addObject, deleteObject, deleteIndex, editSettings, the works. Vue acknowledged it, added me to their Security Hall of Fame, and rotated the key.
+Tha</div>
+<p>Last October I reported an exposed Algolia admin API key on vuejs.org. The key had full permissions: addObject, deleteObject, deleteIndex, editSettings, the works. Vue acknowledged it, added me to their Security Hall of Fame, and rotated the key.</p>
+<p>That should have been the end of it. But it got me thinking: if Vue.js had this problem, how many other DocSearch sites do too?</p>
+<p>Turns out, a lot.</p>
+<p>How Algolia DocSearch works</p>
+<p>Algolia&#x27;s DocSearch is a free search service for open source docs. They crawl your site, index it, and give you an API key to embed in your frontend. That key is supposed to be search-only, but some ship with full admin permissions.</p>
+<p>What I found</p>
+<p>Most keys came from frontend scraping. Algolia maintains a public (now archived) repo called docsearch-configs with a config for every site in the DocSearch program, over 3,500 of them. I used that as a starting target list and scraped roughly 15,000 documentation sites for embedded credentials. This catches keys that don&#x27;t exist in any repo because they&#x27;re injected at build time and only appear in the deployed site:</p>
+<p>APP_RE = re.compile(r&#x27;[&quot;\&#x27;]([A-Z0-9]{10})[&quot;\&#x27;]&#x27;)</p>
+<p>KEY_RE = re.compile(r&#x27;[&quot;\&#x27;]([\da-f]{32})[&quot;\&#x27;]&#x27;)</p>
+<p>def extract(text, app_ids, api_keys):</p>
+<p>if not ALGOLIA_RE.search(text):</p>
+<p>return</p>
+<p>for a in APP_RE.findall(text):</p>
+<p>if valid_app(a):</p>
+<p>app_ids.add(a)</p>
+<p>api_keys.update(KEY_RE.findall(text))</p>
+<p>On top of that I ran GitHub code search to find keys in doc framework configs, then cloned and ran TruffleHog on 500+ documentation site repos to catch keys that had been committed and later removed.</p>
+<p>![Discovery Method Breakdown](/images/blog/docsearch-discovery-breakdown.png)</p>
+<p>35 of the 39 admin keys came from frontend scraping alone. The remaining 4 were found through git history. Every single one was active at the time of discovery.</p>
+<p>The affected projects include some massive open source projects:</p>
+<p>![Top Affected Projects by GitHub Stars](/images/blog/docsearch-affected-projects.png)</p>
+<p>Home Assistant alone has 85,000 GitHub stars and millions of active installations. KEDA is a CNCF project used in production Kubernetes clusters. vcluster, also Kubernetes infrastructure, had the largest search index of any affected site at over 100,000 records.</p>
+<p>What these keys can do</p>
+<p>![Admin Key Permissions](/images/blog/docsearch-permissions.png)</p>
+<p>Nearly all 39 keys share the same permission set: search, addObject, deleteObject, deleteIndex, editSettings, listIndexes, and browse. A few have even broader access including analytics, logs, and NLU capabilities.</p>
+<p>In practical terms, anyone with one of these keys can:</p>
+<p>- Add, modify, or delete any record in the search index</p>
+<p>- Delete the entire index</p>
+<p>- Change index settings and ranking configuration</p>
+<p>- Browse and export all indexed content</p>
+<p>Someone could poison a project&#x27;s search results with malicious links, redirect users to phishing pages, or just nuke the entire index and wipe out search for the site completely.</p>
+<p>Disclosure</p>
+<p>SUSE/Rancher acknowledged the report within two days and rotated the key. That key is now fully revoked. Home Assistant also responded and began remediation, though the original key remains active.</p>
+<p>I compiled the full list of affected keys and emailed Algolia directly a few weeks ago. No response. As of today, all remaining keys are still active.</p>
+<p>The root cause</p>
+<p>This isn&#x27;t really about 39 individual misconfigurations. Algolia&#x27;s DocSearch program provides search-only keys, but many sites run their own crawler and end up using their write or admin key in the frontend config instead. Algolia&#x27;s own docs warn against this, but it clearly happens at scale.</p>
+<p>The fix is straightforward: if you&#x27;re running DocSearch, check what key is in your frontend config and make sure it&#x27;s search-only. If I found 39 admin keys with a few scripts, the real number is almost certainly higher.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://benzimmermann.dev/blog/algolia-docsearch-admin-keys" target="_blank">Read original →</a></div>
+</body></html>

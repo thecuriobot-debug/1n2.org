@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Show HN: Context Gateway – Compress agent context before it hits the LLM</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/Compresr-ai/Context-Gateway" target="_blank">Original article ↗</a></div>
+
+<h1>Show HN: Context Gateway – Compress agent context before it hits the LLM</h1>
+<div class="meta">Hacker News · 2026-03-13</div>
+<div class="summary">Instant history compaction and context optimization for AI agents
+Compresr is a YC-backed company building LLM prompt compression and context optimization.
+Context Gateway sits between your AI agent (Claude Code, Cursor, etc.) and the LLM API. When y</div>
+<p>Instant history compaction and context optimization for AI agents</p>
+<p>Compresr is a YC-backed company building LLM prompt compression and context optimization.</p>
+<p>Context Gateway sits between your AI agent (Claude Code, Cursor, etc.) and the LLM API. When your conversation gets too long, it compresses history in the background so you never wait for compaction.</p>
+<p># Install gateway binary</p>
+<p>curl -fsSL https://compresr.ai/api/install | sh</p>
+<p># Then select an agent (opens interactive TUI wizard)</p>
+<p>context-gateway</p>
+<p>The TUI wizard will help you:</p>
+<p>- Choose an agent (claude_code, cursor, openclaw, or custom)</p>
+<p>- Create/edit configuration:</p>
+<p>- Summarizer model and api key</p>
+<p>- enable slack notifications if needed</p>
+<p>- Set trigger threshold for compression (default: 75%)</p>
+<p>Supported agents:</p>
+<p>- claude_code: Claude Code IDE integration</p>
+<p>- cursor: Cursor IDE integration</p>
+<p>- openclaw: Open-source Claude Code alternative</p>
+<p>- custom: Bring your own agent configuration</p>
+<p>- No more waiting when conversation hits context limits</p>
+<p>- Compaction happens instantly (summary was pre-computed in background)</p>
+<p>- Check</p>
+<p>logs/history_compaction.jsonl</p>
+<p>to see what&#x27;s happening</p>
+<p>We welcome contributions! Please join our Discord to contribute.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/Compresr-ai/Context-Gateway" target="_blank">Read original →</a></div>
+</body></html>
