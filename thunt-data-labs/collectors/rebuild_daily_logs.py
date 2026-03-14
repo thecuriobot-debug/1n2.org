@@ -263,7 +263,6 @@ ul{{margin-left:18px}}li{{margin:.35rem 0;color:#bbb;line-height:1.5}}
   <div class="n2-nav-inner">
     <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
     <div class="n2-links">
-      <a href="/" class="n2-link">\U0001f3e0 home</a>
       <a href="/thunt-data-labs/web/" class="n2-link">\U0001f52c labs</a>
       <a href="/daily-logs/" class="n2-link active">\U0001f4cb logs</a>
       <a href="/ai-usage/" class="n2-link">\U0001f916 usage</a>
@@ -343,7 +342,6 @@ h1 span{{color:var(--accent)}}
   <div class="n2-nav-inner">
     <a href="/" class="n2-logo"><img src="/logo.png" alt="1n2"><span class="n2-logo-text">1n2<span>.org</span></span></a>
     <div class="n2-links">
-      <a href="/" class="n2-link">🏠 home</a>
       <a href="/thunt-data-labs/web/" class="n2-link">🔬 labs</a>
       <a href="/daily-logs/" class="n2-link active">📋 logs</a>
       <a href="/ai-usage/" class="n2-link">🤖 usage</a>
