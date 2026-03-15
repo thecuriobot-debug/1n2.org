@@ -11,7 +11,8 @@ a{color:var(--accent);text-decoration:none}a:hover{color:#fff}
 header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
 header .inner{max-width:1100px;margin:0 auto;padding:12px 20px}
 header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--accent)}header .sub{color:var(--muted);font-size:.68rem}
-.toolbar{padding:8px 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:48px;z-index:19;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toolbar{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:48px;z-index:19}
+.toolbar .inner{max-width:1100px;margin:0 auto;padding:8px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .search{flex:1;min-width:200px;padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8rem}.search:focus{outline:none;border-color:var(--accent)}
 .filt{padding:3px 8px;border-radius:3px;font-size:.68rem;font-weight:700;cursor:pointer;border:1px solid var(--border);color:var(--muted);transition:.1s}
 .filt.on{color:#fff;border-color:transparent}.filt:hover{opacity:.8}
@@ -40,7 +41,7 @@ h2{color:var(--accent);font-size:.85rem;margin:12px 0 6px;border-bottom:1px soli
 <h1>📼 All Media Tracker — Complete Production History</h1>
 <div class="sub">Every video & podcast by Thomas Hunt across all channels · 2012–2026</div>
 </div></header>
-<div class="toolbar">
+<div class="toolbar"><div class="inner">
 <input class="search" id="search" placeholder="Search 5,442 items...">
 <div class="filt on" data-f="all" style="background:var(--accent);color:#000">All</div>
 <div class="filt" data-f="wcn" style="border-color:var(--blue)">WCN</div>
@@ -48,7 +49,7 @@ h2{color:var(--accent);font-size:.85rem;margin:12px 0 6px;border-bottom:1px soli
 <div class="filt" data-f="thf" style="border-color:var(--red)">THF</div>
 <div class="filt" data-f="btg" style="border-color:var(--orange)">BitGroup</div>
 <div class="filt" data-f="audio" style="border-color:#f4c430">🎙 Audio</div>
-</div>
+</div></div>
 <main>
 <div class="grid" id="stats"></div>
 <div id="count"></div>
