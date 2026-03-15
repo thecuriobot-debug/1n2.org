@@ -8,10 +8,12 @@
 :root{--bg:#0a0e17;--card:#111827;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--red:#ff0000;--white:#fff;--green:#34d399;--blue:#3b82f6;--purple:#a78bfa}
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px}
 a{color:var(--text);text-decoration:none}a:hover{color:var(--red)}
-header{padding:10px 18px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px}
+header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+header .inner{max-width:1100px;margin:0 auto;padding:10px 14px;display:flex;align-items:center;gap:10px}
 header h1{font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:var(--white);cursor:pointer}
 header .yt{color:var(--red);font-size:1.2rem}header .home{margin-left:auto;font-size:.7rem;color:var(--muted)}
-nav{display:flex;background:var(--card);border-bottom:2px solid var(--border);padding:0 10px;overflow-x:auto;position:sticky;top:44px;z-index:19}
+nav{background:var(--card);border-bottom:2px solid var(--border);position:sticky;top:44px;z-index:19}
+nav .inner{max-width:1100px;margin:0 auto;display:flex;overflow-x:auto;padding:0 14px}
 nav a{padding:7px 12px;font-size:.75rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:.15s;cursor:pointer}
 nav a:hover{color:var(--text)}nav a.on{color:var(--red);border-color:var(--red)}
 .page{display:none;padding:14px;max-width:1100px;margin:0 auto}.page.on{display:block}
@@ -55,8 +57,8 @@ h2{color:var(--red);font-size:.88rem;margin:12px 0 5px;border-bottom:1px solid v
 </style>
 </head>
 <body>
-<header><div class="yt">▶</div><h1 onclick="location.hash='overview'">My YouTube</h1><a href="/" class="home">← 1n2.org</a></header>
-<nav id="tabs"></nav>
+<header><div class="inner"><div class="yt">▶</div><h1 onclick="location.hash='overview'">My YouTube</h1><a href="/" class="home">← 1n2.org</a></div></header>
+<nav><div class="inner" id="tabs"></div></nav>
 <div id="pages"></div>
 <div class="ft"><a href="/">1n2.org</a> · <a href="/all-media-tracker/">All Media</a> · <a href="/tbg-mirrors/">TBG Mirrors</a></div>
 <script>
