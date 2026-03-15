@@ -68,7 +68,15 @@ h2{color:var(--accent);font-size:.95rem;margin:16px 0 8px;border-bottom:1px soli
 let DATA;
 async function init(){
   DATA=await(await fetch('data.json')).json();
-  const s=DATA.stats,eps=DATA.episodes;
+  const eps=DATA.episodes;
+  // Compute stats from episode data
+  const s={
+    total: eps.length,
+    wcn: eps.filter(e=>e.yt?.wcn || (typeof e.yt==='string' && e.yt)).length,
+    mb: eps.filter(e=>e.yt?.mb).length,
+    tbg: eps.filter(e=>e.yt?.tbg).length,
+    multi: eps.filter(e=>{let c=0;if(e.yt?.wcn||typeof e.yt==='string')c++;if(e.yt?.mb)c++;if(e.yt?.tbg)c++;return c>1;}).length
+  };
   document.getElementById('stats').innerHTML=`
     <div class="stat"><div class="n">${s.total}</div><div class="l">Episodes Found</div></div>
     <div class="stat"><div class="n">#1–#${eps[eps.length-1]?.num||'?'}</div><div class="l">Range</div></div>
@@ -94,16 +102,17 @@ function renderEps(eps){
   const reversed=[...eps].reverse();
   let html='';
   reversed.forEach(ep=>{
-    const onWCN=ep.yt?.wcn;
-    const onMB=ep.yt?.mb;
-    const onTBG=ep.yt?.tbg;
+    const ytId=typeof ep.yt==='string'?ep.yt:ep.yt?.wcn?.vid||ep.yt?.mb?.vid||ep.yt?.tbg?.vid||'';
+    const onWCN=typeof ep.yt==='string'?ep.yt:ep.yt?.wcn?.vid;
+    const onMB=ep.yt?.mb?.vid;
+    const onTBG=ep.yt?.tbg?.vid;
     const date=ep.date||'';
     let title=ep.title.replace(/^The Bitcoin Group #\d+\s*-?\s*/i,'').substring(0,80);
-    const wcnLink=onWCN?`<a href="https://youtube.com/watch?v=${onWCN.vid}" target="_blank" title="WCN: ${onWCN.views} views"><span class="mirror wcn">W</span></a>`
+    const wcnLink=onWCN?`<a href="https://youtube.com/watch?v=${onWCN}" target="_blank" title="WCN"><span class="mirror wcn">W</span></a>`
       :'<span class="mirror none" title="Not on WCN">W</span>';
-    const mbLink=onMB?`<a href="https://youtube.com/watch?v=${onMB.vid}" target="_blank" title="MadBitcoins: ${onMB.views} views"><span class="mirror mb">M</span></a>`
+    const mbLink=onMB?`<a href="https://youtube.com/watch?v=${onMB}" target="_blank" title="MadBitcoins"><span class="mirror mb">M</span></a>`
       :'<span class="mirror none" title="Not on MadBitcoins">M</span>';
-    const tbgLink=onTBG?`<a href="https://youtube.com/watch?v=${onTBG.vid}" target="_blank" title="TBG Original: ${onTBG.views} views"><span class="mirror tbg">T</span></a>`
+    const tbgLink=onTBG?`<a href="https://youtube.com/watch?v=${onTBG}" target="_blank" title="TBG Original"><span class="mirror tbg">T</span></a>`
       :'<span class="mirror none" title="Not on TBG">T</span>';
     // Podcast platforms
     const isSpreaker=ep.num>=200;
