@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>It&#x27;s time to move your docs into a repo – especially because of AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://www.dein.fr/posts/2026-03-13-its-time-to-move-your-docs-in-the-repo" target="_blank">Original article ↗</a></div>
+
+<h1>It&#x27;s time to move your docs into a repo – especially because of AI</h1>
+<div class="meta">Hacker News · 2026-03-14</div>
+<div class="summary">It&#x27;s time to move your docs in the repo
+The palest ink is more reliable than the most powerful memory. – Chinese proverb
+AI changes the game when it comes to having all your docs in your repository: it&#x27;s never been that easy to keep them up to date!
+</div>
+<p>It&#x27;s time to move your docs in the repo</p>
+<p>The palest ink is more reliable than the most powerful memory. – Chinese proverb</p>
+<p>AI changes the game when it comes to having all your docs in your repository: it&#x27;s never been that easy to keep them up to date!</p>
+<p>I&#x27;ve always been a fan of having documentation living alongside the code:</p>
+<p>- Version control: just like code, documentation evolve. Why use a different versioning control system when you&#x27;re already using git? Especially when multiple people are changing docs at the same time, with potentially conflicting changes.</p>
+<p>- Proximity with code: e.g.,</p>
+<p>rg</p>
+<p>orgrep</p>
+<p>will yield code and documentation results, making it much easier to keep it up to date. - Formal approval: in the spirit of documentation-driven development, starting with a review of documentation updates help understand the final product/API. (For active collaboration other tools, e.g., Google Docs still provide a superior UX).</p>
+<p>- Automatic generation: when using a different system for hosting the docs (Google Docs, Confluence, Notion, etc.), it&#x27;s quite laborious to copy-paste APIs and example code. There are many tools (e.g., Sphinx&#x27;s autodoc, jsdoc, javadoc, docusaurus) that can generate API docs directly from the code.</p>
+<p>- Testing: static code examples in documentation are a good start, but it&#x27;s even better when they&#x27;re tested, which you can do when running code examples in docs is part of your continuous integration process. See Python&#x27;s doctest for example. In a way, the documentation is the spec.</p>
+<p>- Efficient editing: you benefit from all your text editor tools, and can script mass-changes.</p>
+<p>We will be spending more time writing docs</p>
+<p>First observation: AI agents have considerably increased the proportion of markdown files in commits. That&#x27;s usually because folks check out the agent&#x27;s implementation, which is a very good idea. It&#x27;s also because you save a lot agentic iteration time when you write rules files (.mdc</p>
+<p>files) to guide agents&#x27; execution. So, whether or not you agree with the thesis, it is happening.</p>
+<p>I would submit that 80% of the rules file could have been documentation instead, or potentially are already documented elsewhere. Just like code should be primarily written for humans to read, all files in a repository is written primarily for humans to review. This also applies to rules files created to guide agentic execution. Rules files are reading more and more like style guides and best practices that we never bothered writing but probably should have solidified.</p>
+<p>The frontier between AI-only markdown and human-only is so blurry that I could see rules files completely disappearing and being replaced by documentation.</p>
+<p>This is also consistent with engineers shifting their focus left. Engineering tooling has trended towards higher and higher abstractions, from machine code to C, to dynamic languages, to SDK, and now to not even writing code and only focusing on the spec, and guidelines. Just like we don&#x27;t review the machine code produced by the compiler, there might be a day where we don&#x27;t review the code generated by an LLM provided it respects the harness, the specs and the guidelines (security will be a key concern there). In that world, we&#x27;ll spend most of our energy reviewing the specs, the harness, the guidelines. Conclusion: those docs need to be written first and foremost for humans review.</p>
+<p>Why AI makes it even more meaningful to move docs into your repo</p>
+<p>AI agents solve stale docs. A common objection to writing docs is: &quot;why bother? read the code - the code is always up to date&quot;. (the same line of arguments would apply to brushing your teeth). AI agents solve this problem. They take away the laborious work to ensure code &amp; documentation alignment (either in PR, or with specialized review agents that look for documentation inconsistencies). Quite game-changing.</p>
+<p>AI agents benefit from higher level context. Moving your docs (including, perhaps, your architecture proposals - RFCs, your product specs - PRDs, etc.) will provide that extra context.</p>
+<p>Materialized plans with findings will save token &amp; iteration time. Imagine researching &quot;the best way to do X&quot; in a massive codebase. You will spend a lot of tokens finding the answer to that question. Documenting the answer to that question and materializing it in the repository will enable your colleague to skip that research step later (and keep it up-to-date with extra learnings, best practices, etc.!). This is especially the case for things that agents can&#x27;t infer from the code, or are difficult to infer: typically, infra-related things you learned by deploying your code to production. For instance, I spent about two weeks researching and iterating on structured logging best practices - I materialized that into a &quot;metaplan&quot; that other teams can use directly, saving everyone (including agents!) a ton of time!</p>
+<p>Answer to objections</p>
+<p>You could use MCP and other approaches (skills) to give agent access to your documentation. But the same arguments I laid out in the beginning still apply, especially the version control piece. Most documentation system are not designed for fast iteration with strong concurrency control.</p>
+<p>Waiting for a code review for docs will deter from updating docs. (1) What if you weren&#x27;t the one writing those docs? (2) Who says all repo content change need to go through review? (3) As we shift more and more left, won&#x27;t the documentation change or implementation plan be the most important thing to review?</p>
+<p>AI agents write long, convoluted docs. First response: well, most humans do as well :). Just like code, you should (1) review the agent&#x27;s work, (2) fix the agent&#x27;s work, and (3) write your own docs (like this article: none of this content has been generated by AI!). Putting it into version control makes it MUCH easier and safer (reviews! history!) to iterate.</p>
+<p>Do I really need to move all my documentation? I&#x27;d say yes, at this point. Not the fleeting docs, but everything that provide useful context about the codebase, including RFCs.</p>
+<p>[your_preferred_tool] is better at [tables/schemas/links]. AI is getting incredibly good at generating mermaid schemas (supported by Github), tables, etc.</p>
+<p>[your_preferred_tool] is better for human collaboration. Yes, Google Docs is still much better for active collaboration, so it&#x27;s fair to continue using it for that use case. But once the documentation is in a good place, I would move it in the repo (Google Docs has a useful &quot;Copy as Markdown&quot; feature that I use all the time).</p>
+<p>Non-engineers usually don&#x27;t have repo access. (1) You can deploy your docs on an internal-only website. (2) There is clear trend with non-engineer code access (which poses some interesting security challenges).</p>
+<p>References and articles</p>
+<p>As always, there are more resources on my repo charlax/professional-programming</p>
+<p>- Specifications Are Becoming the Real Source Code</p>
+<p>- Getting AI to Work in Complex Codebases</p>
+<p>- Documentation-Driven Development</p>
+<p>- Writing automated tests for your documentation</p>
+<p>- 🏙 Documentation is king, Kenneth Reitz</p>
+<p>- The documentation system</p>
+<p>- Write documentation first. Then build.</p>
+<p>- Diátaxis: a systematic approach to technical documentation authoring: tutorials, how-to guides, technical reference, and explanation.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://www.dein.fr/posts/2026-03-13-its-time-to-move-your-docs-in-the-repo" target="_blank">Read original →</a></div>
+</body></html>

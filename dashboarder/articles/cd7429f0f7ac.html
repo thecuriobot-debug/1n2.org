@@ -14,10 +14,90 @@ p{margin-bottom:1rem;font-size:1.05rem}
 .ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
 </style></head><body>
 <div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://cra.mr/optimizing-content-for-agents/" target="_blank">Original article ↗</a></div>
-<img src="https://cra.mr/ai-content/optimizing-content-for-agents.png" style="width:100%;max-height:360px;object-fit:cover;border-radius:4px;margin-bottom:1.2rem">
+
 <h1>Optimizing Content for Agents</h1>
 <div class="meta">Hacker News · 2026-03-14</div>
-<div class="summary">There is a lot of bad discourse around whether we should optimize content for agents at all, and most of it misses the point. We already shape content for humans, and agents are no different. At Sentry we&#x27;ve started treating this as a real interface problem: serving markdown instead of HTML, restructuring content around hierarchy, and giving agents direct paths to the tools and systems they actually need.</div>
-<p style="color:#7A6B5A;font-style:italic">Full article text not yet available. <a href="https://cra.mr/optimizing-content-for-agents/" target="_blank">Read on Hacker News →</a></p>
+<div class="summary">![Optimizing Content for Agents](/ai-content/optimizing-content-for-agents.png)
+Just as useless of an idea as LLMs.txt was
+It’s all dumb abstractions that AI doesn’t need because AIs are as smart as humans so they can just use what was already there,</div>
+<p>![Optimizing Content for Agents](/ai-content/optimizing-content-for-agents.png)</p>
+<p>Just as useless of an idea as LLMs.txt was</p>
+<p>It’s all dumb abstractions that AI doesn’t need because AIs are as smart as humans so they can just use what was already there, which is APIs</p>
+<p>LLMs.txt is indeed useless, but that’s the only thing correct in this statement. I’m here once again being rage baited to address more brainless takes on social media. This one is about content optimization.</p>
+<p>Short and to the point: you should be optimizing content for agents, just as you optimize things for people. How you do that is an ever-evolving subject, but there are some common things we see:</p>
+<p>- order of content</p>
+<p>- content size</p>
+<p>- depth of nodes</p>
+<p>Frontier models and the agents built on top of them all behave similarly, with similar constraints and optimizations. For example, one thing they’re known to do, to avoid context bloat, is to only read parts of files. The first N lines, or bytes, or characters. They’re also known to behave very differently when they’re told information exists somewhere vs. having to discover it on their own. Both of those concerns are actually why LLMs.txt was a valuable idea, but it was the wrong implementation.</p>
+<p>The implementation today is simple: content negotiation. When a request comes in with Accept: text/markdown</p>
+<p>, you can confidently assume you have an agent. That’s your hook, and now it’s just up to you how you optimize it. I’m going to be brief and to the point and just give you a few examples of how we do that at Sentry.</p>
+<p>#Docs</p>
+<p>We’ve put a bunch of time into optimizing our docs for agents, for obvious reasons. The primary optimizations are mostly simple:</p>
+<p>- Serve true markdown content - massive tokenization savings as well as improved accuracy</p>
+<p>- Strip out things that only make sense in the context of the browser, especially navigation and JavaScript bits</p>
+<p>- Optimize various pages to focus more on link hierarchy - our index, for example, is mostly a sitemap, completely different than non-markdown</p>
+<p>$ curl -H &quot;Accept: text/markdown&quot; https://docs.sentry.io/</p>
+<p>---</p>
+<p>title: &quot;Sentry Documentation&quot;</p>
+<p>url: https://docs.sentry.io/</p>
+<p>---</p>
+<p># Sentry Documentation</p>
+<p>Sentry is a developer-first application monitoring platform that helps you identify and fix issues in real-time. It provides error tracking, performance monitoring, session replay, and more across all major platforms and frameworks.</p>
+<p>## Key Features</p>
+<p>* **Error Monitoring**: Capture and diagnose errors with full stack traces, breadcrumbs, and context</p>
+<p>* **Tracing**: Track requests across services to identify performance bottlenecks</p>
+<p>* **Session Replay**: Watch real user sessions to understand what led to errors</p>
+<p>* **Profiling**: Identify slow functions and optimize application performance</p>
+<p>* **Crons**: Monitor scheduled jobs and detect failures</p>
+<p>* **Logs**: Collect and analyze application logs in context</p>
+<p>...</p>
+<p>In our case we actually use MDX to render these, so it involved a handful of parsing changes and overrides to allow certain key pages to render differently. The result: agents fetch pages that are much more actionable.</p>
+<p>#Sentry</p>
+<p>If a headless bot is fetching the website, the least useful thing you can do is serve it an authentication-required page. In our case we use the opportunity to inform the agent that there are a few programmatic ways it can access the application information (MCP, CLI, API, etc):</p>
+<p>$ curl -H &quot;Accept: text/markdown&quot; https://sentry.io</p>
+<p># Sentry</p>
+<p>You&#x27;ve hit the web UI. It&#x27;s HTML meant for humans, not machines.</p>
+<p>Here&#x27;s what you actually want:</p>
+<p>## MCP Server (recommended)</p>
+<p>The fastest way to give your agent structured access to Sentry.</p>
+<p>OAuth-authenticated, HTTP streaming, no HTML parsing required.</p>
+<p>```json</p>
+<p>{</p>
+<p>&quot;mcpServers&quot;: {</p>
+<p>&quot;sentry&quot;: {</p>
+<p>&quot;url&quot;: &quot;https://mcp.sentry.dev/mcp&quot;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>```</p>
+<p>Docs: https://mcp.sentry.dev</p>
+<p>## CLI</p>
+<p>Query issues and analyze errors from the terminal.</p>
+<p>https://cli.sentry.dev</p>
+<p>...</p>
+<p>#Warden</p>
+<p>For projects like Warden, we actually set it up so the agent can hit the entire content to bootstrap itself:</p>
+<p>Help me set up warden.sentry.dev</p>
+<p>curl -H &quot;Accept: text/markdown&quot; https://warden.sentry.dev</p>
+<p># Warden</p>
+<p>&gt; Agents that review your code. Locally or on every PR.</p>
+<p>Warden watches over your code by running **skills** against your changes. Skills are prompts that define what to look for: security vulnerabilities, API design issues, performance problems, or anything else you want consistent coverage on.</p>
+<p>Skills follow the [agentskills.io](https://agentskills.io) specification. They&#x27;re markdown files with a prompt that tells the AI what to look for. You can use community skills, write your own, or combine both.</p>
+<p>- Docs: https://warden.sentry.dev</p>
+<p>- GitHub: https://github.com/getsentry/warden</p>
+<p>- npm: https://www.npmjs.com/package/@sentry/warden</p>
+<p>## How It Works</p>
+<p>Every time you run Warden, it:</p>
+<p>1. Identifies what changed (files, hunks, or entire directories)</p>
+<p>2. Matches changes against configured triggers</p>
+<p>3. Runs the appropriate skills against matching code</p>
+<p>4. Reports findings with severity, location, and optional fixes</p>
+<p>Warden works in two contexts:</p>
+<p>- **Locally** - Review changes before you push, get instant feedback</p>
+<p>- **In CI** - Automatically review pull requests, post findings as comments</p>
+<p>## Quick Start</p>
+<p>...</p>
+<p>#That’s It</p>
+<p>It’s simple and it works. You should do it. You should also pay attention to how patterns are changing with agents and update your optimizations as behavior changes.</p>
 <div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://cra.mr/optimizing-content-for-agents/" target="_blank">Read original →</a></div>
 </body></html>

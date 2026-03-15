@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-14T18:38:23Z",
+  "timestamp": "2026-03-15T08:00:57Z",
   "collection": {
     "slug": "curiocardswrapper",
     "name": "My Curio Cards",
@@ -27,187 +27,187 @@
     {
       "id": 1,
       "name": "Curio Card 1",
-      "floor_price": 0.04022139964312081,
+      "floor_price": 0.04507426196033446,
       "total_supply": 30
     },
     {
       "id": 2,
       "name": "Curio Card 2",
-      "floor_price": 0.048402801961179874,
+      "floor_price": 0.04404069162662521,
       "total_supply": 30
     },
     {
       "id": 3,
       "name": "Curio Card 3",
-      "floor_price": 0.057985448109130464,
+      "floor_price": 0.051411234884951314,
       "total_supply": 30
     },
     {
       "id": 4,
       "name": "Curio Card 4",
-      "floor_price": 0.053927365680254524,
+      "floor_price": 0.04457658170816587,
       "total_supply": 30
     },
     {
       "id": 5,
       "name": "Curio Card 5",
-      "floor_price": 0.0424583300655506,
+      "floor_price": 0.048563056870655014,
       "total_supply": 30
     },
     {
       "id": 6,
       "name": "Curio Card 6",
-      "floor_price": 0.043376223548755255,
+      "floor_price": 0.040262909638663906,
       "total_supply": 30
     },
     {
       "id": 7,
       "name": "Curio Card 7",
-      "floor_price": 0.05353865082088424,
+      "floor_price": 0.04724838761659001,
       "total_supply": 30
     },
     {
       "id": 8,
       "name": "Curio Card 8",
-      "floor_price": 0.057032946702180565,
+      "floor_price": 0.050010148186352035,
       "total_supply": 30
     },
     {
       "id": 9,
       "name": "Curio Card 9",
-      "floor_price": 0.04520230552587939,
+      "floor_price": 0.055020538236040945,
       "total_supply": 30
     },
     {
       "id": 10,
       "name": "Curio Card 10",
-      "floor_price": 0.04483286443578545,
+      "floor_price": 0.05774935347282112,
       "total_supply": 30
     },
     {
       "id": 11,
       "name": "Curio Card 11",
-      "floor_price": 0.050573108569345375,
+      "floor_price": 0.039490468960778805,
       "total_supply": 30
     },
     {
       "id": 12,
       "name": "Curio Card 12",
-      "floor_price": 0.05150982461953763,
+      "floor_price": 0.05138983485687557,
       "total_supply": 30
     },
     {
       "id": 13,
       "name": "Curio Card 13",
-      "floor_price": 0.040682255306580206,
+      "floor_price": 0.05482438721554577,
       "total_supply": 30
     },
     {
       "id": 14,
       "name": "Curio Card 14",
-      "floor_price": 0.04244923079344262,
+      "floor_price": 0.048229424758917915,
       "total_supply": 30
     },
     {
       "id": 15,
       "name": "Curio Card 15",
-      "floor_price": 0.045611440327096194,
+      "floor_price": 0.0434869960940262,
       "total_supply": 30
     },
     {
       "id": 16,
       "name": "Curio Card 16",
-      "floor_price": 0.05534254384538686,
+      "floor_price": 0.04867267172944302,
       "total_supply": 30
     },
     {
       "id": 17,
       "name": "Curio Card 17",
-      "floor_price": 0.04399456666272925,
+      "floor_price": 0.04707400535359182,
       "total_supply": 30
     },
     {
       "id": 18,
       "name": "Curio Card 18",
-      "floor_price": 0.05237026434963956,
+      "floor_price": 0.0471276948135065,
       "total_supply": 30
     },
     {
       "id": 19,
       "name": "Curio Card 19",
-      "floor_price": 0.05321893251623652,
+      "floor_price": 0.052422231626328475,
       "total_supply": 30
     },
     {
       "id": 20,
       "name": "Curio Card 20",
-      "floor_price": 0.04369837711797491,
+      "floor_price": 0.04288735757028566,
       "total_supply": 30
     },
     {
       "id": 21,
       "name": "Curio Card 21",
-      "floor_price": 0.041216379627240375,
+      "floor_price": 0.04681696564668892,
       "total_supply": 30
     },
     {
       "id": 22,
       "name": "Curio Card 22",
-      "floor_price": 0.05000250709229003,
+      "floor_price": 0.055777260600307146,
       "total_supply": 30
     },
     {
       "id": 23,
       "name": "Curio Card 23",
-      "floor_price": 0.05706842028791861,
+      "floor_price": 0.05002679476672229,
       "total_supply": 30
     },
     {
       "id": 24,
       "name": "Curio Card 24",
-      "floor_price": 0.051706714251180924,
+      "floor_price": 0.04239566519767407,
       "total_supply": 30
     },
     {
       "id": 25,
       "name": "Curio Card 25",
-      "floor_price": 0.04647278628072621,
+      "floor_price": 0.055756116091959816,
       "total_supply": 30
     },
     {
       "id": 26,
       "name": "Curio Card 26",
-      "floor_price": 0.0568937134284725,
+      "floor_price": 0.05736529824205843,
       "total_supply": 30
     },
     {
       "id": 27,
       "name": "Curio Card 27",
-      "floor_price": 0.047677867328772584,
+      "floor_price": 0.05126150545248917,
       "total_supply": 30
     },
     {
       "id": 28,
       "name": "Curio Card 28",
-      "floor_price": 0.055320265455185966,
+      "floor_price": 0.040465474024065785,
       "total_supply": 30
     },
     {
       "id": 29,
       "name": "Curio Card 29",
-      "floor_price": 0.05751430973021132,
+      "floor_price": 0.04264712738645711,
       "total_supply": 30
     },
     {
       "id": 30,
       "name": "Curio Card 30",
-      "floor_price": 0.05703809295806176,
+      "floor_price": 0.04339195725959046,
       "total_supply": 30
     }
   ],
   "metadata": {
     "source": "Curio Data Hub",
-    "fetched_at": "2026-03-14T18:38:23Z",
-    "data_age": "0 minutes ago"
+    "fetched_at": "2026-03-15T08:00:57Z",
+    "data_age": "1 minutes ago"
   }
 }

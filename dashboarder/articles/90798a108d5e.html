@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hoskinson might be wrong about the future of decentralized compute</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://www.coindesk.com/opinion/2026/03/14/hoskinson-might-be-wrong-about-the-future-of-decentralized-compute" target="_blank">Original article ↗</a></div>
+
+<h1>Hoskinson might be wrong about the future of decentralized compute</h1>
+<div class="meta">CoinDesk · 2026-03-14</div>
+<div class="summary">Hoskinson might be wrong about the future of decentralized compute
+Cardano’s founder recently made an argument about hyperscalers that needs to be addressed, says Fan.
+![Charles Hoskinson during Consensus Hong Kong 2026 Charles Hoskinson during Conse</div>
+<p>Hoskinson might be wrong about the future of decentralized compute</p>
+<p>Cardano’s founder recently made an argument about hyperscalers that needs to be addressed, says Fan.</p>
+<p>![Charles Hoskinson during Consensus Hong Kong 2026 Charles Hoskinson during Consensus Hong Kong 2026](/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2F9466d917b25b934e5b30836d6b9ce6c812da4cac-1920x1080.jpg%3Fauto%3Dformat&amp;w=3840&amp;q=75)</p>
+<p>The blockchain trilemma reared its head once more at Consensus in Hong Kong in February, to some extent, putting Charles Hoskinson, the founder of Cardano, on the back foot – having to reassure attendees that hyperscalers like Google Cloud and Microsoft Azure are not a risk to decentralisation.</p>
+<p>The point was made that major blockchain projects need hyperscalers, and that one shouldn’t be concerned about a single point of failure because:</p>
+<p>- Advanced cryptography neutralizes the risk</p>
+<p>- Multi-party computation distributes key material</p>
+<p>- Confidential computing shields data in use</p>
+<p>The argument rested on the idea that ‘if the cloud cannot see the data, the cloud cannot control the system,’ and it was left there due to time constraints.</p>
+<p>But there’s an alternative to Hoskinson’s argument in favor of hyperscalers that deserves more attention.</p>
+<p>MPC and Confidential Computing Reduce Exposure</p>
+<p>This was somewhat of a strategic bastion in Charles’ argument – that technologies like multi-party computation (MPC) and confidential computing ensure that hardware providers wouldn’t have access to the underlying data.</p>
+<p>They are powerful tools. But they do not dissolve the underlying risk.</p>
+<p>MPC distributes key material across multiple parties so that no single participant can reconstruct a secret. That meaningfully reduces the risk of a single compromised node. However, the security surface expands in other directions. The coordination layer, the communication channels and the governance of participating nodes all become critical.</p>
+<p>Instead of trusting a single key holder, the system now depends on a distributed set of actors behaving correctly and on the protocol being implemented correctly. The single point of failure does not disappear. In fact, it simply becomes a distributed trust surface.</p>
+<p>Confidential computing, particularly trusted execution environments, introduces a different trade-off. Data is encrypted during execution, which limits exposure to the hosting provider.</p>
+<p>But Trusted Execution Environments (TEEs) rely on hardware assumptions. They depend on microarchitectural isolation, firmware integrity and correct implementation. Academic literature, for example, here and here, has repeatedly demonstrated that side-channel and architectural vulnerabilities continue to emerge across enclave technologies. The security boundary is narrower than traditional cloud, but it is not absolute.</p>
+<p>More importantly, both MPC and TEEs often operate on top of hyperscaler infrastructure. The physical hardware, virtualization layer and supply chain remain concentrated. If an infrastructure provider controls access to machines, bandwidth or geographic regions, it retains operational leverage. Cryptography may prevent data inspection, but it does not prevent throughput restrictions, shutdowns, or policy interventions.</p>
+<p>Advanced cryptographic tools make specific attacks harder, but they still do not remove infrastructure-level failure risk. They simply replace a visible concentration with a more complex one.</p>
+<p>The ‘No L1 Can Handle Global Compute’ Argument</p>
+<p>Hoskinson made the point that hyperscalers are necessary because no single Layer 1 can handle the computational demands of global systems, referencing the trillions of dollars that have helped to build such data centres.</p>
+<p>Of course, Layer 1 networks were not built to run AI training loops, high-frequency trading engines, or enterprise analytics pipelines. They exist to maintain consensus, verify state transitions and provide durable data availability.</p>
+<p>He is correct on what Layer 1 is for. But global systems mainly need results that anyone can verify, even if the computation happens elsewhere.</p>
+<p>In modern crypto infrastructure, heavy computation increasingly happens off-chain. What matters is that results can be proven and verified onchain. This is the foundation of rollups, zero-knowledge systems and verifiable compute networks.</p>
+<p>Focusing on whether an L1 can run global compute misses the core issue of who controls the execution and storage infrastructure behind verification.</p>
+<p>If computation happens offchain but relies on centralized infrastructure, the system inherits centralized failure modes. Settlement remains decentralized in theory, but the pathway to producing valid state transitions is concentrated in practice.</p>
+<p>The issue should be about dependency at the infrastructure layer, not computational capacity inside Layer 1.</p>
+<p>Cryptographic Neutrality Is Not the Same as Participation Neutrality</p>
+<p>Cryptographic neutrality is a powerful idea and something Hoskinson used in his argument. It means rules cannot be arbitrarily changed, hidden backdoors cannot be introduced and the protocol remains fair.</p>
+<p>But cryptography runs on hardware.</p>
+<p>That physical layer determines who can participate, who can afford to do so and who ends up excluded, because throughput and latency are ultimately constrained by real machines and the infrastructure they run on. If hardware production, distribution, and hosting remain centralized, participation becomes economically gated even when the protocol itself is mathematically neutral.</p>
+<p>In high-compute systems, hardware is the game-changer. It determines cost structure, who can scale, and resilience under censorship pressure. A neutral protocol running on concentrated infrastructure is neutral in theory but constrained in practice.</p>
+<p>The priority should shift toward cryptography combined with diversified hardware ownership.</p>
+<p>Without infrastructure diversity, neutrality becomes fragile under stress. If a small set of providers can rate-limit workloads, restrict regions, or impose compliance gates, the system inherits their leverage. Rule fairness alone does not guarantee participation fairness.</p>
+<p>Specialization Beats Generalization in Compute Markets</p>
+<p>Competing with AWS is often framed as a question of scale, but this too is misleading.</p>
+<p>Hyperscalers optimize for flexibility. Their infrastructure is designed to serve thousands of workloads simultaneously. Virtualization layers, orchestration systems, enterprise compliance tooling and elasticity guarantees – these features are strengths for general-purpose compute, but they are also cost layers.</p>
+<p>Zero-knowledge proving and verifiable compute are deterministic, compute-dense, memory-bandwidth constrained, and pipeline-sensitive. In other words, they reward specialization.</p>
+<p>A purpose-built proving network competes on proof per dollar, proof per watt and proof per latency. When hardware, prover software, circuit design, and aggregation logic are vertically integrated, efficiency compounds. Removing unnecessary abstraction layers reduces overhead. Sustained throughput on persistent clusters outperforms elastic scaling for narrow, constant workloads.</p>
+<p>In compute markets, specialization consistently outperforms generalization for steady, high-volume tasks. AWS optimizes for optionality. A dedicated proving network optimizes for one class of work.</p>
+<p>The economic structure differs as well. Hyperscalers&#x27; price for enterprise margins and broad demand variability. A network aligned around protocol incentives can amortize hardware differently and tune performance around sustained utilization rather than short-term rental models.</p>
+<p>The competition becomes about structural efficiency for a defined workload.</p>
+<p>Use Hyperscalers, But Do Not Be Dependent on Them</p>
+<p>Hyperscalers are not the enemy. They are efficient, reliable, and globally distributed infrastructure providers. The problem is dependence.</p>
+<p>A resilient architecture uses major vendors for burst capacity, geographic redundancy, and edge distribution, but it does not anchor core functions to a single provider or a small cluster of providers.</p>
+<p>Settlement, final verification and the availability of critical artifacts should remain intact even if a cloud region fails, a vendor exits a market, or policy constraints tighten.</p>
+<p>This is where decentralized storage and compute infrastructure become a viable alternative. Proof artifacts, historical records and verification inputs should not be withdrawable at a provider’s discretion. Instead, they should live on infrastructure that is economically aligned with the protocol and structurally difficult to turn off.</p>
+<p>Hypescalers should be used as an optional accelerator rather than something foundational to the product. Cloud can still be useful for reach and bursts, but the system’s ability to produce proofs and persist what verification depends on is not gated by a single vendor.</p>
+<p>In such a system, if a hyperscaler disappears tomorrow, the network would only slow down, because the parts that matter most are owned and operated by a broader network rather than rented from a big-brand chokepoint.</p>
+<p>This is how to fortify crypto’s ethos of decentralization.</p>
+<p>Note: The views expressed in this column are those of the author and do not necessarily reflect those of CoinDesk, Inc. or its owners and affiliates.</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://www.coindesk.com/opinion/2026/03/14/hoskinson-might-be-wrong-about-the-future-of-decentralized-compute" target="_blank">Read original →</a></div>
+</body></html>

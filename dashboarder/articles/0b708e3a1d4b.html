@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Claudetop – htop for Claude Code sessions (see your AI spend in real-time)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://github.com/liorwn/claudetop" target="_blank">Original article ↗</a></div>
+
+<h1>Claudetop – htop for Claude Code sessions (see your AI spend in real-time)</h1>
+<div class="meta">Hacker News · 2026-03-14</div>
+<div class="summary">You&#x27;re spending $20/day on Claude Code and can&#x27;t see it.
+claudetop shows you exactly where your tokens and dollars go — in real time.
+14:32 my-project/src/app Opus 20m 0s +256/-43 #auth-refactor
+152.3K in / 45.2K out ████░░░░░░ 38% $3.47 $5.10/hr ~$1</div>
+<p>You&#x27;re spending $20/day on Claude Code and can&#x27;t see it.</p>
+<p>claudetop shows you exactly where your tokens and dollars go — in real time.</p>
+<p>14:32 my-project/src/app Opus 20m 0s +256/-43 #auth-refactor</p>
+<p>152.3K in / 45.2K out ████░░░░░░ 38% $3.47 $5.10/hr ~$174/mo</p>
+<p>cache: 66% efficiency: $0.012/line opus:~$3.20 sonnet:~$0.88 haiku:~$0.23</p>
+<p>in:80% out:20% (fresh:15% cwrite:7% cread:76%)</p>
+<p>$5 MARK | main* | ♫ Artist - Song | PROJ-123 | CI ✓</p>
+<p>Claude Code doesn&#x27;t show you what you&#x27;re spending. You finish a session, check your billing dashboard, and discover a $65 charge for what felt like 30 minutes of work. You have no idea which session caused it, which model was wasteful, or whether your cache was even working.</p>
+<p>I built claudetop after noticing my model estimate showed $10 but the actual bill was $65. Turns out, compaction was hiding 80% of my token usage. The cost was real — the visibility wasn&#x27;t.</p>
+<p>curl -fsSL https://raw.githubusercontent.com/liorwn/claudetop/main/install.sh | bash</p>
+<p>Or clone and run manually:</p>
+<p>git clone https://github.com/liorwn/claudetop.git</p>
+<p>cd claudetop &amp;&amp; ./install.sh</p>
+<p>Then restart Claude Code. That&#x27;s it.</p>
+<p>&gt;</p>
+<p>A blank prompt. No context. No cost. No idea.</p>
+<p>14:32 my-project/src/app Opus 20m 0s +256/-43 #auth-refactor</p>
+<p>152.3K in / 45.2K out ████░░░░░░ 38% $3.47 $5.10/hr ~$174/mo</p>
+<p>cache: 66% efficiency: $0.012/line opus:~$3.20 sonnet:~$0.88 haiku:~$0.23</p>
+<p>$5 MARK | TRY /fast | main* | CI ✓ | ♫ Bonobo - Kerala</p>
+<p>Every response, you see:</p>
+<p>- What project you&#x27;re in and how deep</p>
+<p>- What model is running and for how long</p>
+<p>- What it costs right now, per hour, and projected monthly</p>
+<p>- How efficient your cache is (are you wasting tokens?)</p>
+<p>- What it would cost on a different model (should you switch?)</p>
+<p>- Smart alerts when something is wrong</p>
+<p>Your actual session cost (green), burn rate per hour, and monthly forecast extrapolated from your history. No more billing surprises.</p>
+<p>See what your session would cost on Opus, Sonnet, or Haiku — with cache-aware pricing that accounts for your actual cache hit ratio. The current model is bolded so you can instantly compare.</p>
+<p>Pricing updates automatically from the pricing.json in this repo — when Anthropic changes prices, claudetop stays current.</p>
+<p>Your cache hit ratio tells you if you&#x27;re being efficient. Green (≥60%) means most of your input tokens are being reused. Red (&lt;30%) means something is forcing full re-reads — maybe compaction, maybe a model switch.</p>
+<p>Only appear when something needs your attention:</p>
+<p>| Alert | What happened | What to do |</p>
+<p>|---|---|---|</p>
+<p>$5 MARK / $10 / $25 |</p>
+<p>Cost milestone crossed | Gut-check: am I getting value? |</p>
+<p>OVER BUDGET |</p>
+<p>Daily budget exceeded | Wrap up or switch models |</p>
+<p>CONSIDER FRESH SESSION |</p>
+<p>&gt;2hrs + &gt;60% context | Start fresh — diminishing returns |</p>
+<p>LOW CACHE |</p>
+<p>&lt;20% cache after 5min | Context was reset, tokens being re-read |</p>
+<p>BURN RATE |</p>
+<p>&gt;$15/hr velocity | Runaway subagents or tight loops |</p>
+<p>SPINNING? |</p>
+<p>&gt;$1 spent, zero code output | Stuck in a research loop |</p>
+<p>TRY /fast |</p>
+<p>&gt;$0.05/line on Opus | This task doesn&#x27;t need the biggest model |</p>
+<p>COMPACT SOON |</p>
+<p>Context window &gt;80% full | Auto-compaction is imminent |</p>
+<p>Every session is automatically logged. See where your money goes:</p>
+<p>claudetop-stats # Today&#x27;s summary</p>
+<p>claudetop-stats week # This week</p>
+<p>claudetop-stats month # This month</p>
+<p>claudetop-stats all # All time</p>
+<p>claudetop-stats tag auth # Filter by tag</p>
+<p>claudetop-stats This Week</p>
+<p>──────────────────────────────────────────────────────</p>
+<p>Summary</p>
+<p>Sessions: 12</p>
+<p>Total cost: $47.30</p>
+<p>Avg / session: $3.94</p>
+<p>Daily avg: $9.46</p>
+<p>Cost by model</p>
+<p>claude-opus-4-6: $38.20</p>
+<p>claude-sonnet-4-6: $9.10</p>
+<p>Top projects by cost</p>
+<p>rri-os $22.50 (4 sessions)</p>
+<p>pistol-claw $14.80 (5 sessions)</p>
+<p>the-table $10.00 (3 sessions)</p>
+<p>Track costs per feature, bug, or initiative:</p>
+<p>export CLAUDETOP_TAG=auth-refactor</p>
+<p># ... work on auth ...</p>
+<p>claudetop-stats tag auth-refactor</p>
+<p># Total cost: $12.40 across 3 sessions</p>
+<p>export CLAUDETOP_DAILY_BUDGET=50</p>
+<p>Shows budget: $12 left</p>
+<p>at 80% → OVER BUDGET ($52/$50)</p>
+<p>when exceeded.</p>
+<p>export CLAUDETOP_THEME=full # Default: 3-5 lines</p>
+<p>export CLAUDETOP_THEME=minimal # 2 lines</p>
+<p>export CLAUDETOP_THEME=compact # 1 line</p>
+<p>See what&#x27;s eating your context window:</p>
+<p>in:80% out:20% (fresh:15% cwrite:7% cread:76%)</p>
+<p>High cread</p>
+<p>= cache is working well. High fresh</p>
+<p>= re-reading files every turn.</p>
+<p>Drop any executable script into ~/.claude/claudetop.d/</p>
+<p>— it becomes part of your status line.</p>
+<p>Included (enabled by default):</p>
+<p>| Plugin | What it shows |</p>
+<p>|---|---|</p>
+<p>git-branch.sh |</p>
+<p>main* (branch + dirty indicator) |</p>
+<p>Example plugins (copy to enable):</p>
+<p>cp ~/.claude/claudetop.d/_examples/spotify.sh ~/.claude/claudetop.d/</p>
+<p>| Plugin | What it shows |</p>
+<p>|---|---|</p>
+<p>spotify.sh |</p>
+<p>♫ Artist - Song (macOS) |</p>
+<p>gh-ci-status.sh |</p>
+<p>CI ✓ or CI ✗ (GitHub Actions) |</p>
+<p>meeting-countdown.sh |</p>
+<p>Mtg in 12m: Standup (macOS Calendar) |</p>
+<p>ticket-from-branch.sh |</p>
+<p>PROJ-123 (from branch name) |</p>
+<p>weather.sh |</p>
+<p>Current weather (wttr.in) |</p>
+<p>news-ticker.sh |</p>
+<p>Top HN story |</p>
+<p>pomodoro.sh |</p>
+<p>Focus timer |</p>
+<p>system-load.sh |</p>
+<p>CPU load average |</p>
+<p>Write your own in 4 lines:</p>
+<p>#!/bin/bash</p>
+<p>JSON=$(cat)</p>
+<p>COST=$(echo &quot;$JSON&quot; | jq -r &#x27;.cost.total_cost_usd&#x27;)</p>
+<p>printf &quot;\033[32m\$%s\033[0m&quot; &quot;$COST&quot;</p>
+<p>Make it executable, drop it in ~/.claude/claudetop.d/</p>
+<p>, done.</p>
+<p>Pricing updates daily from this repo. When Anthropic changes prices, we update pricing.json and everyone gets the new rates next morning.</p>
+<p>Current pricing (Claude 4.6, March 2026):</p>
+<p>| Model | Input | Cache Write | Cache Read | Output | Notes |</p>
+<p>|---|---|---|---|---|---|</p>
+<p>| Opus 4.6 | $5/MTok | $6.25/MTok | $0.50/MTok | $25/MTok | |</p>
+<p>| Sonnet 4.6 | $3/MTok | $3.75/MTok | $0.30/MTok | $15/MTok | 2x input / 1.5x output when &gt;200K tokens |</p>
+<p>| Haiku 4.5 | $1/MTok | $1.25/MTok | $0.10/MTok | $5/MTok |</p>
+<p>Extended thinking tokens are billed at standard output rates. No additional charge.</p>
+<p>To update manually: ~/.claude/update-claudetop-pricing.sh</p>
+<p>Every metric uses traffic-light colors — green means healthy, red means act:</p>
+<p>| Metric | Green | Yellow | Red |</p>
+<p>|---|---|---|---|</p>
+<p>| Cost velocity | &lt;$3/hr | &lt;$8/hr | ≥$8/hr |</p>
+<p>| Cache ratio | ≥60% | ≥30% | &lt;30% |</p>
+<p>| Efficiency | &lt;$0.01/line | &lt;$0.05/line | ≥$0.05/line |</p>
+<p>| Context bar | &lt;50% | 50-80% | ≥80% |</p>
+<p>| Time of day | 6am-10pm | — | Magenta after 10pm |</p>
+<p>- Claude Code with status line support</p>
+<p>jq</p>
+<p>—brew install jq</p>
+<p>/apt install jq</p>
+<p>bc</p>
+<p>— pre-installed on macOS and most Linux</p>
+<p>Pricing changed? Model added? Open a PR updating pricing.json</p>
+<p>. Everyone gets the update next morning.</p>
+<p>Built a useful plugin? PRs welcome in plugins/examples/</p>
+<p>.</p>
+<p>MIT</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://github.com/liorwn/claudetop" target="_blank">Read original →</a></div>
+</body></html>

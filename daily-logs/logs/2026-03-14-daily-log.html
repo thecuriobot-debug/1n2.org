@@ -55,27 +55,28 @@ ul{margin-left:18px}li{margin:.35rem 0;color:#bbb;line-height:1.5}
 
 
 
-<h2>📝 Git Commits (9)</h2>
-<ul><li>health: add missing job #11 Curio Review Essay (Monday) — now matches master-run.sh exactly</li>
-<li>health: JOBS list matches master-run.sh exactly (28 jobs across 11 phases), homepage updated to 28</li>
-<li>health: clean sites list — remove old-projects, daily-thunt, thunt-wiki (→curio-wiki), bitcoin-trains/ships, mb-games, madninja, agent-hangar, workflows, commentzor</li>
-<li>health: remove oracle-data.json check, remove briefsmith from sites list</li>
-<li>fix: health exports - correct variable name, absolute paths, no double-slash</li>
-<li>fix: health check exports use absolute paths (was fetching from /health/ subdir causing 404s)</li>
-<li>fix: scope ALL nav CSS to nav#tabs — was leaking into n2-nav links</li>
-<li>fix: ai-usage nav#tabs JS scoped to nav#tabs only (was breaking top nav links), logo cache-busted v=3</li>
-<li>auto: daily data update 2026-03-14 01:06 (288 files)</li></ul>
+<h2>📝 Git Commits (40)</h2>
+<ul><li>WCN Podcast: align Spreaker/Apple/SoundCloud/YouTube platform buttons with page content (inner container at max-width:1000px)</li>
+<li>All Media Tracker: align search bar and filter buttons with page content (inner container at max-width:1100px)</li>
+<li>Align headers with content: All Media Tracker (1100px), TBG Mirrors (1000px), WCN Podcast (1000px) — inner containers match page max-width</li>
+<li>My YouTube: align header and nav tabs with page content (max-width:1100px inner containers)</li>
+<li>Fix all stale /commentzor/ links → /my-youtube/#comments in TBG Mirrors, All Media, WCN Podcast footers</li>
+<li>Fix TBG Mirrors: compute stats from episode data instead of missing DATA.stats fields. Fix episode yt field handling (string vs object). All stats now show real numbers.</li>
+<li>Restore Thomas Hunt Films to full version with Press Coverage, Movie Remixes, and all category tabs</li>
+<li>curio-map: filter metadata keys from nav, auto button after #30 in number bar; curio-wiki: add JetBrains Mono, remove dead curio-hdr CSS</li>
+<li>fix: quant remove orphaned hdr-links + QuantBot badge; community remove duplicate h1</li>
+<li>curio suite: unified .curio-nav header across all 5 pages — same height/font/padding, current page greyed out, consistent link order</li>
+<li>github_commit.sh: protect curio-quant HTML from auto-commit overwrites</li>
+<li>fix: restore CurioQuant v9+ (AI Card Market Intelligence) — auto-commit had accidentally overwritten with old v1 AI Trading Platform version</li>
+<li>homepage: first group 8px top, groups 24px between, items 10px gap</li>
+<li>homepage: reduce group margin-top 20px→14px</li>
+<li>homepage: remove Claude sentence from paragraph</li>
+<li>homepage: projects/records live from stats.json, improved paragraph</li>
+<li>homepage: remove encyclopedia tag from Curio Wiki</li>
+<li>homepage: github moved last, nav uses .hlink class for consistent styling</li>
+<li>homepage: mad patrol 🕹️ emoji, remove game tags</li>
+<li>homepage: remove distribution tag from Curio Map</li></ul>
 
-<h2>📊 Live Data Snapshot</h2>
-<ul>
-<li>Total DB records: <b>4,466</b></li>
-<li>Curio Cards floor: <b>0.0486 ETH</b></li>
-<li>YouTube videos: <b>298</b></li>
-<li>YouTube comments: <b>749</b></li>
-<li>Articles: <b>984</b></li>
-<li>Movies tracked: <b>1,579</b></li>
-<li>Books tracked: <b>779</b></li>
-</ul>
 <div class="foot">
 <a href="/daily-logs/">← All Logs</a>
 <a href="/">🏠 1n2.org</a>
@@ -84,6 +85,6 @@ ul{margin-left:18px}li{margin:.35rem 0;color:#bbb;line-height:1.5}
 <a href="/health/">💚 Health</a>
 <a href="https://github.com/thecuriobot-debug" target="_blank">⚙️ GitHub</a>
 </div>
-<div class="meta">Generated 2026-03-14 11:40 · 1n2.org Daily Log</div>
+<div class="meta">Generated 2026-03-15 01:06 · 1n2.org Daily Log</div>
 </div>
 </body></html>

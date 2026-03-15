@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-03-14T11:40:06.757345",
-  "date": "2026-03-14",
+  "last_updated": "2026-03-15T01:06:10.689358",
+  "date": "2026-03-15",
   "providers": {
     "claude": {
       "name": "Claude (Anthropic)",
@@ -9,7 +9,7 @@
       "color": "#da7756",
       "icon": "\ud83e\udd16",
       "total_prompts": 15000,
-      "last_polled": "2026-03-14"
+      "last_polled": "2026-03-15"
     },
     "openclaw": {
       "name": "OpenClaw (Daily Automation)",
@@ -17,9 +17,9 @@
       "primary_use": "Cron automation \u2014 22 jobs/night, master pipeline orchestration",
       "color": "#7eb8f7",
       "icon": "\ud83d\udd2c",
-      "total_runs": 145,
+      "total_runs": 146,
       "jobs_per_run": 22,
-      "last_polled": "2026-03-14"
+      "last_polled": "2026-03-15"
     },
     "chatgpt": {
       "name": "ChatGPT (OpenAI)",
@@ -28,7 +28,7 @@
       "color": "#19c37d",
       "icon": "\ud83d\udcac",
       "total_prompts": 0,
-      "last_polled": "2026-03-14",
+      "last_polled": "2026-03-15",
       "status": "needs_billing",
       "notes": "Key set \u2014 add billing at platform.openai.com/account/billing"
     },
@@ -39,21 +39,21 @@
       "color": "#a78bfa",
       "icon": "\u26a1",
       "total_prompts": 0,
-      "last_polled": "2026-03-14"
+      "last_polled": "2026-03-15"
     },
     "gemini": {
       "name": "Gemini (Google)",
       "model": "gemini-2.5-flash",
-      "primary_use": "Generating a JSON object based on user specifications and provided fields.",
+      "primary_use": "Generated content ideas and drafted initial descriptions for the 'About Us' section of 1n2.org.",
       "color": "#4285f4",
       "icon": "\ud83c\udf10",
-      "total_prompts": 5,
-      "last_polled": "2026-03-14",
-      "notes": "Followed instructions to provide ONLY a JSON object with specific key-value pairs."
+      "total_prompts": 7,
+      "last_polled": "2026-03-15",
+      "notes": "Focused on concise, engaging language for web content."
     }
   },
   "totals": {
-    "all_prompts": 15005
+    "all_prompts": 15007
   },
   "history": [
     {
@@ -68,7 +68,14 @@
       "claude": 15000,
       "openclaw": 145,
       "chatgpt": 0,
-      "gemini": 5
+      "gemini": 6
+    },
+    {
+      "date": "2026-03-15",
+      "claude": 15000,
+      "openclaw": 146,
+      "chatgpt": 0,
+      "gemini": 7
     }
   ],
   "project_stats": {

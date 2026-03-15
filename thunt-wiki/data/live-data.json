@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-14",
+  "updated": "2026-03-15",
   "channels": {
     "bbctruth": {
       "id": "UCo6p8YD65JejkRSKBMRnr8A",
@@ -391,7 +391,7 @@
         {
           "title": "The Bitcoin Group #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "adDpYA9rj0s",
-          "views": 54,
+          "views": 61,
           "comments": 0,
           "date": "2026-03-14"
         },
@@ -405,7 +405,7 @@
         {
           "title": "The Bitcoin Group #483 - NAKA Drama - SBF Reborn - BitBoy Verdict - Satoshi Movie",
           "id": "bIjswicvees",
-          "views": 62,
+          "views": 63,
           "comments": 0,
           "date": "2026-02-28"
         },
@@ -616,31 +616,31 @@
           "title": "Empire Strikes Back (ships only)",
           "id": "TYrq1mLsPlo",
           "comments": 245,
-          "views": 1678616
+          "views": 1678674
         },
         {
           "title": "Star Trek: The Motion Picture (ships only)",
           "id": "qHWlccpsYIA",
           "comments": 211,
-          "views": 158849
+          "views": 158858
         },
         {
           "title": "Star Trek III: The Search for Spock (ships only)",
           "id": "iHMXrxXCfWs",
           "comments": 188,
-          "views": 194106
+          "views": 194112
         },
         {
           "title": "Return of the Jedi (ships only)",
           "id": "jTMK8McUdE0",
           "comments": 131,
-          "views": 348038
+          "views": 348072
         },
         {
           "title": "Star Trek: Insurrection (ships only)",
           "id": "5LOtf5Yq39Y",
           "comments": 129,
-          "views": 322225
+          "views": 322227
         }
       ],
       "top_commenters": [
@@ -699,19 +699,19 @@
       "id": "UCR9gdpWisRwnk_k23GsHfcA",
       "subscribers": 52400,
       "video_count": 4596,
-      "total_comments_db": 27,
+      "total_comments_db": 28,
       "recent_videos": [
         {
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
-          "views": 113,
-          "comments": 5,
+          "views": 130,
+          "comments": 6,
           "date": "2026-03-14"
         },
         {
           "title": "Vice President JD Vance Speaks at Bitcoin Las Vegas | Full Speech",
           "id": "zcSiy27HrDA",
-          "views": 74,
+          "views": 75,
           "comments": 1,
           "date": "2026-03-11"
         },
@@ -725,7 +725,7 @@
         {
           "title": "Crypto Collapse  Jane Street & October 10th Ruin Millions!",
           "id": "zi_McYDdRY8",
-          "views": 572,
+          "views": 573,
           "comments": 0,
           "date": "2026-03-08"
         },
@@ -739,14 +739,14 @@
         {
           "title": "Jane Street  Terra Luna Peg Scandal EXPOSED!",
           "id": "cU5P4ygR1iI",
-          "views": 127,
+          "views": 128,
           "comments": 0,
           "date": "2026-03-07"
         },
         {
           "title": "The Bitcoin Group  #485 - Surge then Fall - Iran War - CA Buys - NY Allows",
           "id": "px-umd_-rnw",
-          "views": 118,
+          "views": 120,
           "comments": 1,
           "date": "2026-03-07"
         },
@@ -776,8 +776,8 @@
         {
           "title": "The Bitcoin Group  #486 - $72K - Iran War Rages - Mixers are Valid? - Ban Crypto ATMs",
           "id": "VxqQqpgEI-A",
-          "comments": 5,
-          "views": 113
+          "comments": 6,
+          "views": 130
         },
         {
           "title": "Trump Family's $1 3B Crypto Exit & Eric Trump's Tweet Deletions",
@@ -814,6 +814,10 @@
           "count": 5
         },
         {
+          "name": "@dusty-gray",
+          "count": 2
+        },
+        {
           "name": "@szymborska",
           "count": 1
         },
@@ -839,10 +843,6 @@
         },
         {
           "name": "@ken121234",
-          "count": 1
-        },
-        {
-          "name": "@jsmythib",
           "count": 1
         }
       ]

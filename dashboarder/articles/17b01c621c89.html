@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Please Do Not A/B Test My Workflow</title>
+<title>Claude Code&#x27;s binary reveals silent A/B tests on core features</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
 <style>
 body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
@@ -14,10 +14,41 @@ p{margin-bottom:1rem;font-size:1.05rem}
 .ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
 </style></head><body>
 <div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://backnotprop.com/blog/do-not-ab-test-my-workflow/" target="_blank">Original article ↗</a></div>
-<img src="https://backnotprop.com/_astro/og-default.CtYXdJzI.png" style="width:100%;max-height:360px;object-fit:cover;border-radius:4px;margin-bottom:1.2rem">
-<h1>Please Do Not A/B Test My Workflow</h1>
+
+<h1>Claude Code&#x27;s binary reveals silent A/B tests on core features</h1>
 <div class="meta">Hacker News · 2026-03-14</div>
-<div class="summary">Anthropic is silently A/B testing Claude Code&#x27;s plan mode on paying users. This isn&#x27;t a consumer app. Stop treating it like one.</div>
-<p style="color:#7A6B5A;font-style:italic">Full article text not yet available. <a href="https://backnotprop.com/blog/do-not-ab-test-my-workflow/" target="_blank">Read on Hacker News →</a></p>
+<div class="summary">Anthropic is running silent A/B tests on Claude Code that actively degrade my workflow.
+I pay $200/month for Claude Code. Itâs a professional tool I use to do my job, and I need transparency into how it works and the ability to configure it. What I d</div>
+<p>Anthropic is running silent A/B tests on Claude Code that actively degrade my workflow.</p>
+<p>I pay $200/month for Claude Code. Itâs a professional tool I use to do my job, and I need transparency into how it works and the ability to configure it. What I donât need is critical functions of the application changing without notice, or being signed up for lab testing without my approval.</p>
+<p>An AI safety company, yet with apparent roots in a product engineering culture derived from places like Meta, where silent experimentation on users was common practice. We need to be responsible with how we steer these tools (AI), and we need to be enabled to do so. Transparency is a critical part of that. Configurability is a critical part of that.</p>
+<p>Every day, engineers complain about regressions in Claude Code. Half the time, the answer is: youâre probably in an A/B test and donât know it.</p>
+<p>The Proof</p>
+<p>I dug into the Claude Code binary. Thereâs a GrowthBook-managed A/B test called tengu_pewter_ledger</p>
+<p>that controls how plan mode writes its final plan. Four variants: null</p>
+<p>, trim</p>
+<p>, cut</p>
+<p>, cap</p>
+<p>. Each one progressively more restrictive than the last.</p>
+<p>![A/B test variant groups found in the binary](/_astro/tengu-groups.CFTKrKAu_1MIzwM.webp)</p>
+<p>The default variant gives you a full context section, prose explanation, and a detailed verification section. The most aggressive variant, cap</p>
+<p>, hard-caps plans at 40 lines, forbids any context or background section, forbids prose paragraphs, and tells the model to âdelete prose, not file pathsâ if it goes over.</p>
+<p>![The cap variant instructions](/_astro/tengu-cap.BKih05YL_al583.webp)</p>
+<p>I got assigned cap</p>
+<p>. There was no question/answer phase. I entered plan mode, and it immediately launched a sub-agent, generated its own plan with zero discourse, and presented me a wall of terse bullet points. No back and forth. No steering. Just a fait accompli. Hereâs what a plan looks like under cap</p>
+<p>:</p>
+<p>![Example plan output under the cap variant](/_astro/example-plan.SKb44vVM_1gPXFG.webp)</p>
+<p>Plan rendered with Plannotator</p>
+<p>There was no opt-in. No notification. No toggle. No way to know this was happening unless you decompiled the binary yourself.</p>
+<p>At plan exit, the variant gets logged with telemetry:</p>
+<p>d(&quot;tengu_plan_exit&quot;, {</p>
+<p>planLengthChars: R.length,</p>
+<p>outcome: Q,</p>
+<p>clearContext: !0,</p>
+<p>planStructureVariant: h // â your variant (&quot;cap&quot;)</p>
+<p>});</p>
+<p>The code shows they collect data like plan length, plan approval or denial, and variant assignment. What metrics theyâre using downstream isnât clear from the binary alone. What is clear is that paying users are the experiment.</p>
+<p>I donât think Anthropic is doing this to intentionally degrade anyoneâs experience. Theyâre clearly trying to optimize. But it was disruptive enough that I felt the need to decompile the binary to figure out what was going on, and doing it silently on paying users is the wrong way to go about it.</p>
+<p>This is the opposite of transparency and responsible AI deployment. AI tooling needs more transparency, not less. When you abstract away something like planning logic so users canât see whatâs steering the model, you take away the one thing that makes these tools useful: the ability to own my process and guide AI with a human in the loop.</p>
 <div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://backnotprop.com/blog/do-not-ab-test-my-workflow/" target="_blank">Read original →</a></div>
 </body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>An ode to bzip</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Source Serif 4',Georgia,serif;background:#F0E4D0;color:#1A1A1A;line-height:1.75;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem;line-height:1.25}
+.meta{color:#7A6B5A;font-size:.82rem;margin-bottom:1.2rem;font-family:'JetBrains Mono',monospace;font-weight:300}
+a{color:#5B3A00}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;font-size:.82rem}
+.nav a{text-decoration:none}
+p{margin-bottom:1rem;font-size:1.05rem}
+.summary{font-style:italic;color:#5A4E3E;border-left:3px solid #C0A875;padding-left:.8rem;margin-bottom:1.5rem}
+.ft{margin-top:2rem;padding-top:1rem;border-top:1px solid #C0A875;font-size:.75rem;color:#7A6B5A;text-align:center}
+</style></head><body>
+<div class="nav"><a href="/dashboarder/">← Dashboarder</a><a href="https://purplesyringa.moe/blog/an-ode-to-bzip/" target="_blank">Original article ↗</a></div>
+
+<h1>An ode to bzip</h1>
+<div class="meta">Hacker News · 2026-03-14</div>
+<div class="summary">The story goes like this. ComputerCraft is a mod that adds programming to Minecraft. You write Lua code that gets executed by a bespoke interpreter with access to world APIs, and now you’re writing code instead of having fun. Computers have limited d</div>
+<p>The story goes like this. ComputerCraft is a mod that adds programming to Minecraft. You write Lua code that gets executed by a bespoke interpreter with access to world APIs, and now you’re writing code instead of having fun. Computers have limited disk space, and my /nix</p>
+<p>folder is growing out of control, so I need to compress code.</p>
+<p>The laziest option would be to use LibDeflate, but its decoder is larger than both the gains from compression and my personal boundary for copying code. So the question becomes: what’s the shortest, simplest, most ratio-efficient compression algorithm?</p>
+<p>I initially thought this was a complex question full of tradeoffs, but it turns out it’s very clear-cut. My answer is bzip</p>
+<p>, even though this algorithm has been critiqued multiple times and has fallen into obscurity since xz and zstd became popular.</p>
+<p>First lookI’m compressing a 327 KB file that contains Lua code with occasional English text sprinkled in comments and documentation. This is important: bzip excels at text-like data rather than binary data. However, my results should be reproducible on other codebases, as the percentages seem to be mostly constant within that category.</p>
+<p>Let’s compare multiple well-known encoders on this data:</p>
+<p>zopfli --i100</p>
+<p>: 75882zstd -22 --long --ultra</p>
+<p>: 69018xz -9</p>
+<p>: 67940brotli -Z</p>
+<p>: 67859 (recompiled without a dictionary)lzip -9</p>
+<p>: 67651bzip2 -9</p>
+<p>: 63727bzip3</p>
+<p>: 61067The bzip</p>
+<p>family is a clear winner by a large margin. It even beats lzip</p>
+<p>, whose docs say “‘lzip -9’ compresses most files more than bzip2” (I guess code is not “most files”). How does it achieve this? Well, it turns out that bzip</p>
+<p>is not like the others.</p>
+<p>AlgorithmsYou see, all other popular compression algorithms are actually the same thing at the core. They’re all based on LZ77, a compression scheme that boils down to replacing repetitive text with short links to earlier occurrences.</p>
+<p>The main difference is in how literal strings and backreferences are encoded as bit streams, and this is highly non-trivial. Since links can have wildly different offsets, lengths, and frequencies from location to location, a good algorithm needs to predict and succinctly encode these parameters.</p>
+<p>But bzip</p>
+<p>does not use LZ77. bzip</p>
+<p>uses BWT, which reorders characters in the text to group them by context – so instead of predicting tokens based on similar earlier occurrences, you just need to look at the last few symbols. And, surprisingly, with the BWT order, you don’t even need to store where each symbol came from!</p>
+<p>For example, if the word hello</p>
+<p>is repeated in text multiple times, with LZ77 you’ll need to find and insert new references at each occurrence. But with BWT, all continuations of hell</p>
+<p>are grouped together, so you’ll likely just have a sequence of many o</p>
+<p>s in a row, and similarly with other characters, which simple run-length encoding can deal with.</p>
+<p>BWT comes with some downsides. For example, if you concatenate two texts in different English dialects, e.g. using color</p>
+<p>vs colour</p>
+<p>, BWT will mix the continuations of colo</p>
+<p>in an unpredictable order and you’ll have to encode a weird sequence of r</p>
+<p>s and u</p>
+<p>s, whereas LZ77 would prioritize recent history. You can remedy this by separating input by formats, but for consistent data like code, it works just fine as is.</p>
+<p>bzip2</p>
+<p>and bzip3</p>
+<p>are both based on BWT and differ mostly in how the BWT output is compressed. bzip2</p>
+<p>uses a variation on RLE, while bzip3</p>
+<p>tries to be more intelligent. I’ll focus on bzip2</p>
+<p>for performance reasons, but most conclusions apply to bzip3</p>
+<p>, too.</p>
+<p>HeuristicsThere is another interesting thing about BWT. You might have noticed that I’m invoking bzip3</p>
+<p>without passing any parameters like -9</p>
+<p>. That’s because bzip3</p>
+<p>doesn’t take them. In fact, even invoking bzip2</p>
+<p>with -9</p>
+<p>doesn’t do much.</p>
+<p>LZ77-based methods support different compression levels because searching for earlier occurrences is time-consuming, and sometimes it’s preferable to use a literal string instead of a difficult-to-encode reference, so there is some brute-force. BWT, on the other hand, is entirely deterministic and free of heuristics.</p>
+<p>Furthermore, there is no degree of freedom in determining how to efficiently encode the lengths and offsets of backreferences, since there are none. There are run lengths, but that’s about it – it’s a single number, and it’s smaller than typical offsets.</p>
+<p>All of that is to say: if you know what the bzip2</p>
+<p>pipeline looks like, you can quickly achieve similar compression ratios without fine-tuning and worrying about edge cases. My unoptimized ad-hoc bzip2</p>
+<p>-like encoder compresses the same input to about 67 KB – better than lzip</p>
+<p>and with clear avenues for improvement.</p>
+<p>DecodersThat covers the compression format, but what about the size of the decoder? Measuring ELFs is useless when targeting Lua, and Lua libraries like LibDeflate don’t optimize code size for self-extracting archives, so at risk of alienating readers with fancy words and girl math, I’ll have to eyeball this for everything but bzip2</p>
+<p>.</p>
+<p>A self-extracting executable doesn’t have to decode every archive – just one. We can skip sanity checks, headers, inline metadata into code, and tune the format for easier decoding. As such, I will only look at the core decompression loops.</p>
+<p>gzip</p>
+<p>, zstd</p>
+<p>, xz</p>
+<p>, brotli</p>
+<p>, and lzip</p>
+<p>all start by doing LZ77. Evaluating “copy” tokens is a simple loop that won’t take much code. Where they differ is in how those tokens are encoded into bits:</p>
+<p>gzip</p>
+<p>does some light pre-processing and then applies Huffman coding, which assigns unambiguous bit sequences to tokens and then concatenates them, optimizing for total length based on the token frequency distribution. Huffman codes can be parsed in ~250 bytes, the bit trie might take ~700 bytes, and the glue should fit in ~500 bytes. Let’s say 1.5 KB in total.xz</p>
+<p>encodes tokens bit-by-bit instead of treating them as atoms, which allows the coder to adjust probabilities dynamically, yielding good ratios without encoding any tables at the cost of performance. Bit-by-bit parsing will take more space than usual, but avoiding tables is a huge win, so let’s put at 1 KB.</p>
+<p>lzip</p>
+<p>is very similar to xz</p>
+<p>, only slightly changing token encodings, so let’s put it at 1 KB as well.</p>
+<p>zstd</p>
+<p>complicates the pre-processing step and uses Finite State Entropy instead of Huffman coding, which effectively allows tokens to be encoded with fractional bit lengths. FSE is simple, but requires large tables, so let’s say ~2000 bytes for storing and parsing them. Adding glue, we should get about 3 KB.brotli</p>
+<p>keeps Huffman coding, but switches between multiple static Huffman tables on the flight depending on context. I couldn’t find the exact count, but I get 7 tables on my input. That’s a lot of data that we can’t just inline – we’ll need to encode it and parse it. Let’s say ~500 bytes for parser and ~100 bytes per table. Together with the rest of the code, we should get something like 2.2 kB.For bzip</p>
+<p>decoders, BWT can be handled in ~250 bytes. As for the unique parts,</p>
+<p>bzip2</p>
+<p>compresses the BWT output with MTF + RLE + Huffman. With the default 6 Huffman tables, let’s assign ~1.5 KB to all Huffman-related code and data and ~400 bytes for MTF, RLE, and glue.</p>
+<p>bzip3</p>
+<p>uses XZ-like bit-by-bit coding with context mixing instead. Let’s say 1 KB for the former and ~500 bytes for the latter.</p>
+<p>Point is: by dropping compatibility with standard file formats, the decoder can become very small. I might be wrong on some of these figures, but it most likely won’t switch things up significantly.</p>
+<p>bzip</p>
+<p>-style methods are in the middle of the pack, but that’s somewhat misleading. While bzip2</p>
+<p>typically uses 6 Huffman tables, I got good compression results with just one. With a single table, my bzip</p>
+<p>-style decoder fits in 1.5 KB, which is smaller than everything but xz</p>
+<p>and lzip</p>
+<p>, while being faster and more compact.</p>
+<p>PerformanceIt’s common knowledge that bzip</p>
+<p>is slow, but there’s nuance.</p>
+<p>When compression is used to circumvent a hard limit, the difference between bzip</p>
+<p>and gzip</p>
+<p>is not booting slowly or quickly, but between booting and not booting at all. If unpacking initrd takes 0.5 seconds instead of 0.3 seconds, it’s not a big deal compared to being unable to boot.</p>
+<p>From this perspective, saying bzip</p>
+<p>is slower than gzip</p>
+<p>begs the question. gzip</p>
+<p>cannot easily produce an optimal output like bzip</p>
+<p>can, so it searches for earlier occurrences heuristically with a configurable time-ratio tradeoff. gzip</p>
+<p>is faster not because of different designs per se, but because gzip</p>
+<p>decided being fast is more important than a good output, even on -9</p>
+<p>. If you want a good ratio, you have to use zopfli, which tries to encode gzip</p>
+<p>more optimally and is a magnitude slower than bzip</p>
+<p>despite producing worse output.</p>
+<p>On the decoding side, decoding bzip</p>
+<p>is slow because inverting BWT requires random access. This is less of an issue in high-level languages like Lua, where all operations are slow anyway. In this situation, most typical compression techniques are even more expensive. You can decode gzip</p>
+<p>faster than bzip2</p>
+<p>, but zstd</p>
+<p>and brotli</p>
+<p>are likely closer to it in speed.</p>
+<p>I haven’t tried using bzip3</p>
+<p>in practice, but I expect decoding bzip3</p>
+<p>to be significantly slower than bzip2</p>
+<p>due to having to parse tokens bit-by-bit. I’m assuming it’s possible to get bzip3</p>
+<p>-like ratio without this, but I’ll cross that bridge when I come to it.</p>
+<p>AlternativesSo that’s my answer: not a custom compression algorithm, just bzip</p>
+<p>with whistles.</p>
+<p>If you know anything about me, not inventing anything new might sound surprising. Well, I tried to, with varying success.</p>
+<p>Here’s an exercise. The core idea behind text compression is that text is repetitive, so instead of repeating the word repeat</p>
+<p>every time it’s written, we can encode (hopefully shorter) references to the earlier repetitions of repeat</p>
+<p>. For example, the string:</p>
+<p>Rust is an iron oxide, a usually reddish-brown oxide formed by the reaction of iron and oxygen in the catalytic presence of water or air moisture.</p>
+<p>…can be encoded as:</p>
+<p>Rust is an iron oxide, a usua</p>
+<div class="ft"><a href="/dashboarder/">← Back to Dashboarder</a> · <a href="https://purplesyringa.moe/blog/an-ode-to-bzip/" target="_blank">Read original →</a></div>
+</body></html>

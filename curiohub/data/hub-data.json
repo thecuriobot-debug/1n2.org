@@ -1,14 +1,14 @@
 {
-  "updated": "2026-03-14",
+  "updated": "2026-03-15",
   "market": {
     "floor": 0.0486,
     "holders": 4962,
     "total_sales": 75,
-    "total_transfers": 805
+    "total_transfers": 810
   },
   "youtube": {
     "total_videos": 298,
-    "total_comments": 749,
+    "total_comments": 750,
     "channels": [
       {
         "name": "bbctruth",
@@ -49,11 +49,15 @@
     ]
   },
   "content": {
-    "articles": 984,
+    "articles": 1246,
     "tweets": 0,
     "wiki_articles": 27
   },
   "price_history": [
+    {
+      "date": "2026-03-15",
+      "floor": 0.0486
+    },
     {
       "date": "2026-03-14",
       "floor": 0.0486
